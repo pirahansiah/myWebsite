@@ -1,10 +1,26 @@
+
+.jekyll-cache
+/.jekyll-cache
+Gemfile.lock
+/Gemfile.lock
+_site
+_site/
+.kekyll-cache
+.kekyll-cache/
+me 
+me/
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
+mlruns
+mlruns/
 # C extensions
 *.so
+.DS_Store
+DS_Store
 
 # Distribution / packaging
 .Python
@@ -106,10 +122,8 @@ ipython_config.py
 #pdm.lock
 #   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
 #   in version control.
-#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
+#   https://pdm.fming.dev/#use-with-ide
 .pdm.toml
-.pdm-python
-.pdm-build/
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
@@ -137,8 +151,7 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
-/site
+
 
 # mypy
 .mypy_cache/
@@ -153,10 +166,51 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+.env 
 
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+
+# Kubernetes_Terraform
+
+# Compiled files
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+
+# logs
+*.log
+
+# Directories
+.terraform/
+.vagrant/
+
+# SSH Keys
+*.pem
+
+# Backup files
+*.bak
+
+# Ignored Terraform files
+*gitignore*.tf
+
+# Ignore Mac .DS_Store files
+.DS_Store
+
+# Ignored vscode files
+.vscode/
+
+# Ignore Any Generated JSON Files
+operations/automation-script/apply.json
+operations/automation-script/configversion.json
+operations/automation-script/run.template.json
+operations/automation-script/run.json
+operations/automation-script/variable.template.json
+operations/automation-script/variable.json
+operations/automation-script/workspace.template.json
+operations/automation-script/workspace.json
+operations/sentinel-policies-scripts/create-policy.template.json
+operations/sentinel-policies-scripts/create-policy.json
+operations/variable-scripts/variable.template.json
+operations/variable-scripts/variable.json
+
+# Sentinel runtime directory
+.sentinel
