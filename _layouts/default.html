@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title | default: "Dr. Farshid Pirahansiah" }}</title>
+  <style>
+    /* Basic styling for navigation */
+    nav {
+      background-color: #333;
+      font-family: Arial, sans-serif;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+    nav ul li {
+      position: relative;
+      display: inline-block;
+    }
+    nav ul li a, nav ul li span {
+      display: block;
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    nav ul li a:hover, nav ul li span:hover {
+      background-color: #111;
+    }
+    /* Dropdown styling */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+      top: 100%;
+      left: 0;
+    }
+    nav ul li:hover > ul {
+      display: block;
+    }
+    nav ul li ul li {
+      display: block;
+    }
+    nav ul li ul li a, nav ul li ul li span {
+      padding: 12px 16px;
+    }
+    /* Positioning for deeper levels */
+    nav ul li ul li ul {
+      top: 0;
+      left: 100%;
+    }
+    /* Visual indicators */
+    nav ul li span::after {
+      content: " \25BA"; /* Unicode for right-pointing pointer */
+      float: right;
+    }
+    nav ul li ul li span::after {
+      content: " \25BA";
+      float: right;
+    }
+    /* Adjust indicators for items without children */
+    nav ul li a::after, nav ul li ul li a::after {
+      content: "";
+    }
+    /* Back button styling */
+    .back-button {
+      background-color: transparent;
+      border: none;
+      color: #007BFF; /* Customize the color as needed */
+      font-size: 16px;
+      cursor: pointer;
+      padding: 10px;
+      margin: 10px; /* Add margin for spacing */
+    }
+    .back-button:hover {
+      color: #0056b3; /* Darker shade on hover */
+    }
+    /* Responsive Styling */
+    @media screen and (max-width: 768px) {
+      nav ul li {
+        display: block;
+      }
+      nav ul li ul {
+        position: static;
+      }
+      nav ul li ul li ul {
+        position: static;
+      }
+    }
+  </style>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSFF93W8FQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BSFF93W8FQ');
+  </script>
+</head>
+<body>
+  <nav>
+    <ul>
+      {% for item in site.navigation %}
+        <li>
+          {% if item.children %}
+            <span>{{ item.title }}</span>
+            <ul>
+              {% for child in item.children %}
+                <li>
+                  {% if child.children %}
+                    <span>{{ child.title }}</span>
+                    <ul>
+                      {% for subchild in child.children %}
+                        <li>
+                          {% if subchild.children %}
+                            <span>{{ subchild.title }}</span>
+                            <ul>
+                              {% for subsubchild in subchild.children %}
+                                <li>
+                                  <a href="{{ subsubchild.url | relative_url }}">{{ subsubchild.title }}</a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          {% else %}
+                            <a href="{{ subchild.url | relative_url }}">{{ subchild.title }}</a>
+                          {% endif %}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    <a href="{{ child.url | relative_url }}">{{ child.title }}</a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <!-- Back Button -->
+  <button class="back-button" onclick="goBack()">
+    &#8592; Back
+  </button>
+
+  <!-- Main Content -->
+  <div class="page-content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </div>
+
+  <!-- AdSense Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9719404674327580" crossorigin="anonymous"></script>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9719404674327580" data-ad-slot="1895959699" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+  <!-- JavaScript Function -->
+  <script>
+    function goBack() {
+      if (document.referrer !== "") {
+        window.history.back();
+      } else {
+        window.location.href = '{{ "/" | relative_url }}'; // Redirects to home if there's no history
+      }
+    }
+
+    // Optional: JavaScript for Click-Based Dropdowns on Mobile Devices
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdownToggles = document.querySelectorAll('nav ul li span');
+
+      dropdownToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          const submenu = this.nextElementSibling;
+          if (submenu.style.display === 'block') {
+            submenu.style.display = 'none';
+          } else {
+            submenu.style.display = 'block';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
