@@ -4,7 +4,7 @@ title: Home
 ---
 # Farshid PirahanSiah
 
-I am currently seeking opportunities in **computer vision**.
+I am currently seeking opportunities in **computer vision**, ML, LLM.
 
 ## About Me
 
