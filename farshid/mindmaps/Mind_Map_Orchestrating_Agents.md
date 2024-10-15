@@ -1,28 +1,17 @@
 ---
 layout: default
 title: "Orchestrating Agents"
-date: 2024-10-12
-date_modified: 2024-10-12
-permalink: 
+date_modified: 2024-10-14
 categories: [image-processing, LLM , computer-vision]
 tags: [AI, deep-learning, image-processing]
-description: "An exploration of advanced algorithms and techniques in computer vision."
+description: "An exploration of advanced algorithms and techniques in computer vision, ML, DL, LLM, LLMOPs, DevOps."
 excerpt: "Dive deep into the latest advancements in computer vision, including deep learning methodologies and real-time image processing."
-image: 
 author: "Dr. Farshid Pirahansiah"
-featured: true
-seo_title: "Advanced Computer Vision Techniques | Dr. Farshid Pirahansiah"
-seo_description: "Explore cutting-edge computer vision techniques and their applications in modern technology."
-thumbnail: 
-related_posts:
-  - https://pirahansiah.com/site/Resume/Patents/SYSTEM%20AND%20METHOD%20FOR%20PROVIDING%20ADVERTISEMENT%20CONTENTS%20BASED%20ON%20FACIAL%20ANALYSIS%20WO2020141969A2
-  - https://pirahansiah.com/site/Resume/Patents/A%20METHOD%20FOR%20AUGMENTING%20A%20PLURALITY%20OF%20FACE%20IMAGES%20WO2021060971A1
-show_sidebar: 
-
 ---
 
 
 
+<img src="/farshid/mindmaps/Mind_Map_Orchestrating_Agents.png" alt="Mind Map Orchestrating Agents" style="max-width: 100%; height: auto;">
 
 # Mind Map: Orchestrating Agents
 
