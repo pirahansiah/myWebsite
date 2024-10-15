@@ -56,7 +56,7 @@ website_path: https://www.pirahansiah.com/farshid/toc.md -->
 
 #### Resume
 
-# Patent Summary
+##### Patent Summary
 
 {% if page.extname == ".md" %}
   ![Dr. Farshid Pirahansiah 3 Patents - AI Innovations in Vehicle Detection, Facial Analysis, and Image Augmentation](/farshid/portfolio/publications/Resume/Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovati
@@ -79,7 +79,7 @@ Together, these patents demonstrate innovative applications of deep learning, fa
 
 ---
 
-# WO 2021/060971 A1 - A Method for Augmenting a Plurality of Face Images
+###### WO 2021/060971 A1 - A Method for Augmenting a Plurality of Face Images
 
 **Title**: Augmenting Face Images for Video Surveillance  
 **Subtitle**: Enhancing Surveillance with GAN-Based Face Augmentation  
@@ -101,7 +101,7 @@ This patent offers a method for augmenting face images in video surveillance sys
 
 ---
 
-# WO 2020/141969 A2 - System for Providing Advertisement Contents Based on Facial Analysis
+###### WO 2020/141969 A2 - System for Providing Advertisement Contents Based on Facial Analysis
 
 **Title**: Targeted Digital Advertising via Facial Recognition  
 **Subtitle**: Enhancing Digital Ad Engagement Through Facial Analysis  
@@ -122,7 +122,7 @@ This patent offers a method for augmenting face images in video surveillance sys
 This patent describes a system for providing more engaging digital advertisements by analyzing users' facial features using deep learning models. The system identifies key features such as age, gender, and emotions to display tailored ad content on digital signage. This enhances the relevance of displayed content and increases the likelihood of engagement. It is designed to improve marketing efficiency without directly collecting personal data.
 
 
-# WO 2021/107761 A1 - A Method for Detecting a Moving Vehicle
+###### WO 2021/107761 A1 - A Method for Detecting a Moving Vehicle
 
 **Title**: Advanced Vehicle Detection in Surveillance  
 **Subtitle**: Enhancing Vehicle Detection via Image Processing  
@@ -144,6 +144,17 @@ This patent describes a system for providing more engaging digital advertisement
 This patent introduces an innovative method for detecting moving vehicles in surveillance footage by utilizing advanced image processing techniques. It outlines processes such as illumination enhancement, Sobel edge detection, and a sophisticated method to close open edges and identify vehicles based on homogenous body properties. It is particularly adept at handling noise in the image using geometric filtering and relational analysis, improving the accuracy of vehicle detection even in low-light conditions.
 
 --- 
+##### Journals:
+
+###### Journals: Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio
+
+Tune in to my latest podcast episode, generated using Google’s NotebookLM, where I dive into the paper “Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio (PSNR).” This episode explores cutting-edge image segmentation techniques designed to improve thresholding methods, especially in challenging lighting conditions. The discussion emphasizes how PSNR plays a crucial role in separating objects from backgrounds, optimizing image quality in applications like License Plate Recognition (LPR) and handwritten image processing. We also compare traditional approaches, such as Otsu’s thresholding, with the PSNR-based method, highlighting its superior performance in specific use cases, particularly where variable lighting is a challenge. Don’t miss this insightful analysis of how PSNR is transforming image processing!
+- [Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio 2014](/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio_2014)  
+
+
+---
+---
+---
 
 #### LLM
 

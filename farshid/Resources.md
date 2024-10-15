@@ -58,12 +58,17 @@ website_path: https://www.pirahansiah.com/farshid/toc.md -->
 #### Resume
 
 [Dr. Farshid Pirahansiah CV](/farshid/portfolio/publications/Resume/CV)
-  - [A METHOD FOR AUGMENTING A PLURALITY OF FACE IMAGES WO2021060971A1](/farshid/portfolio/publications/Resume/Patents/A_METHOD_FOR_AUGMENTING_A_PLURALITY_OF_FACE_IMAGES_WO2021060971A1)
-  - [SYSTEM AND METHOD FOR PROVIDING ADVERTISEMENT CONTENTS BASED ON FACIAL ANALYSIS WO2020141969A2](/farshid/portfolio/publications/Resume/Patents/SYSTEM_AND_METHOD_FOR_PROVIDING_ADVERTISEMENT_CONTENTS_BASED_ON_FACIAL_ANALYSIS_WO2020141969A2)
-  - [A METHOD FOR DETECTING A MOVING VEHICLE WO2021107761A1](/farshid/portfolio/publications/Resume/Patents/A_METHOD_FOR_DETECTING_A_MOVING_VEHICLE_WO2021107761A1)
 
+
+- Patents
+  - [A METHOD FOR AUGMENTING A PLURALITY OF FACE IMAGES WO2021060971A1](/farshid/portfolio/publications/Resume/Patents/A_METHOD_FOR_AUGMENTING_A_PLURALITY_OF_FACE_IMAGES_WO2021060971A1)   
+  - [SYSTEM AND METHOD FOR PROVIDING ADVERTISEMENT CONTENTS BASED ON FACIAL ANALYSIS WO2020141969A2](/farshid/portfolio/publications/Resume/Patents/SYSTEM_AND_METHOD_FOR_PROVIDING_ADVERTISEMENT_CONTENTS_BASED_ON_FACIAL_ANALYSIS_WO2020141969A2)   
+  - [A METHOD FOR DETECTING A MOVING VEHICLE WO2021107761A1](/farshid/portfolio/publications/Resume/Patents/A_METHOD_FOR_DETECTING_A_MOVING_VEHICLE_WO2021107761A1)   
+
+- Journals
+  - [Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio 2014](/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio_2014)   
 
 
 #### LLM
-  - [Orchestrating Agents](mindmaps/Mind_Map_Orchestrating_Agents.md)
-  
+  - [Orchestrating Agents](/farshid/mindmaps/Mind_Map_Orchestrating_Agents)   
+  - [Dic LLM](/farshid/mindmaps/Mind_Map_Advanced_LLM_Concepts)   
