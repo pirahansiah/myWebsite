@@ -36,7 +36,7 @@ Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio_2014
   ![Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio](/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio_2014.png)
 {% else %}
   <img src="/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio_2014.png" alt="Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio" style="max-width: 100%; height: auto;">
-
+{% endif %}
 
 # Mind Map: Adaptive Image Thresholding Based on PSNR
 
