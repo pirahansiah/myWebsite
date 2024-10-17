@@ -146,6 +146,13 @@ Tune in to my latest podcast episode, generated using Google’s NotebookLM, whe
 
 
 ---
+#### portfolio,projects,Solutions
+
+https://www.pirahansiah.com/farshid/portfolio/projects/Solutions.md
+- [Innovations](/farshid/portfolio/projects/Solutions)
+
+
+
 ---
 ---
 

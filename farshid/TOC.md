@@ -39,7 +39,8 @@ last_modified_at: 2024-10-17
 {{ site.author }}
 
 Dr. Farshid Pirahansiah CV
-  - [Farshid PirahanSiah](/farshid/Resources####Resume)
+  - [Publications](/farshid/Resources####Resume)
+  - [Work Highlights](/farshid/Resources####portfolio,projects,Solutions)
 
 
 

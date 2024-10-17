@@ -31,6 +31,9 @@ show_sidebar:
   - [SYSTEM AND METHOD FOR PROVIDING ADVERTISEMENT CONTENTS BASED ON FACIAL ANALYSIS WO2020141969A2](/farshid/portfolio/publications/Resume/Patents/SYSTEM_AND_METHOD_FOR_PROVIDING_ADVERTISEMENT_CONTENTS_BASED_ON_FACIAL_ANALYSIS_WO2020141969A2)
   - [A METHOD FOR DETECTING A MOVING VEHICLE WO2021107761A1](/farshid/portfolio/publications/Resume/Patents/A_METHOD_FOR_DETECTING_A_MOVING_VEHICLE_WO2021107761A1)
 
+- Journals
+  - [Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio (PSNR) ](/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio)
+  - [CHARACTER AND OBJECT RECOGNITION BASED ON GLOBAL FEATURE EXTRACTION](/farshid/portfolio/publications/Resume/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION)
 
 
 

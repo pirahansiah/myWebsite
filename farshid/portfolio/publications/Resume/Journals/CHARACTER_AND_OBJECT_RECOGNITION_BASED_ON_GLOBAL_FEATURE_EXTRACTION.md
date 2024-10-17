@@ -33,7 +33,7 @@ CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION
 [PDF Download](http://www.jatit.org/volumes/Vol52No2/6Vol52No2.pdf )
 
 {% if page.extname == ".md" %}
-  ![Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio](/farshid/portfolio/publications/Resume/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION.png)
+  ![CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION](/farshid/portfolio/publications/Resume/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION.png)
 {% else %}
   <img src="/farshid/portfolio/publications/Resume/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION.png" alt="CHARACTER AND OBJECT RECOGNITION BASED ON GLOBAL FEATURE EXTRACTION" style="max-width: 100%; height: auto;">
 {% endif %}
