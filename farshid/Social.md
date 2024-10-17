@@ -150,12 +150,18 @@ This patent introduces an innovative method for detecting moving vehicles in sur
 
 Tune in to my latest podcast episode, generated using Google’s NotebookLM, where I dive into the paper “Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio (PSNR).” This episode explores cutting-edge image segmentation techniques designed to improve thresholding methods, especially in challenging lighting conditions. The discussion emphasizes how PSNR plays a crucial role in separating objects from backgrounds, optimizing image quality in applications like License Plate Recognition (LPR) and handwritten image processing. We also compare traditional approaches, such as Otsu’s thresholding, with the PSNR-based method, highlighting its superior performance in specific use cases, particularly where variable lighting is a challenge. Don’t miss this insightful analysis of how PSNR is transforming image processing!   
 
-https://www.pirahansiah.com/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio/        
+[https://www.pirahansiah.com/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio/]
+(https://www.pirahansiah.com/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio/)        
+
+<img src="/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio.png" alt="Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio" style="max-width: 100%; height: auto;">
 
 ###### Journals: Character and Object Recognition Based on Global Feature Extraction
 discusses an approach to improving Optical Character Recognition (OCR) through the use of global feature extraction methods. The focus is on using techniques like Gray Level Co-occurrence Matrix (GLCM) and Edge Direction Matrix (EDMS) to extract features from images, aiming to improve the recognition accuracy of both characters and objects. The study suggests combining global features with feature selection to enhance recognition rates, especially for object recognition. While global methods excel in object identification, spatial methods like the Robinson Compass Mask are more effective for character recognition tasks. The proposed method shows a character recognition accuracy of 85.99% with feature selection and better performance in object recognition compared to traditional approaches. The research indicates potential applications in license plate recognition and binary shape analysis, with future work aimed at refining feature selection for further improvements.
 
-https://www.pirahansiah.com/farshid/portfolio/publications/Resume/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION/        
+[https://www.pirahansiah.com/farshid/portfolio/publications/Resume/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION/]
+(https://www.pirahansiah.com/farshid/portfolio/publications/Resume/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION/)
+
+<img src="/farshid/portfolio/publications/Resume/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION_2013.png" alt="CHARACTER AND OBJECT RECOGNITION BASED ON GLOBAL FEATURE EXTRACTION" style="max-width: 100%; height: auto;">
 
 
 ---
