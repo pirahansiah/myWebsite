@@ -26,16 +26,18 @@ footer: "© 2024 Dr. Farshid Pirahansiah. All rights reserved."
 title: "Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio"
 date: 2024-10-15
 ---
-Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio_2014
+Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio
 
 [spotify](https://podcasters.spotify.com/pod/show/pirahansiah/episodes/Adaptive-Image-Thresholding-Based-on-the-Peak-Signal-to-noise-Ratio-e2pnbgj)
 
 [PDF Download](https://ieeexplore.ieee.org/document/5735125)
 [PDF Download](https://pdfs.semanticscholar.org/05b2/d39fce4e8a99897e95f8c75416f65a5a0acc.pdf)
+
+
 {% if page.extname == ".md" %}
-  ![Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio](/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio_2014.png)
+  ![Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio](/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio.png)
 {% else %}
-  <img src="/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio_2014.png" alt="Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio" style="max-width: 100%; height: auto;">
+  <img src="/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio.png" alt="Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio" style="max-width: 100%; height: auto;">
 {% endif %}
 
 # Mind Map: Adaptive Image Thresholding Based on PSNR
