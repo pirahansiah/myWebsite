@@ -53,7 +53,10 @@ last_modified_at: 2024-10-13
   - [Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio (PSNR) ](/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio)
   - [CHARACTER AND OBJECT RECOGNITION BASED ON GLOBAL FEATURE EXTRACTION](/farshid/portfolio/publications/Resume/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION)
 
+#### portfolio,projects,Solutions
 
+  - [Innovations](/farshid/portfolio/projects/Solutions)
+  
 
 #### LLM
   - [Orchestrating Agents](/farshid/mindmaps/Mind_Map_Orchestrating_Agents)   
