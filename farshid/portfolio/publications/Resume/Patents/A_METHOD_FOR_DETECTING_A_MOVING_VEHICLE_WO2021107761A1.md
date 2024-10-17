@@ -53,12 +53,6 @@ date_modified: 2024-10-12
 
 Patent Summary:
 
-Patent Title: A Method for Detecting a Moving Vehicle
-Publication Number: WO 2021/107761 A1
-Publication Date: June 3, 2021
-Applicant: MIMOS Berhad, Malaysia
-Inventors: Hamam Mokayed, Hock Woon Hon, Den Fairol Bin Samaon, Hasmarina Binti Hasan, Farshid Pirahansiah
-International Application Number: PCT/MY2020/050119
 
 Field of Invention:
 
