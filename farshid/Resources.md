@@ -15,14 +15,14 @@ related_posts:
   - /farshid/resources.md
   - /farshid/social.md
 show_sidebar: true
-website_path: https://www.pirahansiah.com/farshid/advanced-cv-techniques.md
+website_path: https://www.pirahansiah.com/
 toc: true
 comments: true
 share: true
 read_time: 15
 published: true
 sitemap: true
-canonical_url: https://www.pirahansiah.com/canonical/advanced-cv-techniques
+canonical_url: https://www.pirahansiah.com/
 lang: en
 mathjax: true
 mermaid: true
@@ -34,24 +34,8 @@ pin: false
 rating: 4.8
 last_modified_at: 2024-10-13
 
-# redirect_from:
-#   - /old-cv-page/
-#   - /2023/computer-vision-guide/
-# video: https://www.youtube.com/watch?v=dQw4w9WgXcQ
-#subtitle: "Advanced Computer Vision Techniques: A Comprehensive Guide"
-#thumbnail: /assets/images/computer-vision-thumbnail.jpg
-#permalink: /advanced-computer-vision-techniques/
-#image: /assets/images/computer-vision-header.jpg
-#local_path: /farshid/advanced-cv-techniques.md
-#og_image: /assets/images/cv-techniques-og.jpg
-#  image: "/assets/images/cv-header.jpg"
 ---
-<!-- author: "{{ site.author }}"
-title: "table of content " {{ site.name }} 
-author: "{{ site.author }}"
-{{ site.author }}
-local_path: /farshid/toc.md
-website_path: https://www.pirahansiah.com/farshid/toc.md -->
+
 
 
 
@@ -66,7 +50,9 @@ website_path: https://www.pirahansiah.com/farshid/toc.md -->
   - [A METHOD FOR DETECTING A MOVING VEHICLE WO2021107761A1](/farshid/portfolio/publications/Resume/Patents/A_METHOD_FOR_DETECTING_A_MOVING_VEHICLE_WO2021107761A1)   
 
 - Journals
-  - [Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio 2014](/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio_2014)   
+  - [Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio (PSNR) ](/farshid/portfolio/publications/Resume/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio)
+  - [CHARACTER AND OBJECT RECOGNITION BASED ON GLOBAL FEATURE EXTRACTION](/farshid/portfolio/publications/Resume/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION)
+
 
 
 #### LLM

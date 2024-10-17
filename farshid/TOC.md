@@ -2,7 +2,6 @@
 layout: default
 title: "table of content"
 date: 2024-10-12
-date_modified: 2024-10-12
 author: Dr. Farshid Pirahansiah
 categories: [image-processing, LLM, computer-vision]
 tags: [AI, deep-learning, image-processing, neural-networks, object-detection]
@@ -15,14 +14,14 @@ related_posts:
   - /farshid/resources.md
   - /farshid/social.md
 show_sidebar: true
-website_path: https://www.pirahansiah.com/farshid/advanced-cv-techniques.md
+website_path: https://www.pirahansiah.com
 toc: true
 comments: true
 share: true
 read_time: 15
 published: true
 sitemap: true
-canonical_url: https://www.pirahansiah.com/canonical/advanced-cv-techniques
+canonical_url: https://www.pirahansiah.com
 lang: en
 mathjax: true
 mermaid: true
@@ -32,36 +31,15 @@ header:
 footer: "© 2024 Dr. Farshid Pirahansiah. All rights reserved."
 pin: false
 rating: 4.8
-last_modified_at: 2024-10-13
+last_modified_at: 2024-10-17
 
-# redirect_from:
-#   - /old-cv-page/
-#   - /2023/computer-vision-guide/
-# video: https://www.youtube.com/watch?v=dQw4w9WgXcQ
-#subtitle: "Advanced Computer Vision Techniques: A Comprehensive Guide"
-#thumbnail: /assets/images/computer-vision-thumbnail.jpg
-#permalink: /advanced-computer-vision-techniques/
-#image: /assets/images/computer-vision-header.jpg
-#local_path: /farshid/advanced-cv-techniques.md
-#og_image: /assets/images/cv-techniques-og.jpg
-#  image: "/assets/images/cv-header.jpg"
 ---
-<!-- author: "{{ site.author }}"
-title: "table of content " {{ site.name }} 
-author: "{{ site.author }}"
-{{ site.author }}
-local_path: /farshid/toc.md
-website_path: https://www.pirahansiah.com/farshid/toc.md -->
 
 
 {{ site.author }}
 
 Dr. Farshid Pirahansiah CV
   - [Farshid PirahanSiah](/farshid/Resources####Resume)
-
-
-
-
 
 
 

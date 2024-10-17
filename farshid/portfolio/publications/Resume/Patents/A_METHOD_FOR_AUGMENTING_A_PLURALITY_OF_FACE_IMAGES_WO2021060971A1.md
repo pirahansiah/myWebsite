@@ -21,13 +21,7 @@ keywords: [computer vision, deep learning, image processing, object detection, n
 header:
   caption: "Advanced Computer Vision Techniques"
 footer: "© 2024 Dr. Farshid Pirahansiah. All rights reserved."
-
-
-
-read_time: 15
 title: "A METHOD FOR AUGMENTING A PLURALITY OF FACE IMAGES WO2021060971A1"
-date: 2024-10-12
-date_modified: 2024-10-12
 ---
 
 [spotify](https://spotifyanchor-web.app.link/e/XZpmcmHCFNb)
