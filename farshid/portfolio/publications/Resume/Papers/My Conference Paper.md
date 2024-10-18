@@ -12,7 +12,7 @@ header:
   caption: "Advanced Computer Vision Techniques"
 footer: "© 2024 Dr. Farshid Pirahansiah. All rights reserved."
 title: "My Conference Paper: "
-date: 2024-10-18
+date: 2024-10-19
 ---
 
 
