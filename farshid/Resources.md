@@ -57,6 +57,7 @@ last_modified_at: 2024-10-13
 
   - [Innovations](/farshid/portfolio/projects/Solutions)
   
+  
 
 #### LLM
   - [Orchestrating Agents](/farshid/mindmaps/Mind_Map_Orchestrating_Agents)   
