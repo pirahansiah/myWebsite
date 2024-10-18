@@ -27,7 +27,7 @@ https://www.pirahansiah.com/farshid/portfolio/publications/Resume/Papers/Adaptiv
 [PDF Download My Conference Paper](https://doi.org/10.1109/ICCAIE.2010.5735125  )
 
 
-{% if page.extname == ".md" %}
+{% if page.extname == "Adaptive_Image_Segmentation_Based_on_PSNR_for_License_Plate_Recognition.md" %}
   ![My Conference Paper   ](/farshid/portfolio/publications/Resume/Papers/Adaptive_Image_Segmentation_Based_on_PSNR_for_License_Plate_Recognition.png)
 {% else %}
   <img src="/farshid/portfolio/publications/Resume/Papers/Adaptive_Image_Segmentation_Based_on_PSNR_for_License_Plate_Recognition.png" alt="My Conference Paper: Adaptive Image Segmentation Based on PSNR for License Plate Recognition "  style="max-width: 100%; height: auto;">
