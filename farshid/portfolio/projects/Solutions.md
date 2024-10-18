@@ -24,6 +24,39 @@ footer: "© 2024 Dr. Farshid Pirahansiah. All rights reserved."
 title: "Accomplishments"
 ---
 
+
+# My Products 
+- [3D Camera Calibration](/farshid/portfolio/projects/Camera_Calibration/cameracalibration)
+- [AI Realtime GUI OpenCV](/farshid/portfolio/projects/GUI_OpenCV/realtime_GUI_OpenCV.py)
+- [AI Local ToDo List telegram mini app](/farshid/portfolio/projects/AI_todo_list/index.html)
+- [NuGet OpenCV5 Static Library for VS2019](https://www.nuget.org/packages/OpenCV5_StaticLib_VS2019_NuGet) 
+- [NuGet OpenCV5 Static Library for VS2022](https://www.nuget.org/packages/OpenCV5_StaticLib_VS22_NuGet) 
+- [LLM VSCode Extensions Farshid](https://marketplace.visualstudio.com/items?itemName=vscode-extensions-farshid.vscode-extensions-farshid)
+- [cvtest: Computer Vision Test](https://github.com/pirahansiah/cvtest/blob/main/README.md) 
+
+# My custom ChatGPT
+- [Image Processing / Computer Vision Developer](https://chat.openai.com/g/g-vHELtCqJq-computer-vision-developer): Expert in Python, OpenCV for image processing and computer vision applications.
+- [MLOps & DevOps](https://chat.openai.com/g/g-sWtYkb391-mlops-devops): An expert MLOps engineer assisting in DevOps and pipeline optimization.
+- [Career Companion](https://chat.openai.com/g/g-VrtNMlXDg-career-companion): A dedicated job assistant for CV enhancement, interview prep, and job matching.
+- [German TutorBot](https://chat.openai.com/g/g-Fkg5ts1II-german-tutorbot): A German teacher for text correction and simple translations.
+- [Simpli3D Creator](https://chat.openai.com/g/g-AmzCWmmQa-simpli3d-creator): Image-to-3D model conversion, no text involved.
+- [Simpli3D Style Transfer](https://chat.openai.com/g/g-AmzCWmmQa-simpli3d-style-transfer)
+- [Image Inspirer](https://chat.openai.com/g/g-YHNv6svFJ-image-inspirer)
+- [Image 3D Transformer](https://chat.openai.com/g/g-vB0lMseBd-image-3d-transformer)
+- [Simpli3D Style Transfer](https://chat.openai.com/g/g-AmzCWmmQa-simpli3d-style-transfer)
+
+
+# My Social 
+- [Podcast LLM, CV, ML, DL, DevOps, Robotics](https://podcasters.spotify.com/pod/show/pirahansiah)
+- [My LinkedIn Group 55K](https://www.linkedin.com/groups/10320678/ )
+- [My Facebook Group 15K](https://www.facebook.com/groups/computervisiondeeplearning) 
+
+
+<hr style="border: 0; height: 2px; background: linear-gradient(to right, #4CAF50, #FF5722);" />
+<hr style="border: 5px solid #E91E63;" />
+<hr style="border: 10; height: 20px; box-shadow: inset 10 20px 50px rgba(220, 220, 220, 22);" />
+
+
 ## Camera Calibration Expertise
 
 I am an expert in **camera calibration**, with several publications, applications, and solutions developed around this area. My work spans both **single-camera** and **multi-camera systems**, where I have experience with a range of calibration techniques, from **simple fixed patterns** (like chessboards) to more **complex, automated calibration methods**.
@@ -43,7 +76,10 @@ I am an expert in **camera calibration**, with several publications, application
   
 I have worked with various industries such as **robotics**, **IoT**, **medical technology**, and **industrial automation**, providing robust calibration solutions that ensure accuracy across multiple environments and platforms.
 
----
+
+https://lnkd.in/d97ypMcc
+
+<hr style="border: 2px solid #4CAF50;" />
 
 
 
@@ -146,11 +182,225 @@ Happy coding! 💻✨
 - **Publisher**: VSCode Extensions Farshid
 
 
-
-### Hashtags:
 #VSCode #DeveloperTools #Programming #MachineLearning #DataScience
 
 ---
 ---
 ---
 
+farshid/portfolio/projects/GUI_OpenCV/realtime_GUI_OpenCV.py
+
+Excited to share my new Real-time OpenCV Function Tester built with PyQt5! 🎉
+
+🔹 Apply OpenCV functions on images with a user-friendly GUI.
+🔹 Safe code execution environment.
+🔹 Undo functionality for easy experimentation.
+🔹 Perfect for learning and prototyping in computer vision.
+
+Check it out! 🖥️✨
+
+#OpenCV #Python #PyQt5 #ComputerVision #Coding
+
+farshid/portfolio/projects/GUI_OpenCV/realtime_GUI_OpenCV.py
+
+
+
+
+
+---
+---
+---
+
+
+
+
+
+
+<hr style="border: 3px double #673AB7;" />
+<hr style="border: 0; height: 2px; background: linear-gradient(to right, #4CAF50, #FF5722);" />
+
+---
+---
+---
+
+
+
+
+
+
+<hr style="border: 2px solid #4CAF50;" />
+
+
+
+---
+---
+---
+
+<hr style="border: 3px groove #9C27B0;" />
+
+
+
+<hr style="border: 3px ridge #3F51B5;" />
+
+
+<hr style="border: 3px inset #009688;" />
+---
+---
+---
+<hr style="border: 3px outset #FF9800;" />
+
+
+---
+---
+---
+
+# Todo App Overview and Features
+t.me/de_mini_app_bot
+@de_mini_app_bot
+Innovating Task Management with Local Storage-Powered Todo App | Full-Stack Developer | Telegram Bot & Mini App
+
+## Data Flow:
+1. **Loading Data**: Upon loading, the app retrieves todos from **IndexedDB** for persistence.
+2. **Initializing App**: Updates calendars and renders todos across all sections.
+3. **User Interaction**:
+   - **Adding Todos**: Users can add todos to any section, which are saved with relevant date metadata.
+   - **Navigating Calendars**: Changing the `selectedDate` updates the calendars and re-renders todos.
+   - **Managing Todos**: Users can mark todos as done/undone or delete them. Changes are saved to IndexedDB.
+4. **Saving Data**: Any modifications trigger `saveToIndexedDB()`, ensuring data persistence.
+
+## Date Management:
+- **Selected Date**: Central to the app, determines which todos are displayed.
+- **Date Metadata**: Each todo contains date, weekNumber, month, and year for filtering.
+- **Week Calculation**: Follows ISO standards, starting weeks on Monday.
+
+## Compatibility and Limitations:
+- **Browsers**: Compatible with modern browsers supporting **IndexedDB**.
+- **Devices**: Works across desktops, tablets, smartphones, and smart TVs.
+- **Limitations**:
+   - **IndexedDB Support**: Older browsers without IndexedDB support may not retain data.
+   - **Data Storage**: Storage limits vary by browser and device.
+
+## Usage Instructions:
+- **Adding Todos**:
+   - Enter the task in the input field of the desired section.
+   - Click “Add” or press “Enter” to save.
+- **Navigating Dates**:
+   - Click on calendar elements (days, weeks, months, years) to change the `selectedDate`.
+   - The app will refresh to show relevant todos.
+- **Managing Todos**:
+   - Click on a todo to toggle completion status.
+   - Click the “Delete” button to remove a todo.
+
+## Conclusion:
+This **Todo App** offers a simple, efficient way to manage tasks across different time frames with automatic data persistence. By leveraging **IndexedDB**, the app ensures data retention without manual saving. With cross-device compatibility, the app is accessible to a wide range of users.
+
+## Shortcuts:
+- **Automatic Saving**: Data is saved automatically without any manual effort.
+- **Cross-Device Compatibility**: Works seamlessly across multiple devices.
+- **Simple UI**: Clean, intuitive interface for ease of use.
+
+## Potential Enhancements:
+- **Synchronization**: Implement cloud sync for multi-device support.
+- **Notifications**: Add reminders for due tasks.
+- **Customization**: Allow users to customize themes or layouts.
+
+## Technical Features of the Todo App:
+- **Multi-View Calendar**: Seamlessly switch between day, week, month, and year views for comprehensive task tracking.
+- **Task Management**: Easily add, edit, and complete tasks, with real-time updates.
+- **Responsive Design**: Consistent user experience across desktop, tablet, and smartphone devices.
+- **Local Storage**: Offline capability ensures data availability and reliability.
+- **Telegram Bot Integration**: Real-time updates and notifications via **Telegram Bot**.
+- **OpenAI API**: Leverage AI-powered automation for smarter task management.
+
+## Technical Architecture:
+- **Frontend**: Built with **HTML**, **CSS**, and **JavaScript**, offering a dynamic, lightweight interface.
+- **Backend Simulation**: Mimics backend functionalities using **local storage**, ideal for limited server-side access.
+- **Security**: Data is saved locally on the user’s device; caution is advised for sensitive data.
+- **Deployment**: Easy integration and deployment on any static hosting service, with minimal maintenance required.
+
+#TaskManagement #AWSLambda #JavaScript #HTML #CSS #TelegramBot #OpenAI #WebDevelopment #CalendarIntegration #OfflineApp #ResponsiveDesign #ProductivityTools
+
+<hr style="border: 2px dotted #2196F3;" />
+
+
+
+## @pirahansiahbot: AWS
+**ASK from My resume Farshid Pirahansiah Telegram miniapp**:  
+Building and Deploying a Fine-Tuned ChatGPT Model for Telegram Integration Using AWS Lambda. Creating a Powerful AI-Driven Telegram Bot to Answer CV Queries: A Comprehensive Guide.
+
+### Project Overview:
+- **Creating an AI-Driven Telegram Bot for CV Queries**:  
+  This project focuses on building a Telegram bot that answers queries about my CV using AI, hosted on AWS Lambda. The bot, available at [https://t.me/pirahansiahbot](https://t.me/pirahansiahbot), utilizes a fine-tuned GPT-4 Mini model to provide accurate, context-driven responses based on a pre-loaded text file.
+
+### Key Steps and Technologies:
+- **Dataset Preparation**:  
+  - Custom Dataset: Created and cleaned a dataset reflecting my professional experience.  
+  - Data Augmentation: Enhanced the dataset for better model generalization.
+- **Fine-Tuning**:  
+  - Fine-Tuned GPT-4 Mini model using "gpt-4o-mini-2024-07-18" as the base.
+- **Model Optimization**:  
+  - Hyperparameter Tuning: Optimized model parameters for performance.  
+  - Validation: Ensured the model accurately handles diverse CV-related queries.
+- **AWS Lambda Integration**:  
+  - Custom Layers: Developed layers to integrate OpenAI API, Telegram, and file system operations.  
+  - File Handling: Stored CV content within Lambda for quick access during queries.
+- **Telegram Bot Development**:  
+  - Bot Creation: Set up and activated the bot using the setWebhook API to link with AWS Lambda.  
+  - AI-Powered Responses: The bot provides detailed answers to CV-related queries using the fine-tuned model.
+
+### Project Summary:
+This project demonstrates how AI and serverless computing can be combined to create a responsive Telegram bot that can answer any question related to my CV. The bot, found at [https://t.me/pirahansiahbot](https://t.me/pirahansiahbot), showcases expertise in data preparation, model fine-tuning, and AWS Lambda deployment.
+
+### Hashtags:
+#AIPoweredBot #TelegramBot #AWSLambda #OpenAI #Serverless #GPT4Mini #FineTuning #DataAugmentation #ModelOptimization #CVAssistant #ChatGPT
+
+<hr style="border: 2px dotted #2196F3;" />
+
+## @image_processing_farshid_bot:
+🚀 My new **Image Processing Bot**! 🤖🎨  
+📸 Send an image, apply advanced OpenCV functions like `cv2.Canny(img)`, and get instant results! Perfect for quick edits and AI-driven enhancements.
+
+💰 Support the bot via **TonCoin** or purchase stars.  
+**Bot Link**: [https://t.me/image_processing_farshid_bot](https://t.me/image_processing_farshid_bot)
+
+### Hashtags:
+#AI #ImageProcessing #Python #OpenCV #TelegramBot
+
+<hr style="border: 2px dotted #2196F3;" />
+
+🚀 **Just deployed a robust Telegram bot on AWS Lambda!**  
+From setting up webhooks to handling image processing and integrating payments, this guide covers it all. Learn how to optimize your bot for serverless environments!  
+#AWS #TelegramBot #Serverless #AI #CloudComputing
+
+---
+
+### Project Overview:
+This guide provides a comprehensive overview of setting up, deploying, and troubleshooting a Telegram bot on AWS Lambda, including webhook configuration, Lambda layer creation, and common development issues.
+
+<hr style="border: 2px dotted #2196F3;" />
+
+## @item2cook_bot: AWS
+**Transform your photos into beautiful pencil sketches instantly!** Just send an image, and SketchBot will do the rest.  
+[https://t.me/farshidpirahansiahbot](https://t.me/farshidpirahansiahbot)
+
+### Key Features:
+- **Creative Transformations**: Coding transformations, advanced OpenCV functions, and creative image manipulation.
+- **Payment Integration**: Pay with TON or purchase stars for premium features.
+- **Telegram Mini App Integration**: Seamless integration of Telegram Mini Apps for enhanced functionality.
+
+---
+
+## Technical Architecture:
+This AI bot:
+- Accepts an image and shows function options from `a_cv_functions.py`.
+- Applies the function to the image and displays the result.
+- Handles text-based image modification requests through `a_cv_handler_main.py`.
+- Saves all data in a database, checks user activity every 1 minute (`a_database_handler.py`), and handles payments through `a_payment_handler.py`.
+
+---
+
+### More Bots and Links:
+- [@image_processing_farshid_bot](https://t.me/image_processing_farshid_bot)
+
+
+<hr style="border: 2px dotted #2196F3;" />
