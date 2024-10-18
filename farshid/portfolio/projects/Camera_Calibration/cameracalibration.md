@@ -124,3 +124,16 @@ These targets serve as a reference to accurately compute the camera's parameters
 
 ##### 7. Conclusion
 Camera calibration is crucial for applications like 3D reconstruction, object inspection, and navigation. Proper calibration methods, such as those involving known objects, can greatly enhance the accuracy of a camera system's measurements and improve its overall performance.
+
+
+### My Publications 
+  - [My Conference Papers: Camera Calibration for Multi-Modal Robot Vision ](/farshid/portfolio/publications/Resume/Papers/Camera_Calibration_for_Multi-Modal_Robot_Vision )
+
+{% assign topic_page = site.pages | where: "path", "/farshid/portfolio/publications/Resume/Papers/Camera_Calibration_for_Multi-Modal_Robot_Vision.md" | first %}
+
+{% if topic_page %}
+  {% capture topic_content %}
+    {{ topic_page.content }}
+  {% endcapture %}
+  {{ topic_content | markdownify }}
+{% endif %}

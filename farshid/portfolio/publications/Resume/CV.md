@@ -36,13 +36,14 @@ seo_description: "CV, Resume, Explore cutting-edge computer vision techniques an
 
 ## My Conference Papers (16)
   - [My Conference Papers: 2D versus 3D Map for Environment Movement Objects  ](/farshid/portfolio/publications/Resume/Papers/My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects )
+  - [My Conference Papers: Adaptive Image Segmentation Based on PSNR for License Plate Recognition ](/farshid/portfolio/publications/Resume/Papers/Adaptive_Image_Segmentation_Based_on_PSNR_for_License_Plate_Recognition )
+  - [My Conference Papers: An evaluation of classification techniques using enhanced Geometrical Topological Feature Analysis ](/farshid/portfolio/publications/Resume/Papers/An_evaluation_of_classification_techniques_using_enhanced_Geometrical_Topological_Feature_Analysis )
+  - [My Conference Papers: Camera Calibration for Multi-Modal Robot Vision ](/farshid/portfolio/publications/Resume/Papers/Camera_Calibration_for_Multi-Modal_Robot_Vision )
   - [My Conference Papers:  ](/farshid/portfolio/publications/Resume/Papers/ )
   - [My Conference Papers:  ](/farshid/portfolio/publications/Resume/Papers/ )
   - [My Conference Papers:  ](/farshid/portfolio/publications/Resume/Papers/ )
   - [My Conference Papers:  ](/farshid/portfolio/publications/Resume/Papers/ )
-  - [My Conference Papers:  ](/farshid/portfolio/publications/Resume/Papers/ )
-  - [My Conference Papers:  ](/farshid/portfolio/publications/Resume/Papers/ )
-  - [My Conference Papers:  ](/farshid/portfolio/publications/Resume/Papers/ )
+
 
 
 
