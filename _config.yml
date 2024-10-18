@@ -38,8 +38,8 @@ navigation:
   - title: "Farshid"
     # url: "/farshid/"  
     children:
-      - title: "TOC"
-        url: "/farshid/TOC"  
+      - title: "Products"
+        url: "/farshid/portfolio/projects/Solutions"  
       - title: "Resources"
         url: "/farshid/Resources"  
       - title: "Social"
@@ -50,14 +50,8 @@ navigation:
           - title: "Publications"
             url: "/farshid/portfolio/publications/"
             children:
-              - title: "Resume"
-                url: "/farshid/portfolio/publications/Resume/CV"
-                children:
-                  - title: "CV"
-                    url: "/farshid/portfolio/publications/Resume/CV/"
-                  - title: "Journals"
-                    url: "/farshid/portfolio/publications/Resume/Journals/"
-                  - title: "Patents"
-                    url: "/farshid/portfolio/publications/Resume/Patents/"
+                - title: "CV_Patents"
+                  url: "/farshid/portfolio/publications/Resume/CV/"
+
   # - title: "Contact"
   #   url: "/contact/"

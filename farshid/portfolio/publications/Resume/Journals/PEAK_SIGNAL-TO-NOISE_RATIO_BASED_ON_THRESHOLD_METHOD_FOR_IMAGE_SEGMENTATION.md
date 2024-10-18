@@ -28,6 +28,7 @@ date: 2024-10-18
 ---
 PEAK_SIGNAL-TO-NOISE_RATIO_BASED_ON_THRESHOLD_METHOD_FOR_IMAGE_SEGMENTATION
 
+https://www.pirahansiah.com/farshid/portfolio/publications/Resume/Journals/PEAK_SIGNAL-TO-NOISE_RATIO_BASED_ON_THRESHOLD_METHOD_FOR_IMAGE_SEGMENTATION/
 
 [spotify](https://podcasters.spotify.com/pod/show/pirahansiah/episodes/PEAK-SIGNAL-TO-NOISE-RATIO-BASED-ON-THRESHOLD-METHOD-FOR-IMAGE-SEGMENTATION-e2prep9)
 
