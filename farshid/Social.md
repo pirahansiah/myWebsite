@@ -34,7 +34,7 @@ rating: 4.8
 last_modified_at: 2024-10-17
 
 ---
-- [Dr. Farshid Pirahansiah CV](/farshid/portfolio/publications/Resume/CV)
+- [Dr. Farshid Pirahansiah CV](/farshid/portfolio/publications/CV)
 - [portfolio,projects,Solutions](https://www.pirahansiah.com/farshid/portfolio/projects/Solutions)
   - [Innovations](/farshid/portfolio/projects/Solutions)
 
@@ -42,7 +42,7 @@ last_modified_at: 2024-10-17
 
 #### LLM
 
-<img src="/farshid/mindmaps/Mind_Map_Orchestrating_Agents.png" alt="Mind Map Orchestrating Agents" style="max-width: 100%; height: auto;">
+<img src="/farshid/content/Mind_Map_Orchestrating_Agents.png" alt="Mind Map Orchestrating Agents" style="max-width: 100%; height: auto;">
 🚀 Orchestrating AI Agents 🌐
 
 Imagine coordinating multiple AI agents to tackle complex tasks like research, planning, & more! By breaking tasks into subtasks, agents work together efficiently. 🤖🔗
@@ -51,7 +51,7 @@ Explore the future of multi-agent collaboration:
 #AI #MachineLearning #Automation
 
 
-{% assign topic_page = site.pages | where: "path", "farshid/mindmaps/Mind_Map_Orchestrating_Agents.md" | first %}
+{% assign topic_page = site.pages | where: "path", "farshid/content/Mind_Map_Orchestrating_Agents.md" | first %}
 
 {% if topic_page %}
   {% capture topic_content %}

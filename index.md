@@ -34,6 +34,7 @@ With expertise in Machine Learning, IoT, Medical Imaging, and Robotics, I am pro
 - **Operating Systems:** Windows, MacOS, Linux
 - **Containerization:** Docker
 - **Cloud Computing:** Amazon Web Services (AWS)
+- **Hardware Architectures:** x86, Apple Silicon, ARM, Jetson Nano, Raspberry Pi
 - **Others:** CI/CD, GitHub Actions
 
 ## Leadership and Collaboration
@@ -49,7 +50,7 @@ Feel free to connect with me through [LinkedIn](https://www.linkedin.com/in/pira
 ## Patents and Publications
 
 
-[Dr. Farshid Pirahansiah List of all publications](/farshid/portfolio/publications/Resume/CV)
+[Dr. Farshid Pirahansiah List of all publications](/farshid/portfolio/publications/CV)
 
 - **Patents**: A METHOD FOR AUGMENTING A PLURALITY OF FACE IMAGES - 2021 
     - The present invention relates to a method for increasing data for face analysis in video surveillance. 
