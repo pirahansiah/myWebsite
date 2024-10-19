@@ -227,11 +227,11 @@ I am eager to bring my expertise to a dynamic team in Berlin, where I can contri
   - GPTs: [Computer Vision Developer](https://chat.openai.com/g/g-vHELtCqJq-computer-vision-developer)
   - Expert in Python, OpenCV for image processing and computer vision applications.  
 - MindMap about LLMs & LLMOps
-  - [My Note LLMs](https://pirahansiah.com/site/pages/md/DL.html)
+  - [My Note LLMs](https://pirahansiah.com)
 - Code for chat app with OpenRouter's AI! 🚀 Utilize asyncio and aiohttp for seamless conversations and manage interactions with a smart queue. Dive into the future of chat applications now!"
-  - [Source Code](https://pirahansiah.com/src/LLMs/OpenRouter.py)
+  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/OpenRouter.py)
 - fine-tune LLMs
-  - [Source Code](https://pirahansiah.com/src/LLMs/LLMOPs.ipynb)
+  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/LLMOPs.ipynb)
 - Microsoft AI Lab: RAG Workflow with Azure AI
   - Lab Focus: Hands-on RAG workflow development using Azure AI Studio and Prompt Flow.
   - Skills Acquired: Mastery in LLMOps, Azure AI Studio usage, and Prompt Flow integration.
