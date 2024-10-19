@@ -51,7 +51,7 @@ navigation:
             url: "/farshid/portfolio/publications/"
             children:
                 - title: "CV_Patents"
-                  url: "/farshid/portfolio/publications/Resume/CV/"
+                  url: "/farshid/portfolio/publications/CV/"
 
   # - title: "Contact"
   #   url: "/contact/"

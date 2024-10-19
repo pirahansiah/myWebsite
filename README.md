@@ -215,7 +215,7 @@ I am eager to bring my expertise to a dynamic team in Berlin, where I can contri
   - GPTs: [Computer Vision Developer](https://chat.openai.com/g/g-vHELtCqJq-computer-vision-developer)
   - Expert in Python, OpenCV for image processing and computer vision applications.  
 - MindMap about LLMs & LLMOps
-  - [My Note LLMs](https://pirahansiah.com/site/pages/md/DL.html)
+  - [My Note LLMs](https://pirahansiah.com/)
 - Code for chat app with OpenRouter's AI! 🚀 Utilize asyncio and aiohttp for seamless conversations and manage interactions with a smart queue. Dive into the future of chat applications now!"
   - [Source Code](https://pirahansiah.com/src/LLMs/OpenRouter.py)
 - fine-tune LLMs

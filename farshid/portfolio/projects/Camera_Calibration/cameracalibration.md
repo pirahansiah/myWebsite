@@ -128,10 +128,10 @@ Camera calibration is crucial for applications like 3D reconstruction, object in
 
 ### My Publications 
 
-- [My Conference Papers: Camera Calibration for Multi-Modal Robot Vision ](/farshid/portfolio/publications/Resume/Papers/Camera_Calibration_for_Multi-Modal_Robot_Vision )
-- [My Conference Papers: Pattern Image Significance for Camera Calibration](/farshid/portfolio/publications/Resume/Papers/Pattern_Image_Significance_for_Camera_Calibration )
+- [My Conference Papers: Camera Calibration for Multi-Modal Robot Vision ](/farshid/portfolio/publications/Papers/Camera_Calibration_for_Multi-Modal_Robot_Vision )
+- [My Conference Papers: Pattern Image Significance for Camera Calibration](/farshid/portfolio/publications/Papers/Pattern_Image_Significance_for_Camera_Calibration )
 
-{% assign topic_page = site.pages | where: "path", "farshid/portfolio/publications/Resume/Papers/Camera_Calibration_for_Multi-Modal_Robot_Vision.md" | first %}
+{% assign topic_page = site.pages | where: "path", "farshid/portfolio/publications/Papers/Camera_Calibration_for_Multi-Modal_Robot_Vision.md" | first %}
 
 {% if topic_page %}
   {% capture topic_content %}
@@ -141,7 +141,7 @@ Camera calibration is crucial for applications like 3D reconstruction, object in
 {% endif %}
 
 
-{% assign topic_page = site.pages | where: "path", "farshid/portfolio/publications/Resume/Papers/Pattern_Image_Significance_for_Camera_Calibration.md" | first %}
+{% assign topic_page = site.pages | where: "path", "farshid/portfolio/publications/Papers/Pattern_Image_Significance_for_Camera_Calibration.md" | first %}
 
 {% if topic_page %}
   {% capture topic_content %}
