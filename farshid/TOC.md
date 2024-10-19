@@ -46,3 +46,7 @@ Dr. Farshid Pirahansiah CV
 
 LLM
   - [Orchestrating Agents](/farshid/Resources####LLM)
+
+
+CUDA
+  - [CUDA Leveraging CUDA for High-Performance GPU Computing with PyCUDA, Numba](/farshid/Resources####CUDA)

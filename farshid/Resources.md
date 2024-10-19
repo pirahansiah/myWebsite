@@ -80,3 +80,17 @@ last_modified_at: 2024-10-13
 #### LLM
   - [Orchestrating Agents](/farshid/mindmaps/Mind_Map_Orchestrating_Agents)   
   - [Dic LLM](/farshid/mindmaps/Mind_Map_Advanced_LLM_Concepts)   
+
+
+
+#### CUDA 
+
+Leveraging CUDA for High-Performance GPU Computing with PyCUDA, Numba
+
+- [Numba JIT Computer Vision, ML, DL, LLM](/farshid/mindmaps/CUDA_numba_jit_tutorial)   
+    - This file provides a detailed tutorial on how to use the @jit(nopython=True) decorator from the Numba library to optimize Python code for better performance. It explains how Numba compiles Python functions into machine code, improving execution speed for numerical operations and loops. The tutorial includes examples of summing squares, factorial computation, and matrix multiplication.
+
+- [PyCUDA Kernel Explanation: Computer Vision, ML, DL, LLM](/farshid/mindmaps/CUDA_pycuda_kernel_explanation)   
+    - This file explains how PyCUDA enables the execution of CUDA kernels written in C/C++ directly from Python. It details how PyCUDA compiles the kernel code at runtime, allocates memory on the GPU, and executes the kernels. The explanation includes an example of running an element-wise addition kernel on the GPU, demonstrating the process from writing C kernels to retrieving the results in Python.
+
+
