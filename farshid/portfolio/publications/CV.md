@@ -14,6 +14,8 @@ seo_description: "CV, Resume, Explore cutting-edge computer vision techniques an
 
 ---
 
+I have a total of 21 publications, including 3 patents, 2 book chapters, 6 journal articles, and 10 conference papers. My Google Scholar profile indicates 137 citations, an h-index of 7, and an i10-index of 5.
+
 [Dr. Farshid Pirahansiah CV](/farshid/portfolio/publications/CV)
 
 [My podcast](https://podcasters.spotify.com/pod/show/pirahansiah)
@@ -33,7 +35,7 @@ seo_description: "CV, Resume, Explore cutting-edge computer vision techniques an
 
 	
 
-### My Publications
+### My Publications ( Total 21 )
 
 ## My Patents (3)
   - [My Patents: A METHOD FOR AUGMENTING A PLURALITY OF FACE IMAGES WO2021060971A1](/farshid/portfolio/publications/Patents/A_METHOD_FOR_AUGMENTING_A_PLURALITY_OF_FACE_IMAGES_WO2021060971A1)
@@ -52,7 +54,7 @@ seo_description: "CV, Resume, Explore cutting-edge computer vision techniques an
   - [My Journal Publications: 3D SLAM Simultaneous Localization And Mapping Trends And Humanoid Robot Linkages](/farshid/portfolio/publications/Journals/3D_SLAM_Simultaneous_Localization_And_Mapping_Trends_And_Humanoid_Robot_Linkages)
   - [My Journal Publications: USING AN ANT COLONY OPTIMIZATION ALGORITHM](/farshid/portfolio/publications/Journals/USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM)
 
-## My Conference Papers (16)
+## My Conference Papers (10)
   - [My Conference Papers: 2D versus 3D Map for Environment Movement Objects  ](/farshid/portfolio/publications/Papers/My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects )
   - [My Conference Papers: Adaptive Image Segmentation Based on PSNR for License Plate Recognition ](/farshid/portfolio/publications/Papers/Adaptive_Image_Segmentation_Based_on_PSNR_for_License_Plate_Recognition )
   - [My Conference Papers: An evaluation of classification techniques using enhanced Geometrical Topological Feature Analysis ](/farshid/portfolio/publications/Papers/An_evaluation_of_classification_techniques_using_enhanced_Geometrical_Topological_Feature_Analysis )
@@ -63,7 +65,7 @@ seo_description: "CV, Resume, Explore cutting-edge computer vision techniques an
   - [My Conference Papers: Multi-threshold Approach for License Plate Recognition System ](/farshid/portfolio/publications/Papers/Multi-threshold_Approach_for_License_Plate_Recognition_System )
   - [My Conference Papers: Pattern Image Significance for Camera Calibration](/farshid/portfolio/publications/Papers/Pattern_Image_Significance_for_Camera_Calibration )
   - [My Conference Papers: TafreshGrid Grid computing in Tafresh university ](/farshid/portfolio/publications/Papers/TafreshGrid_Grid_computing_in_Tafresh_university )
-  - [My Conference Papers: Computer Vision meet LLM ](/farshid/portfolio/publications/Papers/ )
+  <!-- - [My Conference Papers: Computer Vision meet LLM ](/farshid/portfolio/publications/Papers/ ) -->
 
 
 
@@ -155,3 +157,10 @@ This patent describes a system for providing more engaging digital advertisement
 This patent introduces an innovative method for detecting moving vehicles in surveillance footage by utilizing advanced image processing techniques. It outlines processes such as illumination enhancement, Sobel edge detection, and a sophisticated method to close open edges and identify vehicles based on homogenous body properties. It is particularly adept at handling noise in the image using geometric filtering and relational analysis, improving the accuracy of vehicle detection even in low-light conditions.
 
 --- 
+Visual Language Models (VLM)
+
+As an experienced director and team leader, I excel in scaling operations, expanding teams, and creating a flexible, collaborative work culture. I bring proven expertise in team building and leadership, with a hands-on approach that adapts to any role or challenge. Self-motivated and highly organized, I can independently manage projects from inception to completion, ensuring continuous progress through swift issue resolution.
+
+I’m adept at translating complex technical concepts for non-technical stakeholders and investors, enabling me to effectively pitch ideas, secure funding, and drive growth. With a keen eye for opportunities and process optimization, I have a track record of scaling teams and organizations while maintaining operational excellence. My leadership style empowers cross-functional teams, fosters innovation, and aligns efforts toward shared goals. Thriving in dynamic environments, I’m dedicated to building sustainable, high-performing teams that achieve long-term success.
+
+Experienced in Full Stack LLM development, including model training, fine-tuning, deployment, and integrating LLMs with scalable applications and APIs.

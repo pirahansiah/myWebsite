@@ -34,6 +34,9 @@ title: "Accomplishments"
 - [LLM VSCode Extensions Farshid](https://marketplace.visualstudio.com/items?itemName=vscode-extensions-farshid.vscode-extensions-farshid)
 - [cvtest: Computer Vision Test](https://github.com/pirahansiah/cvtest/blob/main/README.md) 
 
+- [AI Model Cost Calculator: Optimizing Costs for Computer Vision and Multimodal AI Solutions](/farshid/portfolio/projects/AI_Model_Cost_Calculator.html)
+
+
 # My custom ChatGPT
 - [Image Processing / Computer Vision Developer](https://chat.openai.com/g/g-vHELtCqJq-computer-vision-developer): Expert in Python, OpenCV for image processing and computer vision applications.
 - [MLOps & DevOps](https://chat.openai.com/g/g-sWtYkb391-mlops-devops): An expert MLOps engineer assisting in DevOps and pipeline optimization.
@@ -43,7 +46,8 @@ title: "Accomplishments"
 - [Simpli3D Style Transfer](https://chat.openai.com/g/g-AmzCWmmQa-simpli3d-style-transfer)
 - [Image Inspirer](https://chat.openai.com/g/g-YHNv6svFJ-image-inspirer)
 - [Image 3D Transformer](https://chat.openai.com/g/g-vB0lMseBd-image-3d-transformer)
-- [Simpli3D Style Transfer](https://chat.openai.com/g/g-AmzCWmmQa-simpli3d-style-transfer)
+
+
 
 
 # My Social 
@@ -88,6 +92,13 @@ Computer Vision + LLM
 ---
 ---
 ---
+<hr style="border: 3px outset #FF9800;" />
+
+### AI Model Cost Calculator: Optimizing Costs for Computer Vision and Multimodal AI Solutions
+
+My AI Model Cost Calculator with the latest pricing for GPT-4 Turbo, Google Gemini 1.5 Pro, and Claude 3 Opus! 💡 Calculate text and image processing costs easily with real-time estimates. Check it out! #AI #MachineLearning #CostCalculator #GPT4 #Claude #GoogleGemini
+
+
 
 
 # OpenCV 5 NuGet Package – Simplified Setup for Visual Studio
@@ -247,7 +258,7 @@ farshid/portfolio/projects/GUI_OpenCV/realtime_GUI_OpenCV.py
 ---
 ---
 ---
-<hr style="border: 3px outset #FF9800;" />
+
 
 
 ---

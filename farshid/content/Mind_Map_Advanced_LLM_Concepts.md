@@ -183,3 +183,42 @@ Mind_Map_Advanced_LLM_Concepts
 - **Content Creation**: Multi-agent systems producing high-quality written content.
 - **Project Management**: Automating and organizing complex, large-scale projects.
 
+---
+
+
+- Function Calling
+- Subtasks 
+- Tools Using Prompting
+- Knowledge Graphs
+- pgVector
+- open source LLM 
+- Superposition Prompting
+- Retrieval-Augmented Generation (RAG) in Computer vision 
+- Embedding Models
+- Production-Level LLMs
+- Production-Level LLMs with RAG
+- Production-Level LLMs in IoT
+- Cost Management
+
+---
+
+- In managing costs for production-level LLMs with RAG, strategies like embedding retrieval systems and optimizing model queries can help reduce resource use. Leveraging cloud-based solutions or fine-tuning smaller models for specific tasks are also common methods to reduce the expense of running these models in real-time .
+- Running LLMs in production at scale can be expensive, particularly when combined with RAG (Retrieval-Augmented Generation). This is because both the LLM and the external retrieval system (like a knowledge graph) need to work in tandem, which can increase computational overhead. When applied to IoT (Internet of Things), where data sources are vast and diverse, the cost of maintaining such systems can become prohibitive  .
+- Embedding models help LLMs convert text into vector representations, enabling tasks like search, similarity comparison, and context retrieval. These models, when integrated with LLMs, allow for scaling up chunk processing for large datasets, making them essential for production environments where real-time data retrieval is required .
+- Function calling within LLMs allows these models to interact with external APIs and tools by converting user queries into function calls. For example, if a user asks about the weather, the model can trigger a function like get_current_weather(location), passing the necessary parameters to retrieve the correct data. This capability enhances the integration of LLMs with external systems, enabling a more interactive and task-specific approach  .
+- When combined with subtasks, LLMs can divide complex tasks into manageable parts. For instance, a user query can trigger multiple functions or tools to handle different subtasks, such as searching databases or summarizing documents .
+Tool integration with LLMs through prompting enables the models to call upon specialized tools for tasks that require external data or specific functionality. For example, using tools like LangChain, LLMs can be prompted to interact with knowledge graphs, retrieve data from external APIs, or handle subtasks like document chunking or embedding generation . These prompts allow the LLM to understand when and how to invoke external resources, ensuring more accurate responses.
+- A knowledge graph allows LLMs to structure unstructured data by mapping entities and relationships in a graph format, making it easier for models to retrieve, reason about, and respond to queries based on complex datasets . Tools like pgVector enhance this by enabling vectorized searches, allowing models to retrieve semantically similar content from large datasets efficiently.
+- Superposition prompting is an advanced technique that presents multiple prompts to the model at once, helping it learn or decide between different potential tasks. This method increases the model’s ability to handle ambiguity or multiple concurrent tasks efficiently. The application of such techniques can be seen in sectors like Apple, where AI-driven interfaces need to handle complex decision-making processes.
+
+- Keyword Search vs. Vector Search:
+
+	•	When comparing keyword search and vector search, an alpha-based selection helps determine which method is more appropriate depending on the data and task.
+	•	Chunking Data: Data can be divided or “chunked” into meaningful units such as paraphrases, pages, or chapters. This approach helps structure information for more efficient retrieval and processing.
+	•	Imagine an 8MP picture: Whether it’s an image of one person or many people, the resolution remains 8MP. In the same way, the numerical representation of data, like vectors, maintains its “size” regardless of what is being represented.
+	•	GraphQL: GraphQL offers a flexible query system, enabling precise data retrieval by requesting only the fields needed, making it an effective alternative to traditional REST APIs in many cases.
+
+- Best Methods for Keyword Search:
+
+	•	For a keyword-only search, BM25 is considered one of the most effective models. It excels in ranking documents based on keyword occurrences and relevance.
+	•	To measure keyword frequency or how common a keyword is, approaches like term frequency (TF) and inverse document frequency (IDF) can provide insight into the importance of keywords within a dataset.

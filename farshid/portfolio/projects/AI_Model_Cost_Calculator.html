@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Cost Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .result{font-size:1rem;}
+        .container{margin-top:20px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-4">AI Model Cost Calculator</h1>
+        <div class="mb-3 row">
+            <label for="folderInput" class="col-sm-2 col-form-label">Select Folder:</label>
+            <div class="col-sm-10">
+                <input type="file" id="folderInput" webkitdirectory directory multiple class="form-control">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="numberOfImagesSlider" class="col-sm-2 col-form-label">Number of Input Images:</label>
+            <div class="col-sm-10 slider-label">
+                <input type="number" class="form-control input-mini" id="numberOfImagesInput" min="0" max="100" value="0" oninput="syncInputs(this.value, 'numberOfImagesSlider');">
+                <input type="range" class="form-range" id="numberOfImagesSlider" min="0" max="100" value="0" oninput="syncInputs(this.value, 'numberOfImagesInput');">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="widthSlider" class="col-sm-2 col-form-label">Width of Each Image (px):</label>
+            <div class="col-sm-10 slider-label">
+                <input type="number" class="form-control input-mini" id="widthInput" min="100" max="4000" value="512" oninput="syncInputs(this.value, 'widthSlider');">
+                <input type="range" class="form-range" id="widthSlider" min="100" max="4000" value="512" step="1" oninput="syncInputs(this.value, 'widthInput');">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="heightSlider" class="col-sm-2 col-form-label">Height of Each Image (px):</label>
+            <div class="col-sm-10 slider-label">
+                <input type="number" class="form-control input-mini" id="heightInput" min="100" max="4000" value="512" oninput="syncInputs(this.value, 'heightSlider');">
+                <input type="range" class="form-range" id="heightSlider" min="100" max="4000" value="512" step="1" oninput="syncInputs(this.value, 'heightInput');">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputTextLengthSlider" class="col-sm-2 col-form-label">Text Input Length (words):</label>
+            <div class="col-sm-10 slider-label">
+                <input type="number" class="form-control input-mini" id="inputTextLengthInput" min="0" max="50000" value="0" oninput="syncInputs(this.value, 'inputTextLengthSlider');">
+                <input type="range" class="form-range" id="inputTextLengthSlider" min="0" max="50000" value="0" oninput="syncInputs(this.value, 'inputTextLengthInput');">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="outputTextLengthSlider" class="col-sm-2 col-form-label">Text Output Length (words):</label>
+            <div class="col-sm-10 slider-label">
+                <input type="number" class="form-control input-mini" id="outputTextLengthInput" min="0" max="50000" value="0" oninput="syncInputs(this.value, 'outputTextLengthSlider');">
+                <input type="range" class="form-range" id="outputTextLengthSlider" min="0" max="50000" value="0" oninput="syncInputs(this.value, 'outputTextLengthInput');">
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Text Input Cost per million tokens</th>
+                    <th>Text Output Cost per million tokens</th>
+                    <th>Image Cost</th>
+                    <th>Estimated Total Cost</th>
+                </tr>
+            </thead>
+            <tbody id="costTable">
+                <tr>
+                    <td>GPT4o Vision (Low Detail)</td>
+                    <td>$5.00</td>
+                    <td>$15.00</td>
+                    <td>Tokens: 85</td>
+                    <td class="result" id="gpt4oLowCost">-</td>
+                </tr>
+                <tr>
+                    <td>GPT4o Vision (High Detail)</td>
+                    <td>$5.00</td>
+                    <td>$15.00</td>
+                    <td>Tokens: 85 + 170 per 512x512 tile</td>
+                    <td class="result" id="gpt4oHighCost">-</td>
+                </tr>
+                <tr>
+                    <td>GPT4 Turbo Vision (Low Detail)</td>
+                    <td>$10.00</td>
+                    <td>$30.00</td>
+                    <td>Tokens: 85</td>
+                    <td class="result" id="gpt4vLowCost">-</td>
+                </tr>
+                <tr>
+                    <td>GPT4 Turbo Vision (High Detail)</td>
+                    <td>$10.00</td>
+                    <td>$30.00</td>
+                    <td>Tokens: 85 + 170 per 512x512 tile</td>
+                    <td class="result" id="gpt4vHighCost">-</td>
+                </tr>
+                <tr>
+                    <td>Google Gemini 1.0 Pro</td>
+                    <td>$0.50</td>
+                    <td>$1.50</td>
+                    <td>Cost: $0.0025 per image</td>
+                    <td class="result" id="geminipro1.0Cost">-</td>
+                </tr>
+                <tr>
+                    <td>Google Gemini 1.5 Flash</td>
+                    <td>$0.35 for prompts up to 128k tokens, otherwise $0.70</td>
+                    <td>$1.05 for prompts up to 128k tokens, otherwise $2.10</td>
+                    <td>Cost: $0.0001315 per image</td>
+                    <td class="result" id="geminiflash1.5Cost">-</td>
+                </tr>
+                <tr>
+                    <td>Google Gemini 1.5 Pro</td>
+                    <td>$3.50 for prompts up to 128k tokens, otherwise $7.00</td>
+                    <td>$10.50 for prompts up to 128k tokens, otherwise $21.00</td>
+                    <td>Cost: $0.001315 per image</td>
+                    <td class="result" id="geminipro1.5Cost">-</td>
+                </tr>
+                <tr>
+                    <td>Claude 3 Haiku</td>
+                    <td>$0.25</td>
+                    <td>$1.25</td>
+                    <td>Tokens: Width px * Height px / 750</td>
+                    <td class="result" id="claudeHaikuCost">-</td>
+                </tr>
+                <tr>
+                    <td>Claude 3 Sonnet</td>
+                    <td>$3.00</td>
+                    <td>$15.00</td>
+                    <td>Tokens: Width px * Height px / 750</td>
+                    <td class="result" id="claudeSonnetCost">-</td>
+                </tr>
+                <tr>
+                    <td>Claude 3 Opus</td>
+                    <td>$15.00</td>
+                    <td>$75.00</td>
+                    <td>Tokens: Width px * Height px / 750</td>
+                    <td class="result" id="claudeOpusCost">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function syncInputs(value,targetId){document.getElementById(targetId).value=value;updateValues();}
+        function updateValues(){const n=parseInt(document.getElementById('numberOfImagesInput').value),w=parseInt(document.getElementById('widthInput').value),h=parseInt(document.getElementById('heightInput').value),i=parseInt(document.getElementById('inputTextLengthInput').value)*(4/3),o=parseInt(document.getElementById('outputTextLengthInput').value)*(4/3);calculateAllCosts(n,w,h,i,o);}
+        function calculateAllCosts(n,w,h,i,o){const t=Math.ceil(w/512)*Math.ceil(h/512),c=w*h/750,T=i+o;document.getElementById('gpt4oLowCost').textContent=`$${((n*85+i)*5e-6+o*15e-6).toFixed(7)}`;document.getElementById('gpt4oHighCost').textContent=`$${((n*(85+170*t)+i)*5e-6+o*15e-6).toFixed(7)}`;document.getElementById('gpt4vLowCost').textContent=`$${((n*85+i)*1e-5+o*3e-5).toFixed(7)}`;document.getElementById('gpt4vHighCost').textContent=`$${((n*(85+170*t)+i)*1e-5+o*3e-5).toFixed(7)}`;document.getElementById('geminipro1.0Cost').textContent=`$${(n*0.0025+i*5e-7+o*1.5e-6).toFixed(7)}`;document.getElementById('geminiflash1.5Cost').textContent=`$${(n*0.0001315+(T<=128e3?i*3.5e-7+o*1.05e-6:i*7e-7+o*2.1e-6)).toFixed(7)}`;document.getElementById('geminipro1.5Cost').textContent=`$${(n*0.001315+(T<=128e3?i*3.5e-6+o*1.05e-5:i*7e-6+o*2.1e-5)).toFixed(7)}`;['Haiku','Sonnet','Opus'].forEach((m,j)=>document.getElementById(`claude${m}Cost`).textContent=`$${((n*c+i)*[0.25,3,15][j]*1e-6+o*[1.25,15,75][j]*1e-6).toFixed(7)}`);}
+        document.querySelectorAll('input').forEach(input=>input.addEventListener('input',updateValues));
+        document.getElementById('folderInput').addEventListener('change',function(e){const f=e.target.files;let c=0,s=0;for(let i=0;i<f.length;i++)if(f[i].type.startsWith('image/')){c++;s+=f[i].size;}document.getElementById('numberOfImagesInput').value=document.getElementById('numberOfImagesSlider').value=c;const a=c>0?Math.round(Math.sqrt(s/c/3)):512;document.getElementById('widthInput').value=document.getElementById('widthSlider').value=document.getElementById('heightInput').value=document.getElementById('heightSlider').value=a;updateValues();});
+        updateValues();
+    </script>
+</body>
+</html>
