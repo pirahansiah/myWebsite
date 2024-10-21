@@ -160,23 +160,23 @@ The collection of Python scripts provides a range of functionalities: one script
 
 
 
-  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/1gemma-test.py)
+  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/1gemma-test.py)
     - This script logs into KaggleHub, downloads a pretrained Gemma model and tokenizer, sets up the model, and enables interactive chat simulation. ## Libraries: os, sys, torch, kagglehub, gemma_pytorch
-  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/FP.py)
+  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/FP.py)
     - This Python script uses PyQt5 to create a GUI application for real-time testing of OpenCV functions on images. ## Libraries: sys, PyQt5, cv2, numpy, screeninfo
-  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/chatWithLLMs.py)
+  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/chatWithLLMs.py)
     - his Python script defines an asynchronous chat application that uses the aiohttp library to interact with a chat model API, handling concurrency with semaphores and maintaining conversation history. ## Libraries: asyncio, aiohttp, collections, json, re
-  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/LLMOPs.ipynb)
+  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/LLMOPs.ipynb)
     - LLMOps & RAG: This Python script integrates various machine learning models and APIs to process financial data, interactively analyze text, images, and tables, and generate structured outputs. It employs libraries like langchain, transformers, and torch, alongside environmental variables for secure API key handling.
-  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/OpenRouter.py)
+  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/OpenRouter.py)
     - Launch your chat app with OpenRouter's AI! 🚀 Utilize asyncio and aiohttp for seamless conversations and manage interactions with a smart queue. Dive into the future of chat applications now!"
-  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/RAG_using_CPU-based_(No-GPU_required)_Hugging_Face_Models_with_LLMWare_on_your_laptop.py)
+  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/RAG_using_CPU-based_(No-GPU_required)_Hugging_Face_Models_with_LLMWare_on_your_laptop.py)
   
     - This Python script demonstrates how to use the LLMware library to interact with various models hosted on HuggingFace for natural language understanding tasks. It performs a specific query about an invoice using a provided context and compares the response from the model with a pre-defined answer. The script uses time measurement to track model loading and processing times.
-  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/mlflow/test-mlflow.py)
+  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/mlflow/test-mlflow.py)
     -  This Python script uses MLflow, a platform for managing the machine learning lifecycle, including experimentation, reproducibility, and deployment. It demonstrates how to log parameters, metrics, and artifacts within an MLflow experiment. Specifically, it logs a parameter named "param1" with a value of 5, logs multiple values for a metric called "foo," and records a markdown file as an artifact.
 
-  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/Kubernetes_Terraform/Kubernetes_Terraform.py)
+  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/Kubernetes_Terraform/Kubernetes_Terraform.py)
 
     -This script outlines the setup and use of Kubernetes on a local machine using Terraform, along with tools like Docker and Kubernetes command-line interface (CLI) utilities, all managed through Homebrew on macOS. It demonstrates the installation of required software, setting up Kubernetes with Terraform, querying the Kubernetes cluster, and visualizing Terraform plans. Finally, it guides through cleaning up resources with Terraform. This sequence ensures a practical approach to infrastructure as code (IaC) development and testing in a controlled, local environment.
 
@@ -230,9 +230,9 @@ I am eager to bring my expertise to a dynamic team in Berlin, where I can contri
 - MindMap about LLMs & LLMOps
   - [My Note LLMs](https://pirahansiah.com)
 - Code for chat app with OpenRouter's AI! 🚀 Utilize asyncio and aiohttp for seamless conversations and manage interactions with a smart queue. Dive into the future of chat applications now!"
-  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/OpenRouter.py)
+  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/OpenRouter.py)
 - fine-tune LLMs
-  - [Source Code](https://www.pirahansiah.com/farshid/portfolio/development/LLM/LLMOPs.ipynb)
+  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/LLMOPs.ipynb)
 - Microsoft AI Lab: RAG Workflow with Azure AI
   - Lab Focus: Hands-on RAG workflow development using Azure AI Studio and Prompt Flow.
   - Skills Acquired: Mastery in LLMOps, Azure AI Studio usage, and Prompt Flow integration.
