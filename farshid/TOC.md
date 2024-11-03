@@ -31,22 +31,16 @@ header:
 footer: "© 2024 Dr. Farshid Pirahansiah. All rights reserved."
 pin: false
 rating: 4.8
-last_modified_at: 2024-10-17
+last_modified_at: 2024-10-21
 
 ---
-
-
-{{ site.author }}
-
-Dr. Farshid Pirahansiah CV
-  - [Publications](/farshid/Resources####Resume)
-  - [Work Highlights](/farshid/Resources####portfolio,projects,Solutions)
-
-
-
-LLM
-  - [Orchestrating Agents](/farshid/Resources####LLM)
-
-
-CUDA
-  - [CUDA Leveraging CUDA for High-Performance GPU Computing with PyCUDA, Numba](/farshid/Resources####CUDA)
+# {{ site.author }}  
+  - [Publications](/farshid/resources#resume)
+  - [Work Highlights](/farshid/resources#my-portfolio)
+# LLM
+  - [List LLM topics](/farshid/resources#llm)
+# CUDA
+  - [CUDA](/farshid/resources#cuda)
+# Optimization
+  - [Optimization](/farshid/resources#Optimization)
+  

@@ -13,48 +13,35 @@ seo_title: "CV, Resume, Advanced Computer Vision Techniques | Dr. Farshid Piraha
 seo_description: "CV, Resume, Explore cutting-edge computer vision techniques and their applications in modern technology."
 
 ---
+# Me
+- I have a total of 21 publications, including 3 patents, 2 book chapters, 6 journal articles, and 10 conference papers. My Google Scholar profile indicates 137 citations, an h-index of 7, and an i10-index of 5.
+- [Dr. Farshid Pirahansiah CV](/farshid/portfolio/publications/CV)
+- [My podcast](https://podcasters.spotify.com/pod/show/pirahansiah)
 
-I have a total of 21 publications, including 3 patents, 2 book chapters, 6 journal articles, and 10 conference papers. My Google Scholar profile indicates 137 citations, an h-index of 7, and an i10-index of 5.
-
-[Dr. Farshid Pirahansiah CV](/farshid/portfolio/publications/CV)
-
-[My podcast](https://podcasters.spotify.com/pod/show/pirahansiah)
-
-### My Academic Contributions and Publications
+## My Academic Contributions and Publications
 - [My Google Scholar Profile](https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en)
-
     | Metric       | Value |
     |--------------|-------|
     | **Citations**| 137   |
     | **h-index**  | 7     |
-    | **i10-index**| 5     |
-
-- [ScienceOpen Collection](https://www.scienceopen.com/collection/da288fa0-3d52-46dc-9e07-73dfc597dfb8)
-
-
-
-	
-
-### My Publications ( Total 21 )
-
-## My Patents (3)
+    | **i10-index**| 5     |   
+- [ScienceOpen Collection](https://www.scienceopen.com/collection/da288fa0-3d52-46dc-9e07-73dfc597dfb8)   
+## My Publications ( Total 21 )   
+### My Patents (3)   
   - [My Patents: A METHOD FOR AUGMENTING A PLURALITY OF FACE IMAGES WO2021060971A1](/farshid/portfolio/publications/Patents/A_METHOD_FOR_AUGMENTING_A_PLURALITY_OF_FACE_IMAGES_WO2021060971A1)
   - [My Patents: SYSTEM AND METHOD FOR PROVIDING ADVERTISEMENT CONTENTS BASED ON FACIAL ANALYSIS WO2020141969A2](/farshid/portfolio/publications/Patents/SYSTEM_AND_METHOD_FOR_PROVIDING_ADVERTISEMENT_CONTENTS_BASED_ON_FACIAL_ANALYSIS_WO2020141969A2)
-  - [My Patents: A METHOD FOR DETECTING A MOVING VEHICLE WO2021107761A1](/farshid/portfolio/publications/Patents/A_METHOD_FOR_DETECTING_A_MOVING_VEHICLE_WO2021107761A1)
-
-## My Books (2)
+  - [My Patents: A METHOD FOR DETECTING A MOVING VEHICLE WO2021107761A1](/farshid/portfolio/publications/Patents/A_METHOD_FOR_DETECTING_A_MOVING_VEHICLE_WO2021107761A1)    
+### My Books (2)
   - [My Book: My_Book_chapter_Camera_Calibration_and_Video_Stabilization_Framework_for_Robot_Localization  in the Book entitled “Control Engineering in Robotics and Industrial Automation" published in Springer](/farshid/portfolio/publications/Books/My_Book_chapter_Camera_Calibration_and_Video_Stabilization_Framework_for_Robot_Localization)
-  - [My Book: Computational Intelligence: From Theory to Application explores augmented optical flow methods for video stabilization](/farshid/portfolio/publications/Books/Book_Computational_Intelligence_From_Theory_to_Application_explores_augmented_optical_flow_methods_for_video_stabilization)
-  
-## My Journals (6)
+  - [My Book: Computational Intelligence: From Theory to Application explores augmented optical flow methods for video stabilization](/farshid/portfolio/publications/Books/Book_Computational_Intelligence_From_Theory_to_Application_explores_augmented_optical_flow_methods_for_video_stabilization)     
+### My Journals (6)    
   - [My Journal Publications: Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio (PSNR) ](/farshid/portfolio/publications/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio)
   - [My Journal Publications: CHARACTER AND OBJECT RECOGNITION BASED ON GLOBAL FEATURE EXTRACTION](/farshid/portfolio/publications/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION)
   - [My Journal Publications: GSFT-PSNR Global Single Fuzzy Threshold](/farshid/portfolio/publications/Journals/GSFT-PSNR_Global_Single_Fuzzy_Threshold)
   - [My Journal Publications: PEAK SIGNAL-TO-NOISE RATIO BASED ON THRESHOLD METHOD FOR IMAGE SEGMENTATION](/farshid/portfolio/publications/Journals/PEAK_SIGNAL-TO-NOISE_RATIO_BASED_ON_THRESHOLD_METHOD_FOR_IMAGE_SEGMENTATION)
   - [My Journal Publications: 3D SLAM Simultaneous Localization And Mapping Trends And Humanoid Robot Linkages](/farshid/portfolio/publications/Journals/3D_SLAM_Simultaneous_Localization_And_Mapping_Trends_And_Humanoid_Robot_Linkages)
-  - [My Journal Publications: USING AN ANT COLONY OPTIMIZATION ALGORITHM](/farshid/portfolio/publications/Journals/USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM)
-
-## My Conference Papers (10)
+  - [My Journal Publications: USING AN ANT COLONY OPTIMIZATION ALGORITHM](/farshid/portfolio/publications/Journals/USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM)    
+### My Conference Papers (10)    
   - [My Conference Papers: 2D versus 3D Map for Environment Movement Objects  ](/farshid/portfolio/publications/Papers/My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects )
   - [My Conference Papers: Adaptive Image Segmentation Based on PSNR for License Plate Recognition ](/farshid/portfolio/publications/Papers/Adaptive_Image_Segmentation_Based_on_PSNR_for_License_Plate_Recognition )
   - [My Conference Papers: An evaluation of classification techniques using enhanced Geometrical Topological Feature Analysis ](/farshid/portfolio/publications/Papers/An_evaluation_of_classification_techniques_using_enhanced_Geometrical_Topological_Feature_Analysis )
@@ -66,13 +53,41 @@ I have a total of 21 publications, including 3 patents, 2 book chapters, 6 journ
   - [My Conference Papers: Pattern Image Significance for Camera Calibration](/farshid/portfolio/publications/Papers/Pattern_Image_Significance_for_Camera_Calibration )
   - [My Conference Papers: TafreshGrid Grid computing in Tafresh university ](/farshid/portfolio/publications/Papers/TafreshGrid_Grid_computing_in_Tafresh_university )
   <!-- - [My Conference Papers: Computer Vision meet LLM ](/farshid/portfolio/publications/Papers/ ) -->
+# Hardware I Used and Can Work With
+- **Raspberry Pi 3**
+  - Edge computing, low-power processing
+- **Raspberry Pi 4**
+  - Improved performance, real-time CV applications
+- **Intel Neural Compute Stick 2**
+  - Portable AI inference, accelerated deep learning
+- **OpenCV AI Kit**
+  - Integrated AI vision processing, depth sensing
+- **Google Coral (TPU)**
+  - On-device ML, low-latency AI processing
+- **Nvidia Jetson Nano**
+  - AI at the edge, accelerated vision tasks
+- **Nvidia GPU (RTX 1080 to 4090)**
+  - High-performance GPU computing, deep learning training
+# Platforms and Architectures
+- **ARM**
+  - Low-power consumption, mobile CV applications
+- **Apple Silicon**
+  - Efficient CV workflows, ML model optimization
+- **x86-64**
+  - Versatile performance, large-scale CV model training
+# Operating Systems
+- **Linux**
+  - Preferred for CV development, extensive libraries and tools
+- **Windows**
+  - Compatibility with development environments, AI frameworks
+- **MacOS**
+  - Optimized ML support, Apple-specific AI frameworks
 
 
 
 
 
-
-##### Patent Summary
+# Patent Summary
 
 {% if page.extname == "CV.md" %}
   ![Dr. Farshid Pirahansiah 3 Patents - AI Innovations in Vehicle Detection, Facial Analysis, and Image Augmentation](/farshid/portfolio/publications/Patents/Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation.png)
