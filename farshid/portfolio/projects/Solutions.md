@@ -23,7 +23,7 @@ header:
 footer: "© 2024 Dr. Farshid Pirahansiah. All rights reserved."
 title: "Accomplishments"
 ---
-
+# [Dr. Farshid Pirahansiah CV](/farshid/portfolio/publications/CV)
 
 # My Products 
 - [3D Camera Calibration](/farshid/portfolio/projects/Camera_Calibration/cameracalibration)
@@ -32,10 +32,8 @@ title: "Accomplishments"
 - [NuGet OpenCV5 Static Library for VS2019](https://www.nuget.org/packages/OpenCV5_StaticLib_VS2019_NuGet) 
 - [NuGet OpenCV5 Static Library for VS2022](https://www.nuget.org/packages/OpenCV5_StaticLib_VS22_NuGet) 
 - [LLM VSCode Extensions Farshid](https://marketplace.visualstudio.com/items?itemName=vscode-extensions-farshid.vscode-extensions-farshid)
-- [cvtest: Computer Vision Test](https://github.com/pirahansiah/cvtest/blob/main/README.md) 
-
+- [cvtest: Computer Vision Test](https://github.com/pirahansiah/cvtest/blob/main/README.md)
 - [AI Model Cost Calculator: Optimizing Costs for Computer Vision and Multimodal AI Solutions](/farshid/portfolio/projects/AI_Model_Cost_Calculator.html)
-
 
 # My custom ChatGPT
 - [Image Processing / Computer Vision Developer](https://chat.openai.com/g/g-vHELtCqJq-computer-vision-developer): Expert in Python, OpenCV for image processing and computer vision applications.
@@ -47,19 +45,20 @@ title: "Accomplishments"
 - [Image Inspirer](https://chat.openai.com/g/g-YHNv6svFJ-image-inspirer)
 - [Image 3D Transformer](https://chat.openai.com/g/g-vB0lMseBd-image-3d-transformer)
 
-
-
-
 # My Social 
 - [Podcast LLM, CV, ML, DL, DevOps, Robotics](https://podcasters.spotify.com/pod/show/pirahansiah)
 - [My LinkedIn Group 55K](https://www.linkedin.com/groups/10320678/ )
 - [My Facebook Group 15K](https://www.facebook.com/groups/computervisiondeeplearning) 
 
-
-<hr style="border: 0; height: 2px; background: linear-gradient(to right, #4CAF50, #FF5722);" />
 <hr style="border: 5px solid #E91E63;" />
-<hr style="border: 10; height: 20px; box-shadow: inset 10 20px 50px rgba(220, 220, 220, 22);" />
 
+# Index
+
+- [Link to Camera Calibration Expertise](#camera-calibration-expertise)
+- [AA](#expertise-areas)
+
+
+<hr style="border: 3px ridge #3F51B5;" />
 
 ## Camera Calibration Expertise
 
@@ -87,7 +86,7 @@ https://lnkd.in/d97ypMcc
 
 
 
-Computer Vision + LLM
+### Computer Vision + LLM
 
 ---
 ---
@@ -99,7 +98,7 @@ Computer Vision + LLM
 My AI Model Cost Calculator with the latest pricing for GPT-4 Turbo, Google Gemini 1.5 Pro, and Claude 3 Opus! 💡 Calculate text and image processing costs easily with real-time estimates. Check it out! #AI #MachineLearning #CostCalculator #GPT4 #Claude #GoogleGemini
 
 
-
+<hr style="border: 2px solid #4CAF50;" />
 
 # OpenCV 5 NuGet Package – Simplified Setup for Visual Studio
 
@@ -239,7 +238,7 @@ farshid/portfolio/projects/GUI_OpenCV/realtime_GUI_OpenCV.py
 
 
 
-<hr style="border: 2px solid #4CAF50;" />
+
 
 
 
@@ -251,7 +250,7 @@ farshid/portfolio/projects/GUI_OpenCV/realtime_GUI_OpenCV.py
 
 
 
-<hr style="border: 3px ridge #3F51B5;" />
+
 
 
 <hr style="border: 3px inset #009688;" />
