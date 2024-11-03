@@ -8,20 +8,20 @@ description: "An exploration of advanced algorithms and techniques in computer v
 excerpt: "Dive deep into the latest advancements in computer vision, including deep learning methodologies and real-time image processing."
 author: "Dr. Farshid Pirahansiah"
 ---
-
+https://www.pirahansiah.com/farshid/content/MYTopLinkeInPost2024/ 
 # My Top LinkedIn Posts from the Past Year
 
-CC: https://www.linkedin.com/posts/pirahansiah_camera-calibration-geometric-analysis-calibration-activity-7189576372879540225-z0Yk?utm_source=share&utm_medium=member_desktop 
-CC: https://www.linkedin.com/posts/pirahansiah_my-research-about-camera-calibration-activity-7172164143263694848-HtGX?utm_source=share&utm_medium=member_desktop 
-Optimization Methods Computer Vision: https://www.linkedin.com/feed/update/urn:li:activity:7254531961128402945?utm_source=share&utm_medium=member_desktop
-multi-GPU : https://www.linkedin.com/posts/pirahansiah_optimizing-nvidia-gpus-for-deep-learning-activity-7241393350568820736-_xSd?utm_source=share&utm_medium=member_desktop 
-NVIDIA Jetson: https://www.linkedin.com/feed/update/urn:li:activity:7193016287181029376?utm_source=share&utm_medium=member_desktop
-On-Device: https://www.linkedin.com/posts/pirahansiah_on-device-training-in-onnx-runtime-ort-activity-7182296755986722816-70kR?utm_source=share&utm_medium=member_desktop 
-On-Device: https://www.linkedin.com/feed/update/urn:li:activity:7176987115191234561?utm_source=share&utm_medium=member_desktop 
-C++ : https://www.linkedin.com/feed/update/urn:li:activity:7182814472242151424?utm_source=share&utm_medium=member_desktop 
-C++ : https://www.linkedin.com/posts/pirahansiah_c-review-basics-general-purpose-programming-activity-7209181439110582272-Hqtr?utm_source=share&utm_medium=member_desktop 
-C++: https://www.linkedin.com/posts/pirahansiah_c23-keywords-for-parallel-programming-activity-7200241929479970816-gisC?utm_source=share&utm_medium=member_desktop 
-My experience Robotics 3D SLAM LLM Vision Multimodal: https://www.linkedin.com/feed/update/urn:li:activity:7193589360271773696?utm_source=share&utm_medium=member_desktop 
+[CC](https://www.linkedin.com/posts/pirahansiah_camera-calibration-geometric-analysis-calibration-activity-7189576372879540225-z0Yk?utm_source=share&utm_medium=member_desktop )
+[CC](https://www.linkedin.com/posts/pirahansiah_my-research-about-camera-calibration-activity-7172164143263694848-HtGX?utm_source=share&utm_medium=member_desktop )
+[Optimization Methods Computer Vision](https://www.linkedin.com/feed/update/urn:li:activity:7254531961128402945?utm_source=share&utm_medium=member_desktop)
+[multi-GPU ](https://www.linkedin.com/posts/pirahansiah_optimizing-nvidia-gpus-for-deep-learning-activity-7241393350568820736-_xSd?utm_source=share&utm_medium=member_desktop )
+[NVIDIA Jetson](https://www.linkedin.com/feed/update/urn:li:activity:7193016287181029376?utm_source=share&utm_medium=member_desktop)
+[On-Device](https://www.linkedin.com/posts/pirahansiah_on-device-training-in-onnx-runtime-ort-activity-7182296755986722816-70kR?utm_source=share&utm_medium=member_desktop )
+[On-Device](https://www.linkedin.com/feed/update/urn:li:activity:7176987115191234561?utm_source=share&utm_medium=member_desktop )
+[C++ ](https://www.linkedin.com/feed/update/urn:li:activity:7182814472242151424?utm_source=share&utm_medium=member_desktop )
+[C++ ](https://www.linkedin.com/posts/pirahansiah_c-review-basics-general-purpose-programming-activity-7209181439110582272-Hqtr?utm_source=share&utm_medium=member_desktop )
+[C++](https://www.linkedin.com/posts/pirahansiah_c23-keywords-for-parallel-programming-activity-7200241929479970816-gisC?utm_source=share&utm_medium=member_desktop )
+[My experience Robotics 3D SLAM LLM Vision Multimodal](https://www.linkedin.com/feed/update/urn:li:activity:7193589360271773696?utm_source=share&utm_medium=member_desktop )
 
 Over the past year, I’ve explored camera calibration using MATLAB, Python, C++, and OpenCV; optimized NVIDIA GPUs with CUDA and cuDNN; delved into advanced C++ features; integrated AI in robotics with LLMs; and developed VRAM optimization techniques for LLM training.
 
