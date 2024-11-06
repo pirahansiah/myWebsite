@@ -77,4 +77,12 @@ last_modified_at: 2024-10-13
 - [PyCUDA Kernel Explanation: Computer Vision, ML, DL, LLM](/farshid/content/CUDA_pycuda_kernel_explanation)   
 # Optimization   
 - [Optimization](/farshid/content/Optimization)   
+- [Optimization ML](/farshid/content/optimizationML.png)   
+- [Optimization under_over_fit_ML](/farshid/content/under_over_fit_ML.png)   
+
+
+# A
+- [[Optimization]]
+- [[TOC]]
+- - ![[TOC]]
 

@@ -10,6 +10,10 @@ _site/
 me 
 me/
 
+chainlit.md
+.chainlit
+
+
 .vscode
 .vscode/
 .env
