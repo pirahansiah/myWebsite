@@ -25,7 +25,11 @@ title: "Accomplishments"
 ---
 # [Dr. Farshid Pirahansiah CV](/farshid/portfolio/publications/CV)
 
+I can help companies by leveraging my deep expertise in AI, machine learning, and product analysis to drive strategic innovation and transform how businesses approach complex challenges. As a GenAI Product Analyst, I bring a comprehensive skill set that includes conducting data-driven user research, defining product goals, and driving the development of AI-based solutions aligned with business strategies. My proficiency in agile methodologies, user-centric design, and advanced analytics allows me to build and launch effective digital products, ensuring they are both technically sound and customer-focused. This approach supports an organization’s mission to lead in AI-driven advancements and deliver exceptional value in competitive markets.
+
+I can help companies by leveraging my deep expertise in quantitative analytics and machine learning to drive impactful solutions across business verticals. In a role like Lead Quantitative Analytics Specialist, I bring extensive experience in building, evaluating, and implementing complex models, including those involving large-scale data and Generative AI applications. My skill set includes applying advanced mathematical theory and AI techniques, collaborating with cross-functional teams to optimize model deployment, and providing strategic insights for model performance and risk management. With a strong foundation in end-to-end machine learning pipelines and the ability to mentor junior data scientists, I can contribute significantly to advancing data-driven innovation and maintaining compliance in highly regulated environments.
 # My Products 
+- multi camera multi object video tracking systems on the Edge or AWS (Docker)
 - [3D Camera Calibration](/farshid/portfolio/projects/Camera_Calibration/cameracalibration)
 - [AI Realtime GUI OpenCV](/farshid/portfolio/projects/GUI_OpenCV/realtime_GUI_OpenCV.py)
 - [AI Local ToDo List telegram mini app](/farshid/portfolio/projects/AI_todo_list/index.html)
@@ -154,6 +158,7 @@ Find more details in the [README file](https://github.com/pirahansiah/cvtest/blo
 ## Download the Source Code:
 [GitHub Repository](https://github.com/pirahansiah/)
 
+static opencv make 200K to 18MB but no need DLL
 
 ---
 ---
@@ -163,7 +168,7 @@ Find more details in the [README file](https://github.com/pirahansiah/cvtest/blo
 object detection and tracking on Edge and cloud
 Multi Camera (Stereo Vision) Calibration for AR/VR headset (extended reality/mixed reality) 3D Image Processing with Deep Learning
 
-
+To remove unwanted objects from an image using contour detection performed twice, start by reading the image and applying a threshold or edge detection method to create a binary image. Detect the initial contours using cv2.findContours, and filter these contours based on a chosen area threshold to keep only the larger objects. Draw and fill the smaller, unwanted contours using cv2.drawContours with a cv2.FILLED parameter to mask them from the image. Next, perform a second pass of contour detection to identify any remaining objects and repeat the filtering process. Finally, draw the filtered contours onto an output image using cv2.drawContours with a visible color for visualization. Display or save the final image to confirm that only the desired objects remain. This double-pass method ensures effective removal of nested or smaller objects by progressively refining the contours in the image.
 ---
 ---
 ---
@@ -414,3 +419,75 @@ This AI bot:
 
 
 <hr style="border: 2px dotted #2196F3;" />
+
+- I have numerous innovative ideas for leveraging large language models (LLMs) to significantly impact company revenue and profitability. My extensive experience brings substantial value to companies, startups, and teams, and I am skilled in cross-functional collaboration. I excel at working across various teams to implement effective solutions and drive growth. I merges industrial and scientific expertise with IIoT knowledge. We use COTS components to create integrated solutions, developing custom open-source platforms and machine learning algorithms that meet regulatory and scientific needs.
+
+Related Methods:
+
+	•	Fine-tuning LLMs for specific business applications
+	•	Optimizing LLM workflows to enhance productivity
+	•	Developing LLM-based tools for customer support and engagement
+	•	Integrating LLMs into existing company processes to automate tasks
+	•	Utilizing LLMs for data analysis and predictive modeling
+
+- Assumptions and Applications of LLMs at the Edge (IoT) that I Can Contribute to in Your Production Environment:
+
+1. Ultra Low-Power, Low-Processor Devices (e.g., Watch Microcontrollers, Basic Microcontrollers)
+
+	•	Focus on implementing only minimal machine learning models or Tiny LLMs.
+	•	Methods: TinyML, Quantization Techniques, Model Pruning, Edge Impulse Integration.
+
+2. Ultra Low-Power, Low-Processor Devices (Common Edge Devices like Raspberry Pi 5)
+
+	•	Deploying lightweight versions of LLMs optimized for edge inference.
+	•	Methods: ONNX Runtime, TensorFlow Lite, Model Distillation, EfficientNet Variants.
+
+3. Ultra Low-Power, Low-Processor Devices with RISC-V Architecture
+
+	•	Optimizing machine learning and LLMs for open-source, scalable RISC-V chipsets.
+	•	Methods: Custom Compiler Optimization (e.g., TVM), RISC-V-specific ML Frameworks, Edge AI SDKs.
+
+4. Ultra Low-Power, Low-Processor Devices Equipped with Nvidia Chips
+
+	•	Leveraging Nvidia’s GPU capabilities for edge AI models while maintaining energy efficiency.
+	•	Methods: NVIDIA Jetson Platform, CUDA Optimizations, TensorRT, DeepStream SDK.
+
+These contributions can help optimize machine learning and LLM capabilities for edge devices across different hardware, enhancing their application while maintaining low power consumption and processing requirements.
+
+As a consultant, I help companies build AI-integrated workplace ecosystems by offering strategic guidance, culture development, technology implementation, and tailored talent strategies. With extensive expertise, I leverage unique perspectives to approach challenges creatively and adapt to evolving business landscapes. My client-first approach ensures that each solution aligns with company needs while maintaining a strong commitment to ethical AI practices that meet legal and compliance standards.
+
+I support businesses by conducting strategy and gap analyses, optimizing HR processes, and leading alignment workshops for leadership buy-in. I develop internal communication strategies, implement change management journeys, and strengthen employer branding. I also review workflows, automate processes, design AI chatbots, and integrate predictive HR technologies. Additionally, I provide AI education, 1:1 coaching, and strategic talent solutions to build an AI-ready workforce and redefine recruitment strategies.
+
+
+
+--- 
+Command Descriptions for less:
+
+Linux (less x.cpp):
+	•	The command less x.cpp is used to view the content of the file x.cpp in a paginated way. The less utility allows you to scroll through the file and navigate efficiently.
+
+Useful Key Bindings:
+	•	n: Search for the next occurrence of a pattern (after using / or ? to search).
+	•	p: In the context of less, p is not typically a standard key binding, but you may be referring to using ? for searching backward (which behaves like previous).
+	•	q: Quit the less command and return to the terminal prompt.
+
+Mac (assuming using less command as well):
+	•	On macOS, the less command works similarly to Linux, with key bindings:
+	•	:n: Move to the next file in the input list.
+	•	:p: Move to the previous file in the input list.
+	•	q: Quit the viewer and return to the shell prompt.
+
+Additional Tips:
+
+	•	/pattern: Search forward in the file for a specific pattern.
+	•	?pattern: Search backward in the file for a specific pattern.
+	•	space or f: Move forward one page.
+	•	b: Move backward one page.
+	•	G: Go to the end of the file.
+	•	g: Go to the beginning of the file.
+
+These commands enhance navigation and make working with files in the terminal more efficient.
+
+--- 
+
+- 

@@ -20,11 +20,13 @@ seo_description: "CV, Resume, Explore cutting-edge computer vision techniques an
 
 ## My Academic Contributions and Publications
 - [My Google Scholar Profile](https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en)
+
     | Metric       | Value |
     |--------------|-------|
     | **Citations**| 137   |
     | **h-index**  | 7     |
     | **i10-index**| 5     |   
+
 - [ScienceOpen Collection](https://www.scienceopen.com/collection/da288fa0-3d52-46dc-9e07-73dfc597dfb8)   
 ## My Publications ( Total 21 )   
 ### My Patents (3)   

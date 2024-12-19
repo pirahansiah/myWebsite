@@ -29,6 +29,7 @@
     nav ul li a:hover, nav ul li span:hover {
       background-color: #111;
     }
+    /* Dropdown styling */
     nav ul li ul {
       display: none;
       position: absolute;
@@ -47,40 +48,38 @@
     nav ul li ul li a, nav ul li ul li span {
       padding: 12px 16px;
     }
+    /* Positioning for deeper levels */
     nav ul li ul li ul {
       top: 0;
       left: 100%;
     }
+    /* Visual indicators */
     nav ul li span::after {
-      content: " \25BA";
+      content: " \25BA"; /* Unicode for right-pointing pointer */
       float: right;
     }
     nav ul li ul li span::after {
       content: " \25BA";
       float: right;
     }
+    /* Adjust indicators for items without children */
     nav ul li a::after, nav ul li ul li a::after {
       content: "";
     }
+    /* Back button styling */
     .back-button {
       background-color: transparent;
       border: none;
-      color: #007BFF;
+      color: #007BFF; /* Customize the color as needed */
       font-size: 16px;
       cursor: pointer;
       padding: 10px;
-      margin: 10px;
+      margin: 10px; /* Add margin for spacing */
     }
     .back-button:hover {
-      color: #0056b3;
+      color: #0056b3; /* Darker shade on hover */
     }
-    footer {
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #f9f9f9;
-      font-size: 12px;
-      line-height: 1.4;
-    }
+    /* Responsive Styling */
     @media screen and (max-width: 768px) {
       nav ul li {
         display: block;
@@ -93,6 +92,8 @@
       }
     }
   </style>
+  
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSFF93W8FQ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -145,49 +146,52 @@
     </ul>
   </nav>
 
+  <!-- Back Button -->
   <button class="back-button" onclick="goBack()">
     &#8592; Back
   </button>
 
+  <!-- Main Content -->
   <div class="page-content">
     <div class="wrapper">
       {{ content }}
     </div>
   </div>
 
-  <footer>
-    <div style="font-size: 1em;">
-      © 2024 Dr. Farshid Pirahansiah. All rights reserved.  
-      <br><br>
-      <b>Privacy Policy:</b> This website complies with GDPR regulations. We collect personal data to enhance user experience, and you may access or delete your data anytime by contacting [info@pirahansiah.com](mailto:info@pirahansiah.com).  
-      <br><br>
-      <b>Cookie Policy:</b> This website uses cookies to improve services. By continuing to browse, you agree to cookie usage. Manage cookies in your browser settings.  
-      <br><br>
-      <b>Legal Notice:</b> Website owned by Dr. Farshid Pirahansiah. Email: [info@pirahansiah.com](mailto:info@pirahansiah.com). Address: [Insert Address].  
-      <br><br>
-      <b>Terms:</b> Unauthorized use of this website’s content is prohibited. Intellectual property belongs to Dr. Farshid Pirahansiah.  
-    </div>
-  </footer>
+  <!-- AdSense Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9719404674327580" crossorigin="anonymous"></script>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9719404674327580" data-ad-slot="1895959699" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 
+  <!-- JavaScript Function -->
   <script>
     function goBack() {
       if (document.referrer !== "") {
         window.history.back();
       } else {
-        window.location.href = '{{ "/" | relative_url }}';
+        window.location.href = '{{ "/" | relative_url }}'; // Redirects to home if there's no history
       }
     }
 
+    // Optional: JavaScript for Click-Based Dropdowns on Mobile Devices
     document.addEventListener('DOMContentLoaded', function() {
       const dropdownToggles = document.querySelectorAll('nav ul li span');
+
       dropdownToggles.forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
           e.preventDefault();
           const submenu = this.nextElementSibling;
-          submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+          if (submenu.style.display === 'block') {
+            submenu.style.display = 'none';
+          } else {
+            submenu.style.display = 'block';
+          }
         });
       });
     });
   </script>
+  
 </body>
 </html>

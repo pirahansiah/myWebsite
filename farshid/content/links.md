@@ -13,4 +13,6 @@ author: "Dr. Farshid Pirahansiah"
 - Python Multithreading (3/25) : https://www.youtube.com/watch?v=fK72KDAWV38&list=PLs6THB5KHWo2k0OdWXbu_pB_0n2KzpGC1&index=7 
 - data structure python : 20: https://www.youtube.com/watch?v=GnZ9ppr_zaI&list=PLeo1K3hjS3uu_n_a__MI_KktGTLYopZ12&index=16
 - Day 28: Performance Comparison: SYCL vs. CUDA — Benchmarks and Results | by Joel Joseph | Medium
-- 
+- [ollama-vision]( https://github.com/codearrangertoo/ollama-vision/blob/main/llava/Dockerfile )
+
+
