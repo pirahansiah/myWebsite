@@ -81,8 +81,3 @@ last_modified_at: 2024-10-13
 - [Optimization under_over_fit_ML](/farshid/content/under_over_fit_ML.png)   
 
 
-# A
-- [[Optimization]]
-- [[TOC]]
-- - ![[TOC]]
-
