@@ -4,8 +4,22 @@ title: Home
 ---
 # Farshid PirahanSiah
 
-I am currently seeking opportunities in **computer vision**, ML, LLM.
+## Supporting Startups in Berlin
 
+As part of my commitment to fostering innovation, I am offering **one free on-site consultation session** to startups in Berlin. This session focuses on **computer vision** and **large language model (LLM)** solutions, tailored to help startups kickstart their AI and machine learning projects.
+
+### How I Can Help:
+- **Computer Vision Solutions**: From object detection to video analytics, I can guide startups in implementing state-of-the-art vision-based systems.
+- **LLM Applications**: Whether it's chatbots, document summarization, or multimodal AI, I provide actionable insights to integrate LLMs effectively into your workflows.
+- **Strategy and Roadmap**: I help you identify potential AI-driven opportunities and create a roadmap for successful implementation.
+  
+**Eligibility:**  
+- Berlin-based startups.
+- First session is on-site and free of charge.
+
+Interested startups can reach out via [LinkedIn](https://www.linkedin.com/in/pirahansiah/)
+
+Let’s build the future of AI together!
 ## About Me
 
 I am an accomplished Research Engineer with over 7 years of experience, including a PhD in Computer Science and a Bachelor's in Software Engineering. My career has been dedicated to the fields of Computer Vision, Machine Learning, and ML Operations. I have a proven track record of transforming complex algorithms into production-ready applications, utilizing cloud technologies and containerization, and optimizing ML pipelines and infrastructure in fast-paced environments.
