@@ -20,6 +20,29 @@ As part of my commitment to fostering innovation, I am offering **one free on-si
 Interested startups can reach out via [LinkedIn](https://www.linkedin.com/in/pirahansiah/)
 
 Let’s build the future of AI together!
+
+# Farshid Pirahansiah
+
+I am an **Image Processing R&D Specialist** and **LLM Multi-Agent Swarm Architecture Systems Engineer Developer** with extensive experience in designing and implementing **distributed AI systems** and **multi-agent frameworks**. My expertise lies in leveraging **large language models (LLMs)** to create scalable, autonomous, and collaborative architectures for real-world applications. With over a decade of experience in **computer vision**, **machine learning**, and **AI development**, I excel in deploying innovative solutions for complex problems in **IoT**, **robotics**, **medical imaging**, and **cloud technologies**.
+
+### My Expertise:
+- **Image Processing**: Advanced techniques for analysis, enhancement, and real-time implementation.
+- **Multi-Agent Systems Design**: Architecting LLM-powered distributed systems for intelligent collaboration.
+- **Swarm Intelligence Applications**: Implementing decentralized, emergent behavior models inspired by natural systems.
+- **LLM Integration**: End-to-end development of multimodal AI solutions, from concept to deployment.
+- **Optimization and Scalability**: Expertise in edge computing, on-device AI training, and cloud-based architectures.
+- **R&D Leadership**: Driving innovation in AI and computer vision through collaborative research and development.
+
+### How I Can Help:
+- **Image Processing Solutions**: Custom algorithms for medical imaging, robotics, and advanced video analytics.
+- **LLM Applications**: Integration of cutting-edge language models for workflows such as chatbots, summarization, and intelligent automation.
+- **Swarm Architecture Development**: Creating robust frameworks for distributed AI systems leveraging multi-agent collaboration.
+- **AI Strategy and Roadmap**: Helping organizations identify AI-driven opportunities and execute actionable plans for growth.
+
+### Let’s Collaborate:
+I am passionate about pushing the boundaries of AI and collaborating on innovative projects. Feel free to connect via [LinkedIn](https://www.linkedin.com/in/pirahansiah/) or explore my work on [GitHub](https://github.com/pirahansiah).
+
+
 ## About Me
 
 I am an accomplished Research Engineer with over 7 years of experience, including a PhD in Computer Science and a Bachelor's in Software Engineering. My career has been dedicated to the fields of Computer Vision, Machine Learning, and ML Operations. I have a proven track record of transforming complex algorithms into production-ready applications, utilizing cloud technologies and containerization, and optimizing ML pipelines and infrastructure in fast-paced environments.
