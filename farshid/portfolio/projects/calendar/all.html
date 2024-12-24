@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Calendar</title>
+    <title>Calendar</title>
+    <style>
+        :root {
+            --primary-text: #333;
+            --bg-main: #f5f5f5;
+            --bg-cell: white;
+            --border: #ddd;
+            --holiday: #d4fdd4;
+            --highlight-yellow: #fff9c4;
+            --highlight-red: #ffccbc;
+            --highlight-blue: #e0f7fa;
+            --event-bg: #f0f0f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, system-ui, sans-serif;
+            background: var(--bg-main);
+            color: var(--primary-text);
+            padding: 20px;
+        }
+
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .month-container {
+            margin-bottom: 40px;
+        }
+
+        .month-header {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .weekday-header {
+            background: var(--bg-cell);
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .calendar-cell {
+            background: var(--bg-cell);
+            min-height: 100px;
+            padding: 10px;
+            position: relative;
+        }
+
+        .date-number {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .event {
+            font-size: 0.9em;
+            padding: 4px 8px;
+            margin: 2px 0;
+            background: var(--event-bg);
+            border-radius: 3px;
+            word-wrap: break-word;
+        }
+
+        .other-month { opacity: 0.5; }
+        .today { background: #e3f2fd; }
+        .holiday { background: var(--holiday); }
+        .highlight-yellow { background: var(--highlight-yellow); }
+        .highlight-red { background: var(--highlight-red); }
+        .highlight-blue { background: var(--highlight-blue); }
+    </style>
+</head>
+<body>
+    <div class="calendar-header">
+        <h1 id="calendarTitle"></h1>
+    </div>
+    <div id="calendarContainer"></div>
+
+    <script>
+        class CalendarEvent {
+            constructor() {
+                this.items = [];
+                this.type = null;
+            }
+
+            addItem(text, indent = 0) {
+                if (text.trim() && indent <= 1) {  // Only add items with indent level 0 or 1
+                    this.items.push({
+                        text: text.trim(),
+                        indent: indent
+                    });
+                }
+            }
+        }
+
+        class Calendar {
+            constructor() {
+                this.events = new Map();
+                this.weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+                this.markerTypes = {
+                    '|': 'holiday',
+                    '^': 'highlight-red',
+                    '>': 'highlight-yellow',
+                    '<': 'highlight-blue'
+                };
+            }
+
+            parseDate(dateStr) {
+                const [year, month, day] = dateStr.split('-').map(Number);
+                return new Date(year, month - 1, day);
+            }
+
+            formatDate(date) {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            }
+
+            getIndentationLevel(line) {
+                const spaces = line.match(/^\s*/)[0].length;
+                return Math.floor(spaces / 4);  // Changed from 4 to 2 spaces per level
+            }
+
+            parseContent(content) {
+                let currentDate = null;
+                const lines = content.split('\n');
+
+                for (const line of lines) {
+                    const dateMatch = line.match(/^(\d{4}-\d{2}-\d{2})([|^><])?/);
+                    
+                    if (dateMatch) {
+                        currentDate = dateMatch[1];
+                        const marker = dateMatch[2];
+                        
+                        if (!this.events.has(currentDate)) {
+                            this.events.set(currentDate, new CalendarEvent());
+                        }
+                        
+                        if (marker) {
+                            this.events.get(currentDate).type = this.markerTypes[marker];
+                        }
+
+                        const remainingText = line.slice(dateMatch[0].length).trim();
+                        if (remainingText) {
+                            this.events.get(currentDate).addItem(remainingText, 0);
+                        }
+                    } else if (currentDate && line.trim()) {
+                        const event = this.events.get(currentDate);
+                        const indent = this.getIndentationLevel(line);
+                        const text = line.trim().replace(/^[-*]\s*/, '');
+                        
+                        if (text) {  // Process all items regardless of indentation
+                            event.addItem(text, indent);
+                        }
+                    }
+                }
+            }
+
+            getMondayIndex(date) {
+                return (date.getDay() + 6) % 7;
+            }
+
+            renderMonth(year, month) {
+                const container = document.createElement('div');
+                container.className = 'month-container';
+
+                const header = document.createElement('h2');
+                header.className = 'month-header';
+                header.textContent = new Date(year, month).toLocaleString('default', {
+                    month: 'long',
+                    year: 'numeric'
+                });
+                container.appendChild(header);
+
+                const grid = document.createElement('div');
+                grid.className = 'calendar-grid';
+
+                // Add weekday headers
+                this.weekdays.forEach(day => {
+                    const dayHeader = document.createElement('div');
+                    dayHeader.className = 'weekday-header';
+                    dayHeader.textContent = day;
+                    grid.appendChild(dayHeader);
+                });
+
+                // Calculate calendar dates
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+                const startPadding = this.getMondayIndex(firstDay);
+
+                let currentDate = new Date(firstDay);
+                currentDate.setDate(currentDate.getDate() - startPadding);
+
+                // Create calendar cells
+                while (currentDate <= lastDay || this.getMondayIndex(currentDate) !== 0) {
+                    const cell = this.createDateCell(currentDate, month);
+                    grid.appendChild(cell);
+                    currentDate.setDate(currentDate.getDate() + 1);
+                }
+
+                container.appendChild(grid);
+                return container;
+            }
+
+            createDateCell(date, currentMonth) {
+                const cell = document.createElement('div');
+                cell.className = 'calendar-cell';
+                
+                const dateStr = this.formatDate(date);
+                const event = this.events.get(dateStr);
+
+                if (date.getMonth() !== currentMonth) {
+                    cell.classList.add('other-month');
+                }
+
+                if (dateStr === this.formatDate(new Date())) {
+                    cell.classList.add('today');
+                }
+
+                if (event?.type) {
+                    cell.classList.add(event.type);
+                }
+
+                const dateNumber = document.createElement('div');
+                dateNumber.className = 'date-number';
+                dateNumber.textContent = date.getDate();
+                cell.appendChild(dateNumber);
+
+                if (event) {
+                    event.items.forEach(item => {
+                        const eventDiv = document.createElement('div');
+                        eventDiv.className = 'event';
+                        eventDiv.textContent = item.text;
+                        cell.appendChild(eventDiv);
+                    });
+                }
+
+                return cell;
+            }
+
+            render() {
+                const now = new Date();
+                const container = document.getElementById('calendarContainer');
+                container.innerHTML = '';
+
+                document.getElementById('calendarTitle').textContent = 
+                    `Calendar starting ${now.toLocaleString('default', {
+                        month: 'long',
+                        year: 'numeric'
+                    })}`;
+
+                for (let i = 0; i < 12; i++) {
+                    const year = now.getFullYear() + Math.floor((now.getMonth() + i) / 12);
+                    const month = (now.getMonth() + i) % 12;
+                    container.appendChild(this.renderMonth(year, month));
+                }
+            }
+        }
+
+        // Initialize calendar
+        document.addEventListener('DOMContentLoaded', () => {
+            const calendar = new Calendar();
+
+            fetch('data.md')
+                .then(response => response.text())
+                .then(content => {
+                    calendar.parseContent(content);
+                    calendar.render();
+                })
+                .catch(error => {
+                    console.error('Error loading calendar data:', error);
+                    calendar.render(); // Render empty calendar on error
+                });
+        });
+    </script>
+</body>
+</html>
