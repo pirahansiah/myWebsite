@@ -34,6 +34,10 @@ last_modified_at: 2025
 ---
 {{ site.author }}
 
+[https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/ComputerVisionMeetLLM](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/ComputerVisionMeetLLM)
+
+
+
 # AI computer vision locally LLMs on device 
 
 ## Computer Vision Meets LLM: Multi-Agent Swarm with RAG for Images and Videos**
