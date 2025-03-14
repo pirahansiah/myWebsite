@@ -13,6 +13,10 @@ seo_title: "CV, Resume, Advanced Computer Vision Techniques | Dr. Farshid Piraha
 seo_description: "CV, Resume, Explore cutting-edge computer vision techniques and their applications in modern technology."
 
 ---
+
+As an AI and computer vision expert with over a decade of experience collaborating with esteemed global organizations, my expertise encompasses AI research and development, machine learning, deep learning, Internet of Things (IoT), and model optimization for edge and cloud-based solutions. With a portfolio of 21 publications, three patents, and extensive practical experience in real-time computer vision applications, I have spearheaded groundbreaking projects in generative AI, video analytics, and intelligent systems. Proficient in C++, Python, OpenCV, and advanced GPU optimization, I am recognized for bridging the gap between cutting-edge research and commercially viable products.
+
+
 # Me
 - I have a total of 21 publications, including 3 patents, 2 book chapters, 6 journal articles, and 10 conference papers. My Google Scholar profile indicates 137 citations, an h-index of 7, and an i10-index of 5.
 - [Dr. Farshid Pirahansiah CV](/farshid/portfolio/publications/CV)
