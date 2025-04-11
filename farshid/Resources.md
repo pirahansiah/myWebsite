@@ -75,6 +75,7 @@ last_modified_at: 2024-10-13
 # CUDA    
 - [Numba JIT Computer Vision, ML, DL, LLM](/farshid/content/CUDA_numba_jit_tutorial)   
 - [PyCUDA Kernel Explanation: Computer Vision, ML, DL, LLM](/farshid/content/CUDA_pycuda_kernel_explanation)   
+- [Simple Setting Up a CUDA Development Environment in VS Code in Windows](/farshid/content/VSCodeCUDAwindows.md)
 # Optimization   
 - [Optimization](/farshid/content/Optimization)   
 - [Optimization ML](/farshid/content/optimizationML.png)   
