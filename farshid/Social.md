@@ -34,6 +34,23 @@ rating: 4.8
 last_modified_at: 2024-10-17
 
 ---
+
+
+- Friday, 11.04.2025
+  - Set up CUDA in VS Code with nvcc, MSVC paths, IntelliSense, and debugging via tasks.json, launch.json, and proper settings—build and run .cu files seamlessly.
+  - [Simple Setting Up a CUDA Development Environment in VS Code in Windows](/farshid/content/VSCodeCUDAwindows.md)
+
+
+
+
+
+
+
+
+
+
+
+
 {{ site.author }}
 - [Dr. Farshid Pirahansiah CV](/farshid/portfolio/publications/CV)
 - [portfolio,projects,Solutions](https://www.pirahansiah.com/farshid/portfolio/projects/Solutions)
