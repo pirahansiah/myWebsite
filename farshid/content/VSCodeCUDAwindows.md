@@ -11,6 +11,8 @@ author: "Dr. Farshid Pirahansiah"
 
 # Simple Setting Up a CUDA Development Environment in VS Code in Windows 
 
+https://www.pirahansiah.com/farshid/content/VSCodeCUDAwindows/ 
+![VSCode: C++, CUDA, Windows](VSCodeCUDAwindows.png)
 
 🚀 Setting Up a CUDA Development Environment in VS Code (Windows)
 
@@ -21,7 +23,7 @@ Below is a breakdown of how the key configuration files come together.
 ⸻
 
 🛠️ tasks.json – Automating the Build Process
-
+```
 {
   "version": "2.0.0",
   "tasks": [
@@ -46,20 +48,21 @@ Below is a breakdown of how the key configuration files come together.
     }
   ]
 }
+```
 
 This task uses nvcc to compile a CUDA file (main.cu) and links it against MSVC libraries. It’s defined as the default build task, making it easy to trigger with Ctrl + Shift + B.
 
 ⸻
 
 💡 settings.json – File Associations & Terminal Preferences
-
+```
 {
   "files.associations": {
     "*.cu": "cpp"
   },
   "terminal.integrated.shell.windows": "cmd.exe"
 }
-
+```
 This helps VS Code:
 	•	Treat .cu files as C++ for syntax highlighting, IntelliSense, and formatting.
 	•	Use the Windows Command Prompt (cmd.exe) as the integrated terminal for consistency with the Windows toolchain.
@@ -67,7 +70,7 @@ This helps VS Code:
 ⸻
 
 🧪 launch.json – Debugging the Executable
-
+```
 {
   "version": "0.2.0",
   "configurations": [
@@ -85,7 +88,7 @@ This helps VS Code:
     }
   ]
 }
-
+```
 This debug configuration will:
 	•	Automatically build the project before running (preLaunchTask)
 	•	Run the resulting main.exe in an external terminal
@@ -94,7 +97,7 @@ This debug configuration will:
 ⸻
 
 📘 c_cpp_properties.json – IntelliSense Setup
-
+```
 {
   "configurations": [
     {
@@ -114,7 +117,7 @@ This debug configuration will:
   ],
   "version": 4
 }
-
+```
 This enables:
 	•	Full IntelliSense for C++ and CUDA code
 	•	Accurate error highlighting
