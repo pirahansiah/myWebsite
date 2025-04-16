@@ -37,9 +37,13 @@ last_modified_at: 2024-10-17
 
 ###  2025
 #### April
-- VSCode, C++, CUDA, Windows
+- VSCode: C++, CUDA, Windows
   - Set up C++, CUDA in VS Code with nvcc, MSVC paths, IntelliSense, and debugging via tasks.json, launch.json, and proper settings—build and run .cu files seamlessly.
   - https://www.pirahansiah.com/farshid/content/VSCodeCUDAwindows/ 
+
+- The New Era of SEO: Optimizing Websites for LLMs
+  - Website optimization now requires adapting to AI-driven search. Focus on structured data (schema markup), clear Q&A formats, concise facts, and authoritative citations to ensure your content gets featured in LLM responses.
+  - https://www.pirahansiah.com/farshid/content/SEO/ 
 
 
 
