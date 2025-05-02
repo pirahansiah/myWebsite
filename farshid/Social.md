@@ -31,12 +31,77 @@ header:
 footer: "© 2024 Dr. Farshid Pirahansiah. All rights reserved."
 pin: false
 rating: 4.8
-last_modified_at: 2024-10-17
+last_modified_at: 2025-10-17
 
 ---
 
-###  2025
-#### April
+# 2025
+# May
+## RAG vs. CAG: Choosing the Right Approach for Your AI Projects
+```
+                    AI Text Generation Methods
+                  /                         \
+                 /                           \
+     Generation Approaches                  Emerging LLM Methods
+        /           \                       /        |       \
+       /             \                     /         |        \
+     RAG              CAG           Transformer²    MML     Mosaic
+    /   \            /   \            |              |        |
+Access to   Higher   Fast    Simple   Self-      Modular   Composite
+up-to-date  complex- response architec-adaptive components  pruning
+  info       ity     times    ture    weights    |          |
+                                                Better     Faster
+                                               reasoning  inference
+```
+
+## Ultra-Brief Summary
+Compare RAG (retrieval-based, updated info, complex) with CAG (cache-based, faster, simpler) approaches, plus three new LLM methods: self-adaptive Transformer², modular MML, and efficient Mosaic pruning.
+
+
+
+## Understanding Two Main Approaches
+
+### Retrieval-Augmented Generation (RAG)
+RAG joins a language model with a retrieval system that gets relevant documents from a knowledge base before creating responses. This works very well with large or frequently updated information sets because it can access the newest information.
+
+**Advantages:**
+* Access to up-to-date information
+* Works well with changing or large data sets
+
+**Things to consider:**
+* Might be slower due to the retrieval step
+* More complex system to build and maintain
+
+### Cache-Augmented Generation (CAG)
+CAG skips the retrieval step by loading important information into the model's context window first. This method works better with stable and limited knowledge bases, giving faster answers and simpler system design.
+
+**Advantages:**
+* Faster responses with lower waiting time
+* Simpler system design with no need for a retrieval system
+
+**Things to consider:**
+* Not as good for large or frequently changing data sets
+
+**How to choose:** Pick RAG when you need real-time access to large or changing information. Choose CAG when your data is stable and you need quick responses.
+
+## Emerging Methods in Large Language Models (LLMs)
+
+Our team has identified several new methods that improve model performance and flexibility.
+
+### 1. Transformer-Squared: Self-Adaptive LLMs
+Transformer-Squared introduces a self-adaptation system that lets LLMs adjust to new tasks in real-time by changing parts of their weight matrices. This makes models more efficient and versatile across different tasks.
+
+### 2. Modular Machine Learning (MML)
+MML breaks LLMs into smaller components, improving reasoning, factual accuracy, and understanding. By combining semantic components with logic-based decision-making, MML creates more reliable and adaptable AI systems.
+
+### 3. Mosaic: Composite Projection Pruning
+Mosaic uses a new pruning technique that combines unstructured and structured methods to make models smaller without losing performance. This allows faster processing and uses less memory, making LLMs work better on different hardware.
+
+These new developments represent important steps in making LLMs more efficient, adaptable, and useful for more applications.
+
+Please contact us if you're interested in using these cutting-edge AI solutions in your projects.
+
+# April
 - VSCode: C++, CUDA, Windows
   - Set up C++, CUDA in VS Code with nvcc, MSVC paths, IntelliSense, and debugging via tasks.json, launch.json, and proper settings—build and run .cu files seamlessly.
     - https://www.pirahansiah.com/farshid/content/VSCodeCUDAwindows/ 

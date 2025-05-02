@@ -15,4 +15,5 @@ author: "Dr. Farshid Pirahansiah"
 - Day 28: Performance Comparison: SYCL vs. CUDA — Benchmarks and Results | by Joel Joseph | Medium
 - [ollama-vision]( https://github.com/codearrangertoo/ollama-vision/blob/main/llava/Dockerfile )
 
-
+- Everything you need to plan, start, and grow your business. [Business Plan](https://www.venturekit.ai)
+- 
