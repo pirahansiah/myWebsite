@@ -39,11 +39,25 @@ last_modified_at: 2024-10-17
 #### April
 - VSCode: C++, CUDA, Windows
   - Set up C++, CUDA in VS Code with nvcc, MSVC paths, IntelliSense, and debugging via tasks.json, launch.json, and proper settings—build and run .cu files seamlessly.
-  - https://www.pirahansiah.com/farshid/content/VSCodeCUDAwindows/ 
+    - https://www.pirahansiah.com/farshid/content/VSCodeCUDAwindows/ 
 
 - The New Era of SEO: Optimizing Websites for LLMs
   - Website optimization now requires adapting to AI-driven search. Focus on structured data (schema markup), clear Q&A formats, concise facts, and authoritative citations to ensure your content gets featured in LLM responses.
-  - https://www.pirahansiah.com/farshid/content/SEO/ 
+    - https://www.pirahansiah.com/farshid/content/SEO/ 
+
+- The All-Local Video Avatar Generator
+  - Create talking video avatars locally using Ollama LLM, Piper TTS, and Wav2Lip. No internet needed - generate scripts, audio, and lip-synced videos entirely on your device.
+    - https://www.pirahansiah.com/farshid/content/Avatar/ 
+
+- Computer Vision Coaching and Tutoring Service
+  - Expert computer vision coach offering personalized online tutoring from fundamentals to advanced techniques. Learn image processing, object detection, and 3D vision with hands-on guidance.
+    - https://www.pirahansiah.com/farshid/content/coaching/ 
+
+
+- 3D
+  - Converting 2D depth maps to 3D point clouds in real-time! Tracking motion trajectories & visualizing spatial data opens new frontiers for #3D interfaces. Physical meets digital at 60fps! #ComputerVision #DepthSensing.
+    - https://www.pirahansiah.com/farshid/content/3D/ 
+
 
 
 
