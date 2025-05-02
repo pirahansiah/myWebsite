@@ -4415,13 +4415,6 @@ Put yourself in the shoes of a VC, and you'll create a pitch deck that works as 
 
 
 
-
-
-
-
-
-I've thoroughly processed your document about startup founders in Germany. I'll convert it into simple B1 English while restructuring it according to your guidelines.
-
 ## Mind Map Visualization
 
 ```

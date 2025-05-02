@@ -1,300 +1,152 @@
 ---
-layout: default
-title: Home
+
+layout: default  
+title: Home  
 ---
-# Farshid PirahanSiah
 
-## Supporting Startups in Berlin
+# Dr. Farshid Pirahansiah
 
-As part of my commitment to fostering innovation, I am offering **one free on-site consultation session** to startups in Berlin. This session focuses on **computer vision** and **large language model (LLM)** solutions, tailored to help startups kickstart their AI and machine learning projects.
+## Supporting Startups in Berlin/Heidelberg/Frankfurt/Stuttgart
 
-### How I Can Help:
-- **Computer Vision Solutions**: From object detection to video analytics, I can guide startups in implementing state-of-the-art vision-based systems.
-- **LLM Applications**: Whether it's chatbots, document summarization, or multimodal AI, I provide actionable insights to integrate LLMs effectively into your workflows.
-- **Strategy and Roadmap**: I help you identify potential AI-driven opportunities and create a roadmap for successful implementation.
-  
+As part of my commitment to fostering innovation, I offer **one free on-site consultation session** to startups in Berlin/Heidelberg/Frankfurt/Stuttgart. This session focuses on **computer vision** and **large language model (LLM)** solutions, tailored to help startups kickstart their AI and machine learning projects.
+
+### How I Can Help
+- **Computer Vision Solutions**: From object detection to video analytics, I help implement cutting-edge vision systems.
+- **LLM Applications**: I advise on chatbots, summarization, and multimodal AI to integrate LLMs effectively.
+- **AI Strategy and Roadmap**: I identify opportunities and design a roadmap for successful AI implementation.
+
 **Eligibility:**  
-- Berlin-based startups.
-- First session is on-site and free of charge.
+- Berlin/Heidelberg/Frankfurt/Stuttgart based startups  
+- First session is free and on-site
 
-Interested startups can reach out via [LinkedIn](https://www.linkedin.com/in/pirahansiah/)
+Reach out via [LinkedIn](https://www.linkedin.com/in/pirahansiah/)
 
 Let’s build the future of AI together!
 
-# Farshid Pirahansiah
-
-I am an **Image Processing R&D Specialist** and **LLM Multi-Agent Swarm Architecture Systems Engineer Developer** with extensive experience in designing and implementing **distributed AI systems** and **multi-agent frameworks**. My expertise lies in leveraging **large language models (LLMs)** to create scalable, autonomous, and collaborative architectures for real-world applications. With over a decade of experience in **computer vision**, **machine learning**, and **AI development**, I excel in deploying innovative solutions for complex problems in **IoT**, **robotics**, **medical imaging**, and **cloud technologies**.
-
-### My Expertise:
-- **Image Processing**: Advanced techniques for analysis, enhancement, and real-time implementation.
-- **Multi-Agent Systems Design**: Architecting LLM-powered distributed systems for intelligent collaboration.
-- **Swarm Intelligence Applications**: Implementing decentralized, emergent behavior models inspired by natural systems.
-- **LLM Integration**: End-to-end development of multimodal AI solutions, from concept to deployment.
-- **Optimization and Scalability**: Expertise in edge computing, on-device AI training, and cloud-based architectures.
-- **R&D Leadership**: Driving innovation in AI and computer vision through collaborative research and development.
-
-### How I Can Help:
-- **Image Processing Solutions**: Custom algorithms for medical imaging, robotics, and advanced video analytics.
-- **LLM Applications**: Integration of cutting-edge language models for workflows such as chatbots, summarization, and intelligent automation.
-- **Swarm Architecture Development**: Creating robust frameworks for distributed AI systems leveraging multi-agent collaboration.
-- **AI Strategy and Roadmap**: Helping organizations identify AI-driven opportunities and execute actionable plans for growth.
-
-### Let’s Collaborate:
-I am passionate about pushing the boundaries of AI and collaborating on innovative projects. Feel free to connect via [LinkedIn](https://www.linkedin.com/in/pirahansiah/) or explore my work on [GitHub](https://github.com/pirahansiah).
-
+---
 
 ## About Me
 
-I am an accomplished Research Engineer with over 7 years of experience, including a PhD in Computer Science and a Bachelor's in Software Engineering. My career has been dedicated to the fields of Computer Vision, Machine Learning, and ML Operations. I have a proven track record of transforming complex algorithms into production-ready applications, utilizing cloud technologies and containerization, and optimizing ML pipelines and infrastructure in fast-paced environments.
+I am an **Image Processing R&D Specialist** and **LLM Multi-Agent Swarm Architecture Engineer** with deep expertise in distributed AI systems and multi-agent frameworks. I specialize in leveraging large language models (LLMs) to develop scalable, autonomous, and collaborative systems. My experience spans over a decade in **computer vision**, **machine learning**, and AI development.
 
-With expertise in Machine Learning, IoT, Medical Imaging, and Robotics, I am proficient in designing image analysis algorithms and have made significant contributions to patents, books, and research papers. As a Technical Lead and Research Engineer, I have collaborated with stakeholders to define and achieve KPIs, managed cross-functional team projects, and deployed scalable AI solutions across cities and cloud platforms.
+### My Expertise
+- **Image Processing**: Advanced techniques for real-time and complex analysis.
+- **Multi-Agent Systems**: Distributed LLM-based intelligent collaboration.
+- **Swarm Intelligence**: Decentralized models inspired by nature.
+- **LLM Integration**: Multimodal AI from concept to deployment.
+- **Optimization**: On-device training, edge computing, and cloud integration.
+- **R&D Leadership**: Driving innovation in applied AI.
 
-## Experience
+### Services Offered
+- Image analysis for medical, robotics, and video systems
+- LLM-based intelligent applications and automation
+- Swarm architecture design for distributed AI
+- Strategy and development roadmaps for AI adoption
 
-- **10+ years:** PhD, R&D in Computer Vision, C++
-- **7+ years:** Machine Learning/Deep Learning, Python
-- **5+ years:** IoT, Model Optimization on Edge, Robotics, Medical Image Processing, Cloud Solutions (AWS)
-- **3+ years:** Technical Lead, Global Collaboration, Development Leadership
-- **1+ years:** LLM, Multimodal LLM, Vision-Based LLM, RAG, Langchain, OpenAI API
-
-## Core Skills
-
-- **Computer Vision and AI:** Advanced expertise in image processing, deep learning model development, and application deployment.
-- **Project Management:** Experienced in leading complex, cross-functional projects internationally.
-- **Technological Proficiency:** Skilled in **OpenCV**, **NumPy**, **Pandas**, **Matplotlib**, **PyTorch**, **TensorFlow**, **Docker**, and **AWS**.
-
-## Technical Skills
-
-- **Languages:** Python, C++, MATLAB
-- **Frameworks:** TensorFlow, PyTorch, Keras
-- **Tools:** Docker, Kubernetes, AWS, Git, Datadog, MLflow
-- **Operating Systems:** Windows, MacOS, Linux
-- **Containerization:** Docker
-- **Cloud Computing:** Amazon Web Services (AWS)
-- **Hardware Architectures:** x86, Apple Silicon, ARM, Jetson Nano, Raspberry Pi
-- **Others:** CI/CD, GitHub Actions
-
-## Leadership and Collaboration
-
-Strong teamwork and leadership capabilities have enabled me to lead international projects that exceed business expectations, driving growth and technological innovation in computer vision and machine learning.
+### Connect With Me
+- [LinkedIn](https://www.linkedin.com/in/pirahansiah/)
+- [GitHub](https://github.com/pirahansiah)
 
 ---
 
-Feel free to connect with me through [LinkedIn](https://www.linkedin.com/in/pirahansiah/) or follow my updates on [GitHub](https://github.com/pirahansiah). I am always interested in discussing potential opportunities or collaborations in computer vision and AI-related projects.
+## Experience
 
+- **10+ years**: PhD-level R&D in Computer Vision (C++)
+- **7+ years**: Machine Learning, Deep Learning (Python)
+- **5+ years**: IoT, Robotics, Medical Imaging, AWS, Edge AI
+- **3+ years**: Technical Leadership, Global Projects
+- **1+ year**: LLMs, Multimodal AI, RAG, LangChain, OpenAI API
 
+---
+
+## Core & Technical Skills
+
+- **AI/Computer Vision**: Image processing, model design, deployment
+- **Project Leadership**: Leading international, cross-functional teams
+- **Tech Stack**:  
+  - **Languages**: Python, C++, MATLAB  
+  - **Frameworks**: PyTorch, TensorFlow, Keras  
+  - **Tools**: Docker, Kubernetes, MLflow, Datadog  
+  - **Cloud**: AWS  
+  - **Hardware**: x86, ARM, Jetson, Raspberry Pi  
+  - **CI/CD**: GitHub Actions  
+
+---
 
 ## Patents and Publications
 
+- [My Publications](/farshid/portfolio/publications/CV)
 
-[Dr. Farshid Pirahansiah List of all publications](/farshid/portfolio/publications/CV)
+### Patents
+- **Face Image Augmentation**, WO2021060971A1, 2021  
+- **Moving Vehicle Detection**, WO2021107761, 2021  
+- **Facial Analysis for Advertising**, WO2020141969A2, 2020  
 
-- **Patents**: A METHOD FOR AUGMENTING A PLURALITY OF FACE IMAGES - 2021 
-    - The present invention relates to a method for increasing data for face analysis in video surveillance. 
-    - WO2021060971A1   
-- **Patents**: A METHOD FOR DETECTING A MOVING VEHICLE - 2021 
-    - The present invention relates to a method for detecting a moving vehicle.
-    - WO2021107761 
-- **Patents**: System and method for providing advertisement contents based on facial analysis - 2020 
-    - Invented an algorithm, methods, and system for advanced facial attribute detection, leading to improvements in advertising systems.
-    - WO2020141969A2 WIPO (PCT) 
-- **Book Chapter**: Camera Calibration and Video Stabilization for Robot Localization, Springer, 2021.
-- Authored over 16 publications in books, journals, and conferences globally.
-- My Google Scholar citation metrics are: Total Citations  **141**, h-index  **7**, i10-index  **6**
+### Books & Chapters
+- *Camera Calibration and Video Stabilization for Robot Localization*, Springer, 2021
 
+### Research Impact
+- **Citations**: 141+  
+- **h-index**: 7  
+- **i10-index**: 6
 
+---
 
-- [My podcast](https://podcasters.spotify.com/pod/show/pirahansiah)
-- [LinkedIn Group over 55K members](https://www.linkedin.com/groups/10320678/)
-- [Facebook Group 15K](https://www.facebook.com/groups/computervisiondeeplearning)
+## Featured Projects on GitHub
 
-### Professional Profiles and Networks
+### 1. [BI4CV](https://github.com/pirahansiah/BI4CV)  
+Generative AI & Computer Vision for business insights.  
+- Advanced visualization, dashboards, anomaly detection, local LLM support
 
-- [Stack Overflow](https://stackoverflow.com/users/3533188/farshid-pirahansiah)
-- [GitHub](https://github.com/pirahansiah)
-- [Tiziran](https://www.tiziran.com/)
-- [Personal Website](https://pirahansiah.com/)
+### 2. [3D Multi-Camera Calibration](https://github.com/pirahansiah/pirahansiah/tree/master/CV_metaverse/3D_multi_camera_calibration)  
+Camera geometry calibration for robotics and 3D scene reconstruction.
 
-### Coding Challenges and Competitions
-- [HackerRank](https://www.hackerrank.com/profile/pirahansiah)
-- [LeetCode](https://leetcode.com/pirahansiah/)
+### 3. [Modern C++ for Image Processing](https://github.com/pirahansiah/cvtest)  
+Cutting-edge C++23 code examples for image processing with OpenCV.
 
-### Academic Contributions and Publications
-- [Google Scholar](https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en)
-- [ScienceOpen Collection](https://www.scienceopen.com/collection/da288fa0-3d52-46dc-9e07-73dfc597dfb8)
+### 4. [LLM Tools Collection](https://www.pirahansiah.com/farshid/guides/LLM/)  
+Scripts for KaggleHub, Gemma, Langchain, PyQt5 GUI, MLflow, Kubernetes, etc.
 
-### Project Repositories and Code Sharing
-- [Hugging Face Spaces](https://huggingface.co/spaces/pirahansiah/ComputerVision)
-- [Kaggle](https://www.kaggle.com/pirahansiah)
-- [NuGet](https://www.nuget.org/profiles/Farshid_Pirahansiah)
-- [PyPI](https://pypi.org/project/pirahansiah/)
-- [Docker Hub](https://hub.docker.com/u/pirahansiah)
+---
 
-### Social Media and Community Engagement
-- [Twitter](https://twitter.com/pirahansiah)
+## Networks & Platforms
 
-- [Reddit](https://www.reddit.com/user/pirahansiah/)
+- [LinkedIn Group – 55K+ Members](https://www.linkedin.com/groups/10320678/)
+- [Facebook Group – 15K+](https://www.facebook.com/groups/computervisiondeeplearning)
+- [Podcast](https://podcasters.spotify.com/pirahansiah)
+- [YouTube Channel](https://www.youtube.com/@ComputerVisionDeepLearning)
+- [Medium Blog](https://medium.com/@pirahansiah)
 - [Telegram](https://t.me/computer_vision_llm)
+- [Reddit](https://www.reddit.com/user/pirahansiah)
 - [Mastodon](https://mastodon.social/@pirahansiah)
+- [TikTok](https://www.tiktok.com/@pirahansiah)
 - [Instagram](https://www.instagram.com/computer_vision_deep_learning/)
 - [WhatsApp Group](https://chat.whatsapp.com/COguUhOlNprFIjjaHTRppW)
-- [TikTok](https://www.tiktok.com/@pirahansiah)
 
-### Content Creation and Sharing
-- [Medium Blog](https://medium.com/@pirahansiah)
-- [YouTube Channel](https://www.youtube.com/@ComputerVisionDeepLearning)
+---
 
-### Learning and Development Platforms
-- [GPT Store - Creator Profile](https://gptstore.ai/creators/user-bXM5WI8Cx4fppw1EEywZj2ZV)
-- [GPT Store - GPTs](https://gptstore.ai/gpts/x3pf_hdpR6-computer-vision-developer)
+## Developer Profiles
+
+- [GitHub](https://github.com/pirahansiah)
+- [Stack Overflow](https://stackoverflow.com/users/3533188/farshid-pirahansiah)
+- [Kaggle](https://www.kaggle.com/pirahansiah)
+- [Hugging Face](https://huggingface.co/spaces/pirahansiah/ComputerVision)
+- [PyPI](https://pypi.org/project/pirahansiah/)
+- [Docker Hub](https://hub.docker.com/u/pirahansiah)
+- [NuGet](https://www.nuget.org/profiles/Farshid_Pirahansiah)
+- [GPT Store](https://gptstore.ai/creators/user-bXM5WI8Cx4fppw1EEywZj2ZV)
 - [Anaconda Cloud](https://anaconda.cloud/share/notebooks/b3402347-efbb-4a92-b754-fe8195b8ad63/overview)
 
-### Reading and Literature
+---
+
+## Academic Profiles
+
+- [Google Scholar](https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en)
+- [ScienceOpen Collection](https://www.scienceopen.com/collection/da288fa0-3d52-46dc-9e07-73dfc597dfb8)
 - [Goodreads](http://goodreads.com/pirahansiah)
 
+---
 
-## List of My GitHub Repositories:
-
-### 1. BI4CV
-
-##### Business Intelligence (BI) tools for media content (Image/Video) - Generative AI Business Intelligence Computer Vision (BI4CV)
-
-
-**Repository Link**: [BI4CV](https://github.com/pirahansiah/BI4CV)
-
-**Description**: This project is dedicated to revolutionizing how businesses utilize image and video data for insightful Business Intelligence (BI). Our tools are designed to enhance data storytelling through advanced visualizations, interactive dashboards, and comprehensive reports. Our system smartly selects the optimal visual representations based on the complexity of your dataset, making analytics accessible to all users.
-
-**Key Features**:
-- Advanced Visualization Tools
-- Smart Dashboard Creation
-- Anomaly Detection
-- Local LLM Integration
-- User-Friendly Interface
-
-Update: 2024 - May
-- Add 8 Blind/Referenceless Image Quality methods
-- Add CI/CD Github Action
-- Add Documents for the project plan
-
-
-### 2. 3D Multi-Camera Calibration
-- **Repository Link**: [3D Multi-Camera Calibration](https://github.com/pirahansiah/pirahansiah/tree/master/CV_metaverse/3D_multi_camera_calibration)
-- **Overview**: This project focuses on geometric camera calibration techniques to estimate the parameters of a lens and image sensor. Such calibration is crucial for applications in machine vision, robotics, navigation systems, and 3-D scene reconstruction.
-- **Research Links**:
-  - [Camera calibration for multi-modal robot vision based on image quality assessment](https://www.researchgate.net/publication/288174690_Camera_calibration_for_multi-modal_robot_vision_based_on_image_quality_assessment)
-  - [Pattern image significance for camera calibration](https://ieeexplore.ieee.org/document/8305440)
-  - [Camera Calibration and Video Stabilization Framework for Robot Localization](https://link.springer.com/chapter/10.1007/978-3-030-74540-0_12)
-
-### 3. Advanced Programming with Modern C++ 23 for Image Processing
-- **Repository Link**: [C++ Image Processing](https://github.com/pirahansiah/cvtest)
-- **Functionality**: This repository contains advanced C++ code examples for image processing tasks. The main function, `int func_image_info(cv::Mat src, cv::Mat &dst)`, provides detailed information about an image including size, histogram, and more.
-- **Additional Resources**: [YouTube tutorial on OpenCV](https://www.youtube.com/watch?v=gK1ybsWOqhs)
-
-### 3. LLM
-
-The collection of Python scripts provides a range of functionalities: one script automates logging into KaggleHub and setting up a pretrained Gemma model for chat simulations, another builds a GUI for real-time OpenCV function testing using PyQt5, while a third manages an asynchronous chat application with aiohttp. Additionally, there's a script integrating machine learning models for data analysis using advanced libraries like langchain, another launching AI-powered chat applications, and one demonstrating interactions with natural language understanding models on HuggingFace using LLMware. There's also a script using MLflow to manage the machine learning lifecycle and another detailing the local setup of Kubernetes via Terraform, showcasing infrastructure management and resource cleanup. These scripts employ a variety of technologies including Python, Gemma, PyQt5, OpenCV, aiohttp, asyncio, langchain, transformers, MLflow, Kubernetes, Terraform, and Docker, useful for tasks ranging from machine learning to software deployment. #MachineLearning #SoftwareDevelopment
-
-
-
-
-  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/1gemma-test.py)
-    - This script logs into KaggleHub, downloads a pretrained Gemma model and tokenizer, sets up the model, and enables interactive chat simulation. ## Libraries: os, sys, torch, kagglehub, gemma_pytorch
-  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/FP.py)
-    - This Python script uses PyQt5 to create a GUI application for real-time testing of OpenCV functions on images. ## Libraries: sys, PyQt5, cv2, numpy, screeninfo
-  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/chatWithLLMs.py)
-    - his Python script defines an asynchronous chat application that uses the aiohttp library to interact with a chat model API, handling concurrency with semaphores and maintaining conversation history. ## Libraries: asyncio, aiohttp, collections, json, re
-  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/LLMOPs.ipynb)
-    - LLMOps & RAG: This Python script integrates various machine learning models and APIs to process financial data, interactively analyze text, images, and tables, and generate structured outputs. It employs libraries like langchain, transformers, and torch, alongside environmental variables for secure API key handling.
-  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/OpenRouter.py)
-    - Launch your chat app with OpenRouter's AI! 🚀 Utilize asyncio and aiohttp for seamless conversations and manage interactions with a smart queue. Dive into the future of chat applications now!"
-  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/RAG_using_CPU-based_(No-GPU_required)_Hugging_Face_Models_with_LLMWare_on_your_laptop.py)
-  
-    - This Python script demonstrates how to use the LLMware library to interact with various models hosted on HuggingFace for natural language understanding tasks. It performs a specific query about an invoice using a provided context and compares the response from the model with a pre-defined answer. The script uses time measurement to track model loading and processing times.
-  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/mlflow/test-mlflow.py)
-    -  This Python script uses MLflow, a platform for managing the machine learning lifecycle, including experimentation, reproducibility, and deployment. It demonstrates how to log parameters, metrics, and artifacts within an MLflow experiment. Specifically, it logs a parameter named "param1" with a value of 5, logs multiple values for a metric called "foo," and records a markdown file as an artifact.
-
-  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/Kubernetes_Terraform/Kubernetes_Terraform.py)
-
-    -This script outlines the setup and use of Kubernetes on a local machine using Terraform, along with tools like Docker and Kubernetes command-line interface (CLI) utilities, all managed through Homebrew on macOS. It demonstrates the installation of required software, setting up Kubernetes with Terraform, querying the Kubernetes cluster, and visualizing Terraform plans. Finally, it guides through cleaning up resources with Terraform. This sequence ensures a practical approach to infrastructure as code (IaC) development and testing in a controlled, local environment.
-
-
-
--llamafile
-- LLaMA
-- Ollama
-- LLava
-- OpenELM
-
-
-## Generative AI Development
-
-### On-Device Training & Edge Inference
-- **Optimization**: On-device training
-- **Inference**: Real-time LLMs
-- **Configuration**: LLM tuning
-- **Resources**: Power & speed balance
-
-### End-to-End Solutions
-- **Cloud-Based**: AI pipeline development
-- **Deployment**: Data to scaling
-
-### Multimodal LLMs
-- **Integration**: Image & video processing
-
-### Large Vision Models (LVMs)
-- **Optimization**: For edge computing
-- **Innovations**: IoT responsiveness
-
-## Technical Expertise in Large Language Models (LLMs) and AI Development:
-
-- **Multimodal RAG Systems**: Led the development of Retriever-Augmented Generation (RAG) applications integrating text, image, and structured data, enhancing multimodal interaction capabilities.
-- **Advanced AI Pipelines**: Engineered end-to-end solutions for generative AI, leveraging cloud-based architectures to deploy scalable and efficient AI systems.
-- **Deep Learning Implementation**: Proficient in implementing complex deep learning models, with extensive use of libraries such as PyTorch, OpenAI's GPT models, and langchain for sophisticated text and image processing tasks.
-- **Data Handling and Processing**: Experienced in manipulating large-scale datasets, implementing custom extraction and partition techniques for PDF data integration, utilizing Python's robust libraries like PyPDF2 and pytesseract for OCR functionalities.
-- **Optimization Techniques**: Applied advanced machine learning techniques including hyper-parameter tuning, quantization, and model compression to enhance performance and efficiency on target hardware platforms, particularly in edge computing scenarios.
-- **AI Model Deployment**: Skilled in deploying AI models using Docker, managing environments with dependencies including langchain, unstructured, PyPDF2, and various OpenAI services, ensuring smooth transition from development to production.
-- **Research and Development**: Authored comprehensive documentation and guides, effectively summarizing research findings and technical processes, demonstrated through detailed GitHub repositories and Jupyter notebooks.
-- **AI-Powered Summarization**: Developed capabilities for summarizing diverse data elements (text, tables, images) using AI-driven approaches, significantly improving information accessibility and user engagement.
-- **Community Contribution and Collaboration**: Actively engaged in community forums and collaborative projects, contributing to open-source projects and providing innovative solutions to complex problems in the AI space.
-
-
-I am eager to bring my expertise to a dynamic team in Berlin, where I can contribute to groundbreaking projects and further advance the field of artificial intelligence.
-
-## My works on LLMs:
-- Image Processing GPT
-  - GPTs: [Computer Vision Developer](https://chat.openai.com/g/g-vHELtCqJq-computer-vision-developer)
-  - Expert in Python, OpenCV for image processing and computer vision applications.  
-- MindMap about LLMs & LLMOps
-  - [My Note LLMs](https://pirahansiah.com)
-- Code for chat app with OpenRouter's AI! 🚀 Utilize asyncio and aiohttp for seamless conversations and manage interactions with a smart queue. Dive into the future of chat applications now!"
-  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/OpenRouter.py)
-- fine-tune LLMs
-  - [Source Code](https://www.pirahansiah.com/farshid/guides/LLM/LLMOPs.ipynb)
-- Microsoft AI Lab: RAG Workflow with Azure AI
-  - Lab Focus: Hands-on RAG workflow development using Azure AI Studio and Prompt Flow.
-  - Skills Acquired: Mastery in LLMOps, Azure AI Studio usage, and Prompt Flow integration.
-  - Tools Used: GitHub Codespaces, Visual Studio Code, Azure AI & ML Studio, Azure Portal.
-  - Outcome: Successfully developed and deployed "Contoso Chat", enhancing skills in scalable AI solution development.  
-  - Multimodal Conversational Interfaces with GPT and Vision AI
-  -  
-
-
-### LLM and Generative AI Focused Courses
-- Hands-On Generative AI with Diffusion Models: Building Real-World Applications
-- Generative AI and LLMOps: Building Blocks and Applications
-- Advanced AI: Transformers for Computer Vision
-- Large Language Models (LLM) · Generative AI
-- MLOps Tools: MLflow and Hugging Face
-- GGUF-Quantization-of-any-LLM for IoT devices 
-- ollama pull llama3:8b
-     
-
-
-### Tools and models I use for LLM
-- OpenAI API
-- langchain
-- Hugging face
-- Ollama
-- LM Studio
-- [open-interpreter](https://github.com/OpenInterpreter/open-interpreter)
-- [LLaVA: Large Language and Vision Assistant](https://llava-vl.github.io)
+<p style="text-align: center;">
+  <a href="/privacy.html">Privacy Policy</a>
+</p>
