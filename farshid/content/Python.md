@@ -9,67 +9,27 @@ excerpt: "Dive deep into the latest advancements in computer vision, including d
 author: "Dr. Farshid Pirahansiah"
 ---
 # Python
-<img src="/farshid/content/python-configuration-management.png" alt="Python Configuration Management" style="max-width: 100%; height: auto;">
-[Python Configuration Management](#python-configuration-management)
+[Python](https://www.pirahansiah.com/farshid/content/Python)
+A comparison of built-in and third-party configuration options for Python projects
+This guide compares Python’s native configuration methods and popular third-party libraries, helping developers choose the best fit for their project’s needs.
+#Python #DevTools #Configuration #ConfigFiles #PythonTips #OpenSource #MachineLearning #WebDev #FastAP
+
+- Python Configuration Management
+    
+    <img src="/farshid/content/python-configuration-management.png" alt="Python Configuration Management" style="max-width: 100%; height: auto;">
+
+    [Python Configuration Management](#python-configuration-management)
+
+
+- Tips and tricks python scale up projects 
+
+    [Ttips](#tips)
 
 
 
 
 
 
-more *.md
-
-### mmap -> optimization memory usage best 
-
-
-
-df =pd.series()
-all=pd.dataFrame()
-df['a']=x
-all=pd.Concat([all, pd.DataFrame(df).T])
-all.to_csv('fn.csv', index=false, na_rep="NULL')
-
-def pow(*arge):
-    x,y,z=args
-
-def pow (x,y,z=None,/): #The forward slash (/) ensures you must call it like pow(2, 3) and not pow(x=2, y=3).
-
-
-*args
-**kwargs
-/ positional
-
-
-def timer(func):
-    def wrapper(*args, ** kwargs):
-        start_t=time.time()
-        result=func(*args,**kwargs)
-        end_t=time.time()
-        print(f" function {func.__name__!r} took: {end_t - start_t: 0.4f} sec")
-        return result
-    return wrapper
-
-@functools.cash
-@dataclass
-
-
-
-from collections import deque
-stk=deque()
-stk.append('asadfas')
-stk.pop() 
-- o(n)
-stk=[]
-stk.pop().rstk[-1]
-
-collections import lifo
-deque()
-appendLeft(5)
-pop
-
-
-
----
 
 # Python Configuration Management
 
@@ -146,4 +106,66 @@ OmegaConf
 	•	🌊 YAML-based hierarchical config
 	•	✅ Designed for deep learning projects
 
-#Python #DevTools #Configuration #ConfigFiles #PythonTips #OpenSource #MachineLearning #WebDev #FastAP
+
+
+
+
+---
+# tips
+
+
+### mmap -> optimization memory usage best 
+
+
+```
+df =pd.series()
+all=pd.dataFrame()
+df['a']=x
+all=pd.Concat([all, pd.DataFrame(df).T])
+all.to_csv('fn.csv', index=false, na_rep="NULL')
+
+def pow(*arge):
+    x,y,z=args
+
+def pow (x,y,z=None,/): #The forward slash (/) ensures you must call it like pow(2, 3) and not pow(x=2, y=3).
+
+
+*args
+**kwargs
+/ positional
+
+
+def timer(func):
+    def wrapper(*args, ** kwargs):
+        start_t=time.time()
+        result=func(*args,**kwargs)
+        end_t=time.time()
+        print(f" function {func.__name__!r} took: {end_t - start_t: 0.4f} sec")
+        return result
+    return wrapper
+
+@functools.cash
+@dataclass
+
+
+
+from collections import deque
+stk=deque()
+stk.append('asadfas')
+stk.pop() 
+- o(n)
+stk=[]
+stk.pop().rstk[-1]
+
+collections import lifo
+deque()
+appendLeft(5)
+pop
+```
+
+
+---
+
+```
+more *.md
+```
