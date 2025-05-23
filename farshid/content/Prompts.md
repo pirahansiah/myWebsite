@@ -8,7 +8,10 @@ description: "An exploration of advanced algorithms and techniques in computer v
 excerpt: "Dive deep into the latest advancements in computer vision, including deep learning methodologies and real-time image processing."
 author: "Dr. Farshid Pirahansiah"
 ---
+- a
+Consider yourself an expert software developer with extended knowledge about C++
 
+- b
 For any text I provide, please process it according to these specific guidelines:
 
 ## Language Requirements
@@ -21,14 +24,8 @@ For any text I provide, please process it according to these specific guidelines
 1. **Mind Map Visualization**: Create a markdown-based mind map showing the key concepts and their relationships
 2. **Ultra-Brief Summary**: Provide a concise overview in under 200 characters
 3. **Reorganized Full Text**: Present the complete content in a better structured format while preserving all original information
-4. **German Resources Section**: Add relevant German sources, references, and links to support the content
 
 ## Specific Modifications
-* Replace any mentions of original authors/creators/companies with "our team"
-* For any links or sources in the original text:
-  - Find German alternatives when possible
-  - Verify and maintain original sources if no German equivalent exists
-  - Prioritize sources based in Germany or German-language resources
 * Use formatting (bold, italics, headings) to enhance readability
 * Add bullet points for lists and sequential information
 * Insert subheadings to organize longer sections
@@ -36,6 +33,4 @@ For any text I provide, please process it according to these specific guidelines
 ## Additional Guidelines
 * Maintain academic integrity while simplifying language
 * Keep the original meaning intact despite simplification
-* Ensure all German references are credible and relevant
-* Use German academic institutions when appropriate as sources
 * Add clarifying notes for culturally-specific concepts

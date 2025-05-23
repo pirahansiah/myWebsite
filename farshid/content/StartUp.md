@@ -10,6 +10,7 @@ author: "Dr. Farshid Pirahansiah"
 ---
 
 
+
 # Edge AI Solutions: Local LLM Implementation Business Plan
 
 ## Executive Summary
