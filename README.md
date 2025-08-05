@@ -1,10 +1,20 @@
 # Farshid PirahanSiah
 
-I am currently seeking opportunities in **computer vision**.
+I am currently seeking opportunities in **Computer Vision**, with a particular interest in the following areas:
+
+* **Medical Image Processing**
+* **Robotics**
+* **Internet of Things (IoT)**
+* **Embedded Systems**
+* **Multi-camera, Multi-object Tracking** (real-time, embedded implementation with calibration)
+* **Point Cloud Processing**
+* **3D Reconstruction**
+
+
 
 ## About Me
 
-I am an accomplished Research Engineer with over 7 years of experience, including a PhD in Computer Science and a Bachelor's in Software Engineering. My career has been dedicated to the fields of Computer Vision, Machine Learning, and ML Operations. I have a proven track record of transforming complex algorithms into production-ready applications, utilizing cloud technologies and containerization, and optimizing ML pipelines and infrastructure in fast-paced environments.
+I am an accomplished Research Engineer with over 10 years of experience, including a PhD in Computer Science and a Bachelor's in Software Engineering. My career has been dedicated to the fields of Computer Vision, Machine Learning, and ML Operations. I have a proven track record of transforming complex algorithms into production-ready applications, utilizing cloud technologies and containerization, and optimizing ML pipelines and infrastructure in fast-paced environments.
 
 With expertise in Machine Learning, IoT, Medical Imaging, and Robotics, I am proficient in designing image analysis algorithms and have made significant contributions to patents, books, and research papers. As a Technical Lead and Research Engineer, I have collaborated with stakeholders to define and achieve KPIs, managed cross-functional team projects, and deployed scalable AI solutions across cities and cloud platforms.
 
