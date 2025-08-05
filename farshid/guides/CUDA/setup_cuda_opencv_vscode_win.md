@@ -229,7 +229,7 @@ Struggling with VSCode not hitting breakpoints in your CUDA project? Add -g -G t
 
 Download the .vscode files:
 
-- [c_cpp_properties.json]((/farshid/guides/CUDA/c_cpp_properties.json)
-- [launch.json]((/farshid/guides/CUDA/launch.json)
-- [setting.json]((/farshid/guides/CUDA/setting.json)
-- [tasks.json]((/farshid/guides/CUDA/tasks.json)
+- [c_cpp_properties.json](/farshid/guides/CUDA/c_cpp_properties.json)
+- [launch.json](/farshid/guides/CUDA/launch.json)
+- [setting.json](/farshid/guides/CUDA/setting.json)
+- [tasks.json](/farshid/guides/CUDA/tasks.json)
