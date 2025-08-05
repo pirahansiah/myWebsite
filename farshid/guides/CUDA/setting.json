@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.yrf": "json",
+        "*.rpx": "xml",
+        "*.stl": "json",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "*.cu": "cpp"
+    },
+    "terminal.integrated.shell.windows": "cmd.exe"
+}

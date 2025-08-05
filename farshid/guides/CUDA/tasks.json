@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build CUDA Project",
+            "type": "shell",
+            "command": "nvcc",
+            "args": [
+                "-g",
+                "-G",
+                "-I",
+                "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\include",
+                "-I",
+                "${workspaceFolder}\\external\\OpenCV",
+                "-L",
+                "C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\lib\\x64",
+                "-L",
+                "${workspaceFolder}\\external\\OpenCV",
+                "-Xlinker",
+                "user32.lib",
+                "-lopencv_world4130",
+                "${workspaceFolder}/main.cu",
+                "-o",
+                "${workspaceFolder}/main.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

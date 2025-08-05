@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Build and Run CUDA",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "preLaunchTask": "Build CUDA Project",
+            "program": "${workspaceFolder}/main.exe",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "${env:PATH};${workspaceFolder}\\external\\OpenCV"
+                }
+            ],
+            "console": "externalTerminal"
+        }
+    ]
+}
