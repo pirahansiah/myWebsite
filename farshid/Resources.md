@@ -72,11 +72,14 @@ last_modified_at: 2024-10-13
 # LLM     
   - [Orchestrating Agents](/farshid/content/Mind_Map_Orchestrating_Agents)   
   - [Dic LLM](/farshid/content/Mind_Map_Advanced_LLM_Concepts)      
+
 # CUDA    
 - [Numba JIT Computer Vision, ML, DL, LLM](/farshid/content/CUDA_numba_jit_tutorial)   
 - [PyCUDA Kernel Explanation: Computer Vision, ML, DL, LLM](/farshid/content/CUDA_pycuda_kernel_explanation)   
 - [Simple Setting Up a CUDA Development Environment in VS Code in Windows](/farshid/content/VSCodeCUDAwindows)
-  - CUDA & OPENCV [cuda_opencv](/farshid/guides/CUDA/setup_cuda_opencv_vscode_win)
+
+  - [ CUDA & OPENCV ](/farshid/guides/CUDA/setup_cuda_opencv_vscode_win)
+
 # Optimization   
 - [Optimization](/farshid/content/Optimization)   
 - [Optimization ML](/farshid/content/optimizationML.png)   

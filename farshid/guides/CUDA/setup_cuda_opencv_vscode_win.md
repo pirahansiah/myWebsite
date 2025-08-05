@@ -4,6 +4,7 @@
 Modern CUDA development on Windows with VS Code can be a little tricky to set up—but once you’ve nailed the right configuration, you’ll enjoy full IntelliSense, one-click builds, and integrated debugging. Below you’ll find a step-by-step rundown plus the complete `.vscode` configs you need.
 
 Struggling with VSCode not hitting breakpoints in your CUDA project? Add -g -G to nvcc args in tasks.json for debug symbols. Set "stopAtEntry": true in launch.json to test. Rebuild & F5—now it stops! #CUDA #VSCodeDebug
+
 ---
 
 ### 1. The Challenges
@@ -225,4 +226,10 @@ Struggling with VSCode not hitting breakpoints in your CUDA project? Add -g -G t
 3. Press **Ctrl+Shift+B** to build.
 4. Press **F5** to debug—your output appears right in the integrated terminal.
 
-That’s it! You now have a rock-solid CUDA + VS Code setup on Windows 11. Enjoy blazing-fast development!
+
+Download the .vscode files:
+
+- [c_cpp_properties.json]((/farshid/guides/CUDA/c_cpp_properties.json)
+- [launch.json]((/farshid/guides/CUDA/launch.json)
+- [setting.json]((/farshid/guides/CUDA/setting.json)
+- [tasks.json]((/farshid/guides/CUDA/tasks.json)
