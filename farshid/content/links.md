@@ -39,3 +39,11 @@ author: "Dr. Farshid Pirahansiah"
 - [LeetGPU - The GPU Programming Platform](https://leetgpu.com)
 - [mini project how to program a gpu cuda c++](https://www.youtube.com/@0mean1sigma/playlists)
 - 
+
+### Tools
+Dear ImGui is a bloat-free graphical user interface library for C++. It outputs optimized vertex buffers that you can render anytime in your 3D-pipeline-enabled application. It is fast, portable, renderer agnostic, and self-contained (no external dependencies).
+[GitHub repo](https://github.com/ocornut/imgui)
+- Minimize setup and maintenance.
+- The core of Dear ImGui is self-contained within a few platform-agnostic files which you can easily compile in your application/engine. They are all the files in the root folder of the repository (imgui*.cpp, imgui*.h). No specific build process is required. You can add the .cpp files into your existing project.
+- Backends for a variety of graphics API and rendering platforms are provided in the backends/ folder, along with example applications in the examples/ folder. You may also create your own backend. Anywhere where you can render textured triangles, you can render Dear ImGui.
+
