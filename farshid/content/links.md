@@ -39,3 +39,17 @@ author: "Dr. Farshid Pirahansiah"
 - [LeetGPU - The GPU Programming Platform](https://leetgpu.com)
 - [mini project how to program a gpu cuda c++](https://www.youtube.com/@0mean1sigma/playlists)
 - 
+
+### Tools Windows 
+[Log4View](https://www.log4view.com/download-en)
+[MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html)
+[notepad++](https://notepad-plus-plus.org/downloads/)
+[keepass2](https://keepass.info/download.html)
+[OBS Studio](https://obsproject.com/download)
+[rustdesk The Fast Open-Source Remote Access and Support Software](https://rustdesk.com/)
+VSCode
+    VSCode extensions Farshid
+    Excalidraw
+    CodeSnap
+    Foam
+    Markmap

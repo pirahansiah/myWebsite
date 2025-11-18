@@ -12,7 +12,7 @@ me/
 
 chainlit.md
 .chainlit
-
+.venv
 
 .vscode
 .vscode/
