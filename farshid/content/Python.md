@@ -169,3 +169,74 @@ pop
 ```
 more *.md
 ```
+
+pip install pybind11  
+
+
+// add.cpp
+#include <pybind11/pybind11.h>
+
+
+// Simple C++ function to add two numbers
+int add(int a, int b) {
+    return a + b;
+}
+
+
+// This creates the Python module and adds the function `add`
+PYBIND11_MODULE(mycpp, m) {
+    m.def("add", &add, "A function which adds two numbers");
+}
+
+
+
+
+cl /LD /IC:\Users\-winUser\.conda\envs\py314\Include /IC:\Users\-winUser\.conda\envs\py314\Lib\site-packages\pybind11\include add.cpp /link /OUT:mycpp.pyd /LIBPATH:C:\Users\-winUser\.conda\envs\py314\libs python314.lib
+
+
+import mycpp
+print(mycpp.add(2, 3))  # Output should be: 5
+
+
+# 2
+
+
+pip install setuptools
+pip install cython
+## header
+#pragma once
+int add(int a, int b);
+## cpp
+#include "add.h"
+int add(int a, int b) { return a + b; }
+## add_wrapper.pyx
+# add_wrapper.pyx
+cdef extern from "add.h":
+    int add(int a, int b)
+
+
+def py_add(int a, int b):
+    return add(a, b)
+
+
+## setup.py
+# setup.py
+from setuptools import setup, Extension
+from Cython.Build import cythonize
+
+
+ext = Extension(
+    "mycython",
+    sources=["add_wrapper.pyx", "add.cpp"],
+    language="c++",
+    include_dirs=["."],  # Path to add.h
+)
+
+
+setup(
+    ext_modules = cythonize([ext])
+)
+
+
+## 
+python setup.py build_ext --inplace

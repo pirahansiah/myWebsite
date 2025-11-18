@@ -185,3 +185,4 @@ As an experienced director and team leader, I excel in scaling operations, expan
 I’m adept at translating complex technical concepts for non-technical stakeholders and investors, enabling me to effectively pitch ideas, secure funding, and drive growth. With a keen eye for opportunities and process optimization, I have a track record of scaling teams and organizations while maintaining operational excellence. My leadership style empowers cross-functional teams, fosters innovation, and aligns efforts toward shared goals. Thriving in dynamic environments, I’m dedicated to building sustainable, high-performing teams that achieve long-term success.
 
 Experienced in Full Stack LLM development, including model training, fine-tuning, deployment, and integrating LLMs with scalable applications and APIs.
+
