@@ -151,3 +151,19 @@ Proactive decision intelligence (DI) is another key feature of RFMs. DI involves
 
 Artificial intelligence (AI) is being increasingly used in various scientific fields, including biology. AI agents are being developed to assist scientists in their research and experiments, helping them to analyze data more efficiently and make more accurate predictions. 
 ---
+* Tools to remove all personal information from images and videos, including metadata, faces, vehicles, OCR to find private information, OCR to find specific information like street names or billboards, and if you're at home, to provide all kinds of information that might reveal your location, tattoos, mirrors, shadows, and to identify you. Anonymizing techniques include blurring faces, using masks, or masking out all pixels.
+---
+Map out your daily activities, considering how you spend your days, including meetings, focused work time, and work areas. Determine the percentage of your time allocated to each aspect of your role. If you had the power to change anything, what would it be? This is meant to be open-ended, so feel free to draw it up in a way that makes sense to you!
+
+Identify your growth areas. Think big-picture and long-term to ground your Professional Growth Plan (PGP) in your core values and desired career direction. Identify your career drivers, considering what matters most to you in terms of career growth, such as challenges, advancement, influence, or security. Determine your desired brand or "image," defining what you want to be known for in your career. Set career goals, visualizing your career trajectory over the next few years. If you're uncertain about your future, explore potential career paths or target roles that interest you or warrant further exploration. Identify areas of work that intrigue you or warrant further learning.
+
+Focus on your strengths and areas for improvement. To grow professionally, build skills that excel in your current role and broaden or deepen your experience for career advancement. Your last performance review or development conversation with your lead can provide valuable insights for this section. Identify tasks in your current job that contribute to your long-term goals and that you want to emphasize or perform more frequently. Determine the skills you need to develop in your current role or aspire to in other areas.
+
+Develop an action plan, being specific about how you'll build the necessary skills. Effective development plans incorporate activities from each of the three E's: Experience, Exposure, and Education. Here are some examples of each:
+Peer coaching
+Stretch assignments
+Special projects
+Transfers/rotations
+For future reference, your PGP will evolve as your interests, skills, and experience change. Review it quarterly to stay accountable to your action items and share your progress with your lead.
+
+---

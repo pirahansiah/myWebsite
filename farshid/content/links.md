@@ -8,6 +8,10 @@ description: "An exploration of advanced algorithms and techniques in computer v
 excerpt: "Dive deep into the latest advancements in computer vision, including deep learning methodologies and real-time image processing."
 author: "Dr. Farshid Pirahansiah"
 ---
+
+
+[Notion](https://pirahansiah.notion.site/Farshid-110c40b5518a44c7ac3909ed6b705ef7?source=copy_link)
+
 ### CV
 This project is an image viewer built using Qt6, C++, and Vulkan. It supports BMP, PNG, and JPG images and provides essential viewing features such as pan, zoom, and scrolling. The application utilizes Vulkan for rendering and implements custom shaders for efficient image processing.
 [Vulkan C++ Qt Image viewer](https://github.com/HosseinAssaran/VulkanImageViewer)
@@ -15,6 +19,7 @@ This project is an image viewer built using Qt6, C++, and Vulkan. It supports BM
 
 ### tips
 - [get markdown from url](https://r.jina.ai/YOUR_URL)
+- [A simple SSH host manager in terminal](https://github.com/rayx/pickhost)
 
 ### Code
 - python gui: https://hyperdiv.io
@@ -52,6 +57,8 @@ Pydoll is a library for automating chromium-based browsers without a WebDriver, 
 
 
 ### Tools Windows 
+video player for windws it can show framgment of youtube video downloaded very easy to select which part you want
+[video player for windws](https://www.videohelp.com/software/MPC-Video-Renderer)
 [Log4View](https://www.log4view.com/download-en)
 [MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html)
 [notepad++](https://notepad-plus-plus.org/downloads/)
@@ -65,6 +72,7 @@ VSCode
     Foam
     Markmap
 
+[search for windows app](https://www.voidtools.com)
 
 ### Mac
 DisplayLink Manager is a new way to enable your DisplayLink dock, adapter or monitor on macOS platforms. It's an application that combines our latest driver with features that streamline the setup of mutliple displays up to 4K.
