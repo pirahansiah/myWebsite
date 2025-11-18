@@ -78,9 +78,10 @@ VSCode
 DisplayLink Manager is a new way to enable your DisplayLink dock, adapter or monitor on macOS platforms. It's an application that combines our latest driver with features that streamline the setup of mutliple displays up to 4K.
 [display link](https://www.synaptics.com/products/displaylink-graphics/downloads/macos)
 
+[Case Study: How We Reduced a Container Image by 99.7% (800GB to 2GB)](https://sealos.io/blog/reduce-container-image-size-case-study)
 
 ### YouTube
-
+[CUDA](https://www.youtube.com/playlist?list=PL5B692fm6--vWLhYPqLcEu6RF3hXjEyJr)
 https://www.youtube.com/@aliabdaal
 
 https://www.youtube.com/@KhashayarTalks
@@ -112,7 +113,7 @@ shadowing learning language
 
 [HDMI wifi](https://www.aurga.com/products/aurga-viewer)
 
-
+[Finanzfluss](https://www.youtube.com/@Finanzfluss/videos)
 
 
 ### Books
