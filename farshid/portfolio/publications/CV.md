@@ -60,10 +60,10 @@ As an AI and computer vision expert with over a decade of experience collaborati
   - [My Conference Papers: TafreshGrid Grid computing in Tafresh university ](/farshid/portfolio/publications/Papers/TafreshGrid_Grid_computing_in_Tafresh_university )
   <!-- - [My Conference Papers: Computer Vision meet LLM ](/farshid/portfolio/publications/Papers/ ) -->
 # Hardware I Used and Can Work With
-- **Raspberry Pi 3**
+- **Axelera AI M2**
+- **Hailo AI**
+- **Raspberry Pi 3,4,5**
   - Edge computing, low-power processing
-- **Raspberry Pi 4**
-  - Improved performance, real-time CV applications
 - **Intel Neural Compute Stick 2**
   - Portable AI inference, accelerated deep learning
 - **OpenCV AI Kit**

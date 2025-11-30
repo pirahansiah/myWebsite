@@ -13,6 +13,17 @@ seo_title: "CV, Resume, Advanced Computer Vision Techniques | Dr. Farshid Piraha
 seo_description: "CV, Resume, Explore cutting-edge computer vision techniques and their applications in modern technology."
 
 ---
+#ComputerVision_Edge_AI
+High-Accuracy Real-Time Medical Image Processing on Embedded Systems
+#RealTimeEmbeddedMedicalImageProcessing
+C++:
+cv::setNumThreads(cv::getNumberOfCPUs())
+Python:
+import multiprocessing
+num_cpus = multiprocessing.cpu_count()
+cv2.setNumThreads(num_cpus)
+
+
 
 As an AI and computer vision expert with over a decade of experience collaborating with esteemed global organizations, my expertise encompasses AI research and development, machine learning, deep learning, Internet of Things (IoT), and model optimization for edge and cloud-based solutions. With a portfolio of 21 publications, three patents, and extensive practical experience in real-time computer vision applications, I have spearheaded groundbreaking projects in generative AI, video analytics, and intelligent systems. Proficient in C++, Python, OpenCV, and advanced GPU optimization, I am recognized for bridging the gap between cutting-edge research and commercially viable products.
 
@@ -22,31 +33,31 @@ lessons learned fixing bug and review codes for my 10 years experince
 
 you need lessons learned after each project so what do you learn during projects.
 
-# using floating points
+#### using floating points
 using cast
 do not compare float/double numbers by ==
 
 
-# CV
+#### CV
   Background Subtraction (BGS) algorithms
   GrabCut algorithm
   Apply a threshold to the depth map to create a mask that suppresses the distant background.
     Read frames > Rectify the images (cv2.stereoRectify, cv2.initUndistortRectifyMap, and cv2.remap) > Compute the disparity map (cv2.StereoBM or cv2.StereoSGBM) > Create a depth map > Apply a threshold to the depth map
   In OpenCV, temporal constraints are used in video analysis to impose rules on how objects or pixels behave over time across consecutive frames. This helps track objects more accurately and make sense of motion, rather than just analyzing individual images. 
   
-# resize 
+#### resize 
   Upscaling → cv2.INTER_LANCZOS4 (sharp, high quality) or cv2.INTER_CUBIC.
   Downscaling → cv2.INTER_AREA (built-in antialiasing).
   Exact scale factors → use fx, fy as floats (avoid rounding dsize).
   Avoid cumulative rounding → keep data in float (float32/float64) during processing.
   Gamma-aware resizing (more accurate): linearize to linear RGB, resize, then convert back to sRGB.
   Pre-blur for large downsamples: light Gaussian blur can suppress aliasing before resize.
-# VLLM
+#### VLLM
   if the model does not have generating you can create random noisy image as input
   new models can have multiple input images in the beginning
   first : mask the object inside the image then edit it
   keep test of the image original
-# Camera
+#### Camera
       
   Core technologies
     UVC (USB Video Class)
@@ -89,19 +100,22 @@ do not compare float/double numbers by ==
   
   import cv2
 
-
-# Load pre-calibrated camera matrices
-# NOTE: This requires prior calibration with a checkerboard
-# and cannot be done in a single line.
-# See OpenCV documentation for `stereoCalibrate`.
-mtx1, dist1, mtx2, dist2, R, T, E, F = ... # Load matrices from a file
+#### Camera Calibration
+  - the size is very important measure manually and use very accurate parameter setting
 
 
-# Initialize stereo correspondence algorithm
+#### Load pre-calibrated camera matrices
+#### NOTE: This requires prior calibration with a checkerboard
+#### and cannot be done in a single line.
+#### See OpenCV documentation for `stereoCalibrate`.
+mtx1, dist1, mtx2, dist2, R, T, E, F = ... #### Load matrices from a file
+
+
+#### Initialize stereo correspondence algorithm
 stereo = cv2.StereoBM.create(numDisparities=16, blockSize=15)
 
 
-# Open cameras (adjust indices as needed)
+#### Open cameras (adjust indices as needed)
 cap1 = cv2.VideoCapture(0)
 cap2 = cv2.VideoCapture(1)
 
@@ -114,22 +128,22 @@ while True:
         break
 
 
-    # Rectify and process the images
+    #### Rectify and process the images
     undistort1 = cv2.undistort(frame1, mtx1, dist1)
     undistort2 = cv2.undistort(frame2, mtx2, dist2)
     
-    # Compute the disparity map
+    #### Compute the disparity map
     disparity = stereo.compute(cv2.cvtColor(undistort1, cv2.COLOR_BGR2GRAY),
                               cv2.cvtColor(undistort2, cv2.COLOR_BGR2GRAY))
     
-    # Create a mask by thresholding the disparity (adjust the value)
-    # A low disparity means the object is far away (background)
+    #### Create a mask by thresholding the disparity (adjust the value)
+    #### A low disparity means the object is far away (background)
     _, mask = cv2.threshold(disparity, 50, 255, cv2.THRESH_BINARY_INV)
     
-    # Apply the mask to the original frame
+    #### Apply the mask to the original frame
     masked_frame = cv2.bitwise_and(frame1, frame1, mask=mask)
     
-    # Display the result
+    #### Display the result
     cv2.imshow('Background Suppressed', masked_frame)
 
 
@@ -167,3 +181,36 @@ Transfers/rotations
 For future reference, your PGP will evolve as your interests, skills, and experience change. Review it quarterly to stay accountable to your action items and share your progress with your lead.
 
 ---
+I have a Windows PC with an NVIDIA GPU and need to work on other PCs and a laptop without NVIDIA GPUs. For remote work or weekend coding and research, I want seamless project continuity. One solution is to use WSL (Windows Subsystem for Linux) and create a portable Linux environment. This allows me to use the same Linux setup on any Windows machine, even without an NVIDIA GPU, while keeping my projects, code, and large datasets accessible on an external SSD.
+
+* To use external storage, create your Ubuntu WSL distro (e.g., named 22) on your main PC and export it to a .tar file on an external drive:
+* 
+* ```bash
+wsl --export 22 E:\\\\WSL\\\\22\\\\ubuntu22.tar
+wsl --shutdown
+```
+
+* The path for the portable WSL folder on both PCs will be:
+* 
+* ```bash
+D:\\\\WSL\\\\DistroName
+```
+
+1. To import WSL on a new PC without Ubuntu or WSL installed, check the WSL version and update:
+2. 
+3. ```bash
+wsl --version
+wsl --update
+```
+
+1. Import the exported .tar file into the same folder path as the main PC:
+2. 
+3. ```bash
+wsl --import 22 D:\\\\WSL\\\\DistroName D:\\\\WSL\\\\22\\\\ubuntu22.tar
+wsl --shutdown
+```
+
+Notes:
+* - Always use the same folder path (D:\\\\WSL\\\\DistroName) on every PC for consistency.
+* - For each new PC, simply export the distro on the main PC and import it into the same folder.
+* - This keeps all your projects, code, and datasets portable and consistent across machines without needing multiple copies.

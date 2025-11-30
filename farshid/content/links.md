@@ -56,7 +56,7 @@ author: "Dr. Farshid Pirahansiah"
 
 
 
-### Tools Windows 
+### My List of Tools for Windows to install in the first use  
 - video player for windws it can show framgment of youtube video downloaded very easy to select which part you want
 - [video player for windws](https://www.videohelp.com/software/MPC-Video-Renderer)
 - [Log4View](https://www.log4view.com/download-en)
@@ -124,4 +124,3 @@ type hint -> can show all functions inside IDE is setup correctly.
     book
     films
     WSL
-    
