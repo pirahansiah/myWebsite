@@ -1,5 +1,5 @@
 from bleak import BleakScanner
-
+import cv2 
 async def scan_devices():
     devices = await BleakScanner.discover()
     for device in devices:
@@ -7,3 +7,4 @@ async def scan_devices():
 
 import asyncio
 asyncio.run(scan_devices())
+

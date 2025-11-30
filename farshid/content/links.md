@@ -104,3 +104,24 @@ author: "Dr. Farshid Pirahansiah"
 - Outliers: The Story Of Success By Malcolm Gladwell
 - Thinking In Bets By Annie Duke
 - Essentialism By Greg McKeown
+- معجزه شکر گذاری
+- story teller tactice
+
+
+
+### Farshid
+
+- CV edge AI SDK
+- CUDA
+- coach production scale up for API/SDK/...
+
+
+type hint -> can show all functions inside IDE is setup correctly. 
+
+- 5 insights in 5 minutes 
+    - foam
+    github
+    book
+    films
+    WSL
+    
