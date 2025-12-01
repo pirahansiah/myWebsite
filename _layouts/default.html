@@ -7,50 +7,6 @@
   <script>
    
 
-      function tryTCF2() {
-        try {
-          if (typeof window.__tcfapi === 'function') {
-            // Request TCData and decide based on purpose consent (purpose 1/ad storage)
-            window.__tcfapi('getTCData', 2, function(tcData, success){
-              if (!success || !tcData) return;
-              // If ad_storage or purpose 1 consent is granted, load ads
-              var purposes = tcData.purpose && tcData.purpose.consents;
-              if (purposes && purposes['1']) {
-                injectAds();
-              }
-            });
-            return true;
-          }
-        } catch(e){}
-        return false;
-      }
-
-      function tryCookiebot() {
-        try {
-          if (window.Cookiebot && window.Cookiebot.consent) {
-            // Cookiebot: marketing=true or statistics=true -> allow ads/analytics
-            var c = window.Cookiebot.consent;
-            if (c.marketing || c.statistics) injectAds();
-            document.addEventListener('CookiebotOnAccept', function(){
-              injectAds();
-            });
-            return true;
-          }
-        } catch(e){}
-        return false;
-      }
-
-      // Attempt detection for common CMP APIs; if none found, do not auto-load ads.
-      var attempts = 0, maxAttempts = 12;
-      var detectInterval = setInterval(function(){
-        attempts++;
-        var found = tryTCF2() || tryCookiebot();
-        if (found || attempts >= maxAttempts) clearInterval(detectInterval);
-      }, 500);
-
-      // Expose a manual loader your CMP can call once consent is granted.
-      window.loadGoogleAdsIfConsented = function(){ injectAds(); };
-    })();
   </script>
   <meta charset="UTF-8">
   <!-- Privacy & CMP metadata: update privacy URL if different -->
