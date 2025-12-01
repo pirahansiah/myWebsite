@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Conditional Google Ads loader — waits for CMP consent before loading ads script.
-       Your certified CMP should call `window.loadGoogleAdsIfConsented()` or implement TCF v2 / Cookiebot events.
-       This prevents AdSense from firing before consent and helps demonstrate compliance. -->
+  
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917" crossorigin="anonymous"></script>
+
   <script>
-    window.__ADSENSE_PUBLISHER_ID = 'pub-7548808026663917';
-    (function(){
-      function injectAds() {
-        if (document.querySelector('script[data-ads-loaded]')) return;
-        var s = document.createElement('script');
-        s.setAttribute('data-ads-loaded','1');
-        s.async = true;
-        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917';
-        s.crossOrigin = 'anonymous';
-        document.head.appendChild(s);
-      }
+   
 
       function tryTCF2() {
         try {
