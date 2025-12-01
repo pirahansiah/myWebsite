@@ -1,89 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Consent-aware AdSense loader: waits for CMP consent before loading ads script.
-       If your certified CMP supports TCF v2 or Cookiebot, this loader will detect consent.
-       For other CMPs (OneTrust, Usercentrics, Iubenda, Quantcast, etc.), call
-       `window.loadGoogleAdsIfConsented()` from the CMP's accept callback.
-  -->
-  <script>
-    window.__ADSENSE_PUBLISHER_ID = 'pub-7548808026663917';
-    (function(){
-      function injectAds() {
-        if (document.querySelector('script[data-ads-loaded]')) return;
-        console.debug('Loading AdSense script after consent');
-        var s = document.createElement('script');
-        s.setAttribute('data-ads-loaded','1');
-        s.async = true;
-        s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + encodeURIComponent(window.__ADSENSE_PUBLISHER_ID);
-        s.crossOrigin = 'anonymous';
-        document.head.appendChild(s);
-      }
-
-      function tryTCF2() {
-        try {
-          if (typeof window.__tcfapi === 'function') {
-            window.__tcfapi('getTCData', 2, function(tcData, success){
-              if (!success || !tcData) return;
-              var purposes = tcData.purpose && tcData.purpose.consents;
-              // Purpose 1 is ad_storage/consent for ads in many TCF configs
-              if (purposes && purposes['1']) {
-                injectAds();
-              }
-            });
-            return true;
-          }
-        } catch(e){console.debug('TCF2 check error', e);}
-        return false;
-      }
-
-      function tryCookiebot() {
-        try {
-          if (window.Cookiebot && window.Cookiebot.consent) {
-            var c = window.Cookiebot.consent;
-            if (c.marketing || c.statistics) injectAds();
-            // Listen to Cookiebot accept event
-            document.addEventListener('CookiebotOnAccept', function(){ injectAds(); });
-            return true;
-          }
-        } catch(e){console.debug('Cookiebot check error', e);} 
-        return false;
-      }
-
-      // Poll a few times to detect CMPs that initialize shortly after page load
-      var attempts = 0, maxAttempts = 12;
-      var detectInterval = setInterval(function(){
-        attempts++;
-        var found = tryTCF2() || tryCookiebot();
-        if (found || attempts >= maxAttempts) clearInterval(detectInterval);
-      }, 500);
-
-      // Expose manual loader for CMP callbacks. Your CMP vendor can call this when consent is given.
-      window.loadGoogleAdsIfConsented = function(){ injectAds(); };
-
-      /*
-        Examples (paste into your CMP vendor callback if it doesn't support TCF v2/Cookiebot):
-
-        // OneTrust (example)
-        OptanonActiveGroups && document.addEventListener('OneTrustGroupsUpdated', function(){
-          // parse OptanonActiveGroups and call loadGoogleAdsIfConsented() if marketing allowed
-          window.loadGoogleAdsIfConsented();
-        });
-
-        // Usercentrics (example)
-        // In Usercentrics accept callback: window.loadGoogleAdsIfConsented();
-
-        // Iubenda (example)
-        // window.iub && window.iub.cs && window.iub.cs.on('consentGiven', function(){ window.loadGoogleAdsIfConsented(); });
-
-        // Quantcast Choice (example)
-        // If your CMP exposes a callback, call window.loadGoogleAdsIfConsented() when marketing consent is set.
-      */
-    })();
-  </script>
-  <meta charset="UTF-8">
-
-  <title>{{ page.title | default: "Dr. Farshid Pirahansiah" }}</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<title>{{ page.title | default: "Dr. Farshid Pirahansiah" }}</title>
   <style>
     /* Basic styling for navigation */
     nav {
