@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic meta -->
   <meta charset="UTF-8">
-  <title>{{ page.title | default: "Dr. Farshid Pirahansiah" }}</title>
+  <title>LLM</title>
 
   <!-- Google Consent Mode v2 (default: denied) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    
+    // Set default consent to denied
     gtag('consent', 'default', {
       'ad_storage': 'denied',
       'ad_user_data': 'denied',
@@ -16,7 +17,9 @@
       'analytics_storage': 'denied',
       'wait_for_update': 500
     });
-    // Enable IAB TCF support so AdSense CMP can pass consent
+    
+    // Enable TCF (Transparency & Consent Framework) support
+    // This allows AdSense's GDPR message to update consent automatically
     window.gtag_enable_tcf_support = true;
   </script>
 
@@ -26,7 +29,6 @@
           crossorigin="anonymous"></script>
 
   <style>
-    /* Basic styling for navigation */
     nav {
       background-color: #333;
       font-family: Arial, sans-serif;
@@ -186,7 +188,7 @@
       <br><br><br><br>
       <b>Legal Notice:</b> Website owned by Dr. Farshid Pirahansiah. Email: info @ pirahansiah.com
       <br><br><br><br>
-      <b>Terms:</b> Unauthorized use of this website’s content is prohibited. Intellectual property belongs to Dr. Farshid Pirahansiah.
+      <b>Terms:</b> Unauthorized use of this website's content is prohibited. Intellectual property belongs to Dr. Farshid Pirahansiah.
     </div>
   </footer>
 
