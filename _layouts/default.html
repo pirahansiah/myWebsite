@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +8,8 @@
      crossorigin="anonymous"></script>
 
     <!-- 2. Google Analytics & Consent Mode v2 -->
-    <!-- REPLACE G-XXXXXXXXXX with your actual Google Analytics ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- REPLACE THE ID BELOW WITH YOUR REAL ID (e.g., G-12345ABCDE) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_THIS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -30,12 +28,12 @@
 
       gtag('js', new Date());
       
-      // REPLACE G-XXXXXXXXXX with your actual Google Analytics ID
-      gtag('config', 'G-XXXXXXXXXX'); 
+      // REPLACE THE ID BELOW WITH YOUR REAL ID
+      gtag('config', 'G-REPLACE_THIS'); 
     </script>
 
     <style>
-        /* Basic styling for navigation */
+        /* ... Keep your existing styles ... */
         nav { background-color: #333; font-family: Arial, sans-serif; }
         nav ul { list-style-type: none; margin: 0; padding: 0; position: relative; }
         nav ul li { position: relative; display: inline-block; }
@@ -62,98 +60,3 @@
         }
     </style>
 </head>
-<body>
-
-<header>
-    <nav>
-        <ul>
-            {% for item in site.navigation %}
-            <li>
-                {% if item.children %}
-                    <span>{{ item.title }}</span>
-                    <ul>
-                        {% for child in item.children %}
-                        <li>
-                            {% if child.children %}
-                                <span>{{ child.title }}</span>
-                                <ul>
-                                    {% for subchild in child.children %}
-                                    <li>
-                                        {% if subchild.children %}
-                                            <span>{{ subchild.title }}</span>
-                                            <ul>
-                                                {% for subsubchild in subchild.children %}
-                                                <li>
-                                                    <a href="{{ subsubchild.url | relative_url }}">{{ subsubchild.title }}</a>
-                                                </li>
-                                                {% endfor %}
-                                            </ul>
-                                        {% else %}
-                                            <a href="{{ subchild.url | relative_url }}">{{ subchild.title }}</a>
-                                        {% endif %}
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            {% else %}
-                                <a href="{{ child.url | relative_url }}">{{ child.title }}</a>
-                            {% endif %}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                {% else %}
-                    <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-    </nav>
-</header>
-
-<main>
-    <button onclick="goBack()" class="back-button">← Back</button>
-    
-    {{ content }}
-</main>
-
-<footer>
-    <p>
-        © 2024 Dr. Farshid Pirahansiah. All rights reserved.<br><br>
-        
-        <strong>Privacy Policy:</strong> This website complies with GDPR regulations. We collect personal data to enhance user experience. 
-        <a href="{{ '/privacy.html' | relative_url }}">Read our Privacy Policy</a> or contact <a href="mailto:info@pirahansiah.com">info@pirahansiah.com</a><br><br>
-        
-        <strong>Cookie Policy:</strong> This website uses cookies to improve services. By continuing to browse, you agree to cookie usage. 
-        <!-- The Google CMP Badge will appear automatically to allow users to manage preferences -->
-        <br><br>
-        
-        <strong>Legal Notice:</strong> Website owned by Dr. Farshid Pirahansiah. Email: info @ pirahansiah.com<br>
-        <strong>Terms:</strong> Unauthorized use of this website's content is prohibited. Intellectual property belongs to Dr. Farshid Pirahansiah.
-    </p>
-</footer>
-
-<script>
-    function goBack() { 
-        if (document.referrer !== "") { 
-            window.history.back(); 
-        } else { 
-            window.location.href = '{{ "/" | relative_url }}'; 
-        } 
-    }
-
-    // Mobile dropdown navigation support
-    document.addEventListener('DOMContentLoaded', function() { 
-        const dropdownToggles = document.querySelectorAll('nav ul li span'); 
-        dropdownToggles.forEach(function(toggle) { 
-            toggle.addEventListener('click', function(e) { 
-                e.preventDefault(); 
-                const submenu = this.nextElementSibling; 
-                if (submenu) {
-                    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'; 
-                }
-            }); 
-        }); 
-    });
-</script>
-
-</body>
-</html>
