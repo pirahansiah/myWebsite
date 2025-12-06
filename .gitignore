@@ -224,4 +224,4 @@ operations/variable-scripts/variable.template.json
 operations/variable-scripts/variable.json
 
 # Sentinel runtime directory
-.sentinel
+.sentinelfarshid/portfolio/projects/AI_helper/models/*.gguf
