@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Cookie Consent Banner -->
+<script src="https://cdn.cookieconsent.com/v3/cookie-consent.js"></script>
+<link rel="stylesheet" href="https://cdn.cookieconsent.com/v3/cookie-consent.css">
+
+<script>
+window.addEventListener('load', function() {
+  window.cookieconsent.initialise({
+    palette: {
+      popup: {background: '#000'},
+      button: {background: '#f1d600'}
+    },
+    type: 'opt-in', // Critical: blocks cookies until consent
+    content: {
+      message: 'This website uses cookies...',
+      dismiss: 'Accept',
+      deny: 'Decline',
+      link: 'Privacy Policy',
+      href: '/privacy.html'
+    },
+    onStatusChange: function(status) {
+      // Only load analytics after consent
+      if (this.hasConsented()) {
+        loadAnalytics();
+      }
+    }
+  });
+});
+</script>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LLM_CV IOT Medical IP Edge AI</title>
+    <title>Embedded LLM_CV IOT Medical IP Edge AI</title>
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta name="referrer" content="no-referrer-when-downgrade">
     <!-- Google Consent Mode -->

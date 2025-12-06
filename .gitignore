@@ -1,4 +1,7 @@
-
+gguf
+.gguf
+.models
+.model 
 .jekyll-cache
 /.jekyll-cache
 Gemfile.lock
