@@ -224,4 +224,10 @@ operations/variable-scripts/variable.template.json
 operations/variable-scripts/variable.json
 
 # Sentinel runtime directory
-.sentinelfarshid/portfolio/projects/AI_helper/models/*.gguf
+.sentinel
+
+# Large ML model files (GGUF, etc.)
+*.gguf
+**/*.gguf
+farshid/portfolio/projects/AI_helper/models/
+models/
