@@ -1,52 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- 1. Standard Meta Tags & SEO -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title | default: site.title }}</title>
-    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
-    <meta name="author" content="Dr. Farshid Pirahansiah">
-    <meta name="theme-color" content="#333333">
+    <!-- Cookie Consent Banner -->
+<script src="https://cdn.cookieconsent.com/v3/cookie-consent.js"></script>
+<link rel="stylesheet" href="https://cdn.cookieconsent.com/v3/cookie-consent.css">
 
-    <!-- 2. Security Headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+<script>
+window.addEventListener('load', function() {
+  window.cookieconsent.initialise({
+    palette: {
+      popup: {background: '#000'},
+      button: {background: '#f1d600'}
+    },
+    type: 'opt-in', // Critical: blocks cookies until consent
+    content: {
+      message: 'This website uses cookies...',
+      dismiss: 'Accept',
+      deny: 'Decline',
+      link: 'Privacy Policy',
+      href: '/privacy.html'
+    },
+    onStatusChange: function(status) {
+      // Only load analytics after consent
+      if (this.hasConsented()) {
+        loadAnalytics();
+      }
+    }
+  });
+});
+</script>
 
-    <!-- 3. Google Consent Mode v2 (MUST BE FIRST SCRIPT) -->
-    <!-- This ensures cookies are BLOCKED until the user accepts the banner -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
 
-      // Set default consent to 'denied'
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied'
-      });
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded LLM_CV IOT Medical IP Edge AI</title>
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Google Consent Mode -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Set default consent to 'denied' as a placeholder
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'wait_for_update': 500
+  });
+  
+  gtag('set', 'ads_data_redaction', true);
+</script>
 
-    <!-- 4. Google Analytics 4 (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
-    <script>
-      gtag('js', new Date());
-      gtag('config', 'G-2L49VVJP3B');
-    </script>
-
-    <!-- 5. Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917"
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917"
      crossorigin="anonymous"></script>
+  
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2L49VVJP3B');
+</script>
 
     <style>
         /* Basic styling for navigation */
-        body { margin: 0; font-family: Arial, sans-serif; }
         nav { background-color: #333; font-family: Arial, sans-serif; }
         nav ul { list-style-type: none; margin: 0; padding: 0; position: relative; }
         nav ul li { position: relative; display: inline-block; }
         nav ul li a, nav ul li span { display: block; color: white; padding: 14px 20px; text-decoration: none; cursor: pointer; }
         nav ul li a:hover, nav ul li span:hover { background-color: #111; }
-        nav ul li ul { display: none; position: absolute; background-color: #333; min-width: 160px; z-index: 1000; top: 100%; left: 0; }
+        nav ul li ul { display: none; position: absolute; background-color: #333; min-width: 160px; z-index: 1; top: 100%; left: 0; }
         nav ul li:hover > ul { display: block; }
         nav ul li ul li { display: block; }
         nav ul li ul li a, nav ul li ul li span { padding: 12px 16px; }
@@ -58,15 +86,12 @@
         .back-button { background-color: transparent; border: none; color: #007BFF; font-size: 16px; cursor: pointer; padding: 10px; margin: 10px; }
         .back-button:hover { color: #0056b3; }
         
-        main { padding: 20px; }
-        
         footer { margin-top: 20px; padding: 20px; background-color: #f9f9f9; font-size: 12px; line-height: 1.4; }
         
         @media screen and (max-width: 768px) {
-            nav ul li { display: block; border-bottom: 1px solid #444; }
+            nav ul li { display: block; }
             nav ul li ul { position: static; }
             nav ul li ul li ul { position: static; }
-            nav ul li span::after { content: " \25BC"; }
         }
     </style>
 </head>
@@ -127,11 +152,14 @@
     <p>
         © 2024 Dr. Farshid Pirahansiah. All rights reserved.<br><br>
         
-        <strong>Privacy & Data:</strong> We use cookies to analyze traffic and show ads. 
-        You can change your preferences at any time. 
+        <strong>Privacy Policy:</strong> This website complies with GDPR regulations. We collect personal data to enhance user experience. 
         <a href="{{ '/privacy.html' | relative_url }}">Read our Privacy Policy</a> or contact <a href="mailto:info@pirahansiah.com">info@pirahansiah.com</a><br><br>
         
+        <strong>Cookie Policy:</strong> This website uses cookies to improve services. By continuing to browse, you agree to cookie usage. 
+        <br><br>
+        
         <strong>Legal Notice:</strong> Website owned by Dr. Farshid Pirahansiah. Email: info @ pirahansiah.com<br>
+        <strong>Terms:</strong> Unauthorized use of this website's content is prohibited. Intellectual property belongs to Dr. Farshid Pirahansiah.
     </p>
 </footer>
 
@@ -149,12 +177,10 @@
         const dropdownToggles = document.querySelectorAll('nav ul li span'); 
         dropdownToggles.forEach(function(toggle) { 
             toggle.addEventListener('click', function(e) { 
-                if (window.innerWidth <= 768) {
-                    const submenu = this.nextElementSibling; 
-                    if (submenu) {
-                        e.preventDefault(); 
-                        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'; 
-                    }
+                e.preventDefault(); 
+                const submenu = this.nextElementSibling; 
+                if (submenu) {
+                    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'; 
                 }
             }); 
         }); 
