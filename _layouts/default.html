@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- 1. Meta Tags & SEO -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title | default: site.title }}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
     
-    <!-- Security & Verification -->
+    <!-- 2. Security & Verification -->
     <meta name="google-adsense-account" content="ca-pub-7548808026663917">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-    <!-- 1. Consent Mode: GRANT Analytics immediately (Fixes 0 Visitors Issue) -->
+    <!-- 3. Google Consent Mode (FORCE ANALYTICS ON) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
-      // FORCE GRANTED for Analytics so you can see data
+      // CRITICAL FIX: We set 'analytics_storage' to 'granted' 
+      // This forces Analytics to work even if the AdSense banner is broken.
       gtag('consent', 'default', {
-        'ad_storage': 'denied',        // Keep ads blocked until banner
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'granted', // <--- ALLOWED IMMEDIATELY
+        'ad_storage': 'denied',         // Keep Ads blocked (Required by AdSense Policy)
+        'ad_user_data': 'denied',       // Keep User Data blocked
+        'ad_personalization': 'denied', // Keep Personalization blocked
+        'analytics_storage': 'granted', // <--- THIS TURNS ON ANALYTICS
         'wait_for_update': 500
       });
     </script>
 
-    <!-- 2. Google AdSense -->
+    <!-- 4. Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917"
      crossorigin="anonymous"></script>
 
-    <!-- 3. Google Analytics 4 -->
+    <!-- 5. Google Analytics 4 Script -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
     <script>
       gtag('js', new Date());
@@ -37,7 +39,7 @@
     </script>
 
     <style>
-        /* Your Existing CSS */
+        /* Your Navigation & Layout CSS */
         body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; color: #333; }
         nav { background-color: #333; font-family: Arial, sans-serif; }
         nav ul { list-style-type: none; margin: 0; padding: 0; position: relative; }
@@ -52,9 +54,13 @@
         nav ul li span::after { content: " \25BA"; float: right; }
         nav ul li ul li span::after { content: " \25BA"; float: right; }
         nav ul li a::after, nav ul li ul li a::after { content: ""; }
+        
         .back-button { background-color: transparent; border: none; color: #007BFF; font-size: 16px; cursor: pointer; padding: 10px; margin: 10px; }
-        main { padding: 20px; max-width: 1200px; margin: 0 auto; min-height: 80vh; }
-        footer { margin-top: 20px; padding: 20px; background-color: #f9f9f9; font-size: 12px; line-height: 1.4; text-align: center; }
+        
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; min-height: 60vh; }
+        
+        footer { margin-top: 20px; padding: 20px; background-color: #f9f9f9; font-size: 12px; line-height: 1.4; text-align: center; border-top: 1px solid #eee; }
+        
         @media screen and (max-width: 768px) {
             nav ul li { display: block; border-bottom: 1px solid #444; }
             nav ul li ul { position: static; }
