@@ -1,16 +1,14 @@
 # Site Settings
 title: "Dr. Farshid Pirahansiah"
-email: yourlastname@gmail.com  # Replace with your actual email address
+email: mylastname@gmail.com  
 description: "Expertise in Computer Vision, ML, LLM"
-baseurl: ""  # Keep empty if deploying at the root of the domain
+baseurl: "" 
 url: "https://www.pirahansiah.com"
 twitter_username: pirahansiah
 github_username: pirahansiah
 
-# Corrected variables
 name: "pirahansiah"
 author: "Dr. Farshid Pirahansiah"
-# Markdown Settings
 markdown: kramdown
 permalink: /:title/
 
@@ -20,23 +18,16 @@ kramdown:
   hard_wrap: false
   linkify: true
 
-# Include Directories
 include:
   - farshid
 
-# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
-# Optional: Theme (if you're using a specific Jekyll theme)
-# theme: your-theme-name
-
 navigation:
   - title: "Home"
     url: "/"
   - title: "Farshid"
-    # url: "/farshid/"  
     children:
       - title: "Products"
         url: "/farshid/portfolio/projects/Solutions"  
@@ -45,13 +36,9 @@ navigation:
       - title: "Social"
         url: "/farshid/Social"      
       - title: "Portfolio"
-        # url: "/farshid/portfolio/"  
         children:
           - title: "Publications"
             url: "/farshid/portfolio/publications/"
             children:
                 - title: "CV_Patents"
                   url: "/farshid/portfolio/publications/CV/"
-
-  # - title: "Contact"
-  #   url: "/contact/"
