@@ -4,42 +4,52 @@
     <!-- 1. Standard Meta Tags & SEO -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title | default: site.title }}</title>
+    <title>CV</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
-    <meta name="author" content="Dr. Farshid Pirahansiah">
     <meta name="theme-color" content="#333333">
-
+    
     <!-- 2. Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-    <!-- 3. Google Consent Mode v2 (MUST BE FIRST SCRIPT) -->
-    <!-- This ensures cookies are BLOCKED until the user accepts the banner -->
+    <!-- 3. Google Consent Mode v2 (The Critical Fix) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
-      // Set default consent to 'denied'
+      // A. Default to GRANTED for the whole world (US, Asia, etc.) so analytics works
+      gtag('consent', 'default', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted',
+        'wait_for_update': 500
+      });
+
+      // B. Overwrite to DENIED only for GDPR Countries (EEA + UK)
       gtag('consent', 'default', {
         'ad_storage': 'denied',
         'ad_user_data': 'denied',
         'ad_personalization': 'denied',
-        'analytics_storage': 'denied'
+        'analytics_storage': 'denied',
+        'region': [
+          'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'
+        ]
       });
     </script>
 
-    <!-- 4. Google Analytics 4 (GA4) -->
+    <!-- 4. Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917"
+     crossorigin="anonymous"></script>
+
+    <!-- 5. Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
     <script>
       gtag('js', new Date());
       gtag('config', 'G-2L49VVJP3B');
     </script>
 
-    <!-- 5. Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917"
-     crossorigin="anonymous"></script>
-
     <style>
-        /* Basic styling for navigation */
+        /* Navigation & Body Styles */
         body { margin: 0; font-family: Arial, sans-serif; }
         nav { background-color: #333; font-family: Arial, sans-serif; }
         nav ul { list-style-type: none; margin: 0; padding: 0; position: relative; }
@@ -128,7 +138,7 @@
         © 2024 Dr. Farshid Pirahansiah. All rights reserved.<br><br>
         
         <strong>Privacy & Data:</strong> We use cookies to analyze traffic and show ads. 
-        You can change your preferences at any time. 
+        You can change your preferences via the "Privacy and Cookie Settings" link at the bottom of the page.
         <a href="{{ '/privacy.html' | relative_url }}">Read our Privacy Policy</a> or contact <a href="mailto:info@pirahansiah.com">info@pirahansiah.com</a><br><br>
         
         <strong>Legal Notice:</strong> Website owned by Dr. Farshid Pirahansiah. Email: info @ pirahansiah.com<br>
