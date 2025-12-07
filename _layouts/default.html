@@ -1,47 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- 1. Standard Meta Tags & SEO -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CV</title>
+    <title>{{ page.title | default: site.title }}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
-    <meta name="theme-color" content="#333333">
     
-    <!-- 2. Security Headers -->
+    <!-- Security & Verification -->
+    <meta name="google-adsense-account" content="ca-pub-7548808026663917">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-    <!-- 3. Google Consent Mode v2 (The Critical Fix) -->
+    <!-- 1. Consent Mode: GRANT Analytics immediately (Fixes 0 Visitors Issue) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
 
-      // A. Default to GRANTED for the whole world (US, Asia, etc.) so analytics works
+      // FORCE GRANTED for Analytics so you can see data
       gtag('consent', 'default', {
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'analytics_storage': 'granted',
-        'wait_for_update': 500
-      });
-
-      // B. Overwrite to DENIED only for GDPR Countries (EEA + UK)
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
+        'ad_storage': 'denied',        // Keep ads blocked until banner
         'ad_user_data': 'denied',
         'ad_personalization': 'denied',
-        'analytics_storage': 'granted',
-        'region': [
-          'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'
-        ]
+        'analytics_storage': 'granted', // <--- ALLOWED IMMEDIATELY
+        'wait_for_update': 500
       });
     </script>
 
-    <!-- 4. Google AdSense -->
+    <!-- 2. Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917"
      crossorigin="anonymous"></script>
 
-    <!-- 5. Google Analytics 4 -->
+    <!-- 3. Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
     <script>
       gtag('js', new Date());
@@ -49,8 +37,8 @@
     </script>
 
     <style>
-        /* Navigation & Body Styles */
-        body { margin: 0; font-family: Arial, sans-serif; }
+        /* Your Existing CSS */
+        body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; color: #333; }
         nav { background-color: #333; font-family: Arial, sans-serif; }
         nav ul { list-style-type: none; margin: 0; padding: 0; position: relative; }
         nav ul li { position: relative; display: inline-block; }
@@ -64,14 +52,9 @@
         nav ul li span::after { content: " \25BA"; float: right; }
         nav ul li ul li span::after { content: " \25BA"; float: right; }
         nav ul li a::after, nav ul li ul li a::after { content: ""; }
-        
         .back-button { background-color: transparent; border: none; color: #007BFF; font-size: 16px; cursor: pointer; padding: 10px; margin: 10px; }
-        .back-button:hover { color: #0056b3; }
-        
-        main { padding: 20px; }
-        
-        footer { margin-top: 20px; padding: 20px; background-color: #f9f9f9; font-size: 12px; line-height: 1.4; }
-        
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; min-height: 80vh; }
+        footer { margin-top: 20px; padding: 20px; background-color: #f9f9f9; font-size: 12px; line-height: 1.4; text-align: center; }
         @media screen and (max-width: 768px) {
             nav ul li { display: block; border-bottom: 1px solid #444; }
             nav ul li ul { position: static; }
@@ -96,20 +79,7 @@
                                 <span>{{ child.title }}</span>
                                 <ul>
                                     {% for subchild in child.children %}
-                                    <li>
-                                        {% if subchild.children %}
-                                            <span>{{ subchild.title }}</span>
-                                            <ul>
-                                                {% for subsubchild in subchild.children %}
-                                                <li>
-                                                    <a href="{{ subsubchild.url | relative_url }}">{{ subsubchild.title }}</a>
-                                                </li>
-                                                {% endfor %}
-                                            </ul>
-                                        {% else %}
-                                            <a href="{{ subchild.url | relative_url }}">{{ subchild.title }}</a>
-                                        {% endif %}
-                                    </li>
+                                    <li><a href="{{ subsubchild.url | relative_url }}">{{ subsubchild.title }}</a></li>
                                     {% endfor %}
                                 </ul>
                             {% else %}
@@ -129,42 +99,29 @@
 
 <main>
     <button onclick="goBack()" class="back-button">← Back</button>
-    
     {{ content }}
 </main>
 
 <footer>
     <p>
-        © 2024 Dr. Farshid Pirahansiah. All rights reserved.<br><br>
-        
-        <strong>Privacy & Data:</strong> We use cookies to analyze traffic and show ads. 
-        You can change your preferences via the "Privacy and Cookie Settings" link at the bottom of the page.
-        <a href="{{ '/privacy.html' | relative_url }}">Read our Privacy Policy</a> or contact <a href="mailto:info@pirahansiah.com">info@pirahansiah.com</a><br><br>
-        
-        <strong>Legal Notice:</strong> Website owned by Dr. Farshid Pirahansiah. Email: info @ pirahansiah.com<br>
+        © 2024 Dr. Farshid Pirahansiah. All rights reserved.<br>
+        <a href="{{ '/privacy.html' | relative_url }}">Privacy Policy</a> | <a href="mailto:info@pirahansiah.com">Contact</a>
     </p>
 </footer>
 
 <script>
     function goBack() { 
-        if (document.referrer !== "") { 
-            window.history.back(); 
-        } else { 
-            window.location.href = '{{ "/" | relative_url }}'; 
-        } 
+        if (document.referrer !== "") { window.history.back(); } 
+        else { window.location.href = '{{ "/" | relative_url }}'; } 
     }
-
-    // Mobile dropdown navigation support
+    // Mobile menu toggle
     document.addEventListener('DOMContentLoaded', function() { 
         const dropdownToggles = document.querySelectorAll('nav ul li span'); 
         dropdownToggles.forEach(function(toggle) { 
             toggle.addEventListener('click', function(e) { 
                 if (window.innerWidth <= 768) {
                     const submenu = this.nextElementSibling; 
-                    if (submenu) {
-                        e.preventDefault(); 
-                        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'; 
-                    }
+                    if (submenu) { e.preventDefault(); submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block'; }
                 }
             }); 
         }); 
