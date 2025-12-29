@@ -1,13 +1,18 @@
 ---
-
 layout: default  
 title: Dr. Farshid Pirahansiah | Embedded Computer Vision & Edge AI Architect
 ---
-Dr. Farshid Pirahansiah is a Computer Vision expert with 10+ years of R&D experience, specializing in real-time image processing, robotic, and edge AI deployment across Jetson, Raspberry Pi, Hailo, Axelera, and ARM devices. He holds 3 AI patents, has 141+ research citations (h-index: 7), and authored a Springer book chapter on camera calibration. His expertise spans computer vision (C++), deep learning (Python), medical imaging, robotics, IoT. He offers free on-site consultations to Berlin/Heidelberg/Frankfurt/Stuttgart startups and maintains active open-source projects including BI4CV (Generative AI for business insights) and 3D multi-camera calibration systems.
+Dr. Farshid Pirahansiah is a Computer Vision expert with 10+ years of R&D experience, specializing in real-time image processing, robotic, and edge AI deployment across Jetson, Raspberry Pi, Hailo, Axelera, and ARM devices. He holds 3 AI patents, has 141+ research citations (h-index: 7), and authored a Springer book chapter on camera calibration. His expertise spans computer vision (C++), deep learning (Python), medical imaging, robotics, IoT. He actively consults, teaches, and coaches startups and professionals in computer vision implementation and AI strategy.
+
+Experienced in full-stack CV/DL development—from model training and fine-tuning to deployment and integration with scalable applications and APIs.
+
+Reach out via [LinkedIn](https://www.linkedin.com/in/pirahansiah/)
+
+Let’s build the future of AI together!
 
 
 
-# Links
+# My Links
 - [Resources](https://www.pirahansiah.com/farshid/Resources)
 - [VSCodeCUDAwindows](https://www.pirahansiah.com/farshid/content/VSCodeCUDAwindows)
 - [opticalFlow](https://www.pirahansiah.com/farshid/content/opticalFlow)
@@ -42,7 +47,6 @@ Dr. Farshid Pirahansiah is a Computer Vision expert with 10+ years of R&D experi
 - [A_METHOD_FOR_AUGMENTING_A_PLURALITY_OF_FACE_IMAGES_WO2021060971A1](https://www.pirahansiah.com/farshid/portfolio/publications/Patents/A_METHOD_FOR_AUGMENTING_A_PLURALITY_OF_FACE_IMAGES_WO2021060971A1)
 - [My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects)
 - [My_Conference_Paper](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/My_Conference_Paper)
-
 - [Modal_Robot_Vision](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/Camera_Calibration_for_Multi-Modal_Robot_Vision)
 - [Threshold_Based_on_Entropy](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/License_Plate_Recognition_with_Multi-Threshold_Based_on_Entropy)
 - [Comparison_single_thresholding_method_for_handwritten_images_segmentation](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/Comparison_single_thresholding_method_for_handwritten_images_segmentation)
@@ -55,11 +59,12 @@ Dr. Farshid Pirahansiah is a Computer Vision expert with 10+ years of R&D experi
 - [LLMsMeetComputerVision](https://www.pirahansiah.com/farshid/portfolio/publications/Keynotes/LLMsMeetComputerVision)
 - [My_Book_chapter_Camera_Calibration_and_Video_Stabilization_Framework_for_Robot_Localization](https://www.pirahansiah.com/farshid/portfolio/publications/Books/My_Book_chapter_Camera_Calibration_and_Video_Stabilization_Framework_for_Robot_Localization)
 - [Book_Computational_Intelligence_From_Theory_to_Application_explores_augmented_optical_flow_methods_for_video_stabilization](https://www.pirahansiah.com/farshid/portfolio/publications/Books/Book_Computational_Intelligence_From_Theory_to_Application_explores_augmented_optical_flow_methods_for_video_stabilization)
-- [1](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/1)
-- [0](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/0)
+- OpenCV 5 Ebook:
+  - [Chapter 0](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/0)
+  - [Chapter 1](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/1)
+  - [Chapter 2](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/2)
+  - [Chapter 3](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/3)
 - [ComputerVisionMeetLLM](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/ComputerVisionMeetLLM)
-- [3](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/3)
-- [2](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/2)
 - [PSNR_Global_Single_Fuzzy_Threshold](https://www.pirahansiah.com/farshid/portfolio/publications/Journals/GSFT-PSNR_Global_Single_Fuzzy_Threshold)
 - [USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM](https://www.pirahansiah.com/farshid/portfolio/publications/Journals/USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM)
 - [CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION](https://www.pirahansiah.com/farshid/portfolio/publications/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION)
@@ -72,3 +77,4 @@ Dr. Farshid Pirahansiah is a Computer Vision expert with 10+ years of R&D experi
 - [cameracalibration](https://www.pirahansiah.com/farshid/portfolio/projects/Camera_Calibration/cameracalibration)
 - [hardware](https://www.pirahansiah.com/farshid/portfolio/projects/Embedded/hardware)
 
+---

@@ -61,7 +61,15 @@ As an AI and computer vision expert with over a decade of experience collaborati
   <!-- - [My Conference Papers: Computer Vision meet LLM ](/farshid/portfolio/publications/Papers/ ) -->
 # Hardware I Used and Can Work With
 - **Axelera AI M2**
+  - Axelera Metis M.2 on Raspberry Pi 5
+  - M.2 AI Inference Acceleration card: Axelera® AI’s M.2 card, powered by a single, quad-core Metis® AIPU, is perfect for constrained devices that require high-performance AI inference. 
 - **Hailo AI**
+  - The Hailo-15 SBC development kit : Hailo-15 AI Vision Processor
+  - Hardware: a single board computer (SBC) with integrated Hailo-15, supporting sensor interfaces as well as data, memory, communication and display interfaces.
+  - Software: a complete Yocto based Linux distribution, full-stack DSP libraries, BSP and drivers.
+- **FPGA Xilinx: Kria KV260 Vision AI Starter Kit**
+  - Kria KV260 Vision AI Starter Kit: Zynq™ UltraScale+™ MPSoC, SOM + Carrier Card + Thermal Solution, 
+  - The development platform for AMD Kria™ K26 SOMs, the KV260 Starter Kit is built for advanced vision application development without requiring complex hardware design knowledge. 
 - **Raspberry Pi 3,4,5**
   - Edge computing, low-power processing
 - **Intel Neural Compute Stick 2**
@@ -72,7 +80,7 @@ As an AI and computer vision expert with over a decade of experience collaborati
   - On-device ML, low-latency AI processing
 - **Nvidia Jetson Nano**
   - AI at the edge, accelerated vision tasks
-- **Nvidia GPU (RTX 1080 to 4090)**
+- **Nvidia GPU (RTX 1080 to 5090)**
   - High-performance GPU computing, deep learning training
 # Platforms and Architectures
 - **ARM**

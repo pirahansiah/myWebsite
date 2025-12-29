@@ -10,7 +10,8 @@ from pynput import keyboard
 from llama_cpp import Llama
 
 # --- Configuration ---
-MODEL_PATH = "models/Llama-3.2-1B-Instruct-Q4_K_M.gguf"
+#MODEL_PATH = "models/Llama-3.2-1B-Instruct-Q4_K_M.gguf"
+MODEL_PATH = r'/Users/farshid/Library/Application Support/app.cotypist.Cotypist/Models/Qwen3-1.7B-Base.i1-Q4_K_M.gguf'
 
 class SentenceFixerApp:
     def __init__(self):
