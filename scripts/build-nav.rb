@@ -150,8 +150,9 @@ def attach_link_to_heading(ctx, title, url)
 end
 
 # Menu rules (Obsidian MOC):
-#   #       → level 1 top menu only
-#   ## ###  → submenu under their parent #
+#   #       → page title (skipped for menu)
+#   ##      → level 1 top menu items
+#   ###     → submenu under their parent ##
 #   links on the line after ##/### attach to that heading (not separate menu items)
 #   lists, tasks, and other lines are ignored for the menu (still in site-map body)
 def parse_moc(text)
@@ -178,20 +179,19 @@ def parse_moc(text)
 
       case level
       when 1
-        menu << node
         ctx[:h1] = node
         ctx[:h2] = ctx[:h3] = nil
       when 2
-        next unless ctx[:h1]
-
-        ctx[:h1]["items"] << node
+        menu << node
         ctx[:h2] = node
         ctx[:h3] = nil
       when 3
-        parent = ctx[:h2] || ctx[:h1]
-        next unless parent
-
-        parent["items"] << node
+        parent = ctx[:h2]
+        if parent
+          parent["items"] << node
+        else
+          menu << node
+        end
         ctx[:h3] = node
       end
 

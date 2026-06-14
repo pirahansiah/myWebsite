@@ -1,59 +1,57 @@
 ---
-- title: Sitemap
+- title: ATLAS
   items:
-  - title: ATLAS
-    items:
-    - title: Knowledge Graph
-      items: []
-      url: "/www.pirahansiah.com"
-    - title: Research Synthesis
-      items: []
-      url: "/www.pirahansiah.com"
-    - title: Strategic Connections
-      items: []
-      url: "/www.pirahansiah.com"
-    - title: Concept Maps
-      items: []
-      url: "/www.pirahansiah.com"
-  - title: SOLUTIONS
-    items:
-    - title: Use Cases
-      items: []
-      url: "/www.pirahansiah.com"
-    - title: System Design
-      items: []
-      url: "/www.pirahansiah.com"
-    - title: Offering
-      items: []
-      url: "/www.pirahansiah.com"
-  - title: ABOUT
-    items:
-    - title: About Me
-      items: []
-      url: "contents/pkm/AboutMe.html"
-    - title: Company
-      items: []
-      url: "/www.pirahansiah.com"
-    - title: Why We Are Unique
-      items: []
-      url: "/www.pirahansiah.com"
-  - title: RESOURCES
-    items:
-    - title: TOC
-      items: []
-      url: "/www.pirahansiah.com"
-    - title: MOC
-      items: []
-      url: "/www.pirahansiah.com"
-    - title: Growth Model
-      items: []
-      url: "/www.pirahansiah.com"
-    - title: Costs
-      items: []
-      url: "/www.pirahansiah.com"
-    - title: Proof
-      items: []
-      url: "/www.pirahansiah.com"
-    - title: Updates
-      items: []
-      url: "/www.pirahansiah.com"
+  - title: Knowledge Graph
+    items: []
+    url: "/contents/pkm/knowledge-graph"
+  - title: Research Synthesis
+    items: []
+    url: "/contents/pkm/research-synthesis"
+  - title: Strategic Connections
+    items: []
+    url: "/contents/pkm/strategic-connections"
+  - title: Concept Maps
+    items: []
+    url: "/contents/pkm/concept-maps"
+- title: SOLUTIONS
+  items:
+  - title: Use Cases
+    items: []
+    url: "/contents/pkm/use-cases"
+  - title: System Design
+    items: []
+    url: "/contents/pkm/system-design"
+  - title: Offering
+    items: []
+    url: "/contents/pkm/offering"
+- title: ABOUT
+  items:
+  - title: About Me
+    items: []
+    url: "/contents/pkm/AboutMe"
+  - title: Company
+    items: []
+    url: "/contents/pkm/company"
+  - title: Why We Are Unique
+    items: []
+    url: "/contents/pkm/why-we-are-unique"
+- title: RESOURCES
+  items:
+  - title: TOC
+    items: []
+    url: "/contents/pkm/TOC"
+  - title: MOC
+    items: []
+    url: "/contents/pkm/MOC"
+  - title: Growth Model
+    items: []
+    url: "/contents/pkm/growth-model"
+  - title: Costs
+    items: []
+    url: "/contents/pkm/costs"
+  - title: Proof
+    items: []
+    url: "/contents/pkm/proof"
+  - title: Updates
+    items: []
+    url: "/contents/pkm/updates"
