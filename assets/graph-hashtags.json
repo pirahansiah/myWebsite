@@ -109,21 +109,6 @@
       "id": "tag-drfarshidpirahansiah",
       "label": "#drfarshidpirahansiah",
       "kind": "tag"
-    },
-    {
-      "id": "tag-code",
-      "label": "#code",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-liquid-refraction",
-      "label": "#liquid-refraction",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-git",
-      "label": "#git",
-      "kind": "tag"
     }
   ],
   "links": [
@@ -223,6 +208,21 @@
       "kind": "tag"
     },
     {
+      "source": "contents-pkm-proof",
+      "target": "tag-farshid",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-pirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "tag"
+    },
+    {
       "source": "tag-about",
       "target": "tag-publications",
       "kind": "cooccur"
@@ -313,6 +313,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-about",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-publications",
       "target": "tag-patents",
       "kind": "cooccur"
@@ -398,6 +413,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-publications",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-patents",
       "target": "tag-books",
       "kind": "cooccur"
@@ -478,6 +508,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-patents",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-books",
       "target": "tag-journals",
       "kind": "cooccur"
@@ -553,6 +598,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-books",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-journals",
       "target": "tag-conference-papers",
       "kind": "cooccur"
@@ -623,6 +683,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-journals",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-conference-papers",
       "target": "tag-keynotes",
       "kind": "cooccur"
@@ -688,6 +763,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-conference-papers",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-keynotes",
       "target": "tag-camera-calibration-expertise",
       "kind": "cooccur"
@@ -748,6 +838,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-keynotes",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-camera-calibration-expertise",
       "target": "tag-hardware-platforms",
       "kind": "cooccur"
@@ -803,6 +908,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-hardware-platforms",
       "target": "tag-products-tools",
       "kind": "cooccur"
@@ -853,6 +973,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-hardware-platforms",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-products-tools",
       "target": "tag-open-source",
       "kind": "cooccur"
@@ -898,6 +1033,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-products-tools",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-open-source",
       "target": "tag-technical-content",
       "kind": "cooccur"
@@ -938,6 +1088,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-open-source",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-open-source",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-open-source",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-technical-content",
       "target": "tag-cuda-gpu-programming",
       "kind": "cooccur"
@@ -973,6 +1138,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-technical-content",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-technical-content",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-technical-content",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-cuda-gpu-programming",
       "target": "tag-optical-flow",
       "kind": "cooccur"
@@ -1003,6 +1183,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-cuda-gpu-programming",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cuda-gpu-programming",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cuda-gpu-programming",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-optical-flow",
       "target": "tag-optimization",
       "kind": "cooccur"
@@ -1028,6 +1223,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-optical-flow",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optical-flow",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optical-flow",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-optimization",
       "target": "tag-ai-llm",
       "kind": "cooccur"
@@ -1048,6 +1258,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-optimization",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optimization",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optimization",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-ai-llm",
       "target": "tag-cv-coaching-roadmap",
       "kind": "cooccur"
@@ -1063,6 +1288,21 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-ai-llm",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-ai-llm",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-ai-llm",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-cv-coaching-roadmap",
       "target": "tag-courses",
       "kind": "cooccur"
@@ -1073,24 +1313,54 @@
       "kind": "cooccur"
     },
     {
+      "source": "tag-cv-coaching-roadmap",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cv-coaching-roadmap",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cv-coaching-roadmap",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
       "source": "tag-courses",
       "target": "tag-workshops-events",
       "kind": "cooccur"
     },
     {
-      "source": "contents-pkm-research-synthesis",
+      "source": "tag-courses",
       "target": "tag-farshid",
-      "kind": "tag"
+      "kind": "cooccur"
     },
     {
-      "source": "contents-pkm-research-synthesis",
+      "source": "tag-courses",
       "target": "tag-pirahansiah",
-      "kind": "tag"
+      "kind": "cooccur"
     },
     {
-      "source": "contents-pkm-research-synthesis",
+      "source": "tag-courses",
       "target": "tag-drfarshidpirahansiah",
-      "kind": "tag"
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-workshops-events",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-workshops-events",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-workshops-events",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
     },
     {
       "source": "tag-farshid",
@@ -1106,36 +1376,6 @@
       "source": "tag-pirahansiah",
       "target": "tag-drfarshidpirahansiah",
       "kind": "cooccur"
-    },
-    {
-      "source": "contents-pkm-strategic-connections",
-      "target": "tag-farshid",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-strategic-connections",
-      "target": "tag-pirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-strategic-connections",
-      "target": "tag-drfarshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-templates-farshid-ai-cv-llm-fullmarkmapautoloaderwithimages",
-      "target": "tag-code",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-templates-farshid-ai-cv-llm-c",
-      "target": "tag-liquid-refraction",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-templates-farshid-ai-cv-llm-markmap-autoloader",
-      "target": "tag-git",
-      "kind": "tag"
     }
   ]
 }
