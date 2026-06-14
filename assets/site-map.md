@@ -14,7 +14,7 @@ categories: system
 - [Concept Maps](/contents/pkm/concept-maps)
 
 ## SOLUTIONS
-- [Use Cases](/contents/pkm/use-cases)
+- [Use Cases](/contents/pkm/proof)
 - [System Design](/contents/pkm/system-design)
 - [Offering](/contents/pkm/offering)
 
@@ -28,5 +28,5 @@ categories: system
 - [MOC](/contents/pkm/MOC)
 - [Growth Model](/contents/pkm/growth-model)
 - [Costs](/contents/pkm/costs)
-- [Proof](/contents/pkm/proof)
+- [Proof](/contents/pkm/use-cases)
 - [Updates](/contents/pkm/updates)

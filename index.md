@@ -19,7 +19,7 @@ I help companies ship AI products faster. With a PhD in Computer Vision and 11+ 
 
 ## What I Do
 
-**[Use Cases](/contents/pkm/use-cases)** — Identify high-impact AI applications for your industry
+**[Use Cases](/contents/pkm/proof)** — Identify high-impact AI applications for your industry
 
 **[System Design](/contents/pkm/system-design)** — Architecture for edge AI, multi-camera, and cloud ML pipelines
 
@@ -54,7 +54,7 @@ I help companies ship AI products faster. With a PhD in Computer Vision and 11+ 
 
 **[Costs](/contents/pkm/costs)** — Transparent pricing for consulting engagements
 
-**[Track Record](/contents/pkm/proof)** — Patents, publications, and delivery history
+**[Track Record](/contents/pkm/use-cases)** — Patents, publications, and delivery history
 
 ---
 
