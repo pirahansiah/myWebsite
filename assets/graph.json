@@ -1,6 +1,55 @@
 {
   "nodes": [
     {
+      "id": "moc-atlas-graph",
+      "label": "ATLAS & Graph",
+      "url": null,
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-knowledge-graph",
+      "label": "Knowledge Graph",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
+      "kind": "moc"
+    },
+    {
+      "id": "contents-pkm-use-cases",
+      "label": "use-cases",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
+      "kind": "note"
+    },
+    {
+      "id": "moc-solutions",
+      "label": "SOLUTIONS",
+      "url": null,
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-use-cases",
+      "label": "Use Cases",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
+      "kind": "moc"
+    },
+    {
+      "id": "moc-about",
+      "label": "ABOUT",
+      "url": null,
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-about-me",
+      "label": "About Me",
+      "url": "/AboutMe",
+      "raw": null,
+      "kind": "moc"
+    },
+    {
       "id": "moc-atlas",
       "label": "ATLAS",
       "url": null,
@@ -36,13 +85,6 @@
       "kind": "note"
     },
     {
-      "id": "moc-solutions",
-      "label": "SOLUTIONS",
-      "url": null,
-      "raw": null,
-      "kind": "moc"
-    },
-    {
       "id": "moc-system-design",
       "label": "System Design",
       "url": "/contents/pkm/system-design",
@@ -55,13 +97,6 @@
       "url": "/contents/pkm/system-design",
       "raw": "/contents/pkm/system-design",
       "kind": "note"
-    },
-    {
-      "id": "moc-about",
-      "label": "ABOUT",
-      "url": null,
-      "raw": null,
-      "kind": "moc"
     },
     {
       "id": "moc-company",
@@ -141,6 +176,41 @@
       "kind": "note"
     },
     {
+      "id": "moc-llm",
+      "label": "LLM",
+      "url": null,
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-openrouter-ollama-setup",
+      "label": "OpenRouter + Ollama Setup",
+      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FOpenRouter_config.sh",
+      "raw": "/contents/projects/LLM/OpenRouter_config.sh",
+      "kind": "moc"
+    },
+    {
+      "id": "contents-projects-llm-openrouter-config-sh",
+      "label": "OpenRouter_config",
+      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FOpenRouter_config.sh",
+      "raw": "/contents/projects/LLM/OpenRouter_config.sh",
+      "kind": "note"
+    },
+    {
+      "id": "moc-ai-knowledge-graph",
+      "label": "AI Knowledge Graph",
+      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FaiGraph.py",
+      "raw": "/contents/projects/LLM/aiGraph.py",
+      "kind": "moc"
+    },
+    {
+      "id": "contents-projects-llm-aigraph-py",
+      "label": "aiGraph",
+      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FaiGraph.py",
+      "raw": "/contents/projects/LLM/aiGraph.py",
+      "kind": "note"
+    },
+    {
       "id": "contents-readme",
       "label": "README",
       "url": "/contents/README",
@@ -152,6 +222,13 @@
       "label": "menus",
       "url": "/contents/menus",
       "raw": "/contents/menus",
+      "kind": "note"
+    },
+    {
+      "id": "aboutme",
+      "label": "AboutMe",
+      "url": "/AboutMe",
+      "raw": "/AboutMe",
       "kind": "note"
     },
     {
@@ -201,13 +278,6 @@
       "label": "updates",
       "url": "/contents/pkm/updates",
       "raw": "/contents/pkm/updates",
-      "kind": "note"
-    },
-    {
-      "id": "contents-pkm-use-cases",
-      "label": "use-cases",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
       "kind": "note"
     },
     {
@@ -367,6 +437,31 @@
   ],
   "links": [
     {
+      "source": "moc-atlas-graph",
+      "target": "moc-knowledge-graph",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-knowledge-graph",
+      "target": "contents-pkm-use-cases",
+      "kind": "link"
+    },
+    {
+      "source": "moc-solutions",
+      "target": "moc-use-cases",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-use-cases",
+      "target": "contents-pkm-use-cases",
+      "kind": "link"
+    },
+    {
+      "source": "moc-about",
+      "target": "moc-about-me",
+      "kind": "moc"
+    },
+    {
       "source": "moc-atlas",
       "target": "moc-research-synthesis",
       "kind": "moc"
@@ -447,6 +542,36 @@
       "kind": "link"
     },
     {
+      "source": "moc-llm",
+      "target": "moc-openrouter-ollama-setup",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-openrouter-ollama-setup",
+      "target": "contents-projects-llm-openrouter-config-sh",
+      "kind": "link"
+    },
+    {
+      "source": "moc-llm",
+      "target": "moc-ai-knowledge-graph",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-ai-knowledge-graph",
+      "target": "contents-projects-llm-aigraph-py",
+      "kind": "link"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-use-cases",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "aboutme",
+      "kind": "mdlink"
+    },
+    {
       "source": "contents-menus",
       "target": "contents-pkm-knowledge-graph",
       "kind": "mdlink"
@@ -519,6 +644,16 @@
     {
       "source": "contents-menus",
       "target": "contents-pkm-updates",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-projects-llm-openrouter-config-sh",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-projects-llm-aigraph-py",
       "kind": "mdlink"
     },
     {
