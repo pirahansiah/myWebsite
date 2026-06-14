@@ -8,20 +8,6 @@
       "kind": "moc"
     },
     {
-      "id": "moc-knowledge-graph",
-      "label": "Knowledge Graph",
-      "url": "/contents/pkm/knowledge-graph",
-      "raw": "/contents/pkm/knowledge-graph",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-knowledge-graph",
-      "label": "knowledge-graph",
-      "url": "/contents/pkm/knowledge-graph",
-      "raw": "/contents/pkm/knowledge-graph",
-      "kind": "note"
-    },
-    {
       "id": "moc-research-synthesis",
       "label": "Research Synthesis",
       "url": "/contents/pkm/research-synthesis",
@@ -50,39 +36,11 @@
       "kind": "note"
     },
     {
-      "id": "moc-concept-maps",
-      "label": "Concept Maps",
-      "url": "/contents/pkm/concept-maps",
-      "raw": "/contents/pkm/concept-maps",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-concept-maps",
-      "label": "concept-maps",
-      "url": "/contents/pkm/concept-maps",
-      "raw": "/contents/pkm/concept-maps",
-      "kind": "note"
-    },
-    {
       "id": "moc-solutions",
       "label": "SOLUTIONS",
       "url": null,
       "raw": null,
       "kind": "moc"
-    },
-    {
-      "id": "moc-use-cases",
-      "label": "Use Cases",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-use-cases",
-      "label": "use-cases",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "note"
     },
     {
       "id": "moc-system-design",
@@ -99,39 +57,11 @@
       "kind": "note"
     },
     {
-      "id": "moc-offering",
-      "label": "Offering",
-      "url": "/contents/pkm/offering",
-      "raw": "/contents/pkm/offering",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-offering",
-      "label": "offering",
-      "url": "/contents/pkm/offering",
-      "raw": "/contents/pkm/offering",
-      "kind": "note"
-    },
-    {
       "id": "moc-about",
       "label": "ABOUT",
       "url": null,
       "raw": null,
       "kind": "moc"
-    },
-    {
-      "id": "moc-about-me",
-      "label": "About Me",
-      "url": "/contents/pkm/AboutMe",
-      "raw": "/contents/pkm/AboutMe",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-aboutme",
-      "label": "AboutMe",
-      "url": "/contents/pkm/AboutMe",
-      "raw": "/contents/pkm/AboutMe",
-      "kind": "note"
     },
     {
       "id": "moc-company",
@@ -148,39 +78,11 @@
       "kind": "note"
     },
     {
-      "id": "moc-why-we-are-unique",
-      "label": "Why We Are Unique",
-      "url": "/contents/pkm/why-we-are-unique",
-      "raw": "/contents/pkm/why-we-are-unique",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-why-we-are-unique",
-      "label": "why-we-are-unique",
-      "url": "/contents/pkm/why-we-are-unique",
-      "raw": "/contents/pkm/why-we-are-unique",
-      "kind": "note"
-    },
-    {
       "id": "moc-resources",
       "label": "RESOURCES",
       "url": null,
       "raw": null,
       "kind": "moc"
-    },
-    {
-      "id": "moc-toc",
-      "label": "TOC",
-      "url": "/contents/pkm/TOC",
-      "raw": "/contents/pkm/TOC",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-toc",
-      "label": "TOC",
-      "url": "/contents/pkm/TOC",
-      "raw": "/contents/pkm/TOC",
-      "kind": "note"
     },
     {
       "id": "moc-moc",
@@ -239,20 +141,6 @@
       "kind": "note"
     },
     {
-      "id": "moc-updates",
-      "label": "Updates",
-      "url": "/contents/pkm/updates",
-      "raw": "/contents/pkm/updates",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-updates",
-      "label": "updates",
-      "url": "/contents/pkm/updates",
-      "raw": "/contents/pkm/updates",
-      "kind": "note"
-    },
-    {
       "id": "contents-readme",
       "label": "README",
       "url": "/contents/README",
@@ -267,227 +155,217 @@
       "kind": "note"
     },
     {
-      "id": "contents-volumes-4tb-2026-6-pkm-contents-cv-aboutme",
+      "id": "contents-pkm-knowledge-graph",
+      "label": "knowledge-graph",
+      "url": "/contents/pkm/knowledge-graph",
+      "raw": "/contents/pkm/knowledge-graph",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-concept-maps",
+      "label": "concept-maps",
+      "url": "/contents/pkm/concept-maps",
+      "raw": "/contents/pkm/concept-maps",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-offering",
+      "label": "offering",
+      "url": "/contents/pkm/offering",
+      "raw": "/contents/pkm/offering",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-aboutme",
       "label": "AboutMe",
-      "url": "/view/?p=%2Fcontents%2F%2FVolumes%2F4tb%2F2026-6%2FPKM%2Fcontents%2Fcv%2FAboutMe.html",
-      "raw": "/contents//Volumes/4tb/2026-6/PKM/contents/cv/AboutMe.html",
+      "url": "/contents/pkm/AboutMe",
+      "raw": "/contents/pkm/AboutMe",
       "kind": "note"
     },
     {
-      "id": "contents-inbox-e",
-      "label": "e",
-      "url": "/contents/inbox/e",
-      "raw": "/contents/inbox/e",
+      "id": "contents-pkm-why-we-are-unique",
+      "label": "why-we-are-unique",
+      "url": "/contents/pkm/why-we-are-unique",
+      "raw": "/contents/pkm/why-we-are-unique",
       "kind": "note"
     },
     {
-      "id": "contents-inbox-presentation",
-      "label": "presentation",
-      "url": "/contents/inbox/presentation",
-      "raw": "/contents/inbox/presentation",
+      "id": "contents-pkm-toc",
+      "label": "TOC",
+      "url": "/contents/pkm/TOC",
+      "raw": "/contents/pkm/TOC",
       "kind": "note"
     },
     {
-      "id": "contents-inbox-markmap-autoloader",
-      "label": "markmap-autoloader",
-      "url": "/contents/inbox/markmap-autoloader",
-      "raw": "/contents/inbox/markmap-autoloader",
+      "id": "contents-pkm-updates",
+      "label": "updates",
+      "url": "/contents/pkm/updates",
+      "raw": "/contents/pkm/updates",
       "kind": "note"
     },
     {
-      "id": "contents-inbox-fullmarkmapautoloaderwithimages",
-      "label": "FullMarkmapAutoloaderWithImages",
-      "url": "/contents/inbox/FullMarkmapAutoloaderWithImages",
-      "raw": "/contents/inbox/FullMarkmapAutoloaderWithImages",
-      "kind": "note"
-    },
-    {
-      "id": "contents-inbox-c",
-      "label": "c",
-      "url": "/contents/inbox/c",
-      "raw": "/contents/inbox/c",
-      "kind": "note"
-    },
-    {
-      "id": "contents-inbox-d",
-      "label": "d",
-      "url": "/contents/inbox/d",
-      "raw": "/contents/inbox/d",
-      "kind": "note"
-    },
-    {
-      "id": "contents-cv-aboutme",
-      "label": "AboutMe",
-      "url": "/view/?p=%2Fcontents%2Fcv%2FAboutMe.html",
-      "raw": "/contents/cv/AboutMe.html",
+      "id": "contents-pkm-use-cases",
+      "label": "use-cases",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "note"
     },
     {
       "id": "tag-about",
       "label": "#about",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-publications",
       "label": "#publications",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-patents",
       "label": "#patents",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-books",
       "label": "#books",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-journals",
       "label": "#journals",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-conference-papers",
       "label": "#conference-papers",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-keynotes",
       "label": "#keynotes",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-camera-calibration-expertise",
       "label": "#camera-calibration-expertise",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-hardware-platforms",
       "label": "#hardware--platforms",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-products-tools",
       "label": "#products--tools",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-open-source",
       "label": "#open-source",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-technical-content",
       "label": "#technical-content",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-cuda-gpu-programming",
       "label": "#cuda--gpu-programming",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-optical-flow",
       "label": "#optical-flow",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-optimization",
       "label": "#optimization",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-ai-llm",
       "label": "#ai--llm",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-cv-coaching-roadmap",
       "label": "#cv-coaching-roadmap",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-courses",
       "label": "#courses",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-workshops-events",
       "label": "#workshops--events",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-farshid",
       "label": "#farshid",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-pirahansiah",
       "label": "#pirahansiah",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     },
     {
       "id": "tag-drfarshidpirahansiah",
       "label": "#drfarshidpirahansiah",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
       "kind": "tag"
     }
   ],
   "links": [
-    {
-      "source": "moc-atlas",
-      "target": "moc-knowledge-graph",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-knowledge-graph",
-      "target": "contents-pkm-knowledge-graph",
-      "kind": "link"
-    },
     {
       "source": "moc-atlas",
       "target": "moc-research-synthesis",
@@ -509,26 +387,6 @@
       "kind": "link"
     },
     {
-      "source": "moc-atlas",
-      "target": "moc-concept-maps",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-concept-maps",
-      "target": "contents-pkm-concept-maps",
-      "kind": "link"
-    },
-    {
-      "source": "moc-solutions",
-      "target": "moc-use-cases",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-use-cases",
-      "target": "contents-pkm-use-cases",
-      "kind": "link"
-    },
-    {
       "source": "moc-solutions",
       "target": "moc-system-design",
       "kind": "moc"
@@ -539,26 +397,6 @@
       "kind": "link"
     },
     {
-      "source": "moc-solutions",
-      "target": "moc-offering",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-offering",
-      "target": "contents-pkm-offering",
-      "kind": "link"
-    },
-    {
-      "source": "moc-about",
-      "target": "moc-about-me",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-about-me",
-      "target": "contents-pkm-aboutme",
-      "kind": "link"
-    },
-    {
       "source": "moc-about",
       "target": "moc-company",
       "kind": "moc"
@@ -566,26 +404,6 @@
     {
       "source": "moc-company",
       "target": "contents-pkm-company",
-      "kind": "link"
-    },
-    {
-      "source": "moc-about",
-      "target": "moc-why-we-are-unique",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-why-we-are-unique",
-      "target": "contents-pkm-why-we-are-unique",
-      "kind": "link"
-    },
-    {
-      "source": "moc-resources",
-      "target": "moc-toc",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-toc",
-      "target": "contents-pkm-toc",
       "kind": "link"
     },
     {
@@ -629,16 +447,6 @@
       "kind": "link"
     },
     {
-      "source": "moc-resources",
-      "target": "moc-updates",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-updates",
-      "target": "contents-pkm-updates",
-      "kind": "link"
-    },
-    {
       "source": "contents-menus",
       "target": "contents-pkm-knowledge-graph",
       "kind": "mdlink"
@@ -660,7 +468,7 @@
     },
     {
       "source": "contents-menus",
-      "target": "contents-pkm-use-cases",
+      "target": "contents-pkm-proof",
       "kind": "mdlink"
     },
     {
@@ -710,161 +518,116 @@
     },
     {
       "source": "contents-menus",
-      "target": "contents-pkm-proof",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
       "target": "contents-pkm-updates",
       "kind": "mdlink"
     },
     {
-      "source": "contents-pkm-toc",
-      "target": "contents-volumes-4tb-2026-6-pkm-contents-cv-aboutme",
-      "kind": "wiki"
-    },
-    {
-      "source": "contents-pkm-toc",
-      "target": "contents-inbox-e",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-pkm-toc",
-      "target": "contents-inbox-presentation",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-pkm-toc",
-      "target": "contents-inbox-markmap-autoloader",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-pkm-toc",
-      "target": "contents-inbox-fullmarkmapautoloaderwithimages",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-pkm-toc",
-      "target": "contents-inbox-c",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-pkm-toc",
-      "target": "contents-inbox-d",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-pkm-toc",
-      "target": "contents-cv-aboutme",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-about",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-publications",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-patents",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-books",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-journals",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-conference-papers",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-keynotes",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-camera-calibration-expertise",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-hardware-platforms",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-products-tools",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-open-source",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-technical-content",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-cuda-gpu-programming",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-optical-flow",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-optimization",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-ai-llm",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-cv-coaching-roadmap",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-courses",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-workshops-events",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-farshid",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-pirahansiah",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-proof",
+      "source": "contents-pkm-use-cases",
       "target": "tag-drfarshidpirahansiah",
       "kind": "tag"
     }

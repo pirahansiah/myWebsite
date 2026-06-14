@@ -1,57 +1,33 @@
 ---
 - title: ATLAS
   items:
-  - title: Knowledge Graph
-    items: []
-    url: "/contents/pkm/use-cases"
   - title: Research Synthesis
     items: []
-    url: "/contents/pkm/use-cases"
+    url: "/contents/pkm/research-synthesis"
   - title: Strategic Connections
     items: []
-    url: "/contents/pkm/use-cases"
-  - title: Concept Maps
-    items: []
-    url: "/contents/pkm/use-cases"
+    url: "/contents/pkm/strategic-connections"
 - title: SOLUTIONS
   items:
-  - title: Use Cases
-    items: []
-    url: "/contents/pkm/use-cases"
   - title: System Design
     items: []
-    url: "/contents/pkm/use-cases"
-  - title: Offering
-    items: []
-    url: "/contents/pkm/use-cases"
+    url: "/contents/pkm/system-design"
 - title: ABOUT
   items:
-  - title: About Me
-    items: []
-    url: "/contents/pkm/use-cases"
   - title: Company
     items: []
-    url: "/contents/pkm/use-cases"
-  - title: Why We Are Unique
-    items: []
-    url: "/contents/pkm/use-cases"
+    url: "/contents/pkm/company"
 - title: RESOURCES
   items:
-  - title: TOC
-    items: []
-    url: "/contents/pkm/use-cases"
   - title: MOC
     items: []
-    url: "/contents/pkm/use-cases"
+    url: "/contents/pkm/MOC"
   - title: Growth Model
     items: []
-    url: "/contents/pkm/use-cases"
+    url: "/contents/pkm/growth-model"
   - title: Costs
     items: []
-    url: "/contents/pkm/use-cases"
+    url: "/contents/pkm/costs"
   - title: Proof
     items: []
-    url: "/contents/pkm/use-cases"
-  - title: Updates
-    items: []
-    url: "/contents/pkm/use-cases"
+    url: "/contents/pkm/proof"
