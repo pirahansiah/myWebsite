@@ -14,7 +14,7 @@ kramdown:
 
 defaults:
   - scope:
-      path: "Contents"
+      path: "contents"
     values:
       layout: farshid_default
 
@@ -23,7 +23,7 @@ plugins:
   - jekyll-feed
 
 include:
-  - Contents
+  - contents
 
 # Exclude
 exclude:

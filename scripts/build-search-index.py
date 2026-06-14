@@ -3,10 +3,12 @@ import os, json, re
 from pathlib import Path
 
 root_dir = Path(__file__).resolve().parent.parent
-base = root_dir / "Contents" / "pkm"
+base = root_dir / "contents" / "pkm"
 index = []
 
 for path in sorted(base.rglob("*.md")):
+    if path.name.startswith("._"):
+        continue
     try:
         content = path.read_text(errors="replace")
         title = path.stem

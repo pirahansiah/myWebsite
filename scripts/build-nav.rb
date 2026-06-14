@@ -10,7 +10,7 @@ require "yaml"
 require "fileutils"
 
 ROOT = File.expand_path("..", __dir__)
-SITE_MD = File.join(ROOT, "Contents", "menus.md")
+SITE_MD = File.join(ROOT, "contents", "menus.md")
 OUT_YML = File.join(ROOT, "_data", "nav.yml")
 OUT_ASSET = File.join(ROOT, "assets", "site-map.md")
 OUT_GRAPH = File.join(ROOT, "assets", "graph.json")
@@ -36,7 +36,7 @@ end
 def wiki_index
   @wiki_index ||= begin
     idx = {}
-    Dir.glob(File.join(ROOT, "Contents", "**", "*")).each do |path|
+    Dir.glob(File.join(ROOT, "contents", "**", "*")).each do |path|
       next unless File.file?(path)
       next if File.basename(path) == "site.md"
 
@@ -311,7 +311,7 @@ def build_hashtag_graph
     nodes[id] ||= { "id" => id, "label" => label, "kind" => "tag" }
   end
 
-  Dir.glob(File.join(ROOT, "Contents", "**", "*.md")).each do |path|
+  Dir.glob(File.join(ROOT, "contents", "**", "*.md")).each do |path|
     next unless File.file?(path)
 
     body = File.read(path, encoding: "UTF-8").scrub("")
@@ -387,7 +387,7 @@ def build_graph(nav, hashtag_mode: false)
 
   walk_nav.call(nav, nil)
 
-  Dir.glob(File.join(ROOT, "Contents", "**", "*.md")).each do |path|
+  Dir.glob(File.join(ROOT, "contents", "**", "*.md")).each do |path|
     next unless File.file?(path)
 
     rel = path.sub("#{ROOT}/", "")

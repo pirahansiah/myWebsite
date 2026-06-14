@@ -8,25 +8,25 @@ categories: system
 # Sitemap
 
 ## ATLAS
-- [Knowledge Graph](/contents/pkm/knowledge-graph)
-- [Research Synthesis](/contents/pkm/research-synthesis)
-- [Strategic Connections](/contents/pkm/strategic-connections)
-- [Concept Maps](/contents/pkm/concept-maps)
+- [Knowledge Graph](www.pirahansiah.com)
+- [Research Synthesis](www.pirahansiah.com)
+- [Strategic Connections](www.pirahansiah.com)
+- [Concept Maps](www.pirahansiah.com)
 
 ## SOLUTIONS
-- [Use Cases](/contents/pkm/use-cases)
-- [System Design](/contents/pkm/system-design)
-- [Offering](/contents/pkm/offering)
+- [Use Cases](www.pirahansiah.com)
+- [System Design](www.pirahansiah.com)
+- [Offering](www.pirahansiah.com)
 
 ## ABOUT
-- [About Me](/contents/pkm/AboutMe)
-- [Company](/contents/pkm/company)
-- [Why We Are Unique](/contents/pkm/why-we-are-unique)
+- [About Me](www.pirahansiah.com)
+- [Company](www.pirahansiah.com)
+- [Why We Are Unique](www.pirahansiah.com)
 
 ## RESOURCES
-- [TOC](/contents/pkm/TOC)
-- [MOC](/contents/pkm/MOC)
-- [Growth Model](/contents/pkm/growth-model)
-- [Costs](/contents/pkm/costs)
-- [Proof](/contents/pkm/proof)
-- [Updates](/contents/pkm/updates)
+- [TOC](www.pirahansiah.com)
+- [MOC](www.pirahansiah.com)
+- [Growth Model](www.pirahansiah.com)
+- [Costs](www.pirahansiah.com)
+- [Proof](www.pirahansiah.com)
+- [Updates](www.pirahansiah.com)
