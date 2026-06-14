@@ -94,6 +94,36 @@
       "id": "tag-workshops-events",
       "label": "#workshops--events",
       "kind": "tag"
+    },
+    {
+      "id": "tag-farshid",
+      "label": "#farshid",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-pirahansiah",
+      "label": "#pirahansiah",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-drfarshidpirahansiah",
+      "label": "#drfarshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-code",
+      "label": "#code",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-liquid-refraction",
+      "label": "#liquid-refraction",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-git",
+      "label": "#git",
+      "kind": "tag"
     }
   ],
   "links": [
@@ -1046,6 +1076,66 @@
       "source": "tag-courses",
       "target": "tag-workshops-events",
       "kind": "cooccur"
+    },
+    {
+      "source": "contents-pkm-research-synthesis",
+      "target": "tag-farshid",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-research-synthesis",
+      "target": "tag-pirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-research-synthesis",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-farshid",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-farshid",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-pirahansiah",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-pkm-strategic-connections",
+      "target": "tag-farshid",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-strategic-connections",
+      "target": "tag-pirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-strategic-connections",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-templates-farshid-ai-cv-llm-fullmarkmapautoloaderwithimages",
+      "target": "tag-code",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-templates-farshid-ai-cv-llm-c",
+      "target": "tag-liquid-refraction",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-templates-farshid-ai-cv-llm-markmap-autoloader",
+      "target": "tag-git",
+      "kind": "tag"
     }
   ]
 }

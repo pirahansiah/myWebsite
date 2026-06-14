@@ -200,7 +200,15 @@ def parse_moc(text)
       next
     end
 
-    next unless stripped.match?(/\A(\[.+\]\(.+\)|\[\[.+\]\])\z/)
+    next unless stripped.match?(/\A(- \[.+\]\(.+\)|\[.+\]\(.+\)|\[\[.+\]\])\z/)
+
+    if (m = stripped.match(/\A-\s*\[(.+?)\]\((.+?)\)\z/))
+      child = { "title" => m[1], "items" => [] }
+      child["url"] = menu_url(m[2])
+      parent = ctx[:h2] || ctx[:h1]
+      parent["items"] << child if parent
+      next
+    end
 
     if (m = stripped.match(/\A\[(.+?)\]\((.+?)\)\z/))
       attach_link_to_heading(ctx, m[1], menu_url(m[2]))
