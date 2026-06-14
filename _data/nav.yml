@@ -47,10 +47,4 @@
     items: []
     url: "/contents/pkm/proof"
 - title: LLM
-  items:
-  - title: OpenRouter + Ollama Setup
-    items: []
-    url: "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FOpenRouter_config.sh"
-  - title: AI Knowledge Graph
-    items: []
-    url: "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FaiGraph.py"
+  items: []

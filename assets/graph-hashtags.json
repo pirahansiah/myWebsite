@@ -1,6 +1,16 @@
 {
   "nodes": [
     {
+      "id": "tag-setup",
+      "label": "#setup",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-graph",
+      "label": "#graph",
+      "kind": "tag"
+    },
+    {
       "id": "tag-about",
       "label": "#about",
       "kind": "tag"
@@ -112,6 +122,21 @@
     }
   ],
   "links": [
+    {
+      "source": "contents-menus",
+      "target": "tag-setup",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-menus",
+      "target": "tag-graph",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-setup",
+      "target": "tag-graph",
+      "kind": "cooccur"
+    },
     {
       "source": "contents-pkm-use-cases",
       "target": "tag-about",

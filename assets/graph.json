@@ -183,34 +183,6 @@
       "kind": "moc"
     },
     {
-      "id": "moc-openrouter-ollama-setup",
-      "label": "OpenRouter + Ollama Setup",
-      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FOpenRouter_config.sh",
-      "raw": "/contents/projects/LLM/OpenRouter_config.sh",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-projects-llm-openrouter-config-sh",
-      "label": "OpenRouter_config",
-      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FOpenRouter_config.sh",
-      "raw": "/contents/projects/LLM/OpenRouter_config.sh",
-      "kind": "note"
-    },
-    {
-      "id": "moc-ai-knowledge-graph",
-      "label": "AI Knowledge Graph",
-      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FaiGraph.py",
-      "raw": "/contents/projects/LLM/aiGraph.py",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-projects-llm-aigraph-py",
-      "label": "aiGraph",
-      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FaiGraph.py",
-      "raw": "/contents/projects/LLM/aiGraph.py",
-      "kind": "note"
-    },
-    {
       "id": "contents-readme",
       "label": "README",
       "url": "/contents/README",
@@ -223,6 +195,20 @@
       "url": "/contents/menus",
       "raw": "/contents/menus",
       "kind": "note"
+    },
+    {
+      "id": "tag-setup",
+      "label": "#setup",
+      "url": "/contents/menus",
+      "raw": "/contents/menus",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-graph",
+      "label": "#graph",
+      "url": "/contents/menus",
+      "raw": "/contents/menus",
+      "kind": "tag"
     },
     {
       "id": "aboutme",
@@ -278,6 +264,20 @@
       "label": "updates",
       "url": "/contents/pkm/updates",
       "raw": "/contents/pkm/updates",
+      "kind": "note"
+    },
+    {
+      "id": "contents-projects-llm-openrouter-config-sh",
+      "label": "OpenRouter_config",
+      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FOpenRouter_config.sh",
+      "raw": "/contents/projects/LLM/OpenRouter_config.sh",
+      "kind": "note"
+    },
+    {
+      "id": "contents-projects-llm-aigraph-py",
+      "label": "aiGraph",
+      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FaiGraph.py",
+      "raw": "/contents/projects/LLM/aiGraph.py",
       "kind": "note"
     },
     {
@@ -542,24 +542,14 @@
       "kind": "link"
     },
     {
-      "source": "moc-llm",
-      "target": "moc-openrouter-ollama-setup",
-      "kind": "moc"
+      "source": "contents-menus",
+      "target": "tag-setup",
+      "kind": "tag"
     },
     {
-      "source": "moc-openrouter-ollama-setup",
-      "target": "contents-projects-llm-openrouter-config-sh",
-      "kind": "link"
-    },
-    {
-      "source": "moc-llm",
-      "target": "moc-ai-knowledge-graph",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-ai-knowledge-graph",
-      "target": "contents-projects-llm-aigraph-py",
-      "kind": "link"
+      "source": "contents-menus",
+      "target": "tag-graph",
+      "kind": "tag"
     },
     {
       "source": "contents-menus",
