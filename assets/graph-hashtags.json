@@ -1,0 +1,1051 @@
+{
+  "nodes": [
+    {
+      "id": "tag-about",
+      "label": "#about",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-publications",
+      "label": "#publications",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-patents",
+      "label": "#patents",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-books",
+      "label": "#books",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-journals",
+      "label": "#journals",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-conference-papers",
+      "label": "#conference-papers",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-keynotes",
+      "label": "#keynotes",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-camera-calibration-expertise",
+      "label": "#camera-calibration-expertise",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-hardware-platforms",
+      "label": "#hardware--platforms",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-products-tools",
+      "label": "#products--tools",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-open-source",
+      "label": "#open-source",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-technical-content",
+      "label": "#technical-content",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-cuda-gpu-programming",
+      "label": "#cuda--gpu-programming",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-optical-flow",
+      "label": "#optical-flow",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-optimization",
+      "label": "#optimization",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-ai-llm",
+      "label": "#ai--llm",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-cv-coaching-roadmap",
+      "label": "#cv-coaching-roadmap",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-courses",
+      "label": "#courses",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-workshops-events",
+      "label": "#workshops--events",
+      "kind": "tag"
+    }
+  ],
+  "links": [
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-about",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-publications",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-patents",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-books",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-journals",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-conference-papers",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-keynotes",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-camera-calibration-expertise",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-hardware-platforms",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-products-tools",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-open-source",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-technical-content",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-optical-flow",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-optimization",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-ai-llm",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-courses",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-workshops-events",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-publications",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-patents",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-books",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-journals",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-conference-papers",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-keynotes",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-camera-calibration-expertise",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-hardware-platforms",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-products-tools",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-open-source",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-technical-content",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-patents",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-books",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-journals",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-conference-papers",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-keynotes",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-camera-calibration-expertise",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-hardware-platforms",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-products-tools",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-open-source",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-technical-content",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-books",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-journals",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-conference-papers",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-keynotes",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-camera-calibration-expertise",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-hardware-platforms",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-products-tools",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-open-source",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-technical-content",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-journals",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-conference-papers",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-keynotes",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-camera-calibration-expertise",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-hardware-platforms",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-products-tools",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-open-source",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-technical-content",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-conference-papers",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-keynotes",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-camera-calibration-expertise",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-hardware-platforms",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-products-tools",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-open-source",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-technical-content",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-keynotes",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-camera-calibration-expertise",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-hardware-platforms",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-products-tools",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-open-source",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-technical-content",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-camera-calibration-expertise",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-hardware-platforms",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-products-tools",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-open-source",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-technical-content",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-hardware-platforms",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-products-tools",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-open-source",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-technical-content",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-products-tools",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-open-source",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-technical-content",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
+      "target": "tag-open-source",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
+      "target": "tag-technical-content",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-open-source",
+      "target": "tag-technical-content",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-open-source",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-open-source",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-open-source",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-open-source",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-open-source",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-open-source",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-open-source",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-technical-content",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-technical-content",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-technical-content",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-technical-content",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-technical-content",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-technical-content",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-technical-content",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cuda-gpu-programming",
+      "target": "tag-optical-flow",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cuda-gpu-programming",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cuda-gpu-programming",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cuda-gpu-programming",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cuda-gpu-programming",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cuda-gpu-programming",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optical-flow",
+      "target": "tag-optimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optical-flow",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optical-flow",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optical-flow",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optical-flow",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optimization",
+      "target": "tag-ai-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optimization",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optimization",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optimization",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-ai-llm",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-ai-llm",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-ai-llm",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cv-coaching-roadmap",
+      "target": "tag-courses",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cv-coaching-roadmap",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-courses",
+      "target": "tag-workshops-events",
+      "kind": "cooccur"
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Farshid Liquid Glass — macOS 27 / iOS 27
+   ═══════════════════════════════════════════════════════════════════ */
+@import url("./farshid-macos27.css");
+
+*,*::before,*::after{box-sizing:border-box}
+
+/* ─── BASE GLASS ─────────────────────────────────────────────────── */
+.liquid-glass,
+.liquid-glass-item {
+  position: relative;
+  overflow: hidden;
+  background: var(--glass-bg);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  color: var(--text);
+  transition:
+    background   0.22s ease,
+    box-shadow   0.22s ease,
+    transform    0.18s ease,
+    border-color 0.22s ease;
+}
+
+/* top-left shimmer — the iOS 27 signature */
+.liquid-glass::before,
+.liquid-glass-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.62) 0%,
+    rgba(255, 255, 255, 0.00) 50%,
+    rgba(200, 180, 255, 0.08) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.liquid-glass:hover::before,
+.liquid-glass-item:hover::before {
+  opacity: 1;
+}
+
+.liquid-glass:hover,
+.liquid-glass-item:hover {
+  background: var(--glass-bg-hover);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 14px 38px rgba(100, 80, 200, 0.14),
+    0  1px 0   rgba(255, 255, 255, 1.00) inset;
+}
+
+.liquid-glass-item:hover {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* ─── ACTIVE / SELECTED PILL ─────────────────────────────────────── */
+.liquid-glass-item.active,
+.liquid-glass-item[aria-current="page"],
+.nav-list a.active,
+.nav-list a[aria-current="page"] {
+  background: var(--pill-active-bg);
+  border-color: var(--pill-active-border);
+  box-shadow: var(--pill-active-shadow);
+  color: var(--farshid-blue);
+  border-radius: 999px !important;
+}
+
+/* ─── NAVBAR — iOS 27 rounded rectangle ─────────────────────────── */
+.nav-wrapper {
+  position: sticky;
+  top: 15px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  overflow: visible;
+}
+
+.site-nav,
+.site-nav.liquid-glass {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 24px;
+  box-shadow:
+    0 8px 30px rgba(100, 80, 200, 0.10),
+    0 1px 0    rgba(255, 255, 255, 0.96) inset,
+    0 -1px 0   rgba(180, 160, 220, 0.14) inset;
+  overflow: visible;
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-nav.liquid-glass {
+    background: rgba(30, 30, 34, 0.72);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 8px 30px rgba(0, 0, 0, 0.35),
+      0 1px 0    rgba(255, 255, 255, 0.08) inset;
+  }
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ─── NAV ITEMS — iOS 27 pill style ─────────────────────────────── */
+.nav-brand,
+.nav-list a,
+.nav-list li > a,
+.nav-toggle,
+.nav-menu-btn,
+.liquid-glass-item,
+.moc-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  border-radius: 999px !important;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  white-space: nowrap;
+  transition: all 0.18s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-brand:hover,
+.nav-list a:hover,
+.nav-list li > a:hover {
+  background: rgba(255, 255, 255, 0.62);
+  border-color: rgba(255, 255, 255, 0.90);
+  color: var(--farshid-blue);
+  box-shadow:
+    0 6px 24px rgba(10, 132, 255, 0.18),
+    0 1px 0 rgba(255, 255, 255, 1.0) inset;
+  transform: translateY(-1px);
+}
+
+/* ─── TOOLBAR ────────────────────────────────────────────────────── */
+.toolbar.liquid-glass {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.56);
+  backdrop-filter: blur(24px) saturate(170%);
+  -webkit-backdrop-filter: blur(24px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.80);
+  border-radius: 26px;
+  box-shadow:
+    0 6px 24px rgba(100, 80, 200, 0.09),
+    0 1px 0    rgba(255, 255, 255, 0.95) inset;
+}
+
+.bottom-toolbar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+/* ─── MAIN CONTENT PANEL ─────────────────────────────────────────── */
+.site-main.liquid-glass {
+  background: rgba(255, 255, 255, 0.46);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 28px;
+  box-shadow: var(--glass-shadow-lg);
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-main.liquid-glass {
+    background: rgba(22, 22, 26, 0.68);
+    border-color: rgba(255, 255, 255, 0.10);
+  }
+}
+
+/* ─── NAV DROPDOWN — iOS 27 glass panel ──────────────────────────── */
+.nav-list {
+  position: relative;
+}
+
+.nav-list > li {
+  position: relative;
+}
+
+.nav-sub {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  padding: 8px;
+  margin: 0;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  box-shadow:
+    0 16px 48px rgba(80, 60, 160, 0.18),
+    0 1px 0 rgba(255, 255, 255, 0.98) inset;
+  z-index: 1000;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-sub {
+    background: rgba(44, 44, 50, 0.92);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.48),
+      0 1px 0 rgba(255, 255, 255, 0.08) inset;
+  }
+}
+
+.has-children.open > .nav-sub {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-sub li {
+  width: 100%;
+}
+
+.nav-sub li a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.16s ease;
+}
+
+.nav-sub li a:hover {
+  background: rgba(255, 255, 255, 0.60);
+  border-color: rgba(255, 255, 255, 0.80);
+  color: var(--farshid-blue);
+  box-shadow: 0 4px 16px rgba(10, 132, 255, 0.12);
+}
+
+.nav-toggle {
+  padding: 6px 10px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+}
+
+/* ─── PILL UTILITY ───────────────────────────────────────────────── */
+.glass-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  border-radius: 999px !important;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.30);
+  border: 1px solid rgba(255, 255, 255, 0.50);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.glass-pill:hover {
+  background: rgba(255, 255, 255, 0.58);
+  border-color: rgba(255, 255, 255, 0.85);
+  color: var(--text);
+}
+
+/* ─── CODE ───────────────────────────────────────────────────────── */
+code,pre{
+  background: rgba(180, 170, 210, 0.14);
+  border: 1px solid rgba(180, 160, 220, 0.22);
+  border-radius: 10px;
+  font-size: 0.9em;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .liquid-glass,.liquid-glass-item,#farshid-cursor{transition:none!important;animation:none!important}
+}
+
+/* ─── DESKTOP: hide menu button ─────────────────────────────────── */
+@media (min-width: 769px) {
+  .nav-menu-btn {
+    display: none !important;
+  }
+}
+
+/* ─── MOBILE NAV ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-menu-btn {
+    display: block;
+  }
+
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    max-height: 70vh;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(32px) saturate(200%);
+    -webkit-backdrop-filter: blur(32px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 16px 48px rgba(80, 60, 160, 0.18);
+    z-index: 1000;
+    overflow: visible;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .nav-list a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-open > .nav-list {
+    display: flex;
+  }
+
+  .nav-sub {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    min-width: 0;
+    width: 100%;
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.04);
+    border: none;
+    border-radius: 14px;
+    margin: 4px 0 8px;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+  }
+
+  .has-children.open > .nav-sub {
+    display: flex;
+    transform: none !important;
+  }
+
+  .has-children {
+    flex-direction: column;
+  }
+
+  .has-children > a,
+  .has-children > .nav-link {
+    width: 100%;
+  justify-content: flex-start;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .nav-list {
+      background: rgba(44, 44, 50, 0.95);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .nav-sub {
+      background: rgba(255, 255, 255, 0.06);
+    }
+  }
+}
+
+.site-nav::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */

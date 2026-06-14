@@ -1,0 +1,500 @@
+{
+  "nodes": [
+    {
+      "id": "moc-sitemap",
+      "label": "Sitemap",
+      "url": null,
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-atlas",
+      "label": "ATLAS",
+      "url": null,
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-solutions",
+      "label": "SOLUTIONS",
+      "url": null,
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-about",
+      "label": "ABOUT",
+      "url": null,
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-resources",
+      "label": "RESOURCES",
+      "url": null,
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "contents-readme",
+      "label": "README",
+      "url": "/contents/README",
+      "raw": "/contents/README",
+      "kind": "note"
+    },
+    {
+      "id": "contents-menus",
+      "label": "menus",
+      "url": "/contents/menus",
+      "raw": "/contents/menus",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-knowledge-graph",
+      "label": "knowledge-graph",
+      "url": "/contents/pkm/knowledge-graph",
+      "raw": "/contents/pkm/knowledge-graph",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-research-synthesis",
+      "label": "research-synthesis",
+      "url": "/contents/pkm/research-synthesis",
+      "raw": "/contents/pkm/research-synthesis",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-strategic-connections",
+      "label": "strategic-connections",
+      "url": "/contents/pkm/strategic-connections",
+      "raw": "/contents/pkm/strategic-connections",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-concept-maps",
+      "label": "concept-maps",
+      "url": "/contents/pkm/concept-maps",
+      "raw": "/contents/pkm/concept-maps",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-use-cases",
+      "label": "use-cases",
+      "url": "/contents/pkm/use-cases",
+      "raw": "/contents/pkm/use-cases",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-system-design",
+      "label": "system-design",
+      "url": "/contents/pkm/system-design",
+      "raw": "/contents/pkm/system-design",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-offering",
+      "label": "offering",
+      "url": "/contents/pkm/offering",
+      "raw": "/contents/pkm/offering",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-aboutme",
+      "label": "AboutMe",
+      "url": "/contents/pkm/AboutMe",
+      "raw": "/contents/pkm/AboutMe",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-company",
+      "label": "company",
+      "url": "/contents/pkm/company",
+      "raw": "/contents/pkm/company",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-why-we-are-unique",
+      "label": "why-we-are-unique",
+      "url": "/contents/pkm/why-we-are-unique",
+      "raw": "/contents/pkm/why-we-are-unique",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-toc",
+      "label": "TOC",
+      "url": "/contents/pkm/TOC",
+      "raw": "/contents/pkm/TOC",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-moc",
+      "label": "MOC",
+      "url": "/contents/pkm/MOC",
+      "raw": "/contents/pkm/MOC",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-growth-model",
+      "label": "growth-model",
+      "url": "/contents/pkm/growth-model",
+      "raw": "/contents/pkm/growth-model",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-costs",
+      "label": "costs",
+      "url": "/contents/pkm/costs",
+      "raw": "/contents/pkm/costs",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-proof",
+      "label": "proof",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "note"
+    },
+    {
+      "id": "contents-pkm-updates",
+      "label": "updates",
+      "url": "/contents/pkm/updates",
+      "raw": "/contents/pkm/updates",
+      "kind": "note"
+    },
+    {
+      "id": "tag-about",
+      "label": "#about",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-publications",
+      "label": "#publications",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-patents",
+      "label": "#patents",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-books",
+      "label": "#books",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-journals",
+      "label": "#journals",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-conference-papers",
+      "label": "#conference-papers",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-keynotes",
+      "label": "#keynotes",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-camera-calibration-expertise",
+      "label": "#camera-calibration-expertise",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-hardware-platforms",
+      "label": "#hardware--platforms",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-products-tools",
+      "label": "#products--tools",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-open-source",
+      "label": "#open-source",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-technical-content",
+      "label": "#technical-content",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-cuda-gpu-programming",
+      "label": "#cuda--gpu-programming",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-optical-flow",
+      "label": "#optical-flow",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-optimization",
+      "label": "#optimization",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-ai-llm",
+      "label": "#ai--llm",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-cv-coaching-roadmap",
+      "label": "#cv-coaching-roadmap",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-courses",
+      "label": "#courses",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-workshops-events",
+      "label": "#workshops--events",
+      "url": "/contents/pkm/proof",
+      "raw": "/contents/pkm/proof",
+      "kind": "tag"
+    }
+  ],
+  "links": [
+    {
+      "source": "moc-sitemap",
+      "target": "moc-atlas",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-sitemap",
+      "target": "moc-solutions",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-sitemap",
+      "target": "moc-about",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-sitemap",
+      "target": "moc-resources",
+      "kind": "moc"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-knowledge-graph",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-research-synthesis",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-strategic-connections",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-concept-maps",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-use-cases",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-system-design",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-offering",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-aboutme",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-company",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-why-we-are-unique",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-toc",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-moc",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-growth-model",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-costs",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-proof",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-menus",
+      "target": "contents-pkm-updates",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-pkm-toc",
+      "target": "contents-pkm-aboutme",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-about",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-publications",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-patents",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-books",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-journals",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-conference-papers",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-keynotes",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-camera-calibration-expertise",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-hardware-platforms",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-products-tools",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-open-source",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-technical-content",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-cuda-gpu-programming",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-optical-flow",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-optimization",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-ai-llm",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-cv-coaching-roadmap",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-courses",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-proof",
+      "target": "tag-workshops-events",
+      "kind": "tag"
+    }
+  ]
+}

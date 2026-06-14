@@ -1,0 +1,30 @@
+{
+  "site": {
+    "title": "Farshid Pirahansiah",
+    "description": "Computer Vision Engineer Portfolio",
+    "url": "https://www.pirahansiah.com"
+  },
+  "content": {
+    "localPrefix": "contents/",
+    "github": {
+      "owner": "pirahansiah",
+      "repo": "PKM",
+      "branch": "main"
+    },
+    "pages": {
+      "homeIntro": "index.md"
+    },
+    "navigation": {
+      "siteMapFile": "site.md"
+    },
+    "home": {
+      "featuredProjects": []
+    },
+    "projects": {
+      "files": [],
+      "directory": "",
+      "autoDiscover": false,
+      "limit": 9
+    }
+  }
+}

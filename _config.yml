@@ -1,44 +1,39 @@
-# Site Settings
-title: "Dr. Farshid Pirahansiah"
-email: mylastname@gmail.com  
-description: "Expertise in Computer Vision, ML, LLM"
-baseurl: "" 
-url: "https://www.pirahansiah.com"
-twitter_username: pirahansiah
-github_username: pirahansiah
+# Site settings
+title: Farshid Pirahansiah
+author: Farshid Pirahansiah
+url: https://www.pirahansiah.com
+baseurl: ""
+description: Computer Vision & AI Engineer
 
-name: "pirahansiah"
-author: "Dr. Farshid Pirahansiah"
+# Jekyll settings
 markdown: kramdown
-permalink: /:title/
-
+permalink: pretty
 kramdown:
   input: GFM
-  auto_ids: true
-  hard_wrap: false
-  linkify: true
+  syntax_highlighter: rouge
 
-include:
-  - farshid
+defaults:
+  - scope:
+      path: "Contents"
+    values:
+      layout: farshid_default
 
+# Plugins
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
-navigation:
-  - title: "Home"
-    url: "/"
-  - title: "Farshid"
-    children:
-      - title: "Products"
-        url: "/farshid/portfolio/projects/Solutions"  
-      - title: "Resources"
-        url: "/farshid/Resources"  
-      - title: "Social"
-        url: "/farshid/Social"      
-      - title: "Portfolio"
-        children:
-          - title: "Publications"
-            url: "/farshid/portfolio/publications/"
-            children:
-                - title: "CV_Patents"
-                  url: "/farshid/portfolio/publications/CV/"
+
+include:
+  - Contents
+
+# Exclude
+exclude:
+  - README.md
+  - run.sh
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .git/
+  - .gitignore
+  - CNAME
+  - Ads.txt
+  - scripts/

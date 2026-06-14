@@ -1,0 +1,21 @@
+{% assign depth = include.depth | default: 0 | plus: 1 %}
+{% for item in include.items %}
+  {% assign children = item.items %}
+  {% assign child_count = children | size %}
+  {% if child_count > 0 %}
+    <li class="has-children nav-depth-{{ depth }}">
+      <a href="#" class="liquid-glass-item nav-link" data-nav-toggle aria-expanded="false">{{ item.title }}<span class="nav-chevron" aria-hidden="true"> ▾</span></a>
+      <ul class="nav-sub nav-depth-{{ depth }}">
+        {% include nav-items.html items=children depth=depth %}
+      </ul>
+    </li>
+  {% elsif item.url %}
+    <li class="nav-depth-{{ depth }}">
+      <a href="{{ item.url | relative_url }}" class="liquid-glass-item">{{ item.title }}</a>
+    </li>
+  {% else %}
+    <li class="nav-depth-{{ depth }}">
+      <span class="nav-label liquid-glass-item">{{ item.title }}</span>
+    </li>
+  {% endif %}
+{% endfor %}

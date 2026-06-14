@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ site.author }}">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <link rel="icon" type="image/png" href="{{ '/assets/farshid.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/farshid.png' | relative_url }}">
+  
+  <link rel="stylesheet" href="{{ '/assets/css/farshid-macos27.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/farshid-liquid-glass.css' | relative_url }}">
+  
+  {% if page.extra_css %}
+  <link rel="stylesheet" href="{{ '/assets/css/' | append: page.extra_css | relative_url }}">
+  {% endif %}
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="nav-wrapper">
+    <nav class="site-nav liquid-glass" id="site-nav">
+      <div class="nav-header">
+        <a class="nav-brand liquid-glass-item" href="{{ '/' | relative_url }}">{{ site.author | default: "Home" }}</a>
+        <button type="button" class="nav-menu-btn liquid-glass-item" id="nav-menu-btn" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      </div>
+      <ul class="nav-list" id="nav-list" aria-label="Site navigation">
+        {% if site.data.nav and site.data.nav.size > 0 %}
+          {% include nav-items.html items=site.data.nav %}
+        {% endif %}
+        <li><a href="{{ '/search/' | relative_url }}" class="liquid-glass-item" title="Search">&#128269; Search</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main class="site-main liquid-glass">
+    {{ content }}
+  </main>
+
+  <div class="toolbar liquid-glass bottom-toolbar" role="navigation" aria-label="Quick actions">
+    <button type="button" class="liquid-glass-item" onclick="history.back()" title="Back" aria-label="Back">&#8592;</button>
+    <button type="button" class="liquid-glass-item" onclick="history.forward()" title="Forward" aria-label="Forward">&#8594;</button>
+    <a href="{{ '/' | relative_url }}" class="liquid-glass-item" title="Home">Home</a>
+    <a href="{{ '/graph/' | relative_url }}" class="liquid-glass-item" title="Knowledge graph">Graph</a>
+    <a href="{{ '/search/' | relative_url }}" class="liquid-glass-item" title="Search">Search</a>
+    <a href="https://github.com/pirahansiah" class="liquid-glass-item" target="_blank" rel="noopener" title="GitHub">GitHub</a>
+  </div>
+
+<footer class="site-footer liquid-glass">
+  <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author }}. All rights reserved.</p>
+  <p>
+    <a class="liquid-glass-item" href="{{ '/privacy/' | relative_url }}">Privacy Policy</a>
+    &middot;
+    <a class="liquid-glass-item" href="https://github.com/pirahansiah" target="_blank" rel="noopener">GitHub</a>
+    &middot;
+    <a class="liquid-glass-item" href="https://linkedin.com/in/pirahansiah" target="_blank" rel="noopener">LinkedIn</a>
+  </p>
+</footer>
+
+<div id="gdpr-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:rgba(28,28,30,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);color:#f5f5f7;padding:16px 24px;z-index:9999;font-size:14px;line-height:1.6;border-top:1px solid rgba(255,255,255,0.1);">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px;">
+    <span style="flex:1;min-width:200px;">This website uses cookies for analytics and personalized ads (Google AdSense). By continuing to use this site, you consent to our use of cookies.</span>
+    <a href="{{ '/privacy/' | relative_url }}" style="color:#5ac8fa;text-decoration:none;white-space:nowrap;">Privacy Policy</a>
+    <button onclick="acceptGDPR()" style="background:#3a7a3a;color:white;border:none;padding:8px 20px;border-radius:8px;cursor:pointer;font-size:14px;white-space:nowrap;">Accept</button>
+  </div>
+</div>
+
+{% include glass-effects.html %}
+<script id="nav-data" type="application/json">{{ site.data.nav | jsonify }}</script>
+
+<script src="{{ '/assets/js/farshid-site-nav.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/farshid-link-router.js' | relative_url }}" defer></script>
+<script>
+function acceptGDPR() {
+  localStorage.setItem('gdpr_consent', 'accepted');
+  document.getElementById('gdpr-banner').style.display = 'none';
+}
+(function() {
+  if (!localStorage.getItem('gdpr_consent')) {
+    document.getElementById('gdpr-banner').style.display = 'block';
+  }
+})();
+</script>
+</body>
+</html>

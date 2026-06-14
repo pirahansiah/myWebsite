@@ -1,0 +1,566 @@
+---
+layout: farshid_default
+title: Dr. Farshid Pirahansiah — AI & Computer Vision Engineer
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #0a0a0f;
+    --paper: #f5f3ee;
+    --accent: #c8410a;
+    --accent2: #1a4a6e;
+    --warm: #e8e0d0;
+    --muted: #6b6660;
+    --rule: rgba(10,10,15,0.12);
+  }
+
+  .site-main { padding: 0 !important; margin: 0 !important; background: var(--paper) !important; border: none !important; box-shadow: none !important; max-width: none !important; }
+
+  .cv-header {
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cv-header-left {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .cv-header-left::after {
+    content: '';
+    position: absolute;
+    top: 0; right: -1px; bottom: 0;
+    width: 2px;
+    background: var(--accent);
+  }
+
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 1.0;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .name em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .title-block {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .title-block p {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: rgba(245,243,238,0.7);
+    line-height: 1.6;
+  }
+
+  .header-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .stat { border-top: 1px solid rgba(245,243,238,0.15); padding-top: 16px; }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,243,238,0.5);
+    margin-top: 4px;
+  }
+
+  .cv-header-right {
+    background: var(--warm);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .header-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  .intro-text {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 20px;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.7s forwards;
+  }
+
+  .intro-text strong { font-weight: 600; color: var(--accent2); }
+
+  .domain-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.9s forwards;
+  }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    border-radius: 2px;
+  }
+
+  .tag.accent { background: var(--accent); color: white; border-color: var(--accent); }
+
+  .cv-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 60px;
+    font-family: 'Lora', Georgia, serif;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: -0.02em;
+  }
+
+  .story-section {
+    background: var(--ink);
+    color: var(--paper);
+    max-width: none;
+    padding: 0;
+  }
+
+  .story-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 60px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+    font-family: 'Lora', Georgia, serif;
+  }
+
+  .story-sidebar .section-num { color: var(--accent); }
+  .story-sidebar .section-title { color: var(--paper); font-size: 28px; }
+
+  .story-quote {
+    font-size: 15px;
+    line-height: 1.8;
+    font-style: italic;
+    color: rgba(245,243,238,0.5);
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+    margin-top: 32px;
+  }
+
+  .story-body p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: rgba(245,243,238,0.85);
+    margin-bottom: 24px;
+  }
+
+  .story-body p:last-child { margin-bottom: 0; }
+  .story-body strong { color: var(--paper); font-weight: 600; }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  .skill-card {
+    background: var(--paper);
+    padding: 36px 32px;
+    transition: background 0.2s;
+  }
+
+  .skill-card:hover { background: var(--warm); }
+
+  .skill-icon {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .skill-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .skill-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+  .skill-tools { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+
+  .tool-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    padding: 3px 10px;
+    background: var(--warm);
+    border: 1px solid var(--rule);
+    color: var(--muted);
+  }
+
+  .projects-list { display: flex; flex-direction: column; gap: 0; }
+
+  .project-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: start;
+    gap: 32px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .project-item:first-child { border-top: 1px solid var(--rule); }
+
+  .project-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    padding-top: 4px;
+  }
+
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .project-desc { font-size: 15px; color: var(--muted); line-height: 1.6; max-width: 560px; }
+
+  .project-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+  .project-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+  }
+
+  .project-metric {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--accent);
+    text-align: right;
+    white-space: nowrap;
+    padding-top: 4px;
+  }
+
+  .project-metric span {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .pub-strip {
+    background: var(--accent);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .pub-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+
+  .pub-stat {
+    padding: 0 40px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+  }
+
+  .pub-stat:first-child { padding-left: 0; }
+  .pub-stat:last-child { border-right: none; padding-right: 0; }
+
+  .pub-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 1;
+    color: white;
+  }
+
+  .pub-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-top: 8px;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .cv-header { grid-template-columns: 1fr; }
+    .cv-header-left { min-height: 70vh; }
+    .cv-header-right { padding: 60px 40px; }
+    .story-inner { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .cv-section { padding: 70px 40px; }
+    .pub-inner { grid-template-columns: 1fr; gap: 40px; }
+    .pub-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 0 0 40px; text-align: left; }
+    .pub-stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .project-item { grid-template-columns: 1fr; }
+    .project-metric { text-align: left; }
+  }
+
+  @media (max-width: 600px) {
+    .cv-header-left { padding: 60px 28px; }
+    .header-stats { grid-template-columns: 1fr 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .cv-section { padding: 60px 28px; }
+    .story-inner { padding: 60px 28px; }
+    .pub-inner { padding: 60px 28px; }
+  }
+</style>
+
+<!-- HERO HEADER -->
+<div class="cv-header">
+  <div class="cv-header-left">
+    <p class="eyebrow">// About Me</p>
+    <h1 class="name">Dr. <em>Farshid</em><br>Pirahansiah</h1>
+    <div class="title-block">
+      <p>Senior AI Engineer · Computer Vision Researcher<br>Edge AI Specialist · PhD · Author & Speaker</p>
+    </div>
+    <div class="header-stats">
+      <div class="stat"><div class="stat-num">11+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-num">21</div><div class="stat-label">Publications</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Patents</div></div>
+      <div class="stat"><div class="stat-num">38%</div><div class="stat-label">Inference Cost Cut</div></div>
+    </div>
+  </div>
+  <div class="cv-header-right">
+    <p class="header-tag">// Professional Identity</p>
+    <p class="intro-text">
+      I build intelligent systems that <strong>see, understand, and act</strong> — from real-time edge AI on embedded hardware to large-scale MLOps pipelines in the cloud.
+      <br><br>
+      With a PhD in Computer Vision and over 11 years bridging research and production, I specialise in taking AI from prototype to deployment — whether that's running embedded deep learning models on a <strong>Nvidia, Raspberry Pi, Axelera, Hailo AI chip</strong> or scaling medical imaging analysis to tens of thousands of patients daily.
+    </p>
+    <div class="domain-tags">
+      <span class="tag accent">Computer Vision</span>
+      <span class="tag">Edge AI</span>
+      <span class="tag">Medical Imaging</span>
+      <span class="tag">MLOps</span>
+      <span class="tag">Embedded Systems</span>
+      <span class="tag">3D Reconstruction</span>
+      <span class="tag">IoT</span>
+      <span class="tag">Cloud ML</span>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<div class="story-section">
+  <div class="story-inner">
+    <div class="story-sidebar reveal">
+      <p class="section-num">01</p>
+      <h2 class="section-title">My Story</h2>
+      <blockquote class="story-quote">"Innovation thrives where precision meets possibility."</blockquote>
+    </div>
+    <div class="story-body reveal">
+      <p>My journey into AI began with a fascination for how machines could be taught to <strong>perceive the physical world</strong>. During my PhD, I developed fuzzy logic systems for camera calibration and image segmentation — work that led to patents and set the foundation for a career at the intersection of theory and hardware.</p>
+      <p>Over the years I have worked across academia, enterprise, and deep-tech — from MIMOS (Malaysia's national ICT research centre), where I built patented <strong>Intelligent Video Analytics</strong> systems, to medical device companies improving diagnostic accuracy through computer vision, to cutting-edge edge AI deployments on Hailo AI and Axelera Metis hardware today.</p>
+      <p>I speak at workshops and industry events, engage with investors in the computer vision space, and believe strongly that knowledge compounds fastest when shared. My GitHub, publications, and open projects reflect that commitment to the community.</p>
+      <p>Beyond the code, I am driven by a simple conviction: <strong>optimisation is the art of making systems work better without compromising quality</strong> — and that principle applies equally to neural networks, camera pipelines, and the teams that build them.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="cv-section">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Core Expertise</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <p class="skill-icon">// Vision</p>
+      <h3 class="skill-name">Computer Vision & Deep Learning</h3>
+      <p class="skill-desc">Real-time object detection, hand landmark estimation, stereo calibration, 3D reconstruction, medical image analysis, and SLAM.</p>
+      <div class="skill-tools"><span class="tool-pill">OpenCV</span><span class="tool-pill">PyTorch</span><span class="tool-pill">TensorFlow</span><span class="tool-pill">MediaPipe</span><span class="tool-pill">ONNX</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <p class="skill-icon">// Edge</p>
+      <h3 class="skill-name">Edge AI & Embedded Systems</h3>
+      <p class="skill-desc">Deploying AI models on resource-constrained hardware — Hailo AI, Axelera Metis, NVIDIA Jetson, Raspberry Pi, and Intel NCS2.</p>
+      <div class="skill-tools"><span class="tool-pill">HailoRT</span><span class="tool-pill">GStreamer</span><span class="tool-pill">TFLite</span><span class="tool-pill">Yocto</span><span class="tool-pill">CUDA</span><span class="tool-pill">TinyML</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <p class="skill-icon">// Cloud</p>
+      <h3 class="skill-name">MLOps & Cloud Infrastructure</h3>
+      <p class="skill-desc">End-to-end ML pipelines, CI/CD automation, containerised deployment, and real-time monitoring at scale.</p>
+      <div class="skill-tools"><span class="tool-pill">AWS</span><span class="tool-pill">Docker</span><span class="tool-pill">Kubernetes</span><span class="tool-pill">MLflow</span><span class="tool-pill">Airflow</span><span class="tool-pill">Terraform</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <p class="skill-icon">// Camera</p>
+      <h3 class="skill-name">Multi-Camera Systems</h3>
+      <p class="skill-desc">Stereo calibration, depth estimation, 3D scene reconstruction, multi-stream pipeline design, and sensor fusion.</p>
+      <div class="skill-tools"><span class="tool-pill">Intel RealSense</span><span class="tool-pill">Open3D</span><span class="tool-pill">NumPy</span><span class="tool-pill">MFCamera</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <p class="skill-icon">// Research</p>
+      <h3 class="skill-name">AI Research & Publications</h3>
+      <p class="skill-desc">21 peer-reviewed publications and 3 patents spanning image processing, fuzzy logic, OCR, and autonomous vision systems.</p>
+      <div class="skill-tools"><span class="tool-pill">MATLAB</span><span class="tool-pill">Fuzzy Logic</span><span class="tool-pill">Bayesian Opt.</span><span class="tool-pill">Active Learning</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <p class="skill-icon">// Systems</p>
+      <h3 class="skill-name">Software Architecture</h3>
+      <p class="skill-desc">Full-stack system design, API integration, cross-platform deployment, and technical leadership across distributed teams.</p>
+      <div class="skill-tools"><span class="tool-pill">Python</span><span class="tool-pill">C++</span><span class="tool-pill">Linux</span><span class="tool-pill">Git</span><span class="tool-pill">CI/CD</span><span class="tool-pill">Agile</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="pub-strip">
+  <div class="pub-inner">
+    <div class="pub-stat reveal"><div class="pub-num">21</div><div class="pub-label">Peer-Reviewed Publications</div></div>
+    <div class="pub-stat reveal"><div class="pub-num">3</div><div class="pub-label">Granted Patents</div></div>
+    <div class="pub-stat reveal"><div class="pub-num">11+</div><div class="pub-label">Years in AI R&D</div></div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="cv-section">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Selected Projects</h2>
+  </div>
+  <div class="projects-list">
+    <div class="project-item reveal">
+      <div class="project-year">2026</div>
+      <div>
+        <h3 class="project-name">Edge AI Pipeline</h3>
+        <p class="project-desc">Real-time embedded deep learning models multi object detection and tracking on sensor fusion and multi camera system on the NVidia, Axelera, and Hailo SoC using GStreamer, HailoRT, and MediaPipe — optimised for embedded Linux deployments via Yocto.</p>
+        <div class="project-stack"><span class="project-badge">Hailo AI</span><span class="project-badge">GStreamer</span><span class="project-badge">Yocto</span><span class="project-badge">Ubuntu</span></div>
+      </div>
+      <div class="project-metric">40%<span>latency reduction</span></div>
+    </div>
+    <div class="project-item reveal">
+      <div class="project-year">Ongoing</div>
+      <div>
+        <h3 class="project-name">Intelligent Video Analytics (IVA)</h3>
+        <p class="project-desc">Patented video analytics platform developed at MIMOS — covering pedestrian density, anomaly detection, licence plate recognition, and real-time event classification.</p>
+        <div class="project-stack"><span class="project-badge">Python</span><span class="project-badge">C++</span><span class="project-badge">OpenCV</span><span class="project-badge">MATLAB</span><span class="project-badge">Patent</span></div>
+      </div>
+      <div class="project-metric">3<span>patents granted</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const siblings = [...entry.target.parentElement.querySelectorAll('.reveal')];
+        const idx = siblings.indexOf(entry.target);
+        setTimeout(() => { entry.target.classList.add('visible'); }, idx * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>

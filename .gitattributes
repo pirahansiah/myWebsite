@@ -1,3 +1,2 @@
-# Apply Git LFS to mp3 and zip files
-*.mp3 filter=lfs diff=lfs merge=lfs -text
-*.zip filter=lfs diff=lfs merge=lfs -text
+# Force LF line endings, needed for Docker to work on Windows
+*.sh text eol=lf

@@ -1,0 +1,125 @@
+/* ═══════════════════════════════════════════════════════════════════
+   macOS 27 / iOS 27 — Apple liquid glass tokens
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+  --farshid-blue:   #0a84ff;
+  --farshid-purple: #bf5af2;
+  --farshid-pink:   #ff375f;
+  --farshid-teal:   #5ac8fa;
+
+  --glass-bg:            rgba(255, 255, 255, 0.42);
+  --glass-bg-strong:     rgba(255, 255, 255, 0.64);
+  --glass-bg-hover:      rgba(255, 255, 255, 0.58);
+  --glass-border:        rgba(255, 255, 255, 0.85);
+  --glass-border-subtle: rgba(200, 195, 230, 0.30);
+  --glass-shadow:
+    0 8px 32px rgba(100, 80, 200, 0.10),
+    0 1px 0   rgba(255, 255, 255, 0.95) inset,
+    0 -1px 0  rgba(180, 160, 220, 0.12) inset;
+  --glass-shadow-lg:
+    0 20px 50px rgba(80, 60, 160, 0.13),
+    0  1px 0   rgba(255, 255, 255, 0.90) inset;
+
+  --pill-active-bg:     rgba(255, 255, 255, 0.80);
+  --pill-active-border: rgba(255, 255, 255, 0.96);
+  --pill-active-shadow:
+    0 4px 18px rgba(10, 132, 255, 0.18),
+    0 1px 0    rgba(255, 255, 255, 0.98) inset,
+    0 0   0 1px rgba(10, 132, 255, 0.14);
+
+  --background: #e5e2d8;
+  --text:       #000000;
+  --text-muted: #333333;
+  --accent:     #3a7a3a;
+
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --glass-bg:            rgba(28, 28, 30, 0.58);
+    --glass-bg-strong:     rgba(44, 44, 48, 0.76);
+    --glass-bg-hover:      rgba(60, 60, 68, 0.72);
+    --glass-border:        rgba(255, 255, 255, 0.18);
+    --glass-border-subtle: rgba(255, 255, 255, 0.10);
+    --glass-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.32),
+      0 1px 0    rgba(255, 255, 255, 0.12) inset;
+    --glass-shadow-lg:
+      0 20px 50px rgba(0, 0, 0, 0.50);
+
+    --pill-active-bg:     rgba(58, 58, 64, 0.90);
+    --pill-active-border: rgba(255, 255, 255, 0.22);
+    --pill-active-shadow:
+      0 4px 18px rgba(10, 132, 255, 0.25),
+      0 1px 0    rgba(255, 255, 255, 0.10) inset;
+
+    --background: #1c1c1e;
+    --text:       #f5f5f7;
+    --text-muted: #8e8e93;
+  }
+}
+
+body {
+  color: var(--text);
+  background-color: var(--background);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  background:
+    radial-gradient(ellipse 700px 500px at 10% 15%, rgba(80, 120, 60, 0.28), transparent),
+    radial-gradient(ellipse 600px 600px at 85% 20%, rgba(120, 100, 50, 0.22), transparent),
+    radial-gradient(ellipse 500px 450px at 45% 85%, rgba(50, 100, 70, 0.24), transparent);
+  animation: drift 25s ease-in-out infinite alternate;
+}
+
+body::after {
+  background:
+    radial-gradient(ellipse 400px 350px at 75% 55%, rgba(100, 130, 60, 0.18), transparent),
+    radial-gradient(ellipse 350px 400px at 15% 70%, rgba(70, 90, 50, 0.16), transparent),
+    radial-gradient(ellipse 450px 300px at 50% 10%, rgba(140, 110, 55, 0.14), transparent);
+  animation: drift 30s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  25%  { transform: translate(25px, -15px) scale(1.015); }
+  50%  { transform: translate(-15px, 20px) scale(0.985); }
+  75%  { transform: translate(10px, 10px) scale(1.008); }
+  100% { transform: translate(-8px, -18px) scale(1); }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111510;
+  }
+
+  body::before {
+    background:
+      radial-gradient(ellipse 700px 500px at 10% 15%, rgba(40, 80, 30, 0.35), transparent),
+      radial-gradient(ellipse 600px 600px at 85% 20%, rgba(90, 70, 25, 0.28), transparent),
+      radial-gradient(ellipse 500px 450px at 45% 85%, rgba(30, 75, 40, 0.30), transparent);
+    animation: drift 25s ease-in-out infinite alternate;
+  }
+
+  body::after {
+    background:
+      radial-gradient(ellipse 400px 350px at 75% 55%, rgba(60, 95, 35, 0.22), transparent),
+      radial-gradient(ellipse 350px 400px at 15% 70%, rgba(45, 65, 30, 0.20), transparent),
+      radial-gradient(ellipse 450px 300px at 50% 10%, rgba(100, 80, 30, 0.18), transparent);
+    animation: drift 30s ease-in-out infinite alternate-reverse;
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ site.author }}">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <link rel="icon" type="image/png" href="{{ '/assets/farshid.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/farshid.png' | relative_url }}">
+  
+  <link rel="stylesheet" href="{{ '/assets/css/farshid-macos27.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/farshid-liquid-glass.css' | relative_url }}">
+
+  
+  {% if page.extra_css %}
+  <link rel="stylesheet" href="{{ '/assets/css/' | append: page.extra_css | relative_url }}">
+  {% endif %}
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+</head>
+<body>
+  <div class="nav-wrapper">
+    <nav class="site-nav liquid-glass" id="site-nav">
+      <div class="nav-header">
+        <a class="nav-brand liquid-glass-item" href="{{ '/' | relative_url }}">{{ site.author | default: "Home" }}</a>
+        <button type="button" class="nav-menu-btn liquid-glass-item" id="nav-menu-btn" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      </div>
+      <ul class="nav-list" id="nav-list" aria-label="Site navigation"></ul>
+    </nav>
+  </div>
+
+  <main class="site-main liquid-glass">
+    {{ content }}
+  </main>
+
+  <div class="toolbar liquid-glass bottom-toolbar" role="navigation" aria-label="Quick actions">
+    <button type="button" class="liquid-glass-item" onclick="history.back()" title="Back" aria-label="Back">&#8592;</button>
+    <button type="button" class="liquid-glass-item" onclick="history.forward()" title="Forward" aria-label="Forward">&#8594;</button>
+    <a href="{{ '/' | relative_url }}" class="liquid-glass-item" title="Home">Home</a>
+    <a href="{{ '/graph/' | relative_url }}" class="liquid-glass-item" title="Knowledge graph">Graph</a>
+    <a href="https://github.com/pirahansiah" class="liquid-glass-item" target="_blank" rel="noopener" title="GitHub">GitHub</a>
+  </div>
+
+{% include footer.html %}
+
+{% include glass-effects.html %}
+
+<script src="{{ '/assets/js/farshid-site-nav.js' | relative_url }}" defer></script>
+</body>
+</html>

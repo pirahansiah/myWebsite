@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="{{ site.author }}">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <link rel="icon" type="image/png" href="{{ '/assets/farshid.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/farshid.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/farshid-macos27.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/farshid-liquid-glass.css' | relative_url }}">
+
+  {% if page.extra_css %}
+  <link rel="stylesheet" href="{{ page.extra_css | relative_url }}">
+  {% endif %}
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <style>
+    .presentation-nav-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1005;
+      padding: 0.7rem 1rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .presentation-nav-toggle:hover {
+      background: var(--glass-bg-hover);
+    }
+
+    .presentation-nav-panel {
+      display: none;
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1004;
+      padding: 1rem 1.5rem;
+      border-radius: 999px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+    }
+
+    .presentation-nav-panel.active {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .presentation-nav-panel .liquid-glass-item {
+      padding: 0.7rem 1rem;
+    }
+  </style>
+</head>
+<body class="presentation-page">
+  <button class="presentation-nav-toggle liquid-glass" onclick="togglePresentationNav()">☰ Menu</button>
+  
+  <nav class="presentation-nav-panel liquid-glass" id="presentationNav" role="navigation" aria-label="Presentation controls">
+    <a href="{{ '/' | relative_url }}" class="liquid-glass-item">Home</a>
+    <a href="{{ '/contents/pkm/' | relative_url }}" class="liquid-glass-item">Contents</a>
+    <button type="button" class="liquid-glass-item" onclick="history.back()">Back</button>
+    <button type="button" class="liquid-glass-item" onclick="history.forward()">Forward</button>
+  </nav>
+
+  <main class="presentation-main">
+    {{ content }}
+  </main>
+
+  <div class="presentation-footer liquid-glass" aria-hidden="true">
+    <span>Presentation mode</span>
+  </div>
+
+  <script>
+    function togglePresentationNav() {
+      const nav = document.getElementById('presentationNav');
+      nav.classList.toggle('active');
+    }
+  </script>
+
+  
+  {% if page.extra_js %}
+  <script src="{{ page.extra_js }}"></script>
+  {% endif %}
+</body>
+</html>

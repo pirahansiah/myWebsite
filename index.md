@@ -1,80 +1,73 @@
 ---
-layout: default  
-title: Dr. Farshid Pirahansiah | Embedded Computer Vision & Edge AI Architect
+layout: farshid_default
+title: Dr. Farshid Pirahansiah — Technical Product Manager & AI Engineer
+permalink: /
 ---
-Dr. Farshid Pirahansiah is a Computer Vision expert with 10+ years of R&D experience, specializing in real-time image processing, robotic, and edge AI deployment across Jetson, Raspberry Pi, Hailo, Axelera, and ARM devices. He holds 3 AI patents, has 141+ research citations (h-index: 7), and authored a Springer book chapter on camera calibration. His expertise spans computer vision (C++), deep learning (Python), medical imaging, robotics, IoT. He actively consults, teaches, and coaches startups and professionals in computer vision implementation and AI strategy.
 
-Experienced in full-stack CV/DL development—from model training and fine-tuning to deployment and integration with scalable applications and APIs.
+# Technical Product Manager & AI Engineer
 
-Reach out via [LinkedIn](https://www.linkedin.com/in/pirahansiah/)
+**Bridging R&D and production — from prototype to deployment.**
 
-Let’s build the future of AI together!
-
-
-
-# My Links
-- [Resources](https://www.pirahansiah.com/farshid/Resources)
-- [VSCodeCUDAwindows](https://www.pirahansiah.com/farshid/content/VSCodeCUDAwindows)
-- [opticalFlow](https://www.pirahansiah.com/farshid/content/opticalFlow)
-- [theMissingSemester](https://www.pirahansiah.com/farshid/content/theMissingSemester)
-- [Mind_Map_Orchestrating_Agents](https://www.pirahansiah.com/farshid/content/Mind_Map_Orchestrating_Agents)
-- [Python](https://www.pirahansiah.com/farshid/content/Python)
-- [RealTimeMultiCamera](https://www.pirahansiah.com/farshid/content/RealTimeMultiCamera)
-- [CUDA_pycuda_kernel_explanation](https://www.pirahansiah.com/farshid/content/CUDA_pycuda_kernel_explanation)
-- [CUDA_numba_jit_tutorial](https://www.pirahansiah.com/farshid/content/CUDA_numba_jit_tutorial)
-- [coaching](https://www.pirahansiah.com/farshid/content/coaching)
-- [setup](https://www.pirahansiah.com/farshid/content/setup)
-- [MYTopLinkeInPost2024](https://www.pirahansiah.com/farshid/content/MYTopLinkeInPost2024)
-- [3D](https://www.pirahansiah.com/farshid/content/3D)
-- [CPP_Memory](https://www.pirahansiah.com/farshid/content/CPP_Memory)
-- [SEO](https://www.pirahansiah.com/farshid/content/SEO)
-- [interview](https://www.pirahansiah.com/farshid/content/interview)
-- [MLX_CoreML_Metal_](https://www.pirahansiah.com/farshid/content/MLX_CoreML_Metal_)
-- [StartUp](https://www.pirahansiah.com/farshid/content/StartUp)
-- [links](https://www.pirahansiah.com/farshid/content/links)
-- [Optimization](https://www.pirahansiah.com/farshid/content/Optimization)
-- [Mind_Map_Advanced_LLM_Concepts](https://www.pirahansiah.com/farshid/content/Mind_Map_Advanced_LLM_Concepts)
-- [Prompts](https://www.pirahansiah.com/farshid/content/Prompts)
-- [Avatar](https://www.pirahansiah.com/farshid/content/Avatar)
-- [CPP](https://www.pirahansiah.com/farshid/content/CPP)
-- [Social](https://www.pirahansiah.com/farshid/Social)
-- [TOC](https://www.pirahansiah.com/farshid/TOC)
-- [setup_cuda_opencv_vscode_win](https://www.pirahansiah.com/farshid/guides/CUDA/setup_cuda_opencv_vscode_win)
-- [ppt](https://www.pirahansiah.com/farshid/guides/AI_CV_Python/ppt)
-- [CV](https://www.pirahansiah.com/farshid/portfolio/publications/CV)
-- [A_METHOD_FOR_DETECTING_A_MOVING_VEHICLE_WO2021107761A1](https://www.pirahansiah.com/farshid/portfolio/publications/Patents/A_METHOD_FOR_DETECTING_A_MOVING_VEHICLE_WO2021107761A1)
-- [SYSTEM_AND_METHOD_FOR_PROVIDING_ADVERTISEMENT_CONTENTS_BASED_ON_FACIAL_ANALYSIS_WO2020141969A2](https://www.pirahansiah.com/farshid/portfolio/publications/Patents/SYSTEM_AND_METHOD_FOR_PROVIDING_ADVERTISEMENT_CONTENTS_BASED_ON_FACIAL_ANALYSIS_WO2020141969A2)
-- [A_METHOD_FOR_AUGMENTING_A_PLURALITY_OF_FACE_IMAGES_WO2021060971A1](https://www.pirahansiah.com/farshid/portfolio/publications/Patents/A_METHOD_FOR_AUGMENTING_A_PLURALITY_OF_FACE_IMAGES_WO2021060971A1)
-- [My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects)
-- [My_Conference_Paper](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/My_Conference_Paper)
-- [Modal_Robot_Vision](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/Camera_Calibration_for_Multi-Modal_Robot_Vision)
-- [Threshold_Based_on_Entropy](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/License_Plate_Recognition_with_Multi-Threshold_Based_on_Entropy)
-- [Comparison_single_thresholding_method_for_handwritten_images_segmentation](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/Comparison_single_thresholding_method_for_handwritten_images_segmentation)
-- [An_evaluation_of_classification_techniques_using_enhanced_Geometrical_Topological_Feature_Analysis](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/An_evaluation_of_classification_techniques_using_enhanced_Geometrical_Topological_Feature_Analysis)
-- [threshold_Approach_for_License_Plate_Recognition_System](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/Multi-threshold_Approach_for_License_Plate_Recognition_System)
-- [Character_Recognition_Based_on_Global_Feature](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/Character_Recognition_Based_on_Global_Feature)
-- [TafreshGrid_Grid_computing_in_Tafresh_university](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/TafreshGrid_Grid_computing_in_Tafresh_university)
-- [Adaptive_Image_Segmentation_Based_on_PSNR_for_License_Plate_Recognition](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/Adaptive_Image_Segmentation_Based_on_PSNR_for_License_Plate_Recognition)
-- [Pattern_Image_Significance_for_Camera_Calibration](https://www.pirahansiah.com/farshid/portfolio/publications/Papers/Pattern_Image_Significance_for_Camera_Calibration)
-- [LLMsMeetComputerVision](https://www.pirahansiah.com/farshid/portfolio/publications/Keynotes/LLMsMeetComputerVision)
-- [My_Book_chapter_Camera_Calibration_and_Video_Stabilization_Framework_for_Robot_Localization](https://www.pirahansiah.com/farshid/portfolio/publications/Books/My_Book_chapter_Camera_Calibration_and_Video_Stabilization_Framework_for_Robot_Localization)
-- [Book_Computational_Intelligence_From_Theory_to_Application_explores_augmented_optical_flow_methods_for_video_stabilization](https://www.pirahansiah.com/farshid/portfolio/publications/Books/Book_Computational_Intelligence_From_Theory_to_Application_explores_augmented_optical_flow_methods_for_video_stabilization)
-- OpenCV 5 Ebook:
-  - [Chapter 0](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/0)
-  - [Chapter 1](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/1)
-  - [Chapter 2](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/2)
-  - [Chapter 3](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/3)
-- [ComputerVisionMeetLLM](https://www.pirahansiah.com/farshid/portfolio/publications/Books/AI/ComputerVisionMeetLLM)
-- [PSNR_Global_Single_Fuzzy_Threshold](https://www.pirahansiah.com/farshid/portfolio/publications/Journals/GSFT-PSNR_Global_Single_Fuzzy_Threshold)
-- [USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM](https://www.pirahansiah.com/farshid/portfolio/publications/Journals/USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM)
-- [CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION](https://www.pirahansiah.com/farshid/portfolio/publications/Journals/CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION)
-- [noise_Ratio](https://www.pirahansiah.com/farshid/portfolio/publications/Journals/Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio)
-- [3D_SLAM_Simultaneous_Localization_And_Mapping_Trends_And_Humanoid_Robot_Linkages](https://www.pirahansiah.com/farshid/portfolio/publications/Journals/3D_SLAM_Simultaneous_Localization_And_Mapping_Trends_And_Humanoid_Robot_Linkages)
-- [NOISE_RATIO_BASED_ON_THRESHOLD_METHOD_FOR_IMAGE_SEGMENTATION](https://www.pirahansiah.com/farshid/portfolio/publications/Journals/PEAK_SIGNAL-TO-NOISE_RATIO_BASED_ON_THRESHOLD_METHOD_FOR_IMAGE_SEGMENTATION)
-- [10 Yesrs](https://www.pirahansiah.com/farshid/portfolio/publications/10Years)
-- [Solutions](https://www.pirahansiah.com/farshid/portfolio/projects/Solutions)
-- [data](https://www.pirahansiah.com/farshid/portfolio/projects/calendar/data)
-- [cameracalibration](https://www.pirahansiah.com/farshid/portfolio/projects/Camera_Calibration/cameracalibration)
-- [hardware](https://www.pirahansiah.com/farshid/portfolio/projects/Embedded/hardware)
+I help companies ship AI products faster. With a PhD in Computer Vision and 11+ years in edge AI, medical imaging, and MLOps, I turn complex technology into reliable, scalable products.
 
 ---
+
+## Update
+
+**[Update](/contents/menus)** — Latest posts 
+
+
+## What I Do
+
+**[Use Cases](/contents/pkm/use-cases)** — Identify high-impact AI applications for your industry
+
+**[System Design](/contents/pkm/system-design)** — Architecture for edge AI, multi-camera, and cloud ML pipelines
+
+**[Offering](/contents/pkm/offering)** — Product strategy from concept to market
+
+---
+
+## Expertise
+
+| Domain | Focus |
+|:---|:---|
+| **Edge AI** | Hailo, Axelera Metis, NVIDIA Jetson, Raspberry Pi |
+| **Computer Vision** | Object detection, 3D reconstruction, medical imaging |
+| **LLMOps** | CI/CD, containerised deployment, real-time monitoring |
+| **Product Management** | Technical roadmap, stakeholder alignment, go-to-market |
+
+---
+
+## Why Work With Me
+
+**[Why We Are Unique](/contents/pkm/why-we-are-unique)** — PhD-level depth meets production pragmatism
+
+**[Strategic Connections](/contents/pkm/strategic-connections)** — Linking research to market-ready solutions
+
+**[Knowledge Graph](/contents/pkm/knowledge-graph)** — Structured intelligence across projects and IP
+
+---
+
+## Proof of Work
+
+**[Growth Model](/contents/pkm/growth-model)** — Scaling trajectories and projections
+
+**[Costs](/contents/pkm/costs)** — Transparent pricing for consulting engagements
+
+**[Track Record](/contents/pkm/proof)** — Patents, publications, and delivery history
+
+---
+
+## Get Started
+
+**[About Me](/contents/pkm/AboutMe)** — Full background, publications, and project portfolio
+
+**[Company](/contents/pkm/company)** — Mission and values
+
+**[Updates](/contents/pkm/updates)** — Recent work and insights
+
+---
+
+<div style="text-align: center; padding: 40px 0;">
+  <a href="https://www.linkedin.com/in/pirahansiah/" style="display: inline-block; padding: 14px 32px; background: #3a7a3a; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">Let's Talk →</a>
+</div>
