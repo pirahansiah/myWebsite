@@ -1,3 +1,6 @@
 [submodule "contents"]
 	path = Contents
 	url = https://github.com/pirahansiah/PKM
+[submodule "Contents"]
+	path = Contents
+	url = https://github.com/pirahansiah/PKM.git
