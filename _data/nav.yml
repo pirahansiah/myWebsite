@@ -3,16 +3,16 @@
   items:
   - title: Knowledge Graph
     items: []
-    url: "/contents/pkm/knowledge-graph"
+    url: "/contents/pkm/use-cases"
   - title: Research Synthesis
     items: []
-    url: "/contents/pkm/research-synthesis"
+    url: "/contents/pkm/use-cases"
   - title: Strategic Connections
     items: []
-    url: "/contents/pkm/strategic-connections"
+    url: "/contents/pkm/use-cases"
   - title: Concept Maps
     items: []
-    url: "/contents/pkm/concept-maps"
+    url: "/contents/pkm/use-cases"
 - title: SOLUTIONS
   items:
   - title: Use Cases
@@ -20,38 +20,38 @@
     url: "/contents/pkm/use-cases"
   - title: System Design
     items: []
-    url: "/contents/pkm/system-design"
+    url: "/contents/pkm/use-cases"
   - title: Offering
     items: []
-    url: "/contents/pkm/offering"
+    url: "/contents/pkm/use-cases"
 - title: ABOUT
   items:
   - title: About Me
     items: []
-    url: "/contents/pkm/AboutMe"
+    url: "/contents/pkm/use-cases"
   - title: Company
     items: []
-    url: "/contents/pkm/company"
+    url: "/contents/pkm/use-cases"
   - title: Why We Are Unique
     items: []
-    url: "/contents/pkm/why-we-are-unique"
+    url: "/contents/pkm/use-cases"
 - title: RESOURCES
   items:
   - title: TOC
     items: []
-    url: "/contents/pkm/TOC"
+    url: "/contents/pkm/use-cases"
   - title: MOC
     items: []
-    url: "/contents/pkm/MOC"
+    url: "/contents/pkm/use-cases"
   - title: Growth Model
     items: []
-    url: "/contents/pkm/growth-model"
+    url: "/contents/pkm/use-cases"
   - title: Costs
     items: []
-    url: "/contents/pkm/costs"
+    url: "/contents/pkm/use-cases"
   - title: Proof
     items: []
-    url: "/contents/pkm/proof"
+    url: "/contents/pkm/use-cases"
   - title: Updates
     items: []
-    url: "/contents/pkm/updates"
+    url: "/contents/pkm/use-cases"
