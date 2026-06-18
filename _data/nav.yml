@@ -1,50 +1,22 @@
 ---
-- title: ATLAS & Graph
+- title: HOME
   items:
-  - title: Knowledge Graph
+  - title: Home
     items: []
-    url: "/contents/pkm/use-cases"
-- title: SOLUTIONS
-  items:
-  - title: Use Cases
-    items: []
-    url: "/contents/pkm/use-cases"
+    url: "/"
 - title: ABOUT
   items:
   - title: About Me
     items: []
-    url: "/AboutMe"
-- title: ATLAS
-  items:
-  - title: Research Synthesis
+    url: "/contents/pkm/AboutMe"
+  - title: Portfolio
     items: []
-    url: "/contents/pkm/research-synthesis"
-  - title: Strategic Connections
-    items: []
-    url: "/contents/pkm/strategic-connections"
-- title: SOLUTIONS
-  items:
-  - title: System Design
-    items: []
-    url: "/contents/pkm/system-design"
-- title: ABOUT
-  items:
-  - title: Company
-    items: []
-    url: "/contents/pkm/company"
-- title: RESOURCES
-  items:
-  - title: MOC
-    items: []
-    url: "/contents/pkm/MOC"
-  - title: Growth Model
-    items: []
-    url: "/contents/pkm/growth-model"
-  - title: Costs
-    items: []
-    url: "/contents/pkm/costs"
-  - title: Proof
-    items: []
-    url: "/contents/pkm/proof"
+    url: "/contents/pkm/use-cases"
 - title: LLM
-  items: []
+  items:
+  - title: OpenRouter + Ollama Setup
+    items: []
+    url: "/contents/projects/LLM/OpenRouter_config.sh"
+  - title: AI Knowledge Graph
+    items: []
+    url: "/contents/projects/LLM/aiGraph.py"

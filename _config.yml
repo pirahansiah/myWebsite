@@ -35,5 +35,4 @@ exclude:
   - .git/
   - .gitignore
   - CNAME
-  - Ads.txt
   - scripts/
