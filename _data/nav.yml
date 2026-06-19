@@ -1,9 +1,4 @@
 ---
-- title: HOME
-  items:
-  - title: Home
-    items: []
-    url: "/"
 - title: ABOUT
   items:
   - title: About Me
@@ -14,6 +9,12 @@
     url: "/contents/pkm/use-cases"
 - title: LLM
   items:
+  - title: proof
+    items: []
+    url: "/contents/proof"
+  - title: menus
+    items: []
+    url: "/contents/menus"
   - title: OpenRouter + Ollama Setup
     items: []
     url: "/contents/projects/LLM/OpenRouter_config.sh"

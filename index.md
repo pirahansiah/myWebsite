@@ -8,7 +8,7 @@ permalink: /
 
 **Bridging R&D and production — from prototype to deployment.**
 
-I help companies ship AI products faster. With a PhD in Computer Vision and 11+ years in edge AI, medical imaging, and MLOps, I turn complex technology into reliable, scalable products.
+I help companies ship AI products faster. With a PhD in Computer Vision and 12+ years in edge AI, medical imaging, and MLOps, I turn complex technology into reliable, scalable products.
 
 ---
 

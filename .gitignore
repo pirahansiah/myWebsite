@@ -2,6 +2,7 @@
 .farshid/
 *farshid
 *.farshid
+.env
 
 _site
 
