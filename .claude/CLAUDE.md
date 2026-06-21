@@ -1,10 +1,25 @@
-# Project: Personal Website — Farshid Pirahansiah
+# CLAUDE.md — Farshid Pirahansiah
 
 Owner: Dr. Farshid Pirahansiah
 LinkedIn: https://linkedin.com/in/pirahansiah
 GitHub: https://github.com/pirahansiah
 
-Summary: Jekyll personal website at pirahansiah.com. Contents submodule at `contents/`.
+Role: Senior Software Architect & Code Auditor (CV, DL, Edge AI Specialist)
+
+---
+
+## Machine & Environment
+
+- **OS:** macOS (Apple Silicon — optimized for M5 Max)
+- **Python:** 3.14 (Stable) | `conda activate py314`
+- **Working Dir:** `/Volumes/4tb/2026-6/fullGitHub`
+- **Website Dir:** `/Volumes/4tb/myWebsite`
+- **Tech Stack (2026 Locked):**
+  - **Core:** C++29, Python 3.14 (strict types), C++23, OpenCV 5.x (Contrib/G-API)
+  - **ML/DL:** PyTorch 2.6+, MLX (Apple), Ultralytics 10+, TensorRT-LLM
+  - **Inference:** ONNX (FP8/QDQ), OpenVINO (Intel NPU), CoreML (Apple NE)
+  - **Edge:** Raspberry Pi 5 (ARM64 optimization)
+- **Conda:** `conda activate py314` — always use Python 3.14, OpenCV 5 contrib, latest packages (June 2026+)
 
 ---
 
@@ -28,6 +43,36 @@ Summary: Jekyll personal website at pirahansiah.com. Contents submodule at `cont
 - **Always show what changed:** After any task, list: files changed, what was modified (one line per file), files intentionally not touched, follow-up needed.
 - **Never act without explicit confirmation:** Never send, post, publish, share, or schedule anything without my explicit "yes" in the current message.
 - **Think before code:** For architecture, debugging, or non-trivial features — reason step by step before writing code. Show reasoning. Identify uncertainty. Then implement.
+
+---
+
+## Communication & Execution Rules
+
+- **No Preamble:** Skip filler phrases ("I understand," "Certainly"). Start with the result.
+- **Audit-First:** When I say "Audit", you are a passive analyzer. Map data flows, dependencies, and risks. Do not modify code.
+- **Plan Mode:** For non-trivial tasks, provide 3 architectural approaches with a trade-off matrix. Wait for my choice.
+- **Explicit Commands:** Always show the exact `zsh` or `conda` command used for testing/building.
+- **Surgical Edits:** Change only the lines necessary. Do not "improve" unrelated logic or fix linting outside the task scope.
+
+---
+
+## Audit Workflow
+
+When an Audit is requested, follow this structure strictly:
+1. **Current State:** Map existing components, data flows, and conventions.
+2. **Change Analysis:** Detail the logic for new requirements.
+3. **Hardware Impact:** Analyze performance for M5 Max (Unified Memory) vs. NVIDIA Spark (VRAM) vs. Intel Ultra (NPU).
+4. **Risk & Area Mapping:** List potential side effects and all affected files/APIs.
+5. **Confirmation:** Stop and wait for approval before moving to "Implementation Planning."
+
+---
+
+## 2026 Coding Standards
+
+- **Python 3.14:** Use PEP 649 (deferred type evaluation), improved `typing`, and sub-interpreters if needed.
+- **OpenCV 5:** Utilize G-API for compute graphs and enhanced OAK-D/multi-camera support.
+- **Efficiency:** Prioritize zero-copy memory operations (Apple Unified Memory) and FP8 quantization for LLMs/Vision.
+- **Safety:** Always flag uncertainty. If a 2026 library API is unknown, check via browser/documentation before guessing.
 
 ---
 
@@ -68,6 +113,64 @@ Maintain `ERRORS.md`. When an approach fails after 2+ attempts, log: What didn't
 
 ---
 
+## Coding Workflow Principles (Karpathy)
+
+### 1. Plan Mode First
+- Use plan mode for any non-trivial task
+- Write detailed specs up front
+- Reduce ambiguity before writing code
+- Lightweight inline plan for smaller tasks
+
+### 2. Verify Relentlessly
+- Watch like a hawk in a good IDE
+- Check assumptions, edge cases, tradeoffs
+- Run tests, review diffs, verify correctness
+- Don't blindly accept. Stay in the loop
+
+### 3. Keep It Simple
+- Avoid overengineering and bloated abstractions
+- Prefer 100 lines over 1000
+- Clean up dead code and cruft
+- Ask: "Is there a simpler way?"
+
+### 4. Surgical Edits Only
+- Change only what's necessary
+- Don't touch unrelated code or comments
+- Don't "improve" things that aren't broken
+- Minimize side effects and churn
+
+### 5. Goal-Driven Execution
+- Give clear success criteria
+- Write tests first, then make them pass
+- Use tools, e.g., browser MCP, in the loop
+- Let the agent iterate until the goal is met
+
+### 6. Parallelize with Subagents
+- Offload research, exploration, analysis
+- Use subagents to keep context clean
+- One task per subagent for focus
+- Merge results back with judgment
+
+---
+
+## Core Principles (Karpathy)
+
+- **Simplicity First:** Minimal code that solves the problem. Nothing speculative.
+- **No Laziness:** Find root causes. No temporary fixes. Senior developer standards.
+- **Minimal Impact:** Only touch what's necessary. No side effects. No new bugs.
+
+---
+
+## Engineer Mindset (Karpathy)
+
+- **Tenacity:** Agents never get tired. Relentless iteration beats giving up.
+- **Leverage:** Give success criteria and watch it go. Multiply by leverage.
+- **Fun:** Remove drudgery, focus on creativity. More courage, less blocking.
+- **Atrophy:** Writing and reading code are different. Stay sharp intentionally.
+- **Speedups = Just Faster:** Do more, not just faster. Expand what you can build.
+
+---
+
 ## Project Structure
 
 - `CLAUDE.md` (this file) — project brain
@@ -83,35 +186,22 @@ Maintain `ERRORS.md`. When an approach fails after 2+ attempts, log: What didn't
 ## Skills
 - `graphify` — any input to knowledge graph
 
-## Notes
-- Keep `CLAUDE.local.md` for machine-specific overrides (paths, API keys — do not commit secrets).
-- Always mirror memory between `~/.claude/` and VS Code Copilot memory.
-- Before finishing any task, ask: what am I least confident about? what did you not realize?
+## Preferences
+- Prefer plan-first approach for architecture changes
+- Explain risky changes before making them
+- Always show the exact test/build command you ran
+- Prefer conda environments over pip when possible
+- Use zsh-style commands on macOS
 
-## Python Coding Style: Extreme Minimalism
+## Hardware Targets
+- Apple M5 Max (Neural Engine, Unified Memory)
+- NVIDIA Spark (128GB VRAM, Tensor Cores)
+- Intel Ultra 9 Gen 2 (AVX-512, hybrid cores)
+- Raspberry Pi 5 (16GB, ARM64)
 
-- **Density:** Maintain maximum code density. Remove all empty lines and vertical whitespace.
-- **No Comments:** Do not include any comments, docstrings, or annotations. The code must be self-explanatory by its logic alone.
-- **Conciseness:** Use compact syntax where possible (e.g., list comprehensions, ternary operators, and lambda functions) to keep the line count at an absolute minimum.
-- **Architecture:**
-    - Apply the YAGNI (You Ain't Gonna Need It) principle strictly.
-    - Avoid over-engineering, design patterns, or abstraction layers.
-    - Do not create classes unless the logic cannot be implemented procedurally.
-    - Do not break logic into multiple functions unless a piece of code is repeated more than three times.
-- **File Management:**
-    - Consolidate all logic into a single file whenever possible.
-    - Do not create new files, modules, or directory structures unless the program physically cannot run without them.
-    - Do not create backup files or `.bak` versions.
+---
 
-## Operational Constraints
-
-- **Output Only:** Provide only the functional code.
-- **No Documentation:** Do not generate READMEs, `docs/` folders, or explanatory text files.
-- **No Explanations:** Do not explain how the code works, do not provide "how-to" guides, and do not add conversational filler.
-- **No Metadata:** Eliminate all non-executable artifacts, including experiment logs, templates, or project descriptions.
-- **Direct Execution:** Focus entirely on a "single-script" philosophy where the code performs the task without surrounding boilerplate.
-
-# Memory, Mirroring & Completion Rules
+## Memory, Mirroring & Completion Rules
 
 Always add and update relevant skills and memory information in the global Claude folder, and keep both memory systems mirrored in both directions. If data changes in either location, update the other in the same session.
 
@@ -128,3 +218,18 @@ Always add and update relevant skills and memory information in the global Claud
 - what is the biggest things that i do not relised it now ?
 
 **Completion trigger rule:** If the user says any of these words, treat it as project completion status and summarize full completion/fix state: `job done`, `good`, `finished`, `sucessful`, `complite`, `test ok`.
+
+---
+
+## Portfolio Management
+
+- RESUME_ASSETS.md and ROADMAP.md are consolidated in `~/.claude/PROJECT_PORTFOLIO_ASSETS.md`
+- Do NOT create RESUME_ASSETS.md inside individual project repos
+- Use `/portfolio` skill for portfolio management tasks
+- Website use-cases.md updated at `/Volumes/4tb/myWebsite/contents/pkm/use-cases.md`
+
+## Skills
+
+- `/modernize` — Full-stack project modernization (deps, type hints, tests, Docker, CI/CD)
+- `/portfolio` — Portfolio management and career documentation
+- `/graphify` — Any input to knowledge graph
