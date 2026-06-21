@@ -352,37 +352,76 @@ code,pre{
 @media (max-width: 768px) {
   .nav-menu-btn {
     display: block;
+    padding: 10px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav-list {
     display: none;
     position: absolute;
     top: calc(100% + 8px);
-    left: 0;
-    right: 0;
-    max-height: 70vh;
+    left: 8px;
+    right: 8px;
+    max-height: calc(100vh - 120px);
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-start;
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(32px) saturate(200%);
-    -webkit-backdrop-filter: blur(32px) saturate(200%);
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 20px;
-    box-shadow: 0 16px 48px rgba(80, 60, 160, 0.18);
+    padding: 16px 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    box-shadow:
+      0 20px 60px rgba(80, 60, 160, 0.22),
+      0 1px 0 rgba(255, 255, 255, 0.95) inset;
     z-index: 1000;
     overflow: visible;
+    animation: mobileNavIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes mobileNavIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .nav-list li {
     width: 100%;
   }
 
+  .nav-list > li + li {
+    margin-top: 4px;
+  }
+
   .nav-list a {
     width: 100%;
     box-sizing: border-box;
+    padding: 14px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 14px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list > li > a {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    padding: 14px 16px;
   }
 
   .nav-open > .nav-list {
@@ -398,13 +437,28 @@ code,pre{
     min-width: 0;
     width: 100%;
     box-shadow: none;
-    background: rgba(0, 0, 0, 0.04);
-    border: none;
-    border-radius: 14px;
-    margin: 4px 0 8px;
+    background: rgba(10, 132, 255, 0.06);
+    border: 1px solid rgba(10, 132, 255, 0.1);
+    border-radius: 16px;
+    margin: 6px 0 8px;
+    padding: 8px;
     opacity: 1;
     visibility: visible;
     transition: none;
+    gap: 2px;
+  }
+
+  .nav-sub li a {
+    padding: 12px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 12px;
+    min-height: 44px;
+  }
+
+  .nav-sub li a:active {
+    background: rgba(10, 132, 255, 0.15);
+    transform: scale(0.98);
   }
 
   .has-children.open > .nav-sub {
@@ -419,17 +473,41 @@ code,pre{
   .has-children > a,
   .has-children > .nav-link {
     width: 100%;
-  justify-content: flex-start;
+    justify-content: space-between;
+  }
+
+  .nav-chevron {
+    font-size: 12px;
+    opacity: 0.5;
+    transition: transform 0.2s ease;
+  }
+
+  .has-children.open > a > .nav-chevron,
+  .has-children.open > .nav-link > .nav-chevron {
+    transform: rotate(180deg);
   }
 
   @media (prefers-color-scheme: dark) {
     .nav-list {
-      background: rgba(44, 44, 50, 0.95);
-      border-color: rgba(255, 255, 255, 0.14);
+      background: rgba(30, 30, 34, 0.96);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 1px 0 rgba(255, 255, 255, 0.06) inset;
+    }
+
+    .nav-list > li > a {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.1);
     }
 
     .nav-sub {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(10, 132, 255, 0.08);
+      border-color: rgba(10, 132, 255, 0.12);
+    }
+
+    .nav-sub li a:active {
+      background: rgba(10, 132, 255, 0.2);
     }
   }
 }
