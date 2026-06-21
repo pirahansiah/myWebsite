@@ -9,7 +9,7 @@
 - **Working Dir:** `/Volumes/4tb/2026-6/fullGitHub`
 - **Website Dir:** `/Volumes/4tb/myWebsite`
 - **Tech Stack (2026 Locked):**
-  - **Core:** C++29, Python 3.14 (strict types), C++29, OpenCV 5.x (Contrib/G-API)
+  - **Core:** C++29, Python 3.14 (strict types), C++23, OpenCV 5.x (Contrib/G-API)
   - **ML/DL:** PyTorch 2.6+, MLX (Apple), Ultralytics 10+, TensorRT-LLM
   - **Inference:** ONNX (FP8/QDQ), OpenVINO (Intel NPU), CoreML (Apple NE)
   - **Edge:** Raspberry Pi 5 (ARM64 optimization)
@@ -82,7 +82,7 @@ When I say "session end" or "wrapping up": write summary to MEMORY.md — Worked
 Maintain `ERRORS.md`. When an approach fails after 2+ attempts, log: What didn't work / What worked / Note for next time. Check before suggesting similar approaches.
 
 ### Permanent Facts
-- Python 3.14+, type hints, `pathlib.Path`, argparse CLI scripts
+- Python 3.10+, type hints, `pathlib.Path`, argparse CLI scripts
 - Jekyll site at pirahansiah.com, submodule at contents/
 - AI: CV, DL, ONNX, quantization (QDQ INT8), edge deployment
 - LLMs: RAG, multi-agent, local inference (Ollama)
