@@ -17,6 +17,46 @@
   {% endif %}
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+  <style>
+  .markmap-container {
+    margin: 24px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    min-height: 300px;
+  }
+  .markmap-container .markmap {
+    width: 100%;
+    min-height: 300px;
+  }
+  .markmap-node > path {
+    transition: d 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  }
+  .markmap-node {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  }
+  .markmap-node circle {
+    transition: r 0.2s ease, fill 0.2s ease;
+  }
+  .markmap-node circle:hover {
+    r: 8;
+    fill: #f5a623;
+    cursor: pointer;
+  }
+  .markmap-node.markmap-fold circle {
+    fill: currentColor !important;
+    r: 6;
+  }
+  .markmap-node text {
+    transition: opacity 0.3s ease;
+  }
+  .markmap-link {
+    transition: d 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  </style>
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -36,6 +76,11 @@
   </div>
 
   <main class="site-main liquid-glass">
+    {% if page.markmap %}
+    <div class="markmap-container">
+      <div class="markmap">{{ page.markmap }}</div>
+    </div>
+    {% endif %}
     {{ content }}
   </main>
 
