@@ -9,7 +9,7 @@
 - **Working Dir:** `/Volumes/4tb/2026-6/fullGitHub`
 - **Website Dir:** `/Volumes/4tb/myWebsite`
 - **Tech Stack (2026 Locked):**
-  - **Core:** C++29, Python 3.14 (strict types), C++23, OpenCV 5.x (Contrib/G-API)
+  - **Core:** C++29, Python 3.14 (strict types), OpenCV 5.x (Contrib/G-API)
   - **ML/DL:** PyTorch 2.6+, MLX (Apple), Ultralytics 10+, TensorRT-LLM
   - **Inference:** ONNX (FP8/QDQ), OpenVINO (Intel NPU), CoreML (Apple NE)
   - **Edge:** Raspberry Pi 5 (ARM64 optimization)

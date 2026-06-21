@@ -43,33 +43,6 @@ Global Claude Code configuration and preferences.
 | `quantize` | `/quantize` | INT8/INT4 quantization with NNCF, TensorRT |
 | `cv-pipeline` | `/cv-pipeline` | Detection, tracking, segmentation, annotation |
 
-## Quick Commands
-
-```bash
-# Code review
-@code-reviewer
-
-# Modernize a project
-/modernize /Volumes/4tb/2026-6/fullGitHub/BI4CV
-
-# Generate portfolio assets
-/portfolio generate /Volumes/4tb/2026-6/fullGitHub/BI4CV
-
-# Deploy to edge chip
-/edge-deploy model.onnx --chip hailo8
-
-# Quantize model
-/quantize model.onnx --precision int8
-
-# Build CV pipeline
-/cv-pipeline detect video.mp4
-
-# Security audit
-@security-auditor
-
-# Debug error
-@debugger
-```
 
 ## Portfolio Stats
 
@@ -102,10 +75,10 @@ Global Claude Code configuration and preferences.
 
 ## Tech Stack
 
-- Python 3.13+ (targeting 3.14)
-- C++17/23/26
+- Python 3.15+ (targeting 3.14)
+- C++29
 - OpenCV 5
-- CUDA 12.x
+- CUDA 13.x
 - PyTorch 2.x
 - Docker, Kubernetes, GitHub Actions
 - FastAPI, Ollama, LangChain
