@@ -67,8 +67,8 @@
 
 ## Quick Reference
 
-**Code style**: Python 3.15+, type hints, pathlib, argparse on all scripts
-**C++ style**: C++29, std::optional, std::filesystem, structured bindings
-**Target stack**: OpenCV 5, CUDA 13.x, PyTorch 2.x, Docker, GitHub Actions
+**Code style**: Python 3.10+, type hints, pathlib, argparse on all scripts
+**C++ style**: C++17/23, std::optional, std::filesystem, structured bindings
+**Target stack**: OpenCV 5, CUDA 12.x, PyTorch 2.x, Docker, GitHub Actions
 **Quantization**: NNCF (INT8/INT4), TensorRT, ONNX Runtime
 **Edge chips**: Hailo, Axelera, Qualcomm, Apple NE, ARM Ethos, NVIDIA Jetson

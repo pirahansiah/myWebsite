@@ -1,4 +1,6 @@
 # Project Registry — All GitHub Repositories
+
+> Auto-generated from /Volumes/4tb/2026-6/fullGitHub
 > 43 repos (32 own + 11 forks)
 > Last updated: 2026-06-20
 
@@ -7,6 +9,7 @@
 ## Active Python Projects (with code)
 
 ### 1. BI4CV — Business Intelligence Computer Vision
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/BI4CV`
 - **GitHub**: https://github.com/pirahansiah/BI4CV
 - **Description**: Generative AI-powered BI dashboard for CV applications
 - **Stack**: Python, FastAPI, Plotly Dash, Ollama, YOLO11, SAM-2
@@ -18,6 +21,7 @@
   - Create Grafana/Prometheus monitoring dashboard
 
 ### 2. cv-ml-pipline — CV ML Pipeline
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/cv-ml-pipline`
 - **GitHub**: https://github.com/pirahansiah/cv-ml-pipline
 - **Description**: End-to-end ML pipeline with Docker, AWS, Kubernetes, TensorFlow, Seldon
 - **Stack**: Python, Docker, Kubernetes, FastAPI, Seldon, Kubeflow
@@ -29,17 +33,19 @@
   - Create Terraform configs for AWS deployment
 
 ### 3. cv-dashboard-cicd — CI/CD Pipeline for CV Dashboard
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/cv-dashboard-cicd`
 - **GitHub**: https://github.com/pirahansiah/cv-dashboard-cicd
 - **Description**: CI/CD pipeline for CV and LLM applications
 - **Stack**: Python, GitHub Actions, Docker, joblib
 - **Status**: Tests, CI/CD
 - **Ideas**:
   - Add Trivy security scanning
-  - Implement matrix testing (Python 3.14-3.13)
+  - Implement matrix testing (Python 3.10-3.13)
   - Add dependency caching
   - Create deployment pipeline to AWS/GCP
 
 ### 4. workshop_LLM — LLM Workshop
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/workshop_LLM`
 - **GitHub**: https://github.com/pirahansiah/workshop_LLM
 - **Description**: CV + LLM workshop with 3D camera calibration
 - **Stack**: Python, OpenCV, OpenAI API, chessboard calibration
@@ -51,6 +57,7 @@
   - Create interactive web UI for calibration
 
 ### 5. opencv_python — OpenCV Python Workshop
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/opencv_python`
 - **GitHub**: https://github.com/pirahansiah/opencv_python
 - **Description**: OpenCV workshop with YOLO, SAM-2, video analysis, edge deploy
 - **Stack**: Python, OpenCV, Ultralytics, ONNX Runtime, Albumentations
@@ -62,6 +69,7 @@
   - Implement panorama stitching from multiple cameras
 
 ### 6. Computer_Vison_IoT — CV on Jetson Nano
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/Computer_Vison_IoT`
 - **GitHub**: https://github.com/pirahansiah/Computer_Vison_IoT
 - **Description**: Edge CV deployment on Jetson, Raspberry Pi, Coral
 - **Stack**: Python, OpenCV, edge AI
@@ -73,6 +81,7 @@
   - Create remote deployment scripts
 
 ### 7. farshid — Workshop Computer Vision
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/farshid`
 - **GitHub**: https://github.com/pirahansiah/farshid
 - **Description**: CV workshop with thresholding, line detection, video processing
 - **Stack**: Python, OpenCV
@@ -84,6 +93,7 @@
   - Create video annotation tools
 
 ### 8. Smart-Auto-Video-Annotation — Auto Video Annotation
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/Smart-Auto-Video-Annotation-for-Labeling-Data-for-Training-`
 - **GitHub**: https://github.com/pirahansiah/Smart-Auto-Video-Annotation-for-Labeling-Data-for-Training-
 - **Description**: Full auto-annotation pipeline with YOLO, ByteTrack, COCO/YOLO export
 - **Stack**: Python, Ultralytics, ByteTrack, scipy
@@ -95,6 +105,7 @@
   - Create batch processing for large datasets
 
 ### 9. Binary-DNN — Binary Neural Networks for Edge AI
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/Binary-DNN-for-Intel-Movidius-Neural-Compute-Stick`
 - **GitHub**: https://github.com/pirahansiah/Binary-DNN-for-Intel-Movidius-Neural-Compute-Stick
 - **Description**: Binary/quantized DNN deployment across 18+ AI accelerators
 - **Stack**: Python, PyTorch, NNCF, OpenVINO, Hailo, Axelera, Qualcomm
@@ -106,6 +117,7 @@
   - Implement model partitioning for multi-chip inference
 
 ### 10. new — CI/CD Test Repository
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/new`
 - **GitHub**: https://github.com/pirahansiah/new
 - **Description**: Legacy AppVeyor CI test repo
 - **Stack**: Python, AppVeyor
@@ -118,10 +130,11 @@
 
 ## C++ Projects (with code)
 
-### 11. opencv4 — OpenCV 5 with Deep Learning
+### 11. opencv4 — OpenCV 4 with Deep Learning
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/opencv4`
 - **GitHub**: https://github.com/pirahansiah/opencv4
-- **Description**: OpenCV 5 DNN inference (TensorFlow, Caffe) for VS2017
-- **Stack**: C++, OpenCV 5, DNN module
+- **Description**: OpenCV 4 DNN inference (TensorFlow, Caffe) for VS2017
+- **Stack**: C++, OpenCV 4, DNN module
 - **Ideas**:
   - Add YOLOv8 inference example
   - Implement ONNX Runtime integration
@@ -129,6 +142,7 @@
   - Create CMake build system
 
 ### 12. cvtest — Computer Vision Testing Framework
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/cvtest`
 - **GitHub**: https://github.com/pirahansiah/cvtest
 - **Description**: CV/DL testing with Google Test, Docker, CMake
 - **Stack**: C++, OpenCV 5, Google Test, CMake
@@ -140,16 +154,18 @@
   - Create cross-platform build scripts
 
 ### 13. tensorflowOpencv — TensorFlow + OpenCV C++
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/tensorflowOpencv`
 - **GitHub**: https://github.com/pirahansiah/tensorflowOpencv
 - **Description**: TF 1.3 + OpenCV 3.3 integration (legacy)
 - **Stack**: C++, TensorFlow, OpenCV
 - **Ideas**:
   - Migrate to TF 2.x / OpenCV 5
   - Add ONNX Runtime backend
-  - Modernize to C++29
+  - Modernize to C++17
   - Add CMake build system
 
 ### 14. opencv5vs2022 — OpenCV 5 for VS2022
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/opencv5vs2022`
 - **GitHub**: https://github.com/pirahansiah/opencv5vs2022
 - **Description**: Complete OpenCV 5 static library build (344 files, 149K lines)
 - **Stack**: C++, OpenCV 5, Visual Studio 2022
@@ -181,6 +197,7 @@
 - **Ideas**: Add 2025-2026 papers, new open-source models
 
 ### 21. book — OpenCV 5 Ebook
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/book`
 - **Description**: OpenCV 5 ebook with 4 chapters
 - **Ideas**:
   - Add interactive Jupyter notebooks
@@ -189,6 +206,7 @@
   - Publish as online course
 
 ### 22. Computer-Vision — CV Website
+- **Path**: `/Volumes/4tb/2026-6/fullGitHub/Computer-Vision`
 - **Description**: Computer vision reference website
 - **Ideas**:
   - Add interactive demos
@@ -209,6 +227,7 @@
 ## Web & Content
 
 ### 24. myWebsite — pirahansiah.com
+- **Path**: /Volumes/4tb/myWebsite
 - **Description**: Jekyll-based personal website
 - **Ideas**:
   - Add portfolio gallery

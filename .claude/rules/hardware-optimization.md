@@ -8,7 +8,7 @@
 - Use MLX framework for Apple-optimized ML training
 
 ## NVIDIA Spark (128GB VRAM)
-- Use CUDA 13.x with latest Tensor Cores
+- Use CUDA 12.x with latest Tensor Cores
 - Enable TF32 for fast training (no accuracy loss)
 - Use cuDNN 9.x for optimized convolutions
 - Batch size scaling for massive VRAM

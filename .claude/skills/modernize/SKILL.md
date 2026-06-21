@@ -35,7 +35,7 @@ Full-stack project modernization workflow.
 
 **C++:**
 - Update CMakeLists.txt to CMake 3.20+
-- Set C++29 standard
+- Set C++17/20/23 standard
 - Add FetchContent or vcpkg for dependencies
 
 ### Step 3 - Modernize Code
@@ -75,7 +75,7 @@ Full-stack project modernization workflow.
 
 ### Step 6 - Add CI/CD
 - Create `.github/workflows/ci.yml`
-- Matrix testing (Python 3.15 or C++29)
+- Matrix testing (Python 3.10-3.13 or C++17/20/23)
 - Add linting (ruff for Python, clang-format for C++)
 - Add security scanning (Trivy)
 - Add dependency caching

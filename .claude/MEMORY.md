@@ -6,7 +6,7 @@
 - Always use `pathlib.Path` for file operations
 - Type-hint public function signatures
 - Use `conda activate py314` for Python execution
-- Target Python 3.15+ (3.14 in beta), C++29, OpenCV 5, CUDA 13.x
+- Target Python 3.13+ (3.14 in beta), C++23/26, OpenCV 5, CUDA 12.x
 
 ## Session History
 
@@ -92,7 +92,7 @@
 - workshop_LLM: `ret == True` → `ret`, `found_pints` typo
 
 ## Permanent Facts
-- Python 3.14+, type hints, `pathlib.Path`, argparse CLI scripts
+- Python 3.10+, type hints, `pathlib.Path`, argparse CLI scripts
 - Jekyll site at pirahansiah.com, submodule at contents/
 - AI: CV, DL, ONNX, quantization (QDQ INT8), edge deployment
 - LLMs: RAG, multi-agent, local inference (Ollama)
@@ -101,8 +101,8 @@
 - All repos cloned to: /Volumes/4tb/2026-6/fullGitHub
 
 ## Tech Stack (Locked)
-- Python 3.13+ (targeting 3.14), C++29/26
-- OpenCV 5, CUDA 13.x
+- Python 3.13+ (targeting 3.14), C++23/26
+- OpenCV 5, CUDA 12.x
 - PyTorch 2.x, Ultralytics YOLO11
 - ONNX Runtime, TensorRT, NNCF
 - Docker, Kubernetes, GitHub Actions CI/CD

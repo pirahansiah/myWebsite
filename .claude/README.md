@@ -102,10 +102,10 @@ Global Claude Code configuration and preferences.
 
 ## Tech Stack
 
-- Python 3.15+ (targeting 3.14)
-- C++29
+- Python 3.13+ (targeting 3.14)
+- C++17/23/26
 - OpenCV 5
-- CUDA 13.x
+- CUDA 12.x
 - PyTorch 2.x
 - Docker, Kubernetes, GitHub Actions
 - FastAPI, Ollama, LangChain
