@@ -178,7 +178,8 @@ Maintain `ERRORS.md`. When an approach fails after 2+ attempts, log: What didn't
 - `code-reviewer`, `security-auditor`, `debugger`
 
 ## Skills
-n## Privacy Rulesn- **NEVER use or save email addresses or phone numbers.** If content contains email/phone, remove it before saving or pushing to GitHub. Never commit PII.
+- ## Privacy Rules
+- - **NEVER use or save email addresses or phone numbers.** If content contains email/phone, remove it before saving or pushing to GitHub. Never commit PII.
 - `graphify` — any input to knowledge graph
 
 ## Preferences
@@ -224,7 +225,8 @@ Always add and update relevant skills and memory information in the global Claud
 - Website use-cases.md updated at `/Volumes/4tb/myWebsite/contents/pkm/use-cases.md`
 
 ## Skills
-n## Privacy Rulesn- **NEVER use or save email addresses or phone numbers.** If content contains email/phone, remove it before saving or pushing to GitHub. Never commit PII.
+- ## Privacy Rules
+- - **NEVER use or save email addresses or phone numbers.** If content contains email/phone, remove it before saving or pushing to GitHub. Never commit PII.
 
 - `/modernize` — Full-stack project modernization (deps, type hints, tests, Docker, CI/CD)
 - `/portfolio` — Portfolio management and career documentation
