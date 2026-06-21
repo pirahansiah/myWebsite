@@ -1,7 +1,6 @@
 ---
 layout: farshid_default
 title: Search
-permalink: /search/
 ---
 
 <style>
