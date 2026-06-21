@@ -217,6 +217,9 @@ title: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI"
 </style>
 
 <div class="hero-section">
+  
+  <h1> Dr. Farshid PirahanSiah </h1>
+  
   <h1>Embedded Computer Vision<br>&amp; Edge AI at Scale</h1>
   <p class="hero-subtitle">
     I help businesses turn computer vision research into production-ready embedded applications.
