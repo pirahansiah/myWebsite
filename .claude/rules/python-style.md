@@ -8,3 +8,7 @@
 - Print progress with `[STAGE]` prefixes: `[TRAIN]`, `[EXPORT]`, `[QUANT]`, `[BUILD]`
 - No wildcard imports; prefer f-strings
 - `"""docstring"""` on all public functions
+- Use `from __future__ import annotations` for Python 3.14+ compatibility
+- Prefer `dataclasses` or `Pydantic` for data structures
+- Use `concurrent.futures` for parallel operations
+- Minimum Python version: 3.15 (target 3.14+)

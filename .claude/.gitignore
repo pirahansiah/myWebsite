@@ -1,16 +1,45 @@
-# macOS junk (this is a Windows workspace)
+# Claude Code config files
+# Do not commit sensitive data
+
+# OS files
 .DS_Store
 ._*
-.AppleDouble
-.Spotlight-V100
-.Trashes
-
-# Machine-specific / secrets — keep local only
-CLAUDE.local.md
-settings.local.json
+Thumbs.db
 
 # Python
 __pycache__/
-*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
 .venv/
 venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets (NEVER commit)
+.env
+.env.*
+secrets/
+credentials.json
+*.pem
+*.key
+
+# Large files
+*.pt
+*.pth
+*.onnx
+*.bin
+*.hef
+*.xml
