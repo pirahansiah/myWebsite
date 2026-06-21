@@ -1,151 +1,25 @@
 ---
-- title: Expertise
+- title: Product
   items:
   - title: Computer Vision
-    items:
-    - title: 3D Vision & Multi-Camera
-      url: "/contents/public/cv/3d/"
-    - title: Optical Flow
-      url: "/contents/public/cv/optical-flow/"
-    - title: Multi-Camera Systems
-      url: "/contents/public/cv/multi-camera-systems/"
+    url: "/contents/public/product/#computer-vision"
   - title: AI & LLMs
-    items:
-    - title: Advanced LLM Concepts
-      url: "/contents/public/ai-llm/advanced-llm-concepts/"
-    - title: Orchestrating AI Agents
-      url: "/contents/public/ai-llm/orchestrating-agents/"
-    - title: AI Blog
-      url: "/contents/public/ai-llm/blog/"
-    - title: Avatar Generator
-      url: "/contents/public/ai-llm/avatar-generator/"
+    url: "/contents/public/product/#ai--llms"
   - title: CUDA & GPU
-    items:
-    - title: Numba JIT
-      url: "/contents/public/cuda-gpu/numba-jit/"
-    - title: PyCUDA Kernels
-      url: "/contents/public/cuda-gpu/pycuda-kernels/"
-    - title: CUDA in VS Code
-      url: "/contents/public/cuda-gpu/vscode-cuda-windows/"
-    - title: MLX, CoreML & Metal
-      url: "/contents/public/cuda-gpu/mlx-coreml-metal/"
-  - title: Optimization
-    url: "/contents/public/Optimization/"
-  - title: Coaching
-    url: "/contents/public/coaching/"
-  - title: Programming
-    items:
-    - title: C++ Reference
-      url: "/contents/public/CPP/"
-    - title: Python Config
-      url: "/contents/public/Python/"
-    - title: Shell & Vim
-      url: "/contents/public/shell-vim-quickref/"
-    - title: Developer Tools
-      url: "/contents/public/setup/"
+    url: "/contents/public/product/#cuda--gpu"
 - title: Research
   items:
   - title: Patents
-    items:
-    - title: Face Image Augmentation
-      url: "/contents/publications/Patents/face-image-augmentation/"
-    - title: Vehicle Detection
-      url: "/contents/publications/Patents/vehicle-detection/"
-    - title: Facial Analysis Advertising
-      url: "/contents/publications/Patents/facial-analysis-advertisement/"
+    url: "/contents/public/research/#patents"
   - title: Papers
-    items:
-    - title: Adaptive Segmentation PSNR
-      url: "/contents/publications/Papers/adaptive-image-segmentation-psnr/"
-    - title: License Plate — Entropy
-      url: "/contents/publications/Papers/license-plate-recognition-entropy/"
-    - title: Multi-threshold License Plate
-      url: "/contents/publications/Papers/multi-threshold-license-plate/"
-    - title: Camera Calibration Multi-Modal
-      url: "/contents/publications/Papers/camera-calibration-multi-modal/"
-    - title: 2D vs 3D Map Movement
-      url: "/contents/publications/Papers/2d-3d-map-movement/"
-    - title: All Papers
-      url: "/contents/publications/Papers/"
-  - title: Journals
-    items:
-    - title: Adaptive Thresholding PSNR
-      url: "/contents/publications/Journals/adaptive-thresholding-psnr/"
-    - title: GSFT-PSNR Fuzzy Threshold
-      url: "/contents/publications/Journals/gsft-psnr-fuzzy-threshold/"
-    - title: 3D SLAM & Humanoid Robots
-      url: "/contents/publications/Journals/3d-slam-humanoid-robots/"
-    - title: All Journals
-      url: "/contents/publications/Journals/"
-  - title: Books
-    items:
-    - title: Computer Vision Meets LLM
-      url: "/contents/publications/Books/computer-vision-meets-llm/"
-    - title: OpenCV 5 — Ch.0 Introduction
-      url: "/contents/publications/Books/opencv5-chapter0-introduction/"
-    - title: OpenCV 5 — Ch.1 Image Basics
-      url: "/contents/publications/Books/opencv5-chapter1-image-basics/"
-    - title: OpenCV 5 — Ch.2 Feature Detection
-      url: "/contents/publications/Books/opencv5-chapter2-feature-detection/"
-    - title: All Books
-      url: "/contents/publications/Books/"
-  - title: Keynotes
-    items:
-    - title: LLMs Meet Computer Vision
-      url: "/contents/publications/Keynotes/llms-meet-computer-vision/"
-  - title: Full CV
-    url: "/contents/publications/CV/"
-- title: Learn
+    url: "/contents/public/research/#conference-papers"
+  - title: Books & Journals
+    url: "/contents/public/research/#books"
+- title: Solutions
   items:
-  - title: AI 2026 — Courses
-    items:
-    - title: ML Specialization
-      url: "/contents/ai2026/machine-learning-specialization/"
-    - title: Full Stack Deep Learning
-      url: "/contents/ai2026/full-stack-deep-learning/"
-    - title: MLOps
-      url: "/contents/ai2026/mlops/"
-    - title: ROS
-      url: "/contents/ai2026/ros/"
-    - title: Parallel Programming
-      url: "/contents/ai2026/parallel-programming/"
-    - title: Modern C++
-      url: "/contents/ai2026/modern-cpp/"
-    - title: Cloud-Native
-      url: "/contents/ai2026/cloud-native/"
-    - title: TensorFlow Deployment
-      url: "/contents/ai2026/tensorflow-deployment/"
-  - title: Workshops
-    items:
-    - title: RISC-V
-      url: "/contents/ai2026/risc-v/"
-    - title: Edge AI Summit
-      url: "/contents/ai2026/edge-ai-summit/"
-    - title: Embedded IoT
-      url: "/contents/ai2026/embedded-iot/"
-    - title: Tesla AI
-      url: "/contents/ai2026/tesla/"
-    - title: AI Hardware
-      url: "/contents/ai2026/ai-hardware/"
-    - title: OpenVINO
-      url: "/contents/ai2026/openvino/"
-    - title: Metaverse
-      url: "/contents/ai2026/metaverse/"
-  - title: Resources
-    items:
-    - title: Portfolio & Publications
-      url: "/contents/public/Resources/"
-    - title: Curated Links
-      url: "/contents/public/links/"
-    - title: Top LinkedIn Posts
-      url: "/contents/public/linkedin-top-posts/"
+  - title: Courses
+    url: "/contents/public/solutions/#ai-2026--courses"
   - title: Business
-    items:
-    - title: Startup Guide
-      url: "/contents/public/StartUp/"
-    - title: SEO for LLMs
-      url: "/contents/public/SEO/"
-    - title: Prompts
-      url: "/contents/public/Prompts/"
-  - title: Sitemap
-    url: "/contents/sitemap/"
+    url: "/contents/public/solutions/#business"
+  - title: Connect
+    url: "/contents/public/solutions/#connect"
