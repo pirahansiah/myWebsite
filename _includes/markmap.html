@@ -1,0 +1,26 @@
+<!-- _includes/markmap.html : render ```markmap fenced blocks as mind maps -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.18/dist/browser/index.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  var mm = window.markmap;                 // Transformer + Markmap both live here
+  if (!mm || !mm.Transformer) return;
+  var transformer = new mm.Transformer();
+
+  // kramdown renders ```markmap as <pre><code class="language-markmap">
+  document.querySelectorAll('pre > code.language-markmap').forEach(function (code) {
+    var markdown = code.textContent;
+    var result = transformer.transform(markdown);
+
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.classList.add('markmap-svg');
+    svg.style.width = '100%';
+    svg.style.height = '420px';
+
+    var pre = code.parentElement;
+    pre.replaceWith(svg);                   // swap code block for the mind map
+    mm.Markmap.create(svg, null, result.root);
+  });
+});
+</script>
