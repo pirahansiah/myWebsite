@@ -17,6 +17,8 @@
     url: "/contents/public/research/#books"
   - title: Wiki
     url: "/contents/wiki/"
+  - title: Presentations
+    url: "/contents/ppt/farshid-ai-cv-llm-presentation/"
 - title: Solutions
   items:
   - title: Courses
