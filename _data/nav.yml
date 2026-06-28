@@ -2,28 +2,30 @@
 - title: Product
   items:
   - title: Computer Vision
-    url: "/contents/public/product/#computer-vision"
+    url: /contents/public/product/#computer-vision
   - title: AI & LLMs
-    url: "/contents/public/product/#ai--llms"
+    url: /contents/public/product/#ai--llms
   - title: CUDA & GPU
-    url: "/contents/public/product/#cuda--gpu"
+    url: /contents/public/product/#cuda--gpu
 - title: Research
   items:
   - title: Patents
-    url: "/contents/public/research/#patents"
+    url: /contents/publications/Patents/
   - title: Papers
-    url: "/contents/public/research/#conference-papers"
+    url: /contents/publications/Papers/
   - title: Books & Journals
-    url: "/contents/public/research/#books"
+    url: /contents/publications/Books/
+  - title: Keynotes
+    url: /contents/publications/Keynotes/
   - title: Wiki
-    url: "/contents/wiki/"
+    url: /contents/wiki/
   - title: Presentations
-    url: "/contents/ppt/farshid-ai-cv-llm-presentation/"
+    url: /contents/ppt/farshid-ai-cv-llm-presentation/
 - title: Solutions
   items:
   - title: Courses
-    url: "/contents/public/solutions/#ai-2026--courses"
+    url: /contents/ai2026/topics/
   - title: Business
-    url: "/contents/public/solutions/#business"
+    url: /contents/public/solutions/
   - title: Connect
-    url: "/contents/public/solutions/#connect"
+    url: /contents/public/solutions/#connect
