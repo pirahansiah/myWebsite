@@ -1,45 +1,63 @@
-# Claude Code config files
-# Do not commit sensitive data
-
-# OS files
+# macOS junk (this is a Windows workspace)
 .DS_Store
 ._*
-Thumbs.db
+.AppleDouble
+.Spotlight-V100
+.Trashes
+
+# Machine-specific / secrets — keep local only
+CLAUDE.local.md
+settings.local.json
+*.local.md
+*.local.json
+PERSONAL.md
+.env
+.env.local
 
 # Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-*.egg-info/
-dist/
-build/
-.eggs/
-
-# Virtual environments
+*.py[cod]
 .venv/
 venv/
-env/
+
+# Large build artifacts and dependencies (exclude from version control)
+# OpenCV 5 builds
+build*/
+opencv5_build*/
+*.ninja
+*.ninja_deps
+*.ninja_log
+
+# Build outputs
+*.obj
+*.lib
+*.dll
+*.exe
+*.ilk
+*.pdb
+
+# Third-party dependencies (not checked in)
+deps/cuda/
+deps/ffmpeg/
+deps/openvino/
+deps/gstreamer/
+deps/opencv/
+downloads/
+install/
+
+# Build logs
+logs/
+*.log
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
 
 # IDE
+.vs/
 .vscode/
-.idea/
-*.swp
-*.swo
-
-# Secrets (NEVER commit)
-.env
-.env.*
-secrets/
-credentials.json
-*.pem
-*.key
-
-# Large files
-*.pt
-*.pth
-*.onnx
-*.bin
-*.hef
-*.xml
+*.sln
+*.vcxproj
+*.vcxproj.filters
