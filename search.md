@@ -53,7 +53,7 @@ title: Search
 <div class="search-wrap">
   <div class="search-hero">
     <h1>Search</h1>
-    <p>Fuzzy + content-based search across all pages</p>
+    <p>Fuzzy + content-based search across all content pages</p>
   </div>
 
   <div class="search-box">
@@ -89,8 +89,7 @@ title: Search
 
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
 <script>
-var INDEX = [
-  {"title":"Home","url":"/","body":"Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI. 15+ years experience in Computer Vision, Medical Image Processing, IoT, Edge AI, and model optimization."},
+var CONTENT_INDEX = [
   {"title":"AI Hardware Accelerators","url":"/contents/ai2026/ai-hardware","body":"Workshop on custom AI accelerators, NPUs, and edge computing chips."},
   {"title":"Book Summaries","url":"/contents/ai2026/book-summary","body":"Book summaries and key takeaways from AI and computer vision literature."},
   {"title":"Cloud-Native with Kubernetes","url":"/contents/ai2026/cloud-native","body":"Docker, Kubernetes, cloud infrastructure for AI deployment."},
@@ -139,9 +138,9 @@ var INDEX = [
   {"title":"LinkedIn Posts 2024","url":"/contents/public/linkedin-top-posts","body":"Top posts on camera calibration, Python, C++, OpenCV, NVIDIA, AI robotics."},
   {"title":"Curated Links","url":"/contents/public/links","body":"Hand-picked tools, tutorials, references for CV, AI, software engineering."},
   {"title":"Product Page","url":"/contents/public/product","body":"Embedded CV & Edge AI products and solutions."},
-  {"title":"Solutions Mind Map","url":"/contents/public/projects/Solutions/","body":"Impact portfolio and solutions overview."},
   {"title":"Research","url":"/contents/public/research","body":"Publications, patents, papers, journals, books, keynotes."},
   {"title":"Solutions","url":"/contents/public/solutions","body":"How I help businesses with AI and computer vision."},
+  {"title":"Solutions Mind Map","url":"/contents/public/projects/Solutions/","body":"Impact portfolio and solutions overview."},
   {"title":"10 Years of Bug Fixing","url":"/contents/publications/10Years","body":"Lessons from 10 years of fixing bugs in computer vision systems."},
   {"title":"Books","url":"/contents/publications/Books/","body":"Books and chapters on camera calibration, optical flow, OpenCV 5."},
   {"title":"CV Meets LLM","url":"/contents/publications/Books/AI/computer-vision-meets-llm","body":"Multi-agent swarm with RAG for images and video."},
@@ -177,13 +176,10 @@ var INDEX = [
   {"title":"Facial Analysis Advertising Patent","url":"/contents/publications/Patents/facial-analysis-advertisement","body":"Advertisement based on facial analysis — WO2020141969A2."},
   {"title":"Vehicle Detection Patent","url":"/contents/publications/Patents/vehicle-detection","body":"Method for detecting moving vehicles — WO2021107761A1."},
   {"title":"Sitemap","url":"/contents/sitemap","body":"Sitemap — all pages on pirahansiah.com."},
-  {"title":"Wiki","url":"/contents/wiki","body":"Wikipedia-style index of all pages on pirahansiah.com."},
-  {"title":"Knowledge Graph","url":"/farshid-ai-cv-llm-graph","body":"Interactive knowledge graph visualization."},
-  {"title":"Hashtag Graph","url":"/farshid-ai-cv-llm-graph-tags","body":"Hashtag relationship graph visualization."},
-  {"title":"Search","url":"/search","body":"Search all pages on pirahansiah.com."}
+  {"title":"Wiki","url":"/contents/wiki","body":"Wikipedia-style index of all pages on pirahansiah.com."}
 ];
 
-var fuse = new Fuse(INDEX, {
+var fuse = new Fuse(CONTENT_INDEX, {
   keys: [
     { name: 'title', weight: 2 },
     { name: 'body', weight: 1 }
@@ -194,7 +190,7 @@ var fuse = new Fuse(INDEX, {
   minMatchCharLength: 2
 });
 
-var fuseStrict = new Fuse(INDEX, {
+var fuseStrict = new Fuse(CONTENT_INDEX, {
   keys: [
     { name: 'title', weight: 3 },
     { name: 'body', weight: 0.5 }
@@ -226,7 +222,7 @@ function doSearch() {
 
   if (!optTitle) results = results.filter(function(r) { return r.key !== 'title'; });
   if (!optBody && !optTitle) {
-    results = INDEX.filter(function(item) {
+    results = CONTENT_INDEX.filter(function(item) {
       return item.title.toLowerCase().includes(q.toLowerCase()) || item.body.toLowerCase().includes(q.toLowerCase());
     }).map(function(item) { return { item: item, score: 0 }; });
   }
