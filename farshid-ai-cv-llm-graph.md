@@ -90,7 +90,7 @@ extra_css: graph.css
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
 <script>
-var CONTENT_INDEX = [
+var CONTENT_INDEX = [];
   {"id":"product","title":"Product","url":"/contents/public/product/","category":"hub","body":"Embedded CV and Edge AI products."},
   {"id":"research","title":"Research","url":"/contents/public/research/","category":"hub","body":"Publications, patents, papers."},
   {"id":"solutions","title":"Solutions","url":"/contents/public/solutions/","category":"hub","body":"AI and CV business solutions."},
@@ -172,31 +172,31 @@ var CONTENT_INDEX = [
   {"id":"seo","title":"SEO for LLMs","url":"/contents/public/seo/","category":"business","body":"Optimizing for LLM search engines."},
   {"id":"linkedin","title":"LinkedIn Posts","url":"/contents/public/linkedin-top-posts/","category":"business","body":"Camera calibration, Python, OpenCV posts."},
   {"id":"cpp-ref","title":"C++ Reference","url":"/contents/public/cpp/","category":"business","body":"Hash maps, stacks, queues, vectors."},
-  {"id":"python","title":"Python Config","url":"/contents/public/python/","category":"business","body":"Config management, argparse, YAML."},
-  {"id":"optimization","title":"Optimization","url":"/contents/public/optimization/","category":"business","body":"Quantization, pruning, distillation."},
-  {"id":"prompts","title":"Prompts","url":"/contents/public/prompts/","category":"business","body":"Prompt engineering templates."},
-  {"id":"setup","title":"Developer Tools","url":"/contents/public/setup/","category":"business","body":"Shell, vim, dev tools."},
-  {"id":"shell","title":"Shell Vim Reference","url":"/contents/public/shell-vim-quickref/","category":"business","body":"Shell, Vim, CLI tools."},
-  {"id":"token-ppt","title":"Token Presentation","url":"/contents/ppt/farshid-ai-cv-llm-presentation/","category":"business","body":"Token reduction strategies, benchmarks."},
-  {"id":"10years","title":"10 Years Bugs","url":"/contents/publications/10Years/","category":"business","body":"Lessons from fixing CV bugs."},
-  {"id":"cv","title":"CV","url":"/contents/publications/CV/","category":"business","body":"Curriculum Vitae."}
-];
-
-var gFuse = new Fuse(CONTENT_INDEX, {
-  keys: [{ name: 'title', weight: 2 }, { name: 'body', weight: 1 }],
-  threshold: 0.4, distance: 200, includeMatches: true, minMatchCharLength: 2
-});
+var gFuse = null;
 
 function graphSearch(q) {
   var resultsEl = document.getElementById('graph-search-results');
-  if (!q || q.length < 2) { resultsEl.textContent = ''; window.graphClearHighlight(); return; }
+  if (!q || q.length < 2 || !gFuse) { resultsEl.textContent = ''; window.graphClearHighlight(); return; }
   var results = gFuse.search(q);
   if (results.length === 0) { resultsEl.textContent = 'No matches'; window.graphClearHighlight(); return; }
   var nodeIds = [];
-  results.forEach(function(r) { nodeIds.push(r.item.id); });
+  results.forEach(function(r) { nodeIds.push(r.item.url); });
   resultsEl.textContent = results.length + ' node' + (results.length !== 1 ? 's' : '') + ' highlighted';
   window.graphHighlightNodes(nodeIds);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('/assets/search-index.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      CONTENT_INDEX = data;
+      gFuse = new Fuse(data, {
+        keys: [{ name: 'title', weight: 0.4 }, { name: 'tags', weight: 0.3 }, { name: 'hashtags', weight: 0.15 }, { name: 'category', weight: 0.1 }],
+        threshold: 0.35, distance: 200, includeMatches: true, minMatchCharLength: 2
+      });
+    })
+    .catch(function() {});
+});
 </script>
 
 <script src="{{ '/assets/js/graph-view.js' | relative_url }}" defer></script>

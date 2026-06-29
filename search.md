@@ -89,7 +89,7 @@ title: Search
 
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
 <script>
-var CONTENT_INDEX = [
+
   {"title":"AI Hardware Accelerators","url":"/contents/ai2026/ai-hardware","body":"Workshop on custom AI accelerators, NPUs, and edge computing chips."},
   {"title":"Book Summaries","url":"/contents/ai2026/book-summary","body":"Book summaries and key takeaways from AI and computer vision literature."},
   {"title":"Cloud-Native with Kubernetes","url":"/contents/ai2026/cloud-native","body":"Docker, Kubernetes, cloud infrastructure for AI deployment."},
@@ -201,16 +201,41 @@ var fuseStrict = new Fuse(CONTENT_INDEX, {
   minMatchCharLength: 2
 });
 
+var fuse = null;
+var fuseStrict = null;
+
+function initSearch(data) {
+  CONTENT_INDEX = data;
+  fuse = new Fuse(data, {
+    keys: [
+      { name: 'title', weight: 0.4 },
+      { name: 'tags', weight: 0.3 },
+      { name: 'hashtags', weight: 0.15 },
+      { name: 'category', weight: 0.1 },
+      { name: 'body', weight: 0.05 }
+    ],
+    threshold: 0.35,
+    distance: 200,
+    includeMatches: true,
+    minMatchCharLength: 2
+  });
+  fuseStrict = new Fuse(data, {
+    keys: [{ name: 'title', weight: 0.6 }, { name: 'tags', weight: 0.3 }],
+    threshold: 0.25,
+    distance: 100,
+    includeMatches: true,
+    minMatchCharLength: 2
+  });
+}
+
 function doSearch() {
   var q = document.getElementById('q').value.trim();
   var resultsEl = document.getElementById('search-results');
   var countEl = document.getElementById('search-count');
   var googleEl = document.getElementById('search-google');
-  var optTitle = document.getElementById('opt-title').checked;
-  var optBody = document.getElementById('opt-body').checked;
   var optFuzzy = document.getElementById('opt-fuzzy').checked;
 
-  if (!q) {
+  if (!q || !fuse) {
     resultsEl.innerHTML = '';
     countEl.textContent = '';
     googleEl.style.display = 'none';
@@ -219,13 +244,6 @@ function doSearch() {
 
   var engine = optFuzzy ? fuse : fuseStrict;
   var results = engine.search(q);
-
-  if (!optTitle) results = results.filter(function(r) { return r.key !== 'title'; });
-  if (!optBody && !optTitle) {
-    results = CONTENT_INDEX.filter(function(item) {
-      return item.title.toLowerCase().includes(q.toLowerCase()) || item.body.toLowerCase().includes(q.toLowerCase());
-    }).map(function(item) { return { item: item, score: 0 }; });
-  }
 
   countEl.textContent = results.length + ' result' + (results.length !== 1 ? 's' : '') + ' for "' + q + '"';
 
@@ -278,5 +296,9 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('q').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') { e.preventDefault(); doSearch(); }
   });
+  fetch('/assets/search-index.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) { initSearch(data); })
+    .catch(function() { console.log('Search index not ready'); });
 });
 </script>
