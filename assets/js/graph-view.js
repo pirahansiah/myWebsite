@@ -1,6 +1,5 @@
 /**
- * Knowledge Graph — D3.js force-directed, Obsidian-style
- * Uses d3-force for physics, Canvas for rendering, d3-zoom for interaction
+ * Knowledge Graph — Simple D3.js force-directed graph
  */
 (function () {
   "use strict";
@@ -13,26 +12,26 @@
   var W, H, dpr;
   var simulation;
   var graphNodes = [], graphLinks = [];
-  var transform = d3.zoomIdentity;
+  var transform = { x: 0, y: 0, k: 1 };
   var hoveredNode = null, selectedNode = null;
   var draggingNode = null;
   var highlightedSet = new Set();
   var activeCategories = new Set();
   var openBtn = document.getElementById("graph-open-btn");
   var tooltipEl = null;
+  var gFuse = null;
 
   var COLORS = {
-    hub: "#0a84ff", cv: "#30d158", ai: "#bf5af2", cuda: "#ff9f0a",
+    hub: "#0a84ff", page: "#30d158", tag: "#af52de",
     paper: "#5ac8fa", journal: "#64d2ff", book: "#ffd60a", patent: "#ff375f",
     keynote: "#ff6482", course: "#00c7be", pkm: "#ac8e68", business: "#8e8e93"
   };
 
   var isDark = matchMedia("(prefers-color-scheme:dark)").matches;
-  var BG = isDark ? "#111" : "#f5f5f5";
+  var BG = isDark ? "#0d1117" : "#f8f9fa";
   var TEXT = isDark ? "#f5f5f7" : "#1d1d1f";
-  var TEXT_DIM = isDark ? "rgba(245,245,247,0.35)" : "rgba(29,29,31,0.35)";
-  var EDGE = isDark ? "rgba(140,140,160,0.3)" : "rgba(100,100,120,0.25)";
-  var EDGE_HL = "#0a84ff";
+  var TEXT_DIM = isDark ? "rgba(245,245,247,0.3)" : "rgba(29,29,31,0.3)";
+  var EDGE_COLOR = isDark ? "rgba(139,148,158,0.3)" : "rgba(100,116,139,0.25)";
 
   function resize() {
     dpr = window.devicePixelRatio || 1;
@@ -45,8 +44,7 @@
   }
 
   function nodeR(d) {
-    var conns = d.connections || 0;
-    return Math.sqrt(conns + 1) * 3 + 4;
+    return Math.sqrt((d.connections || 0) + 1) * 2.5 + 3;
   }
 
   function render() {
@@ -74,42 +72,35 @@
     // Draw edges
     graphLinks.forEach(function (l) {
       var s = l.source, t = l.target;
-      if (!s || !t) return;
-      var srcCat = s.category || "note";
-      var tgtCat = t.category || "note";
-      if (!activeCategories.has(srcCat) || !activeCategories.has(tgtCat)) return;
+      if (!s || !t || !s.x || !t.x) return;
+      var sCat = s.category || "page";
+      var tCat = t.category || "page";
+      if (!activeCategories.has(sCat) || !activeCategories.has(tCat)) return;
 
       var isHL = active && (s === active || t === active);
       var isDim = active && !isHL;
       var isSearch = highlightedSet.has(s.index) || highlightedSet.has(t.index);
 
       ctx.beginPath();
-      // Curved edges
-      var mx = (s.x + t.x) / 2, my = (s.y + t.y) / 2;
-      var dx = t.x - s.x, dy = t.y - s.y;
-      var dist = Math.sqrt(dx * dx + dy * dy) || 1;
-      var curve = dist * 0.12;
-      var nx = -dy / dist * curve, ny = dx / dist * curve;
-
       ctx.moveTo(s.x, s.y);
-      ctx.quadraticCurveTo(mx + nx, my + ny, t.x, t.y);
+      ctx.lineTo(t.x, t.y);
 
       if (isSearch) {
-        ctx.strokeStyle = EDGE_HL;
+        ctx.strokeStyle = "#0a84ff";
         ctx.lineWidth = 2.5 / transform.k;
         ctx.globalAlpha = 1;
       } else if (isHL) {
-        ctx.strokeStyle = EDGE_HL;
+        ctx.strokeStyle = "#0a84ff";
         ctx.lineWidth = 2 / transform.k;
-        ctx.globalAlpha = 1;
+        ctx.globalAlpha = 0.9;
       } else if (isDim) {
-        ctx.strokeStyle = EDGE;
-        ctx.lineWidth = 0.4 / transform.k;
-        ctx.globalAlpha = 0.3;
+        ctx.strokeStyle = EDGE_COLOR;
+        ctx.lineWidth = 0.3 / transform.k;
+        ctx.globalAlpha = 0.15;
       } else {
-        ctx.strokeStyle = EDGE;
+        ctx.strokeStyle = EDGE_COLOR;
         ctx.lineWidth = 0.8 / transform.k;
-        ctx.globalAlpha = 0.6;
+        ctx.globalAlpha = 0.5;
       }
       ctx.stroke();
       ctx.globalAlpha = 1;
@@ -118,6 +109,8 @@
     // Draw nodes
     graphNodes.forEach(function (n) {
       if (!activeCategories.has(n.category)) return;
+      if (typeof n.x !== "number" || typeof n.y !== "number") return;
+
       var r = nodeR(n);
       var isSel = selectedNode === n;
       var isHov = hoveredNode === n;
@@ -130,44 +123,42 @@
 
       // Glow
       if (isSel || isHov || isSearch) {
-        ctx.globalAlpha = 0.25;
+        ctx.globalAlpha = 0.2;
         ctx.beginPath();
-        ctx.arc(n.x, n.y, drawR + 10, 0, Math.PI * 2);
+        ctx.arc(n.x, n.y, drawR + 8, 0, Math.PI * 2);
         ctx.fillStyle = fill;
         ctx.fill();
       }
 
-      // Node circle
-      ctx.globalAlpha = isDim ? 0.08 : 1;
+      // Node
+      ctx.globalAlpha = isDim ? 0.1 : 1;
       ctx.beginPath();
       ctx.arc(n.x, n.y, drawR, 0, Math.PI * 2);
       ctx.fillStyle = fill;
       ctx.fill();
-      ctx.strokeStyle = isSel ? "#ff9500" : isHov ? "#0a84ff" : "rgba(255,255,255,0.25)";
-      ctx.lineWidth = (isSel ? 3 : isHov ? 2.5 : 0.7) / transform.k;
+      ctx.strokeStyle = isSel ? "#ff9500" : isHov ? "#0a84ff" : "rgba(255,255,255,0.2)";
+      ctx.lineWidth = (isSel ? 2.5 : isHov ? 2 : 0.5) / Math.max(transform.k, 0.5);
       ctx.stroke();
 
       // Label
       var showLabel = isSel || isHov || isConn || isSearch;
       if (!showLabel && !active) {
-        var maxLen = transform.k < 0.3 ? 0 : transform.k < 0.6 ? 3 : transform.k < 0.9 ? 8 : transform.k < 1.4 ? 15 : 999;
+        var maxLen = transform.k < 0.3 ? 0 : transform.k < 0.6 ? 4 : transform.k < 1 ? 10 : 999;
         if (maxLen > 0) showLabel = true;
+        else return;
       }
 
-      if (showLabel) {
-        var label = n.label;
-        if (!isSel && !isHov && !isConn && !isSearch && !active) {
-          var ml = transform.k < 0.3 ? 0 : transform.k < 0.6 ? 3 : transform.k < 0.9 ? 8 : transform.k < 1.4 ? 15 : 999;
-          if (ml > 0 && label.length > ml) label = label.substring(0, ml - 1) + "…";
-          if (ml === 0) return;
-        }
-
-        ctx.globalAlpha = isDim ? 0.08 : (isSel || isHov || isConn || isSearch) ? 1 : 0.5;
-        ctx.fillStyle = isSel ? "#ff9500" : TEXT;
-        ctx.font = ((isSel || isHov) ? "700 " : "500 ") + (10 / Math.max(transform.k, 0.5)) + "px system-ui";
-        ctx.textAlign = "center";
-        ctx.fillText(label, n.x, n.y + drawR + 12 / transform.k);
+      var label = n.label || n.id;
+      if (!isSel && !isHov && !isConn && !isSearch && !active) {
+        var ml = transform.k < 0.3 ? 0 : transform.k < 0.6 ? 4 : transform.k < 1 ? 10 : 999;
+        if (ml > 0 && label.length > ml) label = label.substring(0, ml - 1) + "…";
       }
+
+      ctx.globalAlpha = isDim ? 0.1 : (isSel || isHov || isConn || isSearch) ? 1 : 0.45;
+      ctx.fillStyle = isSel ? "#ff9500" : TEXT;
+      ctx.font = ((isSel || isHov) ? "600 " : "400 ") + Math.max(8, 10 / Math.max(transform.k, 0.5)) + "px -apple-system, system-ui, sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText(label, n.x, n.y + drawR + 10 / Math.max(transform.k, 0.5));
       ctx.globalAlpha = 1;
     });
 
@@ -177,28 +168,28 @@
   }
 
   function drawMinimap() {
-    var mw = 90, mh = 60, mx = W - mw - 8, my = H - mh - 8;
+    var mw = 80, mh = 50, mx = W - mw - 8, my = H - mh - 8;
+    if (graphNodes.length === 0) return;
     ctx.save();
     ctx.scale(dpr, dpr);
-    ctx.globalAlpha = 0.45;
-    ctx.fillStyle = isDark ? "rgba(30,30,30,0.8)" : "rgba(240,240,240,0.8)";
+    ctx.globalAlpha = 0.4;
+    ctx.fillStyle = isDark ? "rgba(22,27,34,0.8)" : "rgba(255,255,255,0.8)";
     ctx.beginPath();
-    ctx.roundRect(mx, my, mw, mh, 5);
+    ctx.roundRect(mx, my, mw, mh, 4);
     ctx.fill();
 
-    if (graphNodes.length === 0) { ctx.restore(); return; }
     var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
     graphNodes.forEach(function (n) {
-      if (!activeCategories.has(n.category)) return;
+      if (!activeCategories.has(n.category) || typeof n.x !== "number") return;
       if (n.x < minX) minX = n.x; if (n.x > maxX) maxX = n.x;
       if (n.y < minY) minY = n.y; if (n.y > maxY) maxY = n.y;
     });
-    if (minX === maxX) { minX -= 100; maxX += 100; }
-    if (minY === maxY) { minY -= 100; maxY += 100; }
-    var p = 30; minX -= p; maxX += p; minY -= p; maxY += p;
+    if (minX >= maxX) { minX -= 100; maxX += 100; }
+    if (minY >= maxY) { minY -= 100; maxY += 100; }
+    var p = 20; minX -= p; maxX += p; minY -= p; maxY += p;
 
     graphNodes.forEach(function (n) {
-      if (!activeCategories.has(n.category)) return;
+      if (!activeCategories.has(n.category) || typeof n.x !== "number") return;
       var nx = mx + ((n.x - minX) / (maxX - minX)) * mw;
       var ny = my + ((n.y - minY) / (maxY - minY)) * mh;
       ctx.beginPath();
@@ -206,28 +197,15 @@
       ctx.fillStyle = COLORS[n.category] || "#8e8e93";
       ctx.fill();
     });
-
-    // Viewport box
-    var vw = W / transform.k, vh = H / transform.k;
-    var vcx = -transform.x / transform.k + W / (2 * transform.k);
-    var vcy = -transform.y / transform.k + H / (2 * transform.k);
-    var vx = mx + ((vcx - vw / 2 - minX) / (maxX - minX)) * mw;
-    var vy = my + ((vcy - vh / 2 - minY) / (maxY - minY)) * mh;
-    var vww = (vw / (maxX - minX)) * mw;
-    var vhh = (vh / (maxY - minY)) * mh;
-    ctx.strokeStyle = "#0a84ff";
-    ctx.lineWidth = 1;
-    ctx.strokeRect(vx, vy, vww, vhh);
     ctx.restore();
   }
 
-  // Hit test
   function hitTest(px, py) {
-    var inverted = transform.invert([px, py]);
-    var mx = inverted[0], my = inverted[1];
+    var mx = (px - transform.x) / transform.k;
+    var my = (py - transform.y) / transform.k;
     for (var i = graphNodes.length - 1; i >= 0; i--) {
       var n = graphNodes[i];
-      if (!activeCategories.has(n.category)) continue;
+      if (!activeCategories.has(n.category) || typeof n.x !== "number") continue;
       var dx = mx - n.x, dy = my - n.y;
       var r = nodeR(n) + 6;
       if (dx * dx + dy * dy <= r * r) return n;
@@ -238,7 +216,7 @@
   function showTooltip(node, px, py) {
     if (!tooltipEl) { tooltipEl = document.createElement("div"); tooltipEl.className = "graph-tooltip"; wrap.appendChild(tooltipEl); }
     var c = COLORS[node.category] || "#8e8e93";
-    tooltipEl.innerHTML = '<div class="gt-title">' + node.label + '</div><div class="gt-cat" style="color:' + c + '">' + (node.category || "") + '</div>';
+    tooltipEl.innerHTML = '<div class="gt-title">' + (node.label || node.id) + '</div><div class="gt-cat" style="color:' + c + '">' + (node.category || "") + '</div>';
     tooltipEl.style.left = Math.min(px, W - 180) + "px";
     tooltipEl.style.top = (py - 50) + "px";
     tooltipEl.style.display = "block";
@@ -253,7 +231,7 @@
 
   function showOpenButton(n) {
     if (!openBtn || !n || !n.url) { hideOpenButton(); return; }
-    openBtn.innerHTML = n.label + " → Open";
+    openBtn.innerHTML = (n.label || n.id) + " → Open";
     openBtn.href = n.url;
     openBtn.style.display = "inline-flex";
   }
@@ -263,91 +241,71 @@
   function updateTabs() {
     document.querySelectorAll(".graph-tab").forEach(function (tab) {
       var cat = tab.dataset.tab;
-      if (cat === "all") {
-        tab.classList.toggle("active", activeCategories.size === Object.keys(COLORS).length);
-      } else {
-        tab.classList.toggle("active", activeCategories.size === 1 && activeCategories.has(cat));
-      }
+      tab.classList.toggle("active", cat === "all" ? activeCategories.size === Object.keys(COLORS).length : activeCategories.size === 1 && activeCategories.has(cat));
     });
   }
 
-  // Tab clicks — show only selected category
+  // Tab clicks
   document.addEventListener("click", function (e) {
     var tab = e.target.closest(".graph-tab");
     if (!tab) return;
     var cat = tab.dataset.tab;
-    if (cat === "all") {
-      activeCategories = new Set(Object.keys(COLORS));
-    } else {
-      activeCategories = new Set([cat]);
-    }
+    activeCategories = cat === "all" ? new Set(Object.keys(COLORS)) : new Set([cat]);
     updateTabs();
     render();
   });
-  }
 
-  // Setup D3
-  function setup(graphData) {
-    graphNodes = graphData.nodes.map(function (n, i) {
+  function setup(data) {
+    graphNodes = (data.nodes || []).map(function (n, i) {
       n.index = i;
       n.connections = 0;
       return n;
     });
-    graphLinks = graphData.links.map(function (l) {
-      return { source: l.source, target: l.target, strength: l.strength || 0.5 };
-    });
-
-    // Count connections
+    var links = data.links || [];
     var idxMap = {};
     graphNodes.forEach(function (n, i) { idxMap[n.id] = i; });
-    var resolvedLinks = [];
-    graphLinks.forEach(function (l) {
-      var si = idxMap[l.source] !== undefined ? idxMap[l.source] : l.source;
-      var ti = idxMap[l.target] !== undefined ? idxMap[l.target] : l.target;
-      if (typeof si === "number" && typeof ti === "number") {
-        resolvedLinks.push({ source: si, target: ti, strength: l.strength });
+
+    graphLinks = [];
+    links.forEach(function (l) {
+      var si = typeof l.source === "string" ? idxMap[l.source] : l.source;
+      var ti = typeof l.target === "string" ? idxMap[l.target] : l.target;
+      if (typeof si === "number" && typeof ti === "number" && si !== ti) {
+        graphLinks.push({ source: si, target: ti, strength: l.strength || 0.5 });
         graphNodes[si].connections++;
         graphNodes[ti].connections++;
       }
     });
-    graphLinks = resolvedLinks;
-
-    // Recalculate node radii
-    graphNodes.forEach(function (n) { n.r = nodeR(n); });
 
     activeCategories = new Set(Object.keys(COLORS));
     updateTabs();
 
     // D3 force simulation
     simulation = d3.forceSimulation(graphNodes)
-      .force("link", d3.forceLink(graphLinks).id(function (d) { return d.index; }).distance(function (d) { return 80 + (1 - d.strength) * 60; }).strength(function (d) { return d.strength * 0.5; })
-      .force("charge", d3.forceManyBody().strength(-200).distanceMax(400))
-      .force("center", d3.forceCenter(W / 2, H / 2).strength(0.05))
-      .force("collide", d3.forceCollide().radius(function (d) { return nodeR(d) + 4; }).strength(0.7))
-      .force("x", d3.forceX(W / 2).strength(0.03))
-      .force("y", d3.forceY(H / 2).strength(0.03))
-      .alphaDecay(0.02)
+      .force("link", d3.forceLink(graphLinks).id(function (d) { return d.index; }).distance(80).strength(function (d) { return (d.strength || 0.5) * 0.4; })
+      .force("charge", d3.forceManyBody().strength(-150).distanceMax(350))
+      .force("center", d3.forceCenter(W / 2, H / 2).strength(0.06))
+      .force("collide", d3.forceCollide().radius(function (d) { return nodeR(d) + 3; }).strength(0.8))
+      .force("x", d3.forceX(W / 2).strength(0.04))
+      .force("y", d3.forceY(H / 2).strength(0.04))
+      .alphaDecay(0.025)
       .on("tick", render);
 
     // D3 zoom
-    var zoom = d3.zoom()
+    var zoomBehavior = d3.zoom()
       .scaleExtent([0.1, 6])
-      .on("zoom", function (e) {
-        transform = e.transform;
-        render();
-      });
+      .on("zoom", function (e) { transform = e.transform; render(); });
+    d3.select(canvas).call(zoomBehavior);
 
-    d3.select(canvas).call(zoom);
-
-    // Drag
-    var drag = d3.drag()
+    // D3 drag
+    var dragBehavior = d3.drag()
       .on("start", function (e, d) {
         if (!e.active) simulation.alphaTarget(0.3).restart();
         d.fx = d.x; d.fy = d.y;
         draggingNode = d;
       })
       .on("drag", function (e, d) {
-        var p = transform.invert([e.sourceEvent.clientX - wrap.getBoundingClientRect().left, e.sourceEvent.clientY - wrap.getBoundingClientRect().top]);
+        var rect = wrap.getBoundingClientRect();
+        var p = transform.invert([e.sourceEvent.clientX - rect.left, e.sourceEvent.clientY - rect.top]);
         d.fx = p[0]; d.fy = p[1];
       })
       .on("end", function (e, d) {
@@ -355,20 +313,19 @@
         d.fx = null; d.fy = null;
         draggingNode = null;
       });
+    d3.select(canvas).call(dragBehavior);
 
-    d3.select(canvas).call(drag);
-
-    // Click / hover
+    // Mouse events
     d3.select(canvas)
       .on("mousemove", function (e) {
         if (draggingNode) return;
         var rect = wrap.getBoundingClientRect();
-        var mx = e.clientX - rect.left, my = e.clientY - rect.top;
-        var hit = hitTest(mx, my);
+        var hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
         if (hit !== hoveredNode) {
           hoveredNode = hit;
           canvas.style.cursor = hit ? "pointer" : "grab";
-          if (hit) showTooltip(hit, mx, my); else hideTooltip();
+          if (hit) showTooltip(hit, e.clientX - rect.left, e.clientY - rect.top);
+          else hideTooltip();
           render();
         }
       })
@@ -376,7 +333,8 @@
         if (draggingNode) return;
         var rect = wrap.getBoundingClientRect();
         var hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
-        if (hit) selectNode(hit); else { selectedNode = null; hideOpenButton(); render(); }
+        if (hit) selectNode(hit);
+        else { selectedNode = null; hideOpenButton(); render(); }
       })
       .on("dblclick", function (e) {
         var rect = wrap.getBoundingClientRect();
@@ -385,65 +343,31 @@
       });
 
     // Touch
-    var touchStartTime = 0;
-    canvas.addEventListener("touchstart", function (e) {
-      touchStartTime = Date.now();
-    }, { passive: true });
-
     canvas.addEventListener("touchend", function (e) {
-      if (Date.now() - touchStartTime < 200 && e.changedTouches.length === 1) {
+      if (e.changedTouches.length === 1) {
         var t = e.changedTouches[0];
         var rect = wrap.getBoundingClientRect();
         var hit = hitTest(t.clientX - rect.left, t.clientY - rect.top);
         if (hit) {
-          if (selectedNode === hit) { window.location.href = hit.url; }
+          if (selectedNode === hit && hit.url) window.location.href = hit.url;
           else { selectNode(hit); render(); }
-          e.preventDefault();
         }
       }
     });
-
-    // Search
-    window.graphHighlightNodes = function (ids) {
-      highlightedSet.clear();
-      ids.forEach(function (id) {
-        graphNodes.forEach(function (n, i) {
-          if (n.id === id || n.label.toLowerCase().indexOf(id.toLowerCase()) !== -1) highlightedSet.add(i);
-        });
-      });
-      render();
-    };
-    window.graphClearHighlight = function () { highlightedSet.clear(); render(); };
 
     // Stats
     var stat = document.getElementById("graph-stats");
     if (stat) stat.textContent = graphNodes.length + " pages · " + graphLinks.length + " connections";
 
-    // Initial render
     render();
   }
 
-  // Filter buttons
-  document.addEventListener("click", function (e) {
-    var btn = e.target.closest(".graph-filter-btn");
-    if (!btn) return;
-    var cat = btn.dataset.category;
-    if (cat === "all") {
-      activeCategories = activeCategories.size === Object.keys(COLORS).length ? new Set() : new Set(Object.keys(COLORS));
-    } else {
-      activeCategories.has(cat) ? activeCategories.delete(cat) : activeCategories.add(cat);
-    }
-    updateFilterButtons();
-    render();
-  });
-
-  // Reset / Freeze
+  // Controls
   var resetBtn = document.getElementById("graph-reset");
   if (resetBtn) resetBtn.addEventListener("click", function () {
     selectedNode = null; hoveredNode = null; highlightedSet.clear();
     hideOpenButton(); hideTooltip();
     simulation.alpha(1).restart();
-    render();
   });
 
   var freezeBtn = document.getElementById("graph-freeze");
@@ -453,115 +377,84 @@
   });
 
   // Search
-  var gFuse;
   var CONTENT_INDEX = [
-    {"id":"hub-product","title":"Product","url":"/contents/public/product/","category":"hub"},
-    {"id":"hub-research","title":"Research","url":"/contents/public/research/","category":"hub"},
-    {"id":"hub-solutions","title":"Solutions","url":"/contents/public/solutions/","category":"hub"},
-    {"id":"hub-content","title":"Content Hub","url":"/contents/public/","category":"hub"},
-    {"id":"hub-wiki","title":"Wiki","url":"/contents/wiki/","category":"hub"},
-    {"id":"hub-portfolio","title":"Portfolio","url":"/contents/pkm/use-cases/","category":"hub"},
-    {"id":"cv-3d","title":"3D Vision","url":"/contents/public/cv/3d/","category":"cv"},
-    {"id":"cv-optical-flow","title":"Optical Flow","url":"/contents/public/cv/optical-flow/","category":"cv"},
-    {"id":"cv-multi-camera","title":"Multi-Camera","url":"/contents/public/cv/multi-camera-systems/","category":"cv"},
-    {"id":"cv-coaching","title":"CV Coaching","url":"/contents/public/coaching/","category":"cv"},
-    {"id":"cv-overview","title":"CV Overview","url":"/contents/public/enter/","category":"cv"},
-    {"id":"ai-llm-concepts","title":"LLM Concepts","url":"/contents/public/ai-llm/advanced-llm-concepts/","category":"ai"},
-    {"id":"ai-agents","title":"AI Agents","url":"/contents/public/ai-llm/orchestrating-agents/","category":"ai"},
-    {"id":"ai-blog","title":"AI Blog","url":"/contents/public/ai-llm/blog/","category":"ai"},
-    {"id":"ai-avatar","title":"Avatar Generator","url":"/contents/public/ai-llm/avatar-generator/","category":"ai"},
-    {"id":"cuda-numba","title":"Numba JIT","url":"/contents/public/cuda-gpu/numba-jit/","category":"cuda"},
-    {"id":"cuda-pycuda","title":"PyCUDA","url":"/contents/public/cuda-gpu/pycuda-kernels/","category":"cuda"},
-    {"id":"cuda-vscode","title":"CUDA VS Code","url":"/contents/public/cuda-gpu/vscode-cuda-windows/","category":"cuda"},
-    {"id":"cuda-mlx","title":"MLX CoreML","url":"/contents/public/cuda-gpu/mlx-coreml-metal/","category":"cuda"},
-    {"id":"paper-adaptive-seg","title":"Adaptive Segmentation","url":"/contents/publications/Papers/adaptive-image-segmentation-psnr/","category":"paper"},
-    {"id":"paper-license-entropy","title":"License Plate Entropy","url":"/contents/publications/Papers/license-plate-recognition-entropy/","category":"paper"},
-    {"id":"paper-multi-threshold","title":"Multi-threshold Plate","url":"/contents/publications/Papers/multi-threshold-license-plate/","category":"paper"},
-    {"id":"paper-handwritten","title":"Thresholding Handwritten","url":"/contents/publications/Papers/comparison-thresholding-handwritten/","category":"paper"},
-    {"id":"paper-camera-cal","title":"Camera Calibration","url":"/contents/publications/Papers/camera-calibration-multi-modal/","category":"paper"},
-    {"id":"paper-pattern","title":"Pattern Calibration","url":"/contents/publications/Papers/pattern-image-calibration/","category":"paper"},
-    {"id":"paper-2d3d","title":"2D vs 3D Map","url":"/contents/publications/Papers/2d-3d-map-movement/","category":"paper"},
-    {"id":"paper-char","title":"Character Recognition","url":"/contents/publications/Papers/character-recognition-global-feature/","category":"paper"},
-    {"id":"paper-class","title":"Classification","url":"/contents/publications/Papers/classification-geometrical-topological/","category":"paper"},
-    {"id":"paper-tafresh","title":"TafreshGrid","url":"/contents/publications/Papers/tafreshgrid-grid-computing/","category":"paper"},
-    {"id":"journal-psnr","title":"Adaptive PSNR","url":"/contents/publications/Journals/adaptive-thresholding-psnr/","category":"journal"},
-    {"id":"journal-gsft","title":"GSFT-PSNR","url":"/contents/publications/Journals/gsft-psnr-fuzzy-threshold/","category":"journal"},
-    {"id":"journal-seg","title":"PSNR Segmentation","url":"/contents/publications/Journals/psnr-threshold-segmentation/","category":"journal"},
-    {"id":"journal-char","title":"Character Recognition","url":"/contents/publications/Journals/character-object-recognition/","category":"journal"},
-    {"id":"journal-slam","title":"3D SLAM","url":"/contents/publications/Journals/3d-slam-humanoid-robots/","category":"journal"},
-    {"id":"journal-ant","title":"Ant Colony","url":"/contents/publications/Journals/ant-colony-optimization/","category":"journal"},
-    {"id":"book-optflow","title":"Optical Flow Book","url":"/contents/publications/Books/computational-intelligence-optical-flow/","category":"book"},
-    {"id":"book-camcal","title":"Camera Calibration Book","url":"/contents/publications/Books/camera-calibration-video-stabilization/","category":"book"},
-    {"id":"book-cvllm","title":"CV Meets LLM","url":"/contents/publications/Books/AI/computer-vision-meets-llm/","category":"book"},
-    {"id":"book-opencv0","title":"OpenCV 5 Ch.0","url":"/contents/publications/Books/AI/opencv5-chapter0-introduction/","category":"book"},
-    {"id":"book-opencv1","title":"OpenCV 5 Ch.1","url":"/contents/publications/Books/AI/opencv5-chapter1-image-basics/","category":"book"},
-    {"id":"book-opencv2","title":"OpenCV 5 Ch.2","url":"/contents/publications/Books/AI/opencv5-chapter2-feature-detection/","category":"book"},
-    {"id":"book-opencv3","title":"OpenCV 5 Ch.3","url":"/contents/publications/Books/AI/opencv5-chapter3-advanced/","category":"book"},
-    {"id":"patent-face","title":"Face Augmentation","url":"/contents/publications/Patents/face-image-augmentation/","category":"patent"},
-    {"id":"patent-facial","title":"Facial Analysis Ad","url":"/contents/publications/Patents/facial-analysis-advertisement/","category":"patent"},
-    {"id":"patent-vehicle","title":"Vehicle Detection","url":"/contents/publications/Patents/vehicle-detection/","category":"patent"},
-    {"id":"keynote-llm","title":"LLMs Meet CV","url":"/contents/publications/Keynotes/llms-meet-computer-vision/","category":"keynote"},
-    {"id":"course-ml","title":"ML Specialization","url":"/contents/ai2026/machine-learning-specialization/","category":"course"},
-    {"id":"course-fsdl","title":"Full Stack DL","url":"/contents/ai2026/full-stack-deep-learning/","category":"course"},
-    {"id":"course-mlops","title":"MLOps","url":"/contents/ai2026/mlops/","category":"course"},
-    {"id":"course-ros","title":"ROS","url":"/contents/ai2026/ros/","category":"course"},
-    {"id":"course-parallel","title":"Parallel Programming","url":"/contents/ai2026/parallel-programming/","category":"course"},
-    {"id":"course-cpp","title":"Modern C++","url":"/contents/ai2026/modern-cpp/","category":"course"},
-    {"id":"course-k8s","title":"Cloud-Native","url":"/contents/ai2026/cloud-native/","category":"course"},
-    {"id":"course-tf","title":"TensorFlow Deploy","url":"/contents/ai2026/tensorflow-deployment/","category":"course"},
-    {"id":"course-riscv","title":"RISC-V","url":"/contents/ai2026/risc-v/","category":"course"},
-    {"id":"course-edgeai","title":"Edge AI Summit","url":"/contents/ai2026/edge-ai-summit/","category":"course"},
-    {"id":"course-iot","title":"Embedded IoT","url":"/contents/ai2026/embedded-iot/","category":"course"},
-    {"id":"course-tesla","title":"Tesla AI","url":"/contents/ai2026/tesla/","category":"course"},
-    {"id":"course-hardware","title":"AI Hardware","url":"/contents/ai2026/ai-hardware/","category":"course"},
-    {"id":"course-openvino","title":"OpenVINO","url":"/contents/ai2026/openvino/","category":"course"},
-    {"id":"course-metaverse","title":"Metaverse XR","url":"/contents/ai2026/metaverse/","category":"course"},
-    {"id":"course-books","title":"Book Summaries","url":"/contents/ai2026/book-summary/","category":"course"},
-    {"id":"course-scholarship","title":"IoT Scholarship","url":"/contents/ai2026/iot-scholarship/","category":"course"},
-    {"id":"pkm-toc","title":"Data DevOps","url":"/contents/pkm/TOC/","category":"pkm"},
-    {"id":"pkm-links","title":"Curated Links","url":"/contents/pkm/links/","category":"pkm"},
-    {"id":"pkm-proof","title":"Site Links","url":"/contents/pkm/proof/","category":"pkm"},
-    {"id":"biz-startup","title":"Startup Guide","url":"/contents/public/startup/","category":"business"},
-    {"id":"biz-seo","title":"SEO for LLMs","url":"/contents/public/seo/","category":"business"},
-    {"id":"biz-linkedin","title":"LinkedIn Posts","url":"/contents/public/linkedin-top-posts/","category":"business"},
-    {"id":"biz-cpp","title":"C++ Reference","url":"/contents/public/cpp/","category":"business"},
-    {"id":"biz-python","title":"Python Config","url":"/contents/public/python/","category":"business"},
-    {"id":"biz-optimization","title":"Optimization","url":"/contents/public/optimization/","category":"business"},
-    {"id":"biz-prompts","title":"Prompts","url":"/contents/public/prompts/","category":"business"},
-    {"id":"biz-setup","title":"Developer Tools","url":"/contents/public/setup/","category":"business"},
-    {"id":"biz-shell","title":"Shell Vim Ref","url":"/contents/public/shell-vim-quickref/","category":"business"},
-    {"id":"biz-token","title":"Token Presentation","url":"/contents/ppt/farshid-ai-cv-llm-presentation/","category":"business"},
-    {"id":"biz-10years","title":"10 Years Bugs","url":"/contents/publications/10Years/","category":"business"},
-    {"id":"biz-cv","title":"CV","url":"/contents/publications/CV/","category":"business"}
+    {"id":"hub-product","title":"Product"},{"id":"hub-research","title":"Research"},
+    {"id":"hub-solutions","title":"Solutions"},{"id":"hub-content","title":"Content Hub"},
+    {"id":"hub-wiki","title":"Wiki"},{"id":"hub-portfolio","title":"Portfolio"},
+    {"id":"page-cv-3d","title":"3D Vision"},{"id":"page-cv-optical","title":"Optical Flow"},
+    {"id":"page-cv-multi","title":"Multi-Camera"},{"id":"page-cv-coaching","title":"CV Coaching"},
+    {"id":"page-cv-enter","title":"CV Overview"},
+    {"id":"page-ai-llm","title":"LLM Concepts"},{"id":"page-ai-agents","title":"AI Agents"},
+    {"id":"page-ai-blog","title":"AI Blog"},{"id":"page-ai-avatar","title":"Avatar Generator"},
+    {"id":"page-cuda-numba","title":"Numba JIT"},{"id":"page-cuda-pycuda","title":"PyCUDA"},
+    {"id":"page-cuda-vscode","title":"CUDA VS Code"},{"id":"page-cuda-mlx","title":"MLX CoreML"},
+    {"id":"page-paper-seg","title":"Adaptive Segmentation"},{"id":"page-paper-entropy","title":"License Plate Entropy"},
+    {"id":"page-paper-multi","title":"Multi-threshold Plate"},{"id":"page-paper-handwritten","title":"Thresholding Handwritten"},
+    {"id":"page-paper-camcal","title":"Camera Calibration"},{"id":"page-paper-pattern","title":"Pattern Calibration"},
+    {"id":"page-paper-2d3d","title":"2D vs 3D Map"},{"id":"page-paper-char","title":"Character Recognition"},
+    {"id":"page-paper-class","title":"Classification"},{"id":"page-paper-tafresh","title":"TafreshGrid"},
+    {"id":"page-journal-psnr","title":"Adaptive PSNR"},{"id":"page-journal-gsft","title":"GSFT-PSNR"},
+    {"id":"page-journal-seg","title":"PSNR Segmentation"},{"id":"page-journal-char","title":"Character Recognition"},
+    {"id":"page-journal-slam","title":"3D SLAM"},{"id":"page-journal-ant","title":"Ant Colony"},
+    {"id":"page-book-optflow","title":"Optical Flow Book"},{"id":"page-book-camcal","title":"Camera Calibration Book"},
+    {"id":"page-book-cvllm","title":"CV Meets LLM"},{"id":"page-book-opencv0","title":"OpenCV 5 Ch.0"},
+    {"id":"page-book-opencv1","title":"OpenCV 5 Ch.1"},{"id":"page-book-opencv2","title":"OpenCV 5 Ch.2"},
+    {"id":"page-book-opencv3","title":"OpenCV 5 Ch.3"},
+    {"id":"page-patent-face","title":"Face Augmentation"},{"id":"page-patent-facial","title":"Facial Analysis Ad"},
+    {"id":"page-patent-vehicle","title":"Vehicle Detection"},
+    {"id":"page-keynote-llm","title":"LLMs Meet CV"},
+    {"id":"page-course-ml","title":"ML Specialization"},{"id":"page-course-fsdl","title":"Full Stack DL"},
+    {"id":"page-course-mlops","title":"MLOps"},{"id":"page-course-ros","title":"ROS"},
+    {"id":"page-course-parallel","title":"Parallel Programming"},{"id":"page-course-cpp","title":"Modern C++"},
+    {"id":"page-course-k8s","title":"Cloud-Native"},{"id":"page-course-tf","title":"TensorFlow Deploy"},
+    {"id":"page-course-riscv","title":"RISC-V"},{"id":"page-course-edgeai","title":"Edge AI Summit"},
+    {"id":"page-course-iot","title":"Embedded IoT"},{"id":"page-course-tesla","title":"Tesla AI"},
+    {"id":"page-course-hardware","title":"AI Hardware"},{"id":"page-course-openvino","title":"OpenVINO"},
+    {"id":"page-course-metaverse","title":"Metaverse XR"},{"id":"page-course-books","title":"Book Summaries"},
+    {"id":"page-course-scholarship","title":"IoT Scholarship"},
+    {"id":"page-pkm-toc","title":"Data DevOps"},{"id":"page-pkm-links","title":"Curated Links"},
+    {"id":"page-pkm-proof","title":"Site Links"},
+    {"id":"page-biz-startup","title":"Startup Guide"},{"id":"page-biz-seo","title":"SEO for LLMs"},
+    {"id":"page-biz-linkedin","title":"LinkedIn Posts"},{"id":"page-biz-cpp","title":"C++ Reference"},
+    {"id":"page-biz-python","title":"Python Config"},{"id":"page-biz-optimization","title":"Optimization"},
+    {"id":"page-biz-prompts","title":"Prompts"},{"id":"page-biz-setup","title":"Developer Tools"},
+    {"id":"page-biz-shell","title":"Shell Vim Ref"},{"id":"page-biz-token","title":"Token Presentation"},
+    {"id":"page-biz-10years","title":"10 Years Bugs"},{"id":"page-biz-cv","title":"CV"}
   ];
 
   function initSearch() {
-    gFuse = new Fuse(CONTENT_INDEX, {
-      keys: [{ name: "title", weight: 2 }],
-      threshold: 0.4, minMatchCharLength: 2
-    });
-
+    gFuse = new Fuse(CONTENT_INDEX, { keys: [{ name: "title", weight: 2 }], threshold: 0.4, minMatchCharLength: 2 });
     var input = document.getElementById("graph-search-input");
     var countEl = document.getElementById("graph-search-results");
     if (!input) return;
     input.addEventListener("input", function () {
       var q = input.value.trim();
-      if (!q || q.length < 2) { window.graphClearHighlight(); countEl.textContent = ""; return; }
+      if (!q || q.length < 2 || !gFuse) { highlightedSet.clear(); countEl.textContent = ""; render(); return; }
       var results = gFuse.search(q);
-      if (results.length === 0) { window.graphClearHighlight(); countEl.textContent = "No matches"; return; }
-      var ids = results.map(function (r) { return r.item.id; });
-      window.graphHighlightNodes(ids);
+      if (results.length === 0) { highlightedSet.clear(); countEl.textContent = "No matches"; render(); return; }
+      highlightedSet.clear();
+      results.forEach(function (r) {
+        graphNodes.forEach(function (n, i) { if (n.id === r.item.id) highlightedSet.add(i); });
+      });
       countEl.textContent = results.length + " highlighted";
+      render();
     });
   }
 
   // Init
   resize();
-  window.addEventListener("resize", function () { resize(); if (simulation) { simulation.force("center", d3.forceCenter(W / 2, H / 2)); simulation.force("x", d3.forceX(W / 2).strength(0.03)); simulation.force("y", d3.forceY(H / 2).strength(0.03)); render(); } });
+  window.addEventListener("resize", function () {
+    resize();
+    if (simulation) {
+      simulation.force("center", d3.forceCenter(W / 2, H / 2));
+      simulation.force("x", d3.forceX(W / 2).strength(0.04));
+      simulation.force("y", d3.forceY(H / 2).strength(0.04));
+      render();
+    }
+  });
 
-  var graphFile = wrap.dataset.graph || "/assets/graph.json";
-  fetch(graphFile)
-    .then(function (r) { return r.json(); })
+  fetch("/assets/graph.json")
+    .then(function (r) { if (!r.ok) throw new Error("no graph"); return r.json(); })
     .then(function (data) { setup(data); initSearch(); })
-    .catch(function () { var s = document.getElementById("graph-stats"); if (s) s.textContent = "Graph data missing"; });
+    .catch(function (e) { console.error("Graph load error:", e); var s = document.getElementById("graph-stats"); if (s) s.textContent = "Graph data missing"; });
 })();
