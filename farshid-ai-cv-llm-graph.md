@@ -51,13 +51,16 @@ extra_css: graph.css
     <div class="graph-legend">
       <span class="legend-hub">Hub</span>
       <span class="legend-cv">CV</span>
-      <span class="legend-ai">AI</span>
-      <span class="legend-cuda">CUDA</span>
+      <span class="legend-ai">AI/LLM</span>
+      <span class="legend-cuda">CUDA/GPU</span>
       <span class="legend-paper">Papers</span>
       <span class="legend-journal">Journals</span>
       <span class="legend-book">Books</span>
       <span class="legend-patent">Patents</span>
+      <span class="legend-keynote">Keynotes</span>
       <span class="legend-course">Courses</span>
+      <span class="legend-pkm">PKM</span>
+      <span class="legend-business">Business</span>
     </div>
   </div>
 </div>

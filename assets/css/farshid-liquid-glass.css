@@ -513,3 +513,60 @@ code,pre{
 }
 
 .site-nav::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
+
+/* ─── MOBILE FIRST: iPhone safe areas + touch targets ──────────── */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .bottom-toolbar {
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  }
+  .site-footer {
+    padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 768px) {
+  .site-main {
+    padding: 12px 14px !important;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .site-main h1 { font-size: 1.5rem; }
+  .site-main h2 { font-size: 1.2rem; }
+  .site-main h3 { font-size: 1.05rem; }
+
+  .bottom-toolbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px));
+    gap: 2px;
+  }
+
+  .bottom-toolbar .liquid-glass-item {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+
+  .site-footer {
+    padding: 16px 14px calc(16px + env(safe-area-inset-bottom, 0px));
+    font-size: 0.78rem;
+  }
+
+  .site-footer p {
+    margin: 4px 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .site-main {
+    padding: 24px 32px !important;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}

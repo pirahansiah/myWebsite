@@ -41,7 +41,7 @@
     book: "#ffd60a",
     patent: "#ff375f",
     keynote: "#ff6482",
-    course: "#30d158",
+    course: "#00c7be",
     pkm: "#ac8e68",
     business: "#8e8e93"
   };
