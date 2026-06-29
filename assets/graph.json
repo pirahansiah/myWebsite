@@ -1,760 +1,259 @@
 {
   "nodes": [
-    {
-      "id": "moc-atlas-graph",
-      "label": "ATLAS & Graph",
-      "url": null,
-      "raw": null,
-      "kind": "moc"
-    },
-    {
-      "id": "moc-knowledge-graph",
-      "label": "Knowledge Graph",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-use-cases",
-      "label": "use-cases",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "note"
-    },
-    {
-      "id": "moc-solutions",
-      "label": "SOLUTIONS",
-      "url": null,
-      "raw": null,
-      "kind": "moc"
-    },
-    {
-      "id": "moc-use-cases",
-      "label": "Use Cases",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "moc"
-    },
-    {
-      "id": "moc-about",
-      "label": "ABOUT",
-      "url": null,
-      "raw": null,
-      "kind": "moc"
-    },
-    {
-      "id": "moc-about-me",
-      "label": "About Me",
-      "url": "/AboutMe",
-      "raw": null,
-      "kind": "moc"
-    },
-    {
-      "id": "moc-atlas",
-      "label": "ATLAS",
-      "url": null,
-      "raw": null,
-      "kind": "moc"
-    },
-    {
-      "id": "moc-research-synthesis",
-      "label": "Research Synthesis",
-      "url": "/contents/pkm/research-synthesis",
-      "raw": "/contents/pkm/research-synthesis",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-research-synthesis",
-      "label": "research-synthesis",
-      "url": "/contents/pkm/research-synthesis",
-      "raw": "/contents/pkm/research-synthesis",
-      "kind": "note"
-    },
-    {
-      "id": "moc-strategic-connections",
-      "label": "Strategic Connections",
-      "url": "/contents/pkm/strategic-connections",
-      "raw": "/contents/pkm/strategic-connections",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-strategic-connections",
-      "label": "strategic-connections",
-      "url": "/contents/pkm/strategic-connections",
-      "raw": "/contents/pkm/strategic-connections",
-      "kind": "note"
-    },
-    {
-      "id": "moc-system-design",
-      "label": "System Design",
-      "url": "/contents/pkm/system-design",
-      "raw": "/contents/pkm/system-design",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-system-design",
-      "label": "system-design",
-      "url": "/contents/pkm/system-design",
-      "raw": "/contents/pkm/system-design",
-      "kind": "note"
-    },
-    {
-      "id": "moc-company",
-      "label": "Company",
-      "url": "/contents/pkm/company",
-      "raw": "/contents/pkm/company",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-company",
-      "label": "company",
-      "url": "/contents/pkm/company",
-      "raw": "/contents/pkm/company",
-      "kind": "note"
-    },
-    {
-      "id": "moc-resources",
-      "label": "RESOURCES",
-      "url": null,
-      "raw": null,
-      "kind": "moc"
-    },
-    {
-      "id": "moc-moc",
-      "label": "MOC",
-      "url": "/contents/pkm/MOC",
-      "raw": "/contents/pkm/MOC",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-moc",
-      "label": "MOC",
-      "url": "/contents/pkm/MOC",
-      "raw": "/contents/pkm/MOC",
-      "kind": "note"
-    },
-    {
-      "id": "moc-growth-model",
-      "label": "Growth Model",
-      "url": "/contents/pkm/growth-model",
-      "raw": "/contents/pkm/growth-model",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-growth-model",
-      "label": "growth-model",
-      "url": "/contents/pkm/growth-model",
-      "raw": "/contents/pkm/growth-model",
-      "kind": "note"
-    },
-    {
-      "id": "moc-costs",
-      "label": "Costs",
-      "url": "/contents/pkm/costs",
-      "raw": "/contents/pkm/costs",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-costs",
-      "label": "costs",
-      "url": "/contents/pkm/costs",
-      "raw": "/contents/pkm/costs",
-      "kind": "note"
-    },
-    {
-      "id": "moc-proof",
-      "label": "Proof",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
-      "kind": "moc"
-    },
-    {
-      "id": "contents-pkm-proof",
-      "label": "proof",
-      "url": "/contents/pkm/proof",
-      "raw": "/contents/pkm/proof",
-      "kind": "note"
-    },
-    {
-      "id": "moc-llm",
-      "label": "LLM",
-      "url": null,
-      "raw": null,
-      "kind": "moc"
-    },
-    {
-      "id": "contents-readme",
-      "label": "README",
-      "url": "/contents/README",
-      "raw": "/contents/README",
-      "kind": "note"
-    },
-    {
-      "id": "contents-menus",
-      "label": "menus",
-      "url": "/contents/menus",
-      "raw": "/contents/menus",
-      "kind": "note"
-    },
-    {
-      "id": "tag-setup",
-      "label": "#setup",
-      "url": "/contents/menus",
-      "raw": "/contents/menus",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-graph",
-      "label": "#graph",
-      "url": "/contents/menus",
-      "raw": "/contents/menus",
-      "kind": "tag"
-    },
-    {
-      "id": "aboutme",
-      "label": "AboutMe",
-      "url": "/AboutMe",
-      "raw": "/AboutMe",
-      "kind": "note"
-    },
-    {
-      "id": "contents-pkm-knowledge-graph",
-      "label": "knowledge-graph",
-      "url": "/contents/pkm/knowledge-graph",
-      "raw": "/contents/pkm/knowledge-graph",
-      "kind": "note"
-    },
-    {
-      "id": "contents-pkm-concept-maps",
-      "label": "concept-maps",
-      "url": "/contents/pkm/concept-maps",
-      "raw": "/contents/pkm/concept-maps",
-      "kind": "note"
-    },
-    {
-      "id": "contents-pkm-offering",
-      "label": "offering",
-      "url": "/contents/pkm/offering",
-      "raw": "/contents/pkm/offering",
-      "kind": "note"
-    },
-    {
-      "id": "contents-pkm-aboutme",
-      "label": "AboutMe",
-      "url": "/contents/pkm/AboutMe",
-      "raw": "/contents/pkm/AboutMe",
-      "kind": "note"
-    },
-    {
-      "id": "contents-pkm-why-we-are-unique",
-      "label": "why-we-are-unique",
-      "url": "/contents/pkm/why-we-are-unique",
-      "raw": "/contents/pkm/why-we-are-unique",
-      "kind": "note"
-    },
-    {
-      "id": "contents-pkm-toc",
-      "label": "TOC",
-      "url": "/contents/pkm/TOC",
-      "raw": "/contents/pkm/TOC",
-      "kind": "note"
-    },
-    {
-      "id": "contents-pkm-updates",
-      "label": "updates",
-      "url": "/contents/pkm/updates",
-      "raw": "/contents/pkm/updates",
-      "kind": "note"
-    },
-    {
-      "id": "contents-projects-llm-openrouter-config-sh",
-      "label": "OpenRouter_config",
-      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FOpenRouter_config.sh",
-      "raw": "/contents/projects/LLM/OpenRouter_config.sh",
-      "kind": "note"
-    },
-    {
-      "id": "contents-projects-llm-aigraph-py",
-      "label": "aiGraph",
-      "url": "/view/?p=%2Fcontents%2Fprojects%2FLLM%2FaiGraph.py",
-      "raw": "/contents/projects/LLM/aiGraph.py",
-      "kind": "note"
-    },
-    {
-      "id": "tag-about",
-      "label": "#about",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-publications",
-      "label": "#publications",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-patents",
-      "label": "#patents",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-books",
-      "label": "#books",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-journals",
-      "label": "#journals",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-conference-papers",
-      "label": "#conference-papers",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-keynotes",
-      "label": "#keynotes",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-camera-calibration-expertise",
-      "label": "#camera-calibration-expertise",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-hardware-platforms",
-      "label": "#hardware--platforms",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-products-tools",
-      "label": "#products--tools",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-open-source",
-      "label": "#open-source",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-technical-content",
-      "label": "#technical-content",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-cuda-gpu-programming",
-      "label": "#cuda--gpu-programming",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-optical-flow",
-      "label": "#optical-flow",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-optimization",
-      "label": "#optimization",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-ai-llm",
-      "label": "#ai--llm",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-cv-coaching-roadmap",
-      "label": "#cv-coaching-roadmap",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-courses",
-      "label": "#courses",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-workshops-events",
-      "label": "#workshops--events",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-farshid",
-      "label": "#farshid",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-pirahansiah",
-      "label": "#pirahansiah",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-drfarshidpirahansiah",
-      "label": "#drfarshidpirahansiah",
-      "url": "/contents/pkm/use-cases",
-      "raw": "/contents/pkm/use-cases",
-      "kind": "tag"
-    }
+    {"id": "hub-product", "label": "Product", "url": "/contents/public/product/", "category": "hub", "size": 5},
+    {"id": "hub-research", "label": "Research", "url": "/contents/public/research/", "category": "hub", "size": 5},
+    {"id": "hub-solutions", "label": "Solutions", "url": "/contents/public/solutions/", "category": "hub", "size": 5},
+    {"id": "hub-content", "label": "Content Hub", "url": "/contents/public/", "category": "hub", "size": 5},
+    {"id": "hub-wiki", "label": "Wiki", "url": "/contents/wiki/", "category": "hub", "size": 4},
+    {"id": "hub-portfolio", "label": "Complete Portfolio", "url": "/contents/pkm/use-cases/", "category": "hub", "size": 4},
+
+    {"id": "cv-3d", "label": "3D Vision", "url": "/contents/public/cv/3d/", "category": "cv", "size": 4},
+    {"id": "cv-optical-flow", "label": "Optical Flow", "url": "/contents/public/cv/optical-flow/", "category": "cv", "size": 4},
+    {"id": "cv-multi-camera", "label": "Multi-Camera", "url": "/contents/public/cv/multi-camera-systems/", "category": "cv", "size": 4},
+    {"id": "cv-coaching", "label": "CV Coaching", "url": "/contents/public/coaching/", "category": "cv", "size": 3},
+    {"id": "cv-overview", "label": "CV Overview", "url": "/contents/public/enter/", "category": "cv", "size": 4},
+
+    {"id": "ai-llm-concepts", "label": "Advanced LLM Concepts", "url": "/contents/public/ai-llm/advanced-llm-concepts/", "category": "ai", "size": 4},
+    {"id": "ai-agents", "label": "Orchestrating Agents", "url": "/contents/public/ai-llm/orchestrating-agents/", "category": "ai", "size": 4},
+    {"id": "ai-blog", "label": "AI Blog", "url": "/contents/public/ai-llm/blog/", "category": "ai", "size": 3},
+    {"id": "ai-avatar", "label": "Avatar Generator", "url": "/contents/public/ai-llm/avatar-generator/", "category": "ai", "size": 3},
+
+    {"id": "cuda-numba", "label": "Numba JIT", "url": "/contents/public/cuda-gpu/numba-jit/", "category": "cuda", "size": 3},
+    {"id": "cuda-pycuda", "label": "PyCUDA", "url": "/contents/public/cuda-gpu/pycuda-kernels/", "category": "cuda", "size": 3},
+    {"id": "cuda-vscode", "label": "CUDA VS Code", "url": "/contents/public/cuda-gpu/vscode-cuda-windows/", "category": "cuda", "size": 3},
+    {"id": "cuda-mlx", "label": "MLX CoreML Metal", "url": "/contents/public/cuda-gpu/mlx-coreml-metal/", "category": "cuda", "size": 3},
+
+    {"id": "paper-adaptive-seg", "label": "Adaptive Segmentation PSNR", "url": "/contents/publications/Papers/adaptive-image-segmentation-psnr/", "category": "paper", "size": 3},
+    {"id": "paper-license-entropy", "label": "License Plate Entropy", "url": "/contents/publications/Papers/license-plate-recognition-entropy/", "category": "paper", "size": 3},
+    {"id": "paper-multi-threshold", "label": "Multi-threshold License Plate", "url": "/contents/publications/Papers/multi-threshold-license-plate/", "category": "paper", "size": 3},
+    {"id": "paper-thresholding-handwritten", "label": "Thresholding Handwritten", "url": "/contents/publications/Papers/comparison-thresholding-handwritten/", "category": "paper", "size": 3},
+    {"id": "paper-camera-calibration", "label": "Camera Calibration Multi-Modal", "url": "/contents/publications/Papers/camera-calibration-multi-modal/", "category": "paper", "size": 3},
+    {"id": "paper-pattern-calibration", "label": "Pattern Image Calibration", "url": "/contents/publications/Papers/pattern-image-calibration/", "category": "paper", "size": 3},
+    {"id": "paper-2d3d-map", "label": "2D vs 3D Map", "url": "/contents/publications/Papers/2d-3d-map-movement/", "category": "paper", "size": 3},
+    {"id": "paper-char-recognition", "label": "Character Recognition", "url": "/contents/publications/Papers/character-recognition-global-feature/", "category": "paper", "size": 3},
+    {"id": "paper-classification-geo", "label": "Classification Geometrical", "url": "/contents/publications/Papers/classification-geometrical-topological/", "category": "paper", "size": 3},
+    {"id": "paper-tafreshgrid", "label": "TafreshGrid", "url": "/contents/publications/Papers/tafreshgrid-grid-computing/", "category": "paper", "size": 3},
+    {"id": "paper-my-conf", "label": "My Conference Paper", "url": "/contents/publications/Papers/My_Conference_Paper/", "category": "paper", "size": 3},
+
+    {"id": "journal-adaptive-thresh", "label": "Adaptive Thresholding PSNR", "url": "/contents/publications/Journals/adaptive-thresholding-psnr/", "category": "journal", "size": 3},
+    {"id": "journal-gsft-psnr", "label": "GSFT-PSNR", "url": "/contents/publications/Journals/gsft-psnr-fuzzy-threshold/", "category": "journal", "size": 3},
+    {"id": "journal-psnr-seg", "label": "PSNR Segmentation", "url": "/contents/publications/Journals/psnr-threshold-segmentation/", "category": "journal", "size": 3},
+    {"id": "journal-char-obj", "label": "Character Recognition", "url": "/contents/publications/Journals/character-object-recognition/", "category": "journal", "size": 3},
+    {"id": "journal-3d-slam", "label": "3D SLAM", "url": "/contents/publications/Journals/3d-slam-humanoid-robots/", "category": "journal", "size": 3},
+    {"id": "journal-ant-colony", "label": "Ant Colony", "url": "/contents/publications/Journals/ant-colony-optimization/", "category": "journal", "size": 3},
+
+    {"id": "book-optical-flow", "label": "Optical Flow Book", "url": "/contents/publications/Books/computational-intelligence-optical-flow/", "category": "book", "size": 4},
+    {"id": "book-camera-calibration", "label": "Camera Calibration Book", "url": "/contents/publications/Books/camera-calibration-video-stabilization/", "category": "book", "size": 4},
+    {"id": "book-cv-meets-llm", "label": "CV Meets LLM", "url": "/contents/publications/Books/AI/computer-vision-meets-llm/", "category": "book", "size": 4},
+    {"id": "book-opencv5-ch0", "label": "OpenCV 5 Ch.0", "url": "/contents/publications/Books/AI/opencv5-chapter0-introduction/", "category": "book", "size": 3},
+    {"id": "book-opencv5-ch1", "label": "OpenCV 5 Ch.1", "url": "/contents/publications/Books/AI/opencv5-chapter1-image-basics/", "category": "book", "size": 3},
+    {"id": "book-opencv5-ch2", "label": "OpenCV 5 Ch.2", "url": "/contents/publications/Books/AI/opencv5-chapter2-feature-detection/", "category": "book", "size": 3},
+    {"id": "book-opencv5-ch3", "label": "OpenCV 5 Ch.3", "url": "/contents/publications/Books/AI/opencv5-chapter3-advanced/", "category": "book", "size": 3},
+
+    {"id": "patent-face-aug", "label": "Face Augmentation", "url": "/contents/publications/Patents/face-image-augmentation/", "category": "patent", "size": 3},
+    {"id": "patent-facial-ad", "label": "Facial Analysis Ad", "url": "/contents/publications/Patents/facial-analysis-advertisement/", "category": "patent", "size": 3},
+    {"id": "patent-vehicle", "label": "Vehicle Detection", "url": "/contents/publications/Patents/vehicle-detection/", "category": "patent", "size": 3},
+
+    {"id": "keynote-llm-cv", "label": "LLMs Meet CV", "url": "/contents/publications/Keynotes/llms-meet-computer-vision/", "category": "keynote", "size": 4},
+
+    {"id": "course-ml-spec", "label": "ML Specialization", "url": "/contents/ai2026/machine-learning-specialization/", "category": "course", "size": 3},
+    {"id": "course-fullstack-dl", "label": "Full Stack DL", "url": "/contents/ai2026/full-stack-deep-learning/", "category": "course", "size": 3},
+    {"id": "course-mlops", "label": "MLOps", "url": "/contents/ai2026/mlops/", "category": "course", "size": 3},
+    {"id": "course-ros", "label": "ROS", "url": "/contents/ai2026/ros/", "category": "course", "size": 3},
+    {"id": "course-parallel", "label": "Parallel Programming", "url": "/contents/ai2026/parallel-programming/", "category": "course", "size": 3},
+    {"id": "course-cpp", "label": "Modern C++", "url": "/contents/ai2026/modern-cpp/", "category": "course", "size": 3},
+    {"id": "course-cloud", "label": "Cloud-Native", "url": "/contents/ai2026/cloud-native/", "category": "course", "size": 3},
+    {"id": "course-tf-deploy", "label": "TensorFlow Deploy", "url": "/contents/ai2026/tensorflow-deployment/", "category": "course", "size": 3},
+    {"id": "course-riscv", "label": "RISC-V", "url": "/contents/ai2026/risc-v/", "category": "course", "size": 3},
+    {"id": "course-edge-ai", "label": "Edge AI Summit", "url": "/contents/ai2026/edge-ai-summit/", "category": "course", "size": 3},
+    {"id": "course-embedded", "label": "Embedded IoT", "url": "/contents/ai2026/embedded-iot/", "category": "course", "size": 3},
+    {"id": "course-tesla", "label": "Tesla AI", "url": "/contents/ai2026/tesla/", "category": "course", "size": 3},
+    {"id": "course-hardware", "label": "AI Hardware", "url": "/contents/ai2026/ai-hardware/", "category": "course", "size": 3},
+    {"id": "course-openvino", "label": "OpenVINO", "url": "/contents/ai2026/openvino/", "category": "course", "size": 3},
+    {"id": "course-metaverse", "label": "Metaverse", "url": "/contents/ai2026/metaverse/", "category": "course", "size": 3},
+    {"id": "course-book-summary", "label": "Book Summaries", "url": "/contents/ai2026/book-summary/", "category": "course", "size": 3},
+    {"id": "course-iot-scholar", "label": "IoT Scholarship", "url": "/contents/ai2026/iot-scholarship/", "category": "course", "size": 3},
+
+    {"id": "pkm-data-devops", "label": "Data DevOps", "url": "/contents/pkm/TOC/", "category": "pkm", "size": 3},
+    {"id": "pkm-curated-links", "label": "Curated Links", "url": "/contents/pkm/links/", "category": "pkm", "size": 3},
+    {"id": "pkm-site-index", "label": "Site Link Index", "url": "/contents/pkm/proof/", "category": "pkm", "size": 3},
+
+    {"id": "biz-startup", "label": "Startup Guide", "url": "/contents/public/startup/", "category": "business", "size": 3},
+    {"id": "biz-seo", "label": "SEO for LLMs", "url": "/contents/public/seo/", "category": "business", "size": 3},
+    {"id": "biz-linkedin", "label": "LinkedIn Posts", "url": "/contents/public/linkedin-top-posts/", "category": "business", "size": 3},
+    {"id": "biz-cpp", "label": "C++ Reference", "url": "/contents/public/cpp/", "category": "business", "size": 3},
+    {"id": "biz-python", "label": "Python Config", "url": "/contents/public/python/", "category": "business", "size": 3},
+    {"id": "biz-optimization", "label": "Optimization", "url": "/contents/public/optimization/", "category": "business", "size": 3},
+    {"id": "biz-prompts", "label": "Prompt Engineering", "url": "/contents/public/prompts/", "category": "business", "size": 3},
+    {"id": "biz-tools", "label": "Developer Tools", "url": "/contents/public/setup/", "category": "business", "size": 3},
+    {"id": "biz-shell-vim", "label": "Shell Vim Reference", "url": "/contents/public/shell-vim-quickref/", "category": "business", "size": 3},
+    {"id": "biz-presentation", "label": "Token Presentation", "url": "/contents/ppt/farshid-ai-cv-llm-presentation/", "category": "business", "size": 3},
+    {"id": "biz-10years", "label": "10 Years Bugs", "url": "/contents/publications/10Years/", "category": "business", "size": 3},
+    {"id": "biz-cv", "label": "CV", "url": "/contents/publications/CV/", "category": "business", "size": 3}
   ],
-  "links": [
-    {
-      "source": "moc-atlas-graph",
-      "target": "moc-knowledge-graph",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-knowledge-graph",
-      "target": "contents-pkm-use-cases",
-      "kind": "link"
-    },
-    {
-      "source": "moc-solutions",
-      "target": "moc-use-cases",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-use-cases",
-      "target": "contents-pkm-use-cases",
-      "kind": "link"
-    },
-    {
-      "source": "moc-about",
-      "target": "moc-about-me",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-atlas",
-      "target": "moc-research-synthesis",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-research-synthesis",
-      "target": "contents-pkm-research-synthesis",
-      "kind": "link"
-    },
-    {
-      "source": "moc-atlas",
-      "target": "moc-strategic-connections",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-strategic-connections",
-      "target": "contents-pkm-strategic-connections",
-      "kind": "link"
-    },
-    {
-      "source": "moc-solutions",
-      "target": "moc-system-design",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-system-design",
-      "target": "contents-pkm-system-design",
-      "kind": "link"
-    },
-    {
-      "source": "moc-about",
-      "target": "moc-company",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-company",
-      "target": "contents-pkm-company",
-      "kind": "link"
-    },
-    {
-      "source": "moc-resources",
-      "target": "moc-moc",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-moc",
-      "target": "contents-pkm-moc",
-      "kind": "link"
-    },
-    {
-      "source": "moc-resources",
-      "target": "moc-growth-model",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-growth-model",
-      "target": "contents-pkm-growth-model",
-      "kind": "link"
-    },
-    {
-      "source": "moc-resources",
-      "target": "moc-costs",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-costs",
-      "target": "contents-pkm-costs",
-      "kind": "link"
-    },
-    {
-      "source": "moc-resources",
-      "target": "moc-proof",
-      "kind": "moc"
-    },
-    {
-      "source": "moc-proof",
-      "target": "contents-pkm-proof",
-      "kind": "link"
-    },
-    {
-      "source": "contents-menus",
-      "target": "tag-setup",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-menus",
-      "target": "tag-graph",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-use-cases",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "aboutme",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-knowledge-graph",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-research-synthesis",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-strategic-connections",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-concept-maps",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-proof",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-system-design",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-offering",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-aboutme",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-company",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-why-we-are-unique",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-toc",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-moc",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-growth-model",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-costs",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-pkm-updates",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-projects-llm-openrouter-config-sh",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-menus",
-      "target": "contents-projects-llm-aigraph-py",
-      "kind": "mdlink"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-about",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-publications",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-patents",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-books",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-journals",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-conference-papers",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-keynotes",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-camera-calibration-expertise",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-hardware-platforms",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-products-tools",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-open-source",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-technical-content",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-cuda-gpu-programming",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-optical-flow",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-optimization",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-ai-llm",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-cv-coaching-roadmap",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-courses",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-workshops-events",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-farshid",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-pirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "contents-pkm-use-cases",
-      "target": "tag-drfarshidpirahansiah",
-      "kind": "tag"
-    }
+  "edges": [
+    {"source": "hub-content", "target": "hub-product", "strength": 1.0},
+    {"source": "hub-content", "target": "hub-research", "strength": 1.0},
+    {"source": "hub-content", "target": "hub-solutions", "strength": 1.0},
+    {"source": "hub-content", "target": "hub-portfolio", "strength": 1.0},
+
+    {"source": "hub-product", "target": "cv-3d", "strength": 0.8},
+    {"source": "hub-product", "target": "cv-optical-flow", "strength": 0.8},
+    {"source": "hub-product", "target": "cv-multi-camera", "strength": 0.8},
+    {"source": "hub-product", "target": "cv-overview", "strength": 1.0},
+    {"source": "hub-product", "target": "ai-llm-concepts", "strength": 0.8},
+    {"source": "hub-product", "target": "ai-agents", "strength": 0.8},
+    {"source": "hub-product", "target": "cuda-numba", "strength": 0.6},
+    {"source": "hub-product", "target": "cuda-pycuda", "strength": 0.6},
+    {"source": "hub-product", "target": "cuda-vscode", "strength": 0.6},
+    {"source": "hub-product", "target": "cuda-mlx", "strength": 0.6},
+
+    {"source": "hub-research", "target": "paper-adaptive-seg", "strength": 1.0},
+    {"source": "hub-research", "target": "paper-license-entropy", "strength": 1.0},
+    {"source": "hub-research", "target": "paper-multi-threshold", "strength": 1.0},
+    {"source": "hub-research", "target": "paper-thresholding-handwritten", "strength": 1.0},
+    {"source": "hub-research", "target": "paper-camera-calibration", "strength": 1.0},
+    {"source": "hub-research", "target": "paper-pattern-calibration", "strength": 1.0},
+    {"source": "hub-research", "target": "paper-2d3d-map", "strength": 1.0},
+    {"source": "hub-research", "target": "paper-char-recognition", "strength": 1.0},
+    {"source": "hub-research", "target": "paper-classification-geo", "strength": 1.0},
+    {"source": "hub-research", "target": "paper-tafreshgrid", "strength": 1.0},
+    {"source": "hub-research", "target": "paper-my-conf", "strength": 1.0},
+    {"source": "hub-research", "target": "journal-adaptive-thresh", "strength": 1.0},
+    {"source": "hub-research", "target": "journal-gsft-psnr", "strength": 1.0},
+    {"source": "hub-research", "target": "journal-psnr-seg", "strength": 1.0},
+    {"source": "hub-research", "target": "journal-char-obj", "strength": 1.0},
+    {"source": "hub-research", "target": "journal-3d-slam", "strength": 1.0},
+    {"source": "hub-research", "target": "journal-ant-colony", "strength": 1.0},
+    {"source": "hub-research", "target": "book-optical-flow", "strength": 1.0},
+    {"source": "hub-research", "target": "book-camera-calibration", "strength": 1.0},
+    {"source": "hub-research", "target": "book-cv-meets-llm", "strength": 1.0},
+    {"source": "hub-research", "target": "book-opencv5-ch0", "strength": 1.0},
+    {"source": "hub-research", "target": "book-opencv5-ch1", "strength": 1.0},
+    {"source": "hub-research", "target": "book-opencv5-ch2", "strength": 1.0},
+    {"source": "hub-research", "target": "book-opencv5-ch3", "strength": 1.0},
+    {"source": "hub-research", "target": "patent-face-aug", "strength": 1.0},
+    {"source": "hub-research", "target": "patent-facial-ad", "strength": 1.0},
+    {"source": "hub-research", "target": "patent-vehicle", "strength": 1.0},
+    {"source": "hub-research", "target": "keynote-llm-cv", "strength": 1.0},
+
+    {"source": "hub-solutions", "target": "course-ml-spec", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-fullstack-dl", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-mlops", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-ros", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-parallel", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-cpp", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-cloud", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-tf-deploy", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-riscv", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-edge-ai", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-embedded", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-tesla", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-hardware", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-openvino", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-metaverse", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-book-summary", "strength": 1.0},
+    {"source": "hub-solutions", "target": "course-iot-scholar", "strength": 1.0},
+
+    {"source": "hub-wiki", "target": "pkm-data-devops", "strength": 1.0},
+    {"source": "hub-wiki", "target": "pkm-curated-links", "strength": 1.0},
+    {"source": "hub-wiki", "target": "pkm-site-index", "strength": 1.0},
+
+    {"source": "hub-portfolio", "target": "biz-cv", "strength": 1.0},
+    {"source": "hub-portfolio", "target": "hub-content", "strength": 0.8},
+
+    {"source": "cv-overview", "target": "cv-coaching", "strength": 0.8},
+    {"source": "cv-overview", "target": "cv-3d", "strength": 0.8},
+    {"source": "cv-overview", "target": "cv-optical-flow", "strength": 0.8},
+    {"source": "cv-overview", "target": "cv-multi-camera", "strength": 0.8},
+    {"source": "cv-overview", "target": "cv-coaching", "strength": 0.8},
+    {"source": "cv-coaching", "target": "ai-blog", "strength": 0.5},
+
+    {"source": "cv-3d", "target": "journal-3d-slam", "strength": 0.8},
+    {"source": "cv-3d", "target": "paper-2d3d-map", "strength": 0.8},
+    {"source": "cv-optical-flow", "target": "book-optical-flow", "strength": 1.0},
+    {"source": "cv-multi-camera", "target": "patent-vehicle", "strength": 0.5},
+    {"source": "cv-multi-camera", "target": "course-ros", "strength": 0.5},
+
+    {"source": "ai-llm-concepts", "target": "ai-blog", "strength": 0.8},
+    {"source": "ai-llm-concepts", "target": "ai-agents", "strength": 0.8},
+    {"source": "ai-llm-concepts", "target": "keynote-llm-cv", "strength": 0.8},
+    {"source": "ai-llm-concepts", "target": "book-cv-meets-llm", "strength": 0.8},
+    {"source": "ai-agents", "target": "ai-avatar", "strength": 0.5},
+    {"source": "ai-agents", "target": "biz-prompts", "strength": 0.5},
+
+    {"source": "cuda-numba", "target": "cuda-pycuda", "strength": 0.8},
+    {"source": "cuda-vscode", "target": "biz-tools", "strength": 0.5},
+    {"source": "cuda-mlx", "target": "course-hardware", "strength": 0.5},
+    {"source": "cuda-mlx", "target": "cv-3d", "strength": 0.3},
+
+    {"source": "paper-adaptive-seg", "target": "journal-adaptive-thresh", "strength": 1.0},
+    {"source": "paper-adaptive-seg", "target": "journal-gsft-psnr", "strength": 0.8},
+    {"source": "paper-adaptive-seg", "target": "journal-psnr-seg", "strength": 1.0},
+    {"source": "paper-license-entropy", "target": "paper-multi-threshold", "strength": 1.0},
+    {"source": "paper-camera-calibration", "target": "paper-pattern-calibration", "strength": 1.0},
+    {"source": "paper-camera-calibration", "target": "book-camera-calibration", "strength": 1.0},
+    {"source": "paper-thresholding-handwritten", "target": "paper-adaptive-seg", "strength": 0.8},
+    {"source": "paper-char-recognition", "target": "journal-char-obj", "strength": 1.0},
+    {"source": "paper-classification-geo", "target": "journal-ant-colony", "strength": 0.5},
+
+    {"source": "journal-adaptive-thresh", "target": "journal-gsft-psnr", "strength": 1.0},
+    {"source": "journal-gsft-psnr", "target": "journal-psnr-seg", "strength": 1.0},
+    {"source": "journal-adaptive-thresh", "target": "journal-psnr-seg", "strength": 1.0},
+
+    {"source": "book-opencv5-ch0", "target": "book-opencv5-ch1", "strength": 1.0},
+    {"source": "book-opencv5-ch1", "target": "book-opencv5-ch2", "strength": 1.0},
+    {"source": "book-opencv5-ch2", "target": "book-opencv5-ch3", "strength": 1.0},
+    {"source": "book-opencv5-ch1", "target": "cv-overview", "strength": 0.5},
+    {"source": "book-opencv5-ch2", "target": "cv-optical-flow", "strength": 0.5},
+    {"source": "book-cv-meets-llm", "target": "ai-llm-concepts", "strength": 0.8},
+    {"source": "book-cv-meets-llm", "target": "keynote-llm-cv", "strength": 0.8},
+
+    {"source": "patent-face-aug", "target": "patent-facial-ad", "strength": 0.8},
+    {"source": "patent-face-aug", "target": "cv-overview", "strength": 0.5},
+    {"source": "patent-facial-ad", "target": "biz-10years", "strength": 0.3},
+    {"source": "patent-vehicle", "target": "cv-multi-camera", "strength": 0.5},
+
+    {"source": "keynote-llm-cv", "target": "cv-overview", "strength": 0.5},
+
+    {"source": "course-ml-spec", "target": "course-fullstack-dl", "strength": 0.8},
+    {"source": "course-fullstack-dl", "target": "course-mlops", "strength": 0.8},
+    {"source": "course-ml-spec", "target": "course-tf-deploy", "strength": 0.5},
+    {"source": "course-cpp", "target": "biz-cpp", "strength": 0.8},
+    {"source": "course-cpp", "target": "biz-optimization", "strength": 0.5},
+    {"source": "course-parallel", "target": "cuda-numba", "strength": 0.5},
+    {"source": "course-parallel", "target": "cuda-pycuda", "strength": 0.5},
+    {"source": "course-ros", "target": "cv-multi-camera", "strength": 0.5},
+    {"source": "course-edge-ai", "target": "course-openvino", "strength": 0.8},
+    {"source": "course-edge-ai", "target": "course-embedded", "strength": 0.8},
+    {"source": "course-edge-ai", "target": "course-riscv", "strength": 0.5},
+    {"source": "course-embedded", "target": "course-iot-scholar", "strength": 0.5},
+    {"source": "course-cloud", "target": "course-mlops", "strength": 0.5},
+    {"source": "course-tesla", "target": "course-hardware", "strength": 0.5},
+    {"source": "course-book-summary", "target": "book-optical-flow", "strength": 0.3},
+    {"source": "course-book-summary", "target": "book-camera-calibration", "strength": 0.3},
+    {"source": "course-metaverse", "target": "cv-3d", "strength": 0.3},
+
+    {"source": "pkm-data-devops", "target": "pkm-curated-links", "strength": 0.8},
+    {"source": "pkm-curated-links", "target": "pkm-site-index", "strength": 0.8},
+
+    {"source": "biz-startup", "target": "biz-seo", "strength": 0.5},
+    {"source": "biz-seo", "target": "biz-prompts", "strength": 0.5},
+    {"source": "biz-prompts", "target": "ai-llm-concepts", "strength": 0.8},
+    {"source": "biz-linkedin", "target": "hub-content", "strength": 0.3},
+    {"source": "biz-python", "target": "biz-tools", "strength": 0.5},
+    {"source": "biz-tools", "target": "biz-shell-vim", "strength": 0.5},
+    {"source": "biz-optimization", "target": "biz-cpp", "strength": 0.5},
+    {"source": "biz-presentation", "target": "hub-portfolio", "strength": 0.5},
+    {"source": "biz-cv", "target": "hub-portfolio", "strength": 0.8},
+
+    {"source": "cv-overview", "target": "book-opencv5-ch1", "strength": 0.5},
+    {"source": "cv-optical-flow", "target": "book-optical-flow", "strength": 1.0},
+    {"source": "cv-3d", "target": "journal-3d-slam", "strength": 0.8},
+
+    {"source": "hub-content", "target": "hub-wiki", "strength": 0.8},
+    {"source": "hub-content", "target": "cv-overview", "strength": 0.8},
+    {"source": "hub-content", "target": "ai-blog", "strength": 0.6},
+    {"source": "hub-content", "target": "biz-cv", "strength": 0.5}
   ]
 }

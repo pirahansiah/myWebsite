@@ -64,15 +64,56 @@ main.site-main.graph-active {
   color: var(--farshid-blue);
 }
 
+.graph-filters {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.graph-filter-btn {
+  font: inherit;
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.16s ease;
+  opacity: 0.5;
+}
+
+.graph-filter-btn.active {
+  opacity: 1;
+  border-color: var(--filter-color, rgba(255,255,255,0.5));
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+}
+
+.graph-filter-btn:hover {
+  opacity: 0.8;
+}
+
+.graph-filter-btn .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
 #graph-wrap {
   flex: 1;
   min-height: 300px;
-  height: calc(100vh - 16rem);
+  height: calc(100vh - 18rem);
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 30% 20%, rgba(90, 200, 250, 0.08), transparent 40%),
-    radial-gradient(circle at 70% 80%, rgba(52, 199, 89, 0.06), transparent 45%);
+    radial-gradient(circle at 30% 20%, rgba(90, 200, 250, 0.06), transparent 40%),
+    radial-gradient(circle at 70% 80%, rgba(52, 199, 89, 0.04), transparent 45%);
 }
 
 #graph-canvas {
@@ -82,12 +123,49 @@ main.site-main.graph-active {
   cursor: grab;
 }
 
+.graph-tooltip {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  padding: 10px 14px;
+  background: var(--glass-bg, rgba(30,30,30,0.95));
+  border: 1px solid var(--glass-border, rgba(255,255,255,0.15));
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  pointer-events: none;
+  max-width: 250px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.gt-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.gt-cat {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gt-hint {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  opacity: 0.6;
+}
+
 .graph-legend {
   display: flex;
   gap: 1rem;
   padding: 0.5rem 1rem;
   font-size: 0.78rem;
   color: var(--text-muted);
+  flex-wrap: wrap;
 }
 
 .graph-legend span::before {
@@ -100,9 +178,18 @@ main.site-main.graph-active {
   vertical-align: middle;
 }
 
-.legend-moc::before { background: #5ac8fa; }
-.legend-note::before { background: #34c759; }
-.legend-tag::before { background: #af52de; }
+.legend-hub::before { background: #0a84ff; }
+.legend-cv::before { background: #30d158; }
+.legend-ai::before { background: #bf5af2; }
+.legend-cuda::before { background: #ff9f0a; }
+.legend-paper::before { background: #5ac8fa; }
+.legend-journal::before { background: #64d2ff; }
+.legend-book::before { background: #ffd60a; }
+.legend-patent::before { background: #ff375f; }
+.legend-keynote::before { background: #ff6482; }
+.legend-course::before { background: #30d158; }
+.legend-pkm::before { background: #ac8e68; }
+.legend-business::before { background: #8e8e93; }
 
 .graph-hint {
   padding: 0 1rem 0.5rem;
@@ -149,8 +236,16 @@ main.site-main.graph-active {
     justify-content: flex-start;
   }
 
+  .graph-filters {
+    padding: 0 0.75rem;
+  }
+
   #graph-wrap {
     min-height: 250px;
-    height: calc(100vh - 18rem);
+    height: calc(100vh - 20rem);
+  }
+
+  .graph-tooltip {
+    display: none !important;
   }
 }
