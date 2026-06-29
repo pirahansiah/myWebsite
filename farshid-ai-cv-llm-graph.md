@@ -37,10 +37,10 @@ extra_css: graph.css
 
   <div class="graph-search-wrap">
     <div class="graph-search-box">
-      <input type="text" id="graph-search-input" placeholder="Search content..." oninput="graphSearch(this.value)">
+      <input type="text" id="graph-search-input" placeholder="Search to highlight nodes..." oninput="graphSearch(this.value)">
       <span class="graph-search-icon">&#128269;</span>
     </div>
-    <ul id="graph-search-results" class="graph-search-results"></ul>
+    <span id="graph-search-results" class="graph-search-count"></span>
   </div>
 
   <p class="graph-hint">Scroll to zoom · Drag to pan · Tap node to select · Double-tap to open</p>
@@ -74,18 +74,14 @@ extra_css: graph.css
   .graph-search-box input:focus { border-color: #0a84ff; }
   .graph-search-box input::placeholder { color: var(--text-muted); }
   .graph-search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.9rem; pointer-events: none; }
-  .graph-search-results {
-    list-style: none; padding: 0; margin: 8px 0 0; max-height: 250px;
-    overflow-y: auto; background: var(--glass-bg); border: 1px solid var(--glass-border);
-    border-radius: 8px; display: none;
+  .graph-search-count {
+    display: block;
+    font-size: 0.75rem;
+    color: #0a84ff;
+    margin-top: 4px;
+    text-align: center;
+    min-height: 1em;
   }
-  .graph-search-results.show { display: block; }
-  .graph-search-results li { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .graph-search-results li:last-child { border-bottom: none; }
-  .graph-search-results a { text-decoration: none; color: var(--text); font-size: 0.85rem; display: block; }
-  .graph-search-results a:hover { color: #0a84ff; }
-  .graph-search-results .gsr-title { font-weight: 600; }
-  .graph-search-results .gsr-url { font-size: 0.7rem; color: #0a84ff; }
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
@@ -189,24 +185,14 @@ var gFuse = new Fuse(CONTENT_INDEX, {
 
 function graphSearch(q) {
   var resultsEl = document.getElementById('graph-search-results');
-  if (!q || q.length < 2) { resultsEl.className = 'graph-search-results'; resultsEl.innerHTML = ''; window.graphClearHighlight(); return; }
+  if (!q || q.length < 2) { resultsEl.textContent = ''; window.graphClearHighlight(); return; }
   var results = gFuse.search(q);
-  if (results.length === 0) { resultsEl.className = 'graph-search-results'; resultsEl.innerHTML = '<li style="color:var(--text-muted);padding:8px 12px;">No results</li>'; resultsEl.classList.add('show'); window.graphClearHighlight(); return; }
-  var html = '';
+  if (results.length === 0) { resultsEl.textContent = 'No matches'; window.graphClearHighlight(); return; }
   var nodeIds = [];
-  results.slice(0, 8).forEach(function(r) {
-    html += '<li><a href="' + r.item.url + '"><div class="gsr-title">' + r.item.title + '</div><div class="gsr-url">' + r.item.url + '</div></a></li>';
-    nodeIds.push(r.item.id);
-  });
-  resultsEl.innerHTML = html;
-  resultsEl.classList.add('show');
+  results.forEach(function(r) { nodeIds.push(r.item.id); });
+  resultsEl.textContent = results.length + ' node' + (results.length !== 1 ? 's' : '') + ' highlighted';
   window.graphHighlightNodes(nodeIds);
 }
-
-document.addEventListener('click', function(e) {
-  var r = document.getElementById('graph-search-results');
-  if (r && !e.target.closest('.graph-search-wrap')) r.classList.remove('show');
-});
 </script>
 
 <script src="{{ '/assets/js/graph-view.js' | relative_url }}" defer></script>
