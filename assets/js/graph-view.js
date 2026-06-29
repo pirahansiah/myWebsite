@@ -1,536 +1,548 @@
 /**
- * Knowledge Graph v3 — Obsidian-style with visible connections
+ * Knowledge Graph — D3.js force-directed, Obsidian-style
+ * Uses d3-force for physics, Canvas for rendering, d3-zoom for interaction
  */
 (function () {
   "use strict";
 
-  var canvas = document.getElementById("graph-canvas");
   var wrap = document.getElementById("graph-wrap");
-  if (!canvas || !wrap) return;
-
+  var canvas = document.getElementById("graph-canvas");
+  if (!wrap || !canvas) return;
   var ctx = canvas.getContext("2d");
-  var nodes = [], links = [], simNodes = [];
-  var dragging = null, hovered = null, selected = null;
-  var panX = 0, panY = 0, zoom = 1;
-  var lastPanX = 0, lastPanY = 0;
-  var isPanning = false, panStartX = 0, panStartY = 0;
-  var mouseDownX = 0, mouseDownY = 0;
-  var frozen = false;
-  var highlightedNodes = new Set();
+
+  var W, H, dpr;
+  var simulation;
+  var graphNodes = [], graphLinks = [];
+  var transform = d3.zoomIdentity;
+  var hoveredNode = null, selectedNode = null;
+  var draggingNode = null;
+  var highlightedSet = new Set();
   var activeCategories = new Set();
-  var tooltip = null;
-
-  var STORAGE_KEY = "graph_v3_" + (wrap.dataset.graph || "default");
   var openBtn = document.getElementById("graph-open-btn");
+  var tooltipEl = null;
 
-  var CATEGORY_COLORS = {
-    hub: "#0a84ff",
-    cv: "#30d158",
-    ai: "#bf5af2",
-    cuda: "#ff9f0a",
-    paper: "#5ac8fa",
-    journal: "#64d2ff",
-    book: "#ffd60a",
-    patent: "#ff375f",
-    keynote: "#ff6482",
-    course: "#00c7be",
-    pkm: "#ac8e68",
-    business: "#8e8e93"
+  var COLORS = {
+    hub: "#0a84ff", cv: "#30d158", ai: "#bf5af2", cuda: "#ff9f0a",
+    paper: "#5ac8fa", journal: "#64d2ff", book: "#ffd60a", patent: "#ff375f",
+    keynote: "#ff6482", course: "#00c7be", pkm: "#ac8e68", business: "#8e8e93"
   };
 
-  var isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  var colors = {
-    text: isDark ? "#f5f5f7" : "#1d1d1f",
-    textMuted: isDark ? "rgba(245,245,247,0.4)" : "rgba(29,29,31,0.4)",
-    link: isDark ? "rgba(140,140,160,0.25)" : "rgba(100,100,120,0.2)",
-    linkHL: "#0a84ff",
-    dim: isDark ? "rgba(140,140,160,0.06)" : "rgba(100,100,120,0.06)",
-    highlight: "#0a84ff",
-    selected: "#ff9500"
-  };
-
-  function showOpenButton(node) {
-    if (!openBtn || !node) { hideOpenButton(); return; }
-    if (!node.url) { hideOpenButton(); return; }
-    openBtn.innerHTML = node.label + " → Open";
-    openBtn.href = node.url;
-    openBtn.style.display = "inline-flex";
-  }
-
-  function hideOpenButton() { if (openBtn) openBtn.style.display = "none"; }
+  var isDark = matchMedia("(prefers-color-scheme:dark)").matches;
+  var BG = isDark ? "#111" : "#f5f5f5";
+  var TEXT = isDark ? "#f5f5f7" : "#1d1d1f";
+  var TEXT_DIM = isDark ? "rgba(245,245,247,0.35)" : "rgba(29,29,31,0.35)";
+  var EDGE = isDark ? "rgba(140,140,160,0.3)" : "rgba(100,100,120,0.25)";
+  var EDGE_HL = "#0a84ff";
 
   function resize() {
-    var dpr = window.devicePixelRatio || 1;
-    var w = wrap.clientWidth;
-    var h = wrap.clientHeight;
-    canvas.width = w * dpr;
-    canvas.height = h * dpr;
-    canvas.style.width = w + "px";
-    canvas.style.height = h + "px";
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    dpr = window.devicePixelRatio || 1;
+    W = wrap.clientWidth;
+    H = wrap.clientHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + "px";
+    canvas.style.height = H + "px";
   }
 
-  function loadPositions() {
-    try { var s = localStorage.getItem(STORAGE_KEY); return s ? JSON.parse(s) : {}; } catch (e) { return {}; }
+  function nodeR(d) {
+    var conns = d.connections || 0;
+    return Math.sqrt(conns + 1) * 3 + 4;
   }
 
-  function savePositions() {
-    var pos = {};
-    for (var i = 0; i < simNodes.length; i++) { pos[simNodes[i].id] = { x: simNodes[i].x, y: simNodes[i].y }; }
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(pos)); } catch (e) {}
-  }
-
-  function countConnections(idx) {
-    var c = 0;
-    for (var i = 0; i < links.length; i++) {
-      if (links[i].source === idx || links[i].target === idx) c++;
-    }
-    return c;
-  }
-
-  function getConnected(node) {
-    var result = {};
-    if (!node) return result;
-    var idx = simNodes.indexOf(node);
-    for (var i = 0; i < links.length; i++) {
-      if (links[i].source === idx) result[links[i].target] = true;
-      if (links[i].target === idx) result[links[i].source] = true;
-    }
-    return result;
-  }
-
-  function initSimulation(data) {
-    nodes = data.nodes || [];
-    links = data.links || [];
-    var w = wrap.clientWidth;
-    var h = wrap.clientHeight;
-    var saved = loadPositions();
-    var idxMap = {};
-
-    simNodes = nodes.map(function (n, i) {
-      idxMap[n.id] = i;
-      var baseR = (n.size || 1) * 2.5 + 3;
-      var sx = saved[n.id];
-      if (sx && sx.x && sx.y) {
-        return { id: n.id, label: n.label, url: n.url, category: n.category || "note", x: sx.x, y: sx.y, vx: 0, vy: 0, r: baseR, connections: 0, baseR: baseR };
-      }
-      var angle = (i / Math.max(nodes.length, 1)) * Math.PI * 2;
-      var radius = Math.min(w, h) * 0.32;
-      return { id: n.id, label: n.label, url: n.url, category: n.category || "note", x: w / 2 + Math.cos(angle) * radius, y: h / 2 + Math.sin(angle) * radius, vx: 0, vy: 0, r: baseR, connections: 0, baseR: baseR };
-    });
-
-    for (var i = 0; i < simNodes.length; i++) {
-      simNodes[i].connections = countConnections(i);
-      simNodes[i].r = simNodes[i].baseR + Math.min(simNodes[i].connections * 0.4, 5);
-    }
-
-    var resolved = [];
-    for (var i = 0; i < links.length; i++) {
-      var s = idxMap[links[i].source];
-      var t = idxMap[links[i].target];
-      if (s !== undefined && t !== undefined) {
-        resolved.push({ source: s, target: t, strength: links[i].strength || 0.5 });
-      }
-    }
-    links = resolved;
-    activeCategories = new Set(Object.keys(CATEGORY_COLORS));
-    updateFilterButtons();
-  }
-
-  function tick() {
-    if (frozen) return;
-    var w = wrap.clientWidth;
-    var h = wrap.clientHeight;
-    var cx = w / 2 + panX;
-    var cy = h / 2 + panY;
-
-    // Center gravity
-    for (var i = 0; i < simNodes.length; i++) {
-      if (simNodes[i] === dragging) continue;
-      simNodes[i].vx += (cx - simNodes[i].x) * 0.0006;
-      simNodes[i].vy += (cy - simNodes[i].y) * 0.0006;
-    }
-
-    // Repulsion
-    for (var i = 0; i < simNodes.length; i++) {
-      for (var j = i + 1; j < simNodes.length; j++) {
-        var dx = simNodes[i].x - simNodes[j].x;
-        var dy = simNodes[i].y - simNodes[j].y;
-        var dist = Math.sqrt(dx * dx + dy * dy) || 1;
-        var force = 350 / (dist * dist);
-        simNodes[i].vx += (dx / dist) * force;
-        simNodes[i].vy += (dy / dist) * force;
-        simNodes[j].vx -= (dx / dist) * force;
-        simNodes[j].vy -= (dy / dist) * force;
-      }
-    }
-
-    // Attraction along edges
-    for (var i = 0; i < links.length; i++) {
-      var a = simNodes[links[i].source];
-      var b = simNodes[links[i].target];
-      if (!a || !b) continue;
-      var dx = b.x - a.x;
-      var dy = b.y - a.y;
-      var dist = Math.sqrt(dx * dx + dy * dy) || 1;
-      var targetDist = 70 + (1 - links[i].strength) * 50;
-      var force = (dist - targetDist) * 0.02 * links[i].strength;
-      a.vx += (dx / dist) * force;
-      a.vy += (dy / dist) * force;
-      b.vx -= (dx / dist) * force;
-      b.vy -= (dy / dist) * force;
-    }
-
-    // Apply velocity
-    for (var i = 0; i < simNodes.length; i++) {
-      if (dragging === simNodes[i]) continue;
-      simNodes[i].vx *= 0.82;
-      simNodes[i].vy *= 0.82;
-      simNodes[i].x += simNodes[i].vx;
-      simNodes[i].y += simNodes[i].vy;
-    }
-  }
-
-  function isNodeVisible(n) { return activeCategories.has(n.category); }
-
-  function draw() {
-    var w = wrap.clientWidth;
-    var h = wrap.clientHeight;
-    ctx.clearRect(0, 0, w, h);
+  function render() {
     ctx.save();
-    ctx.translate(w / 2, h / 2);
-    ctx.scale(zoom, zoom);
-    ctx.translate(-w / 2 + panX, -h / 2 + panY);
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = BG;
+    ctx.fillRect(0, 0, W, H);
 
-    var activeNode = selected || hovered;
-    var connectedTo = getConnected(activeNode);
+    ctx.save();
+    ctx.translate(transform.x, transform.y);
+    ctx.scale(transform.k, transform.k);
 
-    // Draw edges — curved lines like Obsidian
-    for (var i = 0; i < links.length; i++) {
-      var a = simNodes[links[i].source];
-      var b = simNodes[links[i].target];
-      if (!a || !b) continue;
-      if (!isNodeVisible(a) || !isNodeVisible(b)) continue;
+    var active = selectedNode || hoveredNode;
+    var connected = new Set();
+    if (active) {
+      graphLinks.forEach(function (l) {
+        if (l.source === active || l.target === active) {
+          connected.add(l.source);
+          connected.add(l.target);
+        }
+      });
+    }
 
-      var isHL = activeNode && (a === activeNode || b === activeNode);
-      var isDim = activeNode && !isHL;
-      var isHighlighted = highlightedNodes.has(links[i].source) || highlightedNodes.has(links[i].target);
+    // Draw edges
+    graphLinks.forEach(function (l) {
+      var s = l.source, t = l.target;
+      if (!s || !t) return;
+      var srcCat = s.category || "note";
+      var tgtCat = t.category || "note";
+      if (!activeCategories.has(srcCat) || !activeCategories.has(tgtCat)) return;
 
-      var mx = (a.x + b.x) / 2;
-      var my = (a.y + b.y) / 2;
-      var dx = b.x - a.x;
-      var dy = b.y - a.y;
-      var dist = Math.sqrt(dx * dx + dy * dy);
-      var curve = dist * 0.15;
-      var nx = -dy / dist * curve;
-      var ny = dx / dist * curve;
-      var cpx = mx + nx;
-      var cpy = my + ny;
+      var isHL = active && (s === active || t === active);
+      var isDim = active && !isHL;
+      var isSearch = highlightedSet.has(s.index) || highlightedSet.has(t.index);
 
       ctx.beginPath();
-      ctx.moveTo(a.x, a.y);
-      ctx.quadraticCurveTo(cpx, cpy, b.x, b.y);
+      // Curved edges
+      var mx = (s.x + t.x) / 2, my = (s.y + t.y) / 2;
+      var dx = t.x - s.x, dy = t.y - s.y;
+      var dist = Math.sqrt(dx * dx + dy * dy) || 1;
+      var curve = dist * 0.12;
+      var nx = -dy / dist * curve, ny = dx / dist * curve;
 
-      if (isHighlighted) {
-        ctx.strokeStyle = colors.highlight;
-        ctx.lineWidth = 2.5;
+      ctx.moveTo(s.x, s.y);
+      ctx.quadraticCurveTo(mx + nx, my + ny, t.x, t.y);
+
+      if (isSearch) {
+        ctx.strokeStyle = EDGE_HL;
+        ctx.lineWidth = 2.5 / transform.k;
         ctx.globalAlpha = 1;
       } else if (isHL) {
-        ctx.strokeStyle = colors.linkHL;
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = EDGE_HL;
+        ctx.lineWidth = 2 / transform.k;
         ctx.globalAlpha = 1;
       } else if (isDim) {
-        ctx.strokeStyle = colors.dim;
-        ctx.lineWidth = 0.5;
-        ctx.globalAlpha = 0.5;
+        ctx.strokeStyle = EDGE;
+        ctx.lineWidth = 0.4 / transform.k;
+        ctx.globalAlpha = 0.3;
       } else {
-        ctx.strokeStyle = colors.link;
-        ctx.lineWidth = 1;
-        ctx.globalAlpha = 0.7;
+        ctx.strokeStyle = EDGE;
+        ctx.lineWidth = 0.8 / transform.k;
+        ctx.globalAlpha = 0.6;
       }
       ctx.stroke();
       ctx.globalAlpha = 1;
-    }
+    });
 
     // Draw nodes
-    for (var i = 0; i < simNodes.length; i++) {
-      var n = simNodes[i];
-      if (!isNodeVisible(n)) continue;
+    graphNodes.forEach(function (n) {
+      if (!activeCategories.has(n.category)) return;
+      var r = nodeR(n);
+      var isSel = selectedNode === n;
+      var isHov = hoveredNode === n;
+      var isConn = active && connected.has(n);
+      var isDim = active && !isSel && !isHov && !isConn;
+      var isSearch = highlightedSet.has(n.index);
 
-      var isSel = selected === n;
-      var isHov = hovered === n;
-      var isConn = activeNode && connectedTo[i];
-      var isDim = activeNode && !isSel && !isHov && !isConn;
-      var isHighlighted = highlightedNodes.has(i);
-      var fill = CATEGORY_COLORS[n.category] || "#8e8e93";
-      if (isSel) fill = colors.selected;
-      var alpha = isDim ? 0.1 : 1;
-      var nodeR = isSel ? n.r + 4 : isHov ? n.r + 3 : isHighlighted ? n.r + 2 : n.r;
+      var fill = COLORS[n.category] || "#8e8e93";
+      var drawR = isSel ? r + 3 : isHov ? r + 2 : isSearch ? r + 2 : r;
 
-      // Glow for selected/hovered
-      if (isSel || isHov) {
-        ctx.globalAlpha = 0.3;
+      // Glow
+      if (isSel || isHov || isSearch) {
+        ctx.globalAlpha = 0.25;
         ctx.beginPath();
-        ctx.arc(n.x, n.y, nodeR + 8, 0, Math.PI * 2);
+        ctx.arc(n.x, n.y, drawR + 10, 0, Math.PI * 2);
         ctx.fillStyle = fill;
         ctx.fill();
       }
 
-      ctx.globalAlpha = alpha;
+      // Node circle
+      ctx.globalAlpha = isDim ? 0.08 : 1;
       ctx.beginPath();
-      ctx.arc(n.x, n.y, nodeR, 0, Math.PI * 2);
+      ctx.arc(n.x, n.y, drawR, 0, Math.PI * 2);
       ctx.fillStyle = fill;
       ctx.fill();
-      ctx.strokeStyle = isSel ? colors.selected : isHov ? colors.highlight : "rgba(255,255,255,0.3)";
-      ctx.lineWidth = isSel ? 3 : isHov ? 2.5 : 0.8;
+      ctx.strokeStyle = isSel ? "#ff9500" : isHov ? "#0a84ff" : "rgba(255,255,255,0.25)";
+      ctx.lineWidth = (isSel ? 3 : isHov ? 2.5 : 0.7) / transform.k;
       ctx.stroke();
 
-      // Labels
-      if (isSel || isHov || isConn || isHighlighted) {
-        ctx.fillStyle = colors.text;
-        ctx.font = (isSel || isHov ? "700" : "600") + " 11px system-ui";
-        ctx.textAlign = "center";
-        ctx.fillText(n.label, n.x, n.y + nodeR + 13);
-      } else if (!activeNode) {
-        var maxLen = zoom < 0.4 ? 0 : zoom < 0.7 ? 3 : zoom < 1.0 ? 8 : zoom < 1.5 ? 15 : 999;
-        if (maxLen > 0) {
-          var displayLabel = n.label.length > maxLen ? n.label.substring(0, maxLen - 1) + "…" : n.label;
-          var fontSize = zoom < 0.7 ? 7 : zoom < 1.0 ? 8 : 9;
-          ctx.fillStyle = colors.textMuted;
-          ctx.globalAlpha = 0.5;
-          ctx.font = "500 " + fontSize + "px system-ui";
-          ctx.textAlign = "center";
-          ctx.fillText(displayLabel, n.x, n.y + nodeR + 10);
+      // Label
+      var showLabel = isSel || isHov || isConn || isSearch;
+      if (!showLabel && !active) {
+        var maxLen = transform.k < 0.3 ? 0 : transform.k < 0.6 ? 3 : transform.k < 0.9 ? 8 : transform.k < 1.4 ? 15 : 999;
+        if (maxLen > 0) showLabel = true;
+      }
+
+      if (showLabel) {
+        var label = n.label;
+        if (!isSel && !isHov && !isConn && !isSearch && !active) {
+          var ml = transform.k < 0.3 ? 0 : transform.k < 0.6 ? 3 : transform.k < 0.9 ? 8 : transform.k < 1.4 ? 15 : 999;
+          if (ml > 0 && label.length > ml) label = label.substring(0, ml - 1) + "…";
+          if (ml === 0) return;
         }
+
+        ctx.globalAlpha = isDim ? 0.08 : (isSel || isHov || isConn || isSearch) ? 1 : 0.5;
+        ctx.fillStyle = isSel ? "#ff9500" : TEXT;
+        ctx.font = ((isSel || isHov) ? "700 " : "500 ") + (10 / Math.max(transform.k, 0.5)) + "px system-ui";
+        ctx.textAlign = "center";
+        ctx.fillText(label, n.x, n.y + drawR + 12 / transform.k);
       }
       ctx.globalAlpha = 1;
-    }
+    });
 
+    ctx.restore();
     ctx.restore();
     drawMinimap();
   }
 
   function drawMinimap() {
-    var mw = 100, mh = 65;
-    var mx = wrap.clientWidth - mw - 8;
-    var my = wrap.clientHeight - mh - 8;
+    var mw = 90, mh = 60, mx = W - mw - 8, my = H - mh - 8;
     ctx.save();
-    ctx.globalAlpha = 0.5;
-    ctx.fillStyle = isDark ? "rgba(30,30,30,0.7)" : "rgba(240,240,240,0.7)";
+    ctx.scale(dpr, dpr);
+    ctx.globalAlpha = 0.45;
+    ctx.fillStyle = isDark ? "rgba(30,30,30,0.8)" : "rgba(240,240,240,0.8)";
     ctx.beginPath();
     ctx.roundRect(mx, my, mw, mh, 5);
     ctx.fill();
 
+    if (graphNodes.length === 0) { ctx.restore(); return; }
     var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-    for (var i = 0; i < simNodes.length; i++) {
-      if (!isNodeVisible(simNodes[i])) continue;
-      if (simNodes[i].x < minX) minX = simNodes[i].x;
-      if (simNodes[i].x > maxX) maxX = simNodes[i].x;
-      if (simNodes[i].y < minY) minY = simNodes[i].y;
-      if (simNodes[i].y > maxY) maxY = simNodes[i].y;
-    }
-    if (minX === maxX) { minX -= 50; maxX += 50; }
-    if (minY === maxY) { minY -= 50; maxY += 50; }
-    var pad = 20; minX -= pad; maxX += pad; minY -= pad; maxY += pad;
+    graphNodes.forEach(function (n) {
+      if (!activeCategories.has(n.category)) return;
+      if (n.x < minX) minX = n.x; if (n.x > maxX) maxX = n.x;
+      if (n.y < minY) minY = n.y; if (n.y > maxY) maxY = n.y;
+    });
+    if (minX === maxX) { minX -= 100; maxX += 100; }
+    if (minY === maxY) { minY -= 100; maxY += 100; }
+    var p = 30; minX -= p; maxX += p; minY -= p; maxY += p;
 
-    for (var i = 0; i < simNodes.length; i++) {
-      var n = simNodes[i];
-      if (!isNodeVisible(n)) continue;
+    graphNodes.forEach(function (n) {
+      if (!activeCategories.has(n.category)) return;
       var nx = mx + ((n.x - minX) / (maxX - minX)) * mw;
       var ny = my + ((n.y - minY) / (maxY - minY)) * mh;
       ctx.beginPath();
-      ctx.arc(nx, ny, 1.2, 0, Math.PI * 2);
-      ctx.fillStyle = CATEGORY_COLORS[n.category] || "#8e8e93";
+      ctx.arc(nx, ny, 1, 0, Math.PI * 2);
+      ctx.fillStyle = COLORS[n.category] || "#8e8e93";
       ctx.fill();
-    }
+    });
 
-    // Viewport rectangle
-    var vw = wrap.clientWidth / zoom;
-    var vh = wrap.clientHeight / zoom;
-    var vcx = wrap.clientWidth / 2 - panX;
-    var vcy = wrap.clientHeight / 2 - panY;
+    // Viewport box
+    var vw = W / transform.k, vh = H / transform.k;
+    var vcx = -transform.x / transform.k + W / (2 * transform.k);
+    var vcy = -transform.y / transform.k + H / (2 * transform.k);
     var vx = mx + ((vcx - vw / 2 - minX) / (maxX - minX)) * mw;
     var vy = my + ((vcy - vh / 2 - minY) / (maxY - minY)) * mh;
     var vww = (vw / (maxX - minX)) * mw;
     var vhh = (vh / (maxY - minY)) * mh;
-    ctx.strokeStyle = colors.highlight;
+    ctx.strokeStyle = "#0a84ff";
     ctx.lineWidth = 1;
     ctx.strokeRect(vx, vy, vww, vhh);
-
     ctx.restore();
   }
 
-  function loop() { tick(); draw(); requestAnimationFrame(loop); }
-
-  function screenPos(e) {
-    var rect = canvas.getBoundingClientRect();
-    var w = wrap.clientWidth;
-    var h = wrap.clientHeight;
-    var cx = (e.clientX - rect.left - w / 2) / zoom + w / 2 - panX;
-    var cy = (e.clientY - rect.top - h / 2) / zoom + h / 2 - panY;
-    return { x: cx, y: cy };
-  }
-
-  function hitTest(pos) {
-    for (var i = simNodes.length - 1; i >= 0; i--) {
-      var n = simNodes[i];
-      if (!isNodeVisible(n)) continue;
-      var dx = pos.x - n.x;
-      var dy = pos.y - n.y;
-      if (dx * dx + dy * dy <= (n.r + 10) * (n.r + 10)) return n;
+  // Hit test
+  function hitTest(px, py) {
+    var inverted = transform.invert([px, py]);
+    var mx = inverted[0], my = inverted[1];
+    for (var i = graphNodes.length - 1; i >= 0; i--) {
+      var n = graphNodes[i];
+      if (!activeCategories.has(n.category)) continue;
+      var dx = mx - n.x, dy = my - n.y;
+      var r = nodeR(n) + 6;
+      if (dx * dx + dy * dy <= r * r) return n;
     }
     return null;
   }
 
-  function selectNode(node) {
-    if (selected === node) { selected = null; hideOpenButton(); }
-    else { selected = node; showOpenButton(node); }
+  function showTooltip(node, px, py) {
+    if (!tooltipEl) { tooltipEl = document.createElement("div"); tooltipEl.className = "graph-tooltip"; wrap.appendChild(tooltipEl); }
+    var c = COLORS[node.category] || "#8e8e93";
+    tooltipEl.innerHTML = '<div class="gt-title">' + node.label + '</div><div class="gt-cat" style="color:' + c + '">' + (node.category || "") + '</div>';
+    tooltipEl.style.left = Math.min(px, W - 180) + "px";
+    tooltipEl.style.top = (py - 50) + "px";
+    tooltipEl.style.display = "block";
   }
 
-  function showTooltip(node, x, y) {
-    if (!tooltip) { tooltip = document.createElement("div"); tooltip.className = "graph-tooltip"; wrap.appendChild(tooltip); }
-    var catColors = CATEGORY_COLORS[node.category] || "#8e8e93";
-    tooltip.innerHTML = '<div class="gt-title">' + node.label + '</div><div class="gt-cat" style="color:' + catColors + '">' + (node.category || "") + '</div><div class="gt-hint">Tap to select · Double-tap to open</div>';
-    tooltip.style.left = Math.min(x, wrap.clientWidth - 200) + "px";
-    tooltip.style.top = (y - 55) + "px";
-    tooltip.style.display = "block";
+  function hideTooltip() { if (tooltipEl) tooltipEl.style.display = "none"; }
+
+  function selectNode(n) {
+    if (selectedNode === n) { selectedNode = null; hideOpenButton(); }
+    else { selectedNode = n; showOpenButton(n); }
   }
 
-  function hideTooltip() { if (tooltip) tooltip.style.display = "none"; }
+  function showOpenButton(n) {
+    if (!openBtn || !n || !n.url) { hideOpenButton(); return; }
+    openBtn.innerHTML = n.label + " → Open";
+    openBtn.href = n.url;
+    openBtn.style.display = "inline-flex";
+  }
 
-  // Mouse events
-  canvas.addEventListener("mousedown", function (e) {
-    mouseDownX = e.clientX; mouseDownY = e.clientY;
-    var pos = screenPos(e);
-    var hit = hitTest(pos);
-    if (hit) { dragging = hit; hit.vx = hit.vy = 0; frozen = true; canvas.style.cursor = "grabbing"; }
-    else { isPanning = true; panStartX = e.clientX; panStartY = e.clientY; lastPanX = panX; lastPanY = panY; canvas.style.cursor = "grabbing"; }
-  });
-
-  window.addEventListener("mousemove", function (e) {
-    if (dragging) { var pos = screenPos(e); dragging.x = pos.x; dragging.y = pos.y; dragging.vx = dragging.vy = 0; return; }
-    if (isPanning) { panX = lastPanX + (e.clientX - panStartX) / zoom; panY = lastPanY + (e.clientY - panStartY) / zoom; return; }
-    var pos = screenPos(e);
-    var hit = hitTest(pos);
-    if (hit !== hovered) {
-      hovered = hit;
-      canvas.style.cursor = hit ? "pointer" : "grab";
-      if (hit) { var rect = canvas.getBoundingClientRect(); showTooltip(hit, e.clientX - rect.left, e.clientY - rect.top); }
-      else { hideTooltip(); }
-    }
-  });
-
-  window.addEventListener("mouseup", function (e) {
-    var moved = Math.abs(e.clientX - mouseDownX) > 5 || Math.abs(e.clientY - mouseDownY) > 5;
-    if (dragging) { if (moved) savePositions(); else selectNode(dragging); dragging = null; }
-    else if (isPanning && !moved) { var hit = hitTest(screenPos(e)); if (hit) selectNode(hit); else { selected = null; hideOpenButton(); } }
-    isPanning = false; frozen = false; canvas.style.cursor = hovered ? "pointer" : "grab";
-  });
-
-  canvas.addEventListener("dblclick", function (e) { var hit = hitTest(screenPos(e)); if (hit && hit.url) window.location.href = hit.url; });
-
-  // Touch events
-  canvas.addEventListener("touchstart", function (e) {
-    if (e.touches.length !== 1) return;
-    var t = e.touches[0]; mouseDownX = t.clientX; mouseDownY = t.clientY;
-    var pos = screenPos(t); var hit = hitTest(pos);
-    if (hit) { dragging = hit; hit.vx = hit.vy = 0; frozen = true; }
-    else { isPanning = true; panStartX = t.clientX; panStartY = t.clientY; lastPanX = panX; lastPanY = panY; }
-    e.preventDefault();
-  }, { passive: false });
-
-  canvas.addEventListener("touchmove", function (e) {
-    if (e.touches.length !== 1) return;
-    var t = e.touches[0]; e.preventDefault();
-    if (dragging) { var pos = screenPos(t); dragging.x = pos.x; dragging.y = pos.y; dragging.vx = dragging.vy = 0; }
-    else if (isPanning) { panX = lastPanX + (t.clientX - panStartX) / zoom; panY = lastPanY + (t.clientY - panStartY) / zoom; }
-  }, { passive: false });
-
-  canvas.addEventListener("touchend", function (e) {
-    var moved = Math.abs((e.changedTouches[0] || {}).clientX - mouseDownX) > 10 || Math.abs((e.changedTouches[0] || {}).clientY - mouseDownY) > 10;
-    if (dragging) { if (!moved) selectNode(dragging); else savePositions(); dragging = null; }
-    isPanning = false; frozen = false;
-  });
-
-  // Zoom
-  canvas.addEventListener("wheel", function (e) {
-    e.preventDefault();
-    var delta = e.deltaY > 0 ? 0.9 : 1.1;
-    var newZoom = Math.max(0.15, Math.min(6, zoom * delta));
-    var rect = canvas.getBoundingClientRect();
-    var mx = e.clientX - rect.left;
-    var my = e.clientY - rect.top;
-    var w = wrap.clientWidth;
-    var h = wrap.clientHeight;
-    panX = mx - (mx - w / 2 - panX) * (newZoom / zoom);
-    panY = my - (my - h / 2 - panY) * (newZoom / zoom);
-    zoom = newZoom;
-  }, { passive: false });
-
-  window.addEventListener("resize", resize);
-
-  // Controls
-  var resetBtn = document.getElementById("graph-reset");
-  if (resetBtn) resetBtn.addEventListener("click", function () {
-    panX = panY = 0; zoom = 1; selected = null; highlightedNodes.clear();
-    hideOpenButton(); hideTooltip(); frozen = false;
-    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
-    initSimulation({ nodes: nodes, links: links });
-  });
-
-  var freezeBtn = document.getElementById("graph-freeze");
-  if (freezeBtn) freezeBtn.addEventListener("click", function () {
-    frozen = !frozen; freezeBtn.textContent = frozen ? "Unfreeze" : "Freeze";
-  });
+  function hideOpenButton() { if (openBtn) openBtn.style.display = "none"; }
 
   function updateFilterButtons() {
     document.querySelectorAll(".graph-filter-btn").forEach(function (btn) {
       var cat = btn.dataset.category;
-      btn.classList.toggle("active", cat === "all" ? activeCategories.size === Object.keys(CATEGORY_COLORS).length : activeCategories.has(cat));
+      btn.classList.toggle("active", cat === "all" ? activeCategories.size === Object.keys(COLORS).length : activeCategories.has(cat));
     });
   }
 
+  // Setup D3
+  function setup(graphData) {
+    graphNodes = graphData.nodes.map(function (n, i) {
+      n.index = i;
+      n.connections = 0;
+      return n;
+    });
+    graphLinks = graphData.links.map(function (l) {
+      return { source: l.source, target: l.target, strength: l.strength || 0.5 };
+    });
+
+    // Count connections
+    var idxMap = {};
+    graphNodes.forEach(function (n, i) { idxMap[n.id] = i; });
+    var resolvedLinks = [];
+    graphLinks.forEach(function (l) {
+      var si = idxMap[l.source] !== undefined ? idxMap[l.source] : l.source;
+      var ti = idxMap[l.target] !== undefined ? idxMap[l.target] : l.target;
+      if (typeof si === "number" && typeof ti === "number") {
+        resolvedLinks.push({ source: si, target: ti, strength: l.strength });
+        graphNodes[si].connections++;
+        graphNodes[ti].connections++;
+      }
+    });
+    graphLinks = resolvedLinks;
+
+    // Recalculate node radii
+    graphNodes.forEach(function (n) { n.r = nodeR(n); });
+
+    activeCategories = new Set(Object.keys(COLORS));
+    updateFilterButtons();
+
+    // D3 force simulation
+    simulation = d3.forceSimulation(graphNodes)
+      .force("link", d3.forceLink(graphLinks).id(function (d) { return d.index; }).distance(function (d) { return 80 + (1 - d.strength) * 60; }).strength(function (d) { return d.strength * 0.5; })
+      .force("charge", d3.forceManyBody().strength(-200).distanceMax(400))
+      .force("center", d3.forceCenter(W / 2, H / 2).strength(0.05))
+      .force("collide", d3.forceCollide().radius(function (d) { return nodeR(d) + 4; }).strength(0.7))
+      .force("x", d3.forceX(W / 2).strength(0.03))
+      .force("y", d3.forceY(H / 2).strength(0.03))
+      .alphaDecay(0.02)
+      .on("tick", render);
+
+    // D3 zoom
+    var zoom = d3.zoom()
+      .scaleExtent([0.1, 6])
+      .on("zoom", function (e) {
+        transform = e.transform;
+        render();
+      });
+
+    d3.select(canvas).call(zoom);
+
+    // Drag
+    var drag = d3.drag()
+      .on("start", function (e, d) {
+        if (!e.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x; d.fy = d.y;
+        draggingNode = d;
+      })
+      .on("drag", function (e, d) {
+        var p = transform.invert([e.sourceEvent.clientX - wrap.getBoundingClientRect().left, e.sourceEvent.clientY - wrap.getBoundingClientRect().top]);
+        d.fx = p[0]; d.fy = p[1];
+      })
+      .on("end", function (e, d) {
+        if (!e.active) simulation.alphaTarget(0);
+        d.fx = null; d.fy = null;
+        draggingNode = null;
+      });
+
+    d3.select(canvas).call(drag);
+
+    // Click / hover
+    d3.select(canvas)
+      .on("mousemove", function (e) {
+        if (draggingNode) return;
+        var rect = wrap.getBoundingClientRect();
+        var mx = e.clientX - rect.left, my = e.clientY - rect.top;
+        var hit = hitTest(mx, my);
+        if (hit !== hoveredNode) {
+          hoveredNode = hit;
+          canvas.style.cursor = hit ? "pointer" : "grab";
+          if (hit) showTooltip(hit, mx, my); else hideTooltip();
+          render();
+        }
+      })
+      .on("click", function (e) {
+        if (draggingNode) return;
+        var rect = wrap.getBoundingClientRect();
+        var hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
+        if (hit) selectNode(hit); else { selectedNode = null; hideOpenButton(); render(); }
+      })
+      .on("dblclick", function (e) {
+        var rect = wrap.getBoundingClientRect();
+        var hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
+        if (hit && hit.url) window.location.href = hit.url;
+      });
+
+    // Touch
+    var touchStartTime = 0;
+    canvas.addEventListener("touchstart", function (e) {
+      touchStartTime = Date.now();
+    }, { passive: true });
+
+    canvas.addEventListener("touchend", function (e) {
+      if (Date.now() - touchStartTime < 200 && e.changedTouches.length === 1) {
+        var t = e.changedTouches[0];
+        var rect = wrap.getBoundingClientRect();
+        var hit = hitTest(t.clientX - rect.left, t.clientY - rect.top);
+        if (hit) {
+          if (selectedNode === hit) { window.location.href = hit.url; }
+          else { selectNode(hit); render(); }
+          e.preventDefault();
+        }
+      }
+    });
+
+    // Search
+    window.graphHighlightNodes = function (ids) {
+      highlightedSet.clear();
+      ids.forEach(function (id) {
+        graphNodes.forEach(function (n, i) {
+          if (n.id === id || n.label.toLowerCase().indexOf(id.toLowerCase()) !== -1) highlightedSet.add(i);
+        });
+      });
+      render();
+    };
+    window.graphClearHighlight = function () { highlightedSet.clear(); render(); };
+
+    // Stats
+    var stat = document.getElementById("graph-stats");
+    if (stat) stat.textContent = graphNodes.length + " pages · " + graphLinks.length + " connections";
+
+    // Initial render
+    render();
+  }
+
+  // Filter buttons
   document.addEventListener("click", function (e) {
     var btn = e.target.closest(".graph-filter-btn");
     if (!btn) return;
     var cat = btn.dataset.category;
     if (cat === "all") {
-      activeCategories = activeCategories.size === Object.keys(CATEGORY_COLORS).length ? new Set() : new Set(Object.keys(CATEGORY_COLORS));
+      activeCategories = activeCategories.size === Object.keys(COLORS).length ? new Set() : new Set(Object.keys(COLORS));
     } else {
       activeCategories.has(cat) ? activeCategories.delete(cat) : activeCategories.add(cat);
     }
     updateFilterButtons();
+    render();
   });
 
-  var searchInput = document.getElementById("graph-search-input");
-  if (searchInput) searchInput.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") { searchInput.value = ""; highlightedNodes.clear(); }
+  // Reset / Freeze
+  var resetBtn = document.getElementById("graph-reset");
+  if (resetBtn) resetBtn.addEventListener("click", function () {
+    selectedNode = null; hoveredNode = null; highlightedSet.clear();
+    hideOpenButton(); hideTooltip();
+    simulation.alpha(1).restart();
+    render();
   });
 
-  window.graphHighlightNodes = function (nodeIds) {
-    highlightedNodes.clear();
-    nodeIds.forEach(function (id) {
-      for (var i = 0; i < simNodes.length; i++) {
-        if (simNodes[i].id === id || simNodes[i].label.toLowerCase().indexOf(id.toLowerCase()) !== -1) highlightedNodes.add(i);
-      }
+  var freezeBtn = document.getElementById("graph-freeze");
+  if (freezeBtn) freezeBtn.addEventListener("click", function () {
+    if (simulation.alpha() > 0) { simulation.stop(); freezeBtn.textContent = "Unfreeze"; }
+    else { simulation.alpha(0.3).restart(); freezeBtn.textContent = "Freeze"; }
+  });
+
+  // Search
+  var gFuse;
+  var CONTENT_INDEX = [
+    {"id":"hub-product","title":"Product","url":"/contents/public/product/","category":"hub"},
+    {"id":"hub-research","title":"Research","url":"/contents/public/research/","category":"hub"},
+    {"id":"hub-solutions","title":"Solutions","url":"/contents/public/solutions/","category":"hub"},
+    {"id":"hub-content","title":"Content Hub","url":"/contents/public/","category":"hub"},
+    {"id":"hub-wiki","title":"Wiki","url":"/contents/wiki/","category":"hub"},
+    {"id":"hub-portfolio","title":"Portfolio","url":"/contents/pkm/use-cases/","category":"hub"},
+    {"id":"cv-3d","title":"3D Vision","url":"/contents/public/cv/3d/","category":"cv"},
+    {"id":"cv-optical-flow","title":"Optical Flow","url":"/contents/public/cv/optical-flow/","category":"cv"},
+    {"id":"cv-multi-camera","title":"Multi-Camera","url":"/contents/public/cv/multi-camera-systems/","category":"cv"},
+    {"id":"cv-coaching","title":"CV Coaching","url":"/contents/public/coaching/","category":"cv"},
+    {"id":"cv-overview","title":"CV Overview","url":"/contents/public/enter/","category":"cv"},
+    {"id":"ai-llm-concepts","title":"LLM Concepts","url":"/contents/public/ai-llm/advanced-llm-concepts/","category":"ai"},
+    {"id":"ai-agents","title":"AI Agents","url":"/contents/public/ai-llm/orchestrating-agents/","category":"ai"},
+    {"id":"ai-blog","title":"AI Blog","url":"/contents/public/ai-llm/blog/","category":"ai"},
+    {"id":"ai-avatar","title":"Avatar Generator","url":"/contents/public/ai-llm/avatar-generator/","category":"ai"},
+    {"id":"cuda-numba","title":"Numba JIT","url":"/contents/public/cuda-gpu/numba-jit/","category":"cuda"},
+    {"id":"cuda-pycuda","title":"PyCUDA","url":"/contents/public/cuda-gpu/pycuda-kernels/","category":"cuda"},
+    {"id":"cuda-vscode","title":"CUDA VS Code","url":"/contents/public/cuda-gpu/vscode-cuda-windows/","category":"cuda"},
+    {"id":"cuda-mlx","title":"MLX CoreML","url":"/contents/public/cuda-gpu/mlx-coreml-metal/","category":"cuda"},
+    {"id":"paper-adaptive-seg","title":"Adaptive Segmentation","url":"/contents/publications/Papers/adaptive-image-segmentation-psnr/","category":"paper"},
+    {"id":"paper-license-entropy","title":"License Plate Entropy","url":"/contents/publications/Papers/license-plate-recognition-entropy/","category":"paper"},
+    {"id":"paper-multi-threshold","title":"Multi-threshold Plate","url":"/contents/publications/Papers/multi-threshold-license-plate/","category":"paper"},
+    {"id":"paper-handwritten","title":"Thresholding Handwritten","url":"/contents/publications/Papers/comparison-thresholding-handwritten/","category":"paper"},
+    {"id":"paper-camera-cal","title":"Camera Calibration","url":"/contents/publications/Papers/camera-calibration-multi-modal/","category":"paper"},
+    {"id":"paper-pattern","title":"Pattern Calibration","url":"/contents/publications/Papers/pattern-image-calibration/","category":"paper"},
+    {"id":"paper-2d3d","title":"2D vs 3D Map","url":"/contents/publications/Papers/2d-3d-map-movement/","category":"paper"},
+    {"id":"paper-char","title":"Character Recognition","url":"/contents/publications/Papers/character-recognition-global-feature/","category":"paper"},
+    {"id":"paper-class","title":"Classification","url":"/contents/publications/Papers/classification-geometrical-topological/","category":"paper"},
+    {"id":"paper-tafresh","title":"TafreshGrid","url":"/contents/publications/Papers/tafreshgrid-grid-computing/","category":"paper"},
+    {"id":"journal-psnr","title":"Adaptive PSNR","url":"/contents/publications/Journals/adaptive-thresholding-psnr/","category":"journal"},
+    {"id":"journal-gsft","title":"GSFT-PSNR","url":"/contents/publications/Journals/gsft-psnr-fuzzy-threshold/","category":"journal"},
+    {"id":"journal-seg","title":"PSNR Segmentation","url":"/contents/publications/Journals/psnr-threshold-segmentation/","category":"journal"},
+    {"id":"journal-char","title":"Character Recognition","url":"/contents/publications/Journals/character-object-recognition/","category":"journal"},
+    {"id":"journal-slam","title":"3D SLAM","url":"/contents/publications/Journals/3d-slam-humanoid-robots/","category":"journal"},
+    {"id":"journal-ant","title":"Ant Colony","url":"/contents/publications/Journals/ant-colony-optimization/","category":"journal"},
+    {"id":"book-optflow","title":"Optical Flow Book","url":"/contents/publications/Books/computational-intelligence-optical-flow/","category":"book"},
+    {"id":"book-camcal","title":"Camera Calibration Book","url":"/contents/publications/Books/camera-calibration-video-stabilization/","category":"book"},
+    {"id":"book-cvllm","title":"CV Meets LLM","url":"/contents/publications/Books/AI/computer-vision-meets-llm/","category":"book"},
+    {"id":"book-opencv0","title":"OpenCV 5 Ch.0","url":"/contents/publications/Books/AI/opencv5-chapter0-introduction/","category":"book"},
+    {"id":"book-opencv1","title":"OpenCV 5 Ch.1","url":"/contents/publications/Books/AI/opencv5-chapter1-image-basics/","category":"book"},
+    {"id":"book-opencv2","title":"OpenCV 5 Ch.2","url":"/contents/publications/Books/AI/opencv5-chapter2-feature-detection/","category":"book"},
+    {"id":"book-opencv3","title":"OpenCV 5 Ch.3","url":"/contents/publications/Books/AI/opencv5-chapter3-advanced/","category":"book"},
+    {"id":"patent-face","title":"Face Augmentation","url":"/contents/publications/Patents/face-image-augmentation/","category":"patent"},
+    {"id":"patent-facial","title":"Facial Analysis Ad","url":"/contents/publications/Patents/facial-analysis-advertisement/","category":"patent"},
+    {"id":"patent-vehicle","title":"Vehicle Detection","url":"/contents/publications/Patents/vehicle-detection/","category":"patent"},
+    {"id":"keynote-llm","title":"LLMs Meet CV","url":"/contents/publications/Keynotes/llms-meet-computer-vision/","category":"keynote"},
+    {"id":"course-ml","title":"ML Specialization","url":"/contents/ai2026/machine-learning-specialization/","category":"course"},
+    {"id":"course-fsdl","title":"Full Stack DL","url":"/contents/ai2026/full-stack-deep-learning/","category":"course"},
+    {"id":"course-mlops","title":"MLOps","url":"/contents/ai2026/mlops/","category":"course"},
+    {"id":"course-ros","title":"ROS","url":"/contents/ai2026/ros/","category":"course"},
+    {"id":"course-parallel","title":"Parallel Programming","url":"/contents/ai2026/parallel-programming/","category":"course"},
+    {"id":"course-cpp","title":"Modern C++","url":"/contents/ai2026/modern-cpp/","category":"course"},
+    {"id":"course-k8s","title":"Cloud-Native","url":"/contents/ai2026/cloud-native/","category":"course"},
+    {"id":"course-tf","title":"TensorFlow Deploy","url":"/contents/ai2026/tensorflow-deployment/","category":"course"},
+    {"id":"course-riscv","title":"RISC-V","url":"/contents/ai2026/risc-v/","category":"course"},
+    {"id":"course-edgeai","title":"Edge AI Summit","url":"/contents/ai2026/edge-ai-summit/","category":"course"},
+    {"id":"course-iot","title":"Embedded IoT","url":"/contents/ai2026/embedded-iot/","category":"course"},
+    {"id":"course-tesla","title":"Tesla AI","url":"/contents/ai2026/tesla/","category":"course"},
+    {"id":"course-hardware","title":"AI Hardware","url":"/contents/ai2026/ai-hardware/","category":"course"},
+    {"id":"course-openvino","title":"OpenVINO","url":"/contents/ai2026/openvino/","category":"course"},
+    {"id":"course-metaverse","title":"Metaverse XR","url":"/contents/ai2026/metaverse/","category":"course"},
+    {"id":"course-books","title":"Book Summaries","url":"/contents/ai2026/book-summary/","category":"course"},
+    {"id":"course-scholarship","title":"IoT Scholarship","url":"/contents/ai2026/iot-scholarship/","category":"course"},
+    {"id":"pkm-toc","title":"Data DevOps","url":"/contents/pkm/TOC/","category":"pkm"},
+    {"id":"pkm-links","title":"Curated Links","url":"/contents/pkm/links/","category":"pkm"},
+    {"id":"pkm-proof","title":"Site Links","url":"/contents/pkm/proof/","category":"pkm"},
+    {"id":"biz-startup","title":"Startup Guide","url":"/contents/public/startup/","category":"business"},
+    {"id":"biz-seo","title":"SEO for LLMs","url":"/contents/public/seo/","category":"business"},
+    {"id":"biz-linkedin","title":"LinkedIn Posts","url":"/contents/public/linkedin-top-posts/","category":"business"},
+    {"id":"biz-cpp","title":"C++ Reference","url":"/contents/public/cpp/","category":"business"},
+    {"id":"biz-python","title":"Python Config","url":"/contents/public/python/","category":"business"},
+    {"id":"biz-optimization","title":"Optimization","url":"/contents/public/optimization/","category":"business"},
+    {"id":"biz-prompts","title":"Prompts","url":"/contents/public/prompts/","category":"business"},
+    {"id":"biz-setup","title":"Developer Tools","url":"/contents/public/setup/","category":"business"},
+    {"id":"biz-shell","title":"Shell Vim Ref","url":"/contents/public/shell-vim-quickref/","category":"business"},
+    {"id":"biz-token","title":"Token Presentation","url":"/contents/ppt/farshid-ai-cv-llm-presentation/","category":"business"},
+    {"id":"biz-10years","title":"10 Years Bugs","url":"/contents/publications/10Years/","category":"business"},
+    {"id":"biz-cv","title":"CV","url":"/contents/publications/CV/","category":"business"}
+  ];
+
+  function initSearch() {
+    gFuse = new Fuse(CONTENT_INDEX, {
+      keys: [{ name: "title", weight: 2 }],
+      threshold: 0.4, minMatchCharLength: 2
     });
-  };
 
-  window.graphClearHighlight = function () { highlightedNodes.clear(); };
+    var input = document.getElementById("graph-search-input");
+    var countEl = document.getElementById("graph-search-results");
+    if (!input) return;
+    input.addEventListener("input", function () {
+      var q = input.value.trim();
+      if (!q || q.length < 2) { window.graphClearHighlight(); countEl.textContent = ""; return; }
+      var results = gFuse.search(q);
+      if (results.length === 0) { window.graphClearHighlight(); countEl.textContent = "No matches"; return; }
+      var ids = results.map(function (r) { return r.item.id; });
+      window.graphHighlightNodes(ids);
+      countEl.textContent = results.length + " highlighted";
+    });
+  }
 
-  // Load and start
+  // Init
+  resize();
+  window.addEventListener("resize", function () { resize(); if (simulation) { simulation.force("center", d3.forceCenter(W / 2, H / 2)); simulation.force("x", d3.forceX(W / 2).strength(0.03)); simulation.force("y", d3.forceY(H / 2).strength(0.03)); render(); } });
+
   var graphFile = wrap.dataset.graph || "/assets/graph.json";
   fetch(graphFile)
-    .then(function (r) { if (!r.ok) throw new Error("no graph"); return r.json(); })
-    .then(function (data) {
-      resize();
-      initSimulation(data);
-      loop();
-      var stat = document.getElementById("graph-stats");
-      if (stat) stat.textContent = data.nodes.length + " pages · " + data.links.length + " connections · " + Object.keys(CATEGORY_COLORS).length + " categories";
-    })
-    .catch(function () {
-      var stat = document.getElementById("graph-stats");
-      if (stat) stat.textContent = "Graph data missing";
-    });
+    .then(function (r) { return r.json(); })
+    .then(function (data) { setup(data); initSearch(); })
+    .catch(function () { var s = document.getElementById("graph-stats"); if (s) s.textContent = "Graph data missing"; });
 })();

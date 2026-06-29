@@ -87,6 +87,7 @@ extra_css: graph.css
   }
 </style>
 
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
 <script>
 var CONTENT_INDEX = [
