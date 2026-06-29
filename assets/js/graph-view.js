@@ -277,13 +277,17 @@
         ctx.font = (isSel || isHov ? "700" : "600") + " 11px system-ui";
         ctx.textAlign = "center";
         ctx.fillText(n.label, n.x, n.y + nodeR + 12);
-      } else if (!activeNode && zoom > 0.6) {
-        ctx.fillStyle = colors.textMuted;
-        ctx.globalAlpha = 0.5;
-        ctx.font = "500 8px system-ui";
-        ctx.textAlign = "center";
-        var shortLabel = n.label.length > 20 ? n.label.substring(0, 18) + "…" : n.label;
-        ctx.fillText(shortLabel, n.x, n.y + nodeR + 10);
+      } else if (!activeNode) {
+        var maxLen = zoom < 0.4 ? 0 : zoom < 0.7 ? 3 : zoom < 1.0 ? 8 : zoom < 1.5 ? 15 : 999;
+        if (maxLen > 0 && n.label.length > 0) {
+          var displayLabel = n.label.length > maxLen ? n.label.substring(0, maxLen - 1) + "…" : n.label;
+          var fontSize = zoom < 0.7 ? 7 : zoom < 1.0 ? 8 : 9;
+          ctx.fillStyle = colors.textMuted;
+          ctx.globalAlpha = zoom < 0.7 ? 0.35 : 0.5;
+          ctx.font = "500 " + fontSize + "px system-ui";
+          ctx.textAlign = "center";
+          ctx.fillText(displayLabel, n.x, n.y + nodeR + 10);
+        }
       }
       ctx.globalAlpha = 1;
     }
