@@ -21,18 +21,14 @@ extra_css: graph.css
 
   <div class="graph-tabs">
     <button class="graph-tab active" data-tab="all">All</button>
+    <button class="graph-tab" data-tab="page"><span class="dot" style="background:#30d158"></span>Pages</button>
+    <button class="graph-tab" data-tab="tag"><span class="dot" style="background:#af52de"></span>Tags</button>
     <button class="graph-tab" data-tab="hub"><span class="dot" style="background:#0a84ff"></span>Hub</button>
-    <button class="graph-tab" data-tab="cv"><span class="dot" style="background:#30d158"></span>CV</button>
-    <button class="graph-tab" data-tab="ai"><span class="dot" style="background:#bf5af2"></span>AI/LLM</button>
-    <button class="graph-tab" data-tab="cuda"><span class="dot" style="background:#ff9f0a"></span>CUDA</button>
     <button class="graph-tab" data-tab="paper"><span class="dot" style="background:#5ac8fa"></span>Papers</button>
     <button class="graph-tab" data-tab="journal"><span class="dot" style="background:#64d2ff"></span>Journals</button>
     <button class="graph-tab" data-tab="book"><span class="dot" style="background:#ffd60a"></span>Books</button>
     <button class="graph-tab" data-tab="patent"><span class="dot" style="background:#ff375f"></span>Patents</button>
-    <button class="graph-tab" data-tab="keynote"><span class="dot" style="background:#ff6482"></span>Keynote</button>
     <button class="graph-tab" data-tab="course"><span class="dot" style="background:#00c7be"></span>Courses</button>
-    <button class="graph-tab" data-tab="pkm"><span class="dot" style="background:#ac8e68"></span>PKM</button>
-    <button class="graph-tab" data-tab="business"><span class="dot" style="background:#8e8e93"></span>Business</button>
   </div>
 
   <div class="graph-search-wrap">
