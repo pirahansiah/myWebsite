@@ -260,11 +260,30 @@
 
   function hideOpenButton() { if (openBtn) openBtn.style.display = "none"; }
 
-  function updateFilterButtons() {
-    document.querySelectorAll(".graph-filter-btn").forEach(function (btn) {
-      var cat = btn.dataset.category;
-      btn.classList.toggle("active", cat === "all" ? activeCategories.size === Object.keys(COLORS).length : activeCategories.has(cat));
+  function updateTabs() {
+    document.querySelectorAll(".graph-tab").forEach(function (tab) {
+      var cat = tab.dataset.tab;
+      if (cat === "all") {
+        tab.classList.toggle("active", activeCategories.size === Object.keys(COLORS).length);
+      } else {
+        tab.classList.toggle("active", activeCategories.size === 1 && activeCategories.has(cat));
+      }
     });
+  }
+
+  // Tab clicks — show only selected category
+  document.addEventListener("click", function (e) {
+    var tab = e.target.closest(".graph-tab");
+    if (!tab) return;
+    var cat = tab.dataset.tab;
+    if (cat === "all") {
+      activeCategories = new Set(Object.keys(COLORS));
+    } else {
+      activeCategories = new Set([cat]);
+    }
+    updateTabs();
+    render();
+  });
   }
 
   // Setup D3
@@ -297,7 +316,7 @@
     graphNodes.forEach(function (n) { n.r = nodeR(n); });
 
     activeCategories = new Set(Object.keys(COLORS));
-    updateFilterButtons();
+    updateTabs();
 
     // D3 force simulation
     simulation = d3.forceSimulation(graphNodes)
