@@ -235,7 +235,7 @@ title: "Dr. Farshid Pirahansiah ; Embedded Computer Vision & Edge AI"
   <div class="stat-block"><div class="stat-number">12+</div><div class="stat-desc">Years Experience</div></div>
   <div class="stat-block"><div class="stat-number">3</div><div class="stat-desc">Patents</div></div>
   <div class="stat-block"><div class="stat-number">17+</div><div class="stat-desc">Publications</div></div>
-  <div class="stat-block"><div class="stat-number">141+</div><div class="stat-desc">Citations</div></div>
+  <div class="stat-block"><div class="stat-number">142</div><div class="stat-desc">Citations</div></div>
 </div>
 
 <div class="expertise-grid">

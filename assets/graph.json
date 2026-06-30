@@ -1170,6 +1170,13 @@
       "kind": "note"
     },
     {
+      "id": "privacy",
+      "label": "privacy",
+      "url": "/privacy/",
+      "raw": "/privacy/",
+      "kind": "note"
+    },
+    {
       "id": "contents-main-whynot",
       "label": "whyNot",
       "url": "/contents/main/whyNot",
@@ -3624,6 +3631,11 @@
     {
       "source": "contents-main-menus",
       "target": "contents-public-index",
+      "kind": "mdlink"
+    },
+    {
+      "source": "contents-main-terms",
+      "target": "privacy",
       "kind": "mdlink"
     },
     {
