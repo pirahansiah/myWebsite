@@ -284,7 +284,7 @@
 
     // D3 force simulation
     simulation = d3.forceSimulation(graphNodes)
-      .force("link", d3.forceLink(graphLinks).id(function (d) { return d.index; }).distance(80).strength(function (d) { return (d.strength || 0.5) * 0.4; })
+      .force("link", d3.forceLink(graphLinks).id(function (d) { return d.id; }).distance(80).strength(function (d) { return (d.strength || 0.5) * 0.4; })
       .force("charge", d3.forceManyBody().strength(-150).distanceMax(350))
       .force("center", d3.forceCenter(W / 2, H / 2).strength(0.06))
       .force("collide", d3.forceCollide().radius(function (d) { return nodeR(d) + 3; }).strength(0.8))
@@ -336,8 +336,13 @@
         if (draggingNode) return;
         var rect = wrap.getBoundingClientRect();
         var hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
-        if (hit) selectNode(hit);
-        else { selectedNode = null; hideOpenButton(); render(); }
+        if (hit && hit.url) {
+          window.location.href = hit.url;
+        } else if (hit) {
+          selectNode(hit);
+        } else {
+          selectedNode = null; hideOpenButton(); render();
+        }
       })
       .on("dblclick", function (e) {
         var rect = wrap.getBoundingClientRect();
@@ -351,9 +356,10 @@
         var t = e.changedTouches[0];
         var rect = wrap.getBoundingClientRect();
         var hit = hitTest(t.clientX - rect.left, t.clientY - rect.top);
-        if (hit) {
-          if (selectedNode === hit && hit.url) window.location.href = hit.url;
-          else { selectNode(hit); render(); }
+        if (hit && hit.url) {
+          window.location.href = hit.url;
+        } else if (hit) {
+          selectNode(hit); render();
         }
       }
     });
@@ -420,7 +426,8 @@
     }
   });
 
-  fetch("/assets/graph.json")
+  var graphUrl = (wrap && wrap.dataset.graph) || "/assets/graph.json";
+  fetch(graphUrl)
     .then(function (r) { if (!r.ok) throw new Error("no graph"); return r.json(); })
     .then(function (data) { setup(data); initSearch(); })
     .catch(function (e) { console.error("Graph load error:", e); var s = document.getElementById("graph-stats"); if (s) s.textContent = "Graph data missing"; });
