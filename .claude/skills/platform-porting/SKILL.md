@@ -79,10 +79,3 @@ def get_screen_size() -> tuple[int, int]:
 4. ✅ Live test: Run with actual display/mouse to verify accessibility permissions and behavior
 
 ---
-
-## Example: virtual_mouseMacOS.py
-
-**Status**: ✅ Complete and verified (2026-06-19)
-- Path: `/Volumes/4tb/2026-05-26/Work_JOB_UNI/05-AMERIA/_VPEN/VPEN-2026/virtual_mouseMacOS.py`
-- Tested: Imports pass, screen detection works (1728×1117)
-- Ready for: Live hand-tracking + cursor control test

@@ -32,9 +32,9 @@ jobs:
           ruby-version: "3.2"
           bundler-cache: true
 
-      - name: Build navigation from contents/menus.md
+      - name: Build navigation from contents/main/menus.md
         run: |
-          ruby scripts/build-nav.rb || echo "build-nav.rb failed, using committed nav.yml"
+          ruby contents/main/scripts/build-nav.rb || echo "build-nav.rb failed, using committed nav.yml"
 
       - name: Build site
         run: bundle exec jekyll build --destination ./_site
