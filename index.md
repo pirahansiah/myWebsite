@@ -240,7 +240,7 @@ title: "Dr. Farshid Pirahansiah ; Embedded Computer Vision & Edge AI"
 
 <div class="expertise-grid">
 
-  <div class="expertise-card">
+  <a href="/contents/public/cv/" class="expertise-card" style="text-decoration:none;color:inherit;">
     <span class="expertise-icon">&#128065;</span>
     <h3>Embedded Computer Vision</h3>
     <p>Real-time object detection, tracking, and classification on edge devices. From prototype to production deployment on Jetson, Coral, Hailo, and Axelera accelerators.</p>
@@ -250,9 +250,9 @@ title: "Dr. Farshid Pirahansiah ; Embedded Computer Vision & Edge AI"
       <span class="tag">TensorRT</span>
       <span class="tag">ONNX</span>
     </div>
-  </div>
+  </a>
 
-  <div class="expertise-card">
+  <a href="/contents/public/optimization/" class="expertise-card" style="text-decoration:none;color:inherit;">
     <span class="expertise-icon">&#128200;</span>
     <h3>Model Optimization &amp; Quantization</h3>
     <p>INT8/FP16 quantization, pruning, and knowledge distillation. Reduce model size 4-10x while maintaining accuracy for real-time inference on resource-constrained hardware.</p>
@@ -262,9 +262,9 @@ title: "Dr. Farshid Pirahansiah ; Embedded Computer Vision & Edge AI"
       <span class="tag">QDQ</span>
       <span class="tag">Pruning</span>
     </div>
-  </div>
+  </a>
 
-  <div class="expertise-card">
+  <a href="/contents/public/cv/multi-camera-systems/" class="expertise-card" style="text-decoration:none;color:inherit;">
     <span class="expertise-icon">&#127909;</span>
     <h3>Multi-Camera Systems</h3>
     <p>Synchronized multi-camera setups for 3D reconstruction, stereo vision, and surveillance. Scaling from 2 to 100+ cameras with GStreamer and GPU-accelerated pipelines.</p>
@@ -274,9 +274,9 @@ title: "Dr. Farshid Pirahansiah ; Embedded Computer Vision & Edge AI"
       <span class="tag">DeepStream</span>
       <span class="tag">SLAM</span>
     </div>
-  </div>
+  </a>
 
-  <div class="expertise-card">
+  <a href="/contents/public/ai-llm/" class="expertise-card" style="text-decoration:none;color:inherit;">
     <span class="expertise-icon">&#129302;</span>
     <h3>LLM &amp; AI Integration</h3>
     <p>Integrate vision-LLMs, RAG pipelines, and multi-agent systems into CV workflows. Local inference with Ollama, or cloud APIs for production-scale AI applications.</p>
@@ -286,9 +286,9 @@ title: "Dr. Farshid Pirahansiah ; Embedded Computer Vision & Edge AI"
       <span class="tag">Ollama</span>
       <span class="tag">Agents</span>
     </div>
-  </div>
+  </a>
 
-  <div class="expertise-card">
+  <a href="/contents/ai2026/mlops/" class="expertise-card" style="text-decoration:none;color:inherit;">
     <span class="expertise-icon">&#9881;</span>
     <h3>MLOps &amp; CI/CD</h3>
     <p>End-to-end ML pipelines: data collection, training, evaluation, deployment, and monitoring. Docker, Kubernetes, MLflow, and automated model versioning.</p>
@@ -298,9 +298,9 @@ title: "Dr. Farshid Pirahansiah ; Embedded Computer Vision & Edge AI"
       <span class="tag">MLflow</span>
       <span class="tag">CI/CD</span>
     </div>
-  </div>
+  </a>
 
-  <div class="expertise-card">
+  <a href="/contents/ai2026/ai-hardware/" class="expertise-card" style="text-decoration:none;color:inherit;">
     <span class="expertise-icon">&#128204;</span>
     <h3>Hardware Selection &amp; Prototyping</h3>
     <p>Evaluate and select the right AI accelerators for your use case. NVIDIA Jetson, Intel NPU, Hailo-15, Axelera Metis, Google Coral, FPGA, or custom solutions.</p>
@@ -310,7 +310,7 @@ title: "Dr. Farshid Pirahansiah ; Embedded Computer Vision & Edge AI"
       <span class="tag">Axelera</span>
       <span class="tag">FPGA</span>
     </div>
-  </div>
+  </a>
 
 </div>
 
