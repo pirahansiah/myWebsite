@@ -265,18 +265,24 @@
       return n;
     });
     var links = data.links || [];
-    var idxMap = {};
-    graphNodes.forEach(function (n, i) { idxMap[n.id] = i; });
+    var idSet = new Set(graphNodes.map(function (n) { return n.id; }));
 
     graphLinks = [];
     links.forEach(function (l) {
-      var si = typeof l.source === "string" ? idxMap[l.source] : l.source;
-      var ti = typeof l.target === "string" ? idxMap[l.target] : l.target;
-      if (typeof si === "number" && typeof ti === "number" && si !== ti) {
-        graphLinks.push({ source: si, target: ti, strength: l.strength || 0.5 });
-        graphNodes[si].connections++;
-        graphNodes[ti].connections++;
+      var s = typeof l.source === "string" ? l.source : (typeof l.source === "object" ? l.source.id : null);
+      var t = typeof l.target === "string" ? l.target : (typeof l.target === "object" ? l.target.id : null);
+      if (s && t && s !== t && idSet.has(s) && idSet.has(t)) {
+        graphLinks.push({ source: s, target: t, strength: l.strength || l.weight || 0.5 });
       }
+    });
+
+    // Count connections per node
+    graphLinks.forEach(function (l) {
+      var sId = typeof l.source === "object" ? l.source.id : l.source;
+      var tId = typeof l.target === "object" ? l.target.id : l.target;
+      graphNodes.forEach(function (n) {
+        if (n.id === sId || n.id === tId) n.connections++;
+      });
     });
 
     activeCategories = new Set(Object.keys(COLORS));
