@@ -3,13 +3,13 @@
 set -e
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "   🚀  Jekyll Local Development Server"
+echo "   Jekyll Local Development Server"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
 
 # Check if bundle is installed
 if ! command -v bundle &> /dev/null; then
-    echo "❌ Bundle not found. Installing bundler..."
+    echo "Bundle not found. Installing bundler..."
     gem install bundler
 fi
 
@@ -26,9 +26,9 @@ bundle exec jekyll build
 
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "   ✨  Server running at:"
+echo "   Server running at:"
 echo ""
-echo "   🌐  http://localhost:4000"
+echo "   http://localhost:4000"
 echo ""
 echo "   Press Ctrl+C to stop the server"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
