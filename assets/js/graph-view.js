@@ -256,7 +256,10 @@
   });
 
   function setup(data) {
+    var KIND_TO_CATEGORY = { moc: "hub", note: "page", tag: "tag", code: "page" };
     graphNodes = (data.nodes || []).map(function (n, i) {
+      if (!n.category && n.kind) n.category = KIND_TO_CATEGORY[n.kind] || "page";
+      if (!n.category) n.category = "page";
       n.index = i;
       n.connections = 0;
       return n;
@@ -376,53 +379,17 @@
     else { simulation.alpha(0.3).restart(); freezeBtn.textContent = "Freeze"; }
   });
 
-  // Search
-  var CONTENT_INDEX = [
-    {"id":"hub-product","title":"Product"},{"id":"hub-research","title":"Research"},
-    {"id":"hub-solutions","title":"Solutions"},{"id":"hub-content","title":"Content Hub"},
-    {"id":"hub-wiki","title":"Wiki"},{"id":"hub-portfolio","title":"Portfolio"},
-    {"id":"page-cv-3d","title":"3D Vision"},{"id":"page-cv-optical","title":"Optical Flow"},
-    {"id":"page-cv-multi","title":"Multi-Camera"},{"id":"page-cv-coaching","title":"CV Coaching"},
-    {"id":"page-cv-enter","title":"CV Overview"},
-    {"id":"page-ai-llm","title":"LLM Concepts"},{"id":"page-ai-agents","title":"AI Agents"},
-    {"id":"page-ai-blog","title":"AI Blog"},{"id":"page-ai-avatar","title":"Avatar Generator"},
-    {"id":"page-cuda-numba","title":"Numba JIT"},{"id":"page-cuda-pycuda","title":"PyCUDA"},
-    {"id":"page-cuda-vscode","title":"CUDA VS Code"},{"id":"page-cuda-mlx","title":"MLX CoreML"},
-    {"id":"page-paper-seg","title":"Adaptive Segmentation"},{"id":"page-paper-entropy","title":"License Plate Entropy"},
-    {"id":"page-paper-multi","title":"Multi-threshold Plate"},{"id":"page-paper-handwritten","title":"Thresholding Handwritten"},
-    {"id":"page-paper-camcal","title":"Camera Calibration"},{"id":"page-paper-pattern","title":"Pattern Calibration"},
-    {"id":"page-paper-2d3d","title":"2D vs 3D Map"},{"id":"page-paper-char","title":"Character Recognition"},
-    {"id":"page-paper-class","title":"Classification"},{"id":"page-paper-tafresh","title":"TafreshGrid"},
-    {"id":"page-journal-psnr","title":"Adaptive PSNR"},{"id":"page-journal-gsft","title":"GSFT-PSNR"},
-    {"id":"page-journal-seg","title":"PSNR Segmentation"},{"id":"page-journal-char","title":"Character Recognition"},
-    {"id":"page-journal-slam","title":"3D SLAM"},{"id":"page-journal-ant","title":"Ant Colony"},
-    {"id":"page-book-optflow","title":"Optical Flow Book"},{"id":"page-book-camcal","title":"Camera Calibration Book"},
-    {"id":"page-book-cvllm","title":"CV Meets LLM"},{"id":"page-book-opencv0","title":"OpenCV 5 Ch.0"},
-    {"id":"page-book-opencv1","title":"OpenCV 5 Ch.1"},{"id":"page-book-opencv2","title":"OpenCV 5 Ch.2"},
-    {"id":"page-book-opencv3","title":"OpenCV 5 Ch.3"},
-    {"id":"page-patent-face","title":"Face Augmentation"},{"id":"page-patent-facial","title":"Facial Analysis Ad"},
-    {"id":"page-patent-vehicle","title":"Vehicle Detection"},
-    {"id":"page-keynote-llm","title":"LLMs Meet CV"},
-    {"id":"page-course-ml","title":"ML Specialization"},{"id":"page-course-fsdl","title":"Full Stack DL"},
-    {"id":"page-course-mlops","title":"MLOps"},{"id":"page-course-ros","title":"ROS"},
-    {"id":"page-course-parallel","title":"Parallel Programming"},{"id":"page-course-cpp","title":"Modern C++"},
-    {"id":"page-course-k8s","title":"Cloud-Native"},{"id":"page-course-tf","title":"TensorFlow Deploy"},
-    {"id":"page-course-riscv","title":"RISC-V"},{"id":"page-course-edgeai","title":"Edge AI Summit"},
-    {"id":"page-course-iot","title":"Embedded IoT"},{"id":"page-course-tesla","title":"Tesla AI"},
-    {"id":"page-course-hardware","title":"AI Hardware"},{"id":"page-course-openvino","title":"OpenVINO"},
-    {"id":"page-course-metaverse","title":"Metaverse XR"},{"id":"page-course-books","title":"Book Summaries"},
-    {"id":"page-course-scholarship","title":"IoT Scholarship"},
-    {"id":"page-pkm-toc","title":"Data DevOps"},{"id":"page-pkm-links","title":"Curated Links"},
-    {"id":"page-pkm-proof","title":"Site Links"},
-    {"id":"page-biz-startup","title":"Startup Guide"},{"id":"page-biz-seo","title":"SEO for LLMs"},
-    {"id":"page-biz-linkedin","title":"LinkedIn Posts"},{"id":"page-biz-cpp","title":"C++ Reference"},
-    {"id":"page-biz-python","title":"Python Config"},{"id":"page-biz-optimization","title":"Optimization"},
-    {"id":"page-biz-prompts","title":"Prompts"},{"id":"page-biz-setup","title":"Developer Tools"},
-    {"id":"page-biz-shell","title":"Shell Vim Ref"},{"id":"page-biz-token","title":"Token Presentation"},
-    {"id":"page-biz-10years","title":"10 Years Bugs"},{"id":"page-biz-cv","title":"CV"}
-  ];
+  // Search — built dynamically from graph nodes
+  var CONTENT_INDEX = [];
+
+  function buildSearchIndex() {
+    CONTENT_INDEX = graphNodes.map(function (n) {
+      return { id: n.id, title: n.label || n.id };
+    });
+  }
 
   function initSearch() {
+    buildSearchIndex();
     gFuse = new Fuse(CONTENT_INDEX, { keys: [{ name: "title", weight: 2 }], threshold: 0.4, minMatchCharLength: 2 });
     var input = document.getElementById("graph-search-input");
     var countEl = document.getElementById("graph-search-results");
