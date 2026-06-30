@@ -570,3 +570,73 @@ code,pre{
     margin: 0 auto;
   }
 }
+
+/* ─── 3-LEVEL NAV — Desktop dropdown nesting ──────────────────────── */
+@media (min-width: 769px) {
+  .nav-sub .nav-sub {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: none;
+    margin-left: 8px;
+    min-width: 200px;
+  }
+
+  .nav-sub li {
+    position: relative;
+  }
+
+  .nav-sub li:hover > .nav-sub {
+    display: flex;
+  }
+
+  .nav-sub .has-children > a::after {
+    content: "▸";
+    margin-left: auto;
+    font-size: 10px;
+    opacity: 0.5;
+  }
+}
+
+/* ─── 3-LEVEL NAV — Mobile: accordion style ────────────────────────── */
+@media (max-width: 768px) {
+  .nav-depth-2 .nav-sub {
+    background: rgba(10, 132, 255, 0.04) !important;
+    border: 1px solid rgba(10, 132, 255, 0.08) !important;
+    border-radius: 12px !important;
+    margin: 4px 0 !important;
+    padding: 4px 6px !important;
+    gap: 1px !important;
+  }
+
+  .nav-depth-2 .nav-sub li a {
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+    min-height: 40px !important;
+    border-radius: 10px !important;
+  }
+
+  .nav-depth-2 > a > .nav-chevron {
+    font-size: 10px !important;
+    opacity: 0.4 !important;
+  }
+
+  .nav-depth-3 {
+    padding-left: 8px !important;
+  }
+
+  .nav-depth-3 > a {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: var(--text-muted) !important;
+    background: transparent !important;
+    border: none !important;
+    min-height: 38px !important;
+    padding: 8px 12px !important;
+  }
+
+  .nav-depth-3 > a:active {
+    background: rgba(10, 132, 255, 0.12) !important;
+    transform: scale(0.98) !important;
+  }
+}

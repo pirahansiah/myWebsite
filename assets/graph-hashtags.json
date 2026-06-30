@@ -1,13 +1,143 @@
 {
   "nodes": [
     {
-      "id": "tag-setup",
-      "label": "#setup",
+      "id": "tag-aihardware",
+      "label": "#AIHardware",
       "kind": "tag"
     },
     {
-      "id": "tag-graph",
-      "label": "#graph",
+      "id": "tag-accelerators",
+      "label": "#Accelerators",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-farshidpirahansiah",
+      "label": "#FarshidPirahansiah",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-books",
+      "label": "#Books",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-knowledgemanagement",
+      "label": "#KnowledgeManagement",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-docker",
+      "label": "#Docker",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-kubernetes",
+      "label": "#Kubernetes",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-cloudnative",
+      "label": "#CloudNative",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-summit",
+      "label": "#Summit",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-embedded",
+      "label": "#Embedded",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-deeplearning",
+      "label": "#DeepLearning",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-stackdeeplearning",
+      "label": "#StackDeepLearning",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-computervision",
+      "label": "#computervision",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-tiziran",
+      "label": "#tiziran",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-metaverse",
+      "label": "#Metaverse",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-spatialcomputing",
+      "label": "#SpatialComputing",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-intel",
+      "label": "#Intel",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-inference",
+      "label": "#Inference",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-parallelprogramming",
+      "label": "#parallelprogramming",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-robotics",
+      "label": "#Robotics",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-tensorflow",
+      "label": "#TensorFlow",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-tesla",
+      "label": "#Tesla",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-autonomousdriving",
+      "label": "#AutonomousDriving",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-topics",
+      "label": "#Topics",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-projects",
+      "label": "#Projects",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-edge",
+      "label": "#edge",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-hailo",
+      "label": "#hailo",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-mlops",
+      "label": "#mlops",
       "kind": "tag"
     },
     {
@@ -23,11 +153,6 @@
     {
       "id": "tag-patents",
       "label": "#patents",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-books",
-      "label": "#books",
       "kind": "tag"
     },
     {
@@ -106,6 +231,11 @@
       "kind": "tag"
     },
     {
+      "id": "tag-github-projects-portfolio",
+      "label": "#github-projects-portfolio",
+      "kind": "tag"
+    },
+    {
       "id": "tag-farshid",
       "label": "#farshid",
       "kind": "tag"
@@ -119,22 +249,647 @@
       "id": "tag-drfarshidpirahansiah",
       "label": "#drfarshidpirahansiah",
       "kind": "tag"
+    },
+    {
+      "id": "tag-include",
+      "label": "#include",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-python",
+      "label": "#Python",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-numba",
+      "label": "#Numba",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-machinelearning",
+      "label": "#MachineLearning",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-performanceoptimization",
+      "label": "#PerformanceOptimization",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-bigdata",
+      "label": "#BigData",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-datascience",
+      "label": "#DataScience",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-pragma",
+      "label": "#pragma",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-devtools",
+      "label": "#DevTools",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-configuration",
+      "label": "#Configuration",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-configfiles",
+      "label": "#ConfigFiles",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-pythontips",
+      "label": "#PythonTips",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-opensource",
+      "label": "#OpenSource",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-tips",
+      "label": "#tips",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-computervision-edge-ai",
+      "label": "#ComputerVision_Edge_AI",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-llm",
+      "label": "#llm",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-multimodal",
+      "label": "#multimodal",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-rag",
+      "label": "#rag",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-multiagent",
+      "label": "#multiagent",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-imageprocessing",
+      "label": "#imageprocessing",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-artificialintelligence",
+      "label": "#ArtificialIntelligence",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-airesources",
+      "label": "#AIResources",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-techeducation",
+      "label": "#TechEducation",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-professionaldevelopment",
+      "label": "#ProfessionalDevelopment",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-aicommunity",
+      "label": "#AICommunity",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-featuredetection",
+      "label": "#featuredetection",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-videostabilization",
+      "label": "#videostabilization",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-slam",
+      "label": "#slam",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-fuzzylogic",
+      "label": "#fuzzylogic",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-faceaugmentation",
+      "label": "#FaceAugmentation",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-surveillance",
+      "label": "#Surveillance",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-digitaladvertising",
+      "label": "#DigitalAdvertising",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-facialrecognition",
+      "label": "#FacialRecognition",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-targetedads",
+      "label": "#TargetedAds",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-vehicledetection",
+      "label": "#VehicleDetection",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-trafficsurveillance",
+      "label": "#TrafficSurveillance",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-costcalculator",
+      "label": "#CostCalculator",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-claude",
+      "label": "#Claude",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-googlegemini",
+      "label": "#GoogleGemini",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-objectdetection",
+      "label": "#objectdetection",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-handwritten",
+      "label": "#handwritten",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-imagesegmentation",
+      "label": "#imagesegmentation",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-psnr",
+      "label": "#psnr",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-thresholding",
+      "label": "#thresholding",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-advertising",
+      "label": "#advertising",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-digitalmarketing",
+      "label": "#DigitalMarketing",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-innovation",
+      "label": "#Innovation",
+      "kind": "tag"
     }
   ],
   "links": [
     {
-      "source": "contents-menus",
-      "target": "tag-setup",
+      "source": "contents-ai2026-ai-hardware",
+      "target": "tag-aihardware",
       "kind": "tag"
     },
     {
-      "source": "contents-menus",
-      "target": "tag-graph",
+      "source": "contents-ai2026-ai-hardware",
+      "target": "tag-accelerators",
       "kind": "tag"
     },
     {
-      "source": "tag-setup",
-      "target": "tag-graph",
+      "source": "contents-ai2026-ai-hardware",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-aihardware",
+      "target": "tag-accelerators",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-aihardware",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-accelerators",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-book-summary",
+      "target": "tag-books",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-book-summary",
+      "target": "tag-knowledgemanagement",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-books",
+      "target": "tag-knowledgemanagement",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-cloud-native",
+      "target": "tag-docker",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-cloud-native",
+      "target": "tag-kubernetes",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-cloud-native",
+      "target": "tag-cloudnative",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-docker",
+      "target": "tag-kubernetes",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-docker",
+      "target": "tag-cloudnative",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-kubernetes",
+      "target": "tag-cloudnative",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-edge-ai-summit",
+      "target": "tag-summit",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-edge-ai-summit",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-summit",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-embedded-iot",
+      "target": "tag-embedded",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-embedded-iot",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-embedded",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-fsdl-2022",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-fsdl-2022",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-deeplearning",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-full-stack-deep-learning",
+      "target": "tag-stackdeeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-full-stack-deep-learning",
+      "target": "tag-computervision",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-full-stack-deep-learning",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-stackdeeplearning",
+      "target": "tag-computervision",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-stackdeeplearning",
+      "target": "tag-deeplearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-computervision",
+      "target": "tag-deeplearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-iot-scholarship",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-machine-learning-specialization",
+      "target": "tag-tiziran",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-machine-learning-specialization",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-tiziran",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-metaverse",
+      "target": "tag-metaverse",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-metaverse",
+      "target": "tag-spatialcomputing",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-metaverse",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-metaverse",
+      "target": "tag-spatialcomputing",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-metaverse",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-spatialcomputing",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-mlops",
+      "target": "tag-computervision",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-mlops",
+      "target": "tag-tiziran",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-computervision",
+      "target": "tag-tiziran",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-modern-cpp",
+      "target": "tag-tiziran",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-openvino",
+      "target": "tag-intel",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-openvino",
+      "target": "tag-inference",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-openvino",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-intel",
+      "target": "tag-inference",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-intel",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-inference",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-parallel-programming",
+      "target": "tag-computervision",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-parallel-programming",
+      "target": "tag-parallelprogramming",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-parallel-programming",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-computervision",
+      "target": "tag-parallelprogramming",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-computervision",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-parallelprogramming",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-risc-v",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-ros",
+      "target": "tag-robotics",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-ros",
+      "target": "tag-tiziran",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-robotics",
+      "target": "tag-tiziran",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-tensorflow-deployment",
+      "target": "tag-tensorflow",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-tensorflow-deployment",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-tensorflow",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-tesla",
+      "target": "tag-tesla",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-tesla",
+      "target": "tag-autonomousdriving",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-tesla",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-tesla",
+      "target": "tag-autonomousdriving",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-tesla",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-autonomousdriving",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-ai2026-topics",
+      "target": "tag-topics",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-topics",
+      "target": "tag-projects",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-ai2026-topics",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-topics",
+      "target": "tag-projects",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-topics",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-projects",
+      "target": "tag-farshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-main-graphnowledge",
+      "target": "tag-edge",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-main-graphnowledge",
+      "target": "tag-hailo",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-main-graphnowledge",
+      "target": "tag-mlops",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-edge",
+      "target": "tag-hailo",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-edge",
+      "target": "tag-mlops",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hailo",
+      "target": "tag-mlops",
       "kind": "cooccur"
     },
     {
@@ -234,6 +989,11 @@
     },
     {
       "source": "contents-pkm-use-cases",
+      "target": "tag-github-projects-portfolio",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-pkm-use-cases",
       "target": "tag-farshid",
       "kind": "tag"
     },
@@ -339,6 +1099,11 @@
     },
     {
       "source": "tag-about",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-about",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -439,6 +1204,11 @@
     },
     {
       "source": "tag-publications",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-publications",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -534,6 +1304,11 @@
     },
     {
       "source": "tag-patents",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-patents",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -624,6 +1399,11 @@
     },
     {
       "source": "tag-books",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-books",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -709,6 +1489,11 @@
     },
     {
       "source": "tag-journals",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-journals",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -789,6 +1574,11 @@
     },
     {
       "source": "tag-conference-papers",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-conference-papers",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -864,6 +1654,11 @@
     },
     {
       "source": "tag-keynotes",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-keynotes",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -934,6 +1729,11 @@
     },
     {
       "source": "tag-camera-calibration-expertise",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-camera-calibration-expertise",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -999,6 +1799,11 @@
     },
     {
       "source": "tag-hardware-platforms",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-hardware-platforms",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -1059,6 +1864,11 @@
     },
     {
       "source": "tag-products-tools",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-products-tools",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -1114,6 +1924,11 @@
     },
     {
       "source": "tag-open-source",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-open-source",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -1164,6 +1979,11 @@
     },
     {
       "source": "tag-technical-content",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-technical-content",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -1209,6 +2029,11 @@
     },
     {
       "source": "tag-cuda-gpu-programming",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cuda-gpu-programming",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -1249,6 +2074,11 @@
     },
     {
       "source": "tag-optical-flow",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optical-flow",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -1284,6 +2114,11 @@
     },
     {
       "source": "tag-optimization",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-optimization",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -1314,6 +2149,11 @@
     },
     {
       "source": "tag-ai-llm",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-ai-llm",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -1339,6 +2179,11 @@
     },
     {
       "source": "tag-cv-coaching-roadmap",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-cv-coaching-roadmap",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -1359,6 +2204,11 @@
     },
     {
       "source": "tag-courses",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-courses",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -1374,6 +2224,11 @@
     },
     {
       "source": "tag-workshops-events",
+      "target": "tag-github-projects-portfolio",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-workshops-events",
       "target": "tag-farshid",
       "kind": "cooccur"
     },
@@ -1384,6 +2239,21 @@
     },
     {
       "source": "tag-workshops-events",
+      "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-github-projects-portfolio",
+      "target": "tag-farshid",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-github-projects-portfolio",
+      "target": "tag-pirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-github-projects-portfolio",
       "target": "tag-drfarshidpirahansiah",
       "kind": "cooccur"
     },
@@ -1400,6 +2270,1246 @@
     {
       "source": "tag-pirahansiah",
       "target": "tag-drfarshidpirahansiah",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-public-cuda-gpu-mlx-coreml-metal",
+      "target": "tag-include",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-cuda-gpu-numba-jit",
+      "target": "tag-python",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-cuda-gpu-numba-jit",
+      "target": "tag-numba",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-cuda-gpu-numba-jit",
+      "target": "tag-machinelearning",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-cuda-gpu-numba-jit",
+      "target": "tag-performanceoptimization",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-cuda-gpu-numba-jit",
+      "target": "tag-bigdata",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-cuda-gpu-numba-jit",
+      "target": "tag-datascience",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-numba",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-machinelearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-performanceoptimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-bigdata",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-numba",
+      "target": "tag-machinelearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-numba",
+      "target": "tag-performanceoptimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-numba",
+      "target": "tag-bigdata",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-numba",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-performanceoptimization",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-bigdata",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-performanceoptimization",
+      "target": "tag-bigdata",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-performanceoptimization",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-bigdata",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-public-cv-3d",
+      "target": "tag-include",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-cv-3d",
+      "target": "tag-pragma",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-include",
+      "target": "tag-pragma",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-public-python-index",
+      "target": "tag-python",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-python-index",
+      "target": "tag-devtools",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-python-index",
+      "target": "tag-configuration",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-python-index",
+      "target": "tag-configfiles",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-python-index",
+      "target": "tag-pythontips",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-python-index",
+      "target": "tag-opensource",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-python-index",
+      "target": "tag-machinelearning",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-python-index",
+      "target": "tag-tips",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-python-index",
+      "target": "tag-include",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-public-python-index",
+      "target": "tag-pragma",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-devtools",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-configuration",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-configfiles",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-pythontips",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-opensource",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-tips",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-include",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-pragma",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-devtools",
+      "target": "tag-configuration",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-devtools",
+      "target": "tag-configfiles",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-devtools",
+      "target": "tag-pythontips",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-devtools",
+      "target": "tag-opensource",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-devtools",
+      "target": "tag-machinelearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-devtools",
+      "target": "tag-tips",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-devtools",
+      "target": "tag-include",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-devtools",
+      "target": "tag-pragma",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configuration",
+      "target": "tag-configfiles",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configuration",
+      "target": "tag-pythontips",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configuration",
+      "target": "tag-opensource",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configuration",
+      "target": "tag-machinelearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configuration",
+      "target": "tag-tips",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configuration",
+      "target": "tag-include",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configuration",
+      "target": "tag-pragma",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configfiles",
+      "target": "tag-pythontips",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configfiles",
+      "target": "tag-opensource",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configfiles",
+      "target": "tag-machinelearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configfiles",
+      "target": "tag-tips",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configfiles",
+      "target": "tag-include",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-configfiles",
+      "target": "tag-pragma",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-pythontips",
+      "target": "tag-opensource",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-pythontips",
+      "target": "tag-machinelearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-pythontips",
+      "target": "tag-tips",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-pythontips",
+      "target": "tag-include",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-pythontips",
+      "target": "tag-pragma",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-opensource",
+      "target": "tag-machinelearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-opensource",
+      "target": "tag-tips",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-opensource",
+      "target": "tag-include",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-opensource",
+      "target": "tag-pragma",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-tips",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-include",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-pragma",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-tips",
+      "target": "tag-include",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-tips",
+      "target": "tag-pragma",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-10years",
+      "target": "tag-computervision-edge-ai",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-computer-vision-meets-llm",
+      "target": "tag-llm",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-computer-vision-meets-llm",
+      "target": "tag-multimodal",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-computer-vision-meets-llm",
+      "target": "tag-rag",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-llm",
+      "target": "tag-multimodal",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-llm",
+      "target": "tag-rag",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-multimodal",
+      "target": "tag-rag",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter0-introduction",
+      "target": "tag-multiagent",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter0-introduction",
+      "target": "tag-llm",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter0-introduction",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-multiagent",
+      "target": "tag-llm",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-multiagent",
+      "target": "tag-deeplearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-llm",
+      "target": "tag-deeplearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-imageprocessing",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-python",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-artificialintelligence",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-machinelearning",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-airesources",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-techeducation",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-professionaldevelopment",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-datascience",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-aicommunity",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-imageprocessing",
+      "target": "tag-python",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-imageprocessing",
+      "target": "tag-artificialintelligence",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-imageprocessing",
+      "target": "tag-machinelearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-imageprocessing",
+      "target": "tag-deeplearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-imageprocessing",
+      "target": "tag-airesources",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-imageprocessing",
+      "target": "tag-techeducation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-imageprocessing",
+      "target": "tag-professionaldevelopment",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-imageprocessing",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-imageprocessing",
+      "target": "tag-aicommunity",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-artificialintelligence",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-deeplearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-airesources",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-techeducation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-professionaldevelopment",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-python",
+      "target": "tag-aicommunity",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-artificialintelligence",
+      "target": "tag-machinelearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-artificialintelligence",
+      "target": "tag-deeplearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-artificialintelligence",
+      "target": "tag-airesources",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-artificialintelligence",
+      "target": "tag-techeducation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-artificialintelligence",
+      "target": "tag-professionaldevelopment",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-artificialintelligence",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-artificialintelligence",
+      "target": "tag-aicommunity",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-deeplearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-airesources",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-techeducation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-professionaldevelopment",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-aicommunity",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-deeplearning",
+      "target": "tag-airesources",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-deeplearning",
+      "target": "tag-techeducation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-deeplearning",
+      "target": "tag-professionaldevelopment",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-deeplearning",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-deeplearning",
+      "target": "tag-aicommunity",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-airesources",
+      "target": "tag-techeducation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-airesources",
+      "target": "tag-professionaldevelopment",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-airesources",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-airesources",
+      "target": "tag-aicommunity",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-techeducation",
+      "target": "tag-professionaldevelopment",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-techeducation",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-techeducation",
+      "target": "tag-aicommunity",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-professionaldevelopment",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-professionaldevelopment",
+      "target": "tag-aicommunity",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-datascience",
+      "target": "tag-aicommunity",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-featuredetection",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-artificialintelligence",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-machinelearning",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-airesources",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-techeducation",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-professionaldevelopment",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-datascience",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-aicommunity",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-featuredetection",
+      "target": "tag-artificialintelligence",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-featuredetection",
+      "target": "tag-machinelearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-featuredetection",
+      "target": "tag-deeplearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-featuredetection",
+      "target": "tag-airesources",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-featuredetection",
+      "target": "tag-techeducation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-featuredetection",
+      "target": "tag-professionaldevelopment",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-featuredetection",
+      "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-featuredetection",
+      "target": "tag-aicommunity",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-books-camera-calibration-video-stabilization",
+      "target": "tag-videostabilization",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-camera-calibration-video-stabilization",
+      "target": "tag-robotics",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-camera-calibration-video-stabilization",
+      "target": "tag-slam",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-videostabilization",
+      "target": "tag-robotics",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-videostabilization",
+      "target": "tag-slam",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-robotics",
+      "target": "tag-slam",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-books-computational-intelligence-optical-flow",
+      "target": "tag-videostabilization",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-books-computational-intelligence-optical-flow",
+      "target": "tag-fuzzylogic",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-videostabilization",
+      "target": "tag-fuzzylogic",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-cv",
+      "target": "tag-faceaugmentation",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-cv",
+      "target": "tag-surveillance",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-cv",
+      "target": "tag-digitaladvertising",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-cv",
+      "target": "tag-facialrecognition",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-cv",
+      "target": "tag-targetedads",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-cv",
+      "target": "tag-vehicledetection",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-cv",
+      "target": "tag-imageprocessing",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-cv",
+      "target": "tag-trafficsurveillance",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-faceaugmentation",
+      "target": "tag-surveillance",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-faceaugmentation",
+      "target": "tag-digitaladvertising",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-faceaugmentation",
+      "target": "tag-facialrecognition",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-faceaugmentation",
+      "target": "tag-targetedads",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-faceaugmentation",
+      "target": "tag-vehicledetection",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-faceaugmentation",
+      "target": "tag-imageprocessing",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-faceaugmentation",
+      "target": "tag-trafficsurveillance",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-surveillance",
+      "target": "tag-digitaladvertising",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-surveillance",
+      "target": "tag-facialrecognition",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-surveillance",
+      "target": "tag-targetedads",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-surveillance",
+      "target": "tag-vehicledetection",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-surveillance",
+      "target": "tag-imageprocessing",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-surveillance",
+      "target": "tag-trafficsurveillance",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-digitaladvertising",
+      "target": "tag-facialrecognition",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-digitaladvertising",
+      "target": "tag-targetedads",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-digitaladvertising",
+      "target": "tag-vehicledetection",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-digitaladvertising",
+      "target": "tag-imageprocessing",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-digitaladvertising",
+      "target": "tag-trafficsurveillance",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-facialrecognition",
+      "target": "tag-targetedads",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-facialrecognition",
+      "target": "tag-vehicledetection",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-facialrecognition",
+      "target": "tag-imageprocessing",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-facialrecognition",
+      "target": "tag-trafficsurveillance",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-targetedads",
+      "target": "tag-vehicledetection",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-targetedads",
+      "target": "tag-imageprocessing",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-targetedads",
+      "target": "tag-trafficsurveillance",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-vehicledetection",
+      "target": "tag-imageprocessing",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-vehicledetection",
+      "target": "tag-trafficsurveillance",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-imageprocessing",
+      "target": "tag-trafficsurveillance",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-keynotes-llms-meet-computer-vision",
+      "target": "tag-multimodal",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-keynotes-llms-meet-computer-vision",
+      "target": "tag-machinelearning",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-keynotes-llms-meet-computer-vision",
+      "target": "tag-costcalculator",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-keynotes-llms-meet-computer-vision",
+      "target": "tag-claude",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-keynotes-llms-meet-computer-vision",
+      "target": "tag-googlegemini",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-multimodal",
+      "target": "tag-machinelearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-multimodal",
+      "target": "tag-costcalculator",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-multimodal",
+      "target": "tag-claude",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-multimodal",
+      "target": "tag-googlegemini",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-costcalculator",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-claude",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-machinelearning",
+      "target": "tag-googlegemini",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-costcalculator",
+      "target": "tag-claude",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-costcalculator",
+      "target": "tag-googlegemini",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-claude",
+      "target": "tag-googlegemini",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-papers-2d-3d-map-movement",
+      "target": "tag-objectdetection",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-papers-2d-3d-map-movement",
+      "target": "tag-robotics",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-objectdetection",
+      "target": "tag-robotics",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-papers-my-conference-paper",
+      "target": "tag-imageprocessing",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-papers-comparison-thresholding-handwritten",
+      "target": "tag-handwritten",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-papers-comparison-thresholding-handwritten",
+      "target": "tag-imagesegmentation",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-papers-comparison-thresholding-handwritten",
+      "target": "tag-psnr",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-handwritten",
+      "target": "tag-imagesegmentation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-handwritten",
+      "target": "tag-psnr",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-imagesegmentation",
+      "target": "tag-psnr",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-papers-multi-threshold-license-plate",
+      "target": "tag-thresholding",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-papers-multi-threshold-license-plate",
+      "target": "tag-imagesegmentation",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-thresholding",
+      "target": "tag-imagesegmentation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "contents-publications-patents-facial-analysis-advertisement",
+      "target": "tag-facialrecognition",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-patents-facial-analysis-advertisement",
+      "target": "tag-advertising",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-patents-facial-analysis-advertisement",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-patents-facial-analysis-advertisement",
+      "target": "tag-digitalmarketing",
+      "kind": "tag"
+    },
+    {
+      "source": "contents-publications-patents-facial-analysis-advertisement",
+      "target": "tag-innovation",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-facialrecognition",
+      "target": "tag-advertising",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-facialrecognition",
+      "target": "tag-deeplearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-facialrecognition",
+      "target": "tag-digitalmarketing",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-facialrecognition",
+      "target": "tag-innovation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-advertising",
+      "target": "tag-deeplearning",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-advertising",
+      "target": "tag-digitalmarketing",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-advertising",
+      "target": "tag-innovation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-deeplearning",
+      "target": "tag-digitalmarketing",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-deeplearning",
+      "target": "tag-innovation",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-digitalmarketing",
+      "target": "tag-innovation",
       "kind": "cooccur"
     }
   ]
