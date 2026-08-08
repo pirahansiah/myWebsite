@@ -218,6 +218,96 @@
   }
 }
 
+/* ─── UNIFIED CONTENT TYPOGRAPHY (all pages, desktop + mobile) ──────── */
+.site-main,
+.site-main.liquid-glass,
+.content-page .page-content,
+.atlas-content {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.site-main h1,
+.site-main h2,
+.site-main h3,
+.site-main h4,
+.site-main h5,
+.site-main h6 {
+  line-height: 1.25;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.site-main h1 { font-size: 1.75rem; }
+.site-main h2 { font-size: 1.35rem; }
+.site-main h3 { font-size: 1.15rem; }
+.site-main h4 { font-size: 1.05rem; }
+.site-main h5 { font-size: 1rem; }
+.site-main h6 { font-size: 0.95rem; }
+
+.site-main p,
+.site-main li {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.site-main a { color: var(--farshid-blue); text-decoration: none; }
+.site-main a:hover { text-decoration: underline; }
+
+/* Share-line blockquote (top of every page) — consistent card look */
+.site-main blockquote {
+  margin: 0.5rem 0 1.5rem;
+  padding: 14px 18px;
+  border-left: 4px solid var(--farshid-blue);
+  border-radius: 12px;
+  background: rgba(10, 132, 255, 0.08);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.site-main blockquote p { margin: 0; }
+
+.site-main blockquote strong { color: var(--text); }
+
+.site-main table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin: 1rem 0;
+}
+
+.site-main th,
+.site-main td {
+  padding: 8px 10px;
+  border: 1px solid var(--glass-border-subtle);
+  text-align: left;
+}
+
+.site-main th { background: rgba(10, 132, 255, 0.08); font-weight: 600; }
+
+.site-main img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Consistent share line in ALL layouts (incl. atlas/page) */
+blockquote {
+  border-left: 4px solid var(--farshid-blue);
+  border-radius: 12px;
+  background: rgba(10, 132, 255, 0.08);
+  padding: 14px 18px;
+  margin: 0.5rem 0 1.5rem;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
 /* ─── NAV DROPDOWN — iOS 27 glass panel ──────────────────────────── */
 .nav-list {
   position: relative;
@@ -527,13 +617,14 @@ code,pre{
 @media (max-width: 768px) {
   .site-main {
     padding: 12px 14px !important;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.65;
   }
 
   .site-main h1 { font-size: 1.5rem; }
-  .site-main h2 { font-size: 1.2rem; }
-  .site-main h3 { font-size: 1.05rem; }
+  .site-main h2 { font-size: 1.25rem; }
+  .site-main h3 { font-size: 1.1rem; }
+  .site-main h4 { font-size: 1rem; }
 
   .bottom-toolbar {
     display: flex;
