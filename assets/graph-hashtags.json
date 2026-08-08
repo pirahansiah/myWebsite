@@ -488,17 +488,17 @@
   ],
   "links": [
     {
-      "source": "contents-ai2026-ai-hardware",
+      "source": "reddit-ai2026-ai-hardware",
       "target": "tag-aihardware",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-ai-hardware",
+      "source": "reddit-ai2026-ai-hardware",
       "target": "tag-accelerators",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-ai-hardware",
+      "source": "reddit-ai2026-ai-hardware",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
@@ -518,12 +518,12 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-book-summary",
+      "source": "reddit-ai2026-book-summary",
       "target": "tag-books",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-book-summary",
+      "source": "reddit-ai2026-book-summary",
       "target": "tag-knowledgemanagement",
       "kind": "tag"
     },
@@ -533,17 +533,17 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-cloud-native",
+      "source": "reddit-ai2026-cloud-native",
       "target": "tag-docker",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-cloud-native",
+      "source": "reddit-ai2026-cloud-native",
       "target": "tag-kubernetes",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-cloud-native",
+      "source": "reddit-ai2026-cloud-native",
       "target": "tag-cloudnative",
       "kind": "tag"
     },
@@ -563,12 +563,12 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-edge-ai-summit",
+      "source": "reddit-ai2026-edge-ai-summit",
       "target": "tag-summit",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-edge-ai-summit",
+      "source": "reddit-ai2026-edge-ai-summit",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
@@ -578,12 +578,12 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-embedded-iot",
+      "source": "reddit-ai2026-embedded-iot",
       "target": "tag-embedded",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-embedded-iot",
+      "source": "reddit-ai2026-embedded-iot",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
@@ -593,12 +593,12 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-fsdl-2022",
+      "source": "reddit-ai2026-fsdl-2022",
       "target": "tag-deeplearning",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-fsdl-2022",
+      "source": "reddit-ai2026-fsdl-2022",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
@@ -608,17 +608,17 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-full-stack-deep-learning",
+      "source": "reddit-ai2026-full-stack-deep-learning",
       "target": "tag-stackdeeplearning",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-full-stack-deep-learning",
+      "source": "reddit-ai2026-full-stack-deep-learning",
       "target": "tag-computervision",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-full-stack-deep-learning",
+      "source": "reddit-ai2026-full-stack-deep-learning",
       "target": "tag-deeplearning",
       "kind": "tag"
     },
@@ -638,17 +638,17 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-iot-scholarship",
+      "source": "reddit-ai2026-iot-scholarship",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-machine-learning-specialization",
+      "source": "reddit-ai2026-machine-learning-specialization",
       "target": "tag-tiziran",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-machine-learning-specialization",
+      "source": "reddit-ai2026-machine-learning-specialization",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
@@ -658,17 +658,17 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-metaverse",
+      "source": "reddit-ai2026-metaverse",
       "target": "tag-metaverse",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-metaverse",
+      "source": "reddit-ai2026-metaverse",
       "target": "tag-spatialcomputing",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-metaverse",
+      "source": "reddit-ai2026-metaverse",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
@@ -688,12 +688,12 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-mlops",
+      "source": "reddit-ai2026-mlops",
       "target": "tag-computervision",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-mlops",
+      "source": "reddit-ai2026-mlops",
       "target": "tag-tiziran",
       "kind": "tag"
     },
@@ -703,22 +703,22 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-modern-cpp",
+      "source": "reddit-ai2026-modern-cpp",
       "target": "tag-tiziran",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-openvino",
+      "source": "reddit-ai2026-openvino",
       "target": "tag-intel",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-openvino",
+      "source": "reddit-ai2026-openvino",
       "target": "tag-inference",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-openvino",
+      "source": "reddit-ai2026-openvino",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
@@ -738,17 +738,17 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-parallel-programming",
+      "source": "reddit-ai2026-parallel-programming",
       "target": "tag-computervision",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-parallel-programming",
+      "source": "reddit-ai2026-parallel-programming",
       "target": "tag-parallelprogramming",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-parallel-programming",
+      "source": "reddit-ai2026-parallel-programming",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
@@ -768,17 +768,17 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-risc-v",
+      "source": "reddit-ai2026-risc-v",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-ros",
+      "source": "reddit-ai2026-ros",
       "target": "tag-robotics",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-ros",
+      "source": "reddit-ai2026-ros",
       "target": "tag-tiziran",
       "kind": "tag"
     },
@@ -788,12 +788,12 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-tensorflow-deployment",
+      "source": "reddit-ai2026-tensorflow-deployment",
       "target": "tag-tensorflow",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-tensorflow-deployment",
+      "source": "reddit-ai2026-tensorflow-deployment",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
@@ -803,17 +803,17 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-tesla",
+      "source": "reddit-ai2026-tesla",
       "target": "tag-tesla",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-tesla",
+      "source": "reddit-ai2026-tesla",
       "target": "tag-autonomousdriving",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-tesla",
+      "source": "reddit-ai2026-tesla",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
@@ -833,17 +833,17 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-ai2026-topics",
+      "source": "reddit-ai2026-topics",
       "target": "tag-topics",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-topics",
+      "source": "reddit-ai2026-topics",
       "target": "tag-projects",
       "kind": "tag"
     },
     {
-      "source": "contents-ai2026-topics",
+      "source": "reddit-ai2026-topics",
       "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
@@ -863,17 +863,17 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-main-graphnowledge",
+      "source": "reddit-main-graphnowledge",
       "target": "tag-edge",
       "kind": "tag"
     },
     {
-      "source": "contents-main-graphnowledge",
+      "source": "reddit-main-graphnowledge",
       "target": "tag-hailo",
       "kind": "tag"
     },
     {
-      "source": "contents-main-graphnowledge",
+      "source": "reddit-main-graphnowledge",
       "target": "tag-mlops",
       "kind": "tag"
     },
@@ -893,117 +893,117 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-about",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-publications",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-patents",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-books",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-journals",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-conference-papers",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-keynotes",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-camera-calibration-expertise",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-hardware-platforms",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-products-tools",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-open-source",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-technical-content",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-cuda-gpu-programming",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-optical-flow",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-optimization",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-ai-llm",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-cv-coaching-roadmap",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-courses",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-workshops-events",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-github-projects-portfolio",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-farshid",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-pirahansiah",
       "kind": "tag"
     },
     {
-      "source": "contents-pkm-use-cases",
+      "source": "reddit-pkm-use-cases",
       "target": "tag-drfarshidpirahansiah",
       "kind": "tag"
     },
@@ -2273,37 +2273,37 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-public-cuda-gpu-mlx-coreml-metal",
+      "source": "reddit-public-cuda-gpu-mlx-coreml-metal",
       "target": "tag-include",
       "kind": "tag"
     },
     {
-      "source": "contents-public-cuda-gpu-numba-jit",
+      "source": "reddit-public-cuda-gpu-numba-jit",
       "target": "tag-python",
       "kind": "tag"
     },
     {
-      "source": "contents-public-cuda-gpu-numba-jit",
+      "source": "reddit-public-cuda-gpu-numba-jit",
       "target": "tag-numba",
       "kind": "tag"
     },
     {
-      "source": "contents-public-cuda-gpu-numba-jit",
+      "source": "reddit-public-cuda-gpu-numba-jit",
       "target": "tag-machinelearning",
       "kind": "tag"
     },
     {
-      "source": "contents-public-cuda-gpu-numba-jit",
+      "source": "reddit-public-cuda-gpu-numba-jit",
       "target": "tag-performanceoptimization",
       "kind": "tag"
     },
     {
-      "source": "contents-public-cuda-gpu-numba-jit",
+      "source": "reddit-public-cuda-gpu-numba-jit",
       "target": "tag-bigdata",
       "kind": "tag"
     },
     {
-      "source": "contents-public-cuda-gpu-numba-jit",
+      "source": "reddit-public-cuda-gpu-numba-jit",
       "target": "tag-datascience",
       "kind": "tag"
     },
@@ -2383,12 +2383,12 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-public-cv-3d",
+      "source": "reddit-public-cv-3d",
       "target": "tag-include",
       "kind": "tag"
     },
     {
-      "source": "contents-public-cv-3d",
+      "source": "reddit-public-cv-3d",
       "target": "tag-pragma",
       "kind": "tag"
     },
@@ -2398,52 +2398,52 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-public-python-index",
+      "source": "reddit-public-python-index",
       "target": "tag-python",
       "kind": "tag"
     },
     {
-      "source": "contents-public-python-index",
+      "source": "reddit-public-python-index",
       "target": "tag-devtools",
       "kind": "tag"
     },
     {
-      "source": "contents-public-python-index",
+      "source": "reddit-public-python-index",
       "target": "tag-configuration",
       "kind": "tag"
     },
     {
-      "source": "contents-public-python-index",
+      "source": "reddit-public-python-index",
       "target": "tag-configfiles",
       "kind": "tag"
     },
     {
-      "source": "contents-public-python-index",
+      "source": "reddit-public-python-index",
       "target": "tag-pythontips",
       "kind": "tag"
     },
     {
-      "source": "contents-public-python-index",
+      "source": "reddit-public-python-index",
       "target": "tag-opensource",
       "kind": "tag"
     },
     {
-      "source": "contents-public-python-index",
+      "source": "reddit-public-python-index",
       "target": "tag-machinelearning",
       "kind": "tag"
     },
     {
-      "source": "contents-public-python-index",
+      "source": "reddit-public-python-index",
       "target": "tag-tips",
       "kind": "tag"
     },
     {
-      "source": "contents-public-python-index",
+      "source": "reddit-public-python-index",
       "target": "tag-include",
       "kind": "tag"
     },
     {
-      "source": "contents-public-python-index",
+      "source": "reddit-public-python-index",
       "target": "tag-pragma",
       "kind": "tag"
     },
@@ -2663,22 +2663,22 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-10years",
+      "source": "reddit-publications-10years",
       "target": "tag-computervision-edge-ai",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-computer-vision-meets-llm",
+      "source": "reddit-publications-books-ai-computer-vision-meets-llm",
       "target": "tag-llm",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-computer-vision-meets-llm",
+      "source": "reddit-publications-books-ai-computer-vision-meets-llm",
       "target": "tag-multimodal",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-computer-vision-meets-llm",
+      "source": "reddit-publications-books-ai-computer-vision-meets-llm",
       "target": "tag-rag",
       "kind": "tag"
     },
@@ -2698,17 +2698,17 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter0-introduction",
+      "source": "reddit-publications-books-ai-opencv5-chapter0-introduction",
       "target": "tag-multiagent",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter0-introduction",
+      "source": "reddit-publications-books-ai-opencv5-chapter0-introduction",
       "target": "tag-llm",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter0-introduction",
+      "source": "reddit-publications-books-ai-opencv5-chapter0-introduction",
       "target": "tag-deeplearning",
       "kind": "tag"
     },
@@ -2728,52 +2728,52 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
       "target": "tag-imageprocessing",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
       "target": "tag-python",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
       "target": "tag-artificialintelligence",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
       "target": "tag-machinelearning",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
       "target": "tag-deeplearning",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
       "target": "tag-airesources",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
       "target": "tag-techeducation",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
       "target": "tag-professionaldevelopment",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
       "target": "tag-datascience",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
       "target": "tag-aicommunity",
       "kind": "tag"
     },
@@ -2988,47 +2988,47 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
       "target": "tag-featuredetection",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
       "target": "tag-artificialintelligence",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
       "target": "tag-machinelearning",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
       "target": "tag-deeplearning",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
       "target": "tag-airesources",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
       "target": "tag-techeducation",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
       "target": "tag-professionaldevelopment",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
       "target": "tag-datascience",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-ai-opencv5-chapter2-feature-detection",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
       "target": "tag-aicommunity",
       "kind": "tag"
     },
@@ -3073,17 +3073,17 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-books-camera-calibration-video-stabilization",
+      "source": "reddit-publications-books-camera-calibration-video-stabilization",
       "target": "tag-videostabilization",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-camera-calibration-video-stabilization",
+      "source": "reddit-publications-books-camera-calibration-video-stabilization",
       "target": "tag-robotics",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-camera-calibration-video-stabilization",
+      "source": "reddit-publications-books-camera-calibration-video-stabilization",
       "target": "tag-slam",
       "kind": "tag"
     },
@@ -3103,12 +3103,12 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-books-computational-intelligence-optical-flow",
+      "source": "reddit-publications-books-computational-intelligence-optical-flow",
       "target": "tag-videostabilization",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-books-computational-intelligence-optical-flow",
+      "source": "reddit-publications-books-computational-intelligence-optical-flow",
       "target": "tag-fuzzylogic",
       "kind": "tag"
     },
@@ -3118,42 +3118,42 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-cv",
+      "source": "reddit-publications-cv",
       "target": "tag-faceaugmentation",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-cv",
+      "source": "reddit-publications-cv",
       "target": "tag-surveillance",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-cv",
+      "source": "reddit-publications-cv",
       "target": "tag-digitaladvertising",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-cv",
+      "source": "reddit-publications-cv",
       "target": "tag-facialrecognition",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-cv",
+      "source": "reddit-publications-cv",
       "target": "tag-targetedads",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-cv",
+      "source": "reddit-publications-cv",
       "target": "tag-vehicledetection",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-cv",
+      "source": "reddit-publications-cv",
       "target": "tag-imageprocessing",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-cv",
+      "source": "reddit-publications-cv",
       "target": "tag-trafficsurveillance",
       "kind": "tag"
     },
@@ -3298,27 +3298,27 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-keynotes-llms-meet-computer-vision",
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
       "target": "tag-multimodal",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-keynotes-llms-meet-computer-vision",
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
       "target": "tag-machinelearning",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-keynotes-llms-meet-computer-vision",
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
       "target": "tag-costcalculator",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-keynotes-llms-meet-computer-vision",
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
       "target": "tag-claude",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-keynotes-llms-meet-computer-vision",
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
       "target": "tag-googlegemini",
       "kind": "tag"
     },
@@ -3373,12 +3373,12 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-papers-2d-3d-map-movement",
+      "source": "reddit-publications-papers-2d-3d-map-movement",
       "target": "tag-objectdetection",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-papers-2d-3d-map-movement",
+      "source": "reddit-publications-papers-2d-3d-map-movement",
       "target": "tag-robotics",
       "kind": "tag"
     },
@@ -3388,22 +3388,22 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-papers-my-conference-paper",
+      "source": "reddit-publications-papers-my-conference-paper",
       "target": "tag-imageprocessing",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-papers-comparison-thresholding-handwritten",
+      "source": "reddit-publications-papers-comparison-thresholding-handwritten",
       "target": "tag-handwritten",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-papers-comparison-thresholding-handwritten",
+      "source": "reddit-publications-papers-comparison-thresholding-handwritten",
       "target": "tag-imagesegmentation",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-papers-comparison-thresholding-handwritten",
+      "source": "reddit-publications-papers-comparison-thresholding-handwritten",
       "target": "tag-psnr",
       "kind": "tag"
     },
@@ -3423,12 +3423,12 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-papers-multi-threshold-license-plate",
+      "source": "reddit-publications-papers-multi-threshold-license-plate",
       "target": "tag-thresholding",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-papers-multi-threshold-license-plate",
+      "source": "reddit-publications-papers-multi-threshold-license-plate",
       "target": "tag-imagesegmentation",
       "kind": "tag"
     },
@@ -3438,27 +3438,27 @@
       "kind": "cooccur"
     },
     {
-      "source": "contents-publications-patents-facial-analysis-advertisement",
+      "source": "reddit-publications-patents-facial-analysis-advertisement",
       "target": "tag-facialrecognition",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-patents-facial-analysis-advertisement",
+      "source": "reddit-publications-patents-facial-analysis-advertisement",
       "target": "tag-advertising",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-patents-facial-analysis-advertisement",
+      "source": "reddit-publications-patents-facial-analysis-advertisement",
       "target": "tag-deeplearning",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-patents-facial-analysis-advertisement",
+      "source": "reddit-publications-patents-facial-analysis-advertisement",
       "target": "tag-digitalmarketing",
       "kind": "tag"
     },
     {
-      "source": "contents-publications-patents-facial-analysis-advertisement",
+      "source": "reddit-publications-patents-facial-analysis-advertisement",
       "target": "tag-innovation",
       "kind": "tag"
     },

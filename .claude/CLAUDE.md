@@ -1,6 +1,6 @@
 # CLAUDE.md — myWebsite
 
-Jekyll site for pirahansiah.com. Content lives in `contents/` (git submodule from PKM repo).
+Jekyll site for pirahansiah.com. Content lives in `reddit/` (git submodule from PKM repo).
 
 ---
 
@@ -21,9 +21,9 @@ conda activate py314
 - Style: Type hints, no wildcard imports, f-strings only
 
 ### Content
-- Jekyll markdown files in `contents/`
+- Jekyll markdown files in `reddit/`
 - YAML frontmatter required (`layout`, `title`)
-- Images in `contents/public/images/`
+- Images in `reddit/public/images/`
 - Use `farshid_default` layout for pages
 
 ---
@@ -68,7 +68,7 @@ If user says: `job done`, `good`, `finished`, `successful`, `complete`, `test ok
 
 ## Permanent Facts
 
-- Jekyll site: pirahansiah.com (submodule at contents/)
+- Jekyll site: pirahansiah.com (submodule at reddit/)
 - Don't touch `.env`, secrets, credentials
 - If something seems wrong, flag it explicitly
 

@@ -45,7 +45,7 @@ Portfolio management and career documentation workflow.
 3. Push to all repos
 
 ### Update Website
-1. Read current `/Volumes/4tb/myWebsite/contents/pkm/use-cases.md`
+1. Read current `/Volumes/4tb/myWebsite/reddit/pkm/use-cases.md`
 2. Add/update "GitHub Projects Portfolio" section
 3. List all projects with:
    - Link to GitHub repo

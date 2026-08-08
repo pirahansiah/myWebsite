@@ -1,6 +1,6 @@
 /**
  * Universal file viewer — keeps site nav/CSS while showing html, pdf, code, etc.
- * Usage: /view/?p=/contents/cv/AboutMe.html
+ * Usage: /view/?p=/reddit/cv/AboutMe.html
  */
 (function () {
   "use strict";
@@ -46,7 +46,7 @@
     }
 
     p = p.trim();
-    if (p.startsWith("contents/")) p = "/" + p;
+    if (p.startsWith("reddit/")) p = "/" + p;
     return p;
   }
 
@@ -54,7 +54,7 @@
     p = normalizeContentPath(p);
     if (!p) return false;
     if (p.indexOf("..") !== -1) return false;
-    return /^\/contents\//i.test(p);
+    return /^\/reddit\//i.test(p);
   }
 
   function showError(msg) {
@@ -128,7 +128,7 @@
 
   function load(filePath) {
     if (!isSafePath(filePath)) {
-      showError("Invalid path. Only files under /contents/ are allowed.");
+      showError("Invalid path. Only files under /reddit/ are allowed.");
       return;
     }
 
@@ -158,7 +158,7 @@
 
   if (!path) {
     if (titleEl) titleEl.textContent = "No file selected";
-    showError('Missing file path. Use <code>/view/?p=/contents/…</code>');
+    showError('Missing file path. Use <code>/view/?p=/reddit/…</code>');
     return;
   }
 
