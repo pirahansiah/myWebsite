@@ -883,192 +883,794 @@
       "kind": "note"
     },
     {
-      "id": "reddit-readme",
-      "label": "README",
-      "url": "/reddit/README",
-      "raw": "/reddit/README",
+      "id": "tag-computervision-edge-ai",
+      "label": "#ComputerVision_Edge_AI",
+      "url": "/reddit/publications/10Years",
+      "raw": "/reddit/publications/10Years",
+      "kind": "tag"
+    },
+    {
+      "id": "reddit-publications-books-ai-computer-vision-meets-llm",
+      "label": "computer-vision-meets-llm",
+      "url": "/reddit/publications/Books/AI/computer-vision-meets-llm",
+      "raw": "/reddit/publications/Books/AI/computer-vision-meets-llm",
       "kind": "note"
     },
     {
-      "id": "tag-aihardware",
-      "label": "#AIHardware",
-      "url": "/reddit/ai2026/ai-hardware",
-      "raw": "/reddit/ai2026/ai-hardware",
+      "id": "tag-llm",
+      "label": "#llm",
+      "url": "/reddit/publications/Books/AI/computer-vision-meets-llm",
+      "raw": "/reddit/publications/Books/AI/computer-vision-meets-llm",
       "kind": "tag"
     },
     {
-      "id": "tag-accelerators",
-      "label": "#Accelerators",
-      "url": "/reddit/ai2026/ai-hardware",
-      "raw": "/reddit/ai2026/ai-hardware",
+      "id": "tag-multimodal",
+      "label": "#multimodal",
+      "url": "/reddit/publications/Books/AI/computer-vision-meets-llm",
+      "raw": "/reddit/publications/Books/AI/computer-vision-meets-llm",
       "kind": "tag"
     },
     {
-      "id": "tag-farshidpirahansiah",
-      "label": "#FarshidPirahansiah",
-      "url": "/reddit/ai2026/ai-hardware",
-      "raw": "/reddit/ai2026/ai-hardware",
+      "id": "tag-rag",
+      "label": "#rag",
+      "url": "/reddit/publications/Books/AI/computer-vision-meets-llm",
+      "raw": "/reddit/publications/Books/AI/computer-vision-meets-llm",
       "kind": "tag"
     },
     {
-      "id": "tag-books",
-      "label": "#Books",
-      "url": "/reddit/ai2026/book-summary",
-      "raw": "/reddit/ai2026/book-summary",
+      "id": "reddit-publications-books-ai-opencv5-chapter3-advanced",
+      "label": "opencv5-chapter3-advanced",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter3-advanced",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter3-advanced",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
+      "label": "opencv5-chapter2-feature-detection",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "kind": "note"
+    },
+    {
+      "id": "tag-featuredetection",
+      "label": "#featuredetection",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
       "kind": "tag"
     },
     {
-      "id": "tag-knowledgemanagement",
-      "label": "#KnowledgeManagement",
-      "url": "/reddit/ai2026/book-summary",
-      "raw": "/reddit/ai2026/book-summary",
+      "id": "tag-artificialintelligence",
+      "label": "#ArtificialIntelligence",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
       "kind": "tag"
     },
     {
-      "id": "tag-docker",
-      "label": "#Docker",
-      "url": "/reddit/ai2026/cloud-native",
-      "raw": "/reddit/ai2026/cloud-native",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-kubernetes",
-      "label": "#Kubernetes",
-      "url": "/reddit/ai2026/cloud-native",
-      "raw": "/reddit/ai2026/cloud-native",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-cloudnative",
-      "label": "#CloudNative",
-      "url": "/reddit/ai2026/cloud-native",
-      "raw": "/reddit/ai2026/cloud-native",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-summit",
-      "label": "#Summit",
-      "url": "/reddit/ai2026/edge-ai-summit",
-      "raw": "/reddit/ai2026/edge-ai-summit",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-embedded",
-      "label": "#Embedded",
-      "url": "/reddit/ai2026/embedded-iot",
-      "raw": "/reddit/ai2026/embedded-iot",
+      "id": "tag-machinelearning",
+      "label": "#MachineLearning",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
       "kind": "tag"
     },
     {
       "id": "tag-deeplearning",
       "label": "#DeepLearning",
-      "url": "/reddit/ai2026/fsdl-2022",
-      "raw": "/reddit/ai2026/fsdl-2022",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
       "kind": "tag"
     },
     {
-      "id": "tag-stackdeeplearning",
-      "label": "#StackDeepLearning",
-      "url": "/reddit/ai2026/full-stack-deep-learning",
-      "raw": "/reddit/ai2026/full-stack-deep-learning",
+      "id": "tag-airesources",
+      "label": "#AIResources",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
       "kind": "tag"
     },
     {
-      "id": "tag-computervision",
-      "label": "#computervision",
-      "url": "/reddit/ai2026/full-stack-deep-learning",
-      "raw": "/reddit/ai2026/full-stack-deep-learning",
+      "id": "tag-techeducation",
+      "label": "#TechEducation",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
       "kind": "tag"
     },
     {
-      "id": "tag-tiziran",
-      "label": "#tiziran",
-      "url": "/reddit/ai2026/machine-learning-specialization",
-      "raw": "/reddit/ai2026/machine-learning-specialization",
+      "id": "tag-professionaldevelopment",
+      "label": "#ProfessionalDevelopment",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
       "kind": "tag"
     },
     {
-      "id": "tag-metaverse",
-      "label": "#Metaverse",
-      "url": "/reddit/ai2026/metaverse",
-      "raw": "/reddit/ai2026/metaverse",
+      "id": "tag-datascience",
+      "label": "#DataScience",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
       "kind": "tag"
     },
     {
-      "id": "tag-spatialcomputing",
-      "label": "#SpatialComputing",
-      "url": "/reddit/ai2026/metaverse",
-      "raw": "/reddit/ai2026/metaverse",
+      "id": "tag-aicommunity",
+      "label": "#AICommunity",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
       "kind": "tag"
     },
     {
-      "id": "tag-intel",
-      "label": "#Intel",
-      "url": "/reddit/ai2026/openvino",
-      "raw": "/reddit/ai2026/openvino",
+      "id": "reddit-publications-books-ai-the-new-developer-era-transforming-your-career-and-building-production-ready-ai-agents-in-2027",
+      "label": "The New Developer Era, Transforming Your Career and Building Production Ready AI Agents in 2027",
+      "url": "/reddit/publications/Books/AI/The New Developer Era, Transforming Your Career and Building Production Ready AI Agents in 2027",
+      "raw": "/reddit/publications/Books/AI/The New Developer Era, Transforming Your Career and Building Production Ready AI Agents in 2027",
+      "kind": "note"
+    },
+    {
+      "id": "tag-multiagent",
+      "label": "#multiagent",
+      "url": "/reddit/publications/Books/AI/The New Developer Era, Transforming Your Career and Building Production Ready AI Agents in 2027",
+      "raw": "/reddit/publications/Books/AI/The New Developer Era, Transforming Your Career and Building Production Ready AI Agents in 2027",
       "kind": "tag"
     },
     {
-      "id": "tag-inference",
-      "label": "#Inference",
-      "url": "/reddit/ai2026/openvino",
-      "raw": "/reddit/ai2026/openvino",
+      "id": "reddit-publications-books-index-books",
+      "label": "index books",
+      "url": "/reddit/publications/Books/index books",
+      "raw": "/reddit/publications/Books/index books",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "label": "opencv5-chapter1-image-basics",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
+      "kind": "note"
+    },
+    {
+      "id": "tag-imageprocessing",
+      "label": "#imageprocessing",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
       "kind": "tag"
     },
     {
-      "id": "tag-parallelprogramming",
-      "label": "#parallelprogramming",
-      "url": "/reddit/ai2026/parallel-programming",
-      "raw": "/reddit/ai2026/parallel-programming",
+      "id": "tag-python",
+      "label": "#python",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
+      "kind": "tag"
+    },
+    {
+      "id": "reddit-camera-calibration-video-stabilization-png",
+      "label": "camera-calibration-video-stabilization",
+      "url": "/view/?p=%2Freddit%2Fcamera-calibration-video-stabilization.png",
+      "raw": "/reddit/camera-calibration-video-stabilization.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-books-camera-calibration-video-stabilization",
+      "label": "camera-calibration-video-stabilization",
+      "url": "/reddit/publications/Books/camera-calibration-video-stabilization/",
+      "raw": "/reddit/publications/Books/camera-calibration-video-stabilization/",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-books-computational-intelligence-optical-flow",
+      "label": "computational-intelligence-optical-flow",
+      "url": "/reddit/publications/Books/computational-intelligence-optical-flow/",
+      "raw": "/reddit/publications/Books/computational-intelligence-optical-flow/",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-books-ai-opencv5-chapter0-introduction",
+      "label": "opencv5-chapter0-introduction",
+      "url": "/reddit/publications/Books/AI/opencv5-chapter0-introduction/",
+      "raw": "/reddit/publications/Books/AI/opencv5-chapter0-introduction/",
+      "kind": "note"
+    },
+    {
+      "id": "tag-videostabilization",
+      "label": "#videostabilization",
+      "url": "/reddit/publications/Books/camera-calibration-video-stabilization",
+      "raw": "/reddit/publications/Books/camera-calibration-video-stabilization",
       "kind": "tag"
     },
     {
       "id": "tag-robotics",
-      "label": "#Robotics",
-      "url": "/reddit/ai2026/ros",
-      "raw": "/reddit/ai2026/ros",
+      "label": "#robotics",
+      "url": "/reddit/publications/Books/camera-calibration-video-stabilization",
+      "raw": "/reddit/publications/Books/camera-calibration-video-stabilization",
       "kind": "tag"
     },
     {
-      "id": "tag-tensorflow",
-      "label": "#TensorFlow",
-      "url": "/reddit/ai2026/tensorflow-deployment",
-      "raw": "/reddit/ai2026/tensorflow-deployment",
+      "id": "tag-slam",
+      "label": "#slam",
+      "url": "/reddit/publications/Books/camera-calibration-video-stabilization",
+      "raw": "/reddit/publications/Books/camera-calibration-video-stabilization",
       "kind": "tag"
     },
     {
-      "id": "tag-tesla",
-      "label": "#Tesla",
-      "url": "/reddit/ai2026/tesla",
-      "raw": "/reddit/ai2026/tesla",
+      "id": "reddit-publications-books-camera-calibration-video-stabilization-png",
+      "label": "camera-calibration-video-stabilization",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FBooks%2Fcamera-calibration-video-stabilization.png",
+      "raw": "/reddit/publications/Books/camera-calibration-video-stabilization.png",
+      "kind": "asset"
+    },
+    {
+      "id": "tag-fuzzylogic",
+      "label": "#fuzzylogic",
+      "url": "/reddit/publications/Books/computational-intelligence-optical-flow",
+      "raw": "/reddit/publications/Books/computational-intelligence-optical-flow",
       "kind": "tag"
     },
     {
-      "id": "tag-autonomousdriving",
-      "label": "#AutonomousDriving",
-      "url": "/reddit/ai2026/tesla",
-      "raw": "/reddit/ai2026/tesla",
+      "id": "reddit-publications-books-computational-intelligence-optical-flow-png",
+      "label": "computational-intelligence-optical-flow",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FBooks%2Fcomputational-intelligence-optical-flow.png",
+      "raw": "/reddit/publications/Books/computational-intelligence-optical-flow.png",
+      "kind": "asset"
+    },
+    {
+      "id": "tag-faceaugmentation",
+      "label": "#FaceAugmentation",
+      "url": "/reddit/publications/CV",
+      "raw": "/reddit/publications/CV",
       "kind": "tag"
     },
     {
-      "id": "tag-topics",
-      "label": "#Topics",
-      "url": "/reddit/ai2026/topics",
-      "raw": "/reddit/ai2026/topics",
+      "id": "tag-surveillance",
+      "label": "#Surveillance",
+      "url": "/reddit/publications/CV",
+      "raw": "/reddit/publications/CV",
       "kind": "tag"
     },
     {
-      "id": "tag-projects",
-      "label": "#Projects",
-      "url": "/reddit/ai2026/topics",
-      "raw": "/reddit/ai2026/topics",
+      "id": "tag-digitaladvertising",
+      "label": "#DigitalAdvertising",
+      "url": "/reddit/publications/CV",
+      "raw": "/reddit/publications/CV",
       "kind": "tag"
     },
     {
-      "id": "reddit-main-readme",
-      "label": "README",
-      "url": "/reddit/main/README",
-      "raw": "/reddit/main/README",
+      "id": "tag-facialrecognition",
+      "label": "#FacialRecognition",
+      "url": "/reddit/publications/CV",
+      "raw": "/reddit/publications/CV",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-targetedads",
+      "label": "#TargetedAds",
+      "url": "/reddit/publications/CV",
+      "raw": "/reddit/publications/CV",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-vehicledetection",
+      "label": "#VehicleDetection",
+      "url": "/reddit/publications/CV",
+      "raw": "/reddit/publications/CV",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-trafficsurveillance",
+      "label": "#TrafficSurveillance",
+      "url": "/reddit/publications/CV",
+      "raw": "/reddit/publications/CV",
+      "kind": "tag"
+    },
+    {
+      "id": "reddit-publications-patents-face-image-augmentation",
+      "label": "face-image-augmentation",
+      "url": "/reddit/publications/Patents/face-image-augmentation",
+      "raw": "/reddit/publications/Patents/face-image-augmentation",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-patents-facial-analysis-advertisement",
+      "label": "facial-analysis-advertisement",
+      "url": "/reddit/publications/Patents/facial-analysis-advertisement",
+      "raw": "/reddit/publications/Patents/facial-analysis-advertisement",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-patents-vehicle-detection",
+      "label": "vehicle-detection",
+      "url": "/reddit/publications/Patents/vehicle-detection",
+      "raw": "/reddit/publications/Patents/vehicle-detection",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-journals-adaptive-thresholding-psnr",
+      "label": "adaptive-thresholding-psnr",
+      "url": "/reddit/publications/Journals/adaptive-thresholding-psnr",
+      "raw": "/reddit/publications/Journals/adaptive-thresholding-psnr",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-journals-character-object-recognition",
+      "label": "character-object-recognition",
+      "url": "/reddit/publications/Journals/character-object-recognition",
+      "raw": "/reddit/publications/Journals/character-object-recognition",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-journals-gsft-psnr-fuzzy-threshold",
+      "label": "gsft-psnr-fuzzy-threshold",
+      "url": "/reddit/publications/Journals/gsft-psnr-fuzzy-threshold",
+      "raw": "/reddit/publications/Journals/gsft-psnr-fuzzy-threshold",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-journals-psnr-threshold-segmentation",
+      "label": "psnr-threshold-segmentation",
+      "url": "/reddit/publications/Journals/psnr-threshold-segmentation",
+      "raw": "/reddit/publications/Journals/psnr-threshold-segmentation",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-journals-3d-slam-humanoid-robots",
+      "label": "3d-slam-humanoid-robots",
+      "url": "/reddit/publications/Journals/3d-slam-humanoid-robots",
+      "raw": "/reddit/publications/Journals/3d-slam-humanoid-robots",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-journals-ant-colony-optimization",
+      "label": "ant-colony-optimization",
+      "url": "/reddit/publications/Journals/ant-colony-optimization",
+      "raw": "/reddit/publications/Journals/ant-colony-optimization",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-2d-3d-map-movement",
+      "label": "2d-3d-map-movement",
+      "url": "/reddit/publications/Papers/2d-3d-map-movement",
+      "raw": "/reddit/publications/Papers/2d-3d-map-movement",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-adaptive-image-segmentation-psnr",
+      "label": "adaptive-image-segmentation-psnr",
+      "url": "/reddit/publications/Papers/adaptive-image-segmentation-psnr",
+      "raw": "/reddit/publications/Papers/adaptive-image-segmentation-psnr",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-classification-geometrical-topological",
+      "label": "classification-geometrical-topological",
+      "url": "/reddit/publications/Papers/classification-geometrical-topological",
+      "raw": "/reddit/publications/Papers/classification-geometrical-topological",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-camera-calibration-multi-modal",
+      "label": "camera-calibration-multi-modal",
+      "url": "/reddit/publications/Papers/camera-calibration-multi-modal",
+      "raw": "/reddit/publications/Papers/camera-calibration-multi-modal",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-character-recognition-global-feature",
+      "label": "character-recognition-global-feature",
+      "url": "/reddit/publications/Papers/character-recognition-global-feature",
+      "raw": "/reddit/publications/Papers/character-recognition-global-feature",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-comparison-thresholding-handwritten",
+      "label": "comparison-thresholding-handwritten",
+      "url": "/reddit/publications/Papers/comparison-thresholding-handwritten",
+      "raw": "/reddit/publications/Papers/comparison-thresholding-handwritten",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-license-plate-recognition-entropy",
+      "label": "license-plate-recognition-entropy",
+      "url": "/reddit/publications/Papers/license-plate-recognition-entropy",
+      "raw": "/reddit/publications/Papers/license-plate-recognition-entropy",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-multi-threshold-license-plate",
+      "label": "multi-threshold-license-plate",
+      "url": "/reddit/publications/Papers/multi-threshold-license-plate",
+      "raw": "/reddit/publications/Papers/multi-threshold-license-plate",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-pattern-image-calibration",
+      "label": "pattern-image-calibration",
+      "url": "/reddit/publications/Papers/pattern-image-calibration",
+      "raw": "/reddit/publications/Papers/pattern-image-calibration",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-tafreshgrid-grid-computing",
+      "label": "tafreshgrid-grid-computing",
+      "url": "/reddit/publications/Papers/tafreshgrid-grid-computing",
+      "raw": "/reddit/publications/Papers/tafreshgrid-grid-computing",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-patents-dr-farshid-pirahansiah-3-patents-ai-innovations-in-vehicle-detection-facial-analysis-and-image-augmentation-png",
+      "label": "Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPatents%2FDr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection%2C_Facial_Analysis%2C_and_Image_Augmentation.png",
+      "raw": "/reddit/publications/Patents/Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-journals-ant-colony-optimization-png",
+      "label": "ant-colony-optimization",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2Fant-colony-optimization.png",
+      "raw": "/reddit/publications/Journals/ant-colony-optimization.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-journals-gsft-psnr-fuzzy-threshold-png",
+      "label": "gsft-psnr-fuzzy-threshold",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2Fgsft-psnr-fuzzy-threshold.png",
+      "raw": "/reddit/publications/Journals/gsft-psnr-fuzzy-threshold.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-journals-3d-slam-humanoid-robots-png",
+      "label": "3d-slam-humanoid-robots",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2F3d-slam-humanoid-robots.png",
+      "raw": "/reddit/publications/Journals/3d-slam-humanoid-robots.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-journals-psnr-threshold-segmentation-png",
+      "label": "psnr-threshold-segmentation",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2Fpsnr-threshold-segmentation.png",
+      "raw": "/reddit/publications/Journals/psnr-threshold-segmentation.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-journals-character-object-recognition-png",
+      "label": "character-object-recognition",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2Fcharacter-object-recognition.png",
+      "raw": "/reddit/publications/Journals/character-object-recognition.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-journals-index",
+      "label": "index",
+      "url": "/reddit/publications/Journals/index",
+      "raw": "/reddit/publications/Journals/index",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-journals-adaptive-thresholding-psnr-png",
+      "label": "adaptive-thresholding-psnr",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2Fadaptive-thresholding-psnr.png",
+      "raw": "/reddit/publications/Journals/adaptive-thresholding-psnr.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-keynotes-index",
+      "label": "index",
+      "url": "/reddit/publications/Keynotes/index",
+      "raw": "/reddit/publications/Keynotes/index",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-keynotes-llms-meet-computer-vision",
+      "label": "llms-meet-computer-vision",
+      "url": "/reddit/publications/Keynotes/llms-meet-computer-vision/",
+      "raw": "/reddit/publications/Keynotes/llms-meet-computer-vision/",
+      "kind": "note"
+    },
+    {
+      "id": "tag-costcalculator",
+      "label": "#CostCalculator",
+      "url": "/reddit/publications/Keynotes/llms-meet-computer-vision",
+      "raw": "/reddit/publications/Keynotes/llms-meet-computer-vision",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-claude",
+      "label": "#Claude",
+      "url": "/reddit/publications/Keynotes/llms-meet-computer-vision",
+      "raw": "/reddit/publications/Keynotes/llms-meet-computer-vision",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-googlegemini",
+      "label": "#GoogleGemini",
+      "url": "/reddit/publications/Keynotes/llms-meet-computer-vision",
+      "raw": "/reddit/publications/Keynotes/llms-meet-computer-vision",
+      "kind": "tag"
+    },
+    {
+      "id": "reddit-public-projects-ai-model-cost-calculator",
+      "label": "AI_Model_Cost_Calculator",
+      "url": "/view/?p=%2Freddit%2Fpublic%2Fprojects%2FAI_Model_Cost_Calculator.html",
+      "raw": "/reddit/public/projects/AI_Model_Cost_Calculator.html",
+      "kind": "asset"
+    },
+    {
+      "id": "microsoft-ai-use-cases-png",
+      "label": "Microsoft_AI_Use_cases",
+      "url": "/view/?p=%2FMicrosoft_AI_Use_cases.png",
+      "raw": "/Microsoft_AI_Use_cases.png",
+      "kind": "asset"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-license-plate-recognition-with-multi-threshold-based-on-entropy-e2ps290",
+      "label": "License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
+      "kind": "note"
+    },
+    {
+      "id": "https-doi-org-10-1109-iceei-2011-6021627",
+      "label": "ICEEI.2011.6021627",
+      "url": "/https://doi.org/10.1109/ICEEI.2011.6021627",
+      "raw": "/https://doi.org/10.1109/ICEEI.2011.6021627",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-license-plate-recognition-entropy-png",
+      "label": "license-plate-recognition-entropy",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Flicense-plate-recognition-entropy.png",
+      "raw": "/reddit/publications/Papers/license-plate-recognition-entropy.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-papers-pattern-image-calibration-png",
+      "label": "pattern-image-calibration",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fpattern-image-calibration.png",
+      "raw": "/reddit/publications/Papers/pattern-image-calibration.png",
+      "kind": "asset"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-tafreshgrid-grid-computing-in-tafresh-university-e2ps3ma",
+      "label": "My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-tafreshgrid-grid-computing-png",
+      "label": "tafreshgrid-grid-computing",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Ftafreshgrid-grid-computing.png",
+      "raw": "/reddit/publications/Papers/tafreshgrid-grid-computing.png",
+      "kind": "asset"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-an-evaluation-of-classification-techniques-using-enhanced-geometrical-topological-feature-analysis-e2ps17l",
+      "label": "My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-classification-geometrical-topological-png",
+      "label": "classification-geometrical-topological",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fclassification-geometrical-topological.png",
+      "raw": "/reddit/publications/Papers/classification-geometrical-topological.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-papers-camera-calibration-multi-modal-png",
+      "label": "camera-calibration-multi-modal",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fcamera-calibration-multi-modal.png",
+      "raw": "/reddit/publications/Papers/camera-calibration-multi-modal.png",
+      "kind": "asset"
+    },
+    {
+      "id": "tag-thresholding",
+      "label": "#thresholding",
+      "url": "/reddit/publications/Papers/multi-threshold-license-plate",
+      "raw": "/reddit/publications/Papers/multi-threshold-license-plate",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-imagesegmentation",
+      "label": "#imagesegmentation",
+      "url": "/reddit/publications/Papers/multi-threshold-license-plate",
+      "raw": "/reddit/publications/Papers/multi-threshold-license-plate",
+      "kind": "tag"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-multi-threshold-approach-for-license-plate-recognition-system-e2ps2fe",
+      "label": "My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
+      "kind": "note"
+    },
+    {
+      "id": "http-waset-org-publications-3636",
+      "label": "3636",
+      "url": "/http://waset.org/publications/3636",
+      "raw": "/http://waset.org/publications/3636",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-multi-threshold-license-plate-png",
+      "label": "multi-threshold-license-plate",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fmulti-threshold-license-plate.png",
+      "raw": "/reddit/publications/Papers/multi-threshold-license-plate.png",
+      "kind": "asset"
+    },
+    {
+      "id": "tag-handwritten",
+      "label": "#handwritten",
+      "url": "/reddit/publications/Papers/comparison-thresholding-handwritten",
+      "raw": "/reddit/publications/Papers/comparison-thresholding-handwritten",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-psnr",
+      "label": "#psnr",
+      "url": "/reddit/publications/Papers/comparison-thresholding-handwritten",
+      "raw": "/reddit/publications/Papers/comparison-thresholding-handwritten",
+      "kind": "tag"
+    },
+    {
+      "id": "reddit-publications-papers-comparison-thresholding-handwritten-png",
+      "label": "comparison-thresholding-handwritten",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fcomparison-thresholding-handwritten.png",
+      "raw": "/reddit/publications/Papers/comparison-thresholding-handwritten.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-papers-index",
+      "label": "index",
+      "url": "/reddit/publications/Papers/index",
+      "raw": "/reddit/publications/Papers/index",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-my-conference-paper",
+      "label": "My_Conference_Paper",
+      "url": "/reddit/publications/Papers/My_Conference_Paper/",
+      "raw": "/reddit/publications/Papers/My_Conference_Paper/",
+      "kind": "note"
+    },
+    {
+      "id": "",
+      "label": "/",
+      "url": "//",
+      "raw": "//",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-png",
+      "label": ".png",
+      "url": "/reddit/publications/Papers/.png",
+      "raw": "/reddit/publications/Papers/.png",
+      "kind": "note"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-character-recognition-based-on-global-feature-e2ps1tp",
+      "label": "My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
+      "kind": "note"
+    },
+    {
+      "id": "https-doi-org-10-1109-iceei-2011-6021649",
+      "label": "ICEEI.2011.6021649",
+      "url": "/https://doi.org/10.1109/ICEEI.2011.6021649",
+      "raw": "/https://doi.org/10.1109/ICEEI.2011.6021649",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-character-recognition-global-feature-png",
+      "label": "character-recognition-global-feature",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fcharacter-recognition-global-feature.png",
+      "raw": "/reddit/publications/Papers/character-recognition-global-feature.png",
+      "kind": "asset"
+    },
+    {
+      "id": "tag-objectdetection",
+      "label": "#objectdetection",
+      "url": "/reddit/publications/Papers/2d-3d-map-movement",
+      "raw": "/reddit/publications/Papers/2d-3d-map-movement",
+      "kind": "tag"
+    },
+    {
+      "id": "http-www-ftsm-ukm-my-cait2012-images-program-20schedule-20cait2012-pdf",
+      "label": "Program%20Schedule%20CAIT2012",
+      "url": "/view/?p=%2Fhttp%3A%2F%2Fwww.ftsm.ukm.my%2Fcait2012%2Fimages%2FProgram%2520Schedule%2520CAIT2012.pdf",
+      "raw": "/http://www.ftsm.ukm.my/cait2012/images/Program%20Schedule%20CAIT2012.pdf",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-papers-2d-3d-map-movement-png",
+      "label": "2d-3d-map-movement",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2F2d-3d-map-movement.png",
+      "raw": "/reddit/publications/Papers/2d-3d-map-movement.png",
+      "kind": "asset"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-paper-adaptive-image-segmentation-based-on-peak-signal-to-noise-ratio-for-a-license-plate-recognition-system-e2ps0ue",
+      "label": "My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-publications-papers-adaptive-image-segmentation-psnr-png",
+      "label": "adaptive-image-segmentation-psnr",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fadaptive-image-segmentation-psnr.png",
+      "raw": "/reddit/publications/Papers/adaptive-image-segmentation-psnr.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-patents-vehicle-detection-png",
+      "label": "vehicle-detection",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPatents%2Fvehicle-detection.png",
+      "raw": "/reddit/publications/Patents/vehicle-detection.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-patents-index",
+      "label": "index",
+      "url": "/reddit/publications/Patents/index",
+      "raw": "/reddit/publications/Patents/index",
+      "kind": "note"
+    },
+    {
+      "id": "tag-advertising",
+      "label": "#advertising",
+      "url": "/reddit/publications/Patents/facial-analysis-advertisement",
+      "raw": "/reddit/publications/Patents/facial-analysis-advertisement",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-digitalmarketing",
+      "label": "#DigitalMarketing",
+      "url": "/reddit/publications/Patents/facial-analysis-advertisement",
+      "raw": "/reddit/publications/Patents/facial-analysis-advertisement",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-innovation",
+      "label": "#Innovation",
+      "url": "/reddit/publications/Patents/facial-analysis-advertisement",
+      "raw": "/reddit/publications/Patents/facial-analysis-advertisement",
+      "kind": "tag"
+    },
+    {
+      "id": "reddit-publications-patents-facial-analysis-advertisement-png",
+      "label": "facial-analysis-advertisement",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPatents%2Ffacial-analysis-advertisement.png",
+      "raw": "/reddit/publications/Patents/facial-analysis-advertisement.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-patents-face-image-augmentation-png",
+      "label": "face-image-augmentation",
+      "url": "/view/?p=%2Freddit%2Fpublications%2FPatents%2Fface-image-augmentation.png",
+      "raw": "/reddit/publications/Patents/face-image-augmentation.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-main-menus",
+      "label": "menus",
+      "url": "/reddit/main/menus",
+      "raw": "/reddit/main/menus",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-main-sitemap",
+      "label": "sitemap",
+      "url": "/reddit/main/sitemap",
+      "raw": "/reddit/main/sitemap",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-main-whynot",
+      "label": "whyNot",
+      "url": "/reddit/main/whyNot",
+      "raw": "/reddit/main/whyNot",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-main-wiki",
+      "label": "wiki",
+      "url": "/reddit/main/wiki",
+      "raw": "/reddit/main/wiki",
       "kind": "note"
     },
     {
@@ -1135,31 +1737,10 @@
       "kind": "note"
     },
     {
-      "id": "reddit-main-menus",
-      "label": "menus",
-      "url": "/reddit/main/menus",
-      "raw": "/reddit/main/menus",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-main-prompts",
-      "label": "prompts",
-      "url": "/reddit/main/prompts",
-      "raw": "/reddit/main/prompts",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-main-search",
-      "label": "search",
-      "url": "/reddit/main/search",
-      "raw": "/reddit/main/search",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-main-sitemap",
-      "label": "sitemap",
-      "url": "/reddit/main/sitemap",
-      "raw": "/reddit/main/sitemap",
+      "id": "reddit-main-readme",
+      "label": "README",
+      "url": "/reddit/main/README",
+      "raw": "/reddit/main/README",
       "kind": "note"
     },
     {
@@ -1177,31 +1758,38 @@
       "kind": "note"
     },
     {
-      "id": "reddit-main-whynot",
-      "label": "whyNot",
-      "url": "/reddit/main/whyNot",
-      "raw": "/reddit/main/whyNot",
+      "id": "reddit-main-search",
+      "label": "search",
+      "url": "/reddit/main/search",
+      "raw": "/reddit/main/search",
       "kind": "note"
     },
     {
-      "id": "reddit-main-wiki",
-      "label": "wiki",
-      "url": "/reddit/main/wiki",
-      "raw": "/reddit/main/wiki",
+      "id": "reddit-main-prompts",
+      "label": "prompts",
+      "url": "/reddit/main/prompts",
+      "raw": "/reddit/main/prompts",
       "kind": "note"
     },
     {
-      "id": "reddit-pkm-toc",
-      "label": "TOC",
-      "url": "/reddit/pkm/TOC",
-      "raw": "/reddit/pkm/TOC",
+      "id": "reddit-readme",
+      "label": "README",
+      "url": "/reddit/README",
+      "raw": "/reddit/README",
       "kind": "note"
     },
     {
-      "id": "reddit-pkm-links",
-      "label": "links",
-      "url": "/reddit/pkm/links",
-      "raw": "/reddit/pkm/links",
+      "id": "reddit-en-guide-note-taking-and-pkm-and-oranization",
+      "label": "guide note taking and PKM and Oranization",
+      "url": "/reddit/EN/guide note taking and PKM and Oranization",
+      "raw": "/reddit/EN/guide note taking and PKM and Oranization",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-boo",
+      "label": "boo",
+      "url": "/reddit/boo",
+      "raw": "/reddit/boo",
       "kind": "note"
     },
     {
@@ -1216,6 +1804,13 @@
       "label": "public",
       "url": "/reddit/public/",
       "raw": "/reddit/public/",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-pkm-toc",
+      "label": "TOC",
+      "url": "/reddit/pkm/TOC",
+      "raw": "/reddit/pkm/TOC",
       "kind": "note"
     },
     {
@@ -1235,6 +1830,13 @@
     {
       "id": "tag-patents",
       "label": "#patents",
+      "url": "/reddit/pkm/use-cases",
+      "raw": "/reddit/pkm/use-cases",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-books",
+      "label": "#books",
       "url": "/reddit/pkm/use-cases",
       "raw": "/reddit/pkm/use-cases",
       "kind": "tag"
@@ -1373,6 +1975,167 @@
       "kind": "tag"
     },
     {
+      "id": "reddit-pkm-links",
+      "label": "links",
+      "url": "/reddit/pkm/links",
+      "raw": "/reddit/pkm/links",
+      "kind": "note"
+    },
+    {
+      "id": "tag-tiziran",
+      "label": "#tiziran",
+      "url": "/reddit/ai2026/machine-learning-specialization",
+      "raw": "/reddit/ai2026/machine-learning-specialization",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-farshidpirahansiah",
+      "label": "#FarshidPirahanSiah",
+      "url": "/reddit/ai2026/machine-learning-specialization",
+      "raw": "/reddit/ai2026/machine-learning-specialization",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-stackdeeplearning",
+      "label": "#StackDeepLearning",
+      "url": "/reddit/ai2026/full-stack-deep-learning",
+      "raw": "/reddit/ai2026/full-stack-deep-learning",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-computervision",
+      "label": "#computervision",
+      "url": "/reddit/ai2026/full-stack-deep-learning",
+      "raw": "/reddit/ai2026/full-stack-deep-learning",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-parallelprogramming",
+      "label": "#parallelprogramming",
+      "url": "/reddit/ai2026/parallel-programming",
+      "raw": "/reddit/ai2026/parallel-programming",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-docker",
+      "label": "#Docker",
+      "url": "/reddit/ai2026/cloud-native",
+      "raw": "/reddit/ai2026/cloud-native",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-kubernetes",
+      "label": "#Kubernetes",
+      "url": "/reddit/ai2026/cloud-native",
+      "raw": "/reddit/ai2026/cloud-native",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-cloudnative",
+      "label": "#CloudNative",
+      "url": "/reddit/ai2026/cloud-native",
+      "raw": "/reddit/ai2026/cloud-native",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-tensorflow",
+      "label": "#TensorFlow",
+      "url": "/reddit/ai2026/tensorflow-deployment",
+      "raw": "/reddit/ai2026/tensorflow-deployment",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-summit",
+      "label": "#Summit",
+      "url": "/reddit/ai2026/edge-ai-summit",
+      "raw": "/reddit/ai2026/edge-ai-summit",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-embedded",
+      "label": "#Embedded",
+      "url": "/reddit/ai2026/embedded-iot",
+      "raw": "/reddit/ai2026/embedded-iot",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-tesla",
+      "label": "#Tesla",
+      "url": "/reddit/ai2026/tesla",
+      "raw": "/reddit/ai2026/tesla",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-autonomousdriving",
+      "label": "#AutonomousDriving",
+      "url": "/reddit/ai2026/tesla",
+      "raw": "/reddit/ai2026/tesla",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-aihardware",
+      "label": "#AIHardware",
+      "url": "/reddit/ai2026/ai-hardware",
+      "raw": "/reddit/ai2026/ai-hardware",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-accelerators",
+      "label": "#Accelerators",
+      "url": "/reddit/ai2026/ai-hardware",
+      "raw": "/reddit/ai2026/ai-hardware",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-intel",
+      "label": "#Intel",
+      "url": "/reddit/ai2026/openvino",
+      "raw": "/reddit/ai2026/openvino",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-inference",
+      "label": "#Inference",
+      "url": "/reddit/ai2026/openvino",
+      "raw": "/reddit/ai2026/openvino",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-metaverse",
+      "label": "#Metaverse",
+      "url": "/reddit/ai2026/metaverse",
+      "raw": "/reddit/ai2026/metaverse",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-spatialcomputing",
+      "label": "#SpatialComputing",
+      "url": "/reddit/ai2026/metaverse",
+      "raw": "/reddit/ai2026/metaverse",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-knowledgemanagement",
+      "label": "#KnowledgeManagement",
+      "url": "/reddit/ai2026/book-summary",
+      "raw": "/reddit/ai2026/book-summary",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-topics",
+      "label": "#Topics",
+      "url": "/reddit/ai2026/topics",
+      "raw": "/reddit/ai2026/topics",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-projects",
+      "label": "#Projects",
+      "url": "/reddit/ai2026/topics",
+      "raw": "/reddit/ai2026/topics",
+      "kind": "tag"
+    },
+    {
       "id": "reddit-projects-imageinmd",
       "label": "imageinMD",
       "url": "/reddit/projects/imageinMD",
@@ -1387,270 +2150,18 @@
       "kind": "note"
     },
     {
-      "id": "reddit-publications-patents-face-image-augmentation",
-      "label": "face-image-augmentation",
-      "url": "/reddit/publications/Patents/face-image-augmentation/",
-      "raw": "/reddit/publications/Patents/face-image-augmentation/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-patents-facial-analysis-advertisement",
-      "label": "facial-analysis-advertisement",
-      "url": "/reddit/publications/Patents/facial-analysis-advertisement/",
-      "raw": "/reddit/publications/Patents/facial-analysis-advertisement/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-patents-vehicle-detection",
-      "label": "vehicle-detection",
-      "url": "/reddit/publications/Patents/vehicle-detection/",
-      "raw": "/reddit/publications/Patents/vehicle-detection/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-books-computational-intelligence-optical-flow",
-      "label": "computational-intelligence-optical-flow",
-      "url": "/reddit/publications/Books/computational-intelligence-optical-flow/",
-      "raw": "/reddit/publications/Books/computational-intelligence-optical-flow/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-books-camera-calibration-video-stabilization",
-      "label": "camera-calibration-video-stabilization",
-      "url": "/reddit/publications/Books/camera-calibration-video-stabilization/",
-      "raw": "/reddit/publications/Books/camera-calibration-video-stabilization/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-adaptive-thresholding-psnr",
-      "label": "adaptive-thresholding-psnr",
-      "url": "/reddit/publications/Journals/adaptive-thresholding-psnr/",
-      "raw": "/reddit/publications/Journals/adaptive-thresholding-psnr/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-character-object-recognition",
-      "label": "character-object-recognition",
-      "url": "/reddit/publications/Journals/character-object-recognition/",
-      "raw": "/reddit/publications/Journals/character-object-recognition/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-gsft-psnr-fuzzy-threshold",
-      "label": "gsft-psnr-fuzzy-threshold",
-      "url": "/reddit/publications/Journals/gsft-psnr-fuzzy-threshold/",
-      "raw": "/reddit/publications/Journals/gsft-psnr-fuzzy-threshold/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-psnr-threshold-segmentation",
-      "label": "psnr-threshold-segmentation",
-      "url": "/reddit/publications/Journals/psnr-threshold-segmentation/",
-      "raw": "/reddit/publications/Journals/psnr-threshold-segmentation/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-3d-slam-humanoid-robots",
-      "label": "3d-slam-humanoid-robots",
-      "url": "/reddit/publications/Journals/3d-slam-humanoid-robots/",
-      "raw": "/reddit/publications/Journals/3d-slam-humanoid-robots/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-ant-colony-optimization",
-      "label": "ant-colony-optimization",
-      "url": "/reddit/publications/Journals/ant-colony-optimization/",
-      "raw": "/reddit/publications/Journals/ant-colony-optimization/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-2d-3d-map-movement",
-      "label": "2d-3d-map-movement",
-      "url": "/reddit/publications/Papers/2d-3d-map-movement/",
-      "raw": "/reddit/publications/Papers/2d-3d-map-movement/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-adaptive-image-segmentation-psnr",
-      "label": "adaptive-image-segmentation-psnr",
-      "url": "/reddit/publications/Papers/adaptive-image-segmentation-psnr/",
-      "raw": "/reddit/publications/Papers/adaptive-image-segmentation-psnr/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-classification-geometrical-topological",
-      "label": "classification-geometrical-topological",
-      "url": "/reddit/publications/Papers/classification-geometrical-topological/",
-      "raw": "/reddit/publications/Papers/classification-geometrical-topological/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-camera-calibration-multi-modal",
-      "label": "camera-calibration-multi-modal",
-      "url": "/reddit/publications/Papers/camera-calibration-multi-modal/",
-      "raw": "/reddit/publications/Papers/camera-calibration-multi-modal/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-character-recognition-global-feature",
-      "label": "character-recognition-global-feature",
-      "url": "/reddit/publications/Papers/character-recognition-global-feature/",
-      "raw": "/reddit/publications/Papers/character-recognition-global-feature/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-comparison-thresholding-handwritten",
-      "label": "comparison-thresholding-handwritten",
-      "url": "/reddit/publications/Papers/comparison-thresholding-handwritten/",
-      "raw": "/reddit/publications/Papers/comparison-thresholding-handwritten/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-license-plate-recognition-entropy",
-      "label": "license-plate-recognition-entropy",
-      "url": "/reddit/publications/Papers/license-plate-recognition-entropy/",
-      "raw": "/reddit/publications/Papers/license-plate-recognition-entropy/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-multi-threshold-license-plate",
-      "label": "multi-threshold-license-plate",
-      "url": "/reddit/publications/Papers/multi-threshold-license-plate/",
-      "raw": "/reddit/publications/Papers/multi-threshold-license-plate/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-pattern-image-calibration",
-      "label": "pattern-image-calibration",
-      "url": "/reddit/publications/Papers/pattern-image-calibration/",
-      "raw": "/reddit/publications/Papers/pattern-image-calibration/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-tafreshgrid-grid-computing",
-      "label": "tafreshgrid-grid-computing",
-      "url": "/reddit/publications/Papers/tafreshgrid-grid-computing/",
-      "raw": "/reddit/publications/Papers/tafreshgrid-grid-computing/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-my-conference-paper",
-      "label": "My_Conference_Paper",
-      "url": "/reddit/publications/Papers/My_Conference_Paper/",
-      "raw": "/reddit/publications/Papers/My_Conference_Paper/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-keynotes-llms-meet-computer-vision",
-      "label": "llms-meet-computer-vision",
-      "url": "/reddit/publications/Keynotes/llms-meet-computer-vision/",
-      "raw": "/reddit/publications/Keynotes/llms-meet-computer-vision/",
-      "kind": "note"
-    },
-    {
       "id": "reddit-public-images-optimizationml-png",
       "label": "optimizationML",
       "url": "/view/?p=%2Freddit%2Fpublic%2Fimages%2FoptimizationML.png",
       "raw": "/reddit/public/images/optimizationML.png",
-      "kind": "note"
+      "kind": "asset"
     },
     {
       "id": "reddit-public-images-under-over-fit-ml-png",
       "label": "under_over_fit_ML",
       "url": "/view/?p=%2Freddit%2Fpublic%2Fimages%2Funder_over_fit_ML.png",
       "raw": "/reddit/public/images/under_over_fit_ML.png",
-      "kind": "note"
-    },
-    {
-      "id": "tag-include",
-      "label": "#include",
-      "url": "/reddit/public/cuda-gpu/mlx-coreml-metal",
-      "raw": "/reddit/public/cuda-gpu/mlx-coreml-metal",
-      "kind": "tag"
-    },
-    {
-      "id": "reddit-buffer-0",
-      "label": "buffer(0)",
-      "url": "/reddit/buffer(0)",
-      "raw": "/reddit/buffer(0)",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-buffer-1",
-      "label": "buffer(1)",
-      "url": "/reddit/buffer(1)",
-      "raw": "/reddit/buffer(1)",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-buffer-2",
-      "label": "buffer(2)",
-      "url": "/reddit/buffer(2)",
-      "raw": "/reddit/buffer(2)",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-thread-position-in-grid",
-      "label": "thread_position_in_grid",
-      "url": "/reddit/thread_position_in_grid",
-      "raw": "/reddit/thread_position_in_grid",
-      "kind": "note"
-    },
-    {
-      "id": "tag-python",
-      "label": "#Python",
-      "url": "/reddit/public/cuda-gpu/numba-jit",
-      "raw": "/reddit/public/cuda-gpu/numba-jit",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-numba",
-      "label": "#Numba",
-      "url": "/reddit/public/cuda-gpu/numba-jit",
-      "raw": "/reddit/public/cuda-gpu/numba-jit",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-machinelearning",
-      "label": "#MachineLearning",
-      "url": "/reddit/public/cuda-gpu/numba-jit",
-      "raw": "/reddit/public/cuda-gpu/numba-jit",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-performanceoptimization",
-      "label": "#PerformanceOptimization",
-      "url": "/reddit/public/cuda-gpu/numba-jit",
-      "raw": "/reddit/public/cuda-gpu/numba-jit",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-bigdata",
-      "label": "#BigData",
-      "url": "/reddit/public/cuda-gpu/numba-jit",
-      "raw": "/reddit/public/cuda-gpu/numba-jit",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-datascience",
-      "label": "#DataScience",
-      "url": "/reddit/public/cuda-gpu/numba-jit",
-      "raw": "/reddit/public/cuda-gpu/numba-jit",
-      "kind": "tag"
-    },
-    {
-      "id": "reddit-public-images-vscodecudawindows-png",
-      "label": "VSCodeCUDAwindows",
-      "url": "/view/?p=%2Freddit%2Fpublic%2Fimages%2FVSCodeCUDAwindows.png",
-      "raw": "/reddit/public/images/VSCodeCUDAwindows.png",
-      "kind": "note"
-    },
-    {
-      "id": "tag-pragma",
-      "label": "#pragma",
-      "url": "/reddit/public/cv/3d",
-      "raw": "/reddit/public/cv/3d",
-      "kind": "tag"
+      "kind": "asset"
     },
     {
       "id": "reddit-public-optimization-index",
@@ -1660,24 +2171,17 @@
       "kind": "note"
     },
     {
-      "id": "reddit-public-product",
-      "label": "product",
-      "url": "/reddit/public/product",
-      "raw": "/reddit/public/product",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-public-projects-solutions-index",
-      "label": "index",
-      "url": "/reddit/public/projects/Solutions/index",
-      "raw": "/reddit/public/projects/Solutions/index",
-      "kind": "note"
-    },
-    {
       "id": "reddit-public-prompts-index",
       "label": "index",
       "url": "/reddit/public/prompts/index",
       "raw": "/reddit/public/prompts/index",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-public-seo-index",
+      "label": "index",
+      "url": "/reddit/public/seo/index",
+      "raw": "/reddit/public/seo/index",
       "kind": "note"
     },
     {
@@ -1730,6 +2234,34 @@
       "kind": "tag"
     },
     {
+      "id": "tag-include",
+      "label": "#include",
+      "url": "/reddit/public/python/index",
+      "raw": "/reddit/public/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-pragma",
+      "label": "#pragma",
+      "url": "/reddit/public/python/index",
+      "raw": "/reddit/public/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "reddit-public-projects-solutions-index",
+      "label": "index",
+      "url": "/reddit/public/projects/Solutions/index",
+      "raw": "/reddit/public/projects/Solutions/index",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-public-product",
+      "label": "product",
+      "url": "/reddit/public/product",
+      "raw": "/reddit/public/product",
+      "kind": "note"
+    },
+    {
       "id": "reddit-public-research",
       "label": "research",
       "url": "/reddit/public/research",
@@ -1737,563 +2269,59 @@
       "kind": "note"
     },
     {
-      "id": "reddit-public-seo-index",
-      "label": "index",
-      "url": "/reddit/public/seo/index",
-      "raw": "/reddit/public/seo/index",
-      "kind": "note"
-    },
-    {
-      "id": "tag-computervision-edge-ai",
-      "label": "#ComputerVision_Edge_AI",
-      "url": "/reddit/publications/10Years",
-      "raw": "/reddit/publications/10Years",
+      "id": "tag-numba",
+      "label": "#Numba",
+      "url": "/reddit/public/cuda-gpu/numba-jit",
+      "raw": "/reddit/public/cuda-gpu/numba-jit",
       "kind": "tag"
     },
     {
-      "id": "reddit-publications-books-ai-computer-vision-meets-llm",
-      "label": "computer-vision-meets-llm",
-      "url": "/reddit/publications/Books/AI/computer-vision-meets-llm",
-      "raw": "/reddit/publications/Books/AI/computer-vision-meets-llm",
-      "kind": "note"
-    },
-    {
-      "id": "tag-llm",
-      "label": "#llm",
-      "url": "/reddit/publications/Books/AI/computer-vision-meets-llm",
-      "raw": "/reddit/publications/Books/AI/computer-vision-meets-llm",
+      "id": "tag-performanceoptimization",
+      "label": "#PerformanceOptimization",
+      "url": "/reddit/public/cuda-gpu/numba-jit",
+      "raw": "/reddit/public/cuda-gpu/numba-jit",
       "kind": "tag"
     },
     {
-      "id": "tag-multimodal",
-      "label": "#multimodal",
-      "url": "/reddit/publications/Books/AI/computer-vision-meets-llm",
-      "raw": "/reddit/publications/Books/AI/computer-vision-meets-llm",
+      "id": "tag-bigdata",
+      "label": "#BigData",
+      "url": "/reddit/public/cuda-gpu/numba-jit",
+      "raw": "/reddit/public/cuda-gpu/numba-jit",
       "kind": "tag"
     },
     {
-      "id": "tag-rag",
-      "label": "#rag",
-      "url": "/reddit/publications/Books/AI/computer-vision-meets-llm",
-      "raw": "/reddit/publications/Books/AI/computer-vision-meets-llm",
-      "kind": "tag"
+      "id": "reddit-public-images-vscodecudawindows-png",
+      "label": "VSCodeCUDAwindows",
+      "url": "/view/?p=%2Freddit%2Fpublic%2Fimages%2FVSCodeCUDAwindows.png",
+      "raw": "/reddit/public/images/VSCodeCUDAwindows.png",
+      "kind": "asset"
     },
     {
-      "id": "reddit-publications-books-ai-opencv5-chapter0-introduction",
-      "label": "opencv5-chapter0-introduction",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter0-introduction",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter0-introduction",
+      "id": "reddit-buffer-0",
+      "label": "buffer(0)",
+      "url": "/reddit/buffer(0)",
+      "raw": "/reddit/buffer(0)",
       "kind": "note"
     },
     {
-      "id": "tag-multiagent",
-      "label": "#multiagent",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter0-introduction",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter0-introduction",
-      "kind": "tag"
-    },
-    {
-      "id": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
-      "label": "opencv5-chapter1-image-basics",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
+      "id": "reddit-buffer-1",
+      "label": "buffer(1)",
+      "url": "/reddit/buffer(1)",
+      "raw": "/reddit/buffer(1)",
       "kind": "note"
     },
     {
-      "id": "tag-imageprocessing",
-      "label": "#imageprocessing",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-artificialintelligence",
-      "label": "#ArtificialIntelligence",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-airesources",
-      "label": "#AIResources",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-techeducation",
-      "label": "#TechEducation",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-professionaldevelopment",
-      "label": "#ProfessionalDevelopment",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-aicommunity",
-      "label": "#AICommunity",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter1-image-basics",
-      "kind": "tag"
-    },
-    {
-      "id": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "label": "opencv5-chapter2-feature-detection",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
+      "id": "reddit-buffer-2",
+      "label": "buffer(2)",
+      "url": "/reddit/buffer(2)",
+      "raw": "/reddit/buffer(2)",
       "kind": "note"
     },
     {
-      "id": "tag-featuredetection",
-      "label": "#featuredetection",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter2-feature-detection",
-      "kind": "tag"
-    },
-    {
-      "id": "reddit-publications-books-ai-opencv5-chapter3-advanced",
-      "label": "opencv5-chapter3-advanced",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter3-advanced",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter3-advanced",
-      "kind": "note"
-    },
-    {
-      "id": "tag-videostabilization",
-      "label": "#videostabilization",
-      "url": "/reddit/publications/Books/camera-calibration-video-stabilization",
-      "raw": "/reddit/publications/Books/camera-calibration-video-stabilization",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-slam",
-      "label": "#slam",
-      "url": "/reddit/publications/Books/camera-calibration-video-stabilization",
-      "raw": "/reddit/publications/Books/camera-calibration-video-stabilization",
-      "kind": "tag"
-    },
-    {
-      "id": "reddit-publications-books-camera-calibration-video-stabilization-png",
-      "label": "camera-calibration-video-stabilization",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FBooks%2Fcamera-calibration-video-stabilization.png",
-      "raw": "/reddit/publications/Books/camera-calibration-video-stabilization.png",
-      "kind": "note"
-    },
-    {
-      "id": "tag-fuzzylogic",
-      "label": "#fuzzylogic",
-      "url": "/reddit/publications/Books/computational-intelligence-optical-flow",
-      "raw": "/reddit/publications/Books/computational-intelligence-optical-flow",
-      "kind": "tag"
-    },
-    {
-      "id": "reddit-publications-books-computational-intelligence-optical-flow-png",
-      "label": "computational-intelligence-optical-flow",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FBooks%2Fcomputational-intelligence-optical-flow.png",
-      "raw": "/reddit/publications/Books/computational-intelligence-optical-flow.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-books-index",
-      "label": "index",
-      "url": "/reddit/publications/Books/index",
-      "raw": "/reddit/publications/Books/index",
-      "kind": "note"
-    },
-    {
-      "id": "tag-faceaugmentation",
-      "label": "#FaceAugmentation",
-      "url": "/reddit/publications/CV",
-      "raw": "/reddit/publications/CV",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-surveillance",
-      "label": "#Surveillance",
-      "url": "/reddit/publications/CV",
-      "raw": "/reddit/publications/CV",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-digitaladvertising",
-      "label": "#DigitalAdvertising",
-      "url": "/reddit/publications/CV",
-      "raw": "/reddit/publications/CV",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-facialrecognition",
-      "label": "#FacialRecognition",
-      "url": "/reddit/publications/CV",
-      "raw": "/reddit/publications/CV",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-targetedads",
-      "label": "#TargetedAds",
-      "url": "/reddit/publications/CV",
-      "raw": "/reddit/publications/CV",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-vehicledetection",
-      "label": "#VehicleDetection",
-      "url": "/reddit/publications/CV",
-      "raw": "/reddit/publications/CV",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-trafficsurveillance",
-      "label": "#TrafficSurveillance",
-      "url": "/reddit/publications/CV",
-      "raw": "/reddit/publications/CV",
-      "kind": "tag"
-    },
-    {
-      "id": "reddit-publications-patents-dr-farshid-pirahansiah-3-patents-ai-innovations-in-vehicle-detection-facial-analysis-and-image-augmentation-png",
-      "label": "Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPatents%2FDr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection%2C_Facial_Analysis%2C_and_Image_Augmentation.png",
-      "raw": "/reddit/publications/Patents/Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-3d-slam-humanoid-robots-png",
-      "label": "3d-slam-humanoid-robots",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2F3d-slam-humanoid-robots.png",
-      "raw": "/reddit/publications/Journals/3d-slam-humanoid-robots.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-adaptive-thresholding-psnr-png",
-      "label": "adaptive-thresholding-psnr",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2Fadaptive-thresholding-psnr.png",
-      "raw": "/reddit/publications/Journals/adaptive-thresholding-psnr.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-ant-colony-optimization-png",
-      "label": "ant-colony-optimization",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2Fant-colony-optimization.png",
-      "raw": "/reddit/publications/Journals/ant-colony-optimization.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-character-object-recognition-png",
-      "label": "character-object-recognition",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2Fcharacter-object-recognition.png",
-      "raw": "/reddit/publications/Journals/character-object-recognition.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-gsft-psnr-fuzzy-threshold-png",
-      "label": "gsft-psnr-fuzzy-threshold",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2Fgsft-psnr-fuzzy-threshold.png",
-      "raw": "/reddit/publications/Journals/gsft-psnr-fuzzy-threshold.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-index",
-      "label": "index",
-      "url": "/reddit/publications/Journals/index",
-      "raw": "/reddit/publications/Journals/index",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-journals-psnr-threshold-segmentation-png",
-      "label": "psnr-threshold-segmentation",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FJournals%2Fpsnr-threshold-segmentation.png",
-      "raw": "/reddit/publications/Journals/psnr-threshold-segmentation.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-keynotes-index",
-      "label": "index",
-      "url": "/reddit/publications/Keynotes/index",
-      "raw": "/reddit/publications/Keynotes/index",
-      "kind": "note"
-    },
-    {
-      "id": "tag-costcalculator",
-      "label": "#CostCalculator",
-      "url": "/reddit/publications/Keynotes/llms-meet-computer-vision",
-      "raw": "/reddit/publications/Keynotes/llms-meet-computer-vision",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-claude",
-      "label": "#Claude",
-      "url": "/reddit/publications/Keynotes/llms-meet-computer-vision",
-      "raw": "/reddit/publications/Keynotes/llms-meet-computer-vision",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-googlegemini",
-      "label": "#GoogleGemini",
-      "url": "/reddit/publications/Keynotes/llms-meet-computer-vision",
-      "raw": "/reddit/publications/Keynotes/llms-meet-computer-vision",
-      "kind": "tag"
-    },
-    {
-      "id": "reddit-public-projects-ai-model-cost-calculator",
-      "label": "AI_Model_Cost_Calculator",
-      "url": "/view/?p=%2Freddit%2Fpublic%2Fprojects%2FAI_Model_Cost_Calculator.html",
-      "raw": "/reddit/public/projects/AI_Model_Cost_Calculator.html",
-      "kind": "note"
-    },
-    {
-      "id": "microsoft-ai-use-cases-png",
-      "label": "Microsoft_AI_Use_cases",
-      "url": "/view/?p=%2FMicrosoft_AI_Use_cases.png",
-      "raw": "/Microsoft_AI_Use_cases.png",
-      "kind": "note"
-    },
-    {
-      "id": "tag-objectdetection",
-      "label": "#objectdetection",
-      "url": "/reddit/publications/Papers/2d-3d-map-movement",
-      "raw": "/reddit/publications/Papers/2d-3d-map-movement",
-      "kind": "tag"
-    },
-    {
-      "id": "http-www-ftsm-ukm-my-cait2012-images-program-20schedule-20cait2012-pdf",
-      "label": "Program%20Schedule%20CAIT2012",
-      "url": "/view/?p=%2Fhttp%3A%2F%2Fwww.ftsm.ukm.my%2Fcait2012%2Fimages%2FProgram%2520Schedule%2520CAIT2012.pdf",
-      "raw": "/http://www.ftsm.ukm.my/cait2012/images/Program%20Schedule%20CAIT2012.pdf",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-2d-3d-map-movement-png",
-      "label": "2d-3d-map-movement",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2F2d-3d-map-movement.png",
-      "raw": "/reddit/publications/Papers/2d-3d-map-movement.png",
-      "kind": "note"
-    },
-    {
-      "id": "",
-      "label": "/",
-      "url": "//",
-      "raw": "//",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-png",
-      "label": ".png",
-      "url": "/reddit/publications/Papers/.png",
-      "raw": "/reddit/publications/Papers/.png",
-      "kind": "note"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-paper-adaptive-image-segmentation-based-on-peak-signal-to-noise-ratio-for-a-license-plate-recognition-system-e2ps0ue",
-      "label": "My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-adaptive-image-segmentation-psnr-png",
-      "label": "adaptive-image-segmentation-psnr",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fadaptive-image-segmentation-psnr.png",
-      "raw": "/reddit/publications/Papers/adaptive-image-segmentation-psnr.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-camera-calibration-multi-modal-png",
-      "label": "camera-calibration-multi-modal",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fcamera-calibration-multi-modal.png",
-      "raw": "/reddit/publications/Papers/camera-calibration-multi-modal.png",
-      "kind": "note"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-character-recognition-based-on-global-feature-e2ps1tp",
-      "label": "My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
-      "kind": "note"
-    },
-    {
-      "id": "https-doi-org-10-1109-iceei-2011-6021649",
-      "label": "ICEEI.2011.6021649",
-      "url": "/https://doi.org/10.1109/ICEEI.2011.6021649",
-      "raw": "/https://doi.org/10.1109/ICEEI.2011.6021649",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-character-recognition-global-feature-png",
-      "label": "character-recognition-global-feature",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fcharacter-recognition-global-feature.png",
-      "raw": "/reddit/publications/Papers/character-recognition-global-feature.png",
-      "kind": "note"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-an-evaluation-of-classification-techniques-using-enhanced-geometrical-topological-feature-analysis-e2ps17l",
-      "label": "My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-classification-geometrical-topological-png",
-      "label": "classification-geometrical-topological",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fclassification-geometrical-topological.png",
-      "raw": "/reddit/publications/Papers/classification-geometrical-topological.png",
-      "kind": "note"
-    },
-    {
-      "id": "tag-handwritten",
-      "label": "#handwritten",
-      "url": "/reddit/publications/Papers/comparison-thresholding-handwritten",
-      "raw": "/reddit/publications/Papers/comparison-thresholding-handwritten",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-imagesegmentation",
-      "label": "#imagesegmentation",
-      "url": "/reddit/publications/Papers/comparison-thresholding-handwritten",
-      "raw": "/reddit/publications/Papers/comparison-thresholding-handwritten",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-psnr",
-      "label": "#psnr",
-      "url": "/reddit/publications/Papers/comparison-thresholding-handwritten",
-      "raw": "/reddit/publications/Papers/comparison-thresholding-handwritten",
-      "kind": "tag"
-    },
-    {
-      "id": "reddit-publications-papers-comparison-thresholding-handwritten-png",
-      "label": "comparison-thresholding-handwritten",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fcomparison-thresholding-handwritten.png",
-      "raw": "/reddit/publications/Papers/comparison-thresholding-handwritten.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-index",
-      "label": "index",
-      "url": "/reddit/publications/Papers/index",
-      "raw": "/reddit/publications/Papers/index",
-      "kind": "note"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-license-plate-recognition-with-multi-threshold-based-on-entropy-e2ps290",
-      "label": "License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
-      "kind": "note"
-    },
-    {
-      "id": "https-doi-org-10-1109-iceei-2011-6021627",
-      "label": "ICEEI.2011.6021627",
-      "url": "/https://doi.org/10.1109/ICEEI.2011.6021627",
-      "raw": "/https://doi.org/10.1109/ICEEI.2011.6021627",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-license-plate-recognition-entropy-png",
-      "label": "license-plate-recognition-entropy",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Flicense-plate-recognition-entropy.png",
-      "raw": "/reddit/publications/Papers/license-plate-recognition-entropy.png",
-      "kind": "note"
-    },
-    {
-      "id": "tag-thresholding",
-      "label": "#thresholding",
-      "url": "/reddit/publications/Papers/multi-threshold-license-plate",
-      "raw": "/reddit/publications/Papers/multi-threshold-license-plate",
-      "kind": "tag"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-multi-threshold-approach-for-license-plate-recognition-system-e2ps2fe",
-      "label": "My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
-      "kind": "note"
-    },
-    {
-      "id": "http-waset-org-publications-3636",
-      "label": "3636",
-      "url": "/http://waset.org/publications/3636",
-      "raw": "/http://waset.org/publications/3636",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-multi-threshold-license-plate-png",
-      "label": "multi-threshold-license-plate",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fmulti-threshold-license-plate.png",
-      "raw": "/reddit/publications/Papers/multi-threshold-license-plate.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-pattern-image-calibration-png",
-      "label": "pattern-image-calibration",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Fpattern-image-calibration.png",
-      "raw": "/reddit/publications/Papers/pattern-image-calibration.png",
-      "kind": "note"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-tafreshgrid-grid-computing-in-tafresh-university-e2ps3ma",
-      "label": "My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-papers-tafreshgrid-grid-computing-png",
-      "label": "tafreshgrid-grid-computing",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPapers%2Ftafreshgrid-grid-computing.png",
-      "raw": "/reddit/publications/Papers/tafreshgrid-grid-computing.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-patents-face-image-augmentation-png",
-      "label": "face-image-augmentation",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPatents%2Fface-image-augmentation.png",
-      "raw": "/reddit/publications/Patents/face-image-augmentation.png",
-      "kind": "note"
-    },
-    {
-      "id": "tag-advertising",
-      "label": "#advertising",
-      "url": "/reddit/publications/Patents/facial-analysis-advertisement",
-      "raw": "/reddit/publications/Patents/facial-analysis-advertisement",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-digitalmarketing",
-      "label": "#DigitalMarketing",
-      "url": "/reddit/publications/Patents/facial-analysis-advertisement",
-      "raw": "/reddit/publications/Patents/facial-analysis-advertisement",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-innovation",
-      "label": "#Innovation",
-      "url": "/reddit/publications/Patents/facial-analysis-advertisement",
-      "raw": "/reddit/publications/Patents/facial-analysis-advertisement",
-      "kind": "tag"
-    },
-    {
-      "id": "reddit-publications-patents-facial-analysis-advertisement-png",
-      "label": "facial-analysis-advertisement",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPatents%2Ffacial-analysis-advertisement.png",
-      "raw": "/reddit/publications/Patents/facial-analysis-advertisement.png",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-patents-index",
-      "label": "index",
-      "url": "/reddit/publications/Patents/index",
-      "raw": "/reddit/publications/Patents/index",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-patents-vehicle-detection-png",
-      "label": "vehicle-detection",
-      "url": "/view/?p=%2Freddit%2Fpublications%2FPatents%2Fvehicle-detection.png",
-      "raw": "/reddit/publications/Patents/vehicle-detection.png",
+      "id": "reddit-thread-position-in-grid",
+      "label": "thread_position_in_grid",
+      "url": "/reddit/thread_position_in_grid",
+      "raw": "/reddit/thread_position_in_grid",
       "kind": "note"
     }
   ],
@@ -2914,439 +2942,729 @@
       "kind": "link"
     },
     {
-      "source": "reddit-ai2026-ai-hardware",
-      "target": "tag-aihardware",
+      "source": "reddit-publications-10years",
+      "target": "tag-computervision-edge-ai",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-ai-hardware",
-      "target": "tag-accelerators",
+      "source": "reddit-publications-books-ai-computer-vision-meets-llm",
+      "target": "tag-llm",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-ai-hardware",
-      "target": "tag-farshidpirahansiah",
+      "source": "reddit-publications-books-ai-computer-vision-meets-llm",
+      "target": "tag-multimodal",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-book-summary",
-      "target": "tag-books",
+      "source": "reddit-publications-books-ai-computer-vision-meets-llm",
+      "target": "tag-rag",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-book-summary",
-      "target": "tag-knowledgemanagement",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-featuredetection",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-book-summary",
-      "target": "reddit-ai2026-topics",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-book-summary",
-      "target": "reddit-ai2026-machine-learning-specialization",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-book-summary",
-      "target": "reddit-ai2026-full-stack-deep-learning",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-book-summary",
-      "target": "reddit-ai2026-mlops",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-book-summary",
-      "target": "reddit-pkm-use-cases",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-cloud-native",
-      "target": "tag-docker",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-artificialintelligence",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-cloud-native",
-      "target": "tag-kubernetes",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-machinelearning",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-cloud-native",
-      "target": "tag-cloudnative",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-ai2026-edge-ai-summit",
-      "target": "tag-summit",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-ai2026-edge-ai-summit",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-ai2026-embedded-iot",
-      "target": "tag-embedded",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-ai2026-embedded-iot",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-ai2026-fsdl-2022",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
       "target": "tag-deeplearning",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-fsdl-2022",
-      "target": "tag-farshidpirahansiah",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-airesources",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-full-stack-deep-learning",
-      "target": "tag-stackdeeplearning",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-techeducation",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-full-stack-deep-learning",
-      "target": "tag-computervision",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-professionaldevelopment",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-full-stack-deep-learning",
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-datascience",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
+      "target": "tag-aicommunity",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-books-ai-the-new-developer-era-transforming-your-career-and-building-production-ready-ai-agents-in-2027",
+      "target": "tag-multiagent",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-books-ai-the-new-developer-era-transforming-your-career-and-building-production-ready-ai-agents-in-2027",
+      "target": "tag-llm",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-books-ai-the-new-developer-era-transforming-your-career-and-building-production-ready-ai-agents-in-2027",
       "target": "tag-deeplearning",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-iot-scholarship",
-      "target": "tag-farshidpirahansiah",
+      "source": "reddit-publications-books-ai-the-new-developer-era-transforming-your-career-and-building-production-ready-ai-agents-in-2027",
+      "target": "reddit-publications-books-index-books",
+      "kind": "wiki"
+    },
+    {
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-imageprocessing",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-machine-learning-specialization",
-      "target": "tag-tiziran",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-python",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-machine-learning-specialization",
-      "target": "tag-farshidpirahansiah",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-artificialintelligence",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-metaverse",
-      "target": "tag-metaverse",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-machinelearning",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-metaverse",
-      "target": "tag-spatialcomputing",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-deeplearning",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-metaverse",
-      "target": "tag-farshidpirahansiah",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-airesources",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-mlops",
-      "target": "tag-computervision",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-techeducation",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-mlops",
-      "target": "tag-tiziran",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-professionaldevelopment",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-modern-cpp",
-      "target": "tag-tiziran",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-datascience",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-openvino",
-      "target": "tag-intel",
+      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "target": "tag-aicommunity",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-openvino",
-      "target": "tag-inference",
+      "source": "reddit-publications-books-index-books",
+      "target": "reddit-camera-calibration-video-stabilization-png",
+      "kind": "wiki"
+    },
+    {
+      "source": "reddit-publications-books-index-books",
+      "target": "reddit-publications-books-camera-calibration-video-stabilization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index-books",
+      "target": "reddit-publications-books-computational-intelligence-optical-flow",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index-books",
+      "target": "reddit-publications-books-ai-computer-vision-meets-llm",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index-books",
+      "target": "reddit-publications-books-ai-opencv5-chapter0-introduction",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index-books",
+      "target": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index-books",
+      "target": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index-books",
+      "target": "reddit-publications-books-ai-opencv5-chapter3-advanced",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-camera-calibration-video-stabilization",
+      "target": "tag-videostabilization",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-openvino",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-ai2026-parallel-programming",
-      "target": "tag-computervision",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-ai2026-parallel-programming",
-      "target": "tag-parallelprogramming",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-ai2026-parallel-programming",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-ai2026-risc-v",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-ai2026-ros",
+      "source": "reddit-publications-books-camera-calibration-video-stabilization",
       "target": "tag-robotics",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-ros",
-      "target": "tag-tiziran",
+      "source": "reddit-publications-books-camera-calibration-video-stabilization",
+      "target": "tag-slam",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-tensorflow-deployment",
-      "target": "tag-tensorflow",
+      "source": "reddit-publications-books-camera-calibration-video-stabilization",
+      "target": "reddit-publications-books-camera-calibration-video-stabilization-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-computational-intelligence-optical-flow",
+      "target": "tag-videostabilization",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-tensorflow-deployment",
-      "target": "tag-farshidpirahansiah",
+      "source": "reddit-publications-books-computational-intelligence-optical-flow",
+      "target": "tag-fuzzylogic",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-tesla",
-      "target": "tag-tesla",
+      "source": "reddit-publications-books-computational-intelligence-optical-flow",
+      "target": "reddit-publications-books-computational-intelligence-optical-flow-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "tag-faceaugmentation",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-tesla",
-      "target": "tag-autonomousdriving",
+      "source": "reddit-publications-cv",
+      "target": "tag-surveillance",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-tesla",
-      "target": "tag-farshidpirahansiah",
+      "source": "reddit-publications-cv",
+      "target": "tag-digitaladvertising",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-topics",
-      "target": "tag-topics",
+      "source": "reddit-publications-cv",
+      "target": "tag-facialrecognition",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-topics",
-      "target": "tag-projects",
+      "source": "reddit-publications-cv",
+      "target": "tag-targetedads",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-topics",
-      "target": "tag-farshidpirahansiah",
+      "source": "reddit-publications-cv",
+      "target": "tag-vehicledetection",
       "kind": "tag"
     },
     {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-ai-llm-advanced-llm-concepts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-ai-llm-orchestrating-agents",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-ai-hardware",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-openvino",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-machine-learning-specialization",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-full-stack-deep-learning",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-mlops",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-cv-3d",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-cv-optical-flow",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-cv-multi-camera-systems",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-coaching",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-setup",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-cpp",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-cuda-gpu-numba-jit",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-cuda-gpu-pycuda-kernels",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-cuda-gpu-vscode-cuda-windows",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-cuda-gpu-mlx-coreml-metal",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-fsdl-2022",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-ros",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-parallel-programming",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-modern-cpp",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-cloud-native",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-tensorflow-deployment",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-risc-v",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-edge-ai-summit",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-embedded-iot",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-tesla",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-metaverse",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-book-summary",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-ai2026-iot-scholarship",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-startup",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-resources",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-ai2026-topics",
-      "target": "reddit-public-linkedin-top-posts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-main-graphnowledge",
-      "target": "tag-edge",
+      "source": "reddit-publications-cv",
+      "target": "tag-imageprocessing",
       "kind": "tag"
     },
     {
-      "source": "reddit-main-graphnowledge",
-      "target": "tag-hailo",
+      "source": "reddit-publications-cv",
+      "target": "tag-trafficsurveillance",
       "kind": "tag"
     },
     {
-      "source": "reddit-main-graphnowledge",
-      "target": "tag-mlops",
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-patents-face-image-augmentation",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-patents-facial-analysis-advertisement",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-patents-vehicle-detection",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-books-camera-calibration-video-stabilization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-books-computational-intelligence-optical-flow",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-journals-adaptive-thresholding-psnr",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-journals-character-object-recognition",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-journals-gsft-psnr-fuzzy-threshold",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-journals-psnr-threshold-segmentation",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-journals-3d-slam-humanoid-robots",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-journals-ant-colony-optimization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-papers-2d-3d-map-movement",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-papers-adaptive-image-segmentation-psnr",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-papers-classification-geometrical-topological",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-papers-camera-calibration-multi-modal",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-papers-character-recognition-global-feature",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-papers-comparison-thresholding-handwritten",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-papers-license-plate-recognition-entropy",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-papers-multi-threshold-license-plate",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-papers-pattern-image-calibration",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-papers-tafreshgrid-grid-computing",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-papers",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-cv",
+      "target": "reddit-publications-patents-dr-farshid-pirahansiah-3-patents-ai-innovations-in-vehicle-detection-facial-analysis-and-image-augmentation-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-ant-colony-optimization",
+      "target": "reddit-publications-journals-ant-colony-optimization-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-gsft-psnr-fuzzy-threshold",
+      "target": "reddit-publications-journals-gsft-psnr-fuzzy-threshold-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-3d-slam-humanoid-robots",
+      "target": "reddit-publications-journals-3d-slam-humanoid-robots-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-psnr-threshold-segmentation",
+      "target": "reddit-publications-journals-psnr-threshold-segmentation-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-character-object-recognition",
+      "target": "reddit-publications-journals-character-object-recognition-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-index",
+      "target": "reddit-publications-journals-adaptive-thresholding-psnr",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-index",
+      "target": "reddit-publications-journals-gsft-psnr-fuzzy-threshold",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-index",
+      "target": "reddit-publications-journals-psnr-threshold-segmentation",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-index",
+      "target": "reddit-publications-journals-character-object-recognition",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-index",
+      "target": "reddit-publications-journals-3d-slam-humanoid-robots",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-index",
+      "target": "reddit-publications-journals-ant-colony-optimization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-journals-adaptive-thresholding-psnr",
+      "target": "reddit-publications-journals-adaptive-thresholding-psnr-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-keynotes-index",
+      "target": "reddit-publications-keynotes-llms-meet-computer-vision",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
+      "target": "tag-multimodal",
       "kind": "tag"
     },
     {
-      "source": "reddit-main-graphnowledge",
-      "target": "reddit-wikilinks",
-      "kind": "wiki"
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
+      "target": "tag-machinelearning",
+      "kind": "tag"
     },
     {
-      "source": "reddit-main-graphnowledge",
-      "target": "reddit-wikilink",
-      "kind": "wiki"
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
+      "target": "tag-costcalculator",
+      "kind": "tag"
     },
     {
-      "source": "reddit-main-graphnowledge",
-      "target": "reddit-public-links",
-      "kind": "wiki"
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
+      "target": "tag-claude",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
+      "target": "tag-googlegemini",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
+      "target": "reddit-public-projects-ai-model-cost-calculator",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
+      "target": "microsoft-ai-use-cases-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-license-plate-recognition-entropy",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-license-plate-recognition-with-multi-threshold-based-on-entropy-e2ps290",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-license-plate-recognition-entropy",
+      "target": "https-doi-org-10-1109-iceei-2011-6021627",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-license-plate-recognition-entropy",
+      "target": "reddit-publications-papers-license-plate-recognition-entropy-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-pattern-image-calibration",
+      "target": "reddit-publications-papers-pattern-image-calibration-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-tafreshgrid-grid-computing",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-tafreshgrid-grid-computing-in-tafresh-university-e2ps3ma",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-tafreshgrid-grid-computing",
+      "target": "reddit-publications-papers-tafreshgrid-grid-computing-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-classification-geometrical-topological",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-an-evaluation-of-classification-techniques-using-enhanced-geometrical-topological-feature-analysis-e2ps17l",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-classification-geometrical-topological",
+      "target": "reddit-publications-papers-classification-geometrical-topological-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-camera-calibration-multi-modal",
+      "target": "reddit-publications-papers-camera-calibration-multi-modal-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-multi-threshold-license-plate",
+      "target": "tag-thresholding",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-papers-multi-threshold-license-plate",
+      "target": "tag-imagesegmentation",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-papers-multi-threshold-license-plate",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-multi-threshold-approach-for-license-plate-recognition-system-e2ps2fe",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-multi-threshold-license-plate",
+      "target": "http-waset-org-publications-3636",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-multi-threshold-license-plate",
+      "target": "reddit-publications-papers-multi-threshold-license-plate-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-comparison-thresholding-handwritten",
+      "target": "tag-handwritten",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-papers-comparison-thresholding-handwritten",
+      "target": "tag-imagesegmentation",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-papers-comparison-thresholding-handwritten",
+      "target": "tag-psnr",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-papers-comparison-thresholding-handwritten",
+      "target": "reddit-publications-papers-comparison-thresholding-handwritten-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-index",
+      "target": "reddit-publications-papers-adaptive-image-segmentation-psnr",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-index",
+      "target": "reddit-publications-papers-license-plate-recognition-entropy",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-index",
+      "target": "reddit-publications-papers-multi-threshold-license-plate",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-index",
+      "target": "reddit-publications-papers-comparison-thresholding-handwritten",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-index",
+      "target": "reddit-publications-papers-camera-calibration-multi-modal",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-index",
+      "target": "reddit-publications-papers-pattern-image-calibration",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-index",
+      "target": "reddit-publications-papers-2d-3d-map-movement",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-index",
+      "target": "reddit-publications-papers-character-recognition-global-feature",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-index",
+      "target": "reddit-publications-papers-classification-geometrical-topological",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-index",
+      "target": "reddit-publications-papers-tafreshgrid-grid-computing",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-index",
+      "target": "reddit-publications-papers-my-conference-paper",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-my-conference-paper",
+      "target": "tag-imageprocessing",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-papers-my-conference-paper",
+      "target": "",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-my-conference-paper",
+      "target": "reddit-publications-papers-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-character-recognition-global-feature",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-character-recognition-based-on-global-feature-e2ps1tp",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-character-recognition-global-feature",
+      "target": "https-doi-org-10-1109-iceei-2011-6021649",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-character-recognition-global-feature",
+      "target": "reddit-publications-papers-character-recognition-global-feature-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-2d-3d-map-movement",
+      "target": "tag-objectdetection",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-papers-2d-3d-map-movement",
+      "target": "tag-robotics",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-papers-2d-3d-map-movement",
+      "target": "http-www-ftsm-ukm-my-cait2012-images-program-20schedule-20cait2012-pdf",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-2d-3d-map-movement",
+      "target": "reddit-publications-papers-2d-3d-map-movement-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-adaptive-image-segmentation-psnr",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-paper-adaptive-image-segmentation-based-on-peak-signal-to-noise-ratio-for-a-license-plate-recognition-system-e2ps0ue",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-papers-adaptive-image-segmentation-psnr",
+      "target": "reddit-publications-papers-adaptive-image-segmentation-psnr-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-patents-vehicle-detection",
+      "target": "reddit-publications-patents-vehicle-detection-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-patents-index",
+      "target": "reddit-publications-patents-face-image-augmentation",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-patents-index",
+      "target": "reddit-publications-patents-vehicle-detection",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-patents-index",
+      "target": "reddit-publications-patents-facial-analysis-advertisement",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-patents-facial-analysis-advertisement",
+      "target": "tag-facialrecognition",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-patents-facial-analysis-advertisement",
+      "target": "tag-advertising",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-patents-facial-analysis-advertisement",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-patents-facial-analysis-advertisement",
+      "target": "tag-digitalmarketing",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-patents-facial-analysis-advertisement",
+      "target": "tag-innovation",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-patents-facial-analysis-advertisement",
+      "target": "reddit-publications-patents-facial-analysis-advertisement-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-patents-face-image-augmentation",
+      "target": "reddit-publications-patents-face-image-augmentation-png",
+      "kind": "mdlink"
     },
     {
       "source": "reddit-main-menus",
@@ -3634,9 +3952,44 @@
       "kind": "mdlink"
     },
     {
+      "source": "reddit-main-graphnowledge",
+      "target": "tag-edge",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-main-graphnowledge",
+      "target": "tag-hailo",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-main-graphnowledge",
+      "target": "tag-mlops",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-main-graphnowledge",
+      "target": "reddit-wikilinks",
+      "kind": "wiki"
+    },
+    {
+      "source": "reddit-main-graphnowledge",
+      "target": "reddit-wikilink",
+      "kind": "wiki"
+    },
+    {
+      "source": "reddit-main-graphnowledge",
+      "target": "reddit-public-links",
+      "kind": "wiki"
+    },
+    {
       "source": "reddit-main-terms",
       "target": "privacy",
       "kind": "mdlink"
+    },
+    {
+      "source": "reddit-en-guide-note-taking-and-pkm-and-oranization",
+      "target": "reddit-boo",
+      "kind": "wiki"
     },
     {
       "source": "reddit-pkm-proof",
@@ -3999,6 +4352,411 @@
       "kind": "tag"
     },
     {
+      "source": "reddit-ai2026-machine-learning-specialization",
+      "target": "tag-tiziran",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-machine-learning-specialization",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-full-stack-deep-learning",
+      "target": "tag-stackdeeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-full-stack-deep-learning",
+      "target": "tag-computervision",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-full-stack-deep-learning",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-mlops",
+      "target": "tag-computervision",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-mlops",
+      "target": "tag-tiziran",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-ros",
+      "target": "tag-robotics",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-ros",
+      "target": "tag-tiziran",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-parallel-programming",
+      "target": "tag-computervision",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-parallel-programming",
+      "target": "tag-parallelprogramming",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-parallel-programming",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-modern-cpp",
+      "target": "tag-tiziran",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-cloud-native",
+      "target": "tag-docker",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-cloud-native",
+      "target": "tag-kubernetes",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-cloud-native",
+      "target": "tag-cloudnative",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-iot-scholarship",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-tensorflow-deployment",
+      "target": "tag-tensorflow",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-tensorflow-deployment",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-fsdl-2022",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-fsdl-2022",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-risc-v",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-edge-ai-summit",
+      "target": "tag-summit",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-edge-ai-summit",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-embedded-iot",
+      "target": "tag-embedded",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-embedded-iot",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-tesla",
+      "target": "tag-tesla",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-tesla",
+      "target": "tag-autonomousdriving",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-tesla",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-ai-hardware",
+      "target": "tag-aihardware",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-ai-hardware",
+      "target": "tag-accelerators",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-ai-hardware",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-openvino",
+      "target": "tag-intel",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-openvino",
+      "target": "tag-inference",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-openvino",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-metaverse",
+      "target": "tag-metaverse",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-metaverse",
+      "target": "tag-spatialcomputing",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-metaverse",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-book-summary",
+      "target": "tag-books",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-book-summary",
+      "target": "tag-knowledgemanagement",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-book-summary",
+      "target": "reddit-ai2026-topics",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-book-summary",
+      "target": "reddit-ai2026-machine-learning-specialization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-book-summary",
+      "target": "reddit-ai2026-full-stack-deep-learning",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-book-summary",
+      "target": "reddit-ai2026-mlops",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-book-summary",
+      "target": "reddit-pkm-use-cases",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "tag-topics",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "tag-projects",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-ai-llm-advanced-llm-concepts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-ai-llm-orchestrating-agents",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-ai-hardware",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-openvino",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-machine-learning-specialization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-full-stack-deep-learning",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-mlops",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-cv-3d",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-cv-optical-flow",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-cv-multi-camera-systems",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-coaching",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-setup",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-cpp",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-cuda-gpu-numba-jit",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-cuda-gpu-pycuda-kernels",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-cuda-gpu-vscode-cuda-windows",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-cuda-gpu-mlx-coreml-metal",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-fsdl-2022",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-ros",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-parallel-programming",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-modern-cpp",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-cloud-native",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-tensorflow-deployment",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-risc-v",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-edge-ai-summit",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-embedded-iot",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-tesla",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-metaverse",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-book-summary",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-ai2026-iot-scholarship",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-startup",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-resources",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-ai2026-topics",
+      "target": "reddit-public-linkedin-top-posts",
+      "kind": "mdlink"
+    },
+    {
       "source": "reddit-public-resources",
       "target": "reddit-public-projects-solutions",
       "kind": "mdlink"
@@ -4234,201 +4992,6 @@
       "kind": "mdlink"
     },
     {
-      "source": "reddit-public-ai-llm-blog",
-      "target": "reddit-public-cuda-gpu-numba-jit",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-ai-llm-blog",
-      "target": "reddit-public-cuda-gpu-pycuda-kernels",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-mlx-coreml-metal",
-      "target": "tag-include",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-mlx-coreml-metal",
-      "target": "reddit-buffer-0",
-      "kind": "wiki"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-mlx-coreml-metal",
-      "target": "reddit-buffer-1",
-      "kind": "wiki"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-mlx-coreml-metal",
-      "target": "reddit-buffer-2",
-      "kind": "wiki"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-mlx-coreml-metal",
-      "target": "reddit-thread-position-in-grid",
-      "kind": "wiki"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-numba-jit",
-      "target": "tag-python",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-numba-jit",
-      "target": "tag-numba",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-numba-jit",
-      "target": "tag-machinelearning",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-numba-jit",
-      "target": "tag-performanceoptimization",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-numba-jit",
-      "target": "tag-bigdata",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-numba-jit",
-      "target": "tag-datascience",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-public-cuda-gpu-vscode-cuda-windows",
-      "target": "reddit-public-images-vscodecudawindows-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-cv-3d",
-      "target": "tag-include",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-public-cv-3d",
-      "target": "tag-pragma",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-resources",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-coaching",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-cv-3d",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-cv-optical-flow",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-cv-multi-camera-systems",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-ai-llm-advanced-llm-concepts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-ai-llm-orchestrating-agents",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-ai-llm-blog",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-cuda-gpu-numba-jit",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-cuda-gpu-pycuda-kernels",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-cuda-gpu-vscode-cuda-windows",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-cuda-gpu-mlx-coreml-metal",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-cpp",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-python",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-setup",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-shell-vim-quickref",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-optimization",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-prompts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-startup",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-seo",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-ai-llm-avatar-generator",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-linkedin-top-posts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-public-enter",
-      "target": "reddit-public-links",
-      "kind": "mdlink"
-    },
-    {
       "source": "reddit-public-index",
       "target": "reddit-public-cv-3d",
       "kind": "mdlink"
@@ -4599,719 +5162,199 @@
       "kind": "tag"
     },
     {
-      "source": "reddit-publications-10years",
-      "target": "tag-computervision-edge-ai",
+      "source": "reddit-public-enter",
+      "target": "reddit-public-resources",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-coaching",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-cv-3d",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-cv-optical-flow",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-cv-multi-camera-systems",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-ai-llm-advanced-llm-concepts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-ai-llm-orchestrating-agents",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-ai-llm-blog",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-cuda-gpu-numba-jit",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-cuda-gpu-pycuda-kernels",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-cuda-gpu-vscode-cuda-windows",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-cuda-gpu-mlx-coreml-metal",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-cpp",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-python",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-setup",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-shell-vim-quickref",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-optimization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-prompts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-startup",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-seo",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-ai-llm-avatar-generator",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-linkedin-top-posts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-enter",
+      "target": "reddit-public-links",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-cv-3d",
+      "target": "tag-include",
       "kind": "tag"
     },
     {
-      "source": "reddit-publications-books-ai-computer-vision-meets-llm",
-      "target": "tag-llm",
+      "source": "reddit-public-cv-3d",
+      "target": "tag-pragma",
       "kind": "tag"
     },
     {
-      "source": "reddit-publications-books-ai-computer-vision-meets-llm",
-      "target": "tag-multimodal",
-      "kind": "tag"
+      "source": "reddit-public-ai-llm-blog",
+      "target": "reddit-public-cuda-gpu-numba-jit",
+      "kind": "mdlink"
     },
     {
-      "source": "reddit-publications-books-ai-computer-vision-meets-llm",
-      "target": "tag-rag",
-      "kind": "tag"
+      "source": "reddit-public-ai-llm-blog",
+      "target": "reddit-public-cuda-gpu-pycuda-kernels",
+      "kind": "mdlink"
     },
     {
-      "source": "reddit-publications-books-ai-opencv5-chapter0-introduction",
-      "target": "tag-multiagent",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-ai-opencv5-chapter0-introduction",
-      "target": "tag-llm",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-ai-opencv5-chapter0-introduction",
-      "target": "tag-deeplearning",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
-      "target": "tag-imageprocessing",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-public-cuda-gpu-numba-jit",
       "target": "tag-python",
       "kind": "tag"
     },
     {
-      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
-      "target": "tag-artificialintelligence",
+      "source": "reddit-public-cuda-gpu-numba-jit",
+      "target": "tag-numba",
       "kind": "tag"
     },
     {
-      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-public-cuda-gpu-numba-jit",
       "target": "tag-machinelearning",
       "kind": "tag"
     },
     {
-      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
-      "target": "tag-deeplearning",
+      "source": "reddit-public-cuda-gpu-numba-jit",
+      "target": "tag-performanceoptimization",
       "kind": "tag"
     },
     {
-      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
-      "target": "tag-airesources",
+      "source": "reddit-public-cuda-gpu-numba-jit",
+      "target": "tag-bigdata",
       "kind": "tag"
     },
     {
-      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
-      "target": "tag-techeducation",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
-      "target": "tag-professionaldevelopment",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "source": "reddit-public-cuda-gpu-numba-jit",
       "target": "tag-datascience",
       "kind": "tag"
     },
     {
-      "source": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
-      "target": "tag-aicommunity",
+      "source": "reddit-public-cuda-gpu-vscode-cuda-windows",
+      "target": "reddit-public-images-vscodecudawindows-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-cuda-gpu-mlx-coreml-metal",
+      "target": "tag-include",
       "kind": "tag"
     },
     {
-      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "target": "tag-featuredetection",
-      "kind": "tag"
+      "source": "reddit-public-cuda-gpu-mlx-coreml-metal",
+      "target": "reddit-buffer-0",
+      "kind": "wiki"
     },
     {
-      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "target": "tag-artificialintelligence",
-      "kind": "tag"
+      "source": "reddit-public-cuda-gpu-mlx-coreml-metal",
+      "target": "reddit-buffer-1",
+      "kind": "wiki"
     },
     {
-      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "target": "tag-machinelearning",
-      "kind": "tag"
+      "source": "reddit-public-cuda-gpu-mlx-coreml-metal",
+      "target": "reddit-buffer-2",
+      "kind": "wiki"
     },
     {
-      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "target": "tag-deeplearning",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "target": "tag-airesources",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "target": "tag-techeducation",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "target": "tag-professionaldevelopment",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "target": "tag-datascience",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "target": "tag-aicommunity",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-camera-calibration-video-stabilization",
-      "target": "tag-videostabilization",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-camera-calibration-video-stabilization",
-      "target": "tag-robotics",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-camera-calibration-video-stabilization",
-      "target": "tag-slam",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-camera-calibration-video-stabilization",
-      "target": "reddit-publications-books-camera-calibration-video-stabilization-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-computational-intelligence-optical-flow",
-      "target": "tag-videostabilization",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-computational-intelligence-optical-flow",
-      "target": "tag-fuzzylogic",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-books-computational-intelligence-optical-flow",
-      "target": "reddit-publications-books-computational-intelligence-optical-flow-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index",
-      "target": "reddit-publications-books-camera-calibration-video-stabilization",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index",
-      "target": "reddit-publications-books-computational-intelligence-optical-flow",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index",
-      "target": "reddit-publications-books-ai-computer-vision-meets-llm",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index",
-      "target": "reddit-publications-books-ai-opencv5-chapter0-introduction",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index",
-      "target": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index",
-      "target": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index",
-      "target": "reddit-publications-books-ai-opencv5-chapter3-advanced",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "tag-faceaugmentation",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "tag-surveillance",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "tag-digitaladvertising",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "tag-facialrecognition",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "tag-targetedads",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "tag-vehicledetection",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "tag-imageprocessing",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "tag-trafficsurveillance",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-patents-face-image-augmentation",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-patents-facial-analysis-advertisement",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-patents-vehicle-detection",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-books-camera-calibration-video-stabilization",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-books-computational-intelligence-optical-flow",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-journals-adaptive-thresholding-psnr",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-journals-character-object-recognition",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-journals-gsft-psnr-fuzzy-threshold",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-journals-psnr-threshold-segmentation",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-journals-3d-slam-humanoid-robots",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-journals-ant-colony-optimization",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-papers-2d-3d-map-movement",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-papers-adaptive-image-segmentation-psnr",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-papers-classification-geometrical-topological",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-papers-camera-calibration-multi-modal",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-papers-character-recognition-global-feature",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-papers-comparison-thresholding-handwritten",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-papers-license-plate-recognition-entropy",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-papers-multi-threshold-license-plate",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-papers-pattern-image-calibration",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-papers-tafreshgrid-grid-computing",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-papers",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-cv",
-      "target": "reddit-publications-patents-dr-farshid-pirahansiah-3-patents-ai-innovations-in-vehicle-detection-facial-analysis-and-image-augmentation-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-3d-slam-humanoid-robots",
-      "target": "reddit-publications-journals-3d-slam-humanoid-robots-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-adaptive-thresholding-psnr",
-      "target": "reddit-publications-journals-adaptive-thresholding-psnr-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-ant-colony-optimization",
-      "target": "reddit-publications-journals-ant-colony-optimization-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-character-object-recognition",
-      "target": "reddit-publications-journals-character-object-recognition-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-gsft-psnr-fuzzy-threshold",
-      "target": "reddit-publications-journals-gsft-psnr-fuzzy-threshold-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-index",
-      "target": "reddit-publications-journals-adaptive-thresholding-psnr",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-index",
-      "target": "reddit-publications-journals-gsft-psnr-fuzzy-threshold",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-index",
-      "target": "reddit-publications-journals-psnr-threshold-segmentation",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-index",
-      "target": "reddit-publications-journals-character-object-recognition",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-index",
-      "target": "reddit-publications-journals-3d-slam-humanoid-robots",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-index",
-      "target": "reddit-publications-journals-ant-colony-optimization",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-journals-psnr-threshold-segmentation",
-      "target": "reddit-publications-journals-psnr-threshold-segmentation-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-keynotes-index",
-      "target": "reddit-publications-keynotes-llms-meet-computer-vision",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
-      "target": "tag-multimodal",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
-      "target": "tag-machinelearning",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
-      "target": "tag-costcalculator",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
-      "target": "tag-claude",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
-      "target": "tag-googlegemini",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
-      "target": "reddit-public-projects-ai-model-cost-calculator",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-keynotes-llms-meet-computer-vision",
-      "target": "microsoft-ai-use-cases-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-2d-3d-map-movement",
-      "target": "tag-objectdetection",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-papers-2d-3d-map-movement",
-      "target": "tag-robotics",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-papers-2d-3d-map-movement",
-      "target": "http-www-ftsm-ukm-my-cait2012-images-program-20schedule-20cait2012-pdf",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-2d-3d-map-movement",
-      "target": "reddit-publications-papers-2d-3d-map-movement-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-my-conference-paper",
-      "target": "tag-imageprocessing",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-papers-my-conference-paper",
-      "target": "",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-my-conference-paper",
-      "target": "reddit-publications-papers-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-adaptive-image-segmentation-psnr",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-paper-adaptive-image-segmentation-based-on-peak-signal-to-noise-ratio-for-a-license-plate-recognition-system-e2ps0ue",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-adaptive-image-segmentation-psnr",
-      "target": "reddit-publications-papers-adaptive-image-segmentation-psnr-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-camera-calibration-multi-modal",
-      "target": "reddit-publications-papers-camera-calibration-multi-modal-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-character-recognition-global-feature",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-character-recognition-based-on-global-feature-e2ps1tp",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-character-recognition-global-feature",
-      "target": "https-doi-org-10-1109-iceei-2011-6021649",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-character-recognition-global-feature",
-      "target": "reddit-publications-papers-character-recognition-global-feature-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-classification-geometrical-topological",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-an-evaluation-of-classification-techniques-using-enhanced-geometrical-topological-feature-analysis-e2ps17l",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-classification-geometrical-topological",
-      "target": "reddit-publications-papers-classification-geometrical-topological-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-comparison-thresholding-handwritten",
-      "target": "tag-handwritten",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-papers-comparison-thresholding-handwritten",
-      "target": "tag-imagesegmentation",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-papers-comparison-thresholding-handwritten",
-      "target": "tag-psnr",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-papers-comparison-thresholding-handwritten",
-      "target": "reddit-publications-papers-comparison-thresholding-handwritten-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-index",
-      "target": "reddit-publications-papers-adaptive-image-segmentation-psnr",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-index",
-      "target": "reddit-publications-papers-license-plate-recognition-entropy",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-index",
-      "target": "reddit-publications-papers-multi-threshold-license-plate",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-index",
-      "target": "reddit-publications-papers-comparison-thresholding-handwritten",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-index",
-      "target": "reddit-publications-papers-camera-calibration-multi-modal",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-index",
-      "target": "reddit-publications-papers-pattern-image-calibration",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-index",
-      "target": "reddit-publications-papers-2d-3d-map-movement",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-index",
-      "target": "reddit-publications-papers-character-recognition-global-feature",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-index",
-      "target": "reddit-publications-papers-classification-geometrical-topological",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-index",
-      "target": "reddit-publications-papers-tafreshgrid-grid-computing",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-index",
-      "target": "reddit-publications-papers-my-conference-paper",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-license-plate-recognition-entropy",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-license-plate-recognition-with-multi-threshold-based-on-entropy-e2ps290",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-license-plate-recognition-entropy",
-      "target": "https-doi-org-10-1109-iceei-2011-6021627",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-license-plate-recognition-entropy",
-      "target": "reddit-publications-papers-license-plate-recognition-entropy-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-multi-threshold-license-plate",
-      "target": "tag-thresholding",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-papers-multi-threshold-license-plate",
-      "target": "tag-imagesegmentation",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-papers-multi-threshold-license-plate",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-multi-threshold-approach-for-license-plate-recognition-system-e2ps2fe",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-multi-threshold-license-plate",
-      "target": "http-waset-org-publications-3636",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-multi-threshold-license-plate",
-      "target": "reddit-publications-papers-multi-threshold-license-plate-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-pattern-image-calibration",
-      "target": "reddit-publications-papers-pattern-image-calibration-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-tafreshgrid-grid-computing",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-tafreshgrid-grid-computing-in-tafresh-university-e2ps3ma",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-papers-tafreshgrid-grid-computing",
-      "target": "reddit-publications-papers-tafreshgrid-grid-computing-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-patents-face-image-augmentation",
-      "target": "reddit-publications-patents-face-image-augmentation-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-patents-facial-analysis-advertisement",
-      "target": "tag-facialrecognition",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-patents-facial-analysis-advertisement",
-      "target": "tag-advertising",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-patents-facial-analysis-advertisement",
-      "target": "tag-deeplearning",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-patents-facial-analysis-advertisement",
-      "target": "tag-digitalmarketing",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-patents-facial-analysis-advertisement",
-      "target": "tag-innovation",
-      "kind": "tag"
-    },
-    {
-      "source": "reddit-publications-patents-facial-analysis-advertisement",
-      "target": "reddit-publications-patents-facial-analysis-advertisement-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-patents-index",
-      "target": "reddit-publications-patents-face-image-augmentation",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-patents-index",
-      "target": "reddit-publications-patents-vehicle-detection",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-patents-index",
-      "target": "reddit-publications-patents-facial-analysis-advertisement",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-patents-vehicle-detection",
-      "target": "reddit-publications-patents-vehicle-detection-png",
-      "kind": "mdlink"
+      "source": "reddit-public-cuda-gpu-mlx-coreml-metal",
+      "target": "reddit-thread-position-in-grid",
+      "kind": "wiki"
     }
   ]
 }

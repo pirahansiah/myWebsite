@@ -224,6 +224,13 @@
 
   function hideTooltip() { if (tooltipEl) tooltipEl.style.display = "none"; }
 
+  function isClickablePage(n) {
+    if (!n || !n.url) return false;
+    if (n.category !== "hub" && n.category !== "page") return false;
+    if (/^\/view\//.test(n.url)) return false;
+    return true;
+  }
+
   function selectNode(n) {
     if (selectedNode === n) { selectedNode = null; hideOpenButton(); }
     else { selectedNode = n; showOpenButton(n); }
@@ -290,7 +297,7 @@
 
     // D3 force simulation
     simulation = d3.forceSimulation(graphNodes)
-      .force("link", d3.forceLink(graphLinks).id(function (d) { return d.id; }).distance(80).strength(function (d) { return (d.strength || 0.5) * 0.4; })
+      .force("link", d3.forceLink(graphLinks).id(function (d) { return d.id; }).distance(80).strength(function (d) { return (d.strength || 0.5) * 0.4; }))
       .force("charge", d3.forceManyBody().strength(-150).distanceMax(350))
       .force("center", d3.forceCenter(W / 2, H / 2).strength(0.06))
       .force("collide", d3.forceCollide().radius(function (d) { return nodeR(d) + 3; }).strength(0.8))
@@ -332,7 +339,7 @@
         var hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
         if (hit !== hoveredNode) {
           hoveredNode = hit;
-          canvas.style.cursor = hit ? "pointer" : "grab";
+          canvas.style.cursor = hit ? (isClickablePage(hit) ? "pointer" : "default") : "grab";
           if (hit) showTooltip(hit, e.clientX - rect.left, e.clientY - rect.top);
           else hideTooltip();
           render();
@@ -342,7 +349,7 @@
         if (draggingNode) return;
         var rect = wrap.getBoundingClientRect();
         var hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
-        if (hit && hit.url) {
+        if (hit && isClickablePage(hit)) {
           window.location.href = hit.url;
         } else if (hit) {
           selectNode(hit);
@@ -353,7 +360,7 @@
       .on("dblclick", function (e) {
         var rect = wrap.getBoundingClientRect();
         var hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
-        if (hit && hit.url) window.location.href = hit.url;
+        if (hit && isClickablePage(hit)) window.location.href = hit.url;
       });
 
     // Touch
@@ -362,7 +369,7 @@
         var t = e.changedTouches[0];
         var rect = wrap.getBoundingClientRect();
         var hit = hitTest(t.clientX - rect.left, t.clientY - rect.top);
-        if (hit && hit.url) {
+        if (hit && isClickablePage(hit)) {
           window.location.href = hit.url;
         } else if (hit) {
           selectNode(hit); render();
