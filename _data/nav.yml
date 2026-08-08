@@ -5,192 +5,192 @@
     items:
     - title: 3D Vision & Multi-Camera
       items: []
-      url: "/reddit/public/cv/3d/"
+      url: "/notes/docs/cv/3d/"
     - title: Optical Flow
       items: []
-      url: "/reddit/public/cv/optical-flow/"
+      url: "/notes/docs/cv/optical-flow/"
     - title: Multi-Camera Systems
       items: []
-      url: "/reddit/public/cv/multi-camera-systems/"
+      url: "/notes/docs/cv/multi-camera/"
     - title: CV Overview
       items: []
-      url: "/reddit/public/enter/"
+      url: "/notes/docs/cv-overview/"
     - title: CV Coaching
       items: []
-      url: "/reddit/public/coaching/"
+      url: "/notes/docs/coaching/"
   - title: AI & LLMs
     items:
     - title: Advanced LLM Concepts
       items: []
-      url: "/reddit/public/ai-llm/advanced-llm-concepts/"
+      url: "/notes/docs/llm/llm-concepts/"
     - title: Orchestrating Agents
       items: []
-      url: "/reddit/public/ai-llm/orchestrating-agents/"
+      url: "/notes/docs/llm/agents/"
     - title: 'Blog: AI & LLMs'
       items: []
-      url: "/reddit/public/ai-llm/blog/"
+      url: "/notes/docs/llm/blog/"
     - title: Avatar Generator
       items: []
-      url: "/reddit/public/ai-llm/avatar-generator/"
+      url: "/notes/docs/llm/avatar/"
   - title: CUDA & GPU
     items:
     - title: Numba JIT
       items: []
-      url: "/reddit/public/cuda-gpu/numba-jit/"
+      url: "/notes/docs/cuda/numba/"
     - title: PyCUDA Kernels
       items: []
-      url: "/reddit/public/cuda-gpu/pycuda-kernels/"
+      url: "/notes/docs/cuda/pycuda/"
     - title: CUDA in VS Code
       items: []
-      url: "/reddit/public/cuda-gpu/vscode-cuda-windows/"
+      url: "/notes/docs/cuda/cuda-vscode/"
     - title: MLX, CoreML & Metal
       items: []
-      url: "/reddit/public/cuda-gpu/mlx-coreml-metal/"
+      url: "/notes/docs/cuda/apple-ml/"
 - title: Solution
   items:
   - title: Courses
     items:
     - title: All Topics
       items: []
-      url: "/reddit/ai2026/topics/"
+      url: "/notes/courses/"
     - title: ML Specialization
       items: []
-      url: "/reddit/ai2026/machine-learning-specialization/"
+      url: "/notes/courses/ml-spec/"
     - title: Full Stack DL
       items: []
-      url: "/reddit/ai2026/full-stack-deep-learning/"
+      url: "/notes/courses/fsdl/"
     - title: FSDL 2022
       items: []
-      url: "/reddit/ai2026/fsdl-2022/"
+      url: "/notes/courses/fsdl-2022/"
     - title: MLOps
       items: []
-      url: "/reddit/ai2026/mlops/"
+      url: "/notes/courses/mlops/"
     - title: ROS
       items: []
-      url: "/reddit/ai2026/ros/"
+      url: "/notes/courses/ros/"
     - title: Parallel Programming
       items: []
-      url: "/reddit/ai2026/parallel-programming/"
+      url: "/notes/courses/parallel/"
     - title: Modern C++
       items: []
-      url: "/reddit/ai2026/modern-cpp/"
+      url: "/notes/courses/modern-cpp/"
     - title: Cloud-Native
       items: []
-      url: "/reddit/ai2026/cloud-native/"
+      url: "/notes/courses/cloud-native/"
     - title: TF Deployment
       items: []
-      url: "/reddit/ai2026/tensorflow-deployment/"
+      url: "/notes/courses/tf-deploy/"
     - title: RISC-V
       items: []
-      url: "/reddit/ai2026/risc-v/"
+      url: "/notes/courses/risc-v/"
     - title: Edge AI Summit
       items: []
-      url: "/reddit/ai2026/edge-ai-summit/"
+      url: "/notes/courses/edge-ai-summit/"
     - title: Embedded IoT
       items: []
-      url: "/reddit/ai2026/embedded-iot/"
+      url: "/notes/courses/iot/"
     - title: Tesla AI
       items: []
-      url: "/reddit/ai2026/tesla/"
+      url: "/notes/courses/tesla/"
     - title: AI Hardware
       items: []
-      url: "/reddit/ai2026/ai-hardware/"
+      url: "/notes/courses/ai-hardware/"
     - title: OpenVINO
       items: []
-      url: "/reddit/ai2026/openvino/"
+      url: "/notes/courses/openvino/"
     - title: Metaverse
       items: []
-      url: "/reddit/ai2026/metaverse/"
+      url: "/notes/courses/metaverse/"
     - title: Book Summaries
       items: []
-      url: "/reddit/ai2026/book-summary/"
+      url: "/notes/courses/book-summary/"
     - title: IoT Scholarship
       items: []
-      url: "/reddit/ai2026/iot-scholarship/"
+      url: "/notes/courses/iot-scholarship/"
   - title: Business
     items:
     - title: Startup Guide
       items: []
-      url: "/reddit/public/startup/"
+      url: "/notes/docs/startup/"
     - title: SEO for LLMs
       items: []
-      url: "/reddit/public/seo/"
+      url: "/notes/docs/seo/"
     - title: Top LinkedIn Posts
       items: []
-      url: "/reddit/public/linkedin-top-posts/"
+      url: "/notes/docs/linkedin/"
     - title: 10 Years of Bug Fixing
       items: []
-      url: "/reddit/publications/10Years/"
+      url: "/notes/pubs/10-years/"
     - title: Solutions
       items: []
-      url: "/reddit/public/solutions/"
+      url: "/notes/docs/solutions/"
     - title: Connect
       items: []
-      url: "/reddit/public/solutions/#connect"
+      url: "/notes/docs/solutions/#connect"
 - title: Atlas
   items:
   - title: Research
     items:
     - title: Patents
       items: []
-      url: "/reddit/publications/Patents/"
+      url: "/notes/pubs/patents/"
     - title: Papers
       items: []
-      url: "/reddit/publications/Papers/"
+      url: "/notes/pubs/papers/"
     - title: Journals
       items: []
-      url: "/reddit/publications/Journals/"
+      url: "/notes/pubs/journals/"
     - title: Books
       items: []
-      url: "/reddit/publications/Books/"
+      url: "/notes/pubs/books/"
     - title: Keynotes
       items: []
-      url: "/reddit/publications/Keynotes/"
+      url: "/notes/pubs/keynotes/"
     - title: CV
       items: []
-      url: "/reddit/publications/CV/"
+      url: "/notes/pubs/cv/"
   - title: Programming
     items:
     - title: C++ Reference
       items: []
-      url: "/reddit/public/cpp/"
+      url: "/notes/docs/cpp/"
     - title: Python Config
       items: []
-      url: "/reddit/public/python/"
+      url: "/notes/docs/python/"
     - title: Developer Tools
       items: []
-      url: "/reddit/public/setup/"
+      url: "/notes/docs/dev-tools/"
     - title: Shell & Vim
       items: []
-      url: "/reddit/public/shell-vim-quickref/"
+      url: "/notes/docs/shell-vim/"
   - title: Optimization
     items:
     - title: CV/DL/ML Optimization
       items: []
-      url: "/reddit/public/optimization/"
+      url: "/notes/docs/optimization/"
     - title: Prompts
       items: []
-      url: "/reddit/public/prompts/"
+      url: "/notes/docs/prompts/"
   - title: Knowledge
     items:
     - title: Wiki
       items: []
-      url: "/reddit/wiki/"
+      url: "/notes/wiki/"
     - title: Sitemap
       items: []
-      url: "/reddit/sitemap/"
+      url: "/notes/sitemap/"
     - title: Presentations
       items: []
-      url: "/reddit/ppt/farshid-ai-cv-llm-presentation/"
+      url: "/notes/slides/presentation/"
     - title: Portfolio
       items: []
-      url: "/reddit/pkm/use-cases/"
+      url: "/notes/pkm/use-cases/"
     - title: Resources
       items: []
-      url: "/reddit/public/Resources/"
+      url: "/notes/docs/resources/"
     - title: Curated Links
       items: []
-      url: "/reddit/public/links/"
+      url: "/notes/docs/links/"
     - title: Content Hub
       items: []
-      url: "/reddit/public/"
+      url: "/notes/docs/"

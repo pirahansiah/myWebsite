@@ -12,7 +12,7 @@
     );
 
   function needsViewer(href) {
-    if (!href || href.indexOf("/reddit/") !== 0) return false;
+    if (!href || href.indexOf("/notes/") !== 0) return false;
     if (href.indexOf(VIEWER_PATH) === 0) return false;
     var path = href.split("?")[0];
     if (path.endsWith("/")) return false;

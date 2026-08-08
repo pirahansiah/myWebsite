@@ -14,7 +14,7 @@ kramdown:
 
 defaults:
   - scope:
-      path: "reddit"
+      path: "notes"
     values:
       layout: farshid_default
 
@@ -23,7 +23,7 @@ plugins:
   - jekyll-feed
 
 include:
-  - reddit
+  - notes
 
 # Exclude
 exclude:

@@ -1,6 +1,6 @@
 /**
  * Universal file viewer — keeps site nav/CSS while showing html, pdf, code, etc.
- * Usage: /view/?p=/reddit/cv/AboutMe.html
+ * Usage: /view/?p=/notes/cv/AboutMe.html
  */
 (function () {
   "use strict";
@@ -46,7 +46,7 @@
     }
 
     p = p.trim();
-    if (p.startsWith("reddit/")) p = "/" + p;
+    if (p.startsWith("notes/")) p = "/" + p;
     return p;
   }
 
@@ -128,7 +128,7 @@
 
   function load(filePath) {
     if (!isSafePath(filePath)) {
-      showError("Invalid path. Only files under /reddit/ are allowed.");
+      showError("Invalid path. Only files under /notes/ are allowed.");
       return;
     }
 
@@ -158,7 +158,7 @@
 
   if (!path) {
     if (titleEl) titleEl.textContent = "No file selected";
-    showError('Missing file path. Use <code>/view/?p=/reddit/…</code>');
+    showError('Missing file path. Use <code>/view/?p=/notes/…</code>');
     return;
   }
 

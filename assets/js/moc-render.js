@@ -56,7 +56,7 @@
         path = parts[0].trim();
         label = parts[1].trim();
       }
-      var href = "/reddit/" + path.replace(/\.md$/i, "") + "/";
+      var href = "/notes/" + path.replace(/\.md$/i, "") + "/";
       return (
         '<a class="liquid-glass-item moc-item" href="' +
         escapeHtml(href) +

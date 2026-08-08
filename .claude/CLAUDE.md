@@ -23,7 +23,7 @@ conda activate py314
 ### Content
 - Jekyll markdown files in `reddit/`
 - YAML frontmatter required (`layout`, `title`)
-- Images in `reddit/public/images/`
+- Images in `notes/docs/images/`
 - Use `farshid_default` layout for pages
 
 ---
