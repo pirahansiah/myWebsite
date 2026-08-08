@@ -871,15 +871,15 @@
     {
       "id": "moc-content-hub",
       "label": "Content Hub",
-      "url": "/reddit/public/index/",
-      "raw": "/reddit/public/index/",
+      "url": "/reddit/public/",
+      "raw": "/reddit/public/",
       "kind": "moc"
     },
     {
-      "id": "reddit-public-index",
-      "label": "index",
-      "url": "/reddit/public/index/",
-      "raw": "/reddit/public/index/",
+      "id": "reddit-public",
+      "label": "public",
+      "url": "/reddit/public/",
+      "raw": "/reddit/public/",
       "kind": "note"
     },
     {
@@ -916,6 +916,13 @@
       "url": "/reddit/publications/Books/AI/computer-vision-meets-llm",
       "raw": "/reddit/publications/Books/AI/computer-vision-meets-llm",
       "kind": "tag"
+    },
+    {
+      "id": "reddit-public-projects-ai-model-cost-calculator",
+      "label": "AI_Model_Cost_Calculator",
+      "url": "/reddit/public/projects/AI_Model_Cost_Calculator/",
+      "raw": "/reddit/public/projects/AI_Model_Cost_Calculator/",
+      "kind": "note"
     },
     {
       "id": "reddit-publications-books-ai-opencv5-chapter3-advanced",
@@ -1009,10 +1016,10 @@
       "kind": "tag"
     },
     {
-      "id": "reddit-publications-books-index-books",
-      "label": "index books",
-      "url": "/reddit/publications/Books/index books",
-      "raw": "/reddit/publications/Books/index books",
+      "id": "reddit-public-ai-llm-index",
+      "label": "index",
+      "url": "/reddit/public/ai-llm/index",
+      "raw": "/reddit/public/ai-llm/index",
       "kind": "note"
     },
     {
@@ -1037,31 +1044,10 @@
       "kind": "tag"
     },
     {
-      "id": "reddit-camera-calibration-video-stabilization-png",
-      "label": "camera-calibration-video-stabilization",
-      "url": "/view/?p=%2Freddit%2Fcamera-calibration-video-stabilization.png",
-      "raw": "/reddit/camera-calibration-video-stabilization.png",
-      "kind": "asset"
-    },
-    {
       "id": "reddit-publications-books-camera-calibration-video-stabilization",
       "label": "camera-calibration-video-stabilization",
-      "url": "/reddit/publications/Books/camera-calibration-video-stabilization/",
-      "raw": "/reddit/publications/Books/camera-calibration-video-stabilization/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-books-computational-intelligence-optical-flow",
-      "label": "computational-intelligence-optical-flow",
-      "url": "/reddit/publications/Books/computational-intelligence-optical-flow/",
-      "raw": "/reddit/publications/Books/computational-intelligence-optical-flow/",
-      "kind": "note"
-    },
-    {
-      "id": "reddit-publications-books-ai-opencv5-chapter0-introduction",
-      "label": "opencv5-chapter0-introduction",
-      "url": "/reddit/publications/Books/AI/opencv5-chapter0-introduction/",
-      "raw": "/reddit/publications/Books/AI/opencv5-chapter0-introduction/",
+      "url": "/reddit/publications/Books/camera-calibration-video-stabilization",
+      "raw": "/reddit/publications/Books/camera-calibration-video-stabilization",
       "kind": "note"
     },
     {
@@ -1091,6 +1077,27 @@
       "url": "/view/?p=%2Freddit%2Fpublications%2FBooks%2Fcamera-calibration-video-stabilization.png",
       "raw": "/reddit/publications/Books/camera-calibration-video-stabilization.png",
       "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-books-index",
+      "label": "index",
+      "url": "/reddit/publications/Books/index",
+      "raw": "/reddit/publications/Books/index",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-camera-calibration-video-stabilization-png",
+      "label": "camera-calibration-video-stabilization",
+      "url": "/view/?p=%2Freddit%2Fcamera-calibration-video-stabilization.png",
+      "raw": "/reddit/camera-calibration-video-stabilization.png",
+      "kind": "asset"
+    },
+    {
+      "id": "reddit-publications-books-computational-intelligence-optical-flow",
+      "label": "computational-intelligence-optical-flow",
+      "url": "/reddit/publications/Books/computational-intelligence-optical-flow/",
+      "raw": "/reddit/publications/Books/computational-intelligence-optical-flow/",
+      "kind": "note"
     },
     {
       "id": "tag-fuzzylogic",
@@ -1378,13 +1385,6 @@
       "url": "/reddit/publications/Keynotes/llms-meet-computer-vision",
       "raw": "/reddit/publications/Keynotes/llms-meet-computer-vision",
       "kind": "tag"
-    },
-    {
-      "id": "reddit-public-projects-ai-model-cost-calculator",
-      "label": "AI_Model_Cost_Calculator",
-      "url": "/view/?p=%2Freddit%2Fpublic%2Fprojects%2FAI_Model_Cost_Calculator.html",
-      "raw": "/reddit/public/projects/AI_Model_Cost_Calculator.html",
-      "kind": "asset"
     },
     {
       "id": "microsoft-ai-use-cases-png",
@@ -1800,13 +1800,6 @@
       "kind": "note"
     },
     {
-      "id": "reddit-public",
-      "label": "public",
-      "url": "/reddit/public/",
-      "raw": "/reddit/public/",
-      "kind": "note"
-    },
-    {
       "id": "reddit-pkm-toc",
       "label": "TOC",
       "url": "/reddit/pkm/TOC",
@@ -2164,6 +2157,13 @@
       "kind": "asset"
     },
     {
+      "id": "reddit-public-index",
+      "label": "index",
+      "url": "/reddit/public/index",
+      "raw": "/reddit/public/index",
+      "kind": "note"
+    },
+    {
       "id": "reddit-public-optimization-index",
       "label": "index",
       "url": "/reddit/public/optimization/index",
@@ -2266,6 +2266,13 @@
       "label": "research",
       "url": "/reddit/public/research",
       "raw": "/reddit/public/research",
+      "kind": "note"
+    },
+    {
+      "id": "reddit-public-cv-index",
+      "label": "index",
+      "url": "/reddit/public/cv/index",
+      "raw": "/reddit/public/cv/index",
       "kind": "note"
     },
     {
@@ -2938,7 +2945,7 @@
     },
     {
       "source": "moc-content-hub",
-      "target": "reddit-public-index",
+      "target": "reddit-public",
       "kind": "link"
     },
     {
@@ -2960,6 +2967,11 @@
       "source": "reddit-publications-books-ai-computer-vision-meets-llm",
       "target": "tag-rag",
       "kind": "tag"
+    },
+    {
+      "source": "reddit-publications-books-ai-computer-vision-meets-llm",
+      "target": "reddit-public-projects-ai-model-cost-calculator",
+      "kind": "mdlink"
     },
     {
       "source": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
@@ -3023,7 +3035,7 @@
     },
     {
       "source": "reddit-publications-books-ai-the-new-developer-era-transforming-your-career-and-building-production-ready-ai-agents-in-2027",
-      "target": "reddit-publications-books-index-books",
+      "target": "reddit-public-ai-llm-index",
       "kind": "wiki"
     },
     {
@@ -3077,46 +3089,6 @@
       "kind": "tag"
     },
     {
-      "source": "reddit-publications-books-index-books",
-      "target": "reddit-camera-calibration-video-stabilization-png",
-      "kind": "wiki"
-    },
-    {
-      "source": "reddit-publications-books-index-books",
-      "target": "reddit-publications-books-camera-calibration-video-stabilization",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index-books",
-      "target": "reddit-publications-books-computational-intelligence-optical-flow",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index-books",
-      "target": "reddit-publications-books-ai-computer-vision-meets-llm",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index-books",
-      "target": "reddit-publications-books-ai-opencv5-chapter0-introduction",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index-books",
-      "target": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index-books",
-      "target": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
-      "kind": "mdlink"
-    },
-    {
-      "source": "reddit-publications-books-index-books",
-      "target": "reddit-publications-books-ai-opencv5-chapter3-advanced",
-      "kind": "mdlink"
-    },
-    {
       "source": "reddit-publications-books-camera-calibration-video-stabilization",
       "target": "tag-videostabilization",
       "kind": "tag"
@@ -3134,6 +3106,41 @@
     {
       "source": "reddit-publications-books-camera-calibration-video-stabilization",
       "target": "reddit-publications-books-camera-calibration-video-stabilization-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index",
+      "target": "reddit-camera-calibration-video-stabilization-png",
+      "kind": "wiki"
+    },
+    {
+      "source": "reddit-publications-books-index",
+      "target": "reddit-publications-books-camera-calibration-video-stabilization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index",
+      "target": "reddit-publications-books-computational-intelligence-optical-flow",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index",
+      "target": "reddit-publications-books-ai-computer-vision-meets-llm",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index",
+      "target": "reddit-publications-books-ai-opencv5-chapter1-image-basics",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index",
+      "target": "reddit-publications-books-ai-opencv5-chapter2-feature-detection",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-publications-books-index",
+      "target": "reddit-publications-books-ai-opencv5-chapter3-advanced",
       "kind": "mdlink"
     },
     {
@@ -3948,7 +3955,7 @@
     },
     {
       "source": "reddit-main-menus",
-      "target": "reddit-public-index",
+      "target": "reddit-public",
       "kind": "mdlink"
     },
     {
@@ -5287,6 +5294,21 @@
       "kind": "tag"
     },
     {
+      "source": "reddit-public-cv-index",
+      "target": "reddit-public-cv-3d",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-cv-index",
+      "target": "reddit-public-cv-optical-flow",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-cv-index",
+      "target": "reddit-public-cv-multi-camera-systems",
+      "kind": "mdlink"
+    },
+    {
       "source": "reddit-public-ai-llm-blog",
       "target": "reddit-public-cuda-gpu-numba-jit",
       "kind": "mdlink"
@@ -5294,6 +5316,26 @@
     {
       "source": "reddit-public-ai-llm-blog",
       "target": "reddit-public-cuda-gpu-pycuda-kernels",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-ai-llm-index",
+      "target": "reddit-public-ai-llm-advanced-llm-concepts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-ai-llm-index",
+      "target": "reddit-public-ai-llm-orchestrating-agents",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-ai-llm-index",
+      "target": "reddit-public-ai-llm-blog",
+      "kind": "mdlink"
+    },
+    {
+      "source": "reddit-public-ai-llm-index",
+      "target": "reddit-public-ai-llm-avatar-generator",
       "kind": "mdlink"
     },
     {

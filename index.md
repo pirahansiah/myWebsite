@@ -321,7 +321,7 @@ title: "Dr. Farshid Pirahansiah ; Embedded Computer Vision & Edge AI"
     <a href="/reddit/public/cv/optical-flow/"><span class="arr">&#8594;</span> Optical Flow</a>
     <a href="/reddit/public/cuda-gpu/numba-jit/"><span class="arr">&#8594;</span> Numba JIT Tutorial</a>
     <a href="/reddit/public/cuda-gpu/pycuda-kernels/"><span class="arr">&#8594;</span> PyCUDA Kernels</a>
-    <a href="/reddit/public/Optimization/"><span class="arr">&#8594;</span> CV/DL/ML Optimization</a>
+    <a href="/reddit/public/optimization/"><span class="arr">&#8594;</span> CV/DL/ML Optimization</a>
     <a href="/reddit/public/ai-llm/advanced-llm-concepts/"><span class="arr">&#8594;</span> Advanced LLM Concepts</a>
     <a href="/reddit/public/ai-llm/orchestrating-agents/"><span class="arr">&#8594;</span> Orchestrating AI Agents</a>
     <a href="/reddit/public/coaching/"><span class="arr">&#8594;</span> CV Coaching Roadmap</a>

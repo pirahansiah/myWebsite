@@ -103,4 +103,4 @@ markmap: |
 - **[Portfolio](/reddit/pkm/use-cases/)** — Publications, patents, books, journals, papers, keynotes
 - **[Resources](/reddit/public/Resources/)** — Patents, books, papers, projects
 - **[Curated Links](/reddit/public/links/)** — Tools, tutorials, reading, YouTube
-- **[Content Hub](/reddit/public/index/)** — All content categories
+- **[Content Hub](/reddit/public/)** — All content categories
