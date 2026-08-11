@@ -633,7 +633,7 @@
           callback_function: function (t) { streamEl.textContent += t; }
         });
         var messages = [
-          { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Structure your reply exactly like this:\nREVIEW: a rich, detailed single paragraph (6-10 sentences) that synthesizes the context, connections between pages, and key technical details from ALL the sources — write it like a proper paper review, not a one-liner.\nKEY POINTS: three numbered key points (1. 2. 3.), each one short sentence.\nX POST: one short catchy line for sharing this topic on X/Twitter.\nAlways name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
+          { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Structure your reply exactly like this:\nREVIEW: a rich, detailed single paragraph (6-10 sentences) that synthesizes the context, connections between pages, and key technical details from ALL the sources — write it like a proper paper review, not a one-liner.\nKEY POINTS: three numbered key points (1. 2. 3.), each one short sentence.\nX POST: a short 1-2 sentence summary of the review above, most relevant to the question's keywords (no hashtags, no URL).\nAlways name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
           { role: "user", content: "Document excerpts:\n\n" + context + "\n\nQuestion: " + question }
         ];
         return generator(messages, { max_new_tokens: 520, do_sample: false, streamer: streamer });
@@ -684,15 +684,48 @@
       .trim();
   }
 
-  // Build the shareable X post: line + full site URL of top page + hashtags.
-  function buildXPost(text, topPages) {
+  // Build a short X-ready summary from the review text, most relevant to the
+  // question keywords: pick the 1-2 sentences with the most keyword hits.
+  function summarizeForX(reviewText, query, maxLen) {
+    maxLen = maxLen || 240;
+    var text = String(reviewText || "").replace(/\s+/g, " ").trim();
+    if (!text) return "";
+    var tokens = tokenize(query);
+    var sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+    var scored = sentences.map(function (s, i) {
+      var low = s.toLowerCase();
+      var hits = 0;
+      tokens.forEach(function (t) { if (low.indexOf(t) >= 0) hits++; });
+      return { s: s.trim(), i: i, hits: hits };
+    });
+    // prefer sentences with keyword hits, then earlier position
+    scored.sort(function (a, b) { return (b.hits - a.hits) || (a.i - b.i); });
+    var out = "";
+    scored.forEach(function (item) {
+      if (out.length >= maxLen) return;
+      var piece = (out ? " " : "") + item.s;
+      if ((out + piece).length > maxLen && out) return;
+      out += piece;
+      if (item.hits > 0) { /* keep going to gather up to 2 relevant sentences */ }
+    });
+    // If nothing had keyword hits, fall back to the first sentence.
+    if (!out) out = sentences[0] ? sentences[0].trim() : text;
+    if (out.length > maxLen) out = out.substring(0, maxLen - 1).trim() + "…";
+    return out;
+  }
+
+  // Build the shareable X post: short keyword-relevant summary of the review
+  // + full site URL of top page + hashtags.
+  function buildXPost(text, topPages, reviewText, query) {
     var top = topPages[0];
     var meta = pageMeta(top);
     var url = location.origin + top;
     var tags = (meta && meta.tags) ? meta.tags.slice(0, 4) : [];
     var hashes = (meta && meta.hashtags) ? String(meta.hashtags).split(/\s+/).filter(Boolean).slice(0, 4) : [];
     var hashStr = [].concat(tags.map(function (t) { return "#" + t; }), hashes).filter(function (h) { return h && h.length > 1; }).slice(0, 6).join(" ");
-    var line = (text && text.trim()) ? text.trim() : ("Check out " + (meta ? meta.title : top));
+    // Prefer the model's X POST line; otherwise summarize the review itself.
+    var line = (text && text.trim()) ? text.trim() : summarizeForX(reviewText, query);
+    if (!line) line = "Check out " + (meta ? meta.title : top);
     return { line: line, url: url, hashtags: hashStr };
   }
 
@@ -749,8 +782,8 @@
       return '<a class="llm-web-link" href="' + e.url + '" target="_blank" rel="noopener">' + esc(e.name) + '</a>';
     }).join("");
 
-    // X post: explicit xpostLine wins (LLM-generated); fallback to title line
-    var xp = buildXPost(xpostLine || "", topPages);
+    // X post: model's X POST line if present; else keyword-relevant summary of the review
+    var xp = buildXPost(xpostLine || "", topPages, ui.review ? ui.review.textContent : "", query);
     var full = xp.line + "\n\n" + xp.url + (xp.hashtags ? "\n\n" + xp.hashtags : "");
     ui.xpostBody.textContent = full;
     ui.xpostOpen.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(full);
