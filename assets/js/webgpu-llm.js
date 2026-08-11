@@ -645,7 +645,12 @@
         else if (Array.isArray(x)) streamEl.textContent = x[x.length - 1] && x[x.length - 1].content || "";
       }
       setStatus("Done (" + sharedDevice.toUpperCase() + ").", false);
-      onDone && onDone();
+      // onDone must never be able to blank the generated text: guard it.
+      try {
+        onDone && onDone();
+      } catch (e) {
+        console.error("post-processing failed (generated text kept):", e);
+      }
       return result;
     });
   }
@@ -667,6 +672,16 @@
     if (xp) out.xpost = xp[1].trim();
     if (!out.review && !out.keypoints.length && !out.xpost) out.review = text.trim(); // fallback
     return out;
+  }
+
+  // Clean version of the full answer for the review box: keeps ALL model text,
+  // only strips the section labels. Guarantees the box never shrinks.
+  function cleanStructuredText(text) {
+    return String(text || "")
+      .replace(/^\s*REVIEW\s*:\s*/i, "")
+      .replace(/^\s*KEY\s*POINTS?\s*:\s*/i, "")
+      .replace(/^\s*X\s*POST\s*:\s*/i, "")
+      .trim();
   }
 
   // Build the shareable X post: line + full site URL of top page + hashtags.
@@ -792,21 +807,30 @@
       var top5 = top.slice(0, 5);
       ui.askBtn.disabled = true;
       runAnswer(top5, q, ui.review, function () {
-        // structured split of the finished answer — parse ONCE and keep it
+        // Parse ONCE. The review box keeps the FULL model text (labels stripped)
+        // so nothing ever disappears; key points + X line are shown in addition.
         lastParsed = parseStructured(ui.review.textContent);
+        var raw = ui.review.textContent;
         if (lastParsed.keypoints.length) {
-          ui.review.textContent = lastParsed.review || ui.review.textContent;
+          ui.review.textContent = cleanStructuredText(raw) || raw;
           ui.keypoints.innerHTML = lastParsed.keypoints.slice(0, 3).map(function (k) {
             return '<div class="llm-kp"><span class="llm-kp-num">&#10003;</span><span>' + esc(k) + '</span></div>';
           }).join("");
+        } else {
+          // model didn't follow the format — keep the raw text untouched
+          ui.review.textContent = raw;
         }
-        // refresh panels with the LLM X line preserved
-        renderPanels(ranked2, topPages, q, lastParsed.xpost);
+        // refresh panels with the LLM X line preserved (falls back to title if absent)
+        try { renderPanels(ranked2, topPages, q, lastParsed.xpost); } catch (err) { console.error(err); }
         ui.askBtn.disabled = false;
       }).catch(function (e) {
         console.error(e);
-        ui.review.textContent = "LLM unavailable: " + (e && e.message || e) + "\n\n(Relevant pages above are still valid.)";
-        setStatus("LLM error — pages shown above.", false);
+        // never wipe generated/partial text with an error banner
+        if (!ui.review.textContent.trim()) {
+          ui.review.textContent = "LLM unavailable: " + (e && e.message || e) + "\n\n(Relevant pages above are still valid.)";
+        } else {
+          setStatus("LLM error: " + (e && e.message || e) + " — partial answer kept.", false);
+        }
         ui.askBtn.disabled = false;
       });
     }
@@ -884,7 +908,12 @@
       ui.chatStatus.textContent = "";
     }).catch(function (e) {
       console.error(e);
-      thinking.textContent = "Model error: " + (e && e.message || e) + " — try the Load model button first.";
+      // never wipe a partial chat answer with an error banner
+      if (!thinking.textContent.trim() || thinking.textContent === "…") {
+        thinking.textContent = "Model error: " + (e && e.message || e) + " — try the Load model button first.";
+      } else {
+        thinking.textContent += "\n\n[Error: " + (e && e.message || e) + " — partial answer kept]";
+      }
       ui.chatStatus.textContent = "";
     }).finally(function () {
       chatBusy = false;
