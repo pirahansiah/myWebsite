@@ -1,0 +1,64 @@
+---
+layout: none
+---
+{%- assign pages_with_title = site.pages | where_exp: "page", "page.title" -%}
+{%- assign keep = "" | split: "" -%}
+{%- for page in pages_with_title -%}
+  {%- assign u = page.url -%}
+  {%- assign skip = false -%}
+  {%- if u contains '/site/' or u contains '/view/' or u contains '/graph' or u contains '/search' or u contains '/webgpu-llm' or u contains '/assets/' -%}
+    {%- assign skip = true -%}
+  {%- endif -%}
+  {%- unless skip -%}
+    {%- assign keep = keep | push: page -%}
+  {%- endunless -%}
+{%- endfor -%}
+[
+{%- for page in keep -%}
+  {%- if page.url contains '/publications/Papers/' -%}
+    {%- assign category = 'paper' -%}
+  {%- elsif page.url contains '/publications/Journals/' -%}
+    {%- assign category = 'journal' -%}
+  {%- elsif page.url contains '/publications/Books/' -%}
+    {%- assign category = 'book' -%}
+  {%- elsif page.url contains '/publications/Patents/' -%}
+    {%- assign category = 'patent' -%}
+  {%- elsif page.url contains '/publications/Keynotes/' -%}
+    {%- assign category = 'keynote' -%}
+  {%- elsif page.url contains '/ai2026/' -%}
+    {%- assign category = 'course' -%}
+  {%- elsif page.url contains '/public/cv/' -%}
+    {%- assign category = 'cv' -%}
+  {%- elsif page.url contains '/public/ai-llm/' -%}
+    {%- assign category = 'ai' -%}
+  {%- elsif page.url contains '/public/cuda-gpu/' -%}
+    {%- assign category = 'cuda' -%}
+  {%- elsif page.url contains '/pkm/' -%}
+    {%- assign category = 'pkm' -%}
+  {%- elsif page.url contains '/public/' -%}
+    {%- assign category = 'business' -%}
+  {%- else -%}
+    {%- assign category = 'hub' -%}
+  {%- endif -%}
+  {%- if page.tags -%}
+    {%- assign tags = page.tags -%}
+  {%- else -%}
+    {%- assign tags = '' | split: '' -%}
+  {%- endif -%}
+  {%- if page.hashtags -%}
+    {%- assign hashtags = page.hashtags -%}
+  {%- else -%}
+    {%- assign hashtags = '' -%}
+  {%- endif -%}
+  {%- assign body_text = page.content | strip_html | replace: '](', ' ' | replace: '[', '' | replace: ')', '' | replace: '`', '' | replace: '|', ' ' | truncate: 1600 -%}
+  {
+    "id": {{ page.url | jsonify }},
+    "title": {{ page.title | jsonify }},
+    "url": {{ page.url | relative_url | jsonify }},
+    "tags": {{ tags | jsonify }},
+    "hashtags": {{ hashtags | jsonify }},
+    "category": {{ category | jsonify }},
+    "body": {{ body_text | jsonify }}
+  }{%- unless forloop.last -%},{%- endunless -%}
+{%- endfor -%}
+]

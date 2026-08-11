@@ -883,10 +883,402 @@
       "kind": "note"
     },
     {
-      "id": "notes-readme",
-      "label": "README",
-      "url": "/notes/README",
-      "raw": "/notes/README",
+      "id": "notes-tools-image-in-md",
+      "label": "image-in-md",
+      "url": "/notes/tools/image-in-md",
+      "raw": "/notes/tools/image-in-md",
+      "kind": "note"
+    },
+    {
+      "id": "notes-docs-projects-solutions",
+      "label": "solutions",
+      "url": "/notes/docs/projects/solutions/",
+      "raw": "/notes/docs/projects/solutions/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-patents-face-augmentation",
+      "label": "face-augmentation",
+      "url": "/notes/pubs/patents/face-augmentation/",
+      "raw": "/notes/pubs/patents/face-augmentation/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-patents-facial-analysis",
+      "label": "facial-analysis",
+      "url": "/notes/pubs/patents/facial-analysis/",
+      "raw": "/notes/pubs/patents/facial-analysis/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-patents-vehicle-detection",
+      "label": "vehicle-detection",
+      "url": "/notes/pubs/patents/vehicle-detection/",
+      "raw": "/notes/pubs/patents/vehicle-detection/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-books-computational-intelligence",
+      "label": "computational-intelligence",
+      "url": "/notes/pubs/books/computational-intelligence/",
+      "raw": "/notes/pubs/books/computational-intelligence/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-books-camera-calibration",
+      "label": "camera-calibration",
+      "url": "/notes/pubs/books/camera-calibration/",
+      "raw": "/notes/pubs/books/camera-calibration/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-journals-adaptive-thresholding",
+      "label": "adaptive-thresholding",
+      "url": "/notes/pubs/journals/adaptive-thresholding/",
+      "raw": "/notes/pubs/journals/adaptive-thresholding/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-journals-character-recognition",
+      "label": "character-recognition",
+      "url": "/notes/pubs/journals/character-recognition/",
+      "raw": "/notes/pubs/journals/character-recognition/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-journals-fuzzy-thresholding",
+      "label": "fuzzy-thresholding",
+      "url": "/notes/pubs/journals/fuzzy-thresholding/",
+      "raw": "/notes/pubs/journals/fuzzy-thresholding/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-journals-psnr-segmentation",
+      "label": "psnr-segmentation",
+      "url": "/notes/pubs/journals/psnr-segmentation/",
+      "raw": "/notes/pubs/journals/psnr-segmentation/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-journals-slam-humanoid",
+      "label": "slam-humanoid",
+      "url": "/notes/pubs/journals/slam-humanoid/",
+      "raw": "/notes/pubs/journals/slam-humanoid/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-journals-ant-colony",
+      "label": "ant-colony",
+      "url": "/notes/pubs/journals/ant-colony/",
+      "raw": "/notes/pubs/journals/ant-colony/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-2d-3d-mapping",
+      "label": "2d-3d-mapping",
+      "url": "/notes/pubs/papers/2d-3d-mapping/",
+      "raw": "/notes/pubs/papers/2d-3d-mapping/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-adaptive-segmentation",
+      "label": "adaptive-segmentation",
+      "url": "/notes/pubs/papers/adaptive-segmentation/",
+      "raw": "/notes/pubs/papers/adaptive-segmentation/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-geometrical-topological",
+      "label": "geometrical-topological",
+      "url": "/notes/pubs/papers/geometrical-topological/",
+      "raw": "/notes/pubs/papers/geometrical-topological/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-multimodal-calibration",
+      "label": "multimodal-calibration",
+      "url": "/notes/pubs/papers/multimodal-calibration/",
+      "raw": "/notes/pubs/papers/multimodal-calibration/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-global-feature-recognition",
+      "label": "global-feature-recognition",
+      "url": "/notes/pubs/papers/global-feature-recognition/",
+      "raw": "/notes/pubs/papers/global-feature-recognition/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-handwritten-thresholding",
+      "label": "handwritten-thresholding",
+      "url": "/notes/pubs/papers/handwritten-thresholding/",
+      "raw": "/notes/pubs/papers/handwritten-thresholding/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-license-plate",
+      "label": "license-plate",
+      "url": "/notes/pubs/papers/license-plate/",
+      "raw": "/notes/pubs/papers/license-plate/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-multi-threshold-plate",
+      "label": "multi-threshold-plate",
+      "url": "/notes/pubs/papers/multi-threshold-plate/",
+      "raw": "/notes/pubs/papers/multi-threshold-plate/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-pattern-calibration",
+      "label": "pattern-calibration",
+      "url": "/notes/pubs/papers/pattern-calibration/",
+      "raw": "/notes/pubs/papers/pattern-calibration/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-grid-computing",
+      "label": "grid-computing",
+      "url": "/notes/pubs/papers/grid-computing/",
+      "raw": "/notes/pubs/papers/grid-computing/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-conference-paper",
+      "label": "conference-paper",
+      "url": "/notes/pubs/papers/conference-paper/",
+      "raw": "/notes/pubs/papers/conference-paper/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-keynotes-llm-cv",
+      "label": "llm-cv",
+      "url": "/notes/pubs/keynotes/llm-cv/",
+      "raw": "/notes/pubs/keynotes/llm-cv/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-docs-images-optimizationml-png",
+      "label": "optimizationML",
+      "url": "/view/?p=%2Fnotes%2Fdocs%2Fimages%2FoptimizationML.png",
+      "raw": "/notes/docs/images/optimizationML.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-docs-images-under-over-fit-ml-png",
+      "label": "under_over_fit_ML",
+      "url": "/view/?p=%2Fnotes%2Fdocs%2Fimages%2Funder_over_fit_ML.png",
+      "raw": "/notes/docs/images/under_over_fit_ML.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-docs-product",
+      "label": "product",
+      "url": "/notes/docs/product",
+      "raw": "/notes/docs/product",
+      "kind": "note"
+    },
+    {
+      "id": "notes-docs-llm-index",
+      "label": "index",
+      "url": "/notes/docs/llm/index",
+      "raw": "/notes/docs/llm/index",
+      "kind": "note"
+    },
+    {
+      "id": "notes-docs-python-index",
+      "label": "index",
+      "url": "/notes/docs/python/index",
+      "raw": "/notes/docs/python/index",
+      "kind": "note"
+    },
+    {
+      "id": "tag-python",
+      "label": "#Python",
+      "url": "/notes/docs/python/index",
+      "raw": "/notes/docs/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-devtools",
+      "label": "#DevTools",
+      "url": "/notes/docs/python/index",
+      "raw": "/notes/docs/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-configuration",
+      "label": "#Configuration",
+      "url": "/notes/docs/python/index",
+      "raw": "/notes/docs/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-configfiles",
+      "label": "#ConfigFiles",
+      "url": "/notes/docs/python/index",
+      "raw": "/notes/docs/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-pythontips",
+      "label": "#PythonTips",
+      "url": "/notes/docs/python/index",
+      "raw": "/notes/docs/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-opensource",
+      "label": "#OpenSource",
+      "url": "/notes/docs/python/index",
+      "raw": "/notes/docs/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-machinelearning",
+      "label": "#MachineLearning",
+      "url": "/notes/docs/python/index",
+      "raw": "/notes/docs/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-tips",
+      "label": "#tips",
+      "url": "/notes/docs/python/index",
+      "raw": "/notes/docs/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-include",
+      "label": "#include",
+      "url": "/notes/docs/python/index",
+      "raw": "/notes/docs/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-pragma",
+      "label": "#pragma",
+      "url": "/notes/docs/python/index",
+      "raw": "/notes/docs/python/index",
+      "kind": "tag"
+    },
+    {
+      "id": "notes-docs-images-vscodecudawindows-png",
+      "label": "VSCodeCUDAwindows",
+      "url": "/view/?p=%2Fnotes%2Fdocs%2Fimages%2FVSCodeCUDAwindows.png",
+      "raw": "/notes/docs/images/VSCodeCUDAwindows.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-buffer-0",
+      "label": "buffer(0)",
+      "url": "/notes/buffer(0)",
+      "raw": "/notes/buffer(0)",
+      "kind": "note"
+    },
+    {
+      "id": "notes-buffer-1",
+      "label": "buffer(1)",
+      "url": "/notes/buffer(1)",
+      "raw": "/notes/buffer(1)",
+      "kind": "note"
+    },
+    {
+      "id": "notes-buffer-2",
+      "label": "buffer(2)",
+      "url": "/notes/buffer(2)",
+      "raw": "/notes/buffer(2)",
+      "kind": "note"
+    },
+    {
+      "id": "notes-thread-position-in-grid",
+      "label": "thread_position_in_grid",
+      "url": "/notes/thread_position_in_grid",
+      "raw": "/notes/thread_position_in_grid",
+      "kind": "note"
+    },
+    {
+      "id": "tag-numba",
+      "label": "#Numba",
+      "url": "/notes/docs/cuda/numba",
+      "raw": "/notes/docs/cuda/numba",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-performanceoptimization",
+      "label": "#PerformanceOptimization",
+      "url": "/notes/docs/cuda/numba",
+      "raw": "/notes/docs/cuda/numba",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-bigdata",
+      "label": "#BigData",
+      "url": "/notes/docs/cuda/numba",
+      "raw": "/notes/docs/cuda/numba",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-datascience",
+      "label": "#DataScience",
+      "url": "/notes/docs/cuda/numba",
+      "raw": "/notes/docs/cuda/numba",
+      "kind": "tag"
+    },
+    {
+      "id": "notes-docs-optimization-index",
+      "label": "index",
+      "url": "/notes/docs/optimization/index",
+      "raw": "/notes/docs/optimization/index",
+      "kind": "note"
+    },
+    {
+      "id": "notes-docs-projects-solutions-index",
+      "label": "index",
+      "url": "/notes/docs/projects/solutions/index",
+      "raw": "/notes/docs/projects/solutions/index",
+      "kind": "note"
+    },
+    {
+      "id": "notes-docs-projects-ai-cost-calculator",
+      "label": "ai-cost-calculator",
+      "url": "/notes/docs/projects/ai-cost-calculator",
+      "raw": "/notes/docs/projects/ai-cost-calculator",
+      "kind": "note"
+    },
+    {
+      "id": "notes-docs-research",
+      "label": "research",
+      "url": "/notes/docs/research",
+      "raw": "/notes/docs/research",
+      "kind": "note"
+    },
+    {
+      "id": "notes-docs-index",
+      "label": "index",
+      "url": "/notes/docs/index",
+      "raw": "/notes/docs/index",
+      "kind": "note"
+    },
+    {
+      "id": "notes-docs-prompts-index",
+      "label": "index",
+      "url": "/notes/docs/prompts/index",
+      "raw": "/notes/docs/prompts/index",
+      "kind": "note"
+    },
+    {
+      "id": "notes-docs-cv-index",
+      "label": "index",
+      "url": "/notes/docs/cv/index",
+      "raw": "/notes/docs/cv/index",
+      "kind": "note"
+    },
+    {
+      "id": "notes-docs-seo-index",
+      "label": "index",
+      "url": "/notes/docs/seo/index",
+      "raw": "/notes/docs/seo/index",
       "kind": "note"
     },
     {
@@ -897,10 +1289,31 @@
       "kind": "note"
     },
     {
+      "id": "notes-pkm-guide",
+      "label": "guide",
+      "url": "/notes/pkm/guide",
+      "raw": "/notes/pkm/guide",
+      "kind": "note"
+    },
+    {
+      "id": "notes-boo",
+      "label": "boo",
+      "url": "/notes/boo",
+      "raw": "/notes/boo",
+      "kind": "note"
+    },
+    {
       "id": "notes-pkm-toc",
       "label": "TOC",
       "url": "/notes/pkm/TOC",
       "raw": "/notes/pkm/TOC",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pkm-links",
+      "label": "links",
+      "url": "/notes/pkm/links",
+      "raw": "/notes/pkm/links",
       "kind": "note"
     },
     {
@@ -1065,1151 +1478,59 @@
       "kind": "tag"
     },
     {
-      "id": "notes-pkm-links",
-      "label": "links",
-      "url": "/notes/pkm/links",
-      "raw": "/notes/pkm/links",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pkm-guide",
-      "label": "guide",
-      "url": "/notes/pkm/guide",
-      "raw": "/notes/pkm/guide",
-      "kind": "note"
-    },
-    {
-      "id": "notes-boo",
-      "label": "boo",
-      "url": "/notes/boo",
-      "raw": "/notes/boo",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-books-ai-cv-meets-llm",
-      "label": "cv-meets-llm",
-      "url": "/notes/pubs/books/ai/cv-meets-llm",
-      "raw": "/notes/pubs/books/ai/cv-meets-llm",
-      "kind": "note"
-    },
-    {
-      "id": "tag-llm",
-      "label": "#llm",
-      "url": "/notes/pubs/books/ai/cv-meets-llm",
-      "raw": "/notes/pubs/books/ai/cv-meets-llm",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-multimodal",
-      "label": "#multimodal",
-      "url": "/notes/pubs/books/ai/cv-meets-llm",
-      "raw": "/notes/pubs/books/ai/cv-meets-llm",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-rag",
-      "label": "#rag",
-      "url": "/notes/pubs/books/ai/cv-meets-llm",
-      "raw": "/notes/pubs/books/ai/cv-meets-llm",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-docs-projects-ai-cost-calculator",
-      "label": "ai-cost-calculator",
-      "url": "/notes/docs/projects/ai-cost-calculator/",
-      "raw": "/notes/docs/projects/ai-cost-calculator/",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-books-ai-opencv5-ch3",
-      "label": "opencv5-ch3",
-      "url": "/notes/pubs/books/ai/opencv5-ch3",
-      "raw": "/notes/pubs/books/ai/opencv5-ch3",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-books-ai-opencv5-ch2",
-      "label": "opencv5-ch2",
-      "url": "/notes/pubs/books/ai/opencv5-ch2",
-      "raw": "/notes/pubs/books/ai/opencv5-ch2",
-      "kind": "note"
-    },
-    {
-      "id": "tag-featuredetection",
-      "label": "#featuredetection",
-      "url": "/notes/pubs/books/ai/opencv5-ch2",
-      "raw": "/notes/pubs/books/ai/opencv5-ch2",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-artificialintelligence",
-      "label": "#ArtificialIntelligence",
-      "url": "/notes/pubs/books/ai/opencv5-ch2",
-      "raw": "/notes/pubs/books/ai/opencv5-ch2",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-machinelearning",
-      "label": "#MachineLearning",
-      "url": "/notes/pubs/books/ai/opencv5-ch2",
-      "raw": "/notes/pubs/books/ai/opencv5-ch2",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-deeplearning",
-      "label": "#DeepLearning",
-      "url": "/notes/pubs/books/ai/opencv5-ch2",
-      "raw": "/notes/pubs/books/ai/opencv5-ch2",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-airesources",
-      "label": "#AIResources",
-      "url": "/notes/pubs/books/ai/opencv5-ch2",
-      "raw": "/notes/pubs/books/ai/opencv5-ch2",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-techeducation",
-      "label": "#TechEducation",
-      "url": "/notes/pubs/books/ai/opencv5-ch2",
-      "raw": "/notes/pubs/books/ai/opencv5-ch2",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-professionaldevelopment",
-      "label": "#ProfessionalDevelopment",
-      "url": "/notes/pubs/books/ai/opencv5-ch2",
-      "raw": "/notes/pubs/books/ai/opencv5-ch2",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-datascience",
-      "label": "#DataScience",
-      "url": "/notes/pubs/books/ai/opencv5-ch2",
-      "raw": "/notes/pubs/books/ai/opencv5-ch2",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-aicommunity",
-      "label": "#AICommunity",
-      "url": "/notes/pubs/books/ai/opencv5-ch2",
-      "raw": "/notes/pubs/books/ai/opencv5-ch2",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-pubs-books-ai-new-developer-era",
-      "label": "new-developer-era",
-      "url": "/notes/pubs/books/ai/new-developer-era",
-      "raw": "/notes/pubs/books/ai/new-developer-era",
-      "kind": "note"
-    },
-    {
-      "id": "tag-multiagent",
-      "label": "#multiagent",
-      "url": "/notes/pubs/books/ai/new-developer-era",
-      "raw": "/notes/pubs/books/ai/new-developer-era",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-courses-index",
-      "label": "index",
-      "url": "/notes/courses/index",
-      "raw": "/notes/courses/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-books-ai-opencv5-ch1",
-      "label": "opencv5-ch1",
-      "url": "/notes/pubs/books/ai/opencv5-ch1",
-      "raw": "/notes/pubs/books/ai/opencv5-ch1",
-      "kind": "note"
-    },
-    {
-      "id": "tag-imageprocessing",
-      "label": "#imageprocessing",
-      "url": "/notes/pubs/books/ai/opencv5-ch1",
-      "raw": "/notes/pubs/books/ai/opencv5-ch1",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-python",
-      "label": "#python",
-      "url": "/notes/pubs/books/ai/opencv5-ch1",
-      "raw": "/notes/pubs/books/ai/opencv5-ch1",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-pubs-books-camera-calibration",
-      "label": "camera-calibration",
-      "url": "/notes/pubs/books/camera-calibration",
-      "raw": "/notes/pubs/books/camera-calibration",
-      "kind": "note"
-    },
-    {
-      "id": "tag-videostabilization",
-      "label": "#videostabilization",
-      "url": "/notes/pubs/books/camera-calibration",
-      "raw": "/notes/pubs/books/camera-calibration",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-robotics",
-      "label": "#robotics",
-      "url": "/notes/pubs/books/camera-calibration",
-      "raw": "/notes/pubs/books/camera-calibration",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-slam",
-      "label": "#slam",
-      "url": "/notes/pubs/books/camera-calibration",
-      "raw": "/notes/pubs/books/camera-calibration",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-pubs-books-camera-calibration-video-stabilization-png",
-      "label": "camera-calibration-video-stabilization",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fbooks%2Fcamera-calibration-video-stabilization.png",
-      "raw": "/notes/pubs/books/camera-calibration-video-stabilization.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-books-index",
-      "label": "index",
-      "url": "/notes/pubs/books/index",
-      "raw": "/notes/pubs/books/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-camera-calibration-video-stabilization-png",
-      "label": "camera-calibration-video-stabilization",
-      "url": "/view/?p=%2Fnotes%2Fcamera-calibration-video-stabilization.png",
-      "raw": "/notes/camera-calibration-video-stabilization.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-books-computational-intelligence",
-      "label": "computational-intelligence",
-      "url": "/notes/pubs/books/computational-intelligence/",
-      "raw": "/notes/pubs/books/computational-intelligence/",
-      "kind": "note"
-    },
-    {
-      "id": "tag-fuzzylogic",
-      "label": "#fuzzylogic",
-      "url": "/notes/pubs/books/computational-intelligence",
-      "raw": "/notes/pubs/books/computational-intelligence",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-pubs-books-computational-intelligence-optical-flow-png",
-      "label": "computational-intelligence-optical-flow",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fbooks%2Fcomputational-intelligence-optical-flow.png",
-      "raw": "/notes/pubs/books/computational-intelligence-optical-flow.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-journals-ant-colony",
-      "label": "ant-colony",
-      "url": "/notes/pubs/journals/ant-colony",
-      "raw": "/notes/pubs/journals/ant-colony",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-journals-ant-colony-optimization-png",
-      "label": "ant-colony-optimization",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2Fant-colony-optimization.png",
-      "raw": "/notes/pubs/journals/ant-colony-optimization.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-journals-fuzzy-thresholding",
-      "label": "fuzzy-thresholding",
-      "url": "/notes/pubs/journals/fuzzy-thresholding",
-      "raw": "/notes/pubs/journals/fuzzy-thresholding",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-journals-gsft-psnr-fuzzy-threshold-png",
-      "label": "gsft-psnr-fuzzy-threshold",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2Fgsft-psnr-fuzzy-threshold.png",
-      "raw": "/notes/pubs/journals/gsft-psnr-fuzzy-threshold.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-journals-slam-humanoid",
-      "label": "slam-humanoid",
-      "url": "/notes/pubs/journals/slam-humanoid",
-      "raw": "/notes/pubs/journals/slam-humanoid",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-journals-3d-slam-humanoid-robots-png",
-      "label": "3d-slam-humanoid-robots",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2F3d-slam-humanoid-robots.png",
-      "raw": "/notes/pubs/journals/3d-slam-humanoid-robots.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-journals-psnr-segmentation",
-      "label": "psnr-segmentation",
-      "url": "/notes/pubs/journals/psnr-segmentation",
-      "raw": "/notes/pubs/journals/psnr-segmentation",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-journals-psnr-threshold-segmentation-png",
-      "label": "psnr-threshold-segmentation",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2Fpsnr-threshold-segmentation.png",
-      "raw": "/notes/pubs/journals/psnr-threshold-segmentation.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-journals-character-recognition",
-      "label": "character-recognition",
-      "url": "/notes/pubs/journals/character-recognition",
-      "raw": "/notes/pubs/journals/character-recognition",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-journals-character-object-recognition-png",
-      "label": "character-object-recognition",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2Fcharacter-object-recognition.png",
-      "raw": "/notes/pubs/journals/character-object-recognition.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-journals-index",
-      "label": "index",
-      "url": "/notes/pubs/journals/index",
-      "raw": "/notes/pubs/journals/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-journals-adaptive-thresholding",
-      "label": "adaptive-thresholding",
-      "url": "/notes/pubs/journals/adaptive-thresholding/",
-      "raw": "/notes/pubs/journals/adaptive-thresholding/",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-journals-adaptive-thresholding-psnr-png",
-      "label": "adaptive-thresholding-psnr",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2Fadaptive-thresholding-psnr.png",
-      "raw": "/notes/pubs/journals/adaptive-thresholding-psnr.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-keynotes-index",
-      "label": "index",
-      "url": "/notes/pubs/keynotes/index",
-      "raw": "/notes/pubs/keynotes/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-keynotes-llm-cv",
-      "label": "llm-cv",
-      "url": "/notes/pubs/keynotes/llm-cv/",
-      "raw": "/notes/pubs/keynotes/llm-cv/",
-      "kind": "note"
-    },
-    {
-      "id": "tag-costcalculator",
-      "label": "#CostCalculator",
-      "url": "/notes/pubs/keynotes/llm-cv",
-      "raw": "/notes/pubs/keynotes/llm-cv",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-claude",
-      "label": "#Claude",
-      "url": "/notes/pubs/keynotes/llm-cv",
-      "raw": "/notes/pubs/keynotes/llm-cv",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-googlegemini",
-      "label": "#GoogleGemini",
-      "url": "/notes/pubs/keynotes/llm-cv",
-      "raw": "/notes/pubs/keynotes/llm-cv",
-      "kind": "tag"
-    },
-    {
-      "id": "microsoft-ai-use-cases-png",
-      "label": "Microsoft_AI_Use_cases",
-      "url": "/view/?p=%2FMicrosoft_AI_Use_cases.png",
-      "raw": "/Microsoft_AI_Use_cases.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-papers-license-plate",
-      "label": "license-plate",
-      "url": "/notes/pubs/papers/license-plate",
-      "raw": "/notes/pubs/papers/license-plate",
-      "kind": "note"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-license-plate-recognition-with-multi-threshold-based-on-entropy-e2ps290",
-      "label": "License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
-      "kind": "note"
-    },
-    {
-      "id": "https-doi-org-10-1109-iceei-2011-6021627",
-      "label": "ICEEI.2011.6021627",
-      "url": "/https://doi.org/10.1109/ICEEI.2011.6021627",
-      "raw": "/https://doi.org/10.1109/ICEEI.2011.6021627",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-license-plate-recognition-entropy-png",
-      "label": "license-plate-recognition-entropy",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Flicense-plate-recognition-entropy.png",
-      "raw": "/notes/pubs/papers/license-plate-recognition-entropy.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-papers-pattern-calibration",
-      "label": "pattern-calibration",
-      "url": "/notes/pubs/papers/pattern-calibration",
-      "raw": "/notes/pubs/papers/pattern-calibration",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-pattern-image-calibration-png",
-      "label": "pattern-image-calibration",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fpattern-image-calibration.png",
-      "raw": "/notes/pubs/papers/pattern-image-calibration.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-papers-grid-computing",
-      "label": "grid-computing",
-      "url": "/notes/pubs/papers/grid-computing",
-      "raw": "/notes/pubs/papers/grid-computing",
-      "kind": "note"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-tafreshgrid-grid-computing-in-tafresh-university-e2ps3ma",
-      "label": "My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-tafreshgrid-grid-computing-png",
-      "label": "tafreshgrid-grid-computing",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Ftafreshgrid-grid-computing.png",
-      "raw": "/notes/pubs/papers/tafreshgrid-grid-computing.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-papers-geometrical-topological",
-      "label": "geometrical-topological",
-      "url": "/notes/pubs/papers/geometrical-topological",
-      "raw": "/notes/pubs/papers/geometrical-topological",
-      "kind": "note"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-an-evaluation-of-classification-techniques-using-enhanced-geometrical-topological-feature-analysis-e2ps17l",
-      "label": "My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-classification-geometrical-topological-png",
-      "label": "classification-geometrical-topological",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fclassification-geometrical-topological.png",
-      "raw": "/notes/pubs/papers/classification-geometrical-topological.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-papers-multimodal-calibration",
-      "label": "multimodal-calibration",
-      "url": "/notes/pubs/papers/multimodal-calibration",
-      "raw": "/notes/pubs/papers/multimodal-calibration",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-camera-calibration-multi-modal-png",
-      "label": "camera-calibration-multi-modal",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fcamera-calibration-multi-modal.png",
-      "raw": "/notes/pubs/papers/camera-calibration-multi-modal.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-papers-multi-threshold-plate",
-      "label": "multi-threshold-plate",
-      "url": "/notes/pubs/papers/multi-threshold-plate",
-      "raw": "/notes/pubs/papers/multi-threshold-plate",
-      "kind": "note"
-    },
-    {
-      "id": "tag-thresholding",
-      "label": "#thresholding",
-      "url": "/notes/pubs/papers/multi-threshold-plate",
-      "raw": "/notes/pubs/papers/multi-threshold-plate",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-imagesegmentation",
-      "label": "#imagesegmentation",
-      "url": "/notes/pubs/papers/multi-threshold-plate",
-      "raw": "/notes/pubs/papers/multi-threshold-plate",
-      "kind": "tag"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-multi-threshold-approach-for-license-plate-recognition-system-e2ps2fe",
-      "label": "My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
-      "kind": "note"
-    },
-    {
-      "id": "http-waset-org-publications-3636",
-      "label": "3636",
-      "url": "/http://waset.org/publications/3636",
-      "raw": "/http://waset.org/publications/3636",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-multi-threshold-license-plate-png",
-      "label": "multi-threshold-license-plate",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fmulti-threshold-license-plate.png",
-      "raw": "/notes/pubs/papers/multi-threshold-license-plate.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-papers-handwritten-thresholding",
-      "label": "handwritten-thresholding",
-      "url": "/notes/pubs/papers/handwritten-thresholding",
-      "raw": "/notes/pubs/papers/handwritten-thresholding",
-      "kind": "note"
-    },
-    {
-      "id": "tag-handwritten",
-      "label": "#handwritten",
-      "url": "/notes/pubs/papers/handwritten-thresholding",
-      "raw": "/notes/pubs/papers/handwritten-thresholding",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-psnr",
-      "label": "#psnr",
-      "url": "/notes/pubs/papers/handwritten-thresholding",
-      "raw": "/notes/pubs/papers/handwritten-thresholding",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-pubs-papers-comparison-thresholding-handwritten-png",
-      "label": "comparison-thresholding-handwritten",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fcomparison-thresholding-handwritten.png",
-      "raw": "/notes/pubs/papers/comparison-thresholding-handwritten.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-papers-index",
-      "label": "index",
-      "url": "/notes/pubs/papers/index",
-      "raw": "/notes/pubs/papers/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-adaptive-segmentation",
-      "label": "adaptive-segmentation",
-      "url": "/notes/pubs/papers/adaptive-segmentation/",
-      "raw": "/notes/pubs/papers/adaptive-segmentation/",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-2d-3d-mapping",
-      "label": "2d-3d-mapping",
-      "url": "/notes/pubs/papers/2d-3d-mapping/",
-      "raw": "/notes/pubs/papers/2d-3d-mapping/",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-global-feature-recognition",
-      "label": "global-feature-recognition",
-      "url": "/notes/pubs/papers/global-feature-recognition/",
-      "raw": "/notes/pubs/papers/global-feature-recognition/",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-conference-paper",
-      "label": "conference-paper",
-      "url": "/notes/pubs/papers/conference-paper/",
-      "raw": "/notes/pubs/papers/conference-paper/",
-      "kind": "note"
-    },
-    {
-      "id": "",
-      "label": "/",
-      "url": "//",
-      "raw": "//",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-png",
-      "label": ".png",
-      "url": "/notes/pubs/papers/.png",
-      "raw": "/notes/pubs/papers/.png",
-      "kind": "note"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-character-recognition-based-on-global-feature-e2ps1tp",
-      "label": "My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
-      "kind": "note"
-    },
-    {
-      "id": "https-doi-org-10-1109-iceei-2011-6021649",
-      "label": "ICEEI.2011.6021649",
-      "url": "/https://doi.org/10.1109/ICEEI.2011.6021649",
-      "raw": "/https://doi.org/10.1109/ICEEI.2011.6021649",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-character-recognition-global-feature-png",
-      "label": "character-recognition-global-feature",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fcharacter-recognition-global-feature.png",
-      "raw": "/notes/pubs/papers/character-recognition-global-feature.png",
-      "kind": "asset"
-    },
-    {
-      "id": "tag-objectdetection",
-      "label": "#objectdetection",
-      "url": "/notes/pubs/papers/2d-3d-mapping",
-      "raw": "/notes/pubs/papers/2d-3d-mapping",
-      "kind": "tag"
-    },
-    {
-      "id": "http-www-ftsm-ukm-my-cait2012-images-program-20schedule-20cait2012-pdf",
-      "label": "Program%20Schedule%20CAIT2012",
-      "url": "/view/?p=%2Fhttp%3A%2F%2Fwww.ftsm.ukm.my%2Fcait2012%2Fimages%2FProgram%2520Schedule%2520CAIT2012.pdf",
-      "raw": "/http://www.ftsm.ukm.my/cait2012/images/Program%20Schedule%20CAIT2012.pdf",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-papers-2d-3d-map-movement-png",
-      "label": "2d-3d-map-movement",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2F2d-3d-map-movement.png",
-      "raw": "/notes/pubs/papers/2d-3d-map-movement.png",
-      "kind": "asset"
-    },
-    {
-      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-paper-adaptive-image-segmentation-based-on-peak-signal-to-noise-ratio-for-a-license-plate-recognition-system-e2ps0ue",
-      "label": "My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
-      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
-      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-adaptive-image-segmentation-psnr-png",
-      "label": "adaptive-image-segmentation-psnr",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fadaptive-image-segmentation-psnr.png",
-      "raw": "/notes/pubs/papers/adaptive-image-segmentation-psnr.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-patents-vehicle-detection",
-      "label": "vehicle-detection",
-      "url": "/notes/pubs/patents/vehicle-detection",
-      "raw": "/notes/pubs/patents/vehicle-detection",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-patents-vehicle-detection-png",
-      "label": "vehicle-detection",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpatents%2Fvehicle-detection.png",
-      "raw": "/notes/pubs/patents/vehicle-detection.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-patents-index",
-      "label": "index",
-      "url": "/notes/pubs/patents/index",
-      "raw": "/notes/pubs/patents/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-patents-face-augmentation",
-      "label": "face-augmentation",
-      "url": "/notes/pubs/patents/face-augmentation/",
-      "raw": "/notes/pubs/patents/face-augmentation/",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-patents-facial-analysis",
-      "label": "facial-analysis",
-      "url": "/notes/pubs/patents/facial-analysis/",
-      "raw": "/notes/pubs/patents/facial-analysis/",
-      "kind": "note"
-    },
-    {
-      "id": "tag-facialrecognition",
-      "label": "#facialrecognition",
-      "url": "/notes/pubs/patents/facial-analysis",
-      "raw": "/notes/pubs/patents/facial-analysis",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-advertising",
-      "label": "#advertising",
-      "url": "/notes/pubs/patents/facial-analysis",
-      "raw": "/notes/pubs/patents/facial-analysis",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-digitalmarketing",
-      "label": "#DigitalMarketing",
-      "url": "/notes/pubs/patents/facial-analysis",
-      "raw": "/notes/pubs/patents/facial-analysis",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-innovation",
-      "label": "#Innovation",
-      "url": "/notes/pubs/patents/facial-analysis",
-      "raw": "/notes/pubs/patents/facial-analysis",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-pubs-patents-facial-analysis-advertisement-png",
-      "label": "facial-analysis-advertisement",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpatents%2Ffacial-analysis-advertisement.png",
-      "raw": "/notes/pubs/patents/facial-analysis-advertisement.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-pubs-patents-face-image-augmentation-png",
-      "label": "face-image-augmentation",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpatents%2Fface-image-augmentation.png",
-      "raw": "/notes/pubs/patents/face-image-augmentation.png",
-      "kind": "asset"
-    },
-    {
-      "id": "tag-computervision-edge-ai",
-      "label": "#ComputerVision_Edge_AI",
-      "url": "/notes/pubs/10-years",
-      "raw": "/notes/pubs/10-years",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-faceaugmentation",
-      "label": "#FaceAugmentation",
-      "url": "/notes/pubs/cv",
-      "raw": "/notes/pubs/cv",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-surveillance",
-      "label": "#Surveillance",
-      "url": "/notes/pubs/cv",
-      "raw": "/notes/pubs/cv",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-digitaladvertising",
-      "label": "#DigitalAdvertising",
-      "url": "/notes/pubs/cv",
-      "raw": "/notes/pubs/cv",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-targetedads",
-      "label": "#TargetedAds",
-      "url": "/notes/pubs/cv",
-      "raw": "/notes/pubs/cv",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-vehicledetection",
-      "label": "#VehicleDetection",
-      "url": "/notes/pubs/cv",
-      "raw": "/notes/pubs/cv",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-trafficsurveillance",
-      "label": "#TrafficSurveillance",
-      "url": "/notes/pubs/cv",
-      "raw": "/notes/pubs/cv",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-pubs-patents-dr-farshid-pirahansiah-3-patents-ai-innovations-in-vehicle-detection-facial-analysis-and-image-augmentation-png",
-      "label": "Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation",
-      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpatents%2FDr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection%2C_Facial_Analysis%2C_and_Image_Augmentation.png",
-      "raw": "/notes/pubs/patents/Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-docs-projects-solutions-index",
-      "label": "index",
-      "url": "/notes/docs/projects/solutions/index",
-      "raw": "/notes/docs/projects/solutions/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-docs-optimization-index",
-      "label": "index",
-      "url": "/notes/docs/optimization/index",
-      "raw": "/notes/docs/optimization/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-docs-prompts-index",
-      "label": "index",
-      "url": "/notes/docs/prompts/index",
-      "raw": "/notes/docs/prompts/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-docs-seo-index",
-      "label": "index",
-      "url": "/notes/docs/seo/index",
-      "raw": "/notes/docs/seo/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-docs-python-index",
-      "label": "index",
-      "url": "/notes/docs/python/index",
-      "raw": "/notes/docs/python/index",
-      "kind": "note"
-    },
-    {
-      "id": "tag-devtools",
-      "label": "#DevTools",
-      "url": "/notes/docs/python/index",
-      "raw": "/notes/docs/python/index",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-configuration",
-      "label": "#Configuration",
-      "url": "/notes/docs/python/index",
-      "raw": "/notes/docs/python/index",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-configfiles",
-      "label": "#ConfigFiles",
-      "url": "/notes/docs/python/index",
-      "raw": "/notes/docs/python/index",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-pythontips",
-      "label": "#PythonTips",
-      "url": "/notes/docs/python/index",
-      "raw": "/notes/docs/python/index",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-opensource",
-      "label": "#OpenSource",
-      "url": "/notes/docs/python/index",
-      "raw": "/notes/docs/python/index",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-tips",
-      "label": "#tips",
-      "url": "/notes/docs/python/index",
-      "raw": "/notes/docs/python/index",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-include",
-      "label": "#include",
-      "url": "/notes/docs/python/index",
-      "raw": "/notes/docs/python/index",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-pragma",
-      "label": "#pragma",
-      "url": "/notes/docs/python/index",
-      "raw": "/notes/docs/python/index",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-docs-cv-index",
-      "label": "index",
-      "url": "/notes/docs/cv/index",
-      "raw": "/notes/docs/cv/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-docs-llm-index",
-      "label": "index",
-      "url": "/notes/docs/llm/index",
-      "raw": "/notes/docs/llm/index",
-      "kind": "note"
-    },
-    {
-      "id": "tag-numba",
-      "label": "#Numba",
-      "url": "/notes/docs/cuda/numba",
-      "raw": "/notes/docs/cuda/numba",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-performanceoptimization",
-      "label": "#PerformanceOptimization",
-      "url": "/notes/docs/cuda/numba",
-      "raw": "/notes/docs/cuda/numba",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-bigdata",
-      "label": "#BigData",
-      "url": "/notes/docs/cuda/numba",
-      "raw": "/notes/docs/cuda/numba",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-docs-images-vscodecudawindows-png",
-      "label": "VSCodeCUDAwindows",
-      "url": "/view/?p=%2Fnotes%2Fdocs%2Fimages%2FVSCodeCUDAwindows.png",
-      "raw": "/notes/docs/images/VSCodeCUDAwindows.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-buffer-0",
-      "label": "buffer(0)",
-      "url": "/notes/buffer(0)",
-      "raw": "/notes/buffer(0)",
-      "kind": "note"
-    },
-    {
-      "id": "notes-buffer-1",
-      "label": "buffer(1)",
-      "url": "/notes/buffer(1)",
-      "raw": "/notes/buffer(1)",
-      "kind": "note"
-    },
-    {
-      "id": "notes-buffer-2",
-      "label": "buffer(2)",
-      "url": "/notes/buffer(2)",
-      "raw": "/notes/buffer(2)",
-      "kind": "note"
-    },
-    {
-      "id": "notes-thread-position-in-grid",
-      "label": "thread_position_in_grid",
-      "url": "/notes/thread_position_in_grid",
-      "raw": "/notes/thread_position_in_grid",
-      "kind": "note"
-    },
-    {
-      "id": "notes-docs-projects-solutions",
-      "label": "solutions",
-      "url": "/notes/docs/projects/solutions/",
-      "raw": "/notes/docs/projects/solutions/",
-      "kind": "note"
-    },
-    {
-      "id": "notes-docs-images-optimizationml-png",
-      "label": "optimizationML",
-      "url": "/view/?p=%2Fnotes%2Fdocs%2Fimages%2FoptimizationML.png",
-      "raw": "/notes/docs/images/optimizationML.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-docs-images-under-over-fit-ml-png",
-      "label": "under_over_fit_ML",
-      "url": "/view/?p=%2Fnotes%2Fdocs%2Fimages%2Funder_over_fit_ML.png",
-      "raw": "/notes/docs/images/under_over_fit_ML.png",
-      "kind": "asset"
-    },
-    {
-      "id": "notes-docs-index",
-      "label": "index",
-      "url": "/notes/docs/index",
-      "raw": "/notes/docs/index",
-      "kind": "note"
-    },
-    {
-      "id": "notes-docs-product",
-      "label": "product",
-      "url": "/notes/docs/product",
-      "raw": "/notes/docs/product",
-      "kind": "note"
-    },
-    {
-      "id": "notes-docs-research",
-      "label": "research",
-      "url": "/notes/docs/research",
-      "raw": "/notes/docs/research",
-      "kind": "note"
-    },
-    {
-      "id": "notes-site-graph-notes",
-      "label": "graph-notes",
-      "url": "/notes/site/graph-notes",
-      "raw": "/notes/site/graph-notes",
-      "kind": "note"
-    },
-    {
-      "id": "tag-edge",
-      "label": "#edge",
-      "url": "/notes/site/graph-notes",
-      "raw": "/notes/site/graph-notes",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-hailo",
-      "label": "#hailo",
-      "url": "/notes/site/graph-notes",
-      "raw": "/notes/site/graph-notes",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-mlops",
-      "label": "#mlops",
-      "url": "/notes/site/graph-notes",
-      "raw": "/notes/site/graph-notes",
-      "kind": "tag"
-    },
-    {
-      "id": "notes-wikilinks",
-      "label": "wikilinks",
-      "url": "/notes/wikilinks",
-      "raw": "/notes/wikilinks",
-      "kind": "note"
-    },
-    {
-      "id": "notes-wikilink",
-      "label": "wikilink",
-      "url": "/notes/wikilink",
-      "raw": "/notes/wikilink",
-      "kind": "note"
-    },
-    {
-      "id": "notes-site-menus",
-      "label": "menus",
-      "url": "/notes/site/menus",
-      "raw": "/notes/site/menus",
-      "kind": "note"
-    },
-    {
-      "id": "notes-site-sitemap",
-      "label": "sitemap",
-      "url": "/notes/site/sitemap",
-      "raw": "/notes/site/sitemap",
-      "kind": "note"
-    },
-    {
-      "id": "notes-site-why-not",
-      "label": "why-not",
-      "url": "/notes/site/why-not",
-      "raw": "/notes/site/why-not",
-      "kind": "note"
-    },
-    {
-      "id": "notes-site-wiki",
-      "label": "wiki",
-      "url": "/notes/site/wiki",
-      "raw": "/notes/site/wiki",
-      "kind": "note"
-    },
-    {
-      "id": "notes-site-graph-tags",
-      "label": "graph-tags",
-      "url": "/notes/site/graph-tags",
-      "raw": "/notes/site/graph-tags",
-      "kind": "note"
-    },
-    {
-      "id": "notes-site-graph",
-      "label": "graph",
-      "url": "/notes/site/graph",
-      "raw": "/notes/site/graph",
-      "kind": "note"
-    },
-    {
-      "id": "notes-site-view",
-      "label": "view",
-      "url": "/notes/site/view",
-      "raw": "/notes/site/view",
-      "kind": "note"
-    },
-    {
-      "id": "notes-site-readme",
+      "id": "notes-readme",
       "label": "README",
-      "url": "/notes/site/README",
-      "raw": "/notes/site/README",
+      "url": "/notes/README",
+      "raw": "/notes/README",
       "kind": "note"
     },
     {
-      "id": "notes-site-terms",
-      "label": "terms",
-      "url": "/notes/site/terms",
-      "raw": "/notes/site/terms",
-      "kind": "note"
-    },
-    {
-      "id": "privacy",
-      "label": "privacy",
-      "url": "/privacy/",
-      "raw": "/privacy/",
-      "kind": "note"
-    },
-    {
-      "id": "notes-site-search",
-      "label": "search",
-      "url": "/notes/site/search",
-      "raw": "/notes/site/search",
-      "kind": "note"
-    },
-    {
-      "id": "notes-site-prompts",
-      "label": "prompts",
-      "url": "/notes/site/prompts",
-      "raw": "/notes/site/prompts",
-      "kind": "note"
-    },
-    {
-      "id": "notes-tools-image-in-md",
-      "label": "image-in-md",
-      "url": "/notes/tools/image-in-md",
-      "raw": "/notes/tools/image-in-md",
-      "kind": "note"
+      "id": "tag-farshidpirahansiah",
+      "label": "#FarshidPirahansiah",
+      "url": "/notes/courses/risc-v",
+      "raw": "/notes/courses/risc-v",
+      "kind": "tag"
     },
     {
       "id": "tag-tiziran",
       "label": "#tiziran",
-      "url": "/notes/courses/ml-spec",
-      "raw": "/notes/courses/ml-spec",
+      "url": "/notes/courses/modern-cpp",
+      "raw": "/notes/courses/modern-cpp",
       "kind": "tag"
     },
     {
-      "id": "tag-farshidpirahansiah",
-      "label": "#FarshidPirahanSiah",
-      "url": "/notes/courses/ml-spec",
-      "raw": "/notes/courses/ml-spec",
+      "id": "tag-summit",
+      "label": "#Summit",
+      "url": "/notes/courses/edge-ai-summit",
+      "raw": "/notes/courses/edge-ai-summit",
       "kind": "tag"
     },
     {
-      "id": "tag-stackdeeplearning",
-      "label": "#StackDeepLearning",
-      "url": "/notes/courses/fsdl",
-      "raw": "/notes/courses/fsdl",
+      "id": "tag-embedded",
+      "label": "#Embedded",
+      "url": "/notes/courses/iot",
+      "raw": "/notes/courses/iot",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-tensorflow",
+      "label": "#TensorFlow",
+      "url": "/notes/courses/tf-deploy",
+      "raw": "/notes/courses/tf-deploy",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-robotics",
+      "label": "#Robotics",
+      "url": "/notes/courses/ros",
+      "raw": "/notes/courses/ros",
       "kind": "tag"
     },
     {
       "id": "tag-computervision",
       "label": "#computervision",
-      "url": "/notes/courses/fsdl",
-      "raw": "/notes/courses/fsdl",
+      "url": "/notes/courses/parallel",
+      "raw": "/notes/courses/parallel",
       "kind": "tag"
     },
     {
@@ -2241,24 +1562,59 @@
       "kind": "tag"
     },
     {
-      "id": "tag-tensorflow",
-      "label": "#TensorFlow",
-      "url": "/notes/courses/tf-deploy",
-      "raw": "/notes/courses/tf-deploy",
+      "id": "tag-knowledgemanagement",
+      "label": "#KnowledgeManagement",
+      "url": "/notes/courses/book-summary",
+      "raw": "/notes/courses/book-summary",
       "kind": "tag"
     },
     {
-      "id": "tag-summit",
-      "label": "#Summit",
-      "url": "/notes/courses/edge-ai-summit",
-      "raw": "/notes/courses/edge-ai-summit",
+      "id": "notes-courses-index",
+      "label": "index",
+      "url": "/notes/courses/index",
+      "raw": "/notes/courses/index",
+      "kind": "note"
+    },
+    {
+      "id": "tag-topics",
+      "label": "#Topics",
+      "url": "/notes/courses/index",
+      "raw": "/notes/courses/index",
       "kind": "tag"
     },
     {
-      "id": "tag-embedded",
-      "label": "#Embedded",
-      "url": "/notes/courses/iot",
-      "raw": "/notes/courses/iot",
+      "id": "tag-projects",
+      "label": "#Projects",
+      "url": "/notes/courses/index",
+      "raw": "/notes/courses/index",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-stackdeeplearning",
+      "label": "#StackDeepLearning",
+      "url": "/notes/courses/fsdl",
+      "raw": "/notes/courses/fsdl",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-deeplearning",
+      "label": "#deeplearning",
+      "url": "/notes/courses/fsdl",
+      "raw": "/notes/courses/fsdl",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-metaverse",
+      "label": "#Metaverse",
+      "url": "/notes/courses/metaverse",
+      "raw": "/notes/courses/metaverse",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-spatialcomputing",
+      "label": "#SpatialComputing",
+      "url": "/notes/courses/metaverse",
+      "raw": "/notes/courses/metaverse",
       "kind": "tag"
     },
     {
@@ -2304,39 +1660,690 @@
       "kind": "tag"
     },
     {
-      "id": "tag-metaverse",
-      "label": "#Metaverse",
-      "url": "/notes/courses/metaverse",
-      "raw": "/notes/courses/metaverse",
+      "id": "tag-faceaugmentation",
+      "label": "#FaceAugmentation",
+      "url": "/notes/pubs/cv",
+      "raw": "/notes/pubs/cv",
       "kind": "tag"
     },
     {
-      "id": "tag-spatialcomputing",
-      "label": "#SpatialComputing",
-      "url": "/notes/courses/metaverse",
-      "raw": "/notes/courses/metaverse",
+      "id": "tag-surveillance",
+      "label": "#Surveillance",
+      "url": "/notes/pubs/cv",
+      "raw": "/notes/pubs/cv",
       "kind": "tag"
     },
     {
-      "id": "tag-knowledgemanagement",
-      "label": "#KnowledgeManagement",
-      "url": "/notes/courses/book-summary",
-      "raw": "/notes/courses/book-summary",
+      "id": "tag-digitaladvertising",
+      "label": "#DigitalAdvertising",
+      "url": "/notes/pubs/cv",
+      "raw": "/notes/pubs/cv",
       "kind": "tag"
     },
     {
-      "id": "tag-topics",
-      "label": "#Topics",
-      "url": "/notes/courses/index",
-      "raw": "/notes/courses/index",
+      "id": "tag-facialrecognition",
+      "label": "#FacialRecognition",
+      "url": "/notes/pubs/cv",
+      "raw": "/notes/pubs/cv",
       "kind": "tag"
     },
     {
-      "id": "tag-projects",
-      "label": "#Projects",
-      "url": "/notes/courses/index",
-      "raw": "/notes/courses/index",
+      "id": "tag-targetedads",
+      "label": "#TargetedAds",
+      "url": "/notes/pubs/cv",
+      "raw": "/notes/pubs/cv",
       "kind": "tag"
+    },
+    {
+      "id": "tag-vehicledetection",
+      "label": "#VehicleDetection",
+      "url": "/notes/pubs/cv",
+      "raw": "/notes/pubs/cv",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-imageprocessing",
+      "label": "#ImageProcessing",
+      "url": "/notes/pubs/cv",
+      "raw": "/notes/pubs/cv",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-trafficsurveillance",
+      "label": "#TrafficSurveillance",
+      "url": "/notes/pubs/cv",
+      "raw": "/notes/pubs/cv",
+      "kind": "tag"
+    },
+    {
+      "id": "notes-pubs-patents-dr-farshid-pirahansiah-3-patents-ai-innovations-in-vehicle-detection-facial-analysis-and-image-augmentation-png",
+      "label": "Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpatents%2FDr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection%2C_Facial_Analysis%2C_and_Image_Augmentation.png",
+      "raw": "/notes/pubs/patents/Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-patents-face-image-augmentation-png",
+      "label": "face-image-augmentation",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpatents%2Fface-image-augmentation.png",
+      "raw": "/notes/pubs/patents/face-image-augmentation.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-patents-vehicle-detection-png",
+      "label": "vehicle-detection",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpatents%2Fvehicle-detection.png",
+      "raw": "/notes/pubs/patents/vehicle-detection.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-patents-index",
+      "label": "index",
+      "url": "/notes/pubs/patents/index",
+      "raw": "/notes/pubs/patents/index",
+      "kind": "note"
+    },
+    {
+      "id": "tag-advertising",
+      "label": "#advertising",
+      "url": "/notes/pubs/patents/facial-analysis",
+      "raw": "/notes/pubs/patents/facial-analysis",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-digitalmarketing",
+      "label": "#DigitalMarketing",
+      "url": "/notes/pubs/patents/facial-analysis",
+      "raw": "/notes/pubs/patents/facial-analysis",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-innovation",
+      "label": "#Innovation",
+      "url": "/notes/pubs/patents/facial-analysis",
+      "raw": "/notes/pubs/patents/facial-analysis",
+      "kind": "tag"
+    },
+    {
+      "id": "notes-pubs-patents-facial-analysis-advertisement-png",
+      "label": "facial-analysis-advertisement",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpatents%2Ffacial-analysis-advertisement.png",
+      "raw": "/notes/pubs/patents/facial-analysis-advertisement.png",
+      "kind": "asset"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-an-evaluation-of-classification-techniques-using-enhanced-geometrical-topological-feature-analysis-e2ps17l",
+      "label": "My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-classification-geometrical-topological-png",
+      "label": "classification-geometrical-topological",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fclassification-geometrical-topological.png",
+      "raw": "/notes/pubs/papers/classification-geometrical-topological.png",
+      "kind": "asset"
+    },
+    {
+      "id": "tag-handwritten",
+      "label": "#handwritten",
+      "url": "/notes/pubs/papers/handwritten-thresholding",
+      "raw": "/notes/pubs/papers/handwritten-thresholding",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-imagesegmentation",
+      "label": "#imagesegmentation",
+      "url": "/notes/pubs/papers/handwritten-thresholding",
+      "raw": "/notes/pubs/papers/handwritten-thresholding",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-psnr",
+      "label": "#psnr",
+      "url": "/notes/pubs/papers/handwritten-thresholding",
+      "raw": "/notes/pubs/papers/handwritten-thresholding",
+      "kind": "tag"
+    },
+    {
+      "id": "notes-pubs-papers-comparison-thresholding-handwritten-png",
+      "label": "comparison-thresholding-handwritten",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fcomparison-thresholding-handwritten.png",
+      "raw": "/notes/pubs/papers/comparison-thresholding-handwritten.png",
+      "kind": "asset"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-paper-adaptive-image-segmentation-based-on-peak-signal-to-noise-ratio-for-a-license-plate-recognition-system-e2ps0ue",
+      "label": "My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-adaptive-image-segmentation-psnr-png",
+      "label": "adaptive-image-segmentation-psnr",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fadaptive-image-segmentation-psnr.png",
+      "raw": "/notes/pubs/papers/adaptive-image-segmentation-psnr.png",
+      "kind": "asset"
+    },
+    {
+      "id": "",
+      "label": "/",
+      "url": "//",
+      "raw": "//",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-png",
+      "label": ".png",
+      "url": "/notes/pubs/papers/.png",
+      "raw": "/notes/pubs/papers/.png",
+      "kind": "note"
+    },
+    {
+      "id": "tag-objectdetection",
+      "label": "#objectdetection",
+      "url": "/notes/pubs/papers/2d-3d-mapping",
+      "raw": "/notes/pubs/papers/2d-3d-mapping",
+      "kind": "tag"
+    },
+    {
+      "id": "http-www-ftsm-ukm-my-cait2012-images-program-20schedule-20cait2012-pdf",
+      "label": "Program%20Schedule%20CAIT2012",
+      "url": "/view/?p=%2Fhttp%3A%2F%2Fwww.ftsm.ukm.my%2Fcait2012%2Fimages%2FProgram%2520Schedule%2520CAIT2012.pdf",
+      "raw": "/http://www.ftsm.ukm.my/cait2012/images/Program%20Schedule%20CAIT2012.pdf",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-papers-2d-3d-map-movement-png",
+      "label": "2d-3d-map-movement",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2F2d-3d-map-movement.png",
+      "raw": "/notes/pubs/papers/2d-3d-map-movement.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-papers-pattern-image-calibration-png",
+      "label": "pattern-image-calibration",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fpattern-image-calibration.png",
+      "raw": "/notes/pubs/papers/pattern-image-calibration.png",
+      "kind": "asset"
+    },
+    {
+      "id": "tag-thresholding",
+      "label": "#thresholding",
+      "url": "/notes/pubs/papers/multi-threshold-plate",
+      "raw": "/notes/pubs/papers/multi-threshold-plate",
+      "kind": "tag"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-multi-threshold-approach-for-license-plate-recognition-system-e2ps2fe",
+      "label": "My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe",
+      "kind": "note"
+    },
+    {
+      "id": "http-waset-org-publications-3636",
+      "label": "3636",
+      "url": "/http://waset.org/publications/3636",
+      "raw": "/http://waset.org/publications/3636",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-multi-threshold-license-plate-png",
+      "label": "multi-threshold-license-plate",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fmulti-threshold-license-plate.png",
+      "raw": "/notes/pubs/papers/multi-threshold-license-plate.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-papers-camera-calibration-multi-modal-png",
+      "label": "camera-calibration-multi-modal",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fcamera-calibration-multi-modal.png",
+      "raw": "/notes/pubs/papers/camera-calibration-multi-modal.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-papers-index",
+      "label": "index",
+      "url": "/notes/pubs/papers/index",
+      "raw": "/notes/pubs/papers/index",
+      "kind": "note"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-license-plate-recognition-with-multi-threshold-based-on-entropy-e2ps290",
+      "label": "License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290",
+      "kind": "note"
+    },
+    {
+      "id": "https-doi-org-10-1109-iceei-2011-6021627",
+      "label": "ICEEI.2011.6021627",
+      "url": "/https://doi.org/10.1109/ICEEI.2011.6021627",
+      "raw": "/https://doi.org/10.1109/ICEEI.2011.6021627",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-license-plate-recognition-entropy-png",
+      "label": "license-plate-recognition-entropy",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Flicense-plate-recognition-entropy.png",
+      "raw": "/notes/pubs/papers/license-plate-recognition-entropy.png",
+      "kind": "asset"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-character-recognition-based-on-global-feature-e2ps1tp",
+      "label": "My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Character-Recognition-Based-on-Global-Feature-e2ps1tp",
+      "kind": "note"
+    },
+    {
+      "id": "https-doi-org-10-1109-iceei-2011-6021649",
+      "label": "ICEEI.2011.6021649",
+      "url": "/https://doi.org/10.1109/ICEEI.2011.6021649",
+      "raw": "/https://doi.org/10.1109/ICEEI.2011.6021649",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-character-recognition-global-feature-png",
+      "label": "character-recognition-global-feature",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fcharacter-recognition-global-feature.png",
+      "raw": "/notes/pubs/papers/character-recognition-global-feature.png",
+      "kind": "asset"
+    },
+    {
+      "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-tafreshgrid-grid-computing-in-tafresh-university-e2ps3ma",
+      "label": "My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
+      "url": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
+      "raw": "/https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-TafreshGrid-Grid-computing-in-Tafresh-university-e2ps3ma",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-papers-tafreshgrid-grid-computing-png",
+      "label": "tafreshgrid-grid-computing",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Ftafreshgrid-grid-computing.png",
+      "raw": "/notes/pubs/papers/tafreshgrid-grid-computing.png",
+      "kind": "asset"
+    },
+    {
+      "id": "tag-multimodal",
+      "label": "#multimodal",
+      "url": "/notes/pubs/keynotes/llm-cv",
+      "raw": "/notes/pubs/keynotes/llm-cv",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-costcalculator",
+      "label": "#CostCalculator",
+      "url": "/notes/pubs/keynotes/llm-cv",
+      "raw": "/notes/pubs/keynotes/llm-cv",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-claude",
+      "label": "#Claude",
+      "url": "/notes/pubs/keynotes/llm-cv",
+      "raw": "/notes/pubs/keynotes/llm-cv",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-googlegemini",
+      "label": "#GoogleGemini",
+      "url": "/notes/pubs/keynotes/llm-cv",
+      "raw": "/notes/pubs/keynotes/llm-cv",
+      "kind": "tag"
+    },
+    {
+      "id": "microsoft-ai-use-cases-png",
+      "label": "Microsoft_AI_Use_cases",
+      "url": "/view/?p=%2FMicrosoft_AI_Use_cases.png",
+      "raw": "/Microsoft_AI_Use_cases.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-keynotes-index",
+      "label": "index",
+      "url": "/notes/pubs/keynotes/index",
+      "raw": "/notes/pubs/keynotes/index",
+      "kind": "note"
+    },
+    {
+      "id": "tag-videostabilization",
+      "label": "#videostabilization",
+      "url": "/notes/pubs/books/computational-intelligence",
+      "raw": "/notes/pubs/books/computational-intelligence",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-fuzzylogic",
+      "label": "#fuzzylogic",
+      "url": "/notes/pubs/books/computational-intelligence",
+      "raw": "/notes/pubs/books/computational-intelligence",
+      "kind": "tag"
+    },
+    {
+      "id": "notes-pubs-books-computational-intelligence-optical-flow-png",
+      "label": "computational-intelligence-optical-flow",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fbooks%2Fcomputational-intelligence-optical-flow.png",
+      "raw": "/notes/pubs/books/computational-intelligence-optical-flow.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-books-index",
+      "label": "index",
+      "url": "/notes/pubs/books/index",
+      "raw": "/notes/pubs/books/index",
+      "kind": "note"
+    },
+    {
+      "id": "notes-camera-calibration-video-stabilization-png",
+      "label": "camera-calibration-video-stabilization",
+      "url": "/view/?p=%2Fnotes%2Fcamera-calibration-video-stabilization.png",
+      "raw": "/notes/camera-calibration-video-stabilization.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-books-ai-cv-meets-llm",
+      "label": "cv-meets-llm",
+      "url": "/notes/pubs/books/ai/cv-meets-llm/",
+      "raw": "/notes/pubs/books/ai/cv-meets-llm/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-books-ai-opencv5-ch1",
+      "label": "opencv5-ch1",
+      "url": "/notes/pubs/books/ai/opencv5-ch1/",
+      "raw": "/notes/pubs/books/ai/opencv5-ch1/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-books-ai-opencv5-ch2",
+      "label": "opencv5-ch2",
+      "url": "/notes/pubs/books/ai/opencv5-ch2/",
+      "raw": "/notes/pubs/books/ai/opencv5-ch2/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-books-ai-opencv5-ch3",
+      "label": "opencv5-ch3",
+      "url": "/notes/pubs/books/ai/opencv5-ch3/",
+      "raw": "/notes/pubs/books/ai/opencv5-ch3/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pubs-books-ai-new-developer-era",
+      "label": "new-developer-era",
+      "url": "/notes/pubs/books/ai/new-developer-era",
+      "raw": "/notes/pubs/books/ai/new-developer-era",
+      "kind": "note"
+    },
+    {
+      "id": "tag-multiagent",
+      "label": "#multiagent",
+      "url": "/notes/pubs/books/ai/new-developer-era",
+      "raw": "/notes/pubs/books/ai/new-developer-era",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-llm",
+      "label": "#llm",
+      "url": "/notes/pubs/books/ai/new-developer-era",
+      "raw": "/notes/pubs/books/ai/new-developer-era",
+      "kind": "tag"
+    },
+    {
+      "id": "notes-pubs-journals-index",
+      "label": "index",
+      "url": "/notes/pubs/journals/index",
+      "raw": "/notes/pubs/journals/index",
+      "kind": "note"
+    },
+    {
+      "id": "tag-rag",
+      "label": "#rag",
+      "url": "/notes/pubs/books/ai/cv-meets-llm",
+      "raw": "/notes/pubs/books/ai/cv-meets-llm",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-artificialintelligence",
+      "label": "#ArtificialIntelligence",
+      "url": "/notes/pubs/books/ai/opencv5-ch1",
+      "raw": "/notes/pubs/books/ai/opencv5-ch1",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-airesources",
+      "label": "#AIResources",
+      "url": "/notes/pubs/books/ai/opencv5-ch1",
+      "raw": "/notes/pubs/books/ai/opencv5-ch1",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-techeducation",
+      "label": "#TechEducation",
+      "url": "/notes/pubs/books/ai/opencv5-ch1",
+      "raw": "/notes/pubs/books/ai/opencv5-ch1",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-professionaldevelopment",
+      "label": "#ProfessionalDevelopment",
+      "url": "/notes/pubs/books/ai/opencv5-ch1",
+      "raw": "/notes/pubs/books/ai/opencv5-ch1",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-aicommunity",
+      "label": "#AICommunity",
+      "url": "/notes/pubs/books/ai/opencv5-ch1",
+      "raw": "/notes/pubs/books/ai/opencv5-ch1",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-featuredetection",
+      "label": "#featuredetection",
+      "url": "/notes/pubs/books/ai/opencv5-ch2",
+      "raw": "/notes/pubs/books/ai/opencv5-ch2",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-slam",
+      "label": "#slam",
+      "url": "/notes/pubs/books/camera-calibration",
+      "raw": "/notes/pubs/books/camera-calibration",
+      "kind": "tag"
+    },
+    {
+      "id": "notes-pubs-books-camera-calibration-video-stabilization-png",
+      "label": "camera-calibration-video-stabilization",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fbooks%2Fcamera-calibration-video-stabilization.png",
+      "raw": "/notes/pubs/books/camera-calibration-video-stabilization.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-journals-character-object-recognition-png",
+      "label": "character-object-recognition",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2Fcharacter-object-recognition.png",
+      "raw": "/notes/pubs/journals/character-object-recognition.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-journals-3d-slam-humanoid-robots-png",
+      "label": "3d-slam-humanoid-robots",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2F3d-slam-humanoid-robots.png",
+      "raw": "/notes/pubs/journals/3d-slam-humanoid-robots.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-journals-ant-colony-optimization-png",
+      "label": "ant-colony-optimization",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2Fant-colony-optimization.png",
+      "raw": "/notes/pubs/journals/ant-colony-optimization.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-journals-psnr-threshold-segmentation-png",
+      "label": "psnr-threshold-segmentation",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2Fpsnr-threshold-segmentation.png",
+      "raw": "/notes/pubs/journals/psnr-threshold-segmentation.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-journals-adaptive-thresholding-psnr-png",
+      "label": "adaptive-thresholding-psnr",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2Fadaptive-thresholding-psnr.png",
+      "raw": "/notes/pubs/journals/adaptive-thresholding-psnr.png",
+      "kind": "asset"
+    },
+    {
+      "id": "notes-pubs-journals-gsft-psnr-fuzzy-threshold-png",
+      "label": "gsft-psnr-fuzzy-threshold",
+      "url": "/view/?p=%2Fnotes%2Fpubs%2Fjournals%2Fgsft-psnr-fuzzy-threshold.png",
+      "raw": "/notes/pubs/journals/gsft-psnr-fuzzy-threshold.png",
+      "kind": "asset"
+    },
+    {
+      "id": "tag-computervision-edge-ai",
+      "label": "#ComputerVision_Edge_AI",
+      "url": "/notes/pubs/10-years",
+      "raw": "/notes/pubs/10-years",
+      "kind": "tag"
+    },
+    {
+      "id": "notes-site-search",
+      "label": "search",
+      "url": "/notes/site/search",
+      "raw": "/notes/site/search",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-graph-tags",
+      "label": "graph-tags",
+      "url": "/notes/site/graph-tags",
+      "raw": "/notes/site/graph-tags",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-webgpu-llm",
+      "label": "webgpu-llm",
+      "url": "/notes/site/webgpu-llm",
+      "raw": "/notes/site/webgpu-llm",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-view",
+      "label": "view",
+      "url": "/notes/site/view",
+      "raw": "/notes/site/view",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-wiki",
+      "label": "wiki",
+      "url": "/notes/site/wiki",
+      "raw": "/notes/site/wiki",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-menus",
+      "label": "menus",
+      "url": "/notes/site/menus",
+      "raw": "/notes/site/menus",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-why-not",
+      "label": "why-not",
+      "url": "/notes/site/why-not",
+      "raw": "/notes/site/why-not",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-graph-notes",
+      "label": "graph-notes",
+      "url": "/notes/site/graph-notes",
+      "raw": "/notes/site/graph-notes",
+      "kind": "note"
+    },
+    {
+      "id": "tag-edge",
+      "label": "#edge",
+      "url": "/notes/site/graph-notes",
+      "raw": "/notes/site/graph-notes",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-hailo",
+      "label": "#hailo",
+      "url": "/notes/site/graph-notes",
+      "raw": "/notes/site/graph-notes",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-mlops",
+      "label": "#mlops",
+      "url": "/notes/site/graph-notes",
+      "raw": "/notes/site/graph-notes",
+      "kind": "tag"
+    },
+    {
+      "id": "notes-wikilinks",
+      "label": "wikilinks",
+      "url": "/notes/wikilinks",
+      "raw": "/notes/wikilinks",
+      "kind": "note"
+    },
+    {
+      "id": "notes-wikilink",
+      "label": "wikilink",
+      "url": "/notes/wikilink",
+      "raw": "/notes/wikilink",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-readme",
+      "label": "README",
+      "url": "/notes/site/README",
+      "raw": "/notes/site/README",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-terms",
+      "label": "terms",
+      "url": "/notes/site/terms",
+      "raw": "/notes/site/terms",
+      "kind": "note"
+    },
+    {
+      "id": "privacy",
+      "label": "privacy",
+      "url": "/privacy/",
+      "raw": "/privacy/",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-prompts",
+      "label": "prompts",
+      "url": "/notes/site/prompts",
+      "raw": "/notes/site/prompts",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-sitemap",
+      "label": "sitemap",
+      "url": "/notes/site/sitemap",
+      "raw": "/notes/site/sitemap",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-graph",
+      "label": "graph",
+      "url": "/notes/site/graph",
+      "raw": "/notes/site/graph",
+      "kind": "note"
     }
   ],
   "links": [
@@ -2956,6 +2963,641 @@
       "kind": "link"
     },
     {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-resources",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-coaching",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-cv-3d",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-cv-optical-flow",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-cv-multi-camera",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-llm-llm-concepts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-llm-agents",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-llm-blog",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-cuda-numba",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-cuda-pycuda",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-cuda-cuda-vscode",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-cuda-apple-ml",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-cpp",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-python",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-dev-tools",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-shell-vim",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-optimization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-prompts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-startup",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-seo",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-llm-avatar",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-linkedin",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-overview",
+      "target": "notes-docs-links",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-projects-solutions",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-cv",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-patents-face-augmentation",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-patents-facial-analysis",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-patents-vehicle-detection",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-books-computational-intelligence",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-books-camera-calibration",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-journals-adaptive-thresholding",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-journals-character-recognition",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-journals-fuzzy-thresholding",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-journals-psnr-segmentation",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-journals-slam-humanoid",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-journals-ant-colony",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-papers-2d-3d-mapping",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-papers-adaptive-segmentation",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-papers-geometrical-topological",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-papers-multimodal-calibration",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-papers-global-feature-recognition",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-papers-handwritten-thresholding",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-papers-license-plate",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-papers-multi-threshold-plate",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-papers-pattern-calibration",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-papers-grid-computing",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-papers-conference-paper",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-pubs-keynotes-llm-cv",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-llm-agents",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-llm-llm-concepts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-llm-blog",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-cuda-numba",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-cuda-pycuda",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-cuda-cuda-vscode",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-cuda-apple-ml",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-cv-3d",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-cv-optical-flow",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-cv-multi-camera",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-optimization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-cpp",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-python",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-dev-tools",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-shell-vim",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-startup",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-coaching",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-seo",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-linkedin",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-links",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-images-optimizationml-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-resources",
+      "target": "notes-docs-images-under-over-fit-ml-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-llm-blog",
+      "target": "notes-docs-cuda-numba",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-llm-blog",
+      "target": "notes-docs-cuda-pycuda",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-llm-index",
+      "target": "notes-docs-llm-llm-concepts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-llm-index",
+      "target": "notes-docs-llm-agents",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-llm-index",
+      "target": "notes-docs-llm-blog",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-llm-index",
+      "target": "notes-docs-llm-avatar",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-python-index",
+      "target": "tag-python",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-python-index",
+      "target": "tag-devtools",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-python-index",
+      "target": "tag-configuration",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-python-index",
+      "target": "tag-configfiles",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-python-index",
+      "target": "tag-pythontips",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-python-index",
+      "target": "tag-opensource",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-python-index",
+      "target": "tag-machinelearning",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-python-index",
+      "target": "tag-tips",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-python-index",
+      "target": "tag-include",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-python-index",
+      "target": "tag-pragma",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-cuda-cuda-vscode",
+      "target": "notes-docs-images-vscodecudawindows-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cuda-apple-ml",
+      "target": "tag-include",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-cuda-apple-ml",
+      "target": "notes-buffer-0",
+      "kind": "wiki"
+    },
+    {
+      "source": "notes-docs-cuda-apple-ml",
+      "target": "notes-buffer-1",
+      "kind": "wiki"
+    },
+    {
+      "source": "notes-docs-cuda-apple-ml",
+      "target": "notes-buffer-2",
+      "kind": "wiki"
+    },
+    {
+      "source": "notes-docs-cuda-apple-ml",
+      "target": "notes-thread-position-in-grid",
+      "kind": "wiki"
+    },
+    {
+      "source": "notes-docs-cuda-numba",
+      "target": "tag-python",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-cuda-numba",
+      "target": "tag-numba",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-cuda-numba",
+      "target": "tag-machinelearning",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-cuda-numba",
+      "target": "tag-performanceoptimization",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-cuda-numba",
+      "target": "tag-bigdata",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-cuda-numba",
+      "target": "tag-datascience",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-cv-3d",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-cv-optical-flow",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-cv-multi-camera",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-coaching",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-cv-overview",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-cuda-numba",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-cuda-pycuda",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-cuda-cuda-vscode",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-cuda-apple-ml",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-llm-llm-concepts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-llm-agents",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-llm-blog",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-llm-avatar",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-optimization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-prompts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-cpp",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-python",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-dev-tools",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-shell-vim",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-startup",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-seo",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-linkedin",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-resources",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-index",
+      "target": "notes-docs-links",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-3d",
+      "target": "tag-include",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-cv-3d",
+      "target": "tag-pragma",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-cv-index",
+      "target": "notes-docs-cv-3d",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-index",
+      "target": "notes-docs-cv-optical-flow",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-cv-index",
+      "target": "notes-docs-cv-multi-camera",
+      "kind": "mdlink"
+    },
+    {
       "source": "notes-pkm-proof",
       "target": "notes-docs",
       "kind": "mdlink"
@@ -3201,6 +3843,11 @@
       "kind": "mdlink"
     },
     {
+      "source": "notes-pkm-guide",
+      "target": "notes-boo",
+      "kind": "wiki"
+    },
+    {
       "source": "notes-pkm-use-cases",
       "target": "tag-about",
       "kind": "tag"
@@ -3316,578 +3963,408 @@
       "kind": "tag"
     },
     {
-      "source": "notes-pkm-guide",
-      "target": "notes-boo",
-      "kind": "wiki"
-    },
-    {
-      "source": "notes-pubs-books-ai-cv-meets-llm",
-      "target": "tag-llm",
+      "source": "notes-courses-risc-v",
+      "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-ai-cv-meets-llm",
-      "target": "tag-multimodal",
+      "source": "notes-courses-modern-cpp",
+      "target": "tag-tiziran",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-ai-cv-meets-llm",
-      "target": "tag-rag",
+      "source": "notes-courses-edge-ai-summit",
+      "target": "tag-summit",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-ai-cv-meets-llm",
-      "target": "notes-docs-projects-ai-cost-calculator",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch2",
-      "target": "tag-featuredetection",
+      "source": "notes-courses-edge-ai-summit",
+      "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-ai-opencv5-ch2",
-      "target": "tag-artificialintelligence",
+      "source": "notes-courses-iot",
+      "target": "tag-embedded",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-ai-opencv5-ch2",
-      "target": "tag-machinelearning",
+      "source": "notes-courses-iot",
+      "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-ai-opencv5-ch2",
-      "target": "tag-deeplearning",
+      "source": "notes-courses-tf-deploy",
+      "target": "tag-tensorflow",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-ai-opencv5-ch2",
-      "target": "tag-airesources",
+      "source": "notes-courses-tf-deploy",
+      "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-ai-opencv5-ch2",
-      "target": "tag-techeducation",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch2",
-      "target": "tag-professionaldevelopment",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch2",
-      "target": "tag-datascience",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch2",
-      "target": "tag-aicommunity",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-new-developer-era",
-      "target": "tag-multiagent",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-new-developer-era",
-      "target": "tag-llm",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-new-developer-era",
-      "target": "tag-deeplearning",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-new-developer-era",
-      "target": "notes-courses-index",
-      "kind": "wiki"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch1",
-      "target": "tag-imageprocessing",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch1",
-      "target": "tag-python",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch1",
-      "target": "tag-artificialintelligence",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch1",
-      "target": "tag-machinelearning",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch1",
-      "target": "tag-deeplearning",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch1",
-      "target": "tag-airesources",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch1",
-      "target": "tag-techeducation",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch1",
-      "target": "tag-professionaldevelopment",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch1",
-      "target": "tag-datascience",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-ai-opencv5-ch1",
-      "target": "tag-aicommunity",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-camera-calibration",
-      "target": "tag-videostabilization",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-camera-calibration",
+      "source": "notes-courses-ros",
       "target": "tag-robotics",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-camera-calibration",
-      "target": "tag-slam",
+      "source": "notes-courses-ros",
+      "target": "tag-tiziran",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-camera-calibration",
-      "target": "notes-pubs-books-camera-calibration-video-stabilization-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-books-index",
-      "target": "notes-camera-calibration-video-stabilization-png",
-      "kind": "wiki"
-    },
-    {
-      "source": "notes-pubs-books-index",
-      "target": "notes-pubs-books-camera-calibration",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-books-index",
-      "target": "notes-pubs-books-computational-intelligence",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-books-index",
-      "target": "notes-pubs-books-ai-cv-meets-llm",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-books-index",
-      "target": "notes-pubs-books-ai-opencv5-ch1",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-books-index",
-      "target": "notes-pubs-books-ai-opencv5-ch2",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-books-index",
-      "target": "notes-pubs-books-ai-opencv5-ch3",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-books-computational-intelligence",
-      "target": "tag-videostabilization",
+      "source": "notes-courses-parallel",
+      "target": "tag-computervision",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-computational-intelligence",
-      "target": "tag-fuzzylogic",
+      "source": "notes-courses-parallel",
+      "target": "tag-parallelprogramming",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-books-computational-intelligence",
-      "target": "notes-pubs-books-computational-intelligence-optical-flow-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-ant-colony",
-      "target": "notes-pubs-journals-ant-colony-optimization-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-fuzzy-thresholding",
-      "target": "notes-pubs-journals-gsft-psnr-fuzzy-threshold-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-slam-humanoid",
-      "target": "notes-pubs-journals-3d-slam-humanoid-robots-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-psnr-segmentation",
-      "target": "notes-pubs-journals-psnr-threshold-segmentation-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-character-recognition",
-      "target": "notes-pubs-journals-character-object-recognition-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-index",
-      "target": "notes-pubs-journals-adaptive-thresholding",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-index",
-      "target": "notes-pubs-journals-fuzzy-thresholding",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-index",
-      "target": "notes-pubs-journals-psnr-segmentation",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-index",
-      "target": "notes-pubs-journals-character-recognition",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-index",
-      "target": "notes-pubs-journals-slam-humanoid",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-index",
-      "target": "notes-pubs-journals-ant-colony",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-journals-adaptive-thresholding",
-      "target": "notes-pubs-journals-adaptive-thresholding-psnr-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-keynotes-index",
-      "target": "notes-pubs-keynotes-llm-cv",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-keynotes-llm-cv",
-      "target": "tag-multimodal",
+      "source": "notes-courses-parallel",
+      "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-keynotes-llm-cv",
-      "target": "tag-machinelearning",
+      "source": "notes-courses-ml-spec",
+      "target": "tag-tiziran",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-keynotes-llm-cv",
-      "target": "tag-costcalculator",
+      "source": "notes-courses-ml-spec",
+      "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-keynotes-llm-cv",
-      "target": "tag-claude",
+      "source": "notes-courses-cloud-native",
+      "target": "tag-docker",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-keynotes-llm-cv",
-      "target": "tag-googlegemini",
+      "source": "notes-courses-cloud-native",
+      "target": "tag-kubernetes",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-keynotes-llm-cv",
-      "target": "notes-docs-projects-ai-cost-calculator",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-keynotes-llm-cv",
-      "target": "microsoft-ai-use-cases-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-license-plate",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-license-plate-recognition-with-multi-threshold-based-on-entropy-e2ps290",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-license-plate",
-      "target": "https-doi-org-10-1109-iceei-2011-6021627",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-license-plate",
-      "target": "notes-pubs-papers-license-plate-recognition-entropy-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-pattern-calibration",
-      "target": "notes-pubs-papers-pattern-image-calibration-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-grid-computing",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-tafreshgrid-grid-computing-in-tafresh-university-e2ps3ma",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-grid-computing",
-      "target": "notes-pubs-papers-tafreshgrid-grid-computing-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-geometrical-topological",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-an-evaluation-of-classification-techniques-using-enhanced-geometrical-topological-feature-analysis-e2ps17l",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-geometrical-topological",
-      "target": "notes-pubs-papers-classification-geometrical-topological-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-multimodal-calibration",
-      "target": "notes-pubs-papers-camera-calibration-multi-modal-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-multi-threshold-plate",
-      "target": "tag-thresholding",
+      "source": "notes-courses-cloud-native",
+      "target": "tag-cloudnative",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-papers-multi-threshold-plate",
-      "target": "tag-imagesegmentation",
+      "source": "notes-courses-iot-scholarship",
+      "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-papers-multi-threshold-plate",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-multi-threshold-approach-for-license-plate-recognition-system-e2ps2fe",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-multi-threshold-plate",
-      "target": "http-waset-org-publications-3636",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-multi-threshold-plate",
-      "target": "notes-pubs-papers-multi-threshold-license-plate-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-handwritten-thresholding",
-      "target": "tag-handwritten",
+      "source": "notes-courses-book-summary",
+      "target": "tag-books",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-papers-handwritten-thresholding",
-      "target": "tag-imagesegmentation",
+      "source": "notes-courses-book-summary",
+      "target": "tag-knowledgemanagement",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-papers-handwritten-thresholding",
-      "target": "tag-psnr",
+      "source": "notes-courses-book-summary",
+      "target": "notes-courses",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-book-summary",
+      "target": "notes-courses-ml-spec",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-book-summary",
+      "target": "notes-courses-fsdl",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-book-summary",
+      "target": "notes-courses-mlops",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-book-summary",
+      "target": "notes-pkm-use-cases",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "tag-topics",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-papers-handwritten-thresholding",
-      "target": "notes-pubs-papers-comparison-thresholding-handwritten-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-index",
-      "target": "notes-pubs-papers-adaptive-segmentation",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-index",
-      "target": "notes-pubs-papers-license-plate",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-index",
-      "target": "notes-pubs-papers-multi-threshold-plate",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-index",
-      "target": "notes-pubs-papers-handwritten-thresholding",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-index",
-      "target": "notes-pubs-papers-multimodal-calibration",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-index",
-      "target": "notes-pubs-papers-pattern-calibration",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-index",
-      "target": "notes-pubs-papers-2d-3d-mapping",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-index",
-      "target": "notes-pubs-papers-global-feature-recognition",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-index",
-      "target": "notes-pubs-papers-geometrical-topological",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-index",
-      "target": "notes-pubs-papers-grid-computing",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-index",
-      "target": "notes-pubs-papers-conference-paper",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-conference-paper",
-      "target": "tag-imageprocessing",
+      "source": "notes-courses-index",
+      "target": "tag-projects",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-papers-conference-paper",
-      "target": "",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-conference-paper",
-      "target": "notes-pubs-papers-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-global-feature-recognition",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-character-recognition-based-on-global-feature-e2ps1tp",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-global-feature-recognition",
-      "target": "https-doi-org-10-1109-iceei-2011-6021649",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-global-feature-recognition",
-      "target": "notes-pubs-papers-character-recognition-global-feature-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-2d-3d-mapping",
-      "target": "tag-objectdetection",
+      "source": "notes-courses-index",
+      "target": "tag-farshidpirahansiah",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-papers-2d-3d-mapping",
-      "target": "tag-robotics",
+      "source": "notes-courses-index",
+      "target": "notes-docs-llm-llm-concepts",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-llm-agents",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-ai-hardware",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-openvino",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-ml-spec",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-fsdl",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-mlops",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-cv-3d",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-cv-optical-flow",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-cv-multi-camera",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-coaching",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-dev-tools",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-cpp",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-cuda-numba",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-cuda-pycuda",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-cuda-cuda-vscode",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-cuda-apple-ml",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-fsdl-2022",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-ros",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-parallel",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-modern-cpp",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-cloud-native",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-tf-deploy",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-risc-v",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-edge-ai-summit",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-iot",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-tesla",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-metaverse",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-book-summary",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-courses-iot-scholarship",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-startup",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-resources",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-index",
+      "target": "notes-docs-linkedin",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-courses-fsdl",
+      "target": "tag-stackdeeplearning",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-papers-2d-3d-mapping",
-      "target": "http-www-ftsm-ukm-my-cait2012-images-program-20schedule-20cait2012-pdf",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-2d-3d-mapping",
-      "target": "notes-pubs-papers-2d-3d-map-movement-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-adaptive-segmentation",
-      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-paper-adaptive-image-segmentation-based-on-peak-signal-to-noise-ratio-for-a-license-plate-recognition-system-e2ps0ue",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-adaptive-segmentation",
-      "target": "notes-pubs-papers-adaptive-image-segmentation-psnr-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-patents-vehicle-detection",
-      "target": "notes-pubs-patents-vehicle-detection-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-patents-index",
-      "target": "notes-pubs-patents-face-augmentation",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-patents-index",
-      "target": "notes-pubs-patents-vehicle-detection",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-patents-index",
-      "target": "notes-pubs-patents-facial-analysis",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-patents-facial-analysis",
-      "target": "tag-facialrecognition",
+      "source": "notes-courses-fsdl",
+      "target": "tag-computervision",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-patents-facial-analysis",
-      "target": "tag-advertising",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-patents-facial-analysis",
+      "source": "notes-courses-fsdl",
       "target": "tag-deeplearning",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-patents-facial-analysis",
-      "target": "tag-digitalmarketing",
+      "source": "notes-courses-metaverse",
+      "target": "tag-metaverse",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-patents-facial-analysis",
-      "target": "tag-innovation",
+      "source": "notes-courses-metaverse",
+      "target": "tag-spatialcomputing",
       "kind": "tag"
     },
     {
-      "source": "notes-pubs-patents-facial-analysis",
-      "target": "notes-pubs-patents-facial-analysis-advertisement-png",
-      "kind": "mdlink"
+      "source": "notes-courses-metaverse",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
     },
     {
-      "source": "notes-pubs-patents-face-augmentation",
-      "target": "notes-pubs-patents-face-image-augmentation-png",
-      "kind": "mdlink"
+      "source": "notes-courses-fsdl-2022",
+      "target": "tag-deeplearning",
+      "kind": "tag"
     },
     {
-      "source": "notes-pubs-10-years",
-      "target": "tag-computervision-edge-ai",
+      "source": "notes-courses-fsdl-2022",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-courses-tesla",
+      "target": "tag-tesla",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-courses-tesla",
+      "target": "tag-autonomousdriving",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-courses-tesla",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-courses-ai-hardware",
+      "target": "tag-aihardware",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-courses-ai-hardware",
+      "target": "tag-accelerators",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-courses-ai-hardware",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-courses-openvino",
+      "target": "tag-intel",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-courses-openvino",
+      "target": "tag-inference",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-courses-openvino",
+      "target": "tag-farshidpirahansiah",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-courses-mlops",
+      "target": "tag-computervision",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-courses-mlops",
+      "target": "tag-tiziran",
       "kind": "tag"
     },
     {
@@ -4046,669 +4523,574 @@
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-python-index",
-      "target": "tag-python",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-python-index",
-      "target": "tag-devtools",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-python-index",
-      "target": "tag-configuration",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-python-index",
-      "target": "tag-configfiles",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-python-index",
-      "target": "tag-pythontips",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-python-index",
-      "target": "tag-opensource",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-python-index",
-      "target": "tag-machinelearning",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-python-index",
-      "target": "tag-tips",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-python-index",
-      "target": "tag-include",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-python-index",
-      "target": "tag-pragma",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-cv-3d",
-      "target": "tag-include",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-cv-3d",
-      "target": "tag-pragma",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-cv-index",
-      "target": "notes-docs-cv-3d",
+      "source": "notes-pubs-patents-face-augmentation",
+      "target": "notes-pubs-patents-face-image-augmentation-png",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-cv-index",
-      "target": "notes-docs-cv-optical-flow",
+      "source": "notes-pubs-patents-vehicle-detection",
+      "target": "notes-pubs-patents-vehicle-detection-png",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-cv-index",
-      "target": "notes-docs-cv-multi-camera",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-llm-blog",
-      "target": "notes-docs-cuda-numba",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-llm-blog",
-      "target": "notes-docs-cuda-pycuda",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-llm-index",
-      "target": "notes-docs-llm-llm-concepts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-llm-index",
-      "target": "notes-docs-llm-agents",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-llm-index",
-      "target": "notes-docs-llm-blog",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-llm-index",
-      "target": "notes-docs-llm-avatar",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cuda-numba",
-      "target": "tag-python",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-cuda-numba",
-      "target": "tag-numba",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-cuda-numba",
-      "target": "tag-machinelearning",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-cuda-numba",
-      "target": "tag-performanceoptimization",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-cuda-numba",
-      "target": "tag-bigdata",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-cuda-numba",
-      "target": "tag-datascience",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-cuda-cuda-vscode",
-      "target": "notes-docs-images-vscodecudawindows-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cuda-apple-ml",
-      "target": "tag-include",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-docs-cuda-apple-ml",
-      "target": "notes-buffer-0",
-      "kind": "wiki"
-    },
-    {
-      "source": "notes-docs-cuda-apple-ml",
-      "target": "notes-buffer-1",
-      "kind": "wiki"
-    },
-    {
-      "source": "notes-docs-cuda-apple-ml",
-      "target": "notes-buffer-2",
-      "kind": "wiki"
-    },
-    {
-      "source": "notes-docs-cuda-apple-ml",
-      "target": "notes-thread-position-in-grid",
-      "kind": "wiki"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-projects-solutions",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-cv",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
+      "source": "notes-pubs-patents-index",
       "target": "notes-pubs-patents-face-augmentation",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-patents-facial-analysis",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
+      "source": "notes-pubs-patents-index",
       "target": "notes-pubs-patents-vehicle-detection",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-books-computational-intelligence",
+      "source": "notes-pubs-patents-index",
+      "target": "notes-pubs-patents-facial-analysis",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-books-camera-calibration",
+      "source": "notes-pubs-patents-facial-analysis",
+      "target": "tag-facialrecognition",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-patents-facial-analysis",
+      "target": "tag-advertising",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-patents-facial-analysis",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-patents-facial-analysis",
+      "target": "tag-digitalmarketing",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-patents-facial-analysis",
+      "target": "tag-innovation",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-patents-facial-analysis",
+      "target": "notes-pubs-patents-facial-analysis-advertisement-png",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-journals-adaptive-thresholding",
+      "source": "notes-pubs-papers-geometrical-topological",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-an-evaluation-of-classification-techniques-using-enhanced-geometrical-topological-feature-analysis-e2ps17l",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-journals-character-recognition",
+      "source": "notes-pubs-papers-geometrical-topological",
+      "target": "notes-pubs-papers-classification-geometrical-topological-png",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-journals-fuzzy-thresholding",
+      "source": "notes-pubs-papers-handwritten-thresholding",
+      "target": "tag-handwritten",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-handwritten-thresholding",
+      "target": "tag-imagesegmentation",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-handwritten-thresholding",
+      "target": "tag-psnr",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-handwritten-thresholding",
+      "target": "notes-pubs-papers-comparison-thresholding-handwritten-png",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-journals-psnr-segmentation",
+      "source": "notes-pubs-papers-adaptive-segmentation",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-paper-adaptive-image-segmentation-based-on-peak-signal-to-noise-ratio-for-a-license-plate-recognition-system-e2ps0ue",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-journals-slam-humanoid",
+      "source": "notes-pubs-papers-adaptive-segmentation",
+      "target": "notes-pubs-papers-adaptive-image-segmentation-psnr-png",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-journals-ant-colony",
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "tag-imageprocessing",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-papers-2d-3d-mapping",
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "notes-pubs-papers-png",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
+      "source": "notes-pubs-papers-2d-3d-mapping",
+      "target": "tag-objectdetection",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-2d-3d-mapping",
+      "target": "tag-robotics",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-2d-3d-mapping",
+      "target": "http-www-ftsm-ukm-my-cait2012-images-program-20schedule-20cait2012-pdf",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-2d-3d-mapping",
+      "target": "notes-pubs-papers-2d-3d-map-movement-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-pattern-calibration",
+      "target": "notes-pubs-papers-pattern-image-calibration-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-multi-threshold-plate",
+      "target": "tag-thresholding",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-multi-threshold-plate",
+      "target": "tag-imagesegmentation",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-multi-threshold-plate",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-multi-threshold-approach-for-license-plate-recognition-system-e2ps2fe",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-multi-threshold-plate",
+      "target": "http-waset-org-publications-3636",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-multi-threshold-plate",
+      "target": "notes-pubs-papers-multi-threshold-license-plate-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-multimodal-calibration",
+      "target": "notes-pubs-papers-camera-calibration-multi-modal-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-index",
       "target": "notes-pubs-papers-adaptive-segmentation",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-papers-geometrical-topological",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-papers-multimodal-calibration",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-papers-global-feature-recognition",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-pubs-papers-handwritten-thresholding",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
+      "source": "notes-pubs-papers-index",
       "target": "notes-pubs-papers-license-plate",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
+      "source": "notes-pubs-papers-index",
       "target": "notes-pubs-papers-multi-threshold-plate",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
+      "source": "notes-pubs-papers-index",
+      "target": "notes-pubs-papers-handwritten-thresholding",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-index",
+      "target": "notes-pubs-papers-multimodal-calibration",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-index",
       "target": "notes-pubs-papers-pattern-calibration",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
+      "source": "notes-pubs-papers-index",
+      "target": "notes-pubs-papers-2d-3d-mapping",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-index",
+      "target": "notes-pubs-papers-global-feature-recognition",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-index",
+      "target": "notes-pubs-papers-geometrical-topological",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-index",
       "target": "notes-pubs-papers-grid-computing",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
+      "source": "notes-pubs-papers-index",
       "target": "notes-pubs-papers-conference-paper",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
+      "source": "notes-pubs-papers-license-plate",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-license-plate-recognition-with-multi-threshold-based-on-entropy-e2ps290",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-license-plate",
+      "target": "https-doi-org-10-1109-iceei-2011-6021627",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-license-plate",
+      "target": "notes-pubs-papers-license-plate-recognition-entropy-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-global-feature-recognition",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-character-recognition-based-on-global-feature-e2ps1tp",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-global-feature-recognition",
+      "target": "https-doi-org-10-1109-iceei-2011-6021649",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-global-feature-recognition",
+      "target": "notes-pubs-papers-character-recognition-global-feature-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-grid-computing",
+      "target": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-tafreshgrid-grid-computing-in-tafresh-university-e2ps3ma",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-grid-computing",
+      "target": "notes-pubs-papers-tafreshgrid-grid-computing-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-keynotes-llm-cv",
+      "target": "tag-multimodal",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-keynotes-llm-cv",
+      "target": "tag-machinelearning",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-keynotes-llm-cv",
+      "target": "tag-costcalculator",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-keynotes-llm-cv",
+      "target": "tag-claude",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-keynotes-llm-cv",
+      "target": "tag-googlegemini",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-keynotes-llm-cv",
+      "target": "notes-docs-projects-ai-cost-calculator",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-keynotes-llm-cv",
+      "target": "microsoft-ai-use-cases-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-keynotes-index",
       "target": "notes-pubs-keynotes-llm-cv",
       "kind": "mdlink"
     },
     {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-llm-agents",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-llm-llm-concepts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-llm-blog",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-cuda-numba",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-cuda-pycuda",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-cuda-cuda-vscode",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-cuda-apple-ml",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-cv-3d",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-cv-optical-flow",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-cv-multi-camera",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-optimization",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-cpp",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-python",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-dev-tools",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-shell-vim",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-startup",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-coaching",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-seo",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-linkedin",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-links",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-images-optimizationml-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-resources",
-      "target": "notes-docs-images-under-over-fit-ml-png",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-cv-3d",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-cv-optical-flow",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-cv-multi-camera",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-coaching",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-cv-overview",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-cuda-numba",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-cuda-pycuda",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-cuda-cuda-vscode",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-cuda-apple-ml",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-llm-llm-concepts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-llm-agents",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-llm-blog",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-llm-avatar",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-optimization",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-prompts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-cpp",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-python",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-dev-tools",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-shell-vim",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-startup",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-seo",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-linkedin",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-resources",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-index",
-      "target": "notes-docs-links",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-resources",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-coaching",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-cv-3d",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-cv-optical-flow",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-cv-multi-camera",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-llm-llm-concepts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-llm-agents",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-llm-blog",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-cuda-numba",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-cuda-pycuda",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-cuda-cuda-vscode",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-cuda-apple-ml",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-cpp",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-python",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-dev-tools",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-shell-vim",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-optimization",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-prompts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-startup",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-seo",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-llm-avatar",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-linkedin",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-docs-cv-overview",
-      "target": "notes-docs-links",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-site-graph-notes",
-      "target": "tag-edge",
+      "source": "notes-pubs-books-computational-intelligence",
+      "target": "tag-videostabilization",
       "kind": "tag"
     },
     {
-      "source": "notes-site-graph-notes",
-      "target": "tag-hailo",
+      "source": "notes-pubs-books-computational-intelligence",
+      "target": "tag-fuzzylogic",
       "kind": "tag"
     },
     {
-      "source": "notes-site-graph-notes",
-      "target": "tag-mlops",
+      "source": "notes-pubs-books-computational-intelligence",
+      "target": "notes-pubs-books-computational-intelligence-optical-flow-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-books-index",
+      "target": "notes-camera-calibration-video-stabilization-png",
+      "kind": "wiki"
+    },
+    {
+      "source": "notes-pubs-books-index",
+      "target": "notes-pubs-books-camera-calibration",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-books-index",
+      "target": "notes-pubs-books-computational-intelligence",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-books-index",
+      "target": "notes-pubs-books-ai-cv-meets-llm",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-books-index",
+      "target": "notes-pubs-books-ai-opencv5-ch1",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-books-index",
+      "target": "notes-pubs-books-ai-opencv5-ch2",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-books-index",
+      "target": "notes-pubs-books-ai-opencv5-ch3",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-books-ai-new-developer-era",
+      "target": "tag-multiagent",
       "kind": "tag"
     },
     {
-      "source": "notes-site-graph-notes",
-      "target": "notes-wikilinks",
+      "source": "notes-pubs-books-ai-new-developer-era",
+      "target": "tag-llm",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-new-developer-era",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-new-developer-era",
+      "target": "notes-pubs-journals-index",
       "kind": "wiki"
     },
     {
-      "source": "notes-site-graph-notes",
-      "target": "notes-wikilink",
-      "kind": "wiki"
+      "source": "notes-pubs-books-ai-cv-meets-llm",
+      "target": "tag-llm",
+      "kind": "tag"
     },
     {
-      "source": "notes-site-graph-notes",
-      "target": "notes-docs-links",
-      "kind": "wiki"
+      "source": "notes-pubs-books-ai-cv-meets-llm",
+      "target": "tag-multimodal",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-cv-meets-llm",
+      "target": "tag-rag",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-cv-meets-llm",
+      "target": "notes-docs-projects-ai-cost-calculator",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch1",
+      "target": "tag-imageprocessing",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch1",
+      "target": "tag-python",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch1",
+      "target": "tag-artificialintelligence",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch1",
+      "target": "tag-machinelearning",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch1",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch1",
+      "target": "tag-airesources",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch1",
+      "target": "tag-techeducation",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch1",
+      "target": "tag-professionaldevelopment",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch1",
+      "target": "tag-datascience",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch1",
+      "target": "tag-aicommunity",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch2",
+      "target": "tag-featuredetection",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch2",
+      "target": "tag-artificialintelligence",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch2",
+      "target": "tag-machinelearning",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch2",
+      "target": "tag-deeplearning",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch2",
+      "target": "tag-airesources",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch2",
+      "target": "tag-techeducation",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch2",
+      "target": "tag-professionaldevelopment",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch2",
+      "target": "tag-datascience",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-ai-opencv5-ch2",
+      "target": "tag-aicommunity",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-camera-calibration",
+      "target": "tag-videostabilization",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-camera-calibration",
+      "target": "tag-robotics",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-camera-calibration",
+      "target": "tag-slam",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-books-camera-calibration",
+      "target": "notes-pubs-books-camera-calibration-video-stabilization-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-character-recognition",
+      "target": "notes-pubs-journals-character-object-recognition-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-slam-humanoid",
+      "target": "notes-pubs-journals-3d-slam-humanoid-robots-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-ant-colony",
+      "target": "notes-pubs-journals-ant-colony-optimization-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-index",
+      "target": "notes-pubs-journals-adaptive-thresholding",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-index",
+      "target": "notes-pubs-journals-fuzzy-thresholding",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-index",
+      "target": "notes-pubs-journals-psnr-segmentation",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-index",
+      "target": "notes-pubs-journals-character-recognition",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-index",
+      "target": "notes-pubs-journals-slam-humanoid",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-index",
+      "target": "notes-pubs-journals-ant-colony",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-psnr-segmentation",
+      "target": "notes-pubs-journals-psnr-threshold-segmentation-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-adaptive-thresholding",
+      "target": "notes-pubs-journals-adaptive-thresholding-psnr-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-journals-fuzzy-thresholding",
+      "target": "notes-pubs-journals-gsft-psnr-fuzzy-threshold-png",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-10-years",
+      "target": "tag-computervision-edge-ai",
+      "kind": "tag"
     },
     {
       "source": "notes-site-menus",
@@ -4996,413 +5378,38 @@
       "kind": "mdlink"
     },
     {
+      "source": "notes-site-graph-notes",
+      "target": "tag-edge",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-site-graph-notes",
+      "target": "tag-hailo",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-site-graph-notes",
+      "target": "tag-mlops",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-site-graph-notes",
+      "target": "notes-wikilinks",
+      "kind": "wiki"
+    },
+    {
+      "source": "notes-site-graph-notes",
+      "target": "notes-wikilink",
+      "kind": "wiki"
+    },
+    {
+      "source": "notes-site-graph-notes",
+      "target": "notes-pkm-links",
+      "kind": "wiki"
+    },
+    {
       "source": "notes-site-terms",
       "target": "privacy",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-ml-spec",
-      "target": "tag-tiziran",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-ml-spec",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-fsdl",
-      "target": "tag-stackdeeplearning",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-fsdl",
-      "target": "tag-computervision",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-fsdl",
-      "target": "tag-deeplearning",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-mlops",
-      "target": "tag-computervision",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-mlops",
-      "target": "tag-tiziran",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-ros",
-      "target": "tag-robotics",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-ros",
-      "target": "tag-tiziran",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-parallel",
-      "target": "tag-computervision",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-parallel",
-      "target": "tag-parallelprogramming",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-parallel",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-modern-cpp",
-      "target": "tag-tiziran",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-cloud-native",
-      "target": "tag-docker",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-cloud-native",
-      "target": "tag-kubernetes",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-cloud-native",
-      "target": "tag-cloudnative",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-iot-scholarship",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-tf-deploy",
-      "target": "tag-tensorflow",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-tf-deploy",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-fsdl-2022",
-      "target": "tag-deeplearning",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-fsdl-2022",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-risc-v",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-edge-ai-summit",
-      "target": "tag-summit",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-edge-ai-summit",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-iot",
-      "target": "tag-embedded",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-iot",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-tesla",
-      "target": "tag-tesla",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-tesla",
-      "target": "tag-autonomousdriving",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-tesla",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-ai-hardware",
-      "target": "tag-aihardware",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-ai-hardware",
-      "target": "tag-accelerators",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-ai-hardware",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-openvino",
-      "target": "tag-intel",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-openvino",
-      "target": "tag-inference",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-openvino",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-metaverse",
-      "target": "tag-metaverse",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-metaverse",
-      "target": "tag-spatialcomputing",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-metaverse",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-book-summary",
-      "target": "tag-books",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-book-summary",
-      "target": "tag-knowledgemanagement",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-book-summary",
-      "target": "notes-courses",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-book-summary",
-      "target": "notes-courses-ml-spec",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-book-summary",
-      "target": "notes-courses-fsdl",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-book-summary",
-      "target": "notes-courses-mlops",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-book-summary",
-      "target": "notes-pkm-use-cases",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "tag-topics",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "tag-projects",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "tag-farshidpirahansiah",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-llm-llm-concepts",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-llm-agents",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-ai-hardware",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-openvino",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-ml-spec",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-fsdl",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-mlops",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-cv-3d",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-cv-optical-flow",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-cv-multi-camera",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-coaching",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-dev-tools",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-cpp",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-cuda-numba",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-cuda-pycuda",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-cuda-cuda-vscode",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-cuda-apple-ml",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-fsdl-2022",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-ros",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-parallel",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-modern-cpp",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-cloud-native",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-tf-deploy",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-risc-v",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-edge-ai-summit",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-iot",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-tesla",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-metaverse",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-book-summary",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-courses-iot-scholarship",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-startup",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-resources",
-      "kind": "mdlink"
-    },
-    {
-      "source": "notes-courses-index",
-      "target": "notes-docs-linkedin",
       "kind": "mdlink"
     }
   ]
