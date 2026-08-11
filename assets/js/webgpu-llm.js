@@ -377,6 +377,8 @@
           }
         }
         if (!def) def = String(ranked[0].chunk.text).slice(0, 120);
+        // strip URLs and stray markdown symbols from the definition text
+        def = def.replace(/https?:\/\/\S+/g, "").replace(/[#*`>_\[\]()]/g, " ").replace(/\s+/g, " ").trim();
         if (def.length > 150) def = def.slice(0, 149).trim() + "…";
       }
       return {
