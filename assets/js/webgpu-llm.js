@@ -682,8 +682,14 @@
       .replace(/^\s*KEY\s*POINTS?\s*:\s*/i, "")
       .replace(/^\s*X\s*POST\s*:\s*/i, "")
       .trim();
-    // Strip academic intro filler clause (up to the first period) if present.
-    out = out.replace(/^(introduction\s*[:\-–—.]?\s*|in\s+this\s+(paper|study|article|work)[^.]*\.\s*|this\s+(paper|study|article|work)\s+presents?\s+[^.]*\.\s*|the\s+(paper|study|article|work)\s+presents?\s+[^.]*\.\s*)/i, "");
+    // Strip academic intro filler clauses (chained: "Introduction\nThis paper
+    // presents..." needs multiple passes), up to the first real content.
+    var FILLER = /^(introduction\s*[:\-–—.]?\s*|in\s+this\s+(paper|study|article|work)[^.]*\.\s*|this\s+(paper|study|article|work)\s+presents?\s+[^.]*\.\s*|the\s+(paper|study|article|work)\s+presents?\s+[^.]*\.\s*)/i;
+    for (var i = 0; i < 4; i++) {
+      var before = out;
+      out = out.replace(FILLER, "");
+      if (out === before) break;
+    }
     return out.trim();
   }
 
