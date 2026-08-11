@@ -20,9 +20,10 @@
   var INDEX_URL = "/assets/llm-index.json";
   var GRAPH_URL = "/assets/graph.json";
 
-  // Model picker: 3 options, small for phones -> large for powerful laptops.
-  // Persisted in localStorage; the pipeline is reloaded on change.
+  // Model picker: 4 options, micro for low-RAM phones -> large for powerful
+  // laptops. Persisted in localStorage; the pipeline is reloaded on change.
   var MODEL_OPTIONS = [
+    { id: "Xenova/LaMini-GPT-124M", label: "Micro — 0.1B", size: "~0.25 GB", note: "Very small / low RAM" },
     { id: "Xenova/Qwen1.5-0.5B-Chat", label: "Tiny — 0.5B", size: "~0.5 GB", note: "iPhone / slow devices" },
     { id: "onnx-community/Qwen2.5-1.5B-Instruct", label: "Medium — 1.5B", size: "~1.2 GB", note: "Laptop" },
     { id: "onnx-community/Llama-3.2-3B-Instruct", label: "Large — 3B", size: "~2 GB", note: "Powerful GPU" }
@@ -782,7 +783,11 @@
           { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Structure your reply exactly like this:\nREVIEW: a rich, detailed single paragraph (6-10 sentences) that synthesizes the context, connections between pages, and key technical details from ALL the sources. Write it in a natural, engaging, informative style that works anywhere — social post, paper, or presentation. NEVER start with words like 'Introduction', 'In this paper, we', 'This paper presents', 'In this study', or any academic-paper-intro filler. Just go straight into the substance of the topic.\nKEY POINTS: three numbered key points (1. 2. 3.), each one short sentence.\nX POST: a short 1-2 sentence summary of the review above, most relevant to the question's keywords (no hashtags, no URL).\nIDEA: one single sentence that connects the question's keywords into a practical idea or application.\nAlways name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
           { role: "user", content: "Document excerpts:\n\n" + context + "\n\nQuestion: " + question }
         ];
-        return generator(messages, { max_new_tokens: 540, do_sample: false, streamer: streamer });
+        // Base models (e.g. LaMini-GPT) have no chat template — use a plain
+        // text prompt instead of role messages.
+        var hasChat = !!(generator.tokenizer && generator.tokenizer.chat_template);
+        var input = hasChat ? messages : ("System: " + messages[0].content + "\n\n" + messages[1].content + "\n\nAssistant:");
+        return generator(input, { max_new_tokens: 540, do_sample: false, streamer: streamer });
       });
     }).then(function (result) {
       if (!streamEl.textContent.trim()) {
@@ -1087,7 +1092,10 @@
         var history = chatHistory.slice(-6, -1).map(function (m) { return { role: m.role, content: m.content }; });
         messages = messages.concat(history);
         messages.push({ role: "user", content: q });
-        return generator(messages, { max_new_tokens: 260, do_sample: false, streamer: streamer });
+        // Base models (e.g. LaMini-GPT) have no chat template — plain prompt.
+        var hasChat = !!(generator.tokenizer && generator.tokenizer.chat_template);
+        var input = hasChat ? messages : (messages.map(function (m) { return m.role + ": " + m.content; }).join("\n\n") + "\n\nAssistant:");
+        return generator(input, { max_new_tokens: 260, do_sample: false, streamer: streamer });
       });
     }).then(function (result) {
       if (!thinking.textContent.trim()) {
