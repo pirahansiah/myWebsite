@@ -9,11 +9,29 @@
 (function () {
   "use strict";
 
-  var MODEL = "Xenova/Qwen1.5-0.5B-Chat";
   // v3.8.1 = last stable with mature WebGPU support (v4.x WebGPU runtime is buggy)
   var CDN = "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1";
   var INDEX_URL = "/assets/llm-index.json";
   var GRAPH_URL = "/assets/graph.json";
+
+  // Model picker: 3 options, small for phones -> large for powerful laptops.
+  // Persisted in localStorage; the pipeline is reloaded on change.
+  var MODEL_OPTIONS = [
+    { id: "Xenova/Qwen1.5-0.5B-Chat", label: "Tiny — 0.5B", size: "~0.5 GB", note: "iPhone / slow devices" },
+    { id: "onnx-community/Qwen2.5-1.5B-Instruct", label: "Medium — 1.5B", size: "~1.2 GB", note: "Laptop" },
+    { id: "onnx-community/Llama-3.2-3B-Instruct", label: "Large — 3B", size: "~2 GB", note: "Powerful GPU" }
+  ];
+  var MODEL_KEY = "llm-model-id";
+  function selectedModelId() {
+    var saved = null;
+    try { saved = localStorage.getItem(MODEL_KEY); } catch (e) {}
+    var found = null;
+    MODEL_OPTIONS.forEach(function (o) { if (o.id === saved) found = o.id; });
+    return found || MODEL_OPTIONS[0].id;
+  }
+  function saveModelId(id) {
+    try { localStorage.setItem(MODEL_KEY, id); } catch (e) {}
+  }
 
   var $ = function (id) { return document.getElementById(id); };
 
@@ -54,8 +72,8 @@
 
     return loadPipelineModule().then(function () {
       var tryLoad = function (device, dtype) {
-        onStatus && onStatus("Downloading Qwen1.5-0.5B model (" + device.toUpperCase() + ", " + dtype + ")...");
-        return sharedPipelineModule.pipeline("text-generation", MODEL, {
+        onStatus && onStatus("Downloading " + (selectedModelId().split("/").pop() || "model") + " (" + device.toUpperCase() + ", " + dtype + ")...");
+        return sharedPipelineModule.pipeline("text-generation", selectedModelId(), {
           device: device,
           dtype: dtype,
           progress_callback: function (d) {
@@ -310,12 +328,94 @@
     return path;
   }
 
+  // Short label for a page (first words of title, else last URL segment).
+  function shortPageLabel(url) {
+    var meta = pageMeta(url);
+    if (meta && meta.title) {
+      var words = String(meta.title).split(/\s+/);
+      var label = words.slice(0, 3).join(" ");
+      if (words.length > 3) label += "…";
+      return label;
+    }
+    var parts = String(url || "").replace(/\/+$/, "").split("/");
+    return parts[parts.length - 1] || url;
+  }
+
+  // Per-keyword breakdown for the query: matched pages + one-line definition.
+  function keywordMapRows(query) {
+    var tokens = tokenize(query);
+    var kws = [];
+    tokens.forEach(function (t) { if (kws.indexOf(t) < 0 && kws.length < 5) kws.push(t); });
+    return kws.map(function (kw) {
+      var pages = {};
+      chunks.forEach(function (c, i) {
+        var toks = tokenized[i] || [];
+        if (toks.indexOf(kw) < 0) return;
+        var base = c.file;
+        if (!pages[base]) pages[base] = { score: 0, chunk: c };
+        pages[base].score += (idf.get(kw) || 1) * (toks.filter(function (t) { return t === kw; }).length);
+      });
+      var ranked = Object.keys(pages).map(function (u) {
+        return { url: u, score: pages[u].score, chunk: pages[u].chunk };
+      }).sort(function (a, b) { return b.score - a.score; }).slice(0, 3);
+      // definition: first real sentence containing the keyword from the best chunk
+      var def = "";
+      if (ranked.length) {
+        var sents = String(ranked[0].chunk.text).match(/[^.!?]+[.!?]+/g) || [];
+        for (var s = 0; s < sents.length; s++) {
+          var sent = sents[s].trim();
+          // skip share-line blockquotes and markdown noise ("> **Title** — desc — URL")
+          if (/^>\s*\*\*|^\s*#|pirahansiah\.com/.test(sent)) continue;
+          if (sent.toLowerCase().indexOf(kw) >= 0) { def = sent; break; }
+        }
+        if (!def) {
+          // fallback: any real sentence from the chunk
+          for (var s2 = 0; s2 < sents.length; s2++) {
+            var sent2 = sents[s2].trim();
+            if (/^>\s*\*\*|^\s*#|pirahansiah\.com/.test(sent2)) continue;
+            def = sent2; break;
+          }
+        }
+        if (!def) def = String(ranked[0].chunk.text).slice(0, 120);
+        if (def.length > 150) def = def.slice(0, 149).trim() + "…";
+      }
+      return {
+        kw: kw,
+        pages: ranked.map(function (r) { return { url: r.url, label: shortPageLabel(r.url) }; }),
+        def: def
+      };
+    }).filter(function (r) { return r.pages.length; });
+  }
+
+  // Render the keyword map (deterministic — no model needed) + idea line.
+  function renderKeywordMap(query, ideaLine) {
+    var rows = keywordMapRows(query);
+    if (!rows.length) { ui.kwmap.style.display = "none"; return; }
+    ui.kwmap.style.display = "block";
+    ui.kwmapRows.innerHTML = rows.map(function (r) {
+      var pages = r.pages.map(function (p) {
+        return '<a href="' + p.url + '" class="kw-page">' + esc(p.label) + '</a>';
+      }).join(" · ");
+      return '<div class="llm-kwmap-row">' +
+        '<span class="llm-kw">' + esc(r.kw) + '</span>' +
+        '<span class="llm-kw-pages">' + pages + '</span>' +
+        '<span class="llm-kw-def">' + esc(r.def) + '</span>' +
+        '</div>';
+    }).join("");
+    // idea line: LLM-generated if present, else heuristic join
+    var idea = ideaLine && ideaLine.trim() ? ideaLine.trim()
+      : "Combine " + rows.map(function (r) { return "'" + r.kw + "'"; }).join(", ") + " — the pages above show how they connect.";
+    ui.kwmapIdea.innerHTML = '<span class="llm-kwmap-idea-label">&#128161; Idea:</span> ' + esc(idea);
+  }
+
   /* ------------------- UI ------------------------------------------------ */
   var ui = {
     stats: $("llm-stats"), status: $("llm-status-text"), progressWrap: $("llm-progress"),
     progressBar: $("llm-progress-bar"), badge: $("llm-device-badge"), badgeText: $("llm-device-text"),
     answer: $("llm-answer"), review: $("llm-review"), keypoints: $("llm-keypoints"),
     sources: $("llm-sources"),
+    kwmap: $("llm-kwmap"), kwmapRows: $("llm-kwmap-rows"), kwmapIdea: $("llm-kwmap-idea"),
+    modelSelect: $("llm-model-select"),
     catBars: $("llm-cat-bars"), tagcloud: $("llm-tagcloud"),
     refsList: $("llm-refs-list"), webLinks: $("llm-web-links"),
     xpostBody: $("llm-xpost-body"), xpostCopy: $("llm-xpost-copy"), xpostOpen: $("llm-xpost-open"),
@@ -633,10 +733,10 @@
           callback_function: function (t) { streamEl.textContent += t; }
         });
         var messages = [
-          { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Structure your reply exactly like this:\nREVIEW: a rich, detailed single paragraph (6-10 sentences) that synthesizes the context, connections between pages, and key technical details from ALL the sources. Write it in a natural, engaging, informative style that works anywhere — social post, paper, or presentation. NEVER start with words like 'Introduction', 'In this paper, we', 'This paper presents', 'In this study', or any academic-paper-intro filler. Just go straight into the substance of the topic.\nKEY POINTS: three numbered key points (1. 2. 3.), each one short sentence.\nX POST: a short 1-2 sentence summary of the review above, most relevant to the question's keywords (no hashtags, no URL).\nAlways name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
+          { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Structure your reply exactly like this:\nREVIEW: a rich, detailed single paragraph (6-10 sentences) that synthesizes the context, connections between pages, and key technical details from ALL the sources. Write it in a natural, engaging, informative style that works anywhere — social post, paper, or presentation. NEVER start with words like 'Introduction', 'In this paper, we', 'This paper presents', 'In this study', or any academic-paper-intro filler. Just go straight into the substance of the topic.\nKEY POINTS: three numbered key points (1. 2. 3.), each one short sentence.\nX POST: a short 1-2 sentence summary of the review above, most relevant to the question's keywords (no hashtags, no URL).\nIDEA: one single sentence that connects the question's keywords into a practical idea or application.\nAlways name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
           { role: "user", content: "Document excerpts:\n\n" + context + "\n\nQuestion: " + question }
         ];
-        return generator(messages, { max_new_tokens: 520, do_sample: false, streamer: streamer });
+        return generator(messages, { max_new_tokens: 540, do_sample: false, streamer: streamer });
       });
     }).then(function (result) {
       if (!streamEl.textContent.trim()) {
@@ -655,13 +755,13 @@
     });
   }
 
-  // Split the raw LLM output into review / key points / x-post sections.
+  // Split the raw LLM output into review / key points / x-post / idea sections.
   function parseStructured(text) {
-    var out = { review: "", keypoints: [], xpost: "" };
+    var out = { review: "", keypoints: [], xpost: "", idea: "" };
     text = String(text || "");
-    var review = /REVIEW\s*:\s*([\s\S]*?)(?=KEY\s*POINTS|X\s*POST|$)/i.exec(text);
+    var review = /REVIEW\s*:\s*([\s\S]*?)(?=KEY\s*POINTS|X\s*POST|IDEA|$)/i.exec(text);
     if (review) out.review = review[1].trim();
-    var kp = /KEY\s*POINTS?\s*:\s*([\s\S]*?)(?=X\s*POST|$)/i.exec(text);
+    var kp = /KEY\s*POINTS?\s*:\s*([\s\S]*?)(?=X\s*POST|IDEA|$)/i.exec(text);
     if (kp) {
       kp[1].split(/\n/).forEach(function (line) {
         var m = /^\s*(?:\d+[.)]\s*|[-*]\s*)?(.+)$/.exec(line);
@@ -670,7 +770,9 @@
     }
     var xp = /X\s*POST\s*:\s*(.+)/i.exec(text);
     if (xp) out.xpost = xp[1].trim();
-    if (!out.review && !out.keypoints.length && !out.xpost) out.review = text.trim(); // fallback
+    var idea = /IDEA\s*:\s*(.+)/i.exec(text);
+    if (idea) out.idea = idea[1].trim();
+    if (!out.review && !out.keypoints.length && !out.xpost && !out.idea) out.review = text.trim(); // fallback
     return out;
   }
 
@@ -681,6 +783,7 @@
       .replace(/^\s*REVIEW\s*:\s*/i, "")
       .replace(/^\s*KEY\s*POINTS?\s*:\s*/i, "")
       .replace(/^\s*X\s*POST\s*:\s*/i, "")
+      .replace(/^\s*IDEA\s*:\s*/i, "")
       .trim();
     // Strip academic intro filler clauses (chained: "Introduction\nThis paper
     // presents..." needs multiple passes), up to the first real content.
@@ -845,6 +948,7 @@
 
       // deterministic panels render instantly (no model needed)
       renderPanels(ranked2, topPages, q, "");
+      renderKeywordMap(q, "");
 
       var top5 = top.slice(0, 8); // more pages -> richer review context
       ui.askBtn.disabled = true;
@@ -862,8 +966,11 @@
           // model didn't follow the format — keep the raw text untouched
           ui.review.textContent = raw;
         }
-        // refresh panels with the LLM X line preserved (falls back to title if absent)
-        try { renderPanels(ranked2, topPages, q, lastParsed.xpost); } catch (err) { console.error(err); }
+        // refresh panels + keyword map with the LLM X line / idea preserved
+        try {
+          renderPanels(ranked2, topPages, q, lastParsed.xpost);
+          renderKeywordMap(q, lastParsed.idea);
+        } catch (err) { console.error(err); }
         ui.askBtn.disabled = false;
       }).catch(function (e) {
         console.error(e);
@@ -973,6 +1080,18 @@
       }).catch(function () { setDeviceBadge("warn", "WASM fallback"); });
     } else {
       setDeviceBadge("warn", "WASM fallback");
+    }
+
+    // Model picker: restore saved choice, reload the pipeline when changed.
+    if (ui.modelSelect) {
+      ui.modelSelect.value = selectedModelId();
+      ui.modelSelect.addEventListener("change", function () {
+        saveModelId(ui.modelSelect.value);
+        // discard any loaded model so the next ask uses the new selection
+        disposeSharedGenerator().then(function () {
+          setStatus("Model changed to " + (ui.modelSelect.selectedOptions[0] ? ui.modelSelect.selectedOptions[0].textContent.split("—")[0].trim() : ui.modelSelect.value) + " — next Ask will download it.", false);
+        });
+      });
     }
 
     Promise.all([

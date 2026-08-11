@@ -89,6 +89,17 @@ main.site-main.llm-active {
 .llm-badge.ok { border-color: #30d158; color: #30d158; }
 .llm-badge.warn { border-color: #ff9f0a; color: #ff9f0a; }
 .llm-badge.err { border-color: #ff453a; color: #ff453a; }
+.llm-model-pick {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.72rem; color: var(--text-muted);
+}
+.llm-model-pick select {
+  font: inherit; font-size: 0.72rem; padding: 0.25rem 0.5rem;
+  border: 1px solid var(--glass-border); border-radius: 8px;
+  background: var(--glass-bg); color: var(--text); outline: none;
+  max-width: 220px;
+}
+.llm-model-pick select:focus { border-color: #0a84ff; }
 .llm-progress-wrap { flex: 1; min-width: 160px; }
 .llm-progress { height: 8px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 99px; overflow: hidden; display: none; }
 .llm-progress-bar { height: 100%; background: linear-gradient(90deg, #0a84ff, #30d158); width: 0%; transition: width 0.2s ease; }
@@ -106,6 +117,26 @@ main.site-main.llm-active {
 .llm-sources { margin-top: 0.55rem; font-size: 0.75rem; color: var(--text-muted); }
 .llm-sources a { color: #0a84ff; text-decoration: none; margin-right: 0.6rem; }
 .llm-sources a:hover { text-decoration: underline; }
+
+/* ---- keyword map ---- */
+.llm-kwmap {
+  margin-top: 0.6rem; border: 1px solid rgba(90,200,250,0.3); border-radius: 12px;
+  background: rgba(90,200,250,0.05); padding: 0.6rem 0.7rem;
+}
+.llm-kwmap-title { font-size: 0.78rem; font-weight: 700; margin-bottom: 0.4rem; color: #5ac8fa; }
+.llm-kwmap-row { display: flex; flex-wrap: wrap; gap: 0.3rem 0.6rem; align-items: baseline; padding: 0.3rem 0; border-top: 1px dashed rgba(90,200,250,0.15); }
+.llm-kwmap-row:first-of-type { border-top: none; }
+.llm-kw {
+  flex: 0 0 auto; font-size: 0.72rem; font-weight: 700; color: #5ac8fa;
+  background: rgba(90,200,250,0.12); border: 1px solid rgba(90,200,250,0.35);
+  border-radius: 999px; padding: 0.1rem 0.55rem;
+}
+.llm-kw-pages { flex: 0 0 auto; font-size: 0.7rem; }
+.llm-kw-pages a { color: #0a84ff; text-decoration: none; }
+.llm-kw-pages a:hover { text-decoration: underline; }
+.llm-kw-def { flex: 1 1 100%; font-size: 0.76rem; color: var(--text-muted); line-height: 1.5; }
+.llm-kwmap-idea { margin-top: 0.5rem; font-size: 0.8rem; line-height: 1.5; color: var(--text); }
+.llm-kwmap-idea-label { font-weight: 700; color: #30d158; }
 
 /* ---- key points ---- */
 .llm-keypoints { margin-top: 0.6rem; display: flex; flex-direction: column; gap: 0.35rem; }
