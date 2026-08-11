@@ -109,7 +109,7 @@
       };
 
       var loadWasm = function () {
-        // int8 (8-bit, RAM-light, exists for all 3 models) -> fp32 guaranteed.
+        // int8 (8-bit, RAM-light, exists for all 4 models) -> fp32 guaranteed.
         // q8 files don't exist for these models, and q4 is WebGPU-only in
         // transformers.js v3, so the old q8->fp32 chain hit 6GB RAM on M3.
         var dtype = "int8";
@@ -125,40 +125,41 @@
         });
       };
 
-      // WebGPU dtype ladder: q4f16 (fp16 compute, lightest) -> q4 (fp32
-      // compute, works on every WebGPU incl. Safari without shader-f16).
-      var tryWebgpuDtypes = function () {
-        return tryLoad("webgpu", "q4f16").then(function (g) {
-          sharedDtype = "q4f16"; return g;
+      // WebGPU: decide the dtype ONCE from adapter features BEFORE downloading,
+      // so we never download two model files for the same device. q4f16 needs
+      // fp16 shaders; q4 (fp32 compute) works everywhere.
+      var loadWebgpu = function () {
+        return navigator.gpu.requestAdapter().then(function (adapter) {
+          if (!adapter) return null;
+          var f16 = !!(adapter.features && adapter.features.has && adapter.features.has("shader-f16"));
+          var dtype = f16 ? "q4f16" : "q4";
+          onStatus && onStatus("WebGPU " + dtype + " (fp16 " + (f16 ? "supported" : "unsupported") + ")...");
+          return tryLoad("webgpu", dtype).then(function (g) {
+            sharedGenerator = g;
+            sharedDevice = "webgpu";
+            sharedDtype = dtype;
+            return g;
+          });
         }).catch(function (e) {
-          console.warn("WebGPU q4f16 failed, retrying q4:", e);
-          return tryLoad("webgpu", "q4").then(function (g) {
-            sharedDtype = "q4"; return g;
+          // One WebGPU attempt only; any failure -> WASM (never re-download).
+          console.warn("WebGPU failed entirely, falling back to WASM:", e);
+          return disposeSharedGenerator().then(function () {
+            onStatus && onStatus("WebGPU runtime failed - retrying on WASM (slower)...");
+            onProgress && onProgress(0);
+            return loadWasm();
           });
         });
       };
 
-      var webgpuOk = false;
-      // Safari's WebGPU path is unreliable for transformers.js (no fp16
-      // shaders, session-build crashes) — it was silently landing on the
-      // WASM fallback anyway. Go straight to WASM there; Chrome/Firefox get
-      // the WebGPU ladder.
+      // Safari's WebGPU path is unreliable for transformers.js (session-build
+      // crashes after download) — go straight to WASM there; Chrome/Firefox
+      // get one WebGPU attempt.
       var isSafari = /Safari\//.test(navigator.userAgent) && !/Chrome|Chromium|Firefox/.test(navigator.userAgent);
       if (navigator.gpu && !isSafari) {
-        return navigator.gpu.requestAdapter().then(function (adapter) {
-          webgpuOk = !!adapter;
-          return webgpuOk ? tryWebgpuDtypes() : null;
-        }).then(function (gen) {
-          if (gen) { sharedGenerator = gen; sharedDevice = "webgpu"; return gen; }
-          if (!webgpuOk) onStatus && onStatus("WebGPU unavailable - using WASM (slower)...");
+        return loadWebgpu().then(function (gen) {
+          if (gen) return gen;
+          onStatus && onStatus("WebGPU unavailable - using WASM (slower)...");
           return loadWasm();
-        }).catch(function (webgpuErr) {
-          console.warn("WebGPU pipeline failed, falling back to WASM:", webgpuErr);
-          return disposeSharedGenerator().then(function () {
-            onStatus && onStatus("WebGPU runtime crashed - retrying on WASM (slower)...");
-            onProgress && onProgress(0);
-            return loadWasm();
-          });
         });
       }
       onStatus && onStatus("WebGPU unavailable - using WASM (slower)...");
