@@ -1,3 +1,10 @@
+/* Graph pages are full-screen tools: hide the share-line blockquote that
+   pushes the canvas below the fold (it stays in the HTML for LinkedIn
+   manifest generation, just not visually). */
+main.site-main:has(.graph-page) > blockquote {
+  display: none;
+}
+
 main.site-main:has(.graph-page),
 main.site-main.graph-active {
   max-width: none !important;

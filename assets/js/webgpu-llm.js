@@ -1,8 +1,9 @@
 /* =========================================================================
    WebGPU LLM Search — in-browser LLM (Qwen1.5-0.5B via transformers.js,
    WebGPU with WASM fallback) over the full-text site index (llm-index.json)
-   with TF-IDF retrieval, streaming answers, and a connection dashboard
-   built from graph.json.
+   with TF-IDF retrieval, streaming answers, a connection dashboard built
+   from graph.json, plus a ChatGPT-style conversation panel.
+
    Based on the local in-browser LLM diagnostic (dynamicLLM/a).
    ========================================================================= */
 (function () {
@@ -41,6 +42,8 @@
     return Promise.resolve();
   }
 
+  // Try WebGPU first, fall back to WASM (q8 quantized — ~500MB, same as the
+  // notice promises; fp32 would be ~1GB and often fails on Safari).
   function ensureGenerator(onStatus, onProgress) {
     if (sharedGenerator) {
       onStatus && onStatus("Reusing already-loaded " + sharedDevice.toUpperCase() + " model.");
@@ -50,15 +53,15 @@
     if (!window.isSecureContext) return Promise.reject(new Error("This requires a secure context (https:// or localhost)."));
 
     return loadPipelineModule().then(function () {
-      var tryLoad = function (device) {
-        onStatus && onStatus("Downloading Qwen1.5-0.5B model (" + device.toUpperCase() + ")...");
+      var tryLoad = function (device, dtype) {
+        onStatus && onStatus("Downloading Qwen1.5-0.5B model (" + device.toUpperCase() + ", " + dtype + ")...");
         return sharedPipelineModule.pipeline("text-generation", MODEL, {
           device: device,
-          dtype: device === "webgpu" ? "q4" : "fp32",
+          dtype: dtype,
           progress_callback: function (d) {
             if (!d) return;
             if (d.status === "progress") {
-              onStatus && onStatus("Downloading " + ((d.file || "").split("/").pop() || "model file") + "...");
+              onStatus && onStatus("Downloading " + ((d.file || "").split("/").pop() || "model file") + "… " + (Math.round(Number(d.progress) || 0)) + "%");
               onProgress && onProgress(d.progress);
             } else if (d.status === "initiate" || d.status === "start") {
               onStatus && onStatus("Starting model download...");
@@ -71,32 +74,36 @@
         });
       };
 
+      var loadWasm = function () {
+        // q8 first (fits the ~500MB promise); if unsupported, fp32.
+        return tryLoad("wasm", "q8").catch(function (e) {
+          console.warn("WASM q8 failed, retrying fp32:", e);
+          return tryLoad("wasm", "fp32");
+        }).then(function (gen) {
+          sharedGenerator = gen; sharedDevice = "wasm"; return gen;
+        });
+      };
+
       var webgpuOk = false;
       if (navigator.gpu) {
         return navigator.gpu.requestAdapter().then(function (adapter) {
           webgpuOk = !!adapter;
-          return webgpuOk ? tryLoad("webgpu") : null;
+          return webgpuOk ? tryLoad("webgpu", "q4") : null;
         }).then(function (gen) {
           if (gen) { sharedGenerator = gen; sharedDevice = "webgpu"; return gen; }
           if (!webgpuOk) onStatus && onStatus("WebGPU unavailable - using WASM (slower)...");
-          return tryLoad("wasm").then(function (gen) {
-            sharedGenerator = gen; sharedDevice = "wasm"; return gen;
-          });
+          return loadWasm();
         }).catch(function (webgpuErr) {
           console.warn("WebGPU pipeline failed, falling back to WASM:", webgpuErr);
           return disposeSharedGenerator().then(function () {
             onStatus && onStatus("WebGPU runtime crashed - retrying on WASM (slower)...");
             onProgress && onProgress(0);
-            return tryLoad("wasm").then(function (gen) {
-              sharedGenerator = gen; sharedDevice = "wasm"; return gen;
-            });
+            return loadWasm();
           });
         });
       }
       onStatus && onStatus("WebGPU unavailable - using WASM (slower)...");
-      return tryLoad("wasm").then(function (gen) {
-        sharedGenerator = gen; sharedDevice = "wasm"; return gen;
-      });
+      return loadWasm();
     });
   }
 
@@ -108,16 +115,15 @@
 
   function chunkText(text, filename, maxLen) {
     maxLen = maxLen || 700;
-    // Split on markdown headings first (like the original dynamicLLM chunker),
-    // then pack paragraphs into ~maxLen chunks.
+    // Split on markdown headings first, then pack paragraphs into ~maxLen chunks.
     var lines = String(text).split(/\r?\n/);
     var sections = [];
-    var current = { heading: filename, lines: [] };
+    var current = { heading: filename, lines: [], startLine: 0 };
     for (var i = 0; i < lines.length; i++) {
       var m = /^#{1,6}\s+(.*)/.exec(lines[i]);
       if (m) {
         if (current.lines.join("\n").trim()) sections.push(current);
-        current = { heading: m[1].trim(), lines: [] };
+        current = { heading: m[1].trim(), lines: [], startLine: i + 1 };
       } else {
         current.lines.push(lines[i]);
       }
@@ -130,24 +136,33 @@
       if (!body) continue;
       var paras = body.split(/\n\s*\n/);
       var buf = "";
+      var bufStart = sections[s].startLine;
+      var lineOffset = 0;
       for (var q = 0; q < paras.length; q++) {
         var p = paras[q].trim();
         if (!p) continue;
-        if (buf && (buf + "\n\n" + p).length > maxLen) { chunks.push({ file: filename, heading: sections[s].heading, text: buf.trim() }); buf = p; }
-        else buf = buf ? buf + "\n\n" + p : p;
+        if (buf && (buf + "\n\n" + p).length > maxLen) {
+          chunks.push({ file: filename, heading: sections[s].heading, text: buf.trim(), startLine: bufStart });
+          buf = p;
+          bufStart = sections[s].startLine + lineOffset + 1;
+        } else {
+          buf = buf ? buf + "\n\n" + p : p;
+        }
+        lineOffset += p.split("\n").length + 1;
       }
-      if (buf.trim()) chunks.push({ file: filename, heading: sections[s].heading, text: buf.trim() });
+      if (buf.trim()) chunks.push({ file: filename, heading: sections[s].heading, text: buf.trim(), startLine: bufStart });
     }
     return chunks;
   }
 
   var pages = [];       // raw index entries
-  var chunks = [];      // {file, text}
+  var chunks = [];      // {file, heading, text}
   var tokenized = [];   // tokens per chunk
   var idf = new Map();
   var graphNodes = [];  // graph.json nodes
   var graphLinks = [];  // graph.json links
   var urlToNode = {};   // page url (normalized) -> node id (prefer note/moc)
+  var assetsById = {};  // node id -> asset node (PDFs, images, code files)
 
   function normalizeUrl(u) {
     return String(u || "").replace(/\/+$/, "").toLowerCase();
@@ -186,13 +201,14 @@
     return scored.filter(function (s) { return s.score > 0; }).slice(0, topK);
   }
 
-  /* ------------------- graph connections -------------------------------- */
+  /* ------------------- graph connections + assets ------------------------ */
   function setupGraph(g) {
     graphNodes = g.nodes || [];
     graphLinks = g.links || [];
     urlToNode = {};
-    // Prefer page/hub nodes (note/moc) over tag nodes for the same URL
+    assetsById = {};
     graphNodes.forEach(function (n) {
+      if (n.kind === "asset") { assetsById[n.id] = n; return; }
       if (!n.url || String(n.url).indexOf("/view/") === 0) return;
       var key = normalizeUrl(n.url);
       var existing = urlToNode[key];
@@ -207,26 +223,91 @@
     return null;
   }
 
+  // Related pages + attached files for a page url, with the REASON (link kind).
   function relatedForUrl(pageUrl) {
     var node = urlToNode[normalizeUrl(pageUrl)];
-    if (!node) return { pages: [], tags: [] };
-    var pagesSet = {}, tagsSet = {};
-    graphLinks.forEach(function (l) {
-      var s = typeof l.source === "object" ? l.source.id : l.source;
-      var t = typeof l.target === "object" ? l.target.id : l.target;
-      var otherId = null;
-      if (s === node.id) otherId = t;
-      else if (t === node.id) otherId = s;
-      if (!otherId || otherId === node.id) return;
-      var other = nodeById(otherId);
-      if (!other) return;
-      if (other.kind === "tag") {
-        tagsSet[other.label || other.id] = true;
-      } else if (other.url && String(other.url).indexOf("/view/") !== 0) {
-        pagesSet[other.url] = { label: other.label || other.url, url: other.url };
-      }
+    var pagesSet = {}, tagsSet = {}, filesSet = {}, pageLinks = {};
+    if (node) {
+      graphLinks.forEach(function (l) {
+        var s = typeof l.source === "object" ? l.source.id : l.source;
+        var t = typeof l.target === "object" ? l.target.id : l.target;
+        var otherId = null;
+        if (s === node.id) otherId = t;
+        else if (t === node.id) otherId = s;
+        if (!otherId || otherId === node.id) return;
+        var other = nodeById(otherId);
+        if (!other) return;
+        if (other.kind === "tag") {
+          tagsSet[other.label || other.id] = true;
+        } else if (other.kind === "asset") {
+          filesSet[other.url] = { label: other.label || other.url, url: other.url, raw: other.raw };
+        } else if (other.url && String(other.url).indexOf("/view/") !== 0) {
+          pagesSet[other.url] = { label: other.label || other.url, url: other.url };
+          var kind = l.kind || "link";
+          pageLinks[other.url] = pageLinks[other.url] || [];
+          if (pageLinks[other.url].indexOf(kind) < 0) pageLinks[other.url].push(kind);
+        }
+      });
+    }
+    // Also surface assets whose raw path shares this page's folder/name.
+    if (node && node.raw) {
+      var base = String(node.raw).replace(/\.md$/i, "");
+      Object.keys(assetsById).forEach(function (id) {
+        var a = assetsById[id];
+        if (!a.raw) return;
+        var raw = String(a.raw);
+        if (raw.indexOf(base) === 0 || base.indexOf(raw.replace(/\.[^.]+$/, "")) === 0) {
+          filesSet[a.url] = { label: a.label || a.url, url: a.url, raw: a.raw };
+        }
+      });
+    }
+    var pages = Object.values(pagesSet).slice(0, 8).map(function (p) {
+      var kinds = pageLinks[p.url] || [];
+      var label = kinds.map(function (k) {
+        return k === "wiki" ? "wiki link" : k === "mdlink" ? "linked" : k === "moc" ? "menu" : k === "tag" ? "tag" : k;
+      }).join(", ");
+      return { label: p.label, url: p.url, rel: label };
     });
-    return { pages: Object.values(pagesSet).slice(0, 8), tags: Object.keys(tagsSet).slice(0, 8) };
+    return { pages: pages, tags: Object.keys(tagsSet).slice(0, 8), files: Object.values(filesSet).slice(0, 6) };
+  }
+
+  // Category order for reading-path grouping (hub/overview first, then concepts, then research).
+  var CATEGORY_ORDER = ["hub", "course", "ai", "cv", "cuda", "pkm", "paper", "journal", "book", "patent", "keynote", "business"];
+  var CATEGORY_LABEL = {
+    hub: "Overview", course: "Courses", ai: "AI & LLMs", cv: "Computer Vision",
+    cuda: "CUDA & GPU", pkm: "Knowledge", paper: "Papers", journal: "Journals",
+    book: "Books", patent: "Patents", keynote: "Keynotes", business: "Business"
+  };
+  function categoryRank(cat) {
+    var i = CATEGORY_ORDER.indexOf(cat);
+    return i < 0 ? 99 : i;
+  }
+
+  // Build an ordered "how to read this topic" path from ranked pages.
+  function buildReadingPath(ranked) {
+    var used = {};
+    var pick = function (cats) {
+      for (var i = 0; i < ranked.length; i++) {
+        var pg = ranked[i];
+        if (used[pg.url]) continue;
+        if (cats.indexOf(pg.cat) >= 0) { used[pg.url] = true; return pg; }
+      }
+      return null;
+    };
+    var path = [];
+    var overview = pick(["hub"]);
+    if (overview) path.push({ step: "Start with the overview", pg: overview });
+    var concepts = pick(["course", "ai", "cv", "cuda"]);
+    if (concepts) path.push({ step: "Learn the concepts", pg: concepts });
+    var research = pick(["paper", "journal", "book", "patent"]);
+    if (research) path.push({ step: "Dive into research", pg: research });
+    var extra = pick(["pkm", "business", "keynote"]);
+    if (extra) path.push({ step: "Related material", pg: extra });
+    // fill remaining with top pages not yet used
+    for (var i = 0; i < ranked.length && path.length < 5; i++) {
+      if (!used[ranked[i].url]) { used[ranked[i].url] = true; path.push({ step: "Keep exploring", pg: ranked[i] }); }
+    }
+    return path;
   }
 
   /* ------------------- UI ------------------------------------------------ */
@@ -236,7 +317,8 @@
     answer: $("llm-answer"), answerBody: $("llm-answer-body"), sources: $("llm-sources"),
     results: $("llm-results"), resultsHead: $("llm-results-head"), count: $("llm-count"),
     conn: $("llm-conn"), canvas: $("llm-conn-canvas"), hint: $("llm-hint-line"),
-    q: $("llm-query"), askBtn: $("llm-ask-btn"), initBtn: $("llm-init-btn")
+    q: $("llm-query"), askBtn: $("llm-ask-btn"), initBtn: $("llm-init-btn"),
+    chatLog: $("llm-chat-log"), chatInput: $("llm-chat-input"), chatSend: $("llm-chat-send"), chatStatus: $("llm-chat-status")
   };
 
   function setProgress(n) {
@@ -246,8 +328,8 @@
   }
 
   function setStatus(msg, showBar) {
-    ui.status.textContent = msg || "";
-    ui.progressWrap.style.display = showBar ? "block" : "none";
+    if (ui.status) ui.status.textContent = msg || "";
+    if (ui.progressWrap) ui.progressWrap.style.display = showBar ? "block" : "none";
   }
 
   function setDeviceBadge(state, text) {
@@ -260,11 +342,15 @@
     return null;
   }
 
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
   function highlight(text, query) {
     var tokens = tokenize(query);
-    if (!tokens.length || !text) return text;
+    if (!tokens.length || !text) return esc(text);
     var re = new RegExp("(" + tokens.map(function (t) { return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }).join("|") + ")", "gi");
-    return String(text).replace(re, "<mark>$1</mark>");
+    return esc(text).replace(re, "<mark>$1</mark>");
   }
 
   function snippetFor(text, query, len) {
@@ -281,46 +367,145 @@
     return (start > 0 ? "…" : "") + text.substring(start, start + len) + "…";
   }
 
+  function fileLabel(raw) {
+    var name = String(raw || "").split("/").pop() || "";
+    return decodeURIComponent(name);
+  }
+
+  // Exact lines from a chunk containing query tokens, with line numbers.
+  function exactLines(chunk, query, maxLines) {
+    maxLines = maxLines || 14;
+    var tokens = tokenize(query);
+    var lines = String(chunk.text).split("\n");
+    var hitIdx = -1;
+    for (var i = 0; i < lines.length; i++) {
+      var low = lines[i].toLowerCase();
+      for (var t = 0; t < tokens.length; t++) {
+        if (low.indexOf(tokens[t]) >= 0) { hitIdx = i; break; }
+      }
+      if (hitIdx >= 0) break;
+    }
+    if (hitIdx < 0) hitIdx = 0;
+    var start = Math.max(0, hitIdx - 2);
+    var end = Math.min(lines.length, start + maxLines);
+    var out = [];
+    for (var j = start; j < end; j++) {
+      out.push({ n: (chunk.startLine || 1) + j, text: lines[j] });
+    }
+    return out;
+  }
+
+  // One card per PAGE (aggregating chunk scores) + exact lines + files + relations.
   function renderResults(query, top, limit) {
-    limit = limit || 12;
+    limit = limit || 10;
     ui.results.innerHTML = "";
     if (!top.length) {
       ui.results.innerHTML = '<div class="llm-empty">Nothing matched that query. Try different keywords.</div>';
       ui.count.textContent = "0";
       return;
     }
-    ui.count.textContent = top.length;
-    var shown = 0;
+    // Aggregate top chunks per page
+    var perPage = {};
     top.forEach(function (r) {
-      if (shown >= limit) return;
-      var meta = pageMeta(r.chunk.file);
-      var title = meta ? meta.title : r.chunk.file;
+      var url = r.chunk.file;
+      if (!perPage[url]) perPage[url] = { score: 0, chunks: [] };
+      perPage[url].score += r.score;
+      perPage[url].chunks.push(r);
+    });
+    var ranked = Object.keys(perPage).map(function (url) {
+      var meta = pageMeta(url);
       var cat = meta ? meta.category : "hub";
-      var tags = (meta && meta.tags) ? meta.tags : [];
-      var hashes = (meta && meta.hashtags) ? String(meta.hashtags).split(/\s+/).filter(Boolean) : [];
-      var rel = relatedForUrl(r.chunk.file);
-      var pct = Math.min(100, Math.round((r.score / (top[0].score || 1)) * 100));
-      var snippet = snippetFor(r.chunk.text, query);
-      var html = '<div class="llm-card">' +
-        '<div class="llm-card-top"><span class="llm-card-title"><a href="' + r.chunk.file + '">' + (title || r.chunk.file) + '</a></span>' +
-        '<span class="llm-cat ' + cat + '">' + cat + '</span></div>' +
-        '<div class="llm-score-row"><div class="llm-score-bar"><div class="llm-score-fill" style="width:' + pct + '%"></div></div>' +
-        '<span class="llm-score-val">' + pct + '%</span></div>' +
-        '<div class="llm-snippet">' + highlight(snippet, query) + '</div>';
-      if (tags.length || hashes.length) {
-        html += '<div class="llm-tags-row">' +
-          tags.slice(0, 6).map(function (t) { return '<span class="llm-tag">#' + t + '</span>'; }).join("") +
-          hashes.slice(0, 4).map(function (h) { return '<span class="llm-tag hashtag">' + h + '</span>'; }).join("") +
-          '</div>';
-      }
-      if (rel.pages.length) {
-        html += '<div class="llm-related"><b>Connected:</b> ' +
-          rel.pages.map(function (p) { return '<a href="' + p.url + '" class="rel-link" title="' + p.label + '">' + p.label + '</a>'; }).join("") +
-          '</div>';
-      }
+      return { url: url, score: perPage[url].score, n: perPage[url].chunks.length, best: perPage[url].chunks[0], cat: cat, title: meta ? meta.title : url };
+    });
+    ranked.sort(function (a, b) { return b.score - a.score; });
+    ui.count.textContent = ranked.length;
+    var maxScore = ranked[0].score || 1;
+
+    // ---- Reading path (ordered steps) ----
+    var path = buildReadingPath(ranked);
+    if (path.length >= 2) {
+      var pathHtml = '<div class="llm-path"><div class="llm-path-title">&#128218; How to read this topic — suggested order</div><div class="llm-path-steps">';
+      path.forEach(function (p, idx) {
+        var meta2 = pageMeta(p.pg.url);
+        pathHtml += '<div class="llm-path-step" style="--step:' + idx + '">' +
+          '<div class="llm-path-num">' + (idx + 1) + '</div>' +
+          '<div class="llm-path-body"><div class="llm-path-label">' + esc(p.step) + '</div>' +
+          '<a href="' + p.pg.url + '">' + esc(p.pg.title) + '</a></div></div>';
+      });
+      pathHtml += '</div></div>';
+      ui.results.insertAdjacentHTML("beforeend", pathHtml);
+    }
+
+    // ---- Category-grouped results ----
+    var byCat = {};
+    ranked.slice(0, limit).forEach(function (pg) {
+      (byCat[pg.cat] = byCat[pg.cat] || []).push(pg);
+    });
+    var cats = Object.keys(byCat).sort(function (a, b) { return categoryRank(a) - categoryRank(b); });
+    cats.forEach(function (cat) {
+      var html = '<div class="llm-cat-group"><div class="llm-cat-group-head"><span class="llm-cat-group-title">' +
+        esc(CATEGORY_LABEL[cat] || cat) + '</span><span class="llm-cat-group-count">' + byCat[cat].length + '</span></div>';
+      byCat[cat].forEach(function (pg, gi) {
+        var meta = pageMeta(pg.url);
+        var title = meta ? meta.title : pg.url;
+        var tags = (meta && meta.tags) ? meta.tags : [];
+        var hashes = (meta && meta.hashtags) ? String(meta.hashtags).split(/\s+/).filter(Boolean) : [];
+        var rel = relatedForUrl(pg.url);
+        var pct = Math.min(100, Math.round((pg.score / maxScore) * 100));
+        var snippet = snippetFor(pg.best.chunk.text, query);
+        var lines = exactLines(pg.best.chunk, query);
+        var firstLine = lines.length ? lines[0].n : (pg.best.chunk.startLine || 1);
+        var lastLine = lines.length ? lines[lines.length - 1].n : firstLine;
+        var card = '<div class="llm-card" style="--gi:' + gi + '">' +
+          '<div class="llm-card-top"><span class="llm-card-title"><a href="' + pg.url + '">' + esc(title) + '</a></span>' +
+          '<span class="llm-cat ' + esc(cat) + '">' + esc(CATEGORY_LABEL[cat] || cat) + '</span></div>' +
+          '<div class="llm-score-row"><div class="llm-score-bar"><div class="llm-score-fill" style="width:' + pct + '%"></div></div>' +
+          '<span class="llm-score-val">' + pct + '%</span></div>' +
+          '<div class="llm-snippet">' + highlight(snippet, query) + '</div>' +
+          '<div class="llm-lines"><div class="llm-lines-head">&#128203; Exact lines ' + firstLine + '–' + lastLine +
+          ' <button type="button" class="llm-lines-toggle" data-card="' + esc(pg.url) + '">show</button></div>' +
+          '<div class="llm-lines-body" id="lines-' + esc(pg.url).replace(/[^a-zA-Z0-9_-]/g, "_") + '" style="display:none">';
+        lines.forEach(function (ln) {
+          card += '<div class="llm-line"><span class="llm-line-num">' + ln.n + '</span><span class="llm-line-text">' + highlight(ln.text, query) + '</span></div>';
+        });
+        card += '</div></div>';
+        if (rel.files.length) {
+          card += '<div class="llm-files"><b>&#128196; Files &amp; PDFs:</b> ' +
+            rel.files.map(function (f) {
+              var label = f.label === f.url ? fileLabel(f.raw) : f.label;
+              return '<a href="' + f.url + '" target="_blank" rel="noopener" class="rel-link" title="' + esc(label) + '">' + esc(label) + '</a>';
+            }).join("") + '</div>';
+        }
+        if (tags.length || hashes.length) {
+          card += '<div class="llm-tags-row">' +
+            tags.slice(0, 6).map(function (t) { return '<span class="llm-tag">#' + esc(t) + '</span>'; }).join("") +
+            hashes.slice(0, 4).map(function (h) { return '<span class="llm-tag hashtag">' + esc(h) + '</span>'; }).join("") +
+            '</div>';
+        }
+        if (rel.pages.length) {
+          card += '<div class="llm-related"><b>&#128279; Connected:</b> ' +
+            rel.pages.map(function (p) {
+              return '<a href="' + p.url + '" class="rel-link" title="' + esc(p.label) + '">' + esc(p.label) + '</a>' +
+                (p.rel ? '<span class="rel-kind">(' + esc(p.rel) + ')</span>' : '');
+            }).join("") + '</div>';
+        }
+        card += '</div>';
+        html += card;
+      });
       html += '</div>';
       ui.results.insertAdjacentHTML("beforeend", html);
-      shown++;
+    });
+
+    // wire the line toggles
+    document.querySelectorAll(".llm-lines-toggle").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var key = btn.getAttribute("data-card").replace(/[^a-zA-Z0-9_-]/g, "_");
+        var body = document.getElementById("lines-" + key);
+        if (!body) return;
+        var open = body.style.display !== "none";
+        body.style.display = open ? "none" : "block";
+        btn.textContent = open ? "show" : "hide";
+      });
     });
   }
 
@@ -331,7 +516,6 @@
     var seed = top.slice(0, 8).map(function (r) { return urlToNode[normalizeUrl(r.chunk.file)]; }).filter(Boolean);
     if (!seed.length) { ui.conn.style.display = "none"; return; }
     var keep = {};
-    var nodesById = {};
     seed.forEach(function (n) { keep[n.id] = n; });
     var maxNeighbors = 4;
     seed.forEach(function (n) {
@@ -379,7 +563,7 @@
     var link = g.append("g").selectAll("line").data(links).enter().append("line")
       .attr("stroke", "rgba(139,148,158,0.25)").attr("stroke-width", 0.8);
     var node = g.append("g").selectAll("circle").data(nodes).enter().append("circle")
-      .attr("r", function (d) { return d.id === urlToNode[normalizeUrl(query)] ? 0 : 7; })
+      .attr("r", 7)
       .attr("fill", function (d) { return COLORS[d.kind] || "#8e8e93"; })
       .attr("stroke", "#fff").attr("stroke-width", 1)
       .style("cursor", "pointer")
@@ -400,12 +584,14 @@
     connSim = sim;
   }
 
-  /* ------------------- LLM answer ---------------------------------------- */
+  /* ------------------- LLM helpers --------------------------------------- */
   function buildContext(top, maxChars) {
     maxChars = maxChars || 5200;
-    var ctx = [], used = 0;
+    var ctx = [], used = 0, seen = {};
     top.forEach(function (r) {
       if (used >= maxChars) return;
+      if (seen[r.chunk.file]) return; // one chunk per page for context
+      seen[r.chunk.file] = true;
       var meta = pageMeta(r.chunk.file);
       var head = meta ? meta.title : r.chunk.file;
       var text = r.chunk.text;
@@ -416,49 +602,47 @@
     return ctx.join("\n\n");
   }
 
-  function askLLM(query, top) {
-    ui.answer.classList.add("visible");
-    ui.answerBody.textContent = "";
-    ui.sources.innerHTML = "";
-    ui.askBtn.disabled = true;
+  function uniquePages(top) {
+    var out = [], seen = {};
+    top.forEach(function (r) { if (!seen[r.chunk.file]) { seen[r.chunk.file] = true; out.push(r.chunk.file); } });
+    return out;
+  }
+
+  function sourcesHtml(pages) {
+    return pages.map(function (f) {
+      var meta = pageMeta(f);
+      return '<a href="' + f + '" target="_blank" rel="noopener">' + esc(meta ? meta.title : f) + '</a>';
+    }).join("");
+  }
+
+  function runAnswer(top, question, streamEl, onDone) {
     var context = buildContext(top);
-    var streamer = null;
-    ensureGenerator(
+    return ensureGenerator(
       function (msg) { setStatus(msg, true); },
       setProgress
     ).then(function (generator) {
       setStatus("Generating answer on " + sharedDevice.toUpperCase() + "...", false);
       setDeviceBadge("ok", sharedDevice.toUpperCase());
       return loadPipelineModule().then(function () {
-        streamer = new sharedPipelineModule.TextStreamer(generator.tokenizer, {
+        var streamer = new sharedPipelineModule.TextStreamer(generator.tokenizer, {
           skip_prompt: true,
-          callback_function: function (t) { ui.answerBody.textContent += t; }
+          callback_function: function (t) { streamEl.textContent += t; }
         });
         var messages = [
           { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Always name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
-          { role: "user", content: "Document excerpts:\n\n" + context + "\n\nQuestion: " + query }
+          { role: "user", content: "Document excerpts:\n\n" + context + "\n\nQuestion: " + question }
         ];
         return generator(messages, { max_new_tokens: 240, do_sample: false, streamer: streamer });
       });
     }).then(function (result) {
-      if (!ui.answerBody.textContent.trim()) {
+      if (!streamEl.textContent.trim()) {
         var x = result && result[0] && result[0].generated_text;
-        if (typeof x === "string") ui.answerBody.textContent = x;
-        else if (Array.isArray(x)) ui.answerBody.textContent = x[x.length - 1] && x[x.length - 1].content || "";
+        if (typeof x === "string") streamEl.textContent = x;
+        else if (Array.isArray(x)) streamEl.textContent = x[x.length - 1] && x[x.length - 1].content || "";
       }
-      var unique = [];
-      top.forEach(function (r) { if (unique.indexOf(r.chunk.file) < 0) unique.push(r.chunk.file); });
-      ui.sources.innerHTML = "Sources: " + unique.map(function (f) {
-        var meta = pageMeta(f);
-        return '<a href="' + f + '" target="_blank" rel="noopener">' + (meta ? meta.title : f) + '</a>';
-      }).join("");
       setStatus("Done (" + sharedDevice.toUpperCase() + ").", false);
-      ui.askBtn.disabled = false;
-    }).catch(function (e) {
-      console.error(e);
-      ui.answerBody.textContent = "LLM unavailable: " + (e && e.message || e) + "\n\n(Keyword results below are still valid.)";
-      setStatus("LLM error — keyword results shown.", false);
-      ui.askBtn.disabled = false;
+      onDone && onDone();
+      return result;
     });
   }
 
@@ -472,18 +656,109 @@
       ui.conn.classList.remove("visible");
       return;
     }
-    var top = retrieve(q, 14);
+    var top = retrieve(q, 16);
     renderResults(q, top);
     if (typeof d3 !== "undefined") renderConnections(q, top);
-    var meta = pages.length + " pages · " + chunks.length + " sections indexed";
     ui.resultsHead.style.display = top.length ? "flex" : "none";
     setStatus(top.length ? top.length + " relevant sections found." : "No matches.", false);
-    ui.stats.textContent = meta;
     if (top.length) {
-      askLLM(q, top.slice(0, 5));
+      ui.answer.classList.add("visible");
+      ui.answerBody.textContent = "";
+      ui.sources.innerHTML = "Sources: " + sourcesHtml(uniquePages(top));
+      var top5 = top.slice(0, 5);
+      ui.askBtn.disabled = true;
+      runAnswer(top5, q, ui.answerBody, function () { ui.askBtn.disabled = false; })
+        .catch(function (e) {
+          console.error(e);
+          ui.answerBody.textContent = "LLM unavailable: " + (e && e.message || e) + "\n\n(Relevant pages above are still valid.)";
+          setStatus("LLM error — pages shown above.", false);
+          ui.askBtn.disabled = false;
+        });
     }
   }
 
+  /* ------------------- chat (ChatGPT-like) -------------------------------- */
+  var chatHistory = [];
+  var chatBusy = false;
+
+  function chatAddMsg(role, text) {
+    var div = document.createElement("div");
+    div.className = "chat-msg " + (role === "user" ? "chat-user" : "chat-bot");
+    var bubble = document.createElement("div");
+    bubble.className = "chat-bubble";
+    bubble.textContent = text;
+    div.appendChild(bubble);
+    ui.chatLog.appendChild(div);
+    ui.chatLog.scrollTop = ui.chatLog.scrollHeight;
+    return bubble;
+  }
+
+  function chatSend() {
+    var q = ui.chatInput.value.trim();
+    if (!q || chatBusy) return;
+    if (!pages.length) { ui.chatStatus.textContent = "Index still loading — wait a second."; return; }
+    chatBusy = true;
+    ui.chatSend.disabled = true;
+    ui.chatStatus.textContent = "";
+    chatAddMsg("user", q);
+    ui.chatInput.value = "";
+    var thinking = chatAddMsg("bot", "…");
+
+    var top = retrieve(q, 10);
+    if (!top.length) {
+      thinking.textContent = "Nothing in the site matches that closely — try rephrasing.";
+      chatBusy = false; ui.chatSend.disabled = false;
+      return;
+    }
+    chatHistory.push({ role: "user", content: q });
+
+    var context = buildContext(top.slice(0, 5));
+    ensureGenerator(
+      function (msg) { ui.chatStatus.textContent = msg; },
+      setProgress
+    ).then(function (generator) {
+      ui.chatStatus.textContent = "Generating on " + sharedDevice.toUpperCase() + "...";
+      setDeviceBadge("ok", sharedDevice.toUpperCase());
+      return loadPipelineModule().then(function () {
+        thinking.textContent = "";
+        var streamer = new sharedPipelineModule.TextStreamer(generator.tokenizer, {
+          skip_prompt: true,
+          callback_function: function (t) { thinking.textContent += t; }
+        });
+        var messages = [
+          { role: "system", content: "You are a helpful research assistant for the pirahansiah.com knowledge site. Answer using the document excerpts below when relevant. Always mention which source page(s) you used, like (source: /notes/.../). If the excerpts don't contain enough info, say so plainly." },
+          { role: "user", content: "Document excerpts:\n\n" + context }
+        ];
+        // keep last few turns for conversation continuity
+        var history = chatHistory.slice(-6, -1).map(function (m) { return { role: m.role, content: m.content }; });
+        messages = messages.concat(history);
+        messages.push({ role: "user", content: q });
+        return generator(messages, { max_new_tokens: 260, do_sample: false, streamer: streamer });
+      });
+    }).then(function (result) {
+      if (!thinking.textContent.trim()) {
+        var x = result && result[0] && result[0].generated_text;
+        if (typeof x === "string") thinking.textContent = x;
+        else if (Array.isArray(x)) thinking.textContent = x[x.length - 1] && x[x.length - 1].content || "";
+      }
+      var src = document.createElement("div");
+      src.className = "chat-sources";
+      src.innerHTML = "Sources: " + sourcesHtml(uniquePages(top));
+      thinking.parentNode.appendChild(src);
+      chatHistory.push({ role: "assistant", content: thinking.textContent });
+      ui.chatStatus.textContent = "";
+    }).catch(function (e) {
+      console.error(e);
+      thinking.textContent = "Model error: " + (e && e.message || e) + " — try the Load model button first.";
+      ui.chatStatus.textContent = "";
+    }).finally(function () {
+      chatBusy = false;
+      ui.chatSend.disabled = false;
+      ui.chatInput.disabled = !pages.length;
+    });
+  }
+
+  /* ------------------- init ----------------------------------------------- */
   function init() {
     setDeviceBadge("warn", "checking GPU");
     if (navigator.gpu) {
@@ -504,6 +779,8 @@
       setStatus("Ready. Ask a question or type keywords — results stream in live.", false);
       ui.q.disabled = false;
       ui.askBtn.disabled = false;
+      ui.chatInput.disabled = false;
+      ui.chatSend.disabled = false;
     }).catch(function (e) {
       console.error(e);
       setStatus("Could not load index (" + e.message + ").", false);
@@ -523,10 +800,14 @@
         setStatus("Model ready on " + sharedDevice.toUpperCase() + ".", false);
         setDeviceBadge("ok", sharedDevice.toUpperCase());
       }).catch(function (e) {
-        setStatus("Model load failed: " + (e && e.message || e), false);
+        setStatus("Model load failed: " + (e && e.message || e) + " — check your connection and retry.", false);
         setDeviceBadge("err", "load failed");
       });
     });
+
+    // Chat
+    ui.chatSend.addEventListener("click", chatSend);
+    ui.chatInput.addEventListener("keydown", function (e) { if (e.key === "Enter") chatSend(); });
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
