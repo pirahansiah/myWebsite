@@ -38,7 +38,8 @@
   /* ------------------- shared model loading (from dynamicLLM) ----------- */
   var sharedPipelineModule = null;
   var sharedGenerator = null;
-  var sharedDevice = null; // "webgpu" | "wasm"
+  var sharedDevice = null;   // "webgpu" | "wasm"
+  var sharedDtype = null;    // "q4f16" | "q4" | "int8" | "fp32"
 
   function loadPipelineModule() {
     if (!sharedPipelineModule) {
@@ -64,7 +65,7 @@
   // notice promises; fp32 would be ~1GB and often fails on Safari).
   function ensureGenerator(onStatus, onProgress) {
     if (sharedGenerator) {
-      onStatus && onStatus("Reusing already-loaded " + sharedDevice.toUpperCase() + " model.");
+      onStatus && onStatus("Reusing already-loaded " + deviceLabel() + " model.");
       return Promise.resolve(sharedGenerator);
     }
     onStatus && onStatus("Checking secure browser context...");
@@ -93,10 +94,32 @@
       };
 
       var loadWasm = function () {
-        // q4 (int4, ~half the RAM of fp32; q8 files don't exist for these
-        // models, so the old q8->fp32 chain ballooned RAM to ~6GB on M3).
-        return tryLoad("wasm", "q4").then(function (gen) {
-          sharedGenerator = gen; sharedDevice = "wasm"; return gen;
+        // int8 (8-bit, RAM-light, exists for all 3 models) -> fp32 guaranteed.
+        // q8 files don't exist for these models, and q4 is WebGPU-only in
+        // transformers.js v3, so the old q8->fp32 chain hit 6GB RAM on M3.
+        var dtype = "int8";
+        return tryLoad("wasm", "int8").catch(function (e) {
+          console.warn("WASM int8 failed, retrying fp32:", e);
+          dtype = "fp32";
+          return tryLoad("wasm", "fp32");
+        }).then(function (gen) {
+          sharedGenerator = gen;
+          sharedDevice = "wasm";
+          sharedDtype = dtype;
+          return gen;
+        });
+      };
+
+      // WebGPU dtype ladder: q4f16 (fp16 compute, lightest) -> q4 (fp32
+      // compute, works on every WebGPU incl. Safari without shader-f16).
+      var tryWebgpuDtypes = function () {
+        return tryLoad("webgpu", "q4f16").then(function (g) {
+          sharedDtype = "q4f16"; return g;
+        }).catch(function (e) {
+          console.warn("WebGPU q4f16 failed, retrying q4:", e);
+          return tryLoad("webgpu", "q4").then(function (g) {
+            sharedDtype = "q4"; return g;
+          });
         });
       };
 
@@ -104,8 +127,7 @@
       if (navigator.gpu) {
         return navigator.gpu.requestAdapter().then(function (adapter) {
           webgpuOk = !!adapter;
-          // q4f16 = 4-bit weights + fp16 compute — far lighter on RAM than q4
-          return webgpuOk ? tryLoad("webgpu", "q4f16") : null;
+          return webgpuOk ? tryWebgpuDtypes() : null;
         }).then(function (gen) {
           if (gen) { sharedGenerator = gen; sharedDevice = "webgpu"; return gen; }
           if (!webgpuOk) onStatus && onStatus("WebGPU unavailable - using WASM (slower)...");
@@ -437,6 +459,10 @@
     if (ui.progressWrap) ui.progressWrap.style.display = showBar ? "block" : "none";
   }
 
+  function deviceLabel() {
+    return sharedDevice ? sharedDevice.toUpperCase() + (sharedDtype ? " " + sharedDtype : "") : "—";
+  }
+
   function setDeviceBadge(state, text) {
     ui.badge.className = "llm-badge " + state;
     ui.badgeText.textContent = text;
@@ -726,8 +752,8 @@
       function (msg) { setStatus(msg, true); },
       setProgress
     ).then(function (generator) {
-      setStatus("Generating answer on " + sharedDevice.toUpperCase() + "...", false);
-      setDeviceBadge("ok", sharedDevice.toUpperCase());
+      setStatus("Generating answer on " + deviceLabel() + "...", false);
+      setDeviceBadge("ok", deviceLabel());
       return loadPipelineModule().then(function () {
         var streamer = new sharedPipelineModule.TextStreamer(generator.tokenizer, {
           skip_prompt: true,
@@ -745,7 +771,7 @@
         if (typeof x === "string") streamEl.textContent = x;
         else if (Array.isArray(x)) streamEl.textContent = x[x.length - 1] && x[x.length - 1].content || "";
       }
-      setStatus("Done (" + sharedDevice.toUpperCase() + ").", false);
+      setStatus("Done (" + deviceLabel() + ").", false);
       // onDone must never be able to blank the generated text: guard it.
       try {
         onDone && onDone();
@@ -1026,8 +1052,8 @@
       function (msg) { ui.chatStatus.textContent = msg; },
       setProgress
     ).then(function (generator) {
-      ui.chatStatus.textContent = "Generating on " + sharedDevice.toUpperCase() + "...";
-      setDeviceBadge("ok", sharedDevice.toUpperCase());
+      ui.chatStatus.textContent = "Generating on " + deviceLabel() + "...";
+      setDeviceBadge("ok", deviceLabel());
       return loadPipelineModule().then(function () {
         thinking.textContent = "";
         var streamer = new sharedPipelineModule.TextStreamer(generator.tokenizer, {
@@ -1123,8 +1149,8 @@
         function (msg) { setStatus(msg, true); },
         setProgress
       ).then(function () {
-        setStatus("Model ready on " + sharedDevice.toUpperCase() + ".", false);
-        setDeviceBadge("ok", sharedDevice.toUpperCase());
+        setStatus("Model ready on " + deviceLabel() + ".", false);
+        setDeviceBadge("ok", deviceLabel());
       }).catch(function (e) {
         setStatus("Model load failed: " + (e && e.message || e) + " — check your connection and retry.", false);
         setDeviceBadge("err", "load failed");
