@@ -682,7 +682,9 @@
   }
 
   // Render the deterministic panels: category bars, tag cloud, refs, web links, X post.
-  function renderPanels(ranked, topPages, query) {
+  // xpostLine can be passed explicitly so the LLM-generated X line isn't lost
+  // after the review text is cleaned (was: re-parsing review lost the X POST marker).
+  function renderPanels(ranked, topPages, query, xpostLine) {
     // category bars
     var counts = {};
     ranked.slice(0, 10).forEach(function (pg) { counts[pg.cat] = (counts[pg.cat] || 0) + 1; });
@@ -732,9 +734,8 @@
       return '<a class="llm-web-link" href="' + e.url + '" target="_blank" rel="noopener">' + esc(e.name) + '</a>';
     }).join("");
 
-    // X post: prefer the LLM-generated xpost line if present; fallback to title
-    var parsed = parseStructured(ui.review.textContent);
-    var xp = buildXPost(parsed.xpost, topPages);
+    // X post: explicit xpostLine wins (LLM-generated); fallback to title line
+    var xp = buildXPost(xpostLine || "", topPages);
     var full = xp.line + "\n\n" + xp.url + (xp.hashtags ? "\n\n" + xp.hashtags : "");
     ui.xpostBody.textContent = full;
     ui.xpostOpen.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(full);
@@ -751,6 +752,8 @@
   }
 
   /* ------------------- main search flow ----------------------------------- */
+  var lastParsed = null; // last structured answer, so panels don't lose the X line
+
   function doSearch() {
     var q = ui.q.value.trim();
     if (q.length < 2) {
@@ -760,6 +763,7 @@
       ui.conn.classList.remove("visible");
       return;
     }
+    lastParsed = null;
     var top = retrieve(q, 16);
     renderResults(q, top);
     if (typeof d3 !== "undefined") renderConnections(q, top);
@@ -783,21 +787,21 @@
       }).sort(function (a, b) { return b.score - a.score; });
 
       // deterministic panels render instantly (no model needed)
-      renderPanels(ranked2, topPages, q);
+      renderPanels(ranked2, topPages, q, "");
 
       var top5 = top.slice(0, 5);
       ui.askBtn.disabled = true;
       runAnswer(top5, q, ui.review, function () {
-        // structured split of the finished answer
-        var parsed = parseStructured(ui.review.textContent);
-        if (parsed.keypoints.length) {
-          ui.review.textContent = parsed.review || ui.review.textContent;
-          ui.keypoints.innerHTML = parsed.keypoints.slice(0, 3).map(function (k) {
+        // structured split of the finished answer — parse ONCE and keep it
+        lastParsed = parseStructured(ui.review.textContent);
+        if (lastParsed.keypoints.length) {
+          ui.review.textContent = lastParsed.review || ui.review.textContent;
+          ui.keypoints.innerHTML = lastParsed.keypoints.slice(0, 3).map(function (k) {
             return '<div class="llm-kp"><span class="llm-kp-num">&#10003;</span><span>' + esc(k) + '</span></div>';
           }).join("");
         }
-        // refresh X post with the LLM line
-        renderPanels(ranked2, topPages, q);
+        // refresh panels with the LLM X line preserved
+        renderPanels(ranked2, topPages, q, lastParsed.xpost);
         ui.askBtn.disabled = false;
       }).catch(function (e) {
         console.error(e);
