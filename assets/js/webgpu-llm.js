@@ -590,7 +590,7 @@
 
   /* ------------------- LLM helpers --------------------------------------- */
   function buildContext(top, maxChars) {
-    maxChars = maxChars || 5200;
+    maxChars = maxChars || 9000;
     var ctx = [], used = 0, seen = {};
     top.forEach(function (r) {
       if (used >= maxChars) return;
@@ -633,10 +633,10 @@
           callback_function: function (t) { streamEl.textContent += t; }
         });
         var messages = [
-          { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Structure your reply exactly like this:\nREVIEW: a 3-4 sentence review of the topic, like a paper abstract.\nKEY POINTS: three numbered key points (1. 2. 3.), each one short sentence.\nX POST: one single catchy line (max 240 chars, no hashtags) for sharing this topic on X/Twitter.\nAlways name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
+          { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Structure your reply exactly like this:\nREVIEW: a rich, detailed single paragraph (6-10 sentences) that synthesizes the context, connections between pages, and key technical details from ALL the sources — write it like a proper paper review, not a one-liner.\nKEY POINTS: three numbered key points (1. 2. 3.), each one short sentence.\nX POST: one short catchy line for sharing this topic on X/Twitter.\nAlways name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
           { role: "user", content: "Document excerpts:\n\n" + context + "\n\nQuestion: " + question }
         ];
-        return generator(messages, { max_new_tokens: 380, do_sample: false, streamer: streamer });
+        return generator(messages, { max_new_tokens: 520, do_sample: false, streamer: streamer });
       });
     }).then(function (result) {
       if (!streamEl.textContent.trim()) {
@@ -804,7 +804,7 @@
       // deterministic panels render instantly (no model needed)
       renderPanels(ranked2, topPages, q, "");
 
-      var top5 = top.slice(0, 5);
+      var top5 = top.slice(0, 8); // more pages -> richer review context
       ui.askBtn.disabled = true;
       runAnswer(top5, q, ui.review, function () {
         // Parse ONCE. The review box keeps the FULL model text (labels stripped)
