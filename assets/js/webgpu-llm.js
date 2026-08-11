@@ -314,7 +314,11 @@
   var ui = {
     stats: $("llm-stats"), status: $("llm-status-text"), progressWrap: $("llm-progress"),
     progressBar: $("llm-progress-bar"), badge: $("llm-device-badge"), badgeText: $("llm-device-text"),
-    answer: $("llm-answer"), answerBody: $("llm-answer-body"), sources: $("llm-sources"),
+    answer: $("llm-answer"), review: $("llm-review"), keypoints: $("llm-keypoints"),
+    sources: $("llm-sources"),
+    catBars: $("llm-cat-bars"), tagcloud: $("llm-tagcloud"),
+    refsList: $("llm-refs-list"), webLinks: $("llm-web-links"),
+    xpostBody: $("llm-xpost-body"), xpostCopy: $("llm-xpost-copy"), xpostOpen: $("llm-xpost-open"),
     results: $("llm-results"), resultsHead: $("llm-results-head"), count: $("llm-count"),
     conn: $("llm-conn"), canvas: $("llm-conn-canvas"), hint: $("llm-hint-line"),
     q: $("llm-query"), askBtn: $("llm-ask-btn"), initBtn: $("llm-init-btn"),
@@ -629,10 +633,10 @@
           callback_function: function (t) { streamEl.textContent += t; }
         });
         var messages = [
-          { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Always name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
+          { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Structure your reply exactly like this:\nREVIEW: a 3-4 sentence review of the topic, like a paper abstract.\nKEY POINTS: three numbered key points (1. 2. 3.), each one short sentence.\nX POST: one single catchy line (max 240 chars, no hashtags) for sharing this topic on X/Twitter.\nAlways name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
           { role: "user", content: "Document excerpts:\n\n" + context + "\n\nQuestion: " + question }
         ];
-        return generator(messages, { max_new_tokens: 240, do_sample: false, streamer: streamer });
+        return generator(messages, { max_new_tokens: 380, do_sample: false, streamer: streamer });
       });
     }).then(function (result) {
       if (!streamEl.textContent.trim()) {
@@ -644,6 +648,106 @@
       onDone && onDone();
       return result;
     });
+  }
+
+  // Split the raw LLM output into review / key points / x-post sections.
+  function parseStructured(text) {
+    var out = { review: "", keypoints: [], xpost: "" };
+    text = String(text || "");
+    var review = /REVIEW\s*:\s*([\s\S]*?)(?=KEY\s*POINTS|X\s*POST|$)/i.exec(text);
+    if (review) out.review = review[1].trim();
+    var kp = /KEY\s*POINTS?\s*:\s*([\s\S]*?)(?=X\s*POST|$)/i.exec(text);
+    if (kp) {
+      kp[1].split(/\n/).forEach(function (line) {
+        var m = /^\s*(?:\d+[.)]\s*|[-*]\s*)?(.+)$/.exec(line);
+        if (m && m[1].trim() && !/^key\s*points?$/i.test(m[1].trim())) out.keypoints.push(m[1].trim());
+      });
+    }
+    var xp = /X\s*POST\s*:\s*(.+)/i.exec(text);
+    if (xp) out.xpost = xp[1].trim();
+    if (!out.review && !out.keypoints.length && !out.xpost) out.review = text.trim(); // fallback
+    return out;
+  }
+
+  // Build the shareable X post: line + full site URL of top page + hashtags.
+  function buildXPost(text, topPages) {
+    var top = topPages[0];
+    var meta = pageMeta(top);
+    var url = location.origin + top;
+    var tags = (meta && meta.tags) ? meta.tags.slice(0, 4) : [];
+    var hashes = (meta && meta.hashtags) ? String(meta.hashtags).split(/\s+/).filter(Boolean).slice(0, 4) : [];
+    var hashStr = [].concat(tags.map(function (t) { return "#" + t; }), hashes).filter(function (h) { return h && h.length > 1; }).slice(0, 6).join(" ");
+    var line = (text && text.trim()) ? text.trim() : ("Check out " + (meta ? meta.title : top));
+    return { line: line, url: url, hashtags: hashStr };
+  }
+
+  // Render the deterministic panels: category bars, tag cloud, refs, web links, X post.
+  function renderPanels(ranked, topPages, query) {
+    // category bars
+    var counts = {};
+    ranked.slice(0, 10).forEach(function (pg) { counts[pg.cat] = (counts[pg.cat] || 0) + 1; });
+    var cats = Object.keys(counts).sort(function (a, b) { return categoryRank(a) - categoryRank(b); });
+    var max = Math.max.apply(null, cats.map(function (c) { return counts[c]; }).concat([1]));
+    ui.catBars.innerHTML = cats.map(function (c) {
+      var w = Math.round((counts[c] / max) * 100);
+      return '<div class="llm-bar-row"><span class="llm-bar-label">' + esc(CATEGORY_LABEL[c] || c) + '</span>' +
+        '<div class="llm-bar-track"><div class="llm-bar-fill" style="width:' + w + '%"></div></div>' +
+        '<span class="llm-bar-val">' + counts[c] + '</span></div>';
+    }).join("") || '<div class="llm-empty" style="padding:.6rem">No data</div>';
+
+    // tag cloud: aggregate tags + hashtags from top pages
+    var tagCount = {};
+    topPages.forEach(function (u) {
+      var m = pageMeta(u);
+      if (!m) return;
+      (m.tags || []).forEach(function (t) { tagCount[t.toLowerCase()] = (tagCount[t.toLowerCase()] || 0) + 1; });
+      String(m.hashtags || "").split(/\s+/).filter(Boolean).forEach(function (h) {
+        var k = h.toLowerCase(); tagCount[k] = (tagCount[k] || 0) + 1;
+      });
+    });
+    var tags = Object.keys(tagCount).sort(function (a, b) { return tagCount[b] - tagCount[a]; }).slice(0, 14);
+    var tMax = Math.max.apply(null, tags.map(function (t) { return tagCount[t]; }).concat([1]));
+    ui.tagcloud.innerHTML = tags.map(function (t) {
+      var size = 0.7 + (tagCount[t] / tMax) * 0.9;
+      return '<span class="llm-cloud-tag" style="font-size:' + size.toFixed(2) + 'rem" title="' + tagCount[t] + 'x">' + esc(t) + '</span>';
+    }).join("") || '<div class="llm-empty" style="padding:.6rem">No tags</div>';
+
+    // references
+    ui.refsList.innerHTML = topPages.map(function (u, i) {
+      var m = pageMeta(u);
+      return '<li class="llm-ref"><a href="' + u + '" target="_blank" rel="noopener">' + esc(m ? m.title : u) + '</a>' +
+        '<span class="llm-ref-url">' + esc(u) + '</span></li>';
+    }).join("");
+
+    // web search links
+    var engines = [
+      { name: "Google", url: "https://www.google.com/search?q=" + encodeURIComponent(query) },
+      { name: "Bing", url: "https://www.bing.com/search?q=" + encodeURIComponent(query) },
+      { name: "DuckDuckGo", url: "https://duckduckgo.com/?q=" + encodeURIComponent(query) },
+      { name: "arXiv", url: "https://arxiv.org/list/cs.CV/recent" },
+      { name: "YouTube", url: "https://www.youtube.com/results?search_query=" + encodeURIComponent(query) },
+      { name: "Semantic Scholar", url: "https://www.semanticscholar.org/search?q=" + encodeURIComponent(query) }
+    ];
+    ui.webLinks.innerHTML = engines.map(function (e) {
+      return '<a class="llm-web-link" href="' + e.url + '" target="_blank" rel="noopener">' + esc(e.name) + '</a>';
+    }).join("");
+
+    // X post: prefer the LLM-generated xpost line if present; fallback to title
+    var parsed = parseStructured(ui.review.textContent);
+    var xp = buildXPost(parsed.xpost, topPages);
+    var full = xp.line + "\n\n" + xp.url + (xp.hashtags ? "\n\n" + xp.hashtags : "");
+    ui.xpostBody.textContent = full;
+    ui.xpostOpen.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(full);
+    if (ui.xpostCopy) {
+      ui.xpostCopy.onclick = function () {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(full).then(function () {
+            ui.xpostCopy.textContent = "Copied!";
+            setTimeout(function () { ui.xpostCopy.textContent = "Copy"; }, 1500);
+          });
+        }
+      };
+    }
   }
 
   /* ------------------- main search flow ----------------------------------- */
@@ -663,17 +767,44 @@
     setStatus(top.length ? top.length + " relevant sections found." : "No matches.", false);
     if (top.length) {
       ui.answer.classList.add("visible");
-      ui.answerBody.textContent = "";
+      ui.review.textContent = "";
+      ui.keypoints.innerHTML = "";
       ui.sources.innerHTML = "Sources: " + sourcesHtml(uniquePages(top));
+      var topPages = uniquePages(top);
+      // ranked list for panels
+      var perPage = {};
+      top.forEach(function (r) {
+        if (!perPage[r.chunk.file]) perPage[r.chunk.file] = 0;
+        perPage[r.chunk.file] += r.score;
+      });
+      var ranked2 = Object.keys(perPage).map(function (url) {
+        var meta = pageMeta(url);
+        return { url: url, score: perPage[url], cat: meta ? meta.category : "hub" };
+      }).sort(function (a, b) { return b.score - a.score; });
+
+      // deterministic panels render instantly (no model needed)
+      renderPanels(ranked2, topPages, q);
+
       var top5 = top.slice(0, 5);
       ui.askBtn.disabled = true;
-      runAnswer(top5, q, ui.answerBody, function () { ui.askBtn.disabled = false; })
-        .catch(function (e) {
-          console.error(e);
-          ui.answerBody.textContent = "LLM unavailable: " + (e && e.message || e) + "\n\n(Relevant pages above are still valid.)";
-          setStatus("LLM error — pages shown above.", false);
-          ui.askBtn.disabled = false;
-        });
+      runAnswer(top5, q, ui.review, function () {
+        // structured split of the finished answer
+        var parsed = parseStructured(ui.review.textContent);
+        if (parsed.keypoints.length) {
+          ui.review.textContent = parsed.review || ui.review.textContent;
+          ui.keypoints.innerHTML = parsed.keypoints.slice(0, 3).map(function (k) {
+            return '<div class="llm-kp"><span class="llm-kp-num">&#10003;</span><span>' + esc(k) + '</span></div>';
+          }).join("");
+        }
+        // refresh X post with the LLM line
+        renderPanels(ranked2, topPages, q);
+        ui.askBtn.disabled = false;
+      }).catch(function (e) {
+        console.error(e);
+        ui.review.textContent = "LLM unavailable: " + (e && e.message || e) + "\n\n(Relevant pages above are still valid.)";
+        setStatus("LLM error — pages shown above.", false);
+        ui.askBtn.disabled = false;
+      });
     }
   }
 
