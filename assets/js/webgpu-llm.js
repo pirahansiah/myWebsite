@@ -633,7 +633,7 @@
           callback_function: function (t) { streamEl.textContent += t; }
         });
         var messages = [
-          { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Structure your reply exactly like this:\nREVIEW: a rich, detailed single paragraph (6-10 sentences) that synthesizes the context, connections between pages, and key technical details from ALL the sources — write it like a proper paper review, not a one-liner.\nKEY POINTS: three numbered key points (1. 2. 3.), each one short sentence.\nX POST: a short 1-2 sentence summary of the review above, most relevant to the question's keywords (no hashtags, no URL).\nAlways name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
+          { role: "system", content: "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. Structure your reply exactly like this:\nREVIEW: a rich, detailed single paragraph (6-10 sentences) that synthesizes the context, connections between pages, and key technical details from ALL the sources. Write it in a natural, engaging, informative style that works anywhere — social post, paper, or presentation. NEVER start with words like 'Introduction', 'In this paper, we', 'This paper presents', 'In this study', or any academic-paper-intro filler. Just go straight into the substance of the topic.\nKEY POINTS: three numbered key points (1. 2. 3.), each one short sentence.\nX POST: a short 1-2 sentence summary of the review above, most relevant to the question's keywords (no hashtags, no URL).\nAlways name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing." },
           { role: "user", content: "Document excerpts:\n\n" + context + "\n\nQuestion: " + question }
         ];
         return generator(messages, { max_new_tokens: 520, do_sample: false, streamer: streamer });
@@ -675,13 +675,16 @@
   }
 
   // Clean version of the full answer for the review box: keeps ALL model text,
-  // only strips the section labels. Guarantees the box never shrinks.
+  // only strips the section labels and any academic intro filler.
   function cleanStructuredText(text) {
-    return String(text || "")
+    var out = String(text || "")
       .replace(/^\s*REVIEW\s*:\s*/i, "")
       .replace(/^\s*KEY\s*POINTS?\s*:\s*/i, "")
       .replace(/^\s*X\s*POST\s*:\s*/i, "")
       .trim();
+    // Strip academic intro filler clause (up to the first period) if present.
+    out = out.replace(/^(introduction\s*[:\-–—.]?\s*|in\s+this\s+(paper|study|article|work)[^.]*\.\s*|this\s+(paper|study|article|work)\s+presents?\s+[^.]*\.\s*|the\s+(paper|study|article|work)\s+presents?\s+[^.]*\.\s*)/i, "");
+    return out.trim();
   }
 
   // Build a short X-ready summary from the review text, most relevant to the
