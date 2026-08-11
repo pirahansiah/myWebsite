@@ -11,6 +11,12 @@
 
   // v3.8.1 = last stable with mature WebGPU support (v4.x WebGPU runtime is buggy)
   var CDN = "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1";
+  // Fallback CDNs in case jsDelivr is unreachable (Safari reports fetch
+  // failures as "Load failed"). Same version, same API.
+  var CDN_FALLBACKS = [
+    "https://unpkg.com/@huggingface/transformers@3.8.1",
+    "https://cdnjs.cloudflare.com/ajax/libs/transformers.js/3.8.1"
+  ];
   var INDEX_URL = "/assets/llm-index.json";
   var GRAPH_URL = "/assets/graph.json";
 
@@ -43,11 +49,19 @@
 
   function loadPipelineModule() {
     if (!sharedPipelineModule) {
-      return import(CDN).then(function (mod) {
-        if (!mod.pipeline) throw new Error("Transformers.js loaded, but pipeline() is unavailable.");
-        sharedPipelineModule = mod;
-        return mod;
-      });
+      var tryCdn = function (urls) {
+        if (!urls.length) return Promise.reject(new Error("All CDNs unreachable."));
+        var url = urls[0];
+        return import(url).then(function (mod) {
+          if (!mod.pipeline) throw new Error("Transformers.js loaded, but pipeline() is unavailable.");
+          sharedPipelineModule = mod;
+          return mod;
+        }).catch(function (e) {
+          console.warn("CDN load failed (" + url + "), trying next:", e && e.message);
+          return tryCdn(urls.slice(1));
+        });
+      };
+      return tryCdn([CDN].concat(CDN_FALLBACKS));
     }
     return Promise.resolve(sharedPipelineModule);
   }
@@ -124,7 +138,12 @@
       };
 
       var webgpuOk = false;
-      if (navigator.gpu) {
+      // Safari's WebGPU path is unreliable for transformers.js (no fp16
+      // shaders, session-build crashes) — it was silently landing on the
+      // WASM fallback anyway. Go straight to WASM there; Chrome/Firefox get
+      // the WebGPU ladder.
+      var isSafari = /Safari\//.test(navigator.userAgent) && !/Chrome|Chromium|Firefox/.test(navigator.userAgent);
+      if (navigator.gpu && !isSafari) {
         return navigator.gpu.requestAdapter().then(function (adapter) {
           webgpuOk = !!adapter;
           return webgpuOk ? tryWebgpuDtypes() : null;
@@ -1003,7 +1022,7 @@
         console.error(e);
         // never wipe generated/partial text with an error banner
         if (!ui.review.textContent.trim()) {
-          ui.review.textContent = "LLM unavailable: " + (e && e.message || e) + "\n\n(Relevant pages above are still valid.)";
+          ui.review.textContent = "LLM unavailable: " + (e && e.message || e) + "\n\n(Relevant pages above are still valid. If this says 'Load failed' or 'fetch failed', the model file couldn't be downloaded — check your connection, or reload the page and press Load model again.)";
         } else {
           setStatus("LLM error: " + (e && e.message || e) + " — partial answer kept.", false);
         }
