@@ -93,11 +93,9 @@
       };
 
       var loadWasm = function () {
-        // q8 first (fits the ~500MB promise); if unsupported, fp32.
-        return tryLoad("wasm", "q8").catch(function (e) {
-          console.warn("WASM q8 failed, retrying fp32:", e);
-          return tryLoad("wasm", "fp32");
-        }).then(function (gen) {
+        // q4 (int4, ~half the RAM of fp32; q8 files don't exist for these
+        // models, so the old q8->fp32 chain ballooned RAM to ~6GB on M3).
+        return tryLoad("wasm", "q4").then(function (gen) {
           sharedGenerator = gen; sharedDevice = "wasm"; return gen;
         });
       };
@@ -106,7 +104,8 @@
       if (navigator.gpu) {
         return navigator.gpu.requestAdapter().then(function (adapter) {
           webgpuOk = !!adapter;
-          return webgpuOk ? tryLoad("webgpu", "q4") : null;
+          // q4f16 = 4-bit weights + fp16 compute — far lighter on RAM than q4
+          return webgpuOk ? tryLoad("webgpu", "q4f16") : null;
         }).then(function (gen) {
           if (gen) { sharedGenerator = gen; sharedDevice = "webgpu"; return gen; }
           if (!webgpuOk) onStatus && onStatus("WebGPU unavailable - using WASM (slower)...");
