@@ -96,6 +96,20 @@
     return totalMB >= 1024 ? (totalMB / 1024).toFixed(1) + " GB" : totalMB + " MB";
   }
 
+  // The next model SMALLER than `id` (by total RAM) — the OOM auto-downgrade
+  // steps down one rung at a time. Returns null when `id` is already the
+  // smallest (so we never downgrade to a *bigger* model, and never loop).
+  function smallerThan(id) {
+    var o = modelOption(id);
+    if (!o) return null;
+    var best = null;
+    for (var i = 0; i < MODEL_OPTIONS.length; i++) {
+      var m = MODEL_OPTIONS[i];
+      if (m.totalMB < o.totalMB && (!best || m.totalMB > best.totalMB)) best = m;
+    }
+    return best;
+  }
+
   // Migrate away from TinyStories (stories42M) and force phone-safe Micro.
   // storageGet/Set are function decls (hoisted). On iOS/Android always force
   // Micro; on other low-mem keep Micro/Tiny only.
@@ -350,9 +364,16 @@
       // retry after a transient network failure (e.g. Cloudflare 521 "origin
       // down") re-fetches only the file that failed — the rest comes from cache.
       function tryLoadWithRetry(dev, dt, attemptsLeft) {
-        attemptsLeft = attemptsLeft == null ? 2 : attemptsLeft;
+        attemptsLeft = attemptsLeft == null ? 1 : attemptsLeft;
         return tryLoad(dev, dt).catch(function (e) {
-          if (attemptsLeft <= 0) throw e;
+          // Only retry TRANSIENT network failures. An out-of-memory (numeric
+          // code) or an unsupported backend/dtype will fail the same way again,
+          // so re-downloading it only wastes bandwidth and looks like the page
+          // is "downloading the model over and over".
+          if (attemptsLeft <= 0 || isOomError(e)) throw e;
+          var msg = String((e && e.message) || e || "");
+          var net = /fetch|network|load failed|timeout|temporar|521|503|502|429|retry|errno|socket/i.test(msg);
+          if (!net) throw e;
           console.warn(dev + "/" + dt + " load failed (" + friendlyError(e) + ") — " + attemptsLeft + " retry(ies) left.");
           onStatus && onStatus("Network hiccup while downloading — retrying… (" + attemptsLeft + " left)");
           onProgress && onProgress(0);
@@ -463,13 +484,15 @@
       // Out of memory: drop to the smallest model and try once more. The
       // numeric onnxruntime codes are allocation failures (issue #688), so
       // loading the same model again would fail the same way.
-      if (isOomError(e) && modelId !== MODEL_OPTIONS[0].id) {
-        console.warn("Out of memory loading " + modelId + " — retrying with " + MODEL_OPTIONS[0].id + ":", e);
-        onStatus && onStatus("Not enough memory for " + shortName + " — retrying with Micro (Flan-T5)…");
+      var smaller = isOomError(e) ? smallerThan(modelId) : null;
+      if (smaller) {
+        console.warn("Out of memory loading " + modelId + " — retrying with " + smaller.id + ":", e);
+        onStatus && onStatus("Not enough memory for " + shortName + " — retrying with " + (smaller.label || smaller.id) + "…");
         onProgress && onProgress(0);
-        storageSet(MODEL_KEY, MODEL_OPTIONS[0].id);
+        storageSet(MODEL_KEY, smaller.id);
         storageSet(DEVICE_KEY, "wasm");   // the retry must skip WebGPU
-        if (ui && ui.modelSelect) ui.modelSelect.value = MODEL_OPTIONS[0].id;
+        if (ui && ui.modelSelect) ui.modelSelect.value = smaller.id;
+        updateRamInfo();
         return ensureGenerator(onStatus, onProgress);
       }
       // Micro already selected and still OOM — let callers fall back to extractive.
@@ -1650,8 +1673,8 @@
       console.error(e);
       // After Micro OOM / load failure: never hard-fail phones with stories —
       // fall back to extractive BM25 snippets.
-      var alreadyMicro = selectedModelId() === MODEL_OPTIONS[0].id;
-      if (isOomError(e) || alreadyMicro || isIOS || isAndroid || isLowMem) {
+      var alreadySmallest = !smallerThan(selectedModelId());
+      if (isOomError(e) || alreadySmallest || isIOS || isAndroid || isLowMem) {
         try {
           var ext = applyExtractiveToReview(top.slice(0, 8), q, writer);
           finishStructured(ext);
