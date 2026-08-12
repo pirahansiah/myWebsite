@@ -1,0 +1,1412 @@
+[
+  {
+    "id": 1,
+    "file": "index.md",
+    "title": "Embedded Computer Vision & Edge AI",
+    "url": "https://www.pirahansiah.com/",
+    "category": "site",
+    "hashtags": [
+      "ComputerVision",
+      "EdgeAI",
+      "AI",
+      "EmbeddedAI"
+    ],
+    "post": "Patents, papers, courses, and production CV / Edge AI systems by Dr. Farshid Pirahansiah.\n\nEmbedded Computer Vision & Edge AI\nhttps://www.pirahansiah.com/\n\n#ComputerVision #EdgeAI #AI #EmbeddedAI",
+    "chars": 195
+  },
+  {
+    "id": 2,
+    "file": "pubs/papers/2d-3d-mapping.md",
+    "title": "2D vs 3D Mapping for Moving Objects",
+    "url": "https://www.pirahansiah.com/notes/pubs/papers/2d-3d-mapping/",
+    "category": "pubs",
+    "hashtags": [
+      "3DVision",
+      "ComputerVision",
+      "Papers",
+      "Research"
+    ],
+    "post": "2D vs 3D Mapping for Moving Objects\n\nComparison of 2D and 3D mapping approaches for environment movement detection.\n\nhttps://www.pirahansiah.com/notes/pubs/papers/2d-3d-mapping/\n\n#3DVision #ComputerVision #Papers #Research",
+    "chars": 222
+  },
+  {
+    "id": 3,
+    "file": "pubs/papers/adaptive-segmentation.md",
+    "title": "PSNR-Based Segmentation for LPR",
+    "url": "https://www.pirahansiah.com/notes/pubs/papers/adaptive-segmentation/",
+    "category": "pubs",
+    "hashtags": [
+      "imagesegmentation",
+      "psnr",
+      "thresholding",
+      "lpr"
+    ],
+    "post": "PSNR-Based Segmentation for LPR — notes worth keeping.\n\nAdaptive image segmentation using PSNR for license plate recognition systems.\n\nhttps://www.pirahansiah.com/notes/pubs/papers/adaptive-segmentation/\n\n#imagesegmentation #psnr #thresholding #lpr",
+    "chars": 248
+  },
+  {
+    "id": 4,
+    "file": "pubs/papers/conference-paper.md",
+    "title": "Conference Paper on Computer Vision",
+    "url": "https://www.pirahansiah.com/notes/pubs/papers/conference-paper/",
+    "category": "pubs",
+    "hashtags": [
+      "Papers",
+      "Research",
+      "ComputerVision"
+    ],
+    "post": "Sharing: Conference Paper on Computer Vision\n\nConference paper covering computer vision techniques for image processing and pattern recognition.\n\nhttps://www.pirahansiah.com/notes/pubs/papers/conference-paper/\n\n#Papers #Research #ComputerVision",
+    "chars": 244
+  },
+  {
+    "id": 5,
+    "file": "pubs/papers/geometrical-topological.md",
+    "title": "Classification with Geometrical Features",
+    "url": "https://www.pirahansiah.com/notes/pubs/papers/geometrical-topological/",
+    "category": "pubs",
+    "hashtags": [
+      "classification",
+      "geometricalfeatures",
+      "patternrecognition",
+      "ml"
+    ],
+    "post": "Classification with Geometrical Features.\nEvaluation of classification techniques using enhanced geometrical and topological features.\n\n→ https://www.pirahansiah.com/notes/pubs/papers/geometrical-topological/\n\n#classification #geometricalfeatures #patternrecognition #ml",
+    "chars": 270
+  },
+  {
+    "id": 6,
+    "file": "pubs/papers/global-feature-recognition.md",
+    "title": "Character Recognition via Global Features",
+    "url": "https://www.pirahansiah.com/notes/pubs/papers/global-feature-recognition/",
+    "category": "pubs",
+    "hashtags": [
+      "characterrecognition",
+      "featureextraction",
+      "glcm",
+      "ocr"
+    ],
+    "post": "From my CV / AI atlas:\nCharacter Recognition via Global Features\n\nHybrid GLCM and EDMS method for character recognition in OCR applications.\n\nhttps://www.pirahansiah.com/notes/pubs/papers/global-feature-recognition/\n\n#characterrecognition #featureextraction #glcm #ocr",
+    "chars": 268
+  },
+  {
+    "id": 7,
+    "file": "pubs/papers/grid-computing.md",
+    "title": "TafreshGrid: Grid Computing",
+    "url": "https://www.pirahansiah.com/notes/pubs/papers/grid-computing/",
+    "category": "pubs",
+    "hashtags": [
+      "gridcomputing",
+      "distributedsystems",
+      "hpc",
+      "Papers"
+    ],
+    "post": "Grid computing infrastructure implementation and evaluation at Tafresh University.\n\nTafreshGrid: Grid Computing\nhttps://www.pirahansiah.com/notes/pubs/papers/grid-computing/\n\n#gridcomputing #distributedsystems #hpc #Papers",
+    "chars": 222
+  },
+  {
+    "id": 8,
+    "file": "pubs/papers/index.md",
+    "title": "Conference Papers",
+    "url": "https://www.pirahansiah.com/notes/pubs/papers/",
+    "category": "pubs",
+    "hashtags": [
+      "research",
+      "cv",
+      "papers",
+      "imageprocessing"
+    ],
+    "post": "Conference Papers\n\nPeer-reviewed conference papers on image processing, camera calibration, and pattern recognition.\n\nhttps://www.pirahansiah.com/notes/pubs/papers/\n\n#research #cv #papers #imageprocessing",
+    "chars": 204
+  },
+  {
+    "id": 9,
+    "file": "pubs/papers/license-plate.md",
+    "title": "Entropy-Based Multi-Threshold LPR",
+    "url": "https://www.pirahansiah.com/notes/pubs/papers/license-plate/",
+    "category": "pubs",
+    "hashtags": [
+      "lpr",
+      "entropy",
+      "thresholding",
+      "imagesegmentation"
+    ],
+    "post": "Entropy-Based Multi-Threshold LPR — notes worth keeping.\n\nMulti-threshold license plate recognition using entropy-based image segmentation.\n\nhttps://www.pirahansiah.com/notes/pubs/papers/license-plate/\n\n#lpr #entropy #thresholding #imagesegmentation",
+    "chars": 249
+  },
+  {
+    "id": 10,
+    "file": "pubs/papers/multimodal-calibration.md",
+    "title": "Camera Calibration for Multi-Modal Vision",
+    "url": "https://www.pirahansiah.com/notes/pubs/papers/multimodal-calibration/",
+    "category": "pubs",
+    "hashtags": [
+      "cameracalibration",
+      "multimodal",
+      "robotics",
+      "iqa"
+    ],
+    "post": "Sharing: Camera Calibration for Multi-Modal Vision\n\nAutomatic calibration framework for multi-modal robot vision using IQA metrics.\n\nhttps://www.pirahansiah.com/notes/pubs/papers/multimodal-calibration/\n\n#cameracalibration #multimodal #robotics #iqa",
+    "chars": 249
+  },
+  {
+    "id": 11,
+    "file": "pubs/papers/pattern-calibration.md",
+    "title": "Pattern Image for Camera Calibration",
+    "url": "https://www.pirahansiah.com/notes/pubs/papers/pattern-calibration/",
+    "category": "pubs",
+    "hashtags": [
+      "cameracalibration",
+      "patternrecognition",
+      "robotics",
+      "ComputerVision"
+    ],
+    "post": "Pattern Image for Camera Calibration.\nAnalysis of how pattern image design impacts camera calibration accuracy and reliability.\n\n→ https://www.pirahansiah.com/notes/pubs/papers/pattern-calibration/\n\n#cameracalibration #patternrecognition #robotics #ComputerVision",
+    "chars": 263
+  },
+  {
+    "id": 12,
+    "file": "pubs/10-years.md",
+    "title": "10 Years of CV Debugging Lessons",
+    "url": "https://www.pirahansiah.com/notes/pubs/10-years/",
+    "category": "pubs",
+    "hashtags": [
+      "cv",
+      "debugging",
+      "lessonslearned",
+      "opencv"
+    ],
+    "post": "From my CV / AI atlas:\n10 Years of CV Debugging Lessons\n\nLessons learned from a decade of debugging computer vision systems in production.\n\nhttps://www.pirahansiah.com/notes/pubs/10-years/\n\n#cv #debugging #lessonslearned #opencv",
+    "chars": 228
+  },
+  {
+    "id": 13,
+    "file": "pubs/books/ai/cv-meets-llm.md",
+    "title": "Computer Vision Meets LLM",
+    "url": "https://www.pirahansiah.com/notes/pubs/books/ai/cv-meets-llm/",
+    "category": "pubs",
+    "hashtags": [
+      "LLM",
+      "AI",
+      "Books",
+      "Research"
+    ],
+    "post": "Book exploring multimodal AI combining computer vision with large language models.\n\nComputer Vision Meets LLM\nhttps://www.pirahansiah.com/notes/pubs/books/ai/cv-meets-llm/\n\n#LLM #AI #Books #Research",
+    "chars": 198
+  },
+  {
+    "id": 14,
+    "file": "pubs/books/ai/new-developer-era.md",
+    "title": "OpenCV 5 — Chapter 0: Introduction",
+    "url": "https://www.pirahansiah.com/notes/pubs/books/ai/new-developer-era/",
+    "category": "pubs",
+    "hashtags": [
+      "AIAgents",
+      "LLM",
+      "OpenCV",
+      "ComputerVision"
+    ],
+    "post": "OpenCV 5 — Chapter 0: Introduction\n\nIntroduction to the new developer era, AI agents, and multi-agent systems.\n\nhttps://www.pirahansiah.com/notes/pubs/books/ai/new-developer-era/\n\n#AIAgents #LLM #OpenCV #ComputerVision",
+    "chars": 218
+  },
+  {
+    "id": 15,
+    "file": "pubs/books/ai/opencv5-ch1.md",
+    "title": "OpenCV 5 — Chapter 1: Image Basics",
+    "url": "https://www.pirahansiah.com/notes/pubs/books/ai/opencv5-ch1/",
+    "category": "pubs",
+    "hashtags": [
+      "OpenCV",
+      "ComputerVision",
+      "Books",
+      "AI"
+    ],
+    "post": "OpenCV 5 — Chapter 1: Image Basics — notes worth keeping.\n\nGlossary of AI/ML terms, references, and resources for computer vision practitioners.\n\nhttps://www.pirahansiah.com/notes/pubs/books/ai/opencv5-ch1/\n\n#OpenCV #ComputerVision #Books #AI",
+    "chars": 242
+  },
+  {
+    "id": 16,
+    "file": "pubs/books/ai/opencv5-ch2.md",
+    "title": "OpenCV 5 — Chapter 2: Feature Detection",
+    "url": "https://www.pirahansiah.com/notes/pubs/books/ai/opencv5-ch2/",
+    "category": "pubs",
+    "hashtags": [
+      "OpenCV",
+      "ComputerVision",
+      "Books",
+      "AI"
+    ],
+    "post": "Sharing: OpenCV 5 — Chapter 2: Feature Detection\n\nComprehensive guide to AI/ML concepts, tools, best practices, and ethical considerations.\n\nhttps://www.pirahansiah.com/notes/pubs/books/ai/opencv5-ch2/\n\n#OpenCV #ComputerVision #Books #AI",
+    "chars": 237
+  },
+  {
+    "id": 17,
+    "file": "pubs/books/ai/opencv5-ch3.md",
+    "title": "OpenCV 5 — Chapter 3: Advanced Topics",
+    "url": "https://www.pirahansiah.com/notes/pubs/books/ai/opencv5-ch3/",
+    "category": "pubs",
+    "hashtags": [
+      "opencv",
+      "cv",
+      "imageprocessing",
+      "filtering"
+    ],
+    "post": "OpenCV 5 — Chapter 3: Advanced Topics.\nAdvanced computer vision techniques including filtering, morphology, and G-API integration.\n\n→ https://www.pirahansiah.com/notes/pubs/books/ai/opencv5-ch3/\n\n#opencv #cv #imageprocessing #filtering",
+    "chars": 235
+  },
+  {
+    "id": 18,
+    "file": "pubs/books/index.md",
+    "title": "Books & Book Chapters",
+    "url": "https://www.pirahansiah.com/notes/pubs/books/",
+    "category": "pubs",
+    "hashtags": [
+      "book",
+      "opencv",
+      "computervision",
+      "ai"
+    ],
+    "post": "From my CV / AI atlas:\nBooks & Book Chapters\n\nBooks and book chapters on computer vision, camera calibration, and AI.\n\nhttps://www.pirahansiah.com/notes/pubs/books/\n\n#book #opencv #computervision #ai",
+    "chars": 199
+  },
+  {
+    "id": 19,
+    "file": "pubs/cv.md",
+    "title": "CV — Dr. Farshid Pirahansiah",
+    "url": "https://www.pirahansiah.com/notes/pubs/cv/",
+    "category": "pubs",
+    "hashtags": [
+      "cv",
+      "resume",
+      "publications",
+      "patents"
+    ],
+    "post": "Curriculum vitae covering 12+ years of computer vision R&D, 21 publications, and 3 patents.\n\nCV — Dr. Farshid Pirahansiah\nhttps://www.pirahansiah.com/notes/pubs/cv/\n\n#cv #resume #publications #patents",
+    "chars": 200
+  },
+  {
+    "id": 20,
+    "file": "pubs/journals/adaptive-thresholding.md",
+    "title": "Adaptive Thresholding Based on PSNR",
+    "url": "https://www.pirahansiah.com/notes/pubs/journals/adaptive-thresholding/",
+    "category": "pubs",
+    "hashtags": [
+      "thresholding",
+      "psnr",
+      "adaptivethresholding",
+      "imagesegmentation"
+    ],
+    "post": "Adaptive Thresholding Based on PSNR\n\nPSNR-based adaptive thresholding for image segmentation in OCR and license plate recognition.\n\nhttps://www.pirahansiah.com/notes/pubs/journals/adaptive-thresholding/\n\n#thresholding #psnr #adaptivethresholding #imagesegmentation",
+    "chars": 264
+  },
+  {
+    "id": 21,
+    "file": "pubs/journals/ant-colony.md",
+    "title": "Ant Colony Optimization for Image Processing",
+    "url": "https://www.pirahansiah.com/notes/pubs/journals/ant-colony/",
+    "category": "pubs",
+    "hashtags": [
+      "aco",
+      "imageprocessing",
+      "thresholding",
+      "optimization"
+    ],
+    "post": "Ant Colony Optimization for Image Processing — notes worth keeping.\n\nACO-based optimization for image thresholding and edge detection in OCR systems.\n\nhttps://www.pirahansiah.com/notes/pubs/journals/ant-colony/\n\n#aco #imageprocessing #thresholding #optimization",
+    "chars": 261
+  },
+  {
+    "id": 22,
+    "file": "pubs/journals/character-recognition.md",
+    "title": "Character & Object Recognition via Features",
+    "url": "https://www.pirahansiah.com/notes/pubs/journals/character-recognition/",
+    "category": "pubs",
+    "hashtags": [
+      "characterrecognition",
+      "objectrecognition",
+      "featureextraction"
+    ],
+    "post": "Sharing: Character & Object Recognition via Features\n\nGlobal feature extraction methods for character and object recognition in computer vision.\n\nhttps://www.pirahansiah.com/notes/pubs/journals/character-recognition/\n\n#characterrecognition #objectrecognition #featureextraction",
+    "chars": 277
+  },
+  {
+    "id": 23,
+    "file": "pubs/journals/fuzzy-thresholding.md",
+    "title": "GSFT-PSNR: Fuzzy Threshold Method",
+    "url": "https://www.pirahansiah.com/notes/pubs/journals/fuzzy-thresholding/",
+    "category": "pubs",
+    "hashtags": [
+      "fuzzylogic",
+      "thresholding",
+      "psnr",
+      "imagesegmentation"
+    ],
+    "post": "GSFT-PSNR: Fuzzy Threshold Method.\nFuzzy logic approach to global single thresholding using PSNR for image segmentation.\n\n→ https://www.pirahansiah.com/notes/pubs/journals/fuzzy-thresholding/\n\n#fuzzylogic #thresholding #psnr #imagesegmentation",
+    "chars": 243
+  },
+  {
+    "id": 24,
+    "file": "pubs/journals/index.md",
+    "title": "Journal Publications",
+    "url": "https://www.pirahansiah.com/notes/pubs/journals/",
+    "category": "pubs",
+    "hashtags": [
+      "research",
+      "cv",
+      "journals",
+      "thresholding"
+    ],
+    "post": "From my CV / AI atlas:\nJournal Publications\n\nPeer-reviewed journal articles on image processing, pattern recognition, and robotics.\n\nhttps://www.pirahansiah.com/notes/pubs/journals/\n\n#research #cv #journals #thresholding",
+    "chars": 220
+  },
+  {
+    "id": 25,
+    "file": "pubs/journals/psnr-segmentation.md",
+    "title": "PSNR Threshold for Image Segmentation",
+    "url": "https://www.pirahansiah.com/notes/pubs/journals/psnr-segmentation/",
+    "category": "pubs",
+    "hashtags": [
+      "psnr",
+      "thresholding",
+      "imagesegmentation",
+      "imageprocessing"
+    ],
+    "post": "PSNR-based thresholding method for image segmentation in automated visual inspection.\n\nPSNR Threshold for Image Segmentation\nhttps://www.pirahansiah.com/notes/pubs/journals/psnr-segmentation/\n\n#psnr #thresholding #imagesegmentation #imageprocessing",
+    "chars": 248
+  },
+  {
+    "id": 26,
+    "file": "pubs/journals/slam-humanoid.md",
+    "title": "3D SLAM and Humanoid Robot Linkages",
+    "url": "https://www.pirahansiah.com/notes/pubs/journals/slam-humanoid/",
+    "category": "pubs",
+    "hashtags": [
+      "slam",
+      "humanoidrobots",
+      "3dmapping",
+      "robotics"
+    ],
+    "post": "3D SLAM and Humanoid Robot Linkages\n\nSurvey of 3D SLAM techniques for localization, mapping, and humanoid robot applications.\n\nhttps://www.pirahansiah.com/notes/pubs/journals/slam-humanoid/\n\n#slam #humanoidrobots #3dmapping #robotics",
+    "chars": 233
+  },
+  {
+    "id": 27,
+    "file": "pubs/keynotes/index.md",
+    "title": "Keynotes",
+    "url": "https://www.pirahansiah.com/notes/pubs/keynotes/",
+    "category": "pubs",
+    "hashtags": [
+      "keynote",
+      "ai",
+      "computervision",
+      "multimodal"
+    ],
+    "post": "Keynotes — notes worth keeping.\n\nTechnical keynotes on computer vision, LLMs, and multimodal AI.\n\nhttps://www.pirahansiah.com/notes/pubs/keynotes/\n\n#keynote #ai #computervision #multimodal",
+    "chars": 188
+  },
+  {
+    "id": 28,
+    "file": "pubs/patents/face-augmentation.md",
+    "title": "Face Image Augmentation WO2021060971A1",
+    "url": "https://www.pirahansiah.com/notes/pubs/patents/face-augmentation/",
+    "category": "pubs",
+    "hashtags": [
+      "patent",
+      "faceaugmentation",
+      "gan",
+      "dataaugmentation"
+    ],
+    "post": "Sharing: Face Image Augmentation WO2021060971A1\n\nGAN-based method for augmenting face images from surveillance with fuzzy logic quality filtering.\n\nhttps://www.pirahansiah.com/notes/pubs/patents/face-augmentation/\n\n#patent #faceaugmentation #gan #dataaugmentation",
+    "chars": 263
+  },
+  {
+    "id": 29,
+    "file": "pubs/patents/facial-analysis.md",
+    "title": "Facial Analysis Advertisement WO2020141969A2",
+    "url": "https://www.pirahansiah.com/notes/pubs/patents/facial-analysis/",
+    "category": "pubs",
+    "hashtags": [
+      "Patent",
+      "ComputerVision",
+      "FaceAI",
+      "KnowledgeGraph"
+    ],
+    "post": "Facial Analysis Advertisement WO2020141969A2.\nSystem for targeted digital advertising using real-time facial analysis and demographic detection.\n\n→ https://www.pirahansiah.com/notes/pubs/patents/facial-analysis/\n\n#Patent #ComputerVision #FaceAI #KnowledgeGraph",
+    "chars": 260
+  },
+  {
+    "id": 30,
+    "file": "pubs/patents/index.md",
+    "title": "Patents",
+    "url": "https://www.pirahansiah.com/notes/pubs/patents/",
+    "category": "pubs",
+    "hashtags": [
+      "patent",
+      "facedetection",
+      "vehicledetection",
+      "augmentedreality"
+    ],
+    "post": "From my CV / AI atlas:\nPatents\n\nAI and computer vision patents covering face augmentation, vehicle detection, and facial analysis.\n\nhttps://www.pirahansiah.com/notes/pubs/patents/\n\n#patent #facedetection #vehicledetection #augmentedreality",
+    "chars": 239
+  },
+  {
+    "id": 31,
+    "file": "pubs/patents/vehicle-detection.md",
+    "title": "Moving Vehicle Detection WO2021107761A1",
+    "url": "https://www.pirahansiah.com/notes/pubs/patents/vehicle-detection/",
+    "category": "pubs",
+    "hashtags": [
+      "patent",
+      "vehicledetection",
+      "imageprocessing",
+      "trafficsurveillance"
+    ],
+    "post": "Image processing method for detecting moving vehicles using CLAHE, Sobel, and geometric filtering.\n\nMoving Vehicle Detection WO2021107761A1\nhttps://www.pirahansiah.com/notes/pubs/patents/vehicle-detection/\n\n#patent #vehicledetection #imageprocessing #trafficsurveillance",
+    "chars": 270
+  },
+  {
+    "id": 32,
+    "file": "courses/ai-hardware.md",
+    "title": "AI Hardware Accelerators",
+    "url": "https://www.pirahansiah.com/notes/courses/ai-hardware/",
+    "category": "courses",
+    "hashtags": [
+      "EdgeAI",
+      "EmbeddedAI",
+      "AIHardware",
+      "Learning"
+    ],
+    "post": "AI Hardware Accelerators\n\nWorkshop covering custom accelerators, NPUs, and edge AI chips.\n\nhttps://www.pirahansiah.com/notes/courses/ai-hardware/\n\n#EdgeAI #EmbeddedAI #AIHardware #Learning",
+    "chars": 188
+  },
+  {
+    "id": 33,
+    "file": "courses/book-summary.md",
+    "title": "Book Summaries",
+    "url": "https://www.pirahansiah.com/notes/courses/book-summary/",
+    "category": "courses",
+    "hashtags": [
+      "Books",
+      "AI",
+      "Learning"
+    ],
+    "post": "Book Summaries — notes worth keeping.\n\nBook summaries and knowledge management resources.\n\nhttps://www.pirahansiah.com/notes/courses/book-summary/\n\n#Books #AI #Learning",
+    "chars": 168
+  },
+  {
+    "id": 34,
+    "file": "courses/cloud-native.md",
+    "title": "Cloud-Native with Kubernetes",
+    "url": "https://www.pirahansiah.com/notes/courses/cloud-native/",
+    "category": "courses",
+    "hashtags": [
+      "CloudNative",
+      "DevOps",
+      "Learning",
+      "AI"
+    ],
+    "post": "Sharing: Cloud-Native with Kubernetes\n\nDocker and Kubernetes fundamentals for cloud-native infrastructure.\n\nhttps://www.pirahansiah.com/notes/courses/cloud-native/\n\n#CloudNative #DevOps #Learning #AI",
+    "chars": 199
+  },
+  {
+    "id": 35,
+    "file": "courses/edge-ai-summit.md",
+    "title": "Edge AI Summit 2020",
+    "url": "https://www.pirahansiah.com/notes/courses/edge-ai-summit/",
+    "category": "courses",
+    "hashtags": [
+      "EdgeAI",
+      "EmbeddedAI",
+      "Learning",
+      "AI"
+    ],
+    "post": "Edge AI Summit 2020.\nNotes from Edge AI Summit covering tinyML, neuromorphic computing, and edge inference.\n\n→ https://www.pirahansiah.com/notes/courses/edge-ai-summit/\n\n#EdgeAI #EmbeddedAI #Learning #AI",
+    "chars": 203
+  },
+  {
+    "id": 36,
+    "file": "courses/fsdl-2022.md",
+    "title": "FSDL 2022 Notes",
+    "url": "https://www.pirahansiah.com/notes/courses/fsdl-2022/",
+    "category": "courses",
+    "hashtags": [
+      "DeepLearning",
+      "MLOps",
+      "Learning",
+      "AI"
+    ],
+    "post": "From my CV / AI atlas:\nFSDL 2022 Notes\n\nNotes from Full Stack Deep Learning 2022 covering ML lifecycle, data management, and continual learning.\n\nhttps://www.pirahansiah.com/notes/courses/fsdl-2022/\n\n#DeepLearning #MLOps #Learning #AI",
+    "chars": 234
+  },
+  {
+    "id": 37,
+    "file": "courses/fsdl.md",
+    "title": "Full Stack Deep Learning",
+    "url": "https://www.pirahansiah.com/notes/courses/fsdl/",
+    "category": "courses",
+    "hashtags": [
+      "MLOps",
+      "ML",
+      "DeepLearning",
+      "Learning"
+    ],
+    "post": "Full Stack Deep Learning course notes covering ML production from data to deployment.\n\nFull Stack Deep Learning\nhttps://www.pirahansiah.com/notes/courses/fsdl/\n\n#MLOps #ML #DeepLearning #Learning",
+    "chars": 195
+  },
+  {
+    "id": 38,
+    "file": "courses/index.md",
+    "title": "Topics & Projects",
+    "url": "https://www.pirahansiah.com/notes/courses/",
+    "category": "courses",
+    "hashtags": [
+      "CameraCalibration",
+      "ComputerVision",
+      "OpenCV",
+      "Learning"
+    ],
+    "post": "Topics & Projects\n\nTopics and projects covering AI, OpenCV, camera calibration, deep reinforcement learning, and more.\n\nhttps://www.pirahansiah.com/notes/courses/\n\n#CameraCalibration #ComputerVision #OpenCV #Learning",
+    "chars": 216
+  },
+  {
+    "id": 39,
+    "file": "courses/iot-scholarship.md",
+    "title": "IoT Scholarship: Edge AI with OpenVINO",
+    "url": "https://www.pirahansiah.com/notes/courses/iot-scholarship/",
+    "category": "courses",
+    "hashtags": [
+      "EdgeAI",
+      "EmbeddedAI",
+      "IoT",
+      "Embedded"
+    ],
+    "post": "IoT Scholarship: Edge AI with OpenVINO — notes worth keeping.\n\nIoT and Edge AI with OpenVINO: face recognition, object detection, pose estimation, and semantic segmentation.\n\nhttps://www.pirahansiah.com/notes/courses/iot-scholarship/\n\n#EdgeAI #EmbeddedAI #IoT #Embedded",
+    "chars": 269
+  },
+  {
+    "id": 40,
+    "file": "courses/iot.md",
+    "title": "Embedded IoT",
+    "url": "https://www.pirahansiah.com/notes/courses/iot/",
+    "category": "courses",
+    "hashtags": [
+      "IoT",
+      "Embedded",
+      "Learning",
+      "AI"
+    ],
+    "post": "Sharing: Embedded IoT\n\nWorkshop on embedded IoT systems and edge computing applications.\n\nhttps://www.pirahansiah.com/notes/courses/iot/\n\n#IoT #Embedded #Learning #AI",
+    "chars": 166
+  },
+  {
+    "id": 41,
+    "file": "courses/metaverse.md",
+    "title": "Metaverse & XR",
+    "url": "https://www.pirahansiah.com/notes/courses/metaverse/",
+    "category": "courses",
+    "hashtags": [
+      "Metaverse",
+      "XR",
+      "Learning",
+      "AI"
+    ],
+    "post": "Metaverse & XR.\nWorkshop on extended reality, spatial computing, and immersive technologies.\n\n→ https://www.pirahansiah.com/notes/courses/metaverse/\n\n#Metaverse #XR #Learning #AI",
+    "chars": 178
+  },
+  {
+    "id": 42,
+    "file": "courses/ml-spec.md",
+    "title": "Machine Learning Specialization",
+    "url": "https://www.pirahansiah.com/notes/courses/ml-spec/",
+    "category": "courses",
+    "hashtags": [
+      "Learning",
+      "AI"
+    ],
+    "post": "From my CV / AI atlas:\nMachine Learning Specialization\n\nCoursera ML Specialization notes covering regression, classification, clustering, and neural networks.\n\nhttps://www.pirahansiah.com/notes/courses/ml-spec/\n\n#Learning #AI",
+    "chars": 225
+  },
+  {
+    "id": 43,
+    "file": "courses/mlops.md",
+    "title": "MLOps",
+    "url": "https://www.pirahansiah.com/notes/courses/mlops/",
+    "category": "courses",
+    "hashtags": [
+      "MLOps",
+      "ML",
+      "Learning",
+      "AI"
+    ],
+    "post": "Coursera MLOps Specialization covering ML production, data lifecycle, modeling pipelines, and deployment.\n\nMLOps\nhttps://www.pirahansiah.com/notes/courses/mlops/\n\n#MLOps #ML #Learning #AI",
+    "chars": 187
+  },
+  {
+    "id": 44,
+    "file": "courses/modern-cpp.md",
+    "title": "Modern C++ for Image Processing",
+    "url": "https://www.pirahansiah.com/notes/courses/modern-cpp/",
+    "category": "courses",
+    "hashtags": [
+      "CUDA",
+      "GPU",
+      "Cpp",
+      "Systems"
+    ],
+    "post": "Modern C++ for Image Processing\n\nModern C++23 for image processing: memory management, design patterns, CUDA, and OpenCV.\n\nhttps://www.pirahansiah.com/notes/courses/modern-cpp/\n\n#CUDA #GPU #Cpp #Systems",
+    "chars": 202
+  },
+  {
+    "id": 45,
+    "file": "courses/openvino.md",
+    "title": "OpenVINO Deep Learning",
+    "url": "https://www.pirahansiah.com/notes/courses/openvino/",
+    "category": "courses",
+    "hashtags": [
+      "EdgeAI",
+      "EmbeddedAI",
+      "MLOps",
+      "ML"
+    ],
+    "post": "OpenVINO Deep Learning — notes worth keeping.\n\nIntel OpenVINO toolkit for optimizing and deploying deep learning models.\n\nhttps://www.pirahansiah.com/notes/courses/openvino/\n\n#EdgeAI #EmbeddedAI #MLOps #ML",
+    "chars": 205
+  },
+  {
+    "id": 46,
+    "file": "courses/parallel.md",
+    "title": "Parallel Programming for Computer Vision",
+    "url": "https://www.pirahansiah.com/notes/courses/parallel/",
+    "category": "courses",
+    "hashtags": [
+      "Python",
+      "Engineering",
+      "ParallelComputing",
+      "HPC"
+    ],
+    "post": "Sharing: Parallel Programming for Computer Vision\n\nPython parallel programming techniques for computer vision applications.\n\nhttps://www.pirahansiah.com/notes/courses/parallel/\n\n#Python #Engineering #ParallelComputing #HPC",
+    "chars": 222
+  },
+  {
+    "id": 47,
+    "file": "courses/risc-v.md",
+    "title": "RISC-V for AI",
+    "url": "https://www.pirahansiah.com/notes/courses/risc-v/",
+    "category": "courses",
+    "hashtags": [
+      "RISCV",
+      "Embedded",
+      "Learning",
+      "AI"
+    ],
+    "post": "RISC-V for AI.\nRISC-V open-source processor architecture for AI at the edge.\n\n→ https://www.pirahansiah.com/notes/courses/risc-v/\n\n#RISCV #Embedded #Learning #AI",
+    "chars": 161
+  },
+  {
+    "id": 48,
+    "file": "courses/ros.md",
+    "title": "ROS: Robot Operating System",
+    "url": "https://www.pirahansiah.com/notes/courses/ros/",
+    "category": "courses",
+    "hashtags": [
+      "ROS",
+      "Robotics",
+      "Learning",
+      "AI"
+    ],
+    "post": "From my CV / AI atlas:\nROS: Robot Operating System\n\nETH Zurich lecture on ROS architecture, navigation, simulation, and robot models.\n\nhttps://www.pirahansiah.com/notes/courses/ros/\n\n#ROS #Robotics #Learning #AI",
+    "chars": 211
+  },
+  {
+    "id": 49,
+    "file": "courses/tesla.md",
+    "title": "Tesla AI",
+    "url": "https://www.pirahansiah.com/notes/courses/tesla/",
+    "category": "courses",
+    "hashtags": [
+      "TeslaAI",
+      "AutonomousDriving",
+      "Learning",
+      "AI"
+    ],
+    "post": "Workshop on Tesla's autonomous driving technology and AI systems.\n\nTesla AI\nhttps://www.pirahansiah.com/notes/courses/tesla/\n\n#TeslaAI #AutonomousDriving #Learning #AI",
+    "chars": 167
+  },
+  {
+    "id": 50,
+    "file": "courses/tf-deploy.md",
+    "title": "TensorFlow Deployment Specialization",
+    "url": "https://www.pirahansiah.com/notes/courses/tf-deploy/",
+    "category": "courses",
+    "hashtags": [
+      "MLOps",
+      "ML",
+      "MLOptimization",
+      "DeepLearning"
+    ],
+    "post": "TensorFlow Deployment Specialization\n\nTensorFlow deployment: browser-based TF.js, device-based TF Lite, data pipelines, and optimization.\n\nhttps://www.pirahansiah.com/notes/courses/tf-deploy/\n\n#MLOps #ML #MLOptimization #DeepLearning",
+    "chars": 233
+  },
+  {
+    "id": 51,
+    "file": "docs/coaching.md",
+    "title": "CV Coaching & Teaching Roadmap",
+    "url": "https://www.pirahansiah.com/notes/docs/coaching/",
+    "category": "docs",
+    "hashtags": [
+      "cv",
+      "coaching",
+      "teaching",
+      "curriculum"
+    ],
+    "post": "CV Coaching & Teaching Roadmap — notes worth keeping.\n\nPersonalized computer vision coaching with a structured curriculum from fundamentals to edge AI.\n\nhttps://www.pirahansiah.com/notes/docs/coaching/\n\n#cv #coaching #teaching #curriculum",
+    "chars": 238
+  },
+  {
+    "id": 52,
+    "file": "docs/cpp.md",
+    "title": "C++ Quick Reference",
+    "url": "https://www.pirahansiah.com/notes/docs/cpp/",
+    "category": "docs",
+    "hashtags": [
+      "cpp",
+      "programming",
+      "debugging",
+      "memorymanagement"
+    ],
+    "post": "Sharing: C++ Quick Reference\n\nQuick reference for C++ memory management, data structures, debugging tools, and shell basics.\n\nhttps://www.pirahansiah.com/notes/docs/cpp/\n\n#cpp #programming #debugging #memorymanagement",
+    "chars": 217
+  },
+  {
+    "id": 53,
+    "file": "docs/cuda/apple-ml.md",
+    "title": "MLX, CoreML, and Metal for Apple Silicon",
+    "url": "https://www.pirahansiah.com/notes/docs/cuda/apple-ml/",
+    "category": "docs",
+    "hashtags": [
+      "applesilicon",
+      "coreml",
+      "metal",
+      "mlx"
+    ],
+    "post": "MLX, CoreML, and Metal for Apple Silicon.\nGuide to Numba JIT, PyCUDA-to-Metal transition, CoreML conversion, and MLX framework on Apple Silicon.\n\n→ https://www.pirahansiah.com/notes/docs/cuda/apple-ml/\n\n#applesilicon #coreml #metal #mlx",
+    "chars": 236
+  },
+  {
+    "id": 54,
+    "file": "docs/cuda/cuda-vscode.md",
+    "title": "CUDA Development Environment in VS Code on Windows",
+    "url": "https://www.pirahansiah.com/notes/docs/cuda/cuda-vscode/",
+    "category": "docs",
+    "hashtags": [
+      "cuda",
+      "gpu",
+      "devtools",
+      "vscode"
+    ],
+    "post": "From my CV / AI atlas:\nCUDA Development Environment in VS Code on Windows\n\nStep-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and….\n\nhttps://www.pirahansiah.com/notes/docs/cuda/cuda-vscode/\n\n#cuda #gpu #devtools #vscode",
+    "chars": 269
+  },
+  {
+    "id": 55,
+    "file": "docs/cuda/numba.md",
+    "title": "Accelerate Python with Numba's @jit(nopython=True)",
+    "url": "https://www.pirahansiah.com/notes/docs/cuda/numba/",
+    "category": "docs",
+    "hashtags": [
+      "python",
+      "numba",
+      "jit",
+      "performance"
+    ],
+    "post": "Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.\n\nAccelerate Python with Numba's @jit(nopython=True)\nhttps://www.pirahansiah.com/notes/docs/cuda/numba/\n\n#python #numba #jit #performance",
+    "chars": 265
+  },
+  {
+    "id": 56,
+    "file": "docs/cuda/pycuda.md",
+    "title": "How PyCUDA Reads and Runs C Kernels",
+    "url": "https://www.pirahansiah.com/notes/docs/cuda/pycuda/",
+    "category": "docs",
+    "hashtags": [
+      "cuda",
+      "gpu",
+      "python",
+      "parallelcomputing"
+    ],
+    "post": "How PyCUDA Reads and Runs C Kernels\n\nExplanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.\n\nhttps://www.pirahansiah.com/notes/docs/cuda/pycuda/\n\n#cuda #gpu #python #parallelcomputing",
+    "chars": 243
+  },
+  {
+    "id": 57,
+    "file": "docs/cv-overview.md",
+    "title": "Dr. Farshid Pirahansiah — CV & AI",
+    "url": "https://www.pirahansiah.com/notes/docs/cv-overview/",
+    "category": "docs",
+    "hashtags": [
+      "cv",
+      "ai",
+      "portfolio",
+      "about"
+    ],
+    "post": "Dr. Farshid Pirahansiah — CV & AI — notes worth keeping.\n\nDr. Farshid Pirahansiah — CV & AI.\n\nhttps://www.pirahansiah.com/notes/docs/cv-overview/\n\n#cv #ai #portfolio #about",
+    "chars": 172
+  },
+  {
+    "id": 58,
+    "file": "docs/cv/3d.md",
+    "title": "3D Vision & Real-Time Multi-Camera Systems",
+    "url": "https://www.pirahansiah.com/notes/docs/cv/3d/",
+    "category": "docs",
+    "hashtags": [
+      "cv",
+      "3dvision",
+      "depthsensing",
+      "multicamera"
+    ],
+    "post": "Sharing: 3D Vision & Real-Time Multi-Camera Systems\n\nReal-time 3D point cloud generation, depth sensing, and multi-camera synchronization for computer vision applications.\n\nhttps://www.pirahansiah.com/notes/docs/cv/3d/\n\n#cv #3dvision #depthsensing #multicamera",
+    "chars": 260
+  },
+  {
+    "id": 59,
+    "file": "docs/cv/index.md",
+    "title": "Computer Vision",
+    "url": "https://www.pirahansiah.com/notes/docs/cv/",
+    "category": "docs",
+    "hashtags": [
+      "cv",
+      "3d",
+      "opticalflow",
+      "ComputerVision"
+    ],
+    "post": "Computer Vision.\nComputer vision topics: 3D vision, optical flow, multi-camera systems.\n\n→ https://www.pirahansiah.com/notes/docs/cv/\n\n#cv #3d #opticalflow #ComputerVision",
+    "chars": 171
+  },
+  {
+    "id": 60,
+    "file": "docs/cv/multi-camera.md",
+    "title": "Real-Time Multi-Camera Vision Systems",
+    "url": "https://www.pirahansiah.com/notes/docs/cv/multi-camera/",
+    "category": "docs",
+    "hashtags": [
+      "cv",
+      "multicamera",
+      "realtime",
+      "edgeai"
+    ],
+    "post": "From my CV / AI atlas:\nReal-Time Multi-Camera Vision Systems\n\nDeep technical guide to building real-time multi-camera vision systems with heterogeneous processing and….\n\nhttps://www.pirahansiah.com/notes/docs/cv/multi-camera/\n\n#cv #multicamera #realtime #edgeai",
+    "chars": 261
+  },
+  {
+    "id": 61,
+    "file": "docs/cv/optical-flow.md",
+    "title": "Optical Flow: Challenges and Solutions",
+    "url": "https://www.pirahansiah.com/notes/docs/cv/optical-flow/",
+    "category": "docs",
+    "hashtags": [
+      "cv",
+      "opticalflow",
+      "motionanalysis",
+      "opencv"
+    ],
+    "post": "Comprehensive guide to optical flow challenges including illumination changes, occlusions, fast motion, and their solutions.\n\nOptical Flow: Challenges and Solutions\nhttps://www.pirahansiah.com/notes/docs/cv/optical-flow/\n\n#cv #opticalflow #motionanalysis #opencv",
+    "chars": 262
+  },
+  {
+    "id": 62,
+    "file": "docs/dev-tools.md",
+    "title": "Developer Tools & Setup Guide",
+    "url": "https://www.pirahansiah.com/notes/docs/dev-tools/",
+    "category": "docs",
+    "hashtags": [
+      "devtools",
+      "docker",
+      "github",
+      "productivity"
+    ],
+    "post": "Developer Tools & Setup Guide\n\nCurated developer tools, shell essentials, Docker tips, and GitHub tricks.\n\nhttps://www.pirahansiah.com/notes/docs/dev-tools/\n\n#devtools #docker #github #productivity",
+    "chars": 197
+  },
+  {
+    "id": 63,
+    "file": "docs/index.md",
+    "title": "Content Hub",
+    "url": "https://www.pirahansiah.com/notes/docs/",
+    "category": "docs",
+    "hashtags": [
+      "cv",
+      "ai",
+      "llm",
+      "edgeai"
+    ],
+    "post": "Content Hub — notes worth keeping.\n\nTechnical articles and tutorials on computer vision, AI, edge deployment, and software engineering.\n\nhttps://www.pirahansiah.com/notes/docs/\n\n#cv #ai #llm #edgeai",
+    "chars": 198
+  },
+  {
+    "id": 64,
+    "file": "docs/linkedin.md",
+    "title": "Top LinkedIn Posts 2024",
+    "url": "https://www.pirahansiah.com/notes/docs/linkedin/",
+    "category": "docs",
+    "hashtags": [
+      "linkedin",
+      "cameracalibration",
+      "cpp",
+      "robotics"
+    ],
+    "post": "Sharing: Top LinkedIn Posts 2024\n\nHighlights from 2024 LinkedIn posts covering camera calibration, C++, NVIDIA optimization, and robotics.\n\nhttps://www.pirahansiah.com/notes/docs/linkedin/\n\n#linkedin #cameracalibration #cpp #robotics",
+    "chars": 233
+  },
+  {
+    "id": 65,
+    "file": "docs/links.md",
+    "title": "Curated Links & Resources",
+    "url": "https://www.pirahansiah.com/notes/docs/links/",
+    "category": "docs",
+    "hashtags": [
+      "resources",
+      "tools",
+      "tutorials",
+      "references"
+    ],
+    "post": "Curated Links & Resources.\nHand-picked tools, tutorials, and references for CV, AI, and software engineering.\n\n→ https://www.pirahansiah.com/notes/docs/links/\n\n#resources #tools #tutorials #references",
+    "chars": 200
+  },
+  {
+    "id": 66,
+    "file": "docs/llm/agents.md",
+    "title": "Mind Map: Orchestrating AI Agents",
+    "url": "https://www.pirahansiah.com/notes/docs/llm/agents/",
+    "category": "docs",
+    "hashtags": [
+      "ai",
+      "llm",
+      "agents",
+      "multiagent"
+    ],
+    "post": "From my CV / AI atlas:\nMind Map: Orchestrating AI Agents\n\nMind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.\n\nhttps://www.pirahansiah.com/notes/docs/llm/agents/\n\n#ai #llm #agents #multiagent",
+    "chars": 234
+  },
+  {
+    "id": 67,
+    "file": "docs/llm/avatar.md",
+    "title": "Local Video Avatar Generator with Ollama",
+    "url": "https://www.pirahansiah.com/notes/docs/llm/avatar/",
+    "category": "docs",
+    "hashtags": [
+      "ai",
+      "llm",
+      "videogeneration",
+      "ollama"
+    ],
+    "post": "Build a fully local video avatar generator using Ollama LLM, Piper TTS, and Wav2Lip without cloud services.\n\nLocal Video Avatar Generator with Ollama\nhttps://www.pirahansiah.com/notes/docs/llm/avatar/\n\n#ai #llm #videogeneration #ollama",
+    "chars": 235
+  },
+  {
+    "id": 68,
+    "file": "docs/llm/blog.md",
+    "title": "Blog: AI, LLMs, and Computer Vision",
+    "url": "https://www.pirahansiah.com/notes/docs/llm/blog/",
+    "category": "docs",
+    "hashtags": [
+      "ai",
+      "llm",
+      "rag",
+      "multiagent"
+    ],
+    "post": "Blog: AI, LLMs, and Computer Vision\n\nBlog posts on RAG vs CAG, multi-agent architectures, AI's impact on jobs, and the future of software development.\n\nhttps://www.pirahansiah.com/notes/docs/llm/blog/\n\n#ai #llm #rag #multiagent",
+    "chars": 227
+  },
+  {
+    "id": 69,
+    "file": "docs/llm/index.md",
+    "title": "AI & LLMs",
+    "url": "https://www.pirahansiah.com/notes/docs/llm/",
+    "category": "docs",
+    "hashtags": [
+      "ai",
+      "llm",
+      "rag",
+      "agents"
+    ],
+    "post": "AI & LLMs — notes worth keeping.\n\nArticles on LLMs, RAG, multi-agent systems, and local AI integration.\n\nhttps://www.pirahansiah.com/notes/docs/llm/\n\n#ai #llm #rag #agents",
+    "chars": 171
+  },
+  {
+    "id": 70,
+    "file": "docs/llm/llm-concepts.md",
+    "title": "Advanced LLM Concepts",
+    "url": "https://www.pirahansiah.com/notes/docs/llm/llm-concepts/",
+    "category": "docs",
+    "hashtags": [
+      "ai",
+      "llm",
+      "rag",
+      "multimodal"
+    ],
+    "post": "Sharing: Advanced LLM Concepts\n\nComprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production….\n\nhttps://www.pirahansiah.com/notes/docs/llm/llm-concepts/\n\n#ai #llm #rag #multimodal",
+    "chars": 233
+  },
+  {
+    "id": 71,
+    "file": "docs/optimization/index.md",
+    "title": "CV, DL & ML Optimization Guide",
+    "url": "https://www.pirahansiah.com/notes/docs/optimization/",
+    "category": "docs",
+    "hashtags": [
+      "optimization",
+      "deeplearning",
+      "machinelearning",
+      "cv"
+    ],
+    "post": "CV, DL & ML Optimization Guide.\nComprehensive guide to optimizing deep learning models, CV systems, and data pipelines.\n\n→ https://www.pirahansiah.com/notes/docs/optimization/\n\n#optimization #deeplearning #machinelearning #cv",
+    "chars": 225
+  },
+  {
+    "id": 72,
+    "file": "docs/product.md",
+    "title": "Product — Embedded CV & Edge AI",
+    "url": "https://www.pirahansiah.com/notes/docs/product/",
+    "category": "docs",
+    "hashtags": [
+      "cv",
+      "edgeai",
+      "embeddedsystems",
+      "product"
+    ],
+    "post": "From my CV / AI atlas:\nProduct — Embedded CV & Edge AI\n\nEmbedded computer vision and edge AI systems portfolio.\n\nhttps://www.pirahansiah.com/notes/docs/product/\n\n#cv #edgeai #embeddedsystems #product",
+    "chars": 199
+  },
+  {
+    "id": 73,
+    "file": "docs/projects/ai-cost-calculator.md",
+    "title": "AI Model Cost Calculator",
+    "url": "https://www.pirahansiah.com/notes/docs/projects/ai-cost-calculator/",
+    "category": "docs",
+    "hashtags": [
+      "ai",
+      "llm",
+      "costcalculator",
+      "gpt4"
+    ],
+    "post": "Estimate text and image processing costs for GPT-4, Claude, and Gemini — token-aware cost planning for computer vision and multimodal AI.\n\nAI Model Cost Calculator\nhttps://www.pirahansiah.com/notes/docs/projects/ai-cost-calculator/\n\n#ai #llm #costcalculator #gpt4",
+    "chars": 263
+  },
+  {
+    "id": 74,
+    "file": "docs/projects/solutions/index.md",
+    "title": "Solutions",
+    "url": "https://www.pirahansiah.com/notes/docs/projects/solutions/",
+    "category": "docs",
+    "hashtags": [
+      "portfolio",
+      "cv",
+      "ai",
+      "projects"
+    ],
+    "post": "Solutions\n\nShowcase of industry applications, portfolio projects, and technical skills in computer vision and AI.\n\nhttps://www.pirahansiah.com/notes/docs/projects/solutions/\n\n#portfolio #cv #ai #projects",
+    "chars": 203
+  },
+  {
+    "id": 75,
+    "file": "docs/prompts/index.md",
+    "title": "Prompt Engineering Templates",
+    "url": "https://www.pirahansiah.com/notes/docs/prompts/",
+    "category": "docs",
+    "hashtags": [
+      "promptengineering",
+      "llm",
+      "ai",
+      "nlp"
+    ],
+    "post": "Prompt Engineering Templates — notes worth keeping.\n\nReusable prompt templates for text simplification, mind maps, and structured content processing.\n\nhttps://www.pirahansiah.com/notes/docs/prompts/\n\n#promptengineering #llm #ai #nlp",
+    "chars": 232
+  },
+  {
+    "id": 76,
+    "file": "docs/python/index.md",
+    "title": "Python Configuration & C++ Integration",
+    "url": "https://www.pirahansiah.com/notes/docs/python/",
+    "category": "docs",
+    "hashtags": [
+      "python",
+      "cpp",
+      "configuration",
+      "devtools"
+    ],
+    "post": "Sharing: Python Configuration & C++ Integration\n\nPython configuration methods comparison plus pybind11 and Cython tips for C++ integration.\n\nhttps://www.pirahansiah.com/notes/docs/python/\n\n#python #cpp #configuration #devtools",
+    "chars": 226
+  },
+  {
+    "id": 77,
+    "file": "docs/research.md",
+    "title": "Research — Publications & Patents",
+    "url": "https://www.pirahansiah.com/notes/docs/research/",
+    "category": "docs",
+    "hashtags": [
+      "research",
+      "publications",
+      "patents",
+      "cv"
+    ],
+    "post": "Research — Publications & Patents.\nComplete list of patents, journal articles, conference papers, books, and keynotes.\n\n→ https://www.pirahansiah.com/notes/docs/research/\n\n#research #publications #patents #cv",
+    "chars": 208
+  },
+  {
+    "id": 78,
+    "file": "docs/resources.md",
+    "title": "Portfolio & Publications",
+    "url": "https://www.pirahansiah.com/notes/docs/resources/",
+    "category": "docs",
+    "hashtags": [
+      "portfolio",
+      "publications",
+      "patents",
+      "research"
+    ],
+    "post": "From my CV / AI atlas:\nPortfolio & Publications\n\nComplete portfolio of patents, publications, books, and project highlights.\n\nhttps://www.pirahansiah.com/notes/docs/resources/\n\n#portfolio #publications #patents #research",
+    "chars": 220
+  },
+  {
+    "id": 79,
+    "file": "docs/seo/index.md",
+    "title": "SEO for LLM-Powered Search",
+    "url": "https://www.pirahansiah.com/notes/docs/seo/",
+    "category": "docs",
+    "hashtags": [
+      "seo",
+      "llm",
+      "ai",
+      "weboptimization"
+    ],
+    "post": "How to optimize websites for LLM-powered search engines using structured data and AI-friendly content.\n\nSEO for LLM-Powered Search\nhttps://www.pirahansiah.com/notes/docs/seo/\n\n#seo #llm #ai #weboptimization",
+    "chars": 206
+  },
+  {
+    "id": 80,
+    "file": "docs/shell-vim.md",
+    "title": "Shell & Vim Quick Reference",
+    "url": "https://www.pirahansiah.com/notes/docs/shell-vim/",
+    "category": "docs",
+    "hashtags": [
+      "shell",
+      "vim",
+      "cli",
+      "devtools"
+    ],
+    "post": "Shell & Vim Quick Reference\n\nQuick reference for shell commands, vim basics, and essential CLI tools.\n\nhttps://www.pirahansiah.com/notes/docs/shell-vim/\n\n#shell #vim #cli #devtools",
+    "chars": 180
+  },
+  {
+    "id": 81,
+    "file": "docs/solutions.md",
+    "title": "Solutions — AI Courses & Workshops",
+    "url": "https://www.pirahansiah.com/notes/docs/solutions/",
+    "category": "docs",
+    "hashtags": [
+      "ai",
+      "courses",
+      "workshops",
+      "deeplearning"
+    ],
+    "post": "Solutions — AI Courses & Workshops — notes worth keeping.\n\nAI 2026 courses, workshops, and business solutions for production-ready products.\n\nhttps://www.pirahansiah.com/notes/docs/solutions/\n\n#ai #courses #workshops #deeplearning",
+    "chars": 230
+  },
+  {
+    "id": 82,
+    "file": "docs/startup.md",
+    "title": "Startup Guide: Edge AI Business",
+    "url": "https://www.pirahansiah.com/notes/docs/startup/",
+    "category": "docs",
+    "hashtags": [
+      "startup",
+      "business",
+      "fundraising",
+      "ai"
+    ],
+    "post": "Sharing: Startup Guide: Edge AI Business\n\nEdge AI business plan, fundraising in Germany, pitch decks, and growth strategies.\n\nhttps://www.pirahansiah.com/notes/docs/startup/\n\n#startup #business #fundraising #ai",
+    "chars": 210
+  },
+  {
+    "id": 83,
+    "file": "pkm/TOC.md",
+    "title": "PKM Methods & Website Structure",
+    "url": "https://www.pirahansiah.com/notes/pkm/TOC/",
+    "category": "pkm",
+    "hashtags": [
+      "pkm",
+      "knowledgemanagement",
+      "productivity",
+      "Portfolio"
+    ],
+    "post": "PKM Methods & Website Structure.\nPersonal knowledge management approaches from top practitioners and site architecture.\n\n→ https://www.pirahansiah.com/notes/pkm/TOC/\n\n#pkm #knowledgemanagement #productivity #Portfolio",
+    "chars": 217
+  },
+  {
+    "id": 84,
+    "file": "pkm/links.md",
+    "title": "Curated Links & Resources",
+    "url": "https://www.pirahansiah.com/notes/pkm/links/",
+    "category": "pkm",
+    "hashtags": [
+      "curatedlinks",
+      "aitools",
+      "resources",
+      "Portfolio"
+    ],
+    "post": "From my CV / AI atlas:\nCurated Links & Resources\n\nCollection of AI, CV, ML, and software development tools and tutorials.\n\nhttps://www.pirahansiah.com/notes/pkm/links/\n\n#curatedlinks #aitools #resources #Portfolio",
+    "chars": 213
+  },
+  {
+    "id": 85,
+    "file": "pkm/proof.md",
+    "title": "Site Link Index",
+    "url": "https://www.pirahansiah.com/notes/pkm/proof/",
+    "category": "pkm",
+    "hashtags": [
+      "siteindex",
+      "links",
+      "documentation",
+      "Portfolio"
+    ],
+    "post": "Complete index of all pages, publications, and resources on pirahansiah.com.\n\nSite Link Index\nhttps://www.pirahansiah.com/notes/pkm/proof/\n\n#siteindex #links #documentation #Portfolio",
+    "chars": 183
+  },
+  {
+    "id": 86,
+    "file": "pkm/use-cases.md",
+    "title": "Complete Portfolio",
+    "url": "https://www.pirahansiah.com/notes/pkm/use-cases/",
+    "category": "pkm",
+    "hashtags": [
+      "portfolio",
+      "computervision",
+      "edgeai",
+      "github"
+    ],
+    "post": "Complete Portfolio\n\nPublications, patents, expertise, tools, and GitHub projects across CV and AI.\n\nhttps://www.pirahansiah.com/notes/pkm/use-cases/\n\n#portfolio #computervision #edgeai #github",
+    "chars": 192
+  },
+  {
+    "id": 87,
+    "file": "site/README.md",
+    "title": "Farshid Pirahansiah's Website",
+    "url": "https://www.pirahansiah.com/notes/site/README/",
+    "category": "site",
+    "hashtags": [
+      "AI",
+      "ComputerVision"
+    ],
+    "post": "Farshid Pirahansiah's Website — notes worth keeping.\n\nPersonal site for CV, AI, and edge computing projects and resources.\n\nhttps://www.pirahansiah.com/notes/site/README/\n\n#AI #ComputerVision",
+    "chars": 191
+  },
+  {
+    "id": 88,
+    "file": "site/graph-notes.md",
+    "title": "Knowledge Graph — Files & Architecture",
+    "url": "https://www.pirahansiah.com/graph-notes/",
+    "category": "site",
+    "hashtags": [
+      "KnowledgeGraph",
+      "PKM",
+      "AI",
+      "ComputerVision"
+    ],
+    "post": "Sharing: Knowledge Graph — Files & Architecture\n\nKnowledge Graph — Files & Architecture.\n\nhttps://www.pirahansiah.com/graph-notes/\n\n#KnowledgeGraph #PKM #AI #ComputerVision",
+    "chars": 172
+  },
+  {
+    "id": 89,
+    "file": "site/graph-tags.md",
+    "title": "Hashtag Graph",
+    "url": "https://www.pirahansiah.com/graph-tags/",
+    "category": "site",
+    "hashtags": [
+      "KnowledgeGraph",
+      "PKM",
+      "AI",
+      "ComputerVision"
+    ],
+    "post": "Hashtag Graph.\nHashtag Graph.\n\n→ https://www.pirahansiah.com/graph-tags/\n\n#KnowledgeGraph #PKM #AI #ComputerVision",
+    "chars": 114
+  },
+  {
+    "id": 90,
+    "file": "site/graph.md",
+    "title": "Knowledge Graph",
+    "url": "https://www.pirahansiah.com/graph/",
+    "category": "site",
+    "hashtags": [
+      "KnowledgeGraph",
+      "PKM",
+      "AI",
+      "ComputerVision"
+    ],
+    "post": "From my CV / AI atlas:\nKnowledge Graph\n\nKnowledge Graph.\n\nhttps://www.pirahansiah.com/graph/\n\n#KnowledgeGraph #PKM #AI #ComputerVision",
+    "chars": 134
+  },
+  {
+    "id": 91,
+    "file": "site/search.md",
+    "title": "Search",
+    "url": "https://www.pirahansiah.com/search/",
+    "category": "site",
+    "hashtags": [
+      "AI",
+      "ComputerVision"
+    ],
+    "post": "Search.\n\nSearch\nhttps://www.pirahansiah.com/search/\n\n#AI #ComputerVision",
+    "chars": 72
+  },
+  {
+    "id": 92,
+    "file": "site/terms.md",
+    "title": "Terms of Service",
+    "url": "https://www.pirahansiah.com/terms/",
+    "category": "site",
+    "hashtags": [
+      "AI",
+      "ComputerVision"
+    ],
+    "post": "Terms of Service\n\nTerms of Service.\n\nhttps://www.pirahansiah.com/terms/\n\n#AI #ComputerVision",
+    "chars": 92
+  },
+  {
+    "id": 93,
+    "file": "site/view.md",
+    "title": "View",
+    "url": "https://www.pirahansiah.com/view/",
+    "category": "site",
+    "hashtags": [
+      "AI",
+      "ComputerVision"
+    ],
+    "post": "View — notes worth keeping.\n\nView.\n\nhttps://www.pirahansiah.com/view/\n\n#AI #ComputerVision",
+    "chars": 90
+  },
+  {
+    "id": 94,
+    "file": "slides/presentation.md",
+    "title": "Reducing Token Usage in AI-Assisted Development",
+    "url": "https://www.pirahansiah.com/notes/slides/presentation/",
+    "category": "slides",
+    "hashtags": [
+      "presentation",
+      "ai",
+      "llm",
+      "tokenoptimization"
+    ],
+    "post": "Sharing: Reducing Token Usage in AI-Assisted Development\n\nReducing Token Usage in AI-Assisted Development.\n\nhttps://www.pirahansiah.com/notes/slides/presentation/\n\n#presentation #ai #llm #tokenoptimization",
+    "chars": 205
+  },
+  {
+    "id": 95,
+    "file": "tools/image-in-md.md",
+    "title": "test mindmap",
+    "url": "https://www.pirahansiah.com/notes/tools/image-in-md/",
+    "category": "tools",
+    "hashtags": [
+      "DevTools",
+      "Engineering"
+    ],
+    "post": "test mindmap.\ntest mindmap.\n\n→ https://www.pirahansiah.com/notes/tools/image-in-md/\n\n#DevTools #Engineering",
+    "chars": 107
+  }
+]

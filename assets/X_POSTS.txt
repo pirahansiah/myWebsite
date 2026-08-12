@@ -1,0 +1,838 @@
+===== POST 001 | Embedded Computer Vision & Edge AI | 195 chars =====
+Patents, papers, courses, and production CV / Edge AI systems by Dr. Farshid Pirahansiah.
+
+Embedded Computer Vision & Edge AI
+https://www.pirahansiah.com/
+
+#ComputerVision #EdgeAI #AI #EmbeddedAI
+
+===== POST 002 | 2D vs 3D Mapping for Moving Objects | 222 chars =====
+2D vs 3D Mapping for Moving Objects
+
+Comparison of 2D and 3D mapping approaches for environment movement detection.
+
+https://www.pirahansiah.com/notes/pubs/papers/2d-3d-mapping/
+
+#3DVision #ComputerVision #Papers #Research
+
+===== POST 003 | PSNR-Based Segmentation for LPR | 248 chars =====
+PSNR-Based Segmentation for LPR — notes worth keeping.
+
+Adaptive image segmentation using PSNR for license plate recognition systems.
+
+https://www.pirahansiah.com/notes/pubs/papers/adaptive-segmentation/
+
+#imagesegmentation #psnr #thresholding #lpr
+
+===== POST 004 | Conference Paper on Computer Vision | 244 chars =====
+Sharing: Conference Paper on Computer Vision
+
+Conference paper covering computer vision techniques for image processing and pattern recognition.
+
+https://www.pirahansiah.com/notes/pubs/papers/conference-paper/
+
+#Papers #Research #ComputerVision
+
+===== POST 005 | Classification with Geometrical Features | 270 chars =====
+Classification with Geometrical Features.
+Evaluation of classification techniques using enhanced geometrical and topological features.
+
+→ https://www.pirahansiah.com/notes/pubs/papers/geometrical-topological/
+
+#classification #geometricalfeatures #patternrecognition #ml
+
+===== POST 006 | Character Recognition via Global Features | 268 chars =====
+From my CV / AI atlas:
+Character Recognition via Global Features
+
+Hybrid GLCM and EDMS method for character recognition in OCR applications.
+
+https://www.pirahansiah.com/notes/pubs/papers/global-feature-recognition/
+
+#characterrecognition #featureextraction #glcm #ocr
+
+===== POST 007 | TafreshGrid: Grid Computing | 222 chars =====
+Grid computing infrastructure implementation and evaluation at Tafresh University.
+
+TafreshGrid: Grid Computing
+https://www.pirahansiah.com/notes/pubs/papers/grid-computing/
+
+#gridcomputing #distributedsystems #hpc #Papers
+
+===== POST 008 | Conference Papers | 204 chars =====
+Conference Papers
+
+Peer-reviewed conference papers on image processing, camera calibration, and pattern recognition.
+
+https://www.pirahansiah.com/notes/pubs/papers/
+
+#research #cv #papers #imageprocessing
+
+===== POST 009 | Entropy-Based Multi-Threshold LPR | 249 chars =====
+Entropy-Based Multi-Threshold LPR — notes worth keeping.
+
+Multi-threshold license plate recognition using entropy-based image segmentation.
+
+https://www.pirahansiah.com/notes/pubs/papers/license-plate/
+
+#lpr #entropy #thresholding #imagesegmentation
+
+===== POST 010 | Camera Calibration for Multi-Modal Vision | 249 chars =====
+Sharing: Camera Calibration for Multi-Modal Vision
+
+Automatic calibration framework for multi-modal robot vision using IQA metrics.
+
+https://www.pirahansiah.com/notes/pubs/papers/multimodal-calibration/
+
+#cameracalibration #multimodal #robotics #iqa
+
+===== POST 011 | Pattern Image for Camera Calibration | 263 chars =====
+Pattern Image for Camera Calibration.
+Analysis of how pattern image design impacts camera calibration accuracy and reliability.
+
+→ https://www.pirahansiah.com/notes/pubs/papers/pattern-calibration/
+
+#cameracalibration #patternrecognition #robotics #ComputerVision
+
+===== POST 012 | 10 Years of CV Debugging Lessons | 228 chars =====
+From my CV / AI atlas:
+10 Years of CV Debugging Lessons
+
+Lessons learned from a decade of debugging computer vision systems in production.
+
+https://www.pirahansiah.com/notes/pubs/10-years/
+
+#cv #debugging #lessonslearned #opencv
+
+===== POST 013 | Computer Vision Meets LLM | 198 chars =====
+Book exploring multimodal AI combining computer vision with large language models.
+
+Computer Vision Meets LLM
+https://www.pirahansiah.com/notes/pubs/books/ai/cv-meets-llm/
+
+#LLM #AI #Books #Research
+
+===== POST 014 | OpenCV 5 — Chapter 0: Introduction | 218 chars =====
+OpenCV 5 — Chapter 0: Introduction
+
+Introduction to the new developer era, AI agents, and multi-agent systems.
+
+https://www.pirahansiah.com/notes/pubs/books/ai/new-developer-era/
+
+#AIAgents #LLM #OpenCV #ComputerVision
+
+===== POST 015 | OpenCV 5 — Chapter 1: Image Basics | 242 chars =====
+OpenCV 5 — Chapter 1: Image Basics — notes worth keeping.
+
+Glossary of AI/ML terms, references, and resources for computer vision practitioners.
+
+https://www.pirahansiah.com/notes/pubs/books/ai/opencv5-ch1/
+
+#OpenCV #ComputerVision #Books #AI
+
+===== POST 016 | OpenCV 5 — Chapter 2: Feature Detection | 237 chars =====
+Sharing: OpenCV 5 — Chapter 2: Feature Detection
+
+Comprehensive guide to AI/ML concepts, tools, best practices, and ethical considerations.
+
+https://www.pirahansiah.com/notes/pubs/books/ai/opencv5-ch2/
+
+#OpenCV #ComputerVision #Books #AI
+
+===== POST 017 | OpenCV 5 — Chapter 3: Advanced Topics | 235 chars =====
+OpenCV 5 — Chapter 3: Advanced Topics.
+Advanced computer vision techniques including filtering, morphology, and G-API integration.
+
+→ https://www.pirahansiah.com/notes/pubs/books/ai/opencv5-ch3/
+
+#opencv #cv #imageprocessing #filtering
+
+===== POST 018 | Books & Book Chapters | 199 chars =====
+From my CV / AI atlas:
+Books & Book Chapters
+
+Books and book chapters on computer vision, camera calibration, and AI.
+
+https://www.pirahansiah.com/notes/pubs/books/
+
+#book #opencv #computervision #ai
+
+===== POST 019 | CV — Dr. Farshid Pirahansiah | 200 chars =====
+Curriculum vitae covering 12+ years of computer vision R&D, 21 publications, and 3 patents.
+
+CV — Dr. Farshid Pirahansiah
+https://www.pirahansiah.com/notes/pubs/cv/
+
+#cv #resume #publications #patents
+
+===== POST 020 | Adaptive Thresholding Based on PSNR | 264 chars =====
+Adaptive Thresholding Based on PSNR
+
+PSNR-based adaptive thresholding for image segmentation in OCR and license plate recognition.
+
+https://www.pirahansiah.com/notes/pubs/journals/adaptive-thresholding/
+
+#thresholding #psnr #adaptivethresholding #imagesegmentation
+
+===== POST 021 | Ant Colony Optimization for Image Processing | 261 chars =====
+Ant Colony Optimization for Image Processing — notes worth keeping.
+
+ACO-based optimization for image thresholding and edge detection in OCR systems.
+
+https://www.pirahansiah.com/notes/pubs/journals/ant-colony/
+
+#aco #imageprocessing #thresholding #optimization
+
+===== POST 022 | Character & Object Recognition via Features | 277 chars =====
+Sharing: Character & Object Recognition via Features
+
+Global feature extraction methods for character and object recognition in computer vision.
+
+https://www.pirahansiah.com/notes/pubs/journals/character-recognition/
+
+#characterrecognition #objectrecognition #featureextraction
+
+===== POST 023 | GSFT-PSNR: Fuzzy Threshold Method | 243 chars =====
+GSFT-PSNR: Fuzzy Threshold Method.
+Fuzzy logic approach to global single thresholding using PSNR for image segmentation.
+
+→ https://www.pirahansiah.com/notes/pubs/journals/fuzzy-thresholding/
+
+#fuzzylogic #thresholding #psnr #imagesegmentation
+
+===== POST 024 | Journal Publications | 220 chars =====
+From my CV / AI atlas:
+Journal Publications
+
+Peer-reviewed journal articles on image processing, pattern recognition, and robotics.
+
+https://www.pirahansiah.com/notes/pubs/journals/
+
+#research #cv #journals #thresholding
+
+===== POST 025 | PSNR Threshold for Image Segmentation | 248 chars =====
+PSNR-based thresholding method for image segmentation in automated visual inspection.
+
+PSNR Threshold for Image Segmentation
+https://www.pirahansiah.com/notes/pubs/journals/psnr-segmentation/
+
+#psnr #thresholding #imagesegmentation #imageprocessing
+
+===== POST 026 | 3D SLAM and Humanoid Robot Linkages | 233 chars =====
+3D SLAM and Humanoid Robot Linkages
+
+Survey of 3D SLAM techniques for localization, mapping, and humanoid robot applications.
+
+https://www.pirahansiah.com/notes/pubs/journals/slam-humanoid/
+
+#slam #humanoidrobots #3dmapping #robotics
+
+===== POST 027 | Keynotes | 188 chars =====
+Keynotes — notes worth keeping.
+
+Technical keynotes on computer vision, LLMs, and multimodal AI.
+
+https://www.pirahansiah.com/notes/pubs/keynotes/
+
+#keynote #ai #computervision #multimodal
+
+===== POST 028 | Face Image Augmentation WO2021060971A1 | 263 chars =====
+Sharing: Face Image Augmentation WO2021060971A1
+
+GAN-based method for augmenting face images from surveillance with fuzzy logic quality filtering.
+
+https://www.pirahansiah.com/notes/pubs/patents/face-augmentation/
+
+#patent #faceaugmentation #gan #dataaugmentation
+
+===== POST 029 | Facial Analysis Advertisement WO2020141969A2 | 260 chars =====
+Facial Analysis Advertisement WO2020141969A2.
+System for targeted digital advertising using real-time facial analysis and demographic detection.
+
+→ https://www.pirahansiah.com/notes/pubs/patents/facial-analysis/
+
+#Patent #ComputerVision #FaceAI #KnowledgeGraph
+
+===== POST 030 | Patents | 239 chars =====
+From my CV / AI atlas:
+Patents
+
+AI and computer vision patents covering face augmentation, vehicle detection, and facial analysis.
+
+https://www.pirahansiah.com/notes/pubs/patents/
+
+#patent #facedetection #vehicledetection #augmentedreality
+
+===== POST 031 | Moving Vehicle Detection WO2021107761A1 | 270 chars =====
+Image processing method for detecting moving vehicles using CLAHE, Sobel, and geometric filtering.
+
+Moving Vehicle Detection WO2021107761A1
+https://www.pirahansiah.com/notes/pubs/patents/vehicle-detection/
+
+#patent #vehicledetection #imageprocessing #trafficsurveillance
+
+===== POST 032 | AI Hardware Accelerators | 188 chars =====
+AI Hardware Accelerators
+
+Workshop covering custom accelerators, NPUs, and edge AI chips.
+
+https://www.pirahansiah.com/notes/courses/ai-hardware/
+
+#EdgeAI #EmbeddedAI #AIHardware #Learning
+
+===== POST 033 | Book Summaries | 168 chars =====
+Book Summaries — notes worth keeping.
+
+Book summaries and knowledge management resources.
+
+https://www.pirahansiah.com/notes/courses/book-summary/
+
+#Books #AI #Learning
+
+===== POST 034 | Cloud-Native with Kubernetes | 199 chars =====
+Sharing: Cloud-Native with Kubernetes
+
+Docker and Kubernetes fundamentals for cloud-native infrastructure.
+
+https://www.pirahansiah.com/notes/courses/cloud-native/
+
+#CloudNative #DevOps #Learning #AI
+
+===== POST 035 | Edge AI Summit 2020 | 203 chars =====
+Edge AI Summit 2020.
+Notes from Edge AI Summit covering tinyML, neuromorphic computing, and edge inference.
+
+→ https://www.pirahansiah.com/notes/courses/edge-ai-summit/
+
+#EdgeAI #EmbeddedAI #Learning #AI
+
+===== POST 036 | FSDL 2022 Notes | 234 chars =====
+From my CV / AI atlas:
+FSDL 2022 Notes
+
+Notes from Full Stack Deep Learning 2022 covering ML lifecycle, data management, and continual learning.
+
+https://www.pirahansiah.com/notes/courses/fsdl-2022/
+
+#DeepLearning #MLOps #Learning #AI
+
+===== POST 037 | Full Stack Deep Learning | 195 chars =====
+Full Stack Deep Learning course notes covering ML production from data to deployment.
+
+Full Stack Deep Learning
+https://www.pirahansiah.com/notes/courses/fsdl/
+
+#MLOps #ML #DeepLearning #Learning
+
+===== POST 038 | Topics & Projects | 216 chars =====
+Topics & Projects
+
+Topics and projects covering AI, OpenCV, camera calibration, deep reinforcement learning, and more.
+
+https://www.pirahansiah.com/notes/courses/
+
+#CameraCalibration #ComputerVision #OpenCV #Learning
+
+===== POST 039 | IoT Scholarship: Edge AI with OpenVINO | 269 chars =====
+IoT Scholarship: Edge AI with OpenVINO — notes worth keeping.
+
+IoT and Edge AI with OpenVINO: face recognition, object detection, pose estimation, and semantic segmentation.
+
+https://www.pirahansiah.com/notes/courses/iot-scholarship/
+
+#EdgeAI #EmbeddedAI #IoT #Embedded
+
+===== POST 040 | Embedded IoT | 166 chars =====
+Sharing: Embedded IoT
+
+Workshop on embedded IoT systems and edge computing applications.
+
+https://www.pirahansiah.com/notes/courses/iot/
+
+#IoT #Embedded #Learning #AI
+
+===== POST 041 | Metaverse & XR | 178 chars =====
+Metaverse & XR.
+Workshop on extended reality, spatial computing, and immersive technologies.
+
+→ https://www.pirahansiah.com/notes/courses/metaverse/
+
+#Metaverse #XR #Learning #AI
+
+===== POST 042 | Machine Learning Specialization | 225 chars =====
+From my CV / AI atlas:
+Machine Learning Specialization
+
+Coursera ML Specialization notes covering regression, classification, clustering, and neural networks.
+
+https://www.pirahansiah.com/notes/courses/ml-spec/
+
+#Learning #AI
+
+===== POST 043 | MLOps | 187 chars =====
+Coursera MLOps Specialization covering ML production, data lifecycle, modeling pipelines, and deployment.
+
+MLOps
+https://www.pirahansiah.com/notes/courses/mlops/
+
+#MLOps #ML #Learning #AI
+
+===== POST 044 | Modern C++ for Image Processing | 202 chars =====
+Modern C++ for Image Processing
+
+Modern C++23 for image processing: memory management, design patterns, CUDA, and OpenCV.
+
+https://www.pirahansiah.com/notes/courses/modern-cpp/
+
+#CUDA #GPU #Cpp #Systems
+
+===== POST 045 | OpenVINO Deep Learning | 205 chars =====
+OpenVINO Deep Learning — notes worth keeping.
+
+Intel OpenVINO toolkit for optimizing and deploying deep learning models.
+
+https://www.pirahansiah.com/notes/courses/openvino/
+
+#EdgeAI #EmbeddedAI #MLOps #ML
+
+===== POST 046 | Parallel Programming for Computer Vision | 222 chars =====
+Sharing: Parallel Programming for Computer Vision
+
+Python parallel programming techniques for computer vision applications.
+
+https://www.pirahansiah.com/notes/courses/parallel/
+
+#Python #Engineering #ParallelComputing #HPC
+
+===== POST 047 | RISC-V for AI | 161 chars =====
+RISC-V for AI.
+RISC-V open-source processor architecture for AI at the edge.
+
+→ https://www.pirahansiah.com/notes/courses/risc-v/
+
+#RISCV #Embedded #Learning #AI
+
+===== POST 048 | ROS: Robot Operating System | 211 chars =====
+From my CV / AI atlas:
+ROS: Robot Operating System
+
+ETH Zurich lecture on ROS architecture, navigation, simulation, and robot models.
+
+https://www.pirahansiah.com/notes/courses/ros/
+
+#ROS #Robotics #Learning #AI
+
+===== POST 049 | Tesla AI | 167 chars =====
+Workshop on Tesla's autonomous driving technology and AI systems.
+
+Tesla AI
+https://www.pirahansiah.com/notes/courses/tesla/
+
+#TeslaAI #AutonomousDriving #Learning #AI
+
+===== POST 050 | TensorFlow Deployment Specialization | 233 chars =====
+TensorFlow Deployment Specialization
+
+TensorFlow deployment: browser-based TF.js, device-based TF Lite, data pipelines, and optimization.
+
+https://www.pirahansiah.com/notes/courses/tf-deploy/
+
+#MLOps #ML #MLOptimization #DeepLearning
+
+===== POST 051 | CV Coaching & Teaching Roadmap | 238 chars =====
+CV Coaching & Teaching Roadmap — notes worth keeping.
+
+Personalized computer vision coaching with a structured curriculum from fundamentals to edge AI.
+
+https://www.pirahansiah.com/notes/docs/coaching/
+
+#cv #coaching #teaching #curriculum
+
+===== POST 052 | C++ Quick Reference | 217 chars =====
+Sharing: C++ Quick Reference
+
+Quick reference for C++ memory management, data structures, debugging tools, and shell basics.
+
+https://www.pirahansiah.com/notes/docs/cpp/
+
+#cpp #programming #debugging #memorymanagement
+
+===== POST 053 | MLX, CoreML, and Metal for Apple Silicon | 236 chars =====
+MLX, CoreML, and Metal for Apple Silicon.
+Guide to Numba JIT, PyCUDA-to-Metal transition, CoreML conversion, and MLX framework on Apple Silicon.
+
+→ https://www.pirahansiah.com/notes/docs/cuda/apple-ml/
+
+#applesilicon #coreml #metal #mlx
+
+===== POST 054 | CUDA Development Environment in VS Code on Windows | 269 chars =====
+From my CV / AI atlas:
+CUDA Development Environment in VS Code on Windows
+
+Step-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and….
+
+https://www.pirahansiah.com/notes/docs/cuda/cuda-vscode/
+
+#cuda #gpu #devtools #vscode
+
+===== POST 055 | Accelerate Python with Numba's @jit(nopython=True) | 265 chars =====
+Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.
+
+Accelerate Python with Numba's @jit(nopython=True)
+https://www.pirahansiah.com/notes/docs/cuda/numba/
+
+#python #numba #jit #performance
+
+===== POST 056 | How PyCUDA Reads and Runs C Kernels | 243 chars =====
+How PyCUDA Reads and Runs C Kernels
+
+Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.
+
+https://www.pirahansiah.com/notes/docs/cuda/pycuda/
+
+#cuda #gpu #python #parallelcomputing
+
+===== POST 057 | Dr. Farshid Pirahansiah — CV & AI | 172 chars =====
+Dr. Farshid Pirahansiah — CV & AI — notes worth keeping.
+
+Dr. Farshid Pirahansiah — CV & AI.
+
+https://www.pirahansiah.com/notes/docs/cv-overview/
+
+#cv #ai #portfolio #about
+
+===== POST 058 | 3D Vision & Real-Time Multi-Camera Systems | 260 chars =====
+Sharing: 3D Vision & Real-Time Multi-Camera Systems
+
+Real-time 3D point cloud generation, depth sensing, and multi-camera synchronization for computer vision applications.
+
+https://www.pirahansiah.com/notes/docs/cv/3d/
+
+#cv #3dvision #depthsensing #multicamera
+
+===== POST 059 | Computer Vision | 171 chars =====
+Computer Vision.
+Computer vision topics: 3D vision, optical flow, multi-camera systems.
+
+→ https://www.pirahansiah.com/notes/docs/cv/
+
+#cv #3d #opticalflow #ComputerVision
+
+===== POST 060 | Real-Time Multi-Camera Vision Systems | 261 chars =====
+From my CV / AI atlas:
+Real-Time Multi-Camera Vision Systems
+
+Deep technical guide to building real-time multi-camera vision systems with heterogeneous processing and….
+
+https://www.pirahansiah.com/notes/docs/cv/multi-camera/
+
+#cv #multicamera #realtime #edgeai
+
+===== POST 061 | Optical Flow: Challenges and Solutions | 262 chars =====
+Comprehensive guide to optical flow challenges including illumination changes, occlusions, fast motion, and their solutions.
+
+Optical Flow: Challenges and Solutions
+https://www.pirahansiah.com/notes/docs/cv/optical-flow/
+
+#cv #opticalflow #motionanalysis #opencv
+
+===== POST 062 | Developer Tools & Setup Guide | 197 chars =====
+Developer Tools & Setup Guide
+
+Curated developer tools, shell essentials, Docker tips, and GitHub tricks.
+
+https://www.pirahansiah.com/notes/docs/dev-tools/
+
+#devtools #docker #github #productivity
+
+===== POST 063 | Content Hub | 198 chars =====
+Content Hub — notes worth keeping.
+
+Technical articles and tutorials on computer vision, AI, edge deployment, and software engineering.
+
+https://www.pirahansiah.com/notes/docs/
+
+#cv #ai #llm #edgeai
+
+===== POST 064 | Top LinkedIn Posts 2024 | 233 chars =====
+Sharing: Top LinkedIn Posts 2024
+
+Highlights from 2024 LinkedIn posts covering camera calibration, C++, NVIDIA optimization, and robotics.
+
+https://www.pirahansiah.com/notes/docs/linkedin/
+
+#linkedin #cameracalibration #cpp #robotics
+
+===== POST 065 | Curated Links & Resources | 200 chars =====
+Curated Links & Resources.
+Hand-picked tools, tutorials, and references for CV, AI, and software engineering.
+
+→ https://www.pirahansiah.com/notes/docs/links/
+
+#resources #tools #tutorials #references
+
+===== POST 066 | Mind Map: Orchestrating AI Agents | 234 chars =====
+From my CV / AI atlas:
+Mind Map: Orchestrating AI Agents
+
+Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.
+
+https://www.pirahansiah.com/notes/docs/llm/agents/
+
+#ai #llm #agents #multiagent
+
+===== POST 067 | Local Video Avatar Generator with Ollama | 235 chars =====
+Build a fully local video avatar generator using Ollama LLM, Piper TTS, and Wav2Lip without cloud services.
+
+Local Video Avatar Generator with Ollama
+https://www.pirahansiah.com/notes/docs/llm/avatar/
+
+#ai #llm #videogeneration #ollama
+
+===== POST 068 | Blog: AI, LLMs, and Computer Vision | 227 chars =====
+Blog: AI, LLMs, and Computer Vision
+
+Blog posts on RAG vs CAG, multi-agent architectures, AI's impact on jobs, and the future of software development.
+
+https://www.pirahansiah.com/notes/docs/llm/blog/
+
+#ai #llm #rag #multiagent
+
+===== POST 069 | AI & LLMs | 171 chars =====
+AI & LLMs — notes worth keeping.
+
+Articles on LLMs, RAG, multi-agent systems, and local AI integration.
+
+https://www.pirahansiah.com/notes/docs/llm/
+
+#ai #llm #rag #agents
+
+===== POST 070 | Advanced LLM Concepts | 233 chars =====
+Sharing: Advanced LLM Concepts
+
+Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production….
+
+https://www.pirahansiah.com/notes/docs/llm/llm-concepts/
+
+#ai #llm #rag #multimodal
+
+===== POST 071 | CV, DL & ML Optimization Guide | 225 chars =====
+CV, DL & ML Optimization Guide.
+Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines.
+
+→ https://www.pirahansiah.com/notes/docs/optimization/
+
+#optimization #deeplearning #machinelearning #cv
+
+===== POST 072 | Product — Embedded CV & Edge AI | 199 chars =====
+From my CV / AI atlas:
+Product — Embedded CV & Edge AI
+
+Embedded computer vision and edge AI systems portfolio.
+
+https://www.pirahansiah.com/notes/docs/product/
+
+#cv #edgeai #embeddedsystems #product
+
+===== POST 073 | AI Model Cost Calculator | 263 chars =====
+Estimate text and image processing costs for GPT-4, Claude, and Gemini — token-aware cost planning for computer vision and multimodal AI.
+
+AI Model Cost Calculator
+https://www.pirahansiah.com/notes/docs/projects/ai-cost-calculator/
+
+#ai #llm #costcalculator #gpt4
+
+===== POST 074 | Solutions | 203 chars =====
+Solutions
+
+Showcase of industry applications, portfolio projects, and technical skills in computer vision and AI.
+
+https://www.pirahansiah.com/notes/docs/projects/solutions/
+
+#portfolio #cv #ai #projects
+
+===== POST 075 | Prompt Engineering Templates | 232 chars =====
+Prompt Engineering Templates — notes worth keeping.
+
+Reusable prompt templates for text simplification, mind maps, and structured content processing.
+
+https://www.pirahansiah.com/notes/docs/prompts/
+
+#promptengineering #llm #ai #nlp
+
+===== POST 076 | Python Configuration & C++ Integration | 226 chars =====
+Sharing: Python Configuration & C++ Integration
+
+Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.
+
+https://www.pirahansiah.com/notes/docs/python/
+
+#python #cpp #configuration #devtools
+
+===== POST 077 | Research — Publications & Patents | 208 chars =====
+Research — Publications & Patents.
+Complete list of patents, journal articles, conference papers, books, and keynotes.
+
+→ https://www.pirahansiah.com/notes/docs/research/
+
+#research #publications #patents #cv
+
+===== POST 078 | Portfolio & Publications | 220 chars =====
+From my CV / AI atlas:
+Portfolio & Publications
+
+Complete portfolio of patents, publications, books, and project highlights.
+
+https://www.pirahansiah.com/notes/docs/resources/
+
+#portfolio #publications #patents #research
+
+===== POST 079 | SEO for LLM-Powered Search | 206 chars =====
+How to optimize websites for LLM-powered search engines using structured data and AI-friendly content.
+
+SEO for LLM-Powered Search
+https://www.pirahansiah.com/notes/docs/seo/
+
+#seo #llm #ai #weboptimization
+
+===== POST 080 | Shell & Vim Quick Reference | 180 chars =====
+Shell & Vim Quick Reference
+
+Quick reference for shell commands, vim basics, and essential CLI tools.
+
+https://www.pirahansiah.com/notes/docs/shell-vim/
+
+#shell #vim #cli #devtools
+
+===== POST 081 | Solutions — AI Courses & Workshops | 230 chars =====
+Solutions — AI Courses & Workshops — notes worth keeping.
+
+AI 2026 courses, workshops, and business solutions for production-ready products.
+
+https://www.pirahansiah.com/notes/docs/solutions/
+
+#ai #courses #workshops #deeplearning
+
+===== POST 082 | Startup Guide: Edge AI Business | 210 chars =====
+Sharing: Startup Guide: Edge AI Business
+
+Edge AI business plan, fundraising in Germany, pitch decks, and growth strategies.
+
+https://www.pirahansiah.com/notes/docs/startup/
+
+#startup #business #fundraising #ai
+
+===== POST 083 | PKM Methods & Website Structure | 217 chars =====
+PKM Methods & Website Structure.
+Personal knowledge management approaches from top practitioners and site architecture.
+
+→ https://www.pirahansiah.com/notes/pkm/TOC/
+
+#pkm #knowledgemanagement #productivity #Portfolio
+
+===== POST 084 | Curated Links & Resources | 213 chars =====
+From my CV / AI atlas:
+Curated Links & Resources
+
+Collection of AI, CV, ML, and software development tools and tutorials.
+
+https://www.pirahansiah.com/notes/pkm/links/
+
+#curatedlinks #aitools #resources #Portfolio
+
+===== POST 085 | Site Link Index | 183 chars =====
+Complete index of all pages, publications, and resources on pirahansiah.com.
+
+Site Link Index
+https://www.pirahansiah.com/notes/pkm/proof/
+
+#siteindex #links #documentation #Portfolio
+
+===== POST 086 | Complete Portfolio | 192 chars =====
+Complete Portfolio
+
+Publications, patents, expertise, tools, and GitHub projects across CV and AI.
+
+https://www.pirahansiah.com/notes/pkm/use-cases/
+
+#portfolio #computervision #edgeai #github
+
+===== POST 087 | Farshid Pirahansiah's Website | 191 chars =====
+Farshid Pirahansiah's Website — notes worth keeping.
+
+Personal site for CV, AI, and edge computing projects and resources.
+
+https://www.pirahansiah.com/notes/site/README/
+
+#AI #ComputerVision
+
+===== POST 088 | Knowledge Graph — Files & Architecture | 172 chars =====
+Sharing: Knowledge Graph — Files & Architecture
+
+Knowledge Graph — Files & Architecture.
+
+https://www.pirahansiah.com/graph-notes/
+
+#KnowledgeGraph #PKM #AI #ComputerVision
+
+===== POST 089 | Hashtag Graph | 114 chars =====
+Hashtag Graph.
+Hashtag Graph.
+
+→ https://www.pirahansiah.com/graph-tags/
+
+#KnowledgeGraph #PKM #AI #ComputerVision
+
+===== POST 090 | Knowledge Graph | 134 chars =====
+From my CV / AI atlas:
+Knowledge Graph
+
+Knowledge Graph.
+
+https://www.pirahansiah.com/graph/
+
+#KnowledgeGraph #PKM #AI #ComputerVision
+
+===== POST 091 | Search | 72 chars =====
+Search.
+
+Search
+https://www.pirahansiah.com/search/
+
+#AI #ComputerVision
+
+===== POST 092 | Terms of Service | 92 chars =====
+Terms of Service
+
+Terms of Service.
+
+https://www.pirahansiah.com/terms/
+
+#AI #ComputerVision
+
+===== POST 093 | View | 90 chars =====
+View — notes worth keeping.
+
+View.
+
+https://www.pirahansiah.com/view/
+
+#AI #ComputerVision
+
+===== POST 094 | Reducing Token Usage in AI-Assisted Development | 205 chars =====
+Sharing: Reducing Token Usage in AI-Assisted Development
+
+Reducing Token Usage in AI-Assisted Development.
+
+https://www.pirahansiah.com/notes/slides/presentation/
+
+#presentation #ai #llm #tokenoptimization
+
+===== POST 095 | test mindmap | 107 chars =====
+test mindmap.
+test mindmap.
+
+→ https://www.pirahansiah.com/notes/tools/image-in-md/
+
+#DevTools #Engineering
+
