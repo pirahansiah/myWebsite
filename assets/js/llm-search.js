@@ -101,6 +101,7 @@
   var modPromise = null;   // in-flight import
   var generator = null;
   var genPromise = null;   // in-flight pipeline load
+  var genModelId = null;   // model belonging to generator/genPromise
   var device = null;       // "webgpu" | "wasm"
   var dtype = null;
   var stopper = null;      // InterruptableStoppingCriteria, when available
@@ -124,10 +125,19 @@
   }
 
   function disposeGenerator() {
+    // Never clear an in-flight promise: Ask, Chat, and Load model must all
+    // share it. Wait for it, then dispose exactly once.
+    if (genPromise) {
+      var pending = genPromise;
+      return pending.catch(function () {}).then(function () {
+        if (genPromise === pending) genPromise = null;
+        return disposeGenerator();
+      });
+    }
     try {
       if (generator && generator.model && typeof generator.model.dispose === "function") generator.model.dispose();
     } catch (e) { console.warn("Cleanup warning:", e); }
-    generator = null; genPromise = null; device = null; dtype = null;
+    generator = null; genModelId = null; device = null; dtype = null;
     return Promise.resolve();
   }
 
@@ -135,22 +145,31 @@
 
   // Returns the shared generator. Concurrent callers share one download.
   function ensureGenerator(onStatus, onProgress) {
-    if (generator) {
+    var modelId = selectedModelId();
+    if (generator && genModelId === modelId) {
       onStatus && onStatus("Reusing already-loaded " + deviceLabel() + " model.");
       return Promise.resolve(generator);
     }
     if (genPromise) {
-      onStatus && onStatus("Model is already loading…");
-      return genPromise;                                // <- was starting a 2nd download
+      if (genModelId === modelId) {
+        onStatus && onStatus("Model is already loading…");
+        return genPromise;                              // <- was starting a 2nd download
+      }
+      // A different model was picked while another download was in flight:
+      // wait for it to settle, dispose it, then load the new one. Never let
+      // two downloads run concurrently.
+      onStatus && onStatus("Model changed — finishing the current load, then switching…");
+      return disposeGenerator().then(function () {
+        return ensureGenerator(onStatus, onProgress);
+      });
     }
     if (!window.isSecureContext) {
       return Promise.reject(new Error("This requires a secure context (https:// or localhost)."));
     }
 
-    var modelId = selectedModelId();
     var shortName = modelId.split("/").pop() || "model";
 
-    genPromise = loadModule().then(function () {
+    var flight = loadModule().then(function () {
       function tryLoad(dev, dt) {
         onStatus && onStatus("Downloading " + shortName + " (" + dev.toUpperCase() + ", " + dt + ")…");
         return mod.pipeline("text-generation", modelId, {
@@ -173,31 +192,47 @@
         });
       }
 
-      // int8 exists for all four models; q8 does not, and q4 is WebGPU-only in v3.
-      function loadWasm() {
-        var dt = "int8";
-        return tryLoad("wasm", dt).catch(function (e) {
-          console.warn("WASM int8 failed, retrying fp32:", e);
-          dt = "fp32";
-          return tryLoad("wasm", dt);
-        }).then(function (g) { generator = g; device = "wasm"; dtype = dt; return g; });
+      // transformers.js caches fully-downloaded files in Cache Storage, so a
+      // retry after a transient network failure (e.g. Cloudflare 521 "origin
+      // down") re-fetches only the file that failed — the rest comes from cache.
+      function tryLoadWithRetry(dev, dt, attemptsLeft) {
+        attemptsLeft = attemptsLeft == null ? 2 : attemptsLeft;
+        return tryLoad(dev, dt).catch(function (e) {
+          if (attemptsLeft <= 0) throw e;
+          console.warn(dev + "/" + dt + " load failed (" + ((e && e.message) || e) + ") — " + attemptsLeft + " retry(ies) left.");
+          onStatus && onStatus("Network hiccup while downloading — retrying… (" + attemptsLeft + " left)");
+          onProgress && onProgress(0);
+          return new Promise(function (res) { setTimeout(res, 2500); }).then(function () {
+            return tryLoadWithRetry(dev, dt, attemptsLeft - 1);
+          });
+        });
       }
 
-      // Decide the WebGPU dtype from adapter features BEFORE downloading, so a
-      // single device never downloads two model files.
+      // int8 exists for all four models; q8 does not, and q4 is WebGPU-only in v3.
+      // Do not fall back to fp32: that downloads a second variant and caused
+      // the 3–6 GB memory spikes on embedded devices.
+      function loadWasm() {
+        var dt = "int8";
+        return tryLoadWithRetry("wasm", dt).then(function (g) {
+          generator = g; genModelId = modelId; device = "wasm"; dtype = dt; return g;
+        });
+      }
+
+      // Decide the WebGPU dtype from adapter features BEFORE downloading. Old
+      // WebGPU implementations without shader-f16 use WASM instead of trying
+      // q4 and then downloading a second variant after a runtime failure.
       function loadWebgpu() {
         return navigator.gpu.requestAdapter().then(function (adapter) {
           if (!adapter) return null;
           var f16 = !!(adapter.features && adapter.features.has && adapter.features.has("shader-f16"));
-          var dt = f16 ? "q4f16" : "q4";
-          onStatus && onStatus("WebGPU " + dt + " (fp16 " + (f16 ? "supported" : "unsupported") + ")…");
-          return tryLoad("webgpu", dt).then(function (g) { generator = g; device = "webgpu"; dtype = dt; return g; });
-        }).catch(function (e) {
-          console.warn("WebGPU failed entirely, falling back to WASM:", e);
-          return disposeGenerator().then(function () {
-            onStatus && onStatus("WebGPU runtime failed — retrying on WASM (slower)…");
-            onProgress && onProgress(0);
-            return loadWasm();
+          if (!f16) {
+            onStatus && onStatus("Older WebGPU detected — using WASM int8 (one model download)…");
+            return null;
+          }
+          var dt = "q4f16";
+          onStatus && onStatus("WebGPU " + dt + " (one model download)…");
+          return tryLoadWithRetry("webgpu", dt).then(function (g) {
+            generator = g; genModelId = modelId; device = "webgpu"; dtype = dt; return g;
           });
         });
       }
@@ -213,12 +248,16 @@
       }
       onStatus && onStatus("WebGPU unavailable — using WASM (slower)…");
       return loadWasm();
-    }).catch(function (e) {
-      genPromise = null;   // allow a retry after failure
+    }).then(function (g) {
+      if (genPromise === flight) genPromise = null;
+      return g;
+    }, function (e) {
+      if (genPromise === flight) genPromise = null;
       throw e;
     });
-
-    return genPromise;
+    genPromise = flight;
+    genModelId = modelId;
+    return flight;
   }
 
   // One generation at a time — transformers.js sessions are not re-entrant.
@@ -479,7 +518,7 @@
         }
       }
     }
-    var list = Array.prototype.slice.call(relPages.values()).slice(0, 8).map(function (p) {
+    var list = Array.from(relPages.values()).slice(0, 8).map(function (p) {
       return {
         label: p.label, url: p.url,
         rel: p.kinds.map(function (k) { return REL_LABEL[k] || k; }).join(", ")
@@ -487,8 +526,8 @@
     });
     return {
       pages: list,
-      tags: Array.prototype.slice.call(tags.keys()).slice(0, 8),
-      files: Array.prototype.slice.call(files.values()).slice(0, 6)
+      tags: Array.from(tags.keys()).slice(0, 8),
+      files: Array.from(files.values()).slice(0, 6)
     };
   }
 
@@ -555,7 +594,7 @@
         if (tf > (cur.bestTf || 0)) { cur.bestTf = tf; cur.chunk = ch; }
         perPage.set(ch.file, cur);
       }
-      var ranked = Array.prototype.slice.call(perPage.entries())
+      var ranked = Array.from(perPage.entries())
         .map(function (e) { return { url: e[0], score: e[1].score, chunk: e[1].chunk }; })
         .sort(function (a, b) { return b.score - a.score; })
         .slice(0, 3);
@@ -687,7 +726,7 @@
       e.score += r.score; e.chunks.push(r);
       perPage.set(url, e);
     });
-    var ranked = Array.prototype.slice.call(perPage.entries()).map(function (e) {
+    var ranked = Array.from(perPage.entries()).map(function (e) {
       var meta = pageMeta(e[0]);
       return {
         url: e[0], score: e[1].score, n: e[1].chunks.length, best: e[1].chunks[0],
@@ -716,7 +755,7 @@
       if (!byCat.has(pg.cat)) byCat.set(pg.cat, []);
       byCat.get(pg.cat).push(pg);
     });
-    Array.prototype.slice.call(byCat.keys())
+    Array.from(byCat.keys())
       .sort(function (a, b) { return categoryRank(a) - categoryRank(b); })
       .forEach(function (cat) {
         var group = byCat.get(cat);
@@ -824,7 +863,7 @@
       });
     });
 
-    var nodes = Array.prototype.slice.call(keep.values()).map(function (n) {
+    var nodes = Array.from(keep.values()).map(function (n) {
       return { id: n.id, label: n.label, url: n.url, kind: n.kind };
     });
     var idSet = new Set(nodes.map(function (n) { return n.id; }));
@@ -1169,7 +1208,7 @@
     var topPages = uniquePages(top);
     var perPage = new Map();
     top.forEach(function (r) { perPage.set(r.chunk.file, (perPage.get(r.chunk.file) || 0) + r.score); });
-    var ranked = Array.prototype.slice.call(perPage.entries()).map(function (e) {
+    var ranked = Array.from(perPage.entries()).map(function (e) {
       var meta = pageMeta(e[0]);
       return { url: e[0], score: e[1], cat: (meta && meta.category) || "hub" };
     }).sort(function (a, b) { return b.score - a.score; });

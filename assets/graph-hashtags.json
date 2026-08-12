@@ -376,6 +376,11 @@
       "kind": "tag"
     },
     {
+      "id": "tag-papers",
+      "label": "#papers",
+      "kind": "tag"
+    },
+    {
       "id": "tag-objectdetection",
       "label": "#objectdetection",
       "kind": "tag"
@@ -2919,8 +2924,33 @@
     },
     {
       "source": "notes-pubs-papers-conference-paper",
+      "target": "tag-papers",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "tag-computervision",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
       "target": "tag-imageprocessing",
       "kind": "tag"
+    },
+    {
+      "source": "tag-papers",
+      "target": "tag-computervision",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-papers",
+      "target": "tag-imageprocessing",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-computervision",
+      "target": "tag-imageprocessing",
+      "kind": "cooccur"
     },
     {
       "source": "notes-pubs-papers-2d-3d-mapping",

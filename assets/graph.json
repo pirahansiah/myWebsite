@@ -1828,18 +1828,11 @@
       "kind": "asset"
     },
     {
-      "id": "",
-      "label": "/",
-      "url": "//",
-      "raw": "//",
-      "kind": "note"
-    },
-    {
-      "id": "notes-pubs-papers-png",
-      "label": ".png",
-      "url": "/notes/pubs/papers/.png",
-      "raw": "/notes/pubs/papers/.png",
-      "kind": "note"
+      "id": "tag-papers",
+      "label": "#papers",
+      "url": "/notes/pubs/papers/conference-paper",
+      "raw": "/notes/pubs/papers/conference-paper",
+      "kind": "tag"
     },
     {
       "id": "tag-objectdetection",
@@ -4619,17 +4612,67 @@
     },
     {
       "source": "notes-pubs-papers-conference-paper",
+      "target": "tag-papers",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "tag-computervision",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
       "target": "tag-imageprocessing",
       "kind": "tag"
     },
     {
       "source": "notes-pubs-papers-conference-paper",
-      "target": "",
+      "target": "notes-pubs-papers-adaptive-segmentation",
       "kind": "mdlink"
     },
     {
       "source": "notes-pubs-papers-conference-paper",
-      "target": "notes-pubs-papers-png",
+      "target": "notes-pubs-papers-license-plate",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "notes-pubs-papers-multi-threshold-plate",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "notes-pubs-papers-handwritten-thresholding",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "notes-pubs-papers-multimodal-calibration",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "notes-pubs-papers-pattern-calibration",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "notes-pubs-papers-2d-3d-mapping",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "notes-pubs-papers-global-feature-recognition",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "notes-pubs-papers-geometrical-topological",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-pubs-papers-conference-paper",
+      "target": "notes-pubs-papers-grid-computing",
       "kind": "mdlink"
     },
     {
