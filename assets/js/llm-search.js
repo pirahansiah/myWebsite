@@ -1137,6 +1137,13 @@
     return cjk.length / (cjk.length + latin.length);
   }
 
+  // Hard guarantee: remove CJK characters from any text the model (or the
+  // extractive fallback) produced, so the Topic review / chat can never show
+  // Chinese, Japanese, or Korean even if the model ignored the prompt.
+  function stripCjk(s) {
+    return String(s == null ? "" : s).replace(/[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff00-\uffef\u3040-\u30ff\uac00-\ud7af]+/g, "");
+  }
+
   function buildContext(top, tokenizer, windowTokens, maxNewTokens, overheadTokens) {
     var budgetTokens = null;
     if (windowTokens) {
@@ -1152,7 +1159,11 @@
       if (seen[r.chunk.file]) continue;     // one chunk per page
       seen[r.chunk.file] = 1;
       var meta = pageMeta(r.chunk.file);
-      var header = "### Source: " + ((meta && meta.title) || r.chunk.file) + " (" + r.chunk.file + ")\n";
+      // A non-English page TITLE would be shown to the model and echoed back —
+      // fall back to the (ASCII) file path for CJK-heavy titles.
+      var title = (meta && meta.title) || r.chunk.file;
+      if (cjkRatio(title) > 0.4) title = r.chunk.file;
+      var header = "### Source: " + title + " (" + r.chunk.file + ")\n";
       var block = header + r.chunk.text;
       var blockTokens = estimateTokens(block, tokenizer);
       if (budgetTokens != null) {
@@ -1260,7 +1271,7 @@
   }
 
   function applyExtractiveToReview(top, question, writer) {
-    var text = extractiveAnswer(top, question);
+    var text = stripCjk(extractiveAnswer(top, question));   // excerpts may be non-English
     if (writer && writer.reset) writer.reset();
     if (writer && writer.write) { writer.write(text); writer.finish(); }
     else if (ui && ui.review) ui.review.textContent = text;
@@ -1286,7 +1297,7 @@
         try {
           streamer = new mod.TextStreamer(gen.tokenizer, {
             skip_prompt: true,
-            callback_function: function (t) { writer.write(t); }
+            callback_function: function (t) { writer.write(stripCjk(t)); }
           });
         } catch (e) {
           streamer = null;
@@ -1324,7 +1335,7 @@
           // text2text without streamer: write the full result once
           if (streamer == null) {
             var full = textFromResult(result);
-            if (full) writer.write(full);
+            if (full) writer.write(stripCjk(full));
           }
           writer.finish();
           return result;
@@ -1349,7 +1360,7 @@
 
   function parseStructured(text) {
     var out = { review: "", keypoints: [], xpost: "", idea: "" };
-    text = String(text || "");
+    text = stripCjk(text);   // English-only: never show CJK, whatever the model wrote
     var review = /REVIEW\s*:\s*([\s\S]*?)(?=KEY\s*POINTS|X\s*POST|IDEA|$)/i.exec(text);
     if (review) out.review = review[1].trim();
     var kp = /KEY\s*POINTS?\s*:\s*([\s\S]*?)(?=X\s*POST|IDEA|$)/i.exec(text);
@@ -1561,7 +1572,7 @@
     function finishStructured(raw) {
       if (!ui.review) return;
       var parsed = parseStructured(raw);
-      ui.review.textContent = (parsed.review && cleanStructuredText(parsed.review)) || cleanStructuredText(raw) || raw;
+      ui.review.textContent = (parsed.review && cleanStructuredText(parsed.review)) || cleanStructuredText(raw) || stripCjk(raw) || "";
       if (ui.keypoints && parsed.keypoints.length) {
         ui.keypoints.innerHTML = parsed.keypoints.slice(0, 3).map(function (k) {
           return '<div class="llm-kp"><span class="llm-kp-num">&#10003;</span><span>' + esc(k) + '</span></div>';
@@ -1575,7 +1586,7 @@
 
     runAnswer(top.slice(0, 8), q, writer).then(function (result) {
       if (!ui.review) return;
-      if (!ui.review.textContent.trim()) ui.review.textContent = textFromResult(result);
+      if (!ui.review.textContent.trim()) ui.review.textContent = stripCjk(textFromResult(result));
       finishStructured(ui.review.textContent);
     }).catch(function (e) {
       console.error(e);
@@ -1653,7 +1664,7 @@
           try {
             streamer = new mod.TextStreamer(gen.tokenizer, {
               skip_prompt: true,
-              callback_function: function (t) { writer.write(t); if (ui.chatLog) ui.chatLog.scrollTop = ui.chatLog.scrollHeight; }
+              callback_function: function (t) { writer.write(stripCjk(t)); if (ui.chatLog) ui.chatLog.scrollTop = ui.chatLog.scrollHeight; }
             });
           } catch (e) { streamer = null; }
           var sysChat = "You are a helpful research assistant for the pirahansiah.com knowledge site. Answer using the document excerpts below when relevant. Always mention which source page(s) you used, like (source: /notes/.../). If the excerpts don't contain enough info, say so plainly. Always answer in English only — never in Chinese or any other language.";
@@ -1700,7 +1711,7 @@
           return gen(input, opts).then(function (r) {
             if (streamer == null) {
               var full = textFromResult(r);
-              if (full) writer.write(full);
+              if (full) writer.write(stripCjk(full));
             }
             writer.finish();
             return r;
@@ -1708,7 +1719,7 @@
         });
       })
       .then(function (result) {
-        if (bubble && !bubble.textContent.trim()) bubble.textContent = textFromResult(result);
+        if (bubble && !bubble.textContent.trim()) bubble.textContent = stripCjk(textFromResult(result));
         if (bubble && bubble.parentNode) {
           var src = document.createElement("div");
           src.className = "chat-sources";
