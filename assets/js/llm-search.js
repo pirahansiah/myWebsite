@@ -33,19 +33,37 @@
   var GRAPH_URL = "/assets/graph.json";
 
   var MODEL_OPTIONS = [
-    { id: "Xenova/LaMini-GPT-124M", label: "Micro — 0.1B" },
+    { id: "Xenova/LaMini-GPT-124M", label: "Micro — 0.1B (recommended mobile)" },
     { id: "Xenova/Qwen1.5-0.5B-Chat", label: "Tiny — 0.5B" },
-    { id: "onnx-community/Qwen2.5-1.5B-Instruct", label: "Medium — 1.5B" },
-    { id: "onnx-community/Llama-3.2-3B-Instruct", label: "Large — 3B" }
+    { id: "onnx-community/Qwen2.5-1.5B-Instruct", label: "Medium — 1.5B (desktop)" },
+    { id: "onnx-community/Llama-3.2-3B-Instruct", label: "Large — 3B (desktop only)" }
   ];
   var MODEL_KEY = "llm-model-id";
 
-  var CHUNK_MAX = 700;      // chars per retrieval chunk
+  // ---- Embedded / mobile / low-memory profile ----
+  var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+              (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(navigator.userAgent);
+  var isMobile = isIOS || isAndroid || /Mobile|Tablet/i.test(navigator.userAgent);
+  var isSafari = /Safari\//.test(navigator.userAgent) && !/Chrome|Chromium|Firefox|Edg/.test(navigator.userAgent);
+  var isWebKit = isSafari || isIOS;
+  // NOTE: desktop Safari is deliberately NOT low-mem — it is a known-working
+  // WASM path; only iOS/Android/unknown-RAM small desktops get the tight
+  // profile.
+  var approxGB = navigator.deviceMemory || (isIOS ? 6 : 0);   // 0 = unknown
+  var isLowMem = isMobile || (approxGB > 0 && approxGB <= 6);
+
+  // On embedded / mobile default to the tiniest usable model
+  if (isLowMem && !storageGet(MODEL_KEY)) {
+    storageSet(MODEL_KEY, MODEL_OPTIONS[0].id); // Micro 0.1B
+  }
+
+  var CHUNK_MAX = isLowMem ? 450 : 700;   // chars per retrieval chunk
   var BM25_K1 = 1.5;
   var BM25_B = 0.75;
   var FIELD_BOOST = 2;      // extra tf credit for terms in title/heading/tags
-  var MAX_NEW_TOKENS = 540;      // answer budget for models with big windows
-  var TINY_WINDOW = 2048;        // models below this window get a short prompt + shorter answers
+  var MAX_NEW_TOKENS = isLowMem ? 192 : 540;   // answer budget for models with big windows
+  var TINY_WINDOW = isLowMem ? 1024 : 2048;    // below this window: short prompt + shorter answers
   var GRAPH_HEIGHT = 240;
 
   /* ---------------------------- tiny helpers ----------------------------- */
@@ -165,6 +183,27 @@
   var dtype = null;
   var stopper = null;      // InterruptableStoppingCriteria, when available
 
+  // Configure the ONNX runtime for this device BEFORE any pipeline call:
+  // multi-threaded WASM is a common crash/hang source on Safari/iOS (no
+  // cross-origin isolation -> no SharedArrayBuffer), and threads add little
+  // on embedded devices. Called once right after the module loads.
+  function configureOnnxForDevice(m) {
+    try {
+      if (!m || !m.env || !m.env.backends || !m.env.backends.onnx) return;
+      if (isWebKit || isLowMem) {
+        m.env.backends.onnx.wasm.numThreads = 1;
+      } else {
+        m.env.backends.onnx.wasm.numThreads = Math.min(
+          4, Math.max(1, (navigator.hardwareConcurrency || 4) >> 1)
+        );
+      }
+      if (isLowMem) m.env.backends.onnx.wasm.proxy = false;
+      console.log("ONNX backend: numThreads=" + m.env.backends.onnx.wasm.numThreads);
+    } catch (e) {
+      console.warn("ONNX env config skipped:", e);
+    }
+  }
+
   function loadModule() {
     if (mod) return Promise.resolve(mod);
     if (modPromise) return modPromise;                 // <- was re-importing on every call
@@ -173,6 +212,7 @@
       return import(urls[0]).then(function (m) {
         if (!m || !m.pipeline) throw new Error("Transformers.js loaded, but pipeline() is unavailable.");
         mod = m;
+        configureOnnxForDevice(m);
         return m;
       }).catch(function (e) {
         console.warn("CDN load failed (" + urls[0] + "), trying next:", e && e.message);
@@ -337,19 +377,22 @@
       // build, so it stays on WASM. iOS Safari/Chrome (iPhone 14 Pro Max et
       // al.) is memory-tight — the q4f16 GPU session needs far less system
       // RAM than the WASM int8 heap — so iOS gets the WebGPU attempt, with
-      // the WASM fallback below catching any failure.
-      var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
-      var isSafari = /Safari\//.test(navigator.userAgent) && !/Chrome|Chromium|Firefox/.test(navigator.userAgent);
-      // If a previous load had to fall back to WASM (e.g. Chrome with a
-      // broken WebGPU runtime), skip the WebGPU attempt entirely.
-      if (navigator.gpu && !(isSafari && !isIOS) && storageGet("llm-device-v2") !== "wasm") {
+      // the WASM fallback below catching any failure. Older low-mem devices
+      // without WebGPU obviously go straight to WASM.
+      var preferWasm = isLowMem && !navigator.gpu;
+      var skipWebgpu = (isSafari && !isIOS) ||          // desktop Safari
+                       storageGet("llm-device-v2") === "wasm" ||
+                       preferWasm;
+      if (navigator.gpu && !skipWebgpu) {
         return loadWebgpu().then(function (g) {
           if (g) return g;
           onStatus && onStatus("WebGPU unavailable — using WASM (slower)…");
           return loadWasm();
         });
       }
-      onStatus && onStatus("WebGPU unavailable — using WASM (slower)…");
+      onStatus && onStatus(isLowMem
+        ? "Mobile / low-memory profile — using WASM int8…"
+        : "WebGPU unavailable — using WASM (slower)…");
       return loadWasm();
     }).then(function (g) {
       if (genPromise === flight) genPromise = null;
@@ -1147,7 +1190,9 @@
         var win = modelWindowTokens(gen);
         var tiny = win != null && win < TINY_WINDOW;
         var sysPrompt = tiny ? SYSTEM_TINY : SYSTEM_ANSWER;
-        var maxNew = tiny ? 320 : MAX_NEW_TOKENS;
+        // Low-memory devices get a tight answer budget: 160 tokens for the
+        // 0.1B Micro model, 192 for anything bigger.
+        var maxNew = tiny ? (isLowMem ? 160 : 320) : MAX_NEW_TOKENS;
         var overhead = estimateTokens(sysPrompt, gen.tokenizer) + estimateTokens(question, gen.tokenizer) + 40;
         var context = buildContext(top, gen.tokenizer, win, maxNew, overhead);
         var messages = [
@@ -1477,7 +1522,7 @@
           var sysChat = "You are a helpful research assistant for the pirahansiah.com knowledge site. Answer using the document excerpts below when relevant. Always mention which source page(s) you used, like (source: /notes/.../). If the excerpts don't contain enough info, say so plainly.";
           var win = modelWindowTokens(gen);
           var tiny = win != null && win < TINY_WINDOW;
-          var maxNew = tiny ? 200 : 260;
+          var maxNew = tiny ? (isLowMem ? 120 : 200) : (isLowMem ? 150 : 260);
           // Keep only as much conversation history as fits the window
           // (LaMini's 1024-token window would overflow with 6 long messages).
           var histBudget = tiny ? 200 : 1200;
@@ -1556,6 +1601,16 @@
 
     if (ui.modelSelect) {
       ui.modelSelect.value = selectedModelId();
+      // Embedded / mobile: the 1.5B and 3B models will not fit — disable them.
+      if (isLowMem) {
+        for (var mi = 0; mi < ui.modelSelect.options.length; mi++) {
+          var mOpt = ui.modelSelect.options[mi];
+          if (mOpt.value.indexOf("1.5B") >= 0 || mOpt.value.indexOf("3B") >= 0) {
+            mOpt.disabled = true;
+            mOpt.textContent = (mOpt.textContent || mOpt.value) + " (desktop only)";
+          }
+        }
+      }
       on(ui.modelSelect, "change", function () {
         storageSet(MODEL_KEY, ui.modelSelect.value);
         disposeGenerator().then(function () {
