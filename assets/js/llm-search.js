@@ -288,7 +288,7 @@
       function loadWasm() {
         var dt = "int8";
         return tryLoadWithRetry("wasm", dt).then(function (g) {
-          storageSet("llm-device", "wasm");
+          storageSet("llm-device-v2", "wasm");
           generator = g; genModelId = modelId; device = "wasm"; dtype = dt; return g;
         });
       }
@@ -310,17 +310,18 @@
           // or hang during session build — cap the attempt, then fall back to
           // WASM (which Safari already uses successfully).
           return withTimeout(tryLoadWithRetry("webgpu", dt), 60000, "WebGPU").then(function (g) {
-            storageSet("llm-device", "webgpu");
+            storageSet("llm-device-v2", "webgpu");
             generator = g; genModelId = modelId; device = "webgpu"; dtype = dt; return g;
           }, function (e) {
-            // Out-of-memory: retrying the SAME model on WASM would just OOM
-            // again (and re-download a second variant) — let the top-level
-            // handler downgrade to the Micro model instead.
-            if (isOomError(e)) throw e;
+            // Fall back to WASM for ANY WebGPU failure — including OOM:
+            // GPU and CPU memory budgets differ (an iPhone can fail the
+            // 500MB WASM heap yet fit the q4f16 GPU session, or vice versa).
+            // If the WASM attempt also OOMs, the top-level handler downgrades
+            // to the Micro model.
             console.warn("WebGPU load failed, falling back to WASM:", e);
             onStatus && onStatus("WebGPU failed (" + friendlyError(e) + ") — using WASM int8…");
             onProgress && onProgress(0);
-            storageSet("llm-device", "wasm");
+            storageSet("llm-device-v2", "wasm");
             return disposeGenerator(true).then(loadWasm);
           });
         }, function (e) {
@@ -332,11 +333,16 @@
         });
       }
 
-      // Safari's WebGPU path crashes transformers.js during session build.
+      // Desktop Safari's WebGPU path crashes transformers.js during session
+      // build, so it stays on WASM. iOS Safari/Chrome (iPhone 14 Pro Max et
+      // al.) is memory-tight — the q4f16 GPU session needs far less system
+      // RAM than the WASM int8 heap — so iOS gets the WebGPU attempt, with
+      // the WASM fallback below catching any failure.
+      var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
       var isSafari = /Safari\//.test(navigator.userAgent) && !/Chrome|Chromium|Firefox/.test(navigator.userAgent);
       // If a previous load had to fall back to WASM (e.g. Chrome with a
       // broken WebGPU runtime), skip the WebGPU attempt entirely.
-      if (navigator.gpu && !isSafari && storageGet("llm-device") !== "wasm") {
+      if (navigator.gpu && !(isSafari && !isIOS) && storageGet("llm-device-v2") !== "wasm") {
         return loadWebgpu().then(function (g) {
           if (g) return g;
           onStatus && onStatus("WebGPU unavailable — using WASM (slower)…");
@@ -358,7 +364,7 @@
         onStatus && onStatus("Not enough memory for " + shortName + " — retrying with Micro (0.1B)…");
         onProgress && onProgress(0);
         storageSet(MODEL_KEY, MODEL_OPTIONS[0].id);
-        storageSet("llm-device", "wasm");   // the retry must skip WebGPU
+        storageSet("llm-device-v2", "wasm");   // the retry must skip WebGPU
         if (ui && ui.modelSelect) ui.modelSelect.value = MODEL_OPTIONS[0].id;
         return ensureGenerator(onStatus, onProgress);
       }
