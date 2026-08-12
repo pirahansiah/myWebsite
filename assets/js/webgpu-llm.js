@@ -101,6 +101,7 @@
   var modPromise = null;   // in-flight import
   var generator = null;
   var genPromise = null;   // in-flight pipeline load
+  var genModelId = null;   // model belonging to generator/genPromise
   var device = null;       // "webgpu" | "wasm"
   var dtype = null;
   var stopper = null;      // InterruptableStoppingCriteria, when available
@@ -124,10 +125,19 @@
   }
 
   function disposeGenerator() {
+    // Never clear an in-flight promise: Ask, Chat, and Load model must all
+    // share it. Wait for it, then dispose exactly once.
+    if (genPromise) {
+      var pending = genPromise;
+      return pending.catch(function () {}).then(function () {
+        if (genPromise === pending) genPromise = null;
+        return disposeGenerator();
+      });
+    }
     try {
       if (generator && generator.model && typeof generator.model.dispose === "function") generator.model.dispose();
     } catch (e) { console.warn("Cleanup warning:", e); }
-    generator = null; genPromise = null; device = null; dtype = null;
+    generator = null; genModelId = null; device = null; dtype = null;
     return Promise.resolve();
   }
 
@@ -135,7 +145,8 @@
 
   // Returns the shared generator. Concurrent callers share one download.
   function ensureGenerator(onStatus, onProgress) {
-    if (generator) {
+    var modelId = selectedModelId();
+    if (generator && genModelId === modelId) {
       onStatus && onStatus("Reusing already-loaded " + deviceLabel() + " model.");
       return Promise.resolve(generator);
     }
@@ -147,10 +158,9 @@
       return Promise.reject(new Error("This requires a secure context (https:// or localhost)."));
     }
 
-    var modelId = selectedModelId();
     var shortName = modelId.split("/").pop() || "model";
 
-    genPromise = loadModule().then(function () {
+    var flight = loadModule().then(function () {
       function tryLoad(dev, dt) {
         onStatus && onStatus("Downloading " + shortName + " (" + dev.toUpperCase() + ", " + dt + ")…");
         return mod.pipeline("text-generation", modelId, {
@@ -174,30 +184,30 @@
       }
 
       // int8 exists for all four models; q8 does not, and q4 is WebGPU-only in v3.
+      // Do not fall back to fp32: that downloads a second variant and caused
+      // the 3–6 GB memory spikes on embedded devices.
       function loadWasm() {
         var dt = "int8";
-        return tryLoad("wasm", dt).catch(function (e) {
-          console.warn("WASM int8 failed, retrying fp32:", e);
-          dt = "fp32";
-          return tryLoad("wasm", dt);
-        }).then(function (g) { generator = g; device = "wasm"; dtype = dt; return g; });
+        return tryLoad("wasm", dt).then(function (g) {
+          generator = g; genModelId = modelId; device = "wasm"; dtype = dt; return g;
+        });
       }
 
-      // Decide the WebGPU dtype from adapter features BEFORE downloading, so a
-      // single device never downloads two model files.
+      // Decide the WebGPU dtype from adapter features BEFORE downloading. Old
+      // WebGPU implementations without shader-f16 use WASM instead of trying
+      // q4 and then downloading a second variant after a runtime failure.
       function loadWebgpu() {
         return navigator.gpu.requestAdapter().then(function (adapter) {
           if (!adapter) return null;
           var f16 = !!(adapter.features && adapter.features.has && adapter.features.has("shader-f16"));
-          var dt = f16 ? "q4f16" : "q4";
-          onStatus && onStatus("WebGPU " + dt + " (fp16 " + (f16 ? "supported" : "unsupported") + ")…");
-          return tryLoad("webgpu", dt).then(function (g) { generator = g; device = "webgpu"; dtype = dt; return g; });
-        }).catch(function (e) {
-          console.warn("WebGPU failed entirely, falling back to WASM:", e);
-          return disposeGenerator().then(function () {
-            onStatus && onStatus("WebGPU runtime failed — retrying on WASM (slower)…");
-            onProgress && onProgress(0);
-            return loadWasm();
+          if (!f16) {
+            onStatus && onStatus("Older WebGPU detected — using WASM int8 (one model download)…");
+            return null;
+          }
+          var dt = "q4f16";
+          onStatus && onStatus("WebGPU " + dt + " (one model download)…");
+          return tryLoad("webgpu", dt).then(function (g) {
+            generator = g; genModelId = modelId; device = "webgpu"; dtype = dt; return g;
           });
         });
       }
@@ -213,12 +223,16 @@
       }
       onStatus && onStatus("WebGPU unavailable — using WASM (slower)…");
       return loadWasm();
-    }).catch(function (e) {
-      genPromise = null;   // allow a retry after failure
+    }).then(function (g) {
+      if (genPromise === flight) genPromise = null;
+      return g;
+    }, function (e) {
+      if (genPromise === flight) genPromise = null;
       throw e;
     });
-
-    return genPromise;
+    genPromise = flight;
+    genModelId = modelId;
+    return flight;
   }
 
   // One generation at a time — transformers.js sessions are not re-entrant.
