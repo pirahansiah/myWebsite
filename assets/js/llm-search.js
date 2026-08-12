@@ -67,12 +67,23 @@
 
   function on(el, ev, fn, opts) { if (el) el.addEventListener(ev, fn, opts); }
 
-  // onnxruntime-web surfaces some internal failures as bare numeric codes
-  // (e.g. "521247920" from the WebGPU backend) — make them comprehensible.
+  // onnxruntime-web surfaces some internal failures as bare numeric codes —
+  // per upstream transformers.js issue #688 those are OUT-OF-MEMORY errors
+  // (the number is the failed allocation size in bytes). Make them
+  // comprehensible instead of showing a raw number.
+  function isOomError(e) {
+    var m = String((e && e.message) || e || "");
+    if (/^\d+$/.test(m)) return true;
+    return /out of memory|array buffer allocation failed|allocation failed|not enough memory/i.test(m);
+  }
+
   function friendlyError(e) {
     var m = (e && e.message) || e || "";
     m = String(m);
-    return /^\d+$/.test(m) ? "onnxruntime error (code " + m + ")" : m;
+    if (/^\d+$/.test(m)) {
+      return "ran out of memory while allocating ~" + Math.round(Number(m) / 1048576) + " MB (onnxruntime code " + m + ")";
+    }
+    return m;
   }
 
   function debounce(fn, ms) {
@@ -302,13 +313,20 @@
             storageSet("llm-device", "webgpu");
             generator = g; genModelId = modelId; device = "webgpu"; dtype = dt; return g;
           }, function (e) {
+            // Out-of-memory: retrying the SAME model on WASM would just OOM
+            // again (and re-download a second variant) — let the top-level
+            // handler downgrade to the Micro model instead.
+            if (isOomError(e)) throw e;
             console.warn("WebGPU load failed, falling back to WASM:", e);
             onStatus && onStatus("WebGPU failed (" + friendlyError(e) + ") — using WASM int8…");
             onProgress && onProgress(0);
             storageSet("llm-device", "wasm");
             return disposeGenerator(true).then(loadWasm);
           });
-        }).catch(function (e) {
+        }, function (e) {
+          // Two-arg form: this ONLY handles requestAdapter() failing. It must
+          // not catch rejections from the pipeline/fallback above — those
+          // must propagate so the OOM downgrade can run.
           console.warn("WebGPU adapter unavailable:", e);
           return null;
         });
@@ -332,6 +350,18 @@
       return g;
     }, function (e) {
       if (genPromise === flight) genPromise = null;
+      // Out of memory: drop to the smallest model and try once more. The
+      // numeric onnxruntime codes are allocation failures (issue #688), so
+      // loading the same model again would fail the same way.
+      if (isOomError(e) && modelId !== MODEL_OPTIONS[0].id) {
+        console.warn("Out of memory loading " + modelId + " — retrying with " + MODEL_OPTIONS[0].id + ":", e);
+        onStatus && onStatus("Not enough memory for " + shortName + " — retrying with Micro (0.1B)…");
+        onProgress && onProgress(0);
+        storageSet(MODEL_KEY, MODEL_OPTIONS[0].id);
+        storageSet("llm-device", "wasm");   // the retry must skip WebGPU
+        if (ui && ui.modelSelect) ui.modelSelect.value = MODEL_OPTIONS[0].id;
+        return ensureGenerator(onStatus, onProgress);
+      }
       throw e;
     });
     genPromise = flight;
