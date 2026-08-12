@@ -33,12 +33,13 @@
   var GRAPH_URL = "/assets/graph.json";
 
   var MODEL_OPTIONS = [
-    { id: "Xenova/llama2.c-stories42M", label: "Micro — 42M (loads anywhere, 40 MB)" },
+    { id: "Xenova/LaMini-Flan-T5-77M", label: "Micro — Flan-T5 77M (phone-safe)" },
     { id: "Xenova/LaMini-GPT-124M", label: "Tiny — 0.1B" },
     { id: "Xenova/Qwen1.5-0.5B-Chat", label: "Medium — 0.5B" },
     { id: "onnx-community/Qwen2.5-1.5B-Instruct", label: "Large — 1.5B (desktop)" }
   ];
   var MODEL_KEY = "llm-model-id";
+  var DEVICE_KEY = "llm-device-v3";  // bumped from v2 so sticky wasm/stories prefs reset
 
   // ---- Embedded / mobile / low-memory profile ----
   var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
@@ -53,10 +54,32 @@
   var approxGB = navigator.deviceMemory || (isIOS ? 6 : 0);   // 0 = unknown
   var isLowMem = isMobile || (approxGB > 0 && approxGB <= 6);
 
-  // On embedded / mobile default to the tiniest usable model
-  if (isLowMem && !storageGet(MODEL_KEY)) {
-    storageSet(MODEL_KEY, MODEL_OPTIONS[0].id); // Micro 0.1B
+  function isSeq2Seq(id) {
+    id = String(id || "");
+    return /flan-t5|t5-/i.test(id) || id.indexOf("LaMini-Flan-T5") >= 0;
   }
+
+  // Migrate away from TinyStories (stories42M) and force phone-safe Micro.
+  // storageGet/Set are function decls (hoisted). On iOS/Android always force
+  // Micro; on other low-mem keep Micro/Tiny only.
+  (function migrateModelChoice() {
+    var saved = storageGet(MODEL_KEY);
+    var micro = MODEL_OPTIONS[0].id;
+    var tiny = MODEL_OPTIONS[1].id;
+    var isStories = saved && saved.indexOf("stories42M") >= 0;
+    if (isIOS || isAndroid) {
+      storageSet(MODEL_KEY, micro);
+      try { localStorage.removeItem("llm-device-v2"); } catch (e) {}
+      return;
+    }
+    if (isLowMem) {
+      if (!saved || isStories || (saved !== micro && saved !== tiny)) {
+        storageSet(MODEL_KEY, micro);
+      }
+    } else if (isStories) {
+      storageSet(MODEL_KEY, micro);
+    }
+  })();
 
   var CHUNK_MAX = isLowMem ? 450 : 700;   // chars per retrieval chunk
   var BM25_K1 = 1.5;
@@ -274,7 +297,8 @@
     var flight = loadModule().then(function () {
       function tryLoad(dev, dt) {
         onStatus && onStatus("Downloading " + shortName + " (" + dev.toUpperCase() + ", " + dt + ")…");
-        return mod.pipeline("text-generation", modelId, {
+        var task = isSeq2Seq(modelId) ? "text2text-generation" : "text-generation";
+        return mod.pipeline(task, modelId, {
           device: dev,
           dtype: dt,
           progress_callback: function (d) {
@@ -328,7 +352,7 @@
       function loadWasm() {
         var dt = "int8";
         return tryLoadWithRetry("wasm", dt).then(function (g) {
-          storageSet("llm-device-v2", "wasm");
+          storageSet(DEVICE_KEY, "wasm");
           generator = g; genModelId = modelId; device = "wasm"; dtype = dt; return g;
         });
       }
@@ -350,7 +374,7 @@
           // or hang during session build — cap the attempt, then fall back to
           // WASM (which Safari already uses successfully).
           return withTimeout(tryLoadWithRetry("webgpu", dt), 60000, "WebGPU").then(function (g) {
-            storageSet("llm-device-v2", "webgpu");
+            storageSet(DEVICE_KEY, "webgpu");
             generator = g; genModelId = modelId; device = "webgpu"; dtype = dt; return g;
           }, function (e) {
             // Fall back to WASM for ANY WebGPU failure — including OOM:
@@ -361,7 +385,7 @@
             console.warn("WebGPU load failed, falling back to WASM:", e);
             onStatus && onStatus("WebGPU failed (" + friendlyError(e) + ") — using WASM int8…");
             onProgress && onProgress(0);
-            storageSet("llm-device-v2", "wasm");
+            storageSet(DEVICE_KEY, "wasm");
             return disposeGenerator(true).then(loadWasm);
           });
         }, function (e) {
@@ -373,15 +397,12 @@
         });
       }
 
-      // Desktop Safari's WebGPU path crashes transformers.js during session
-      // build, so it stays on WASM. iOS Safari/Chrome (iPhone 14 Pro Max et
-      // al.) is memory-tight — the q4f16 GPU session needs far less system
-      // RAM than the WASM int8 heap — so iOS gets the WebGPU attempt, with
-      // the WASM fallback below catching any failure. Older low-mem devices
-      // without WebGPU obviously go straight to WASM.
+      // Desktop Safari: WASM only (WebGPU session build is unstable).
+      // iOS / Android: skip WebGPU entirely — phone-safe Micro Flan-T5 via
+      // WASM int8. Desktop Chrome keeps WebGPU q4f16 when shader-f16 exists.
       var preferWasm = isLowMem && !navigator.gpu;
-      var skipWebgpu = (isSafari && !isIOS) ||          // desktop Safari
-                       storageGet("llm-device-v2") === "wasm" ||
+      var skipWebgpu = (isSafari && !isIOS) || isIOS || isAndroid ||
+                       storageGet(DEVICE_KEY) === "wasm" ||
                        preferWasm;
       if (navigator.gpu && !skipWebgpu) {
         return loadWebgpu().then(function (g) {
@@ -404,13 +425,14 @@
       // loading the same model again would fail the same way.
       if (isOomError(e) && modelId !== MODEL_OPTIONS[0].id) {
         console.warn("Out of memory loading " + modelId + " — retrying with " + MODEL_OPTIONS[0].id + ":", e);
-        onStatus && onStatus("Not enough memory for " + shortName + " — retrying with Micro (0.1B)…");
+        onStatus && onStatus("Not enough memory for " + shortName + " — retrying with Micro (Flan-T5)…");
         onProgress && onProgress(0);
         storageSet(MODEL_KEY, MODEL_OPTIONS[0].id);
-        storageSet("llm-device-v2", "wasm");   // the retry must skip WebGPU
+        storageSet(DEVICE_KEY, "wasm");   // the retry must skip WebGPU
         if (ui && ui.modelSelect) ui.modelSelect.value = MODEL_OPTIONS[0].id;
         return ensureGenerator(onStatus, onProgress);
       }
+      // Micro already selected and still OOM — let callers fall back to extractive.
       throw e;
     });
     genPromise = flight;
@@ -1176,6 +1198,64 @@
     return messages.map(function (m) { return m.role + ": " + m.content; }).join("\n\n") + "\n\nAssistant:";
   }
 
+  // First 2–3 sentence-ish slices from chunk text (no model required).
+  function firstSentences(text, maxN) {
+    maxN = maxN || 3;
+    text = String(text || "").replace(/\s+/g, " ").trim();
+    if (!text) return "";
+    var parts = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
+    return parts.slice(0, maxN).map(function (s) { return s.trim(); }).filter(Boolean).join(" ");
+  }
+
+  // Extractive fallback when Micro still OOMs / model unavailable on phone.
+  // Templated REVIEW + bullet key sentences from BM25 top chunks + sources.
+  function extractiveAnswer(top, question) {
+    var lines = [];
+    var sources = [];
+    var keypoints = [];
+    var seen = Object.create(null);
+    var i, r, meta, title, snip, firstLine;
+    for (i = 0; i < top.length && sources.length < 4; i++) {
+      r = top[i];
+      if (!r || !r.chunk || seen[r.chunk.file]) continue;
+      seen[r.chunk.file] = 1;
+      meta = pageMeta(r.chunk.file);
+      title = (meta && meta.title) || r.chunk.file;
+      sources.push(title + " (" + r.chunk.file + ")");
+      snip = firstSentences(r.chunk.text, sources.length <= 2 ? 3 : 2);
+      if (snip) lines.push(snip + " (source: " + r.chunk.file + ")");
+      firstLine = String(r.chunk.text || "").split(/\n/).map(function (s) {
+        return s.replace(/^#+\s*/, "").trim();
+      }).filter(Boolean)[0] || snip;
+      if (firstLine) keypoints.push(firstLine.replace(/\s+/g, " ").trim().slice(0, 160));
+    }
+    var review = lines.slice(0, 2).join(" ") ||
+      ("No model is available on this device for \"" + question + "\". Showing the top matching excerpts instead.");
+    var kp = keypoints.slice(0, 3).map(function (k, idx) { return (idx + 1) + ". " + k; }).join("\n");
+    var xpost = firstSentences(review, 2).slice(0, 220);
+    var idea = "Explore: " + String(question || "").trim() +
+      (sources[0] ? " — start with " + sources[0].split(" (")[0] : "");
+    return "REVIEW: " + review + "\n\n" +
+      "KEY POINTS:\n" + (kp || "1. See the matching pages below.") + "\n\n" +
+      "X POST: " + (xpost || review.slice(0, 180)) + "\n\n" +
+      "IDEA: " + idea + "\n\n" +
+      "Sources: " + sources.join("; ");
+  }
+
+  function applyExtractiveToReview(top, question, writer) {
+    var text = extractiveAnswer(top, question);
+    if (writer && writer.reset) writer.reset();
+    if (writer && writer.write) { writer.write(text); writer.finish(); }
+    else if (ui && ui.review) ui.review.textContent = text;
+    setStatus("Using extractive answer (model unavailable on this device)", false);
+    return text;
+  }
+
+  function flanPrompt(context, question) {
+    return "Using ONLY these excerpts, write REVIEW (one paragraph), KEY POINTS (3 short lines), X POST (1-2 sentences), IDEA (one sentence). Name sources.\n\nExcerpts:\n" +
+      context + "\n\nQuestion: " + question;
+  }
+
   function runAnswer(top, question, writer) {
     return ensureGenerator(function (m) { setStatus(m, true); }, setProgress).then(function (gen) {
       return enqueue(function () {
@@ -1183,34 +1263,52 @@
         setDeviceBadge("ok", deviceLabel());
         generating = true;
         setAskBusy(true);
-        var streamer = new mod.TextStreamer(gen.tokenizer, {
-          skip_prompt: true,
-          callback_function: function (t) { writer.write(t); }
-        });
+        var modelId = genModelId || selectedModelId();
+        var seq2seq = isSeq2Seq(modelId);
+        var streamer = null;
+        try {
+          streamer = new mod.TextStreamer(gen.tokenizer, {
+            skip_prompt: true,
+            callback_function: function (t) { writer.write(t); }
+          });
+        } catch (e) {
+          streamer = null;
+        }
         var win = modelWindowTokens(gen);
-        var tiny = win != null && win < TINY_WINDOW;
+        // Flan-T5 encoder/decoder windows are small (~512); treat as tiny.
+        var tiny = seq2seq || (win != null && win < TINY_WINDOW);
         var sysPrompt = tiny ? SYSTEM_TINY : SYSTEM_ANSWER;
-        // Low-memory devices get a tight answer budget: 160 tokens for the
-        // Micro model, 192 for anything bigger.
         var maxNew = tiny ? (isLowMem ? 160 : 320) : MAX_NEW_TOKENS;
-        var overhead = estimateTokens(sysPrompt, gen.tokenizer) + estimateTokens(question, gen.tokenizer) + 40;
-        // Very small windows (llama2.c-stories15M is 256 tokens) cannot hold
-        // the full answer budget — clamp so the whole prompt always fits.
+        if (seq2seq) maxNew = isLowMem ? 128 : 192;
+        var overhead = estimateTokens(seq2seq ? flanPrompt("", question) : sysPrompt, gen.tokenizer) +
+          estimateTokens(question, gen.tokenizer) + 40;
+        // Very small windows cannot hold the full answer budget — clamp so
+        // the whole prompt always fits. (Old TinyStories was 256 tokens.)
         if (win) {
           var room = win - overhead - 48;
           if (maxNew > room) maxNew = Math.max(16, Math.floor(room));
         }
-        var context = buildContext(top, gen.tokenizer, win, maxNew, overhead);
-        var messages = [
-          { role: "system", content: sysPrompt },
-          { role: "user", content: "Document excerpts:\n\n" + context + "\n\nQuestion: " + question }
-        ];
-        // no_repeat_ngram_size + repetition_penalty stop tiny models from
-        // looping ("— MASt3R — MASt3R — …") under greedy decoding.
-        var opts = { max_new_tokens: maxNew, do_sample: false, no_repeat_ngram_size: 3, repetition_penalty: 1.15, streamer: streamer };
+        var context = buildContext(top, gen.tokenizer, win || (seq2seq ? 512 : null), maxNew, overhead);
+        var opts = { max_new_tokens: maxNew, do_sample: false, no_repeat_ngram_size: 3, repetition_penalty: 1.15 };
+        if (streamer) opts.streamer = streamer;
         var extra = stoppingOpts();
         for (var k in extra) opts[k] = extra[k];
-        return gen(promptFor(gen, messages), opts).then(function (result) {
+        var input;
+        if (seq2seq) {
+          input = flanPrompt(context, question);
+        } else {
+          var messages = [
+            { role: "system", content: sysPrompt },
+            { role: "user", content: "Document excerpts:\n\n" + context + "\n\nQuestion: " + question }
+          ];
+          input = promptFor(gen, messages);
+        }
+        return gen(input, opts).then(function (result) {
+          // text2text without streamer: write the full result once
+          if (streamer == null) {
+            var full = textFromResult(result);
+            if (full) writer.write(full);
+          }
           writer.finish();
           return result;
         }, function (err) { writer.finish(); throw err; });
@@ -1443,14 +1541,9 @@
     var writer = streamWriter(ui.review);
     writer.reset();
 
-    runAnswer(top.slice(0, 8), q, writer).then(function (result) {
+    function finishStructured(raw) {
       if (!ui.review) return;
-      if (!ui.review.textContent.trim()) ui.review.textContent = textFromResult(result);
-      var raw = ui.review.textContent;
       var parsed = parseStructured(raw);
-      // Show the REVIEW section only — key points are rendered separately, so
-      // they no longer appear twice. Falls back to the full text if the model
-      // ignored the format.
       ui.review.textContent = (parsed.review && cleanStructuredText(parsed.review)) || cleanStructuredText(raw) || raw;
       if (ui.keypoints && parsed.keypoints.length) {
         ui.keypoints.innerHTML = parsed.keypoints.slice(0, 3).map(function (k) {
@@ -1461,8 +1554,24 @@
         renderPanels(ranked, topPages, q, parsed.xpost, ui.review.textContent);
         renderKeywordMap(q, parsed.idea);
       } catch (err) { console.error("panel refresh failed:", err); }
+    }
+
+    runAnswer(top.slice(0, 8), q, writer).then(function (result) {
+      if (!ui.review) return;
+      if (!ui.review.textContent.trim()) ui.review.textContent = textFromResult(result);
+      finishStructured(ui.review.textContent);
     }).catch(function (e) {
       console.error(e);
+      // After Micro OOM / load failure: never hard-fail phones with stories —
+      // fall back to extractive BM25 snippets.
+      var alreadyMicro = selectedModelId() === MODEL_OPTIONS[0].id;
+      if (isOomError(e) || alreadyMicro || isIOS || isAndroid || isLowMem) {
+        try {
+          var ext = applyExtractiveToReview(top.slice(0, 8), q, writer);
+          finishStructured(ext);
+          return;
+        } catch (ee) { console.warn("extractive fallback failed:", ee); }
+      }
       if (ui.review && !ui.review.textContent.trim()) {
         ui.review.textContent = "LLM unavailable: " + friendlyError(e) +
           "\n\nThe pages above are still valid. If this says 'Load failed' or 'fetch failed', the model file could not be " +
@@ -1521,14 +1630,20 @@
           if (ui.chatStatus) ui.chatStatus.textContent = "Generating on " + deviceLabel() + "…";
           setDeviceBadge("ok", deviceLabel());
           writer.reset();
-          var streamer = new mod.TextStreamer(gen.tokenizer, {
-            skip_prompt: true,
-            callback_function: function (t) { writer.write(t); if (ui.chatLog) ui.chatLog.scrollTop = ui.chatLog.scrollHeight; }
-          });
+          var modelId = genModelId || selectedModelId();
+          var seq2seq = isSeq2Seq(modelId);
+          var streamer = null;
+          try {
+            streamer = new mod.TextStreamer(gen.tokenizer, {
+              skip_prompt: true,
+              callback_function: function (t) { writer.write(t); if (ui.chatLog) ui.chatLog.scrollTop = ui.chatLog.scrollHeight; }
+            });
+          } catch (e) { streamer = null; }
           var sysChat = "You are a helpful research assistant for the pirahansiah.com knowledge site. Answer using the document excerpts below when relevant. Always mention which source page(s) you used, like (source: /notes/.../). If the excerpts don't contain enough info, say so plainly.";
           var win = modelWindowTokens(gen);
-          var tiny = win != null && win < TINY_WINDOW;
+          var tiny = seq2seq || (win != null && win < TINY_WINDOW);
           var maxNew = tiny ? (isLowMem ? 120 : 200) : (isLowMem ? 150 : 260);
+          if (seq2seq) maxNew = isLowMem ? 96 : 160;
           // Keep only as much conversation history as fits the window
           // (LaMini's 1024-token window would overflow with 6 long messages).
           var histBudget = tiny ? 200 : 1200;
@@ -1542,23 +1657,37 @@
             histMsgs.unshift(hm);
           }
           var overhead = estimateTokens(sysChat, gen.tokenizer) + estimateTokens(q, gen.tokenizer) + estimateTokens(histText, gen.tokenizer) + 40;
-          // Clamp the answer to fit tiny windows (see runAnswer).
           if (win) {
             var room = win - overhead - 48;
             if (maxNew > room) maxNew = Math.max(16, Math.floor(room));
           }
-          var context = buildContext(top.slice(0, 5), gen.tokenizer, win, maxNew, overhead);
-          var messages = [
-            { role: "system", content: sysChat },
-            { role: "user", content: "Document excerpts:\n\n" + context }
-          ];
-          messages = messages.concat(histMsgs);
-          messages.push({ role: "user", content: q });
-          var opts = { max_new_tokens: maxNew, do_sample: false, no_repeat_ngram_size: 3, repetition_penalty: 1.15, streamer: streamer };
+          var context = buildContext(top.slice(0, 5), gen.tokenizer, win || (seq2seq ? 512 : null), maxNew, overhead);
+          var opts = { max_new_tokens: maxNew, do_sample: false, no_repeat_ngram_size: 3, repetition_penalty: 1.15 };
+          if (streamer) opts.streamer = streamer;
           var extra = stoppingOpts();
           for (var k in extra) opts[k] = extra[k];
-          return gen(promptFor(gen, messages), opts).then(function (r) { writer.finish(); return r; },
-            function (err) { writer.finish(); throw err; });
+          var input;
+          if (seq2seq) {
+            input = "Using ONLY these excerpts, answer the question in a few short sentences and name sources.\n\nExcerpts:\n" +
+              context + "\n\nQuestion: " + q +
+              (histText ? "\n\nEarlier conversation:\n" + histText : "");
+          } else {
+            var messages = [
+              { role: "system", content: sysChat },
+              { role: "user", content: "Document excerpts:\n\n" + context }
+            ];
+            messages = messages.concat(histMsgs);
+            messages.push({ role: "user", content: q });
+            input = promptFor(gen, messages);
+          }
+          return gen(input, opts).then(function (r) {
+            if (streamer == null) {
+              var full = textFromResult(r);
+              if (full) writer.write(full);
+            }
+            writer.finish();
+            return r;
+          }, function (err) { writer.finish(); throw err; });
         });
       })
       .then(function (result) {
@@ -1576,12 +1705,18 @@
         console.error(e);
         if (bubble) {
           if (!bubble.textContent.trim() || bubble.textContent === "…") {
-            bubble.textContent = "Model error: " + friendlyError(e) + " — try Load model first.";
+            // Phone-safe: never hard-fail chat — extractive BM25 answer.
+            try {
+              bubble.textContent = extractiveAnswer(top, q);
+              if (ui.chatStatus) ui.chatStatus.textContent = "Using extractive answer (model unavailable on this device)";
+            } catch (ee) {
+              bubble.textContent = "Model error: " + friendlyError(e) + " — try Load model first.";
+            }
           } else {
             bubble.textContent += "\n\n[Stopped: " + ((e && e.message) || e) + " — partial answer kept]";
           }
         }
-        if (ui.chatStatus) ui.chatStatus.textContent = "";
+        if (ui.chatStatus && !ui.chatStatus.textContent) ui.chatStatus.textContent = "";
       })
       .then(function () {
         chatBusy = false;
@@ -1611,17 +1746,34 @@
     }
 
     if (ui.modelSelect) {
+      // Keep <option> values in sync with MODEL_OPTIONS (md may lag a deploy).
+      if (ui.modelSelect.options.length === MODEL_OPTIONS.length) {
+        for (var oi = 0; oi < MODEL_OPTIONS.length; oi++) {
+          ui.modelSelect.options[oi].value = MODEL_OPTIONS[oi].id;
+          ui.modelSelect.options[oi].textContent = MODEL_OPTIONS[oi].label;
+        }
+      }
       ui.modelSelect.value = selectedModelId();
-      // Embedded / mobile: the 1.5B and 3B models will not fit — disable them.
-      if (isLowMem) {
-        for (var mi = 0; mi < ui.modelSelect.options.length; mi++) {
-          var mOpt = ui.modelSelect.options[mi];
-          if (mOpt.value.indexOf("1.5B") >= 0 || mOpt.value.indexOf("3B") >= 0) {
-            mOpt.disabled = true;
-            mOpt.textContent = (mOpt.textContent || mOpt.value) + " (desktop only)";
+      // iPhone / Android: only Micro (Flan-T5) is safe — disable Tiny/Medium/Large.
+      // Other low-mem desktops: allow Micro + Tiny; disable Medium/Large.
+      for (var mi = 0; mi < ui.modelSelect.options.length; mi++) {
+        var mOpt = ui.modelSelect.options[mi];
+        var allow = true;
+        if (isIOS || isAndroid) {
+          allow = mOpt.value === MODEL_OPTIONS[0].id;
+        } else if (isLowMem) {
+          allow = mOpt.value === MODEL_OPTIONS[0].id || mOpt.value === MODEL_OPTIONS[1].id;
+        }
+        if (!allow) {
+          mOpt.disabled = true;
+          if ((mOpt.textContent || "").indexOf("desktop only") < 0 &&
+              (mOpt.textContent || "").indexOf("phone") < 0) {
+            mOpt.textContent = (mOpt.textContent || mOpt.value) +
+              ((isIOS || isAndroid) ? " (phone: Micro only)" : " (desktop only)");
           }
         }
       }
+      if (isIOS || isAndroid) ui.modelSelect.value = MODEL_OPTIONS[0].id;
       on(ui.modelSelect, "change", function () {
         storageSet(MODEL_KEY, ui.modelSelect.value);
         disposeGenerator().then(function () {
@@ -1678,8 +1830,13 @@
         setStatus("Model ready on " + deviceLabel() + ".", false);
         setDeviceBadge("ok", deviceLabel());
       }).catch(function (e) {
-        setStatus("Model load failed: " + friendlyError(e) + " — check your connection and retry.", false);
-        setDeviceBadge("err", "load failed");
+        if (isOomError(e) || isIOS || isAndroid) {
+          setStatus("Using extractive answer (model unavailable on this device)", false);
+          setDeviceBadge("warn", "extractive");
+        } else {
+          setStatus("Model load failed: " + friendlyError(e) + " — check your connection and retry.", false);
+          setDeviceBadge("err", "load failed");
+        }
       });
     });
 
