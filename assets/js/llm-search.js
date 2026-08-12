@@ -67,6 +67,14 @@
 
   function on(el, ev, fn, opts) { if (el) el.addEventListener(ev, fn, opts); }
 
+  // onnxruntime-web surfaces some internal failures as bare numeric codes
+  // (e.g. "521247920" from the WebGPU backend) — make them comprehensible.
+  function friendlyError(e) {
+    var m = (e && e.message) || e || "";
+    m = String(m);
+    return /^\d+$/.test(m) ? "onnxruntime error (code " + m + ")" : m;
+  }
+
   function debounce(fn, ms) {
     var t = 0;
     return function () {
@@ -164,10 +172,13 @@
     return modPromise;
   }
 
-  function disposeGenerator() {
-    // Never clear an in-flight promise: Ask, Chat, and Load model must all
-    // share it. Wait for it, then dispose exactly once.
-    if (genPromise) {
+  // Called from external code (model switch, reload, pagehide) it waits for
+  // any in-flight load so a half-finished download can't install its
+  // generator afterwards. Called from INSIDE the load chain (WebGPU → WASM
+  // fallback) it must NOT wait: the in-flight promise is the very chain we
+  // are running in, so waiting would deadlock.
+  function disposeGenerator(fromLoadChain) {
+    if (genPromise && !fromLoadChain) {
       var pending = genPromise;
       return pending.catch(function () {}).then(function () {
         if (genPromise === pending) genPromise = null;
@@ -239,12 +250,24 @@
         attemptsLeft = attemptsLeft == null ? 2 : attemptsLeft;
         return tryLoad(dev, dt).catch(function (e) {
           if (attemptsLeft <= 0) throw e;
-          console.warn(dev + "/" + dt + " load failed (" + ((e && e.message) || e) + ") — " + attemptsLeft + " retry(ies) left.");
+          console.warn(dev + "/" + dt + " load failed (" + friendlyError(e) + ") — " + attemptsLeft + " retry(ies) left.");
           onStatus && onStatus("Network hiccup while downloading — retrying… (" + attemptsLeft + " left)");
           onProgress && onProgress(0);
           return new Promise(function (res) { setTimeout(res, 2500); }).then(function () {
             return tryLoadWithRetry(dev, dt, attemptsLeft - 1);
           });
+        });
+      }
+
+      // A WebGPU session build that hangs (known on some Chrome versions)
+      // must not block the page forever — cap it and fall back to WASM.
+      function withTimeout(promise, ms, label) {
+        return new Promise(function (resolve, reject) {
+          var t = setTimeout(function () {
+            reject(new Error(label + " timed out after " + Math.round(ms / 1000) + "s"));
+          }, ms);
+          promise.then(function (v) { clearTimeout(t); resolve(v); },
+            function (e) { clearTimeout(t); reject(e); });
         });
       }
 
@@ -254,6 +277,7 @@
       function loadWasm() {
         var dt = "int8";
         return tryLoadWithRetry("wasm", dt).then(function (g) {
+          storageSet("llm-device", "wasm");
           generator = g; genModelId = modelId; device = "wasm"; dtype = dt; return g;
         });
       }
@@ -271,15 +295,30 @@
           }
           var dt = "q4f16";
           onStatus && onStatus("WebGPU " + dt + " (one model download)…");
-          return tryLoadWithRetry("webgpu", dt).then(function (g) {
+          // Chrome's WebGPU runtime can fail with numeric onnxruntime codes
+          // or hang during session build — cap the attempt, then fall back to
+          // WASM (which Safari already uses successfully).
+          return withTimeout(tryLoadWithRetry("webgpu", dt), 60000, "WebGPU").then(function (g) {
+            storageSet("llm-device", "webgpu");
             generator = g; genModelId = modelId; device = "webgpu"; dtype = dt; return g;
+          }, function (e) {
+            console.warn("WebGPU load failed, falling back to WASM:", e);
+            onStatus && onStatus("WebGPU failed (" + friendlyError(e) + ") — using WASM int8…");
+            onProgress && onProgress(0);
+            storageSet("llm-device", "wasm");
+            return disposeGenerator(true).then(loadWasm);
           });
+        }).catch(function (e) {
+          console.warn("WebGPU adapter unavailable:", e);
+          return null;
         });
       }
 
       // Safari's WebGPU path crashes transformers.js during session build.
       var isSafari = /Safari\//.test(navigator.userAgent) && !/Chrome|Chromium|Firefox/.test(navigator.userAgent);
-      if (navigator.gpu && !isSafari) {
+      // If a previous load had to fall back to WASM (e.g. Chrome with a
+      // broken WebGPU runtime), skip the WebGPU attempt entirely.
+      if (navigator.gpu && !isSafari && storageGet("llm-device") !== "wasm") {
         return loadWebgpu().then(function (g) {
           if (g) return g;
           onStatus && onStatus("WebGPU unavailable — using WASM (slower)…");
@@ -1338,11 +1377,11 @@
     }).catch(function (e) {
       console.error(e);
       if (ui.review && !ui.review.textContent.trim()) {
-        ui.review.textContent = "LLM unavailable: " + ((e && e.message) || e) +
+        ui.review.textContent = "LLM unavailable: " + friendlyError(e) +
           "\n\nThe pages above are still valid. If this says 'Load failed' or 'fetch failed', the model file could not be " +
           "downloaded — check your connection, then press Load model.";
       } else {
-        setStatus("LLM error: " + ((e && e.message) || e) + " — partial answer kept.", false);
+        setStatus("LLM error: " + friendlyError(e) + " — partial answer kept.", false);
       }
     });
   }
@@ -1445,7 +1484,7 @@
         console.error(e);
         if (bubble) {
           if (!bubble.textContent.trim() || bubble.textContent === "…") {
-            bubble.textContent = "Model error: " + ((e && e.message) || e) + " — try Load model first.";
+            bubble.textContent = "Model error: " + friendlyError(e) + " — try Load model first.";
           } else {
             bubble.textContent += "\n\n[Stopped: " + ((e && e.message) || e) + " — partial answer kept]";
           }
@@ -1537,7 +1576,7 @@
         setStatus("Model ready on " + deviceLabel() + ".", false);
         setDeviceBadge("ok", deviceLabel());
       }).catch(function (e) {
-        setStatus("Model load failed: " + ((e && e.message) || e) + " — check your connection and retry.", false);
+        setStatus("Model load failed: " + friendlyError(e) + " — check your connection and retry.", false);
         setDeviceBadge("err", "load failed");
       });
     });
