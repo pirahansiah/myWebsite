@@ -97,13 +97,14 @@ main.site-main.llm-active {
   font: inherit; font-size: 0.72rem; padding: 0.25rem 0.5rem;
   border: 1px solid var(--glass-border); border-radius: 8px;
   background: var(--glass-bg); color: var(--text); outline: none;
-  max-width: 220px;
+  max-width: 300px;
 }
 .llm-model-pick select:focus { border-color: #0a84ff; }
 .llm-progress-wrap { flex: 1; min-width: 160px; }
 .llm-progress { height: 8px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 99px; overflow: hidden; display: none; }
 .llm-progress-bar { height: 100%; background: linear-gradient(90deg, #0a84ff, #30d158); width: 0%; transition: width 0.2s ease; }
 .llm-status-text { font-size: 0.75rem; color: var(--text-muted); }
+.llm-ram-info { flex-basis: 100%; font-size: 0.7rem; color: var(--text-muted); margin-top: 0.15rem; line-height: 1.45; }
 
 /* ---- answer card ---- */
 .llm-answer {

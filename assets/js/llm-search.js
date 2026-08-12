@@ -32,14 +32,25 @@
   var INDEX_URL = "/assets/llm-index.json";
   var GRAPH_URL = "/assets/graph.json";
 
+  // Each model carries its measured ONNX download size (int8) plus an ESTIMATE
+  // of total session RAM = weights + KV cache + context/activation buffers.
+  // KV cache is estimated at the model's typical context (full window for tiny
+  // models, ~2k tokens for large-window models). These are estimates, not
+  // guarantees — real usage varies with context length and backend.
   var MODEL_OPTIONS = [
-    { id: "Xenova/LaMini-Flan-T5-77M", label: "Micro — Flan-T5 77M (phone-safe)" },
-    { id: "Xenova/LaMini-GPT-124M", label: "Tiny — 0.1B" },
-    { id: "Xenova/Qwen1.5-0.5B-Chat", label: "Medium — 0.5B" },
-    { id: "onnx-community/Qwen2.5-1.5B-Instruct", label: "Large — 1.5B (desktop)" }
+    { id: "Xenova/LaMini-Flan-T5-77M",            label: "Micro — Flan-T5 77M",      seq2seq: true,  weightsMB: 90,   window: 512,   kvMB: 12,  totalMB: 150 },
+    { id: "Xenova/llama2.c-stories15M",           label: "Nano — stories 15M",       seq2seq: false, weightsMB: 15,   window: 256,   kvMB: 4,   totalMB: 25 },
+    { id: "Xenova/llama2.c-stories42M",           label: "Pico — stories 42M",       seq2seq: false, weightsMB: 40,   window: 1024,  kvMB: 32,  totalMB: 95 },
+    { id: "Xenova/llama2.c-stories110M",          label: "Slim — stories 110M",      seq2seq: false, weightsMB: 105,  window: 1024,  kvMB: 72,  totalMB: 230 },
+    { id: "Xenova/distilgpt2",                    label: "Compact — DistilGPT-2",    seq2seq: false, weightsMB: 226,  window: 1024,  kvMB: 36,  totalMB: 375 },
+    { id: "Xenova/LaMini-GPT-124M",               label: "Tiny — LaMini 124M",       seq2seq: false, weightsMB: 268,  window: 1024,  kvMB: 72,  totalMB: 475 },
+    { id: "Xenova/Qwen1.5-0.5B-Chat",             label: "Medium — Qwen1.5 0.5B",    seq2seq: false, weightsMB: 460,  window: 32768, kvMB: 384, totalMB: 1100 },
+    { id: "onnx-community/Qwen2.5-0.5B-Instruct", label: "Balanced — Qwen2.5 0.5B",  seq2seq: false, weightsMB: 488,  window: 32768, kvMB: 48,  totalMB: 780 },
+    { id: "onnx-community/Qwen2.5-1.5B-Instruct", label: "Large — Qwen2.5 1.5B",     seq2seq: false, weightsMB: 1506, window: 32768, kvMB: 112, totalMB: 2400 }
   ];
   var MODEL_KEY = "llm-model-id";
-  var DEVICE_KEY = "llm-device-v3";  // bumped from v2 so sticky wasm/stories prefs reset
+  var DEVICE_KEY = "llm-device-v4";   // bumped: new device/method policy (auto/webgpu/wasm)
+  var MODE_KEY = "llm-device-mode";   // "auto" | "webgpu" | "wasm" (manual override)
 
   // ---- Embedded / mobile / low-memory profile ----
   var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) ||
@@ -54,9 +65,35 @@
   var approxGB = navigator.deviceMemory || (isIOS ? 6 : 0);   // 0 = unknown
   var isLowMem = isMobile || (approxGB > 0 && approxGB <= 6);
 
+  function modelOption(id) {
+    for (var i = 0; i < MODEL_OPTIONS.length; i++) if (MODEL_OPTIONS[i].id === id) return MODEL_OPTIONS[i];
+    return null;
+  }
+
   function isSeq2Seq(id) {
     id = String(id || "");
+    var o = modelOption(id);
+    if (o) return !!o.seq2seq;
     return /flan-t5|t5-/i.test(id) || id.indexOf("LaMini-Flan-T5") >= 0;
+  }
+
+  // Manual backend override ("auto" | "webgpu" | "wasm"). Auto = the smart
+  // per-device ladder below; "webgpu"/"wasm" force a backend (with a safe
+  // fallback so the page never hard-fails).
+  function deviceMode() {
+    var m = storageGet(MODE_KEY);
+    return (m === "webgpu" || m === "wasm") ? m : "auto";
+  }
+
+  // Models that fit this device's RAM budget (used to disable the rest).
+  function ramAllowed(totalMB) {
+    if (isIOS || isAndroid) return totalMB <= 260;   // 6 GB phones: tiny models only
+    if (isLowMem) return totalMB <= 500;             // low-mem desktops: up to ~0.5 GB
+    return true;                                     // full desktops: everything
+  }
+
+  function ramLabel(totalMB) {
+    return totalMB >= 1024 ? (totalMB / 1024).toFixed(1) + " GB" : totalMB + " MB";
   }
 
   // Migrate away from TinyStories (stories42M) and force phone-safe Micro.
@@ -64,21 +101,12 @@
   // Micro; on other low-mem keep Micro/Tiny only.
   (function migrateModelChoice() {
     var saved = storageGet(MODEL_KEY);
-    var micro = MODEL_OPTIONS[0].id;
-    var tiny = MODEL_OPTIONS[1].id;
-    var isStories = saved && saved.indexOf("stories42M") >= 0;
-    if (isIOS || isAndroid) {
-      storageSet(MODEL_KEY, micro);
-      try { localStorage.removeItem("llm-device-v2"); } catch (e) {}
-      return;
-    }
-    if (isLowMem) {
-      if (!saved || isStories || (saved !== micro && saved !== tiny)) {
-        storageSet(MODEL_KEY, micro);
-      }
-    } else if (isStories) {
-      storageSet(MODEL_KEY, micro);
-    }
+    var opt = saved ? modelOption(saved) : null;
+    var micro = MODEL_OPTIONS[0].id;   // Flan-T5: phone-safe default
+    // Anything over this device's RAM budget falls back to Micro; a saved
+    // model that still fits is kept (so a user's stories/Nano pick survives).
+    if (!opt || !ramAllowed(opt.totalMB)) storageSet(MODEL_KEY, micro);
+    if (isIOS || isAndroid) { try { localStorage.removeItem("llm-device-v2"); } catch (e) {} }
   })();
 
   var CHUNK_MAX = isLowMem ? 450 : 700;   // chars per retrieval chunk
@@ -398,12 +426,23 @@
       }
 
       // Desktop Safari: WASM only (WebGPU session build is unstable).
-      // iOS / Android: skip WebGPU entirely — phone-safe Micro Flan-T5 via
+      // iOS / Android: skip WebGPU in AUTO mode — phone-safe Micro Flan-T5 via
       // WASM int8. Desktop Chrome keeps WebGPU q4f16 when shader-f16 exists.
+      // The user can override all of this with the "Method" selector.
+      var mode = deviceMode();
       var preferWasm = isLowMem && !navigator.gpu;
-      var skipWebgpu = (isSafari && !isIOS) || isIOS || isAndroid ||
+      var skipWebgpu = mode === "wasm" ||
+                       (isSafari && !isIOS) || isIOS || isAndroid ||
                        storageGet(DEVICE_KEY) === "wasm" ||
                        preferWasm;
+      if (mode === "webgpu" && navigator.gpu) {
+        onStatus && onStatus("Manual WebGPU mode — attempting WebGPU…");
+        return loadWebgpu().then(function (g) {
+          if (g) return g;
+          onStatus && onStatus("WebGPU unavailable — falling back to WASM…");
+          return loadWasm();
+        });
+      }
       if (navigator.gpu && !skipWebgpu) {
         return loadWebgpu().then(function (g) {
           if (g) return g;
@@ -411,9 +450,10 @@
           return loadWasm();
         });
       }
-      onStatus && onStatus(isLowMem
-        ? "Mobile / low-memory profile — using WASM int8…"
-        : "WebGPU unavailable — using WASM (slower)…");
+      onStatus && onStatus(mode === "wasm"
+        ? "Manual WASM mode — using WASM int8 (universal)…"
+        : (isLowMem ? "Mobile / low-memory profile — using WASM int8…"
+                    : "WebGPU unavailable — using WASM (slower)…"));
       return loadWasm();
     }).then(function (g) {
       if (genPromise === flight) genPromise = null;
@@ -784,13 +824,14 @@
       var def = "";
       for (var s = 0; s < sents.length && !def; s++) {
         var sent = sents[s].trim();
-        if (NOISE_LINE.test(sent)) continue;
+        if (NOISE_LINE.test(sent) || cjkRatio(sent) > 0.4) continue;
         if (sent.toLowerCase().indexOf(kw) >= 0) def = sent;
       }
       for (var s2 = 0; s2 < sents.length && !def; s2++) {
-        if (!NOISE_LINE.test(sents[s2].trim())) def = sents[s2].trim();
+        var s2t = sents[s2].trim();
+        if (!NOISE_LINE.test(s2t) && cjkRatio(s2t) <= 0.4) def = s2t;
       }
-      if (!def) def = String(ranked[0].chunk.text).slice(0, 120);
+      if (!def) def = stripCjk(String(ranked[0].chunk.text).slice(0, 120));
       def = def.replace(/https?:\/\/\S+/g, "").replace(/[#*`>_[\]()]/g, " ").replace(/\s+/g, " ").trim();
       if (def.length > 150) def = def.slice(0, 149).trim() + "…";
 
@@ -811,7 +852,7 @@
     answer: $("llm-answer"), review: $("llm-review"), keypoints: $("llm-keypoints"),
     sources: $("llm-sources"),
     kwmap: $("llm-kwmap"), kwmapRows: $("llm-kwmap-rows"), kwmapIdea: $("llm-kwmap-idea"),
-    modelSelect: $("llm-model-select"),
+    modelSelect: $("llm-model-select"), deviceSelect: $("llm-device-select"), ramInfo: $("llm-ram-info"),
     catBars: $("llm-cat-bars"), tagcloud: $("llm-tagcloud"),
     refsList: $("llm-refs-list"), webLinks: $("llm-web-links"),
     xpostBody: $("llm-xpost-body"), xpostCopy: $("llm-xpost-copy"), xpostOpen: $("llm-xpost-open"),
@@ -837,6 +878,20 @@
     if (!ui.badge) return;
     ui.badge.className = "llm-badge " + state;
     if (ui.badgeText) ui.badgeText.textContent = text;
+  }
+
+  // Show the per-model RAM breakdown (weights + KV cache + context/activations)
+  // whenever the selected model changes.
+  function updateRamInfo() {
+    if (!ui.ramInfo) return;
+    var opt = modelOption(selectedModelId());
+    if (!opt) { ui.ramInfo.textContent = ""; return; }
+    var workspace = Math.max(0, opt.totalMB - opt.weightsMB - opt.kvMB);
+    ui.ramInfo.textContent =
+      "RAM estimate — " + opt.label.split("—")[0].trim() + ": " +
+      opt.weightsMB + " MB weights + " + opt.kvMB + " MB KV cache + ~" + workspace +
+      " MB context/activations ≈ " + ramLabel(opt.totalMB) +
+      " total (" + opt.weightsMB + " MB int8 download · " + opt.window + "-token window)";
   }
 
   function highlight(text, query) {
@@ -1304,7 +1359,10 @@
         }
         var win = modelWindowTokens(gen);
         // Flan-T5 encoder/decoder windows are small (~512); treat as tiny.
-        var tiny = seq2seq || (win != null && win < TINY_WINDOW);
+        // Base models (no chat template: stories/gpt2) also get the short
+        // prompt — a 124M model can't follow the full format spec.
+        var hasChat = !!(gen.tokenizer && gen.tokenizer.chat_template);
+        var tiny = seq2seq || (win != null && win < TINY_WINDOW) || !hasChat;
         var sysPrompt = tiny ? SYSTEM_TINY : SYSTEM_ANSWER;
         var maxNew = tiny ? (isLowMem ? 160 : 320) : MAX_NEW_TOKENS;
         if (seq2seq) maxNew = isLowMem ? 128 : 192;
@@ -1669,7 +1727,8 @@
           } catch (e) { streamer = null; }
           var sysChat = "You are a helpful research assistant for the pirahansiah.com knowledge site. Answer using the document excerpts below when relevant. Always mention which source page(s) you used, like (source: /notes/.../). If the excerpts don't contain enough info, say so plainly. Always answer in English only — never in Chinese or any other language.";
           var win = modelWindowTokens(gen);
-          var tiny = seq2seq || (win != null && win < TINY_WINDOW);
+          var hasChat = !!(gen.tokenizer && gen.tokenizer.chat_template);
+          var tiny = seq2seq || (win != null && win < TINY_WINDOW) || !hasChat;
           var maxNew = tiny ? (isLowMem ? 120 : 200) : (isLowMem ? 150 : 260);
           if (seq2seq) maxNew = isLowMem ? 96 : 160;
           // Keep only as much conversation history as fits the window
@@ -1778,36 +1837,50 @@
       if (ui.modelSelect.options.length === MODEL_OPTIONS.length) {
         for (var oi = 0; oi < MODEL_OPTIONS.length; oi++) {
           ui.modelSelect.options[oi].value = MODEL_OPTIONS[oi].id;
-          ui.modelSelect.options[oi].textContent = MODEL_OPTIONS[oi].label;
+          ui.modelSelect.options[oi].textContent =
+            MODEL_OPTIONS[oi].label + " · ~" + ramLabel(MODEL_OPTIONS[oi].totalMB);
         }
       }
       ui.modelSelect.value = selectedModelId();
-      // iPhone / Android: only Micro (Flan-T5) is safe — disable Tiny/Medium/Large.
-      // Other low-mem desktops: allow Micro + Tiny; disable Medium/Large.
+      // Disable models that don't fit this device's RAM budget (phones and
+      // low-memory desktops). The OOM auto-downgrade still catches surprises.
       for (var mi = 0; mi < ui.modelSelect.options.length; mi++) {
         var mOpt = ui.modelSelect.options[mi];
-        var allow = true;
-        if (isIOS || isAndroid) {
-          allow = mOpt.value === MODEL_OPTIONS[0].id;
-        } else if (isLowMem) {
-          allow = mOpt.value === MODEL_OPTIONS[0].id || mOpt.value === MODEL_OPTIONS[1].id;
-        }
-        if (!allow) {
+        var opt = MODEL_OPTIONS[mi] || modelOption(mOpt.value);
+        if (opt && !ramAllowed(opt.totalMB)) {
           mOpt.disabled = true;
           if ((mOpt.textContent || "").indexOf("desktop only") < 0 &&
               (mOpt.textContent || "").indexOf("phone") < 0) {
             mOpt.textContent = (mOpt.textContent || mOpt.value) +
-              ((isIOS || isAndroid) ? " (phone: Micro only)" : " (desktop only)");
+              ((isIOS || isAndroid) ? " (phone: small models only)" : " (desktop only)");
           }
         }
       }
-      if (isIOS || isAndroid) ui.modelSelect.value = MODEL_OPTIONS[0].id;
+      if (isIOS || isAndroid) ui.modelSelect.value = selectedModelId();
+      updateRamInfo();
       on(ui.modelSelect, "change", function () {
         storageSet(MODEL_KEY, ui.modelSelect.value);
+        updateRamInfo();
         disposeGenerator().then(function () {
-          var opt = ui.modelSelect.selectedOptions && ui.modelSelect.selectedOptions[0];
-          var name = opt ? opt.textContent.split("—")[0].trim() : ui.modelSelect.value;
+          var name = (ui.modelSelect.selectedOptions && ui.modelSelect.selectedOptions[0])
+            ? ui.modelSelect.selectedOptions[0].textContent.split("·")[0].trim()
+            : ui.modelSelect.value;
           setStatus("Model set to " + name + ". The next answer downloads it.", false);
+        });
+      });
+    }
+
+    // Manual backend/method selector: Auto lets the page pick the best backend
+    // for this device (WebGPU → WASM ladder); WebGPU / WASM force a method.
+    if (ui.deviceSelect) {
+      ui.deviceSelect.value = deviceMode();
+      on(ui.deviceSelect, "change", function () {
+        storageSet(MODE_KEY, ui.deviceSelect.value);
+        if (ui.deviceSelect.value === "auto") { try { localStorage.removeItem(DEVICE_KEY); } catch (e) {} }
+        else storageSet(DEVICE_KEY, ui.deviceSelect.value);
+        disposeGenerator().then(function () {
+          setStatus("Method set to " + ui.deviceSelect.value.toUpperCase() +
+            ". The next answer reloads the model on that backend.", false);
         });
       });
     }
