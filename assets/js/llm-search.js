@@ -1126,6 +1126,17 @@
   // order; the last one is trimmed to the remaining token room. The old
   // char-only cap sent ~9000 chars (2400+ tokens) into LaMini's 1024-token
   // window, which crashed ONNX Runtime: "wpe/Gather idx=1024 out of bounds".
+  // Fraction of CJK characters in a string (0..1) — used to keep non-English
+  // excerpts out of the LLM context so tiny models have nothing to echo back
+  // in Chinese/Japanese/Korean.
+  function cjkRatio(s) {
+    s = String(s || "");
+    var cjk = s.match(/[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff00-\uffef\u3040-\u30ff\uac00-\ud7af]/g);
+    var latin = s.match(/[A-Za-z0-9]/g);
+    if (!cjk || !latin) return cjk ? 1 : 0;
+    return cjk.length / (cjk.length + latin.length);
+  }
+
   function buildContext(top, tokenizer, windowTokens, maxNewTokens, overheadTokens) {
     var budgetTokens = null;
     if (windowTokens) {
@@ -1135,6 +1146,9 @@
     var ctx = [], usedTokens = 0, seen = Object.create(null);
     for (var i = 0; i < top.length; i++) {
       var r = top[i];
+      // Skip chunks that are mostly Chinese/Japanese/Korean — the model must
+      // answer in English only and should never see text it would echo back.
+      if (cjkRatio(r.chunk.text) > 0.4) continue;
       if (seen[r.chunk.file]) continue;     // one chunk per page
       seen[r.chunk.file] = 1;
       var meta = pageMeta(r.chunk.file);
@@ -1174,6 +1188,8 @@
 
   var SYSTEM_ANSWER =
     "You are a research assistant for the pirahansiah.com knowledge site. Answer using ONLY the document excerpts below. " +
+    "IMPORTANT: Write EVERYTHING in English only. Never use Chinese, Japanese, Korean, or any other language — not even mixed in. " +
+    "If a source title is non-English, still explain it in English.\n" +
     "Structure your reply exactly like this:\n" +
     "REVIEW: a rich, detailed single paragraph (6-10 sentences) that synthesizes the context, connections between pages, " +
     "and key technical details from ALL the sources. Write it in a natural, engaging, informative style that works anywhere — " +
@@ -1187,7 +1203,8 @@
   // Tiny models (124M) can't follow the full format spec; a short prompt keeps
   // their whole 1024-token window for the answer.
   var SYSTEM_TINY =
-    "You are a research assistant for the pirahansiah.com site. Use ONLY the excerpts below. Reply with: " +
+    "You are a research assistant for the pirahansiah.com site. Use ONLY the excerpts below. " +
+    "Write EVERYTHING in English only — never Chinese or any other language. Reply with: " +
     "REVIEW (one rich paragraph), KEY POINTS (3 short lines), X POST (1-2 sentences), IDEA (one sentence). " +
     "Name the source files you used, like (source: /notes/.../).";
 
@@ -1252,7 +1269,7 @@
   }
 
   function flanPrompt(context, question) {
-    return "Using ONLY these excerpts, write REVIEW (one paragraph), KEY POINTS (3 short lines), X POST (1-2 sentences), IDEA (one sentence). Name sources.\n\nExcerpts:\n" +
+    return "Answer in English only (never Chinese or any other language). Using ONLY these excerpts, write REVIEW (one paragraph), KEY POINTS (3 short lines), X POST (1-2 sentences), IDEA (one sentence). Name sources.\n\nExcerpts:\n" +
       context + "\n\nQuestion: " + question;
   }
 
@@ -1639,7 +1656,7 @@
               callback_function: function (t) { writer.write(t); if (ui.chatLog) ui.chatLog.scrollTop = ui.chatLog.scrollHeight; }
             });
           } catch (e) { streamer = null; }
-          var sysChat = "You are a helpful research assistant for the pirahansiah.com knowledge site. Answer using the document excerpts below when relevant. Always mention which source page(s) you used, like (source: /notes/.../). If the excerpts don't contain enough info, say so plainly.";
+          var sysChat = "You are a helpful research assistant for the pirahansiah.com knowledge site. Answer using the document excerpts below when relevant. Always mention which source page(s) you used, like (source: /notes/.../). If the excerpts don't contain enough info, say so plainly. Always answer in English only — never in Chinese or any other language.";
           var win = modelWindowTokens(gen);
           var tiny = seq2seq || (win != null && win < TINY_WINDOW);
           var maxNew = tiny ? (isLowMem ? 120 : 200) : (isLowMem ? 150 : 260);
@@ -1668,7 +1685,7 @@
           for (var k in extra) opts[k] = extra[k];
           var input;
           if (seq2seq) {
-            input = "Using ONLY these excerpts, answer the question in a few short sentences and name sources.\n\nExcerpts:\n" +
+            input = "Answer in English only (never Chinese or any other language). Using ONLY these excerpts, answer the question in a few short sentences and name sources.\n\nExcerpts:\n" +
               context + "\n\nQuestion: " + q +
               (histText ? "\n\nEarlier conversation:\n" + histText : "");
           } else {
