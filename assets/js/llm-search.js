@@ -33,10 +33,10 @@
   var GRAPH_URL = "/assets/graph.json";
 
   var MODEL_OPTIONS = [
-    { id: "Xenova/LaMini-GPT-124M", label: "Micro — 0.1B (recommended mobile)" },
-    { id: "Xenova/Qwen1.5-0.5B-Chat", label: "Tiny — 0.5B" },
-    { id: "onnx-community/Qwen2.5-1.5B-Instruct", label: "Medium — 1.5B (desktop)" },
-    { id: "onnx-community/Llama-3.2-3B-Instruct", label: "Large — 3B (desktop only)" }
+    { id: "Xenova/llama2.c-stories42M", label: "Micro — 42M (loads anywhere, 40 MB)" },
+    { id: "Xenova/LaMini-GPT-124M", label: "Tiny — 0.1B" },
+    { id: "Xenova/Qwen1.5-0.5B-Chat", label: "Medium — 0.5B" },
+    { id: "onnx-community/Qwen2.5-1.5B-Instruct", label: "Large — 1.5B (desktop)" }
   ];
   var MODEL_KEY = "llm-model-id";
 
@@ -1191,9 +1191,15 @@
         var tiny = win != null && win < TINY_WINDOW;
         var sysPrompt = tiny ? SYSTEM_TINY : SYSTEM_ANSWER;
         // Low-memory devices get a tight answer budget: 160 tokens for the
-        // 0.1B Micro model, 192 for anything bigger.
+        // Micro model, 192 for anything bigger.
         var maxNew = tiny ? (isLowMem ? 160 : 320) : MAX_NEW_TOKENS;
         var overhead = estimateTokens(sysPrompt, gen.tokenizer) + estimateTokens(question, gen.tokenizer) + 40;
+        // Very small windows (llama2.c-stories15M is 256 tokens) cannot hold
+        // the full answer budget — clamp so the whole prompt always fits.
+        if (win) {
+          var room = win - overhead - 48;
+          if (maxNew > room) maxNew = Math.max(16, Math.floor(room));
+        }
         var context = buildContext(top, gen.tokenizer, win, maxNew, overhead);
         var messages = [
           { role: "system", content: sysPrompt },
@@ -1536,6 +1542,11 @@
             histMsgs.unshift(hm);
           }
           var overhead = estimateTokens(sysChat, gen.tokenizer) + estimateTokens(q, gen.tokenizer) + estimateTokens(histText, gen.tokenizer) + 40;
+          // Clamp the answer to fit tiny windows (see runAnswer).
+          if (win) {
+            var room = win - overhead - 48;
+            if (maxNew > room) maxNew = Math.max(16, Math.floor(room));
+          }
           var context = buildContext(top.slice(0, 5), gen.tokenizer, win, maxNew, overhead);
           var messages = [
             { role: "system", content: sysChat },
