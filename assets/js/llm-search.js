@@ -96,6 +96,45 @@
     return MODEL_OPTIONS[0].id;
   }
 
+  /* --------------- model download mirror fallback (HF → hf-mirror) ------- */
+
+  // huggingface.co is sometimes unreachable (Cloudflare 521 "origin down"),
+  // which killed model downloads and forced full re-downloads. Patch fetch
+  // once: a failed or 5xx model-file request transparently retries on the
+  // hf-mirror.com CDN (same files, Range supported for ONNX). Only
+  // huggingface.co URLs are rewritten; 404s pass through untouched.
+  var MIRROR_HOST = "hf-mirror.com";
+  var __mirrorInstalled = false;
+
+  function mirrorUrl(u) {
+    u = String(u);
+    return /^https?:\/\/huggingface\.co\//.test(u)
+      ? "https://" + MIRROR_HOST + "/" + u.replace(/^https?:\/\/huggingface\.co\//, "")
+      : u;
+  }
+
+  function installMirrorFallback() {
+    if (__mirrorInstalled || typeof window === "undefined" || !window.fetch) return;
+    __mirrorInstalled = true;
+    var realFetch = window.fetch.bind(window);
+    window.fetch = function (input, init) {
+      var isHf = typeof input === "string" && /^https?:\/\/huggingface\.co\//.test(input);
+      if (!isHf) return realFetch(input, init);
+      return realFetch(input, init).then(function (res) {
+        if (res.ok || res.status < 500) return res;   // 404: mirror won't have it either
+        if (res.body && res.body.cancel) res.body.cancel();    // drop the failed body
+        console.warn("HF HTTP " + res.status + " for " + String(input).split("/").pop() + " — retrying on " + MIRROR_HOST);
+        return realFetch(mirrorUrl(input), init);
+      }, function (err) {
+        // Mirror failure propagates straight to the caller (the pipeline
+        // retry above); it must NOT be re-caught here and retried again.
+        console.warn("HF fetch failed (" + (err && err.message) + ") — retrying on " + MIRROR_HOST);
+        return realFetch(mirrorUrl(input), init);
+      });
+    };
+  }
+  installMirrorFallback();
+
   /* ----------------------- model loading (single flight) ----------------- */
 
   var mod = null;          // transformers.js module
