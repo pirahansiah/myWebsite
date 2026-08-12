@@ -306,6 +306,9 @@ main.site-main.llm-active {
   color: var(--text); padding: 0.3rem 0.15rem 0;
 }
 .llm-cat-group-head::after { content: ""; flex: 1; height: 1px; background: var(--glass-border); }
+.llm-cat-group-title { font-weight: 800; }
+.llm-ask-btn.is-busy { background: linear-gradient(135deg, #ff453a, #ff9f0a); }
+.llm-ask-btn.is-busy:hover { filter: brightness(1.08); }
 .llm-cat-group-count {
   font-size: 0.66rem; font-weight: 600; color: #0a84ff;
   background: rgba(10,132,255,0.12); border: 1px solid rgba(10,132,255,0.3);
