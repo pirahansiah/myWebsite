@@ -49,7 +49,7 @@
     { id: "onnx-community/Qwen2.5-1.5B-Instruct", label: "Large — Qwen2.5 1.5B",     seq2seq: false, weightsMB: 1506, window: 32768, kvMB: 112, totalMB: 2400 }
   ];
   var MODEL_KEY = "llm-model-id";
-  var DEVICE_KEY = "llm-device-v4";   // bumped: new device/method policy (auto/webgpu/wasm)
+  var DEVICE_KEY = "llm-device-v5";   // bumped: iOS/Android now try WebGPU for decoder-only models
   var MODE_KEY = "llm-device-mode";   // "auto" | "webgpu" | "wasm" (manual override)
 
   // ---- Embedded / mobile / low-memory profile ----
@@ -110,16 +110,31 @@
     return best;
   }
 
+  // Best phone default: the smallest DECODER-ONLY model with a usable window
+  // (>=1024 tokens). Decoder-only models run on WebGPU (q4f16) with far less
+  // system RAM than the WASM int8 heap, which OOMs iPhone 14 Pro Max even with
+  // tiny models. seq2seq (Flan-T5) is avoided as a phone default.
+  function phoneDefaultId() {
+    var best = null;
+    for (var i = 0; i < MODEL_OPTIONS.length; i++) {
+      var m = MODEL_OPTIONS[i];
+      if (m.seq2seq || m.window < 1024) continue;
+      if (!best || m.totalMB < best.totalMB) best = m;
+    }
+    return best ? best.id : MODEL_OPTIONS[0].id;
+  }
+
   // Migrate away from TinyStories (stories42M) and force phone-safe Micro.
   // storageGet/Set are function decls (hoisted). On iOS/Android always force
   // Micro; on other low-mem keep Micro/Tiny only.
   (function migrateModelChoice() {
     var saved = storageGet(MODEL_KEY);
     var opt = saved ? modelOption(saved) : null;
-    var micro = MODEL_OPTIONS[0].id;   // Flan-T5: phone-safe default
-    // Anything over this device's RAM budget falls back to Micro; a saved
-    // model that still fits is kept (so a user's stories/Nano pick survives).
-    if (!opt || !ramAllowed(opt.totalMB)) storageSet(MODEL_KEY, micro);
+    // Phones default to the smallest decoder-only model (Pico, WebGPU-capable);
+    // desktops default to Flan-T5. A saved model that still fits is kept (so a
+    // user's Nano/Flan-T5 pick survives).
+    var def = (isIOS || isAndroid) ? phoneDefaultId() : MODEL_OPTIONS[0].id;
+    if (!opt || !ramAllowed(opt.totalMB)) storageSet(MODEL_KEY, def);
     if (isIOS || isAndroid) { try { localStorage.removeItem("llm-device-v2"); } catch (e) {} }
   })();
 
@@ -447,13 +462,16 @@
       }
 
       // Desktop Safari: WASM only (WebGPU session build is unstable).
-      // iOS / Android: skip WebGPU in AUTO mode — phone-safe Micro Flan-T5 via
-      // WASM int8. Desktop Chrome keeps WebGPU q4f16 when shader-f16 exists.
+      // iOS / Android: decoder-only models (stories/gpt2/Qwen) get a WebGPU
+      // attempt — the q4f16 GPU session needs far less system RAM than the
+      // WASM int8 heap (which OOMs iPhone 14 Pro Max even with tiny models).
+      // seq2seq (Flan-T5) stays on WASM on phones (seq2seq WebGPU is unreliable).
       // The user can override all of this with the "Method" selector.
       var mode = deviceMode();
       var preferWasm = isLowMem && !navigator.gpu;
       var skipWebgpu = mode === "wasm" ||
-                       (isSafari && !isIOS) || isIOS || isAndroid ||
+                       (isSafari && !isIOS) ||
+                       ((isIOS || isAndroid) && isSeq2Seq(modelId)) ||
                        storageGet(DEVICE_KEY) === "wasm" ||
                        preferWasm;
       if (mode === "webgpu" && navigator.gpu) {
