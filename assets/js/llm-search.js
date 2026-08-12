@@ -44,7 +44,8 @@
   var BM25_K1 = 1.5;
   var BM25_B = 0.75;
   var FIELD_BOOST = 2;      // extra tf credit for terms in title/heading/tags
-  var MAX_CTX_CHARS = 9000;
+  var MAX_NEW_TOKENS = 540;      // answer budget for models with big windows
+  var TINY_WINDOW = 2048;        // models below this window get a short prompt + shorter answers
   var GRAPH_HEIGHT = 240;
 
   /* ---------------------------- tiny helpers ----------------------------- */
@@ -920,18 +921,61 @@
 
   /* ------------------------------ LLM helpers ---------------------------- */
 
-  function buildContext(top, maxChars) {
-    maxChars = maxChars || MAX_CTX_CHARS;
-    var ctx = [], used = 0, seen = Object.create(null);
-    for (var i = 0; i < top.length && used < maxChars; i++) {
+  // Token count of text. Uses the model's real tokenizer when available
+  // (transformers.js v3 encode() returns number[]), else ~3.5 chars/token.
+  function estimateTokens(text, tokenizer) {
+    if (tokenizer && typeof tokenizer.encode === "function") {
+      try {
+        var enc = tokenizer.encode(String(text));
+        if (enc && typeof enc.length === "number") return enc.length;
+      } catch (e) {}
+    }
+    return Math.ceil(String(text).length / 3.5);
+  }
+
+  // LaMini-GPT reports n_positions; Qwen/Llama report max_position_embeddings.
+  function modelWindowTokens(gen) {
+    try {
+      var cfg = gen && gen.model && gen.model.config;
+      if (!cfg) return null;
+      return cfg.max_position_embeddings || cfg.n_positions || null;
+    } catch (e) { return null; }
+  }
+
+  // Builds the retrieval context, capped to fit the model's context window:
+  // window − (answer budget + prompt overhead). Chunks are added in score
+  // order; the last one is trimmed to the remaining token room. The old
+  // char-only cap sent ~9000 chars (2400+ tokens) into LaMini's 1024-token
+  // window, which crashed ONNX Runtime: "wpe/Gather idx=1024 out of bounds".
+  function buildContext(top, tokenizer, windowTokens, maxNewTokens, overheadTokens) {
+    var budgetTokens = null;
+    if (windowTokens) {
+      var avail = windowTokens - (maxNewTokens || MAX_NEW_TOKENS) - (overheadTokens || 300);
+      budgetTokens = Math.max(40, avail);
+    }
+    var ctx = [], usedTokens = 0, seen = Object.create(null);
+    for (var i = 0; i < top.length; i++) {
       var r = top[i];
       if (seen[r.chunk.file]) continue;     // one chunk per page
       seen[r.chunk.file] = 1;
       var meta = pageMeta(r.chunk.file);
-      var text = r.chunk.text;
-      if (used + text.length > maxChars) text = text.substring(0, maxChars - used);
-      ctx.push("### Source: " + ((meta && meta.title) || r.chunk.file) + " (" + r.chunk.file + ")\n" + text);
-      used += text.length;
+      var header = "### Source: " + ((meta && meta.title) || r.chunk.file) + " (" + r.chunk.file + ")\n";
+      var block = header + r.chunk.text;
+      var blockTokens = estimateTokens(block, tokenizer);
+      if (budgetTokens != null) {
+        if (usedTokens + blockTokens > budgetTokens) {
+          var remaining = budgetTokens - usedTokens;
+          if (remaining < 24) break;
+          var keep = Math.max(80, Math.floor(remaining * 3.5) - header.length);
+          block = header + r.chunk.text.substring(0, Math.min(r.chunk.text.length, keep));
+          blockTokens = estimateTokens(block, tokenizer);
+          if (usedTokens + blockTokens > budgetTokens) break;
+        }
+      } else if (usedTokens > 2400) {
+        break;                              // no window info: hard safety cap
+      }
+      ctx.push(block);
+      usedTokens += blockTokens;
     }
     return ctx.join("\n\n");
   }
@@ -961,6 +1005,13 @@
     "IDEA: one single sentence that connects the question's keywords into a practical idea or application.\n" +
     "Always name the source file(s) you used, like (source: /notes/.../). If the excerpts don't contain enough information, say so plainly instead of guessing.";
 
+  // Tiny models (124M) can't follow the full format spec; a short prompt keeps
+  // their whole 1024-token window for the answer.
+  var SYSTEM_TINY =
+    "You are a research assistant for the pirahansiah.com site. Use ONLY the excerpts below. Reply with: " +
+    "REVIEW (one rich paragraph), KEY POINTS (3 short lines), X POST (1-2 sentences), IDEA (one sentence). " +
+    "Name the source files you used, like (source: /notes/.../).";
+
   function promptFor(gen, messages) {
     // Base models (e.g. LaMini-GPT) have no chat template — flatten to text.
     var hasChat = !!(gen.tokenizer && gen.tokenizer.chat_template);
@@ -969,7 +1020,6 @@
   }
 
   function runAnswer(top, question, writer) {
-    var context = buildContext(top);
     return ensureGenerator(function (m) { setStatus(m, true); }, setProgress).then(function (gen) {
       return enqueue(function () {
         setStatus("Generating answer on " + deviceLabel() + "…", false);
@@ -980,11 +1030,19 @@
           skip_prompt: true,
           callback_function: function (t) { writer.write(t); }
         });
+        var win = modelWindowTokens(gen);
+        var tiny = win != null && win < TINY_WINDOW;
+        var sysPrompt = tiny ? SYSTEM_TINY : SYSTEM_ANSWER;
+        var maxNew = tiny ? 320 : MAX_NEW_TOKENS;
+        var overhead = estimateTokens(sysPrompt, gen.tokenizer) + estimateTokens(question, gen.tokenizer) + 40;
+        var context = buildContext(top, gen.tokenizer, win, maxNew, overhead);
         var messages = [
-          { role: "system", content: SYSTEM_ANSWER },
+          { role: "system", content: sysPrompt },
           { role: "user", content: "Document excerpts:\n\n" + context + "\n\nQuestion: " + question }
         ];
-        var opts = { max_new_tokens: 540, do_sample: false, streamer: streamer };
+        // no_repeat_ngram_size + repetition_penalty stop tiny models from
+        // looping ("— MASt3R — MASt3R — …") under greedy decoding.
+        var opts = { max_new_tokens: maxNew, do_sample: false, no_repeat_ngram_size: 3, repetition_penalty: 1.15, streamer: streamer };
         var extra = stoppingOpts();
         for (var k in extra) opts[k] = extra[k];
         return gen(promptFor(gen, messages), opts).then(function (result) {
@@ -1291,7 +1349,6 @@
     chatHistory.push({ role: "user", content: q });
 
     var writer = streamWriter(bubble);
-    var context = buildContext(top.slice(0, 5));
 
     ensureGenerator(function (m) { if (ui.chatStatus) ui.chatStatus.textContent = m; }, setProgress)
       .then(function (gen) {
@@ -1303,13 +1360,31 @@
             skip_prompt: true,
             callback_function: function (t) { writer.write(t); if (ui.chatLog) ui.chatLog.scrollTop = ui.chatLog.scrollHeight; }
           });
+          var sysChat = "You are a helpful research assistant for the pirahansiah.com knowledge site. Answer using the document excerpts below when relevant. Always mention which source page(s) you used, like (source: /notes/.../). If the excerpts don't contain enough info, say so plainly.";
+          var win = modelWindowTokens(gen);
+          var tiny = win != null && win < TINY_WINDOW;
+          var maxNew = tiny ? 200 : 260;
+          // Keep only as much conversation history as fits the window
+          // (LaMini's 1024-token window would overflow with 6 long messages).
+          var histBudget = tiny ? 200 : 1200;
+          var histMsgs = [], histText = "";
+          for (var h = chatHistory.length - 2; h >= 0; h--) {
+            var hm = chatHistory[h];
+            if (!hm || !hm.content) continue;
+            var piece = (hm.role === "user" ? "User: " : "Assistant: ") + hm.content;
+            if (histMsgs.length >= 5 || estimateTokens(histText + piece + "\n", gen.tokenizer) > histBudget) break;
+            histText += piece + "\n";
+            histMsgs.unshift(hm);
+          }
+          var overhead = estimateTokens(sysChat, gen.tokenizer) + estimateTokens(q, gen.tokenizer) + estimateTokens(histText, gen.tokenizer) + 40;
+          var context = buildContext(top.slice(0, 5), gen.tokenizer, win, maxNew, overhead);
           var messages = [
-            { role: "system", content: "You are a helpful research assistant for the pirahansiah.com knowledge site. Answer using the document excerpts below when relevant. Always mention which source page(s) you used, like (source: /notes/.../). If the excerpts don't contain enough info, say so plainly." },
+            { role: "system", content: sysChat },
             { role: "user", content: "Document excerpts:\n\n" + context }
           ];
-          messages = messages.concat(chatHistory.slice(-6, -1));
+          messages = messages.concat(histMsgs);
           messages.push({ role: "user", content: q });
-          var opts = { max_new_tokens: 260, do_sample: false, streamer: streamer };
+          var opts = { max_new_tokens: maxNew, do_sample: false, no_repeat_ngram_size: 3, repetition_penalty: 1.15, streamer: streamer };
           var extra = stoppingOpts();
           for (var k in extra) opts[k] = extra[k];
           return gen(promptFor(gen, messages), opts).then(function (r) { writer.finish(); return r; },
