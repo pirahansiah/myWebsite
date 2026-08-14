@@ -1,6 +1,7 @@
 ---
 layout: farshid_default
 title: "Dr. Farshid Pirahansiah ; Embedded Computer Vision & Edge AI"
+description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Engineer with 12+ years in real-time image processing, robotics and edge AI deployment. Computer vision (C++), deep learning (Python), model optimization, LLM integration."
 ---
 
 <style>

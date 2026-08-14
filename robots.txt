@@ -1,7 +1,4 @@
 User-agent: *
-Disallow:
-
-User-agent: *
 Allow: /
 
-Sitemap: https://www.pirahansiah.com/sitemap.xml
+Sitemap: https://pirahansiah.com/sitemap.xml

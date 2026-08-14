@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="{{ site.description }}">
+  <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
   <meta name="author" content="{{ site.author }}">
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
   
