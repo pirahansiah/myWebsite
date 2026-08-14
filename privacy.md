@@ -2,6 +2,7 @@
 layout: farshid_default
 title: Privacy Policy
 permalink: /privacy/
+description: "Privacy policy for pirahansiah.com: what data is collected, how Google AdSense and Google Analytics are used, cookie policy, GDPR rights, and contact details."
 ---
 
 # Privacy Policy
