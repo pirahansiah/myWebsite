@@ -1,7 +1,4 @@
 ---
-- title: Shop
-  items: []
-  url: "/shop/"
 - title: Product
   items:
   - title: Computer Vision
