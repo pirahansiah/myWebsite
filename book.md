@@ -2,11 +2,11 @@
 layout: farshid_default
 permalink: /book/
 title: "Book — Computer Vision & AI: An Engineer's Guide"
-description: "Computer Vision & AI: An Engineer's Guide by Dr. Farshid Pirahansiah — a 404-page practical reference covering 3D vision, GPU & CUDA programming, LLMs, optimization, and startup strategy."
+description: "Computer Vision & AI: An Engineer's Guide by Dr. Farshid Pirahansiah — a 406-page practical reference covering 3D vision, GPU & CUDA programming, LLMs, optimization, and startup strategy."
 tags: [book, computer vision, ai, gpu, cuda, llm, pdf]
 ---
 
-> **The Book** — Computer Vision & AI: An Engineer's Guide — 404 pages · 21 chapters · 7 parts — https://pirahansiah.com/book/
+> **The Book** — Computer Vision & AI: An Engineer's Guide — 406 pages · 21 chapters · 7 parts — https://pirahansiah.com/book/
 
 <style>
 .book-hero { text-align: center; padding: 40px 20px 16px; }
@@ -39,7 +39,7 @@ tags: [book, computer vision, ai, gpu, cuda, llm, pdf]
   <h1>Computer Vision &amp; AI — An Engineer's Guide</h1>
   <p>A practical reference distilling more than a decade of hands-on work in computer vision, artificial intelligence, and GPU computing into a single book.</p>
   <div class="book-meta">
-    <span>404 pages</span><span>21 chapters</span><span>7 parts</span><span>PDF</span>
+    <span>406 pages</span><span>21 chapters</span><span>7 parts</span><span>PDF</span>
   </div>
   <a class="book-btn" href="/assets/downloads/computer-vision-ai-engineers-guide.pdf" download>Download the PDF &darr;</a>
 </div>
