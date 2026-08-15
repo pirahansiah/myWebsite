@@ -2,6 +2,9 @@
 - title: Crypto
   items: []
   url: "/crypto/"
+- title: Shop
+  items: []
+  url: "/shop/"
 - title: Product
   items:
   - title: Computer Vision
