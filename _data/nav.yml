@@ -1,4 +1,7 @@
 ---
+- title: Crypto
+  items: []
+  url: "/crypto/"
 - title: Product
   items:
   - title: Computer Vision
