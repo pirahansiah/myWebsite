@@ -31,7 +31,7 @@
   -webkit-backdrop-filter: blur(16px) saturate(200%) brightness(1.10);
   border: 1.5px solid rgba(255, 255, 255, 0.90);
   box-shadow:
-    0 4px 20px rgba(100, 80, 200, 0.14),
+    0 4px 20px rgba(90, 60, 20, 0.14),
     0 1px 0   rgba(255, 255, 255, 1.00) inset,
     0 -1px 0  rgba(180, 160, 240, 0.18) inset;
   transition:
@@ -72,8 +72,8 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: rgba(10, 132, 255, 0.80);
-  box-shadow: 0 0 8px rgba(10, 132, 255, 0.45);
+  background: rgba(245, 166, 35, 0.80);
+  box-shadow: 0 0 8px rgba(245, 166, 35, 0.45);
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition:
@@ -93,21 +93,21 @@
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.54);
   box-shadow:
-    0 6px 28px rgba(10, 132, 255, 0.22),
+    0 6px 28px rgba(245, 166, 35, 0.22),
     0 1px 0   rgba(255, 255, 255, 1.00) inset,
-    0 -1px 0  rgba(10, 132, 255, 0.12) inset;
+    0 -1px 0  rgba(245, 166, 35, 0.12) inset;
 }
 
 #farshid-cursor.is-hovered .cursor-ring {
   border-radius: 999px;
-  border-color: rgba(10, 132, 255, 0.20);
+  border-color: rgba(245, 166, 35, 0.20);
 }
 
 #farshid-cursor.is-hovered .cursor-dot {
   width: 6px;
   height: 6px;
-  background: rgba(10, 132, 255, 1.0);
-  box-shadow: 0 0 12px rgba(10, 132, 255, 0.60);
+  background: rgba(245, 166, 35, 1.0);
+  box-shadow: 0 0 12px rgba(245, 166, 35, 0.60);
 }
 
 /* ─── STATE: clicking → compress ──────────────────────────────────── */
@@ -119,15 +119,15 @@
 #farshid-cursor.is-clicking .cursor-glass {
   background: rgba(255, 255, 255, 0.62);
   box-shadow:
-    0 2px 10px rgba(100, 80, 200, 0.20),
+    0 2px 10px rgba(90, 60, 20, 0.20),
     0 1px 0   rgba(255, 255, 255, 1.00) inset;
 }
 
 #farshid-cursor.is-clicking .cursor-dot {
   width: 8px;
   height: 8px;
-  background: rgba(10, 132, 255, 1.0);
-  box-shadow: 0 0 16px rgba(10, 132, 255, 0.70);
+  background: rgba(245, 166, 35, 1.0);
+  box-shadow: 0 0 16px rgba(245, 166, 35, 0.70);
 }
 
 /* ─── STATE: text selection → I-beam bar ──────────────────────────── */
@@ -138,10 +138,10 @@
 
 #farshid-cursor.is-text .cursor-glass {
   border-radius: 3px;
-  background: rgba(10, 132, 255, 0.55);
+  background: rgba(245, 166, 35, 0.55);
   backdrop-filter: none;
-  border-color: rgba(10, 132, 255, 0.40);
-  box-shadow: 0 0 12px rgba(10, 132, 255, 0.35);
+  border-color: rgba(245, 166, 35, 0.40);
+  box-shadow: 0 0 12px rgba(245, 166, 35, 0.35);
 }
 
 #farshid-cursor.is-text .cursor-shine,
@@ -167,7 +167,7 @@
   #farshid-cursor.is-hovered .cursor-glass {
     background: rgba(255, 255, 255, 0.22);
     box-shadow:
-      0 6px 28px rgba(10, 132, 255, 0.30),
+      0 6px 28px rgba(245, 166, 35, 0.30),
       0 1px 0   rgba(255, 255, 255, 0.22) inset;
   }
 }

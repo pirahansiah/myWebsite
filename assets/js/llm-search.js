@@ -1160,7 +1160,7 @@
       .attr("viewBox", "0 0 " + W + " " + H);
     svg.selectAll("*").remove();
 
-    var COLORS = { hub: "#0a84ff", page: "#30d158", tag: "#af52de", asset: "#8e8e93", moc: "#0a84ff", note: "#30d158" };
+    var COLORS = { hub: "#F5A623", page: "#30d158", tag: "#af52de", asset: "#8e8e93", moc: "#F5A623", note: "#30d158" };
     var g = svg.append("g");
 
     var link = g.append("g").selectAll("line").data(links).enter().append("line")

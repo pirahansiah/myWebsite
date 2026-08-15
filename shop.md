@@ -1,8 +1,8 @@
 ---
 layout: farshid_default
 permalink: /shop/
-title: "Digital Downloads — Guides & Cheat Sheets"
-description: "Technical guides, cheat sheets, and tutorials by Dr. Farshid Pirahansiah — computer vision, AI, CUDA, and software engineering."
+title: "Digital Downloads & AI Prompt Packs"
+description: "Technical guides, cheat sheets, AI prompt packs, and tutorials by Dr. Farshid Pirahansiah — computer vision, AI, CUDA, and software engineering."
 ---
 
 > **Digital Downloads** — Technical guides, cheat sheets, and tutorials by Dr. Farshid Pirahansiah — https://pirahansiah.com/shop/
@@ -21,16 +21,16 @@ description: "Technical guides, cheat sheets, and tutorials by Dr. Farshid Pirah
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   transition: border-color 0.18s ease, transform 0.18s ease;
 }
-.shop-card:hover { border-color: rgba(90,200,250,0.5); transform: translateY(-2px); }
-.shop-cat { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5ac8fa; }
+.shop-card:hover { border-color: rgba(245, 166, 35,0.5); transform: translateY(-2px); }
+.shop-cat { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #14B8A6; }
 .shop-title { margin: 0; font-size: 1.05rem; line-height: 1.3; }
 .shop-desc { margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.55; flex-grow: 1; }
 .shop-meta { font-size: 0.72rem; color: var(--text-muted); opacity: 0.75; }
 .shop-dl {
   display: inline-block; margin-top: 4px; padding: 10px 16px; text-align: center;
-  background: linear-gradient(135deg, #0a84ff, #bf5af2); color: #fff;
+  background: linear-gradient(135deg, #F5A623, #EA580C); color: #1B1208;
   border-radius: 10px; font-weight: 700; font-size: 0.88rem; text-decoration: none;
-  box-shadow: 0 4px 16px rgba(10,132,255,0.3); transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(245, 166, 35,0.3); transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .shop-dl:hover { opacity: 0.9; transform: scale(1.02); }
 .shop-foot { max-width: 640px; margin: 26px auto 0; padding: 0 16px 40px; color: var(--text-muted); font-size: 0.82rem; line-height: 1.6; text-align: center; }
@@ -38,9 +38,49 @@ description: "Technical guides, cheat sheets, and tutorials by Dr. Farshid Pirah
 
 <div class="shop-hero">
   <h1>Digital Downloads</h1>
-  <p>Technical guides, cheat sheets, and tutorials on computer vision, AI, CUDA, and software engineering — by Dr. Farshid Pirahansiah.</p>
+  <p>Technical guides, cheat sheets, AI prompt packs, and tutorials on computer vision, AI, CUDA, and software engineering — by Dr. Farshid Pirahansiah.</p>
 </div>
 <div class="shop-note">Every item below is a self-contained PDF. Click <strong>Download PDF</strong> to get the file. These are the same products sold as digital downloads on Etsy.</div>
+
+<h2 class="shop-sec">AI Prompt Packs — Etsy</h2>
+<div class="shop-grid">
+<div class="shop-card">
+  <div class="shop-cat">Prompt Pack</div>
+  <h3 class="shop-title">CV &amp; Edge AI Engineering</h3>
+  <p class="shop-desc">CV pipelines, edge deployment, and INT8/INT4 quantization skills — the full computer-vision agent stack.</p>
+</div>
+<div class="shop-card">
+  <div class="shop-cat">Prompt Pack</div>
+  <h3 class="shop-title">Code Review &amp; Debugging</h3>
+  <p class="shop-desc">Code-reviewer, debugger, and security-auditor agents plus a structured bug-diagnosis loop.</p>
+</div>
+<div class="shop-card">
+  <div class="shop-cat">Prompt Pack</div>
+  <h3 class="shop-title">System Design &amp; Architecture</h3>
+  <p class="shop-desc">Deep-module design vocabulary, domain modeling, and relentless design interviews.</p>
+</div>
+<div class="shop-card">
+  <div class="shop-cat">Prompt Pack</div>
+  <h3 class="shop-title">Agent Workflows &amp; Autonomy</h3>
+  <p class="shop-desc">Autonomy ladders, evaluator-optimizer loops, handoffs, and PRD-to-issue pipelines.</p>
+</div>
+<div class="shop-card">
+  <div class="shop-cat">Prompt Pack</div>
+  <h3 class="shop-title">Engineering Discipline</h3>
+  <p class="shop-desc">TDD, project modernization, throwaway prototypes, and learning from failures.</p>
+</div>
+<div class="shop-card">
+  <div class="shop-cat">Prompt Pack</div>
+  <h3 class="shop-title">Writing &amp; Communication</h3>
+  <p class="shop-desc">Humanize AI text, force terse output, and teach concepts clearly.</p>
+</div>
+<div class="shop-card">
+  <div class="shop-cat">Prompt Pack</div>
+  <h3 class="shop-title">Knowledge Graph &amp; Memory</h3>
+  <p class="shop-desc">Turn anything into a knowledge graph and query it with the codebase-memory MCP.</p>
+</div>
+</div>
+<div class="shop-note">All seven packs — 27 skills, 3 agents, MCP tools, and coding rules — are catalogued on the <a href="/ai-toolkit/">AI Toolkit page</a>. Prompt packs are sold as digital downloads on <strong>Etsy</strong>, ready for Claude 5, GPT-5.6, Cursor, and Codex.</div>
 
 <h2 class="shop-sec">Computer Vision</h2>
 <div class="shop-grid">

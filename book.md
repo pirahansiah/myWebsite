@@ -12,7 +12,7 @@ tags: [book, computer vision, ai, gpu, cuda, llm, pdf]
 .book-hero { text-align: center; padding: 40px 20px 16px; }
 .book-hero h1 {
   font-size: 2.4rem; font-weight: 800; line-height: 1.2; margin-bottom: 12px;
-  background: linear-gradient(135deg, #0a84ff 0%, #bf5af2 50%, #ff375f 100%);
+  background: linear-gradient(135deg, #F5A623 0%, #EA580C 50%, #F97316 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 .book-hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 680px; margin: 0 auto; line-height: 1.65; }
@@ -24,15 +24,15 @@ tags: [book, computer vision, ai, gpu, cuda, llm, pdf]
 }
 .book-btn {
   display: inline-block; margin-top: 20px; padding: 13px 30px; border-radius: 12px;
-  background: linear-gradient(135deg, #0a84ff, #bf5af2); color: #fff; font-weight: 700;
-  font-size: 1.02rem; text-decoration: none; box-shadow: 0 8px 24px rgba(10,132,255,0.35);
+  background: linear-gradient(135deg, #F5A623, #EA580C); color: #1B1208; font-weight: 700;
+  font-size: 1.02rem; text-decoration: none; box-shadow: 0 8px 24px rgba(245, 166, 35,0.35);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.book-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(10,132,255,0.45); }
+.book-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(245, 166, 35,0.45); }
 .book-wrap { max-width: 720px; margin: 0 auto; padding: 8px 20px 48px; }
 .book-wrap h2 { margin-top: 34px; }
 .book-part { margin: 8px 0; line-height: 1.6; }
-.book-part b { color: #0a84ff; }
+.book-part b { color: #F5A623; }
 </style>
 
 <div class="book-hero">
