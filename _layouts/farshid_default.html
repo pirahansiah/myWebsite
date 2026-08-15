@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
   <meta name="author" content="{{ site.author }}">
+  {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
   <link rel="icon" type="image/png" href="{{ '/assets/farshid.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/farshid.png' | relative_url }}">
