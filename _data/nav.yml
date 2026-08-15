@@ -1,7 +1,4 @@
 ---
-- title: Crypto
-  items: []
-  url: "/crypto/"
 - title: Shop
   items: []
   url: "/shop/"
@@ -135,6 +132,9 @@
       url: "/notes/docs/solutions/#connect"
 - title: Atlas
   items:
+  - title: Crypto
+    items: []
+    url: "/crypto/"
   - title: Research
     items:
     - title: Patents

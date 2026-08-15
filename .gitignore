@@ -248,6 +248,7 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 .jekyll-metadata
+.jekyll-cache/
 _site/
 *.pem
 *.p12

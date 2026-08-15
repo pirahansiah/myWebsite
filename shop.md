@@ -211,6 +211,6 @@ description: "Technical guides, cheat sheets, and tutorials by Dr. Farshid Pirah
 </div>
 </div>
 <div class="shop-foot">
-  Questions or licensing? Email <a href="mailto:pirahansiah@gmail.com">pirahansiah@gmail.com</a>.
+  Questions or licensing? Reach out via the <a href="/notes/docs/solutions/#connect">contact section</a>.
   For custom work and consulting, see the <a href="/notes/docs/coaching/">coaching page</a>.
 </div>
