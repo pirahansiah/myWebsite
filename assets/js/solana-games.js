@@ -324,6 +324,7 @@
 
     function start() {
       if (running) return;
+      reset();
       running = true;
       showOverlay(false, '');
       timer = setInterval(tick, speed);
@@ -505,6 +506,7 @@
 
     function start() {
       if (running) return;
+      reset();
       running = true;
       showOverlay(false, '');
       timer = setInterval(tick, dropMs);
@@ -515,6 +517,7 @@
     }
 
     function tick() { moveDown(); }
+    function moveDown() { if (!running) return; move(1, 0); }
 
     function moveLeft() { if (!running) return; move(0, -1); }
     function moveRight() { if (!running) return; move(0, 1); }
@@ -681,10 +684,10 @@
     var k = e.key;
     var handled = false;
     if (activeGame === 'snake') {
-      if (k === 'ArrowUp' || k === 'w' || k === 'W') { snakeGame.setDir(0, -1); handled = true; }
-      else if (k === 'ArrowDown' || k === 's' || k === 'S') { snakeGame.setDir(0, 1); handled = true; }
-      else if (k === 'ArrowLeft' || k === 'a' || k === 'A') { snakeGame.setDir(-1, 0); handled = true; }
-      else if (k === 'ArrowRight' || k === 'd' || k === 'D') { snakeGame.setDir(1, 0); handled = true; }
+      if (k === 'ArrowUp' || k === 'w' || k === 'W') { snakeGame.setDir(0, -1); snakeGame.start(); handled = true; }
+      else if (k === 'ArrowDown' || k === 's' || k === 'S') { snakeGame.setDir(0, 1); snakeGame.start(); handled = true; }
+      else if (k === 'ArrowLeft' || k === 'a' || k === 'A') { snakeGame.setDir(-1, 0); snakeGame.start(); handled = true; }
+      else if (k === 'ArrowRight' || k === 'd' || k === 'D') { snakeGame.setDir(1, 0); snakeGame.start(); handled = true; }
       else if (k === ' ' || k === 'Enter') { snakeGame.start(); handled = true; }
     } else if (activeGame === 'tetris') {
       if (k === 'ArrowLeft' || k === 'a' || k === 'A') { tetrisGame.left(); handled = true; }
@@ -738,10 +741,13 @@
     var signBtn = $('sign-score-btn');
     if (signBtn) signBtn.addEventListener('click', signScore);
 
+    var tipBtn = $('tip-copy');
+    if (tipBtn) tipBtn.addEventListener('click', function () { copyText(TIP_ADDR, tipBtn); });
+
     var snakeStart = $('snake-start-btn');
-    if (snakeStart) snakeStart.addEventListener('click', function () { snakeGame.reset(); snakeGame.start(); });
+    if (snakeStart) snakeStart.addEventListener('click', function () { snakeGame.start(); });
     var tetrisStart = $('tetris-start-btn');
-    if (tetrisStart) tetrisStart.addEventListener('click', function () { tetrisGame.reset(); tetrisGame.start(); });
+    if (tetrisStart) tetrisStart.addEventListener('click', function () { tetrisGame.start(); });
 
     holdButton($('snake-up'), function () { snakeGame.setDir(0, -1); snakeGame.start(); });
     holdButton($('snake-down'), function () { snakeGame.setDir(0, 1); snakeGame.start(); });

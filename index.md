@@ -15,7 +15,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #F5A623 0%, #EA580C 50%, #F97316 100%);
+  background: linear-gradient(135deg, #22D3EE 0%, #06B6D4 50%, #0284C7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -32,17 +32,17 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   align-items: center;
   gap: 10px;
   padding: 16px 36px;
-  background: linear-gradient(135deg, #F5A623, #EA580C); color: #1B1208;
+  background: linear-gradient(135deg, #22D3EE, #06B6D4); color: #062A33;
   text-decoration: none;
   border-radius: 14px;
   font-size: 1.1rem;
   font-weight: 700;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 20px rgba(245, 166, 35,0.3);
+  box-shadow: 0 4px 20px rgba(34, 211, 238,0.3);
 }
 .hero-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(245, 166, 35,0.4);
+  box-shadow: 0 8px 30px rgba(34, 211, 238,0.4);
 }
 
 .expertise-grid {
@@ -103,8 +103,8 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   font-size: 0.72rem;
   padding: 3px 10px;
   border-radius: 20px;
-  background: rgba(245, 166, 35,0.12);
-  color: #F5A623;
+  background: rgba(34, 211, 238,0.12);
+  color: #22D3EE;
   font-weight: 600;
 }
 
@@ -121,7 +121,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
 .stat-number {
   font-size: 2.4rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #F5A623, #EA580C);
+  background: linear-gradient(135deg, #22D3EE, #06B6D4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -163,13 +163,13 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   transition: all 0.2s ease;
 }
 .content-links a:hover {
-  background: rgba(245, 166, 35,0.1);
-  border-color: rgba(245, 166, 35,0.25);
+  background: rgba(34, 211, 238,0.1);
+  border-color: rgba(34, 211, 238,0.25);
   transform: translateX(3px);
 }
 .content-links a .arr {
   opacity: 0;
-  color: #F5A623;
+  color: #22D3EE;
   transition: opacity 0.2s ease;
 }
 .content-links a:hover .arr { opacity: 1; }
@@ -194,7 +194,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   align-items: center;
   gap: 10px;
   padding: 16px 40px;
-  background: #B45309;
+  background: #0891B2;
   color: #fff;
   text-decoration: none;
   border-radius: 12px;

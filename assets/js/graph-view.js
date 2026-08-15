@@ -22,8 +22,8 @@
   var gFuse = null;
 
   var COLORS = {
-    hub: "#F5A623", page: "#30d158", tag: "#af52de",
-    paper: "#14B8A6", journal: "#64d2ff", book: "#ffd60a", patent: "#F97316",
+    hub: "#22D3EE", page: "#30d158", tag: "#af52de",
+    paper: "#06B6D4", journal: "#64d2ff", book: "#ffd60a", patent: "#0284C7",
     keynote: "#ff6482", course: "#00c7be", pkm: "#ac8e68", business: "#8e8e93"
   };
 
@@ -86,11 +86,11 @@
       ctx.lineTo(t.x, t.y);
 
       if (isSearch) {
-        ctx.strokeStyle = "#F5A623";
+        ctx.strokeStyle = "#22D3EE";
         ctx.lineWidth = 2.5 / transform.k;
         ctx.globalAlpha = 1;
       } else if (isHL) {
-        ctx.strokeStyle = "#F5A623";
+        ctx.strokeStyle = "#22D3EE";
         ctx.lineWidth = 2 / transform.k;
         ctx.globalAlpha = 0.9;
       } else if (isDim) {
@@ -136,7 +136,7 @@
       ctx.arc(n.x, n.y, drawR, 0, Math.PI * 2);
       ctx.fillStyle = fill;
       ctx.fill();
-      ctx.strokeStyle = isSel ? "#ff9500" : isHov ? "#F5A623" : "rgba(255,255,255,0.2)";
+      ctx.strokeStyle = isSel ? "#ff9500" : isHov ? "#22D3EE" : "rgba(255,255,255,0.2)";
       ctx.lineWidth = (isSel ? 2.5 : isHov ? 2 : 0.5) / Math.max(transform.k, 0.5);
       ctx.stroke();
 

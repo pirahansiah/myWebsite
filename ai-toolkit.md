@@ -12,7 +12,7 @@ tags: [prompts, claude, gpt, mcp, skills, agents, ai-toolkit, etsy]
 .tk-hero { text-align: center; padding: 36px 20px 12px; }
 .tk-hero h1 {
   font-size: 2.3rem; font-weight: 800; line-height: 1.2; margin-bottom: 10px;
-  background: linear-gradient(135deg, #F5A623 0%, #EA580C 60%, #F97316 100%);
+  background: linear-gradient(135deg, #22D3EE 0%, #06B6D4 60%, #0284C7 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 .tk-hero p { color: var(--text-muted); font-size: 1.08rem; max-width: 700px; margin: 0 auto; line-height: 1.65; }
@@ -31,8 +31,8 @@ tags: [prompts, claude, gpt, mcp, skills, agents, ai-toolkit, etsy]
 .tk-card li { margin: 4px 0; font-size: 0.86rem; color: var(--text-muted); line-height: 1.45; }
 .tk-card li b { color: var(--text); font-weight: 600; }
 .tk-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
-.tk-tags span { font-size: 0.78rem; color: var(--text-muted); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 5px 12px; border-radius: 999px; }
-.tk-note { margin: 22px 0 0; padding: 16px 18px; border-radius: 14px; border-left: 3px solid var(--accent); background: rgba(245,166,35,0.07); font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); }
+.tk-tags span { font-size: 0.78rem; color: var(--text-muted); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 5px 12px; border-radius: 12px; }
+.tk-note { margin: 22px 0 0; padding: 16px 18px; border-radius: 14px; border-left: 3px solid var(--accent); background: rgba(34, 211, 238,0.07); font-size: 0.9rem; line-height: 1.6; color: var(--text-muted); }
 </style>
 
 <div class="tk-hero">

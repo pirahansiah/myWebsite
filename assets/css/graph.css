@@ -55,7 +55,7 @@ main.site-main.graph-active {
   font: inherit;
   font-size: 0.72rem;
   padding: 0.3rem 0.6rem;
-  border-radius: 999px;
+  border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.50);
   background: rgba(255, 255, 255, 0.28);
   color: var(--text);
@@ -104,8 +104,8 @@ main.site-main.graph-active {
 }
 
 .graph-tab.active {
-  color: #F5A623;
-  border-bottom-color: #F5A623;
+  color: #22D3EE;
+  border-bottom-color: #22D3EE;
   font-weight: 600;
 }
 
@@ -125,7 +125,7 @@ main.site-main.graph-active {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 30% 20%, rgba(245, 166, 35, 0.06), transparent 40%),
+    radial-gradient(circle at 30% 20%, rgba(34, 211, 238, 0.06), transparent 40%),
     radial-gradient(circle at 70% 80%, rgba(52, 199, 89, 0.04), transparent 45%);
 }
 
@@ -199,14 +199,14 @@ main.site-main.graph-active {
   vertical-align: middle;
 }
 
-.legend-hub::before { background: #F5A623; }
+.legend-hub::before { background: #22D3EE; }
 .legend-cv::before { background: #30d158; }
-.legend-ai::before { background: #EA580C; }
+.legend-ai::before { background: #06B6D4; }
 .legend-cuda::before { background: #ff9f0a; }
-.legend-paper::before { background: #14B8A6; }
+.legend-paper::before { background: #06B6D4; }
 .legend-journal::before { background: #64d2ff; }
 .legend-book::before { background: #ffd60a; }
-.legend-patent::before { background: #F97316; }
+.legend-patent::before { background: #0284C7; }
 .legend-keynote::before { background: #ff6482; }
 .legend-course::before { background: #00c7be; }
 .legend-pkm::before { background: #ac8e68; }
@@ -230,9 +230,9 @@ main.site-main.graph-active {
   padding: 0.4rem 0.8rem !important;
   font-weight: 600;
   color: var(--farshid-blue) !important;
-  background: rgba(245, 166, 35, 0.10) !important;
-  border: 1px solid rgba(245, 166, 35, 0.30) !important;
-  border-radius: 999px !important;
+  background: rgba(34, 211, 238, 0.10) !important;
+  border: 1px solid rgba(34, 211, 238, 0.30) !important;
+  border-radius: 12px !important;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.16s ease;
@@ -240,8 +240,8 @@ main.site-main.graph-active {
 }
 
 .graph-open-btn:hover {
-  background: rgba(245, 166, 35, 0.20) !important;
-  border-color: rgba(245, 166, 35, 0.50) !important;
+  background: rgba(34, 211, 238, 0.20) !important;
+  border-color: rgba(34, 211, 238, 0.50) !important;
 }
 
 .graph-open-btn strong {

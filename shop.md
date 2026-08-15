@@ -21,16 +21,16 @@ description: "Technical guides, cheat sheets, AI prompt packs, and tutorials by 
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   transition: border-color 0.18s ease, transform 0.18s ease;
 }
-.shop-card:hover { border-color: rgba(245, 166, 35,0.5); transform: translateY(-2px); }
-.shop-cat { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #14B8A6; }
+.shop-card:hover { border-color: rgba(34, 211, 238,0.5); transform: translateY(-2px); }
+.shop-cat { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #06B6D4; }
 .shop-title { margin: 0; font-size: 1.05rem; line-height: 1.3; }
 .shop-desc { margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.55; flex-grow: 1; }
 .shop-meta { font-size: 0.72rem; color: var(--text-muted); opacity: 0.75; }
 .shop-dl {
   display: inline-block; margin-top: 4px; padding: 10px 16px; text-align: center;
-  background: linear-gradient(135deg, #F5A623, #EA580C); color: #1B1208;
+  background: linear-gradient(135deg, #22D3EE, #06B6D4); color: #062A33;
   border-radius: 10px; font-weight: 700; font-size: 0.88rem; text-decoration: none;
-  box-shadow: 0 4px 16px rgba(245, 166, 35,0.3); transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(34, 211, 238,0.3); transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .shop-dl:hover { opacity: 0.9; transform: scale(1.02); }
 .shop-foot { max-width: 640px; margin: 26px auto 0; padding: 0 16px 40px; color: var(--text-muted); font-size: 0.82rem; line-height: 1.6; text-align: center; }
