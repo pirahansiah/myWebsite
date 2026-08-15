@@ -129,9 +129,20 @@
       url: "/notes/docs/solutions/#connect"
 - title: Atlas
   items:
-  - title: Crypto
-    items: []
-    url: "/crypto/"
+  - title: About
+    items:
+    - title: Crypto
+      items: []
+      url: "/crypto/"
+    - title: MetaMask
+      items: []
+      url: "/metamask/"
+    - title: Shop
+      items: []
+      url: "/shop/"
+    - title: Book
+      items: []
+      url: "/book/"
   - title: Research
     items:
     - title: Patents
