@@ -23,7 +23,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #34D399 0%, #10B981 50%, #059669 100%);
+  background: linear-gradient(135deg, #8FB996 0%, #6FAE8A 50%, #5BA57B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -36,14 +36,13 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   line-height: 1.6;
 }
 .hero-avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
-  border: 4px solid var(--farshid-teal);
-  box-shadow: 0 12px 34px rgba(60, 70, 80, 0.18), 0 3px 12px rgba(52, 211, 153, 0.22);
-  margin: 0 auto 24px;
+  margin: 0 auto 28px;
   display: block;
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,0.55) 66%, transparent 78%);
+  mask-image: radial-gradient(circle at 50% 50%, #000 52%, rgba(0,0,0,0.55) 66%, transparent 78%);
 }
 .hero-mentoring {
   font-size: 1.15rem;
@@ -57,17 +56,17 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   align-items: center;
   gap: 10px;
   padding: 16px 36px;
-  background: linear-gradient(135deg, #34D399, #10B981); color: #052e16;
+  background: linear-gradient(135deg, #8FB996, #6FAE8A); color: #26382B;
   text-decoration: none;
   border-radius: 14px;
   font-size: 1.1rem;
   font-weight: 700;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 20px rgba(52, 211, 153,0.3);
+  box-shadow: 0 4px 20px rgba(143, 185, 150,0.3);
 }
 .hero-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(52, 211, 153,0.4);
+  box-shadow: 0 8px 30px rgba(143, 185, 150,0.4);
 }
 
 .expertise-grid {
@@ -128,8 +127,8 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   font-size: 0.72rem;
   padding: 3px 10px;
   border-radius: 20px;
-  background: rgba(52, 211, 153,0.12);
-  color: #34D399;
+  background: rgba(143, 185, 150,0.12);
+  color: #8FB996;
   font-weight: 600;
 }
 
@@ -146,7 +145,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
 .stat-number {
   font-size: 2.4rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #34D399, #10B981);
+  background: linear-gradient(135deg, #8FB996, #6FAE8A);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -188,13 +187,13 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   transition: all 0.2s ease;
 }
 .content-links a:hover {
-  background: rgba(52, 211, 153,0.1);
-  border-color: rgba(52, 211, 153,0.25);
+  background: rgba(143, 185, 150,0.1);
+  border-color: rgba(143, 185, 150,0.25);
   transform: translateX(3px);
 }
 .content-links a .arr {
   opacity: 0;
-  color: #34D399;
+  color: #8FB996;
   transition: opacity 0.2s ease;
 }
 .content-links a:hover .arr { opacity: 1; }
@@ -219,7 +218,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   align-items: center;
   gap: 10px;
   padding: 16px 40px;
-  background: #059669;
+  background: #5BA57B;
   color: #fff;
   text-decoration: none;
   border-radius: 12px;
@@ -228,9 +227,9 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   transition: all 0.2s ease;
 }
 .cta-btn:hover {
-  background: #047857;
+  background: #46825F;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(5,150,105,0.35);
+  box-shadow: 0 8px 24px rgba(91,165,123,0.35);
 }
 .cta-btn svg { width: 20px; height: 20px; fill: currentColor; }
 
@@ -243,14 +242,14 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
 
 <div class="hero-section">
   
-  <img class="hero-avatar" src="{{ '/assets/a.jpg' | relative_url }}" alt="Dr. Farshid Pirahansiah" width="150" height="150">
+  <img class="hero-avatar" src="{{ '/assets/a.jpg' | relative_url }}" alt="Dr. Farshid Pirahansiah" width="220" height="220">
   <h1>Dr. Farshid Pirahansiah</h1>
   <p class="hero-subtitle">
-    Embedded Computer Vision &amp; Edge AI at Scale &mdash; I help businesses turn computer vision research into production-ready embedded applications.
-    From model optimization to multi-camera deployment on NVIDIA Jetson, Raspberry Pi, Hailo, Axelera, and beyond.
+    Embedded Computer Vision &amp; Edge AI at Scale &mdash; I help organizations move computer vision from research into production-ready edge applications.
+    From model optimization and real-time inference to multi-camera deployment on NVIDIA Jetson, Raspberry Pi, Hailo, and Axelera platforms.
   </p>
   <p class="hero-mentoring">
-    I am mentoring for AI in Germany &mdash; contact me for your first free session.
+    I offer AI mentoring in Germany &mdash; book a complimentary first session.
   </p>
   <a href="https://www.linkedin.com/in/pirahansiah/" class="hero-cta" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -259,7 +258,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
 </div>
 
 <div class="stats-row">
-  <div class="stat-block"><div class="stat-number">12+</div><div class="stat-desc">Years Experience</div></div>
+  <div class="stat-block"><div class="stat-number">12+</div><div class="stat-desc">Years of Experience</div></div>
   <div class="stat-block"><div class="stat-number">3</div><div class="stat-desc">Patents</div></div>
   <div class="stat-block"><div class="stat-number">17+</div><div class="stat-desc">Publications</div></div>
   <div class="stat-block"><div class="stat-number">142</div><div class="stat-desc">Citations</div></div>
@@ -282,7 +281,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   <a href="/notes/docs/optimization/" class="expertise-card" style="text-decoration:none;color:inherit;">
     <span class="expertise-icon">&#128200;</span>
     <h3>Model Optimization &amp; Quantization</h3>
-    <p>INT8/FP16 quantization, pruning, and knowledge distillation. Reduce model size 4-10x while maintaining accuracy for real-time inference on resource-constrained hardware.</p>
+    <p>INT8/FP16 quantization, pruning, and knowledge distillation. Reduce model size by 4&ndash;10&times; while maintaining accuracy for real-time inference on resource-constrained hardware.</p>
     <div class="tags">
       <span class="tag">TensorRT</span>
       <span class="tag">OpenVINO</span>
@@ -294,7 +293,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   <a href="/notes/docs/cv/multi-camera/" class="expertise-card" style="text-decoration:none;color:inherit;">
     <span class="expertise-icon">&#127909;</span>
     <h3>Multi-Camera Systems</h3>
-    <p>Synchronized multi-camera setups for 3D reconstruction, stereo vision, and surveillance. Scaling from 2 to 100+ cameras with GStreamer and GPU-accelerated pipelines.</p>
+    <p>Synchronized multi-camera setups for 3D reconstruction, stereo vision, and surveillance. scaling from 2 to 100+ cameras with GStreamer and GPU-accelerated pipelines.</p>
     <div class="tags">
       <span class="tag">GStreamer</span>
       <span class="tag">CUDA</span>
@@ -306,7 +305,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   <a href="/notes/docs/llm/" class="expertise-card" style="text-decoration:none;color:inherit;">
     <span class="expertise-icon">&#129302;</span>
     <h3>LLM &amp; AI Integration</h3>
-    <p>Integrate vision-LLMs, RAG pipelines, and multi-agent systems into CV workflows. Local inference with Ollama, or cloud APIs for production-scale AI applications.</p>
+    <p>Integrate vision-LLMs, RAG pipelines, and multi-agent systems into CV workflows. Local inference via Ollama, or cloud APIs for production-scale AI applications.</p>
     <div class="tags">
       <span class="tag">LLMs</span>
       <span class="tag">RAG</span>
