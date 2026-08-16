@@ -1,7 +1,4 @@
 ---
-- title: Games
-  items: []
-  url: "/game/"
 - title: Product
   items:
   - title: Computer Vision
@@ -140,6 +137,9 @@
     - title: MetaMask
       items: []
       url: "/metamask/"
+    - title: Game
+      items: []
+      url: "/game/"
     - title: Solana Games
       items: []
       url: "/solana-games/"

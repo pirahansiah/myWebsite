@@ -544,9 +544,8 @@
     var adx = Math.abs(dx), ady = Math.abs(dy);
     var dur = Date.now() - touchStartT;
     if (adx < 12 && ady < 12 && dur < 300) {
-      // tap
+      // tap — only flappy acts on a tap
       if (active === 'flappy') { handleFlap(); }
-      else if (!snake.running || snake.over) { /* tap does nothing outside flappy */ }
     } else if (adx > ady) {
       handleDir(dx > 0 ? 1 : -1, 0);
     } else {

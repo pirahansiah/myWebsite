@@ -12,6 +12,7 @@ markmap: |
   - Courses
   - Business
   ## Atlas
+  - About
   - Research
   - Programming
   - Optimization
@@ -77,6 +78,14 @@ markmap: |
 ---
 
 ## Atlas
+
+### About
+- **[Crypto](/crypto/)** — Support the site with crypto donations (ETH, BTC, SOL, Base, BNB)
+- **[MetaMask](/metamask/)** — Connect a crypto wallet and test send/receive
+- **[Game](/game/)** — Play Snake, Flappy Bird and 2048 in your browser
+- **[Solana Games](/solana-games/)** — Simple Solana games and on-chain mini-games
+- **[Shop](/shop/)** — Digital downloads: branded PDF guides and ebooks
+- **[Book](/book/)** — Computer Vision & AI Engineer's Guide (free PDF)
 
 ### Research
 - **[Patents](/notes/pubs/patents/)** — 3 patents: face augmentation, vehicle detection, facial analysis

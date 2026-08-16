@@ -5,10 +5,10 @@
 
 :root {
   /* Primary accent — instrument cyan */
-  --farshid-blue:   #0891B2;   /* cyan-600 — links / text on light */
-  --farshid-purple: #0E7490;   /* cyan-700 — gradient end */
-  --farshid-pink:   #0284C7;   /* sky-600  — gradient mid */
-  --farshid-teal:   #06B6D4;   /* cyan-500 — secondary / data */
+  --farshid-blue:   #059669;   /* cyan-600 — links / text on light */
+  --farshid-purple: #047857;   /* cyan-700 — gradient end */
+  --farshid-pink:   #10B981;   /* sky-600  — gradient mid */
+  --farshid-teal:   #34D399;   /* cyan-500 — secondary / data */
 
   /* Typography */
   --mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas,
@@ -30,14 +30,14 @@
   --pill-active-bg:     rgba(255, 255, 255, 0.82);
   --pill-active-border: rgba(255, 255, 255, 0.96);
   --pill-active-shadow:
-    0 4px 18px rgba(8, 145, 178, 0.18),
+    0 4px 18px rgba(5, 150, 105, 0.18),
     0 1px 0    rgba(255, 255, 255, 0.98) inset,
-    0 0   0 1px rgba(8, 145, 178, 0.14);
+    0 0   0 1px rgba(5, 150, 105, 0.14);
 
   --background: #F4F6F8;
   --text:       #0F172A;
   --text-muted: #475569;
-  --accent:     #0891B2;
+  --accent:     #059669;
 
   --mouse-x: 50%;
   --mouse-y: 50%;
@@ -45,10 +45,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --farshid-blue:   #22D3EE;   /* cyan-400 on midnight */
-    --farshid-purple: #38BDF8;
-    --farshid-pink:   #06B6D4;
-    --farshid-teal:   #2DD4BF;
+    --farshid-blue:   #34D399;   /* cyan-400 on midnight */
+    --farshid-purple: #6EE7B7;
+    --farshid-pink:   #34D399;
+    --farshid-teal:   #4ADE80;
 
     --glass-bg:            rgba(17, 24, 39, 0.58);
     --glass-bg-strong:     rgba(30, 41, 59, 0.76);
@@ -64,13 +64,13 @@
     --pill-active-bg:     rgba(30, 41, 59, 0.90);
     --pill-active-border: rgba(255, 255, 255, 0.20);
     --pill-active-shadow:
-      0 4px 18px rgba(34, 211, 238, 0.20),
+      0 4px 18px rgba(52, 211, 153, 0.20),
       0 1px 0    rgba(255, 255, 255, 0.08) inset;
 
     --background: #0B1220;
     --text:       #E2E8F0;
     --text-muted: #94A3B8;
-    --accent:     #22D3EE;
+    --accent:     #34D399;
   }
 }
 
@@ -98,17 +98,17 @@ body::after {
 
 body::before {
   background:
-    radial-gradient(ellipse 700px 500px at 10% 15%, rgba(34, 211, 238, 0.10), transparent),
-    radial-gradient(ellipse 600px 600px at 85% 20%, rgba(2, 132, 199, 0.09), transparent),
-    radial-gradient(ellipse 500px 450px at 45% 85%, rgba(6, 182, 212, 0.08), transparent);
+    radial-gradient(ellipse 700px 500px at 10% 15%, rgba(52, 211, 153, 0.10), transparent),
+    radial-gradient(ellipse 600px 600px at 85% 20%, rgba(16, 185, 129, 0.09), transparent),
+    radial-gradient(ellipse 500px 450px at 45% 85%, rgba(52, 211, 153, 0.08), transparent);
   animation: drift 25s ease-in-out infinite alternate;
 }
 
 body::after {
   background:
-    radial-gradient(ellipse 400px 350px at 75% 55%, rgba(2, 132, 199, 0.08), transparent),
-    radial-gradient(ellipse 350px 400px at 15% 70%, rgba(8, 145, 178, 0.07), transparent),
-    radial-gradient(ellipse 450px 300px at 50% 10%, rgba(34, 211, 238, 0.06), transparent);
+    radial-gradient(ellipse 400px 350px at 75% 55%, rgba(16, 185, 129, 0.08), transparent),
+    radial-gradient(ellipse 350px 400px at 15% 70%, rgba(5, 150, 105, 0.07), transparent),
+    radial-gradient(ellipse 450px 300px at 50% 10%, rgba(52, 211, 153, 0.06), transparent);
   animation: drift 30s ease-in-out infinite alternate-reverse;
 }
 
@@ -127,17 +127,17 @@ body::after {
 
   body::before {
     background:
-      radial-gradient(ellipse 700px 500px at 10% 15%, rgba(34, 211, 238, 0.09), transparent),
-      radial-gradient(ellipse 600px 600px at 85% 20%, rgba(2, 132, 199, 0.08), transparent),
+      radial-gradient(ellipse 700px 500px at 10% 15%, rgba(52, 211, 153, 0.09), transparent),
+      radial-gradient(ellipse 600px 600px at 85% 20%, rgba(16, 185, 129, 0.08), transparent),
       radial-gradient(ellipse 500px 450px at 45% 85%, rgba(45, 212, 191, 0.06), transparent);
     animation: drift 25s ease-in-out infinite alternate;
   }
 
   body::after {
     background:
-      radial-gradient(ellipse 400px 350px at 75% 55%, rgba(2, 132, 199, 0.07), transparent),
-      radial-gradient(ellipse 350px 400px at 15% 70%, rgba(8, 145, 178, 0.06), transparent),
-      radial-gradient(ellipse 450px 300px at 50% 10%, rgba(34, 211, 238, 0.05), transparent);
+      radial-gradient(ellipse 400px 350px at 75% 55%, rgba(16, 185, 129, 0.07), transparent),
+      radial-gradient(ellipse 350px 400px at 15% 70%, rgba(5, 150, 105, 0.06), transparent),
+      radial-gradient(ellipse 450px 300px at 50% 10%, rgba(52, 211, 153, 0.05), transparent);
     animation: drift 30s ease-in-out infinite alternate-reverse;
   }
 }

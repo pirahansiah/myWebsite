@@ -71,6 +71,31 @@
       "kind": "tag"
     },
     {
+      "id": "tag-wallet-bar",
+      "label": "#wallet-bar",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-wallet-address",
+      "label": "#wallet-address",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-wallet-balance",
+      "label": "#wallet-balance",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-panel-tetris",
+      "label": "#panel-tetris",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-tetris-next-canvas",
+      "label": "#tetris-next-canvas",
+      "kind": "tag"
+    },
+    {
       "id": "tag-about",
       "label": "#about",
       "kind": "tag"
@@ -361,21 +386,6 @@
       "kind": "tag"
     },
     {
-      "id": "tag-handwritten",
-      "label": "#handwritten",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-imagesegmentation",
-      "label": "#imagesegmentation",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-psnr",
-      "label": "#psnr",
-      "kind": "tag"
-    },
-    {
       "id": "tag-papers",
       "label": "#papers",
       "kind": "tag"
@@ -383,16 +393,6 @@
     {
       "id": "tag-objectdetection",
       "label": "#objectdetection",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-thresholding",
-      "label": "#thresholding",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-multimodal",
-      "label": "#multimodal",
       "kind": "tag"
     },
     {
@@ -411,16 +411,6 @@
       "kind": "tag"
     },
     {
-      "id": "tag-videostabilization",
-      "label": "#videostabilization",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-fuzzylogic",
-      "label": "#fuzzylogic",
-      "kind": "tag"
-    },
-    {
       "id": "tag-multiagent",
       "label": "#multiagent",
       "kind": "tag"
@@ -428,6 +418,11 @@
     {
       "id": "tag-llm",
       "label": "#llm",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-multimodal",
+      "label": "#multimodal",
       "kind": "tag"
     },
     {
@@ -463,11 +458,6 @@
     {
       "id": "tag-featuredetection",
       "label": "#featuredetection",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-slam",
-      "label": "#slam",
       "kind": "tag"
     },
     {
@@ -870,6 +860,81 @@
     {
       "source": "tag-bigdata",
       "target": "tag-datascience",
+      "kind": "cooccur"
+    },
+    {
+      "source": "notes-docs-solana-games",
+      "target": "tag-wallet-bar",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-solana-games",
+      "target": "tag-wallet-address",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-solana-games",
+      "target": "tag-wallet-balance",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-solana-games",
+      "target": "tag-panel-tetris",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-solana-games",
+      "target": "tag-tetris-next-canvas",
+      "kind": "tag"
+    },
+    {
+      "source": "tag-wallet-bar",
+      "target": "tag-wallet-address",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-wallet-bar",
+      "target": "tag-wallet-balance",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-wallet-bar",
+      "target": "tag-panel-tetris",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-wallet-bar",
+      "target": "tag-tetris-next-canvas",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-wallet-address",
+      "target": "tag-wallet-balance",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-wallet-address",
+      "target": "tag-panel-tetris",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-wallet-address",
+      "target": "tag-tetris-next-canvas",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-wallet-balance",
+      "target": "tag-panel-tetris",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-wallet-balance",
+      "target": "tag-tetris-next-canvas",
+      "kind": "cooccur"
+    },
+    {
+      "source": "tag-panel-tetris",
+      "target": "tag-tetris-next-canvas",
       "kind": "cooccur"
     },
     {
@@ -2893,36 +2958,6 @@
       "kind": "cooccur"
     },
     {
-      "source": "notes-pubs-papers-handwritten-thresholding",
-      "target": "tag-handwritten",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-papers-handwritten-thresholding",
-      "target": "tag-imagesegmentation",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-papers-handwritten-thresholding",
-      "target": "tag-psnr",
-      "kind": "tag"
-    },
-    {
-      "source": "tag-handwritten",
-      "target": "tag-imagesegmentation",
-      "kind": "cooccur"
-    },
-    {
-      "source": "tag-handwritten",
-      "target": "tag-psnr",
-      "kind": "cooccur"
-    },
-    {
-      "source": "tag-imagesegmentation",
-      "target": "tag-psnr",
-      "kind": "cooccur"
-    },
-    {
       "source": "notes-pubs-papers-conference-paper",
       "target": "tag-papers",
       "kind": "tag"
@@ -2968,26 +3003,6 @@
       "kind": "cooccur"
     },
     {
-      "source": "notes-pubs-papers-multi-threshold-plate",
-      "target": "tag-thresholding",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-papers-multi-threshold-plate",
-      "target": "tag-imagesegmentation",
-      "kind": "tag"
-    },
-    {
-      "source": "tag-thresholding",
-      "target": "tag-imagesegmentation",
-      "kind": "cooccur"
-    },
-    {
-      "source": "notes-pubs-keynotes-llm-cv",
-      "target": "tag-multimodal",
-      "kind": "tag"
-    },
-    {
       "source": "notes-pubs-keynotes-llm-cv",
       "target": "tag-machinelearning",
       "kind": "tag"
@@ -3006,26 +3021,6 @@
       "source": "notes-pubs-keynotes-llm-cv",
       "target": "tag-googlegemini",
       "kind": "tag"
-    },
-    {
-      "source": "tag-multimodal",
-      "target": "tag-machinelearning",
-      "kind": "cooccur"
-    },
-    {
-      "source": "tag-multimodal",
-      "target": "tag-costcalculator",
-      "kind": "cooccur"
-    },
-    {
-      "source": "tag-multimodal",
-      "target": "tag-claude",
-      "kind": "cooccur"
-    },
-    {
-      "source": "tag-multimodal",
-      "target": "tag-googlegemini",
-      "kind": "cooccur"
     },
     {
       "source": "tag-machinelearning",
@@ -3055,21 +3050,6 @@
     {
       "source": "tag-claude",
       "target": "tag-googlegemini",
-      "kind": "cooccur"
-    },
-    {
-      "source": "notes-pubs-books-computational-intelligence",
-      "target": "tag-videostabilization",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-computational-intelligence",
-      "target": "tag-fuzzylogic",
-      "kind": "tag"
-    },
-    {
-      "source": "tag-videostabilization",
-      "target": "tag-fuzzylogic",
       "kind": "cooccur"
     },
     {
@@ -3475,36 +3455,6 @@
     {
       "source": "tag-featuredetection",
       "target": "tag-aicommunity",
-      "kind": "cooccur"
-    },
-    {
-      "source": "notes-pubs-books-camera-calibration",
-      "target": "tag-videostabilization",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-camera-calibration",
-      "target": "tag-robotics",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-camera-calibration",
-      "target": "tag-slam",
-      "kind": "tag"
-    },
-    {
-      "source": "tag-videostabilization",
-      "target": "tag-robotics",
-      "kind": "cooccur"
-    },
-    {
-      "source": "tag-videostabilization",
-      "target": "tag-slam",
-      "kind": "cooccur"
-    },
-    {
-      "source": "tag-robotics",
-      "target": "tag-slam",
       "kind": "cooccur"
     },
     {

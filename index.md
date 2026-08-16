@@ -15,7 +15,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #22D3EE 0%, #06B6D4 50%, #0284C7 100%);
+  background: linear-gradient(135deg, #34D399 0%, #10B981 50%, #059669 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -27,22 +27,39 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   margin: 0 auto 32px;
   line-height: 1.6;
 }
+.hero-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--farshid-teal);
+  box-shadow: 0 8px 30px rgba(52, 211, 153, 0.35);
+  margin: 0 auto 24px;
+  display: block;
+}
+.hero-mentoring {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--farshid-blue);
+  max-width: 640px;
+  margin: 0 auto 24px;
+}
 .hero-cta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 16px 36px;
-  background: linear-gradient(135deg, #22D3EE, #06B6D4); color: #062A33;
+  background: linear-gradient(135deg, #34D399, #10B981); color: #052e16;
   text-decoration: none;
   border-radius: 14px;
   font-size: 1.1rem;
   font-weight: 700;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 20px rgba(34, 211, 238,0.3);
+  box-shadow: 0 4px 20px rgba(52, 211, 153,0.3);
 }
 .hero-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(34, 211, 238,0.4);
+  box-shadow: 0 8px 30px rgba(52, 211, 153,0.4);
 }
 
 .expertise-grid {
@@ -103,8 +120,8 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   font-size: 0.72rem;
   padding: 3px 10px;
   border-radius: 20px;
-  background: rgba(34, 211, 238,0.12);
-  color: #22D3EE;
+  background: rgba(52, 211, 153,0.12);
+  color: #34D399;
   font-weight: 600;
 }
 
@@ -121,7 +138,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
 .stat-number {
   font-size: 2.4rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #22D3EE, #06B6D4);
+  background: linear-gradient(135deg, #34D399, #10B981);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -163,13 +180,13 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   transition: all 0.2s ease;
 }
 .content-links a:hover {
-  background: rgba(34, 211, 238,0.1);
-  border-color: rgba(34, 211, 238,0.25);
+  background: rgba(52, 211, 153,0.1);
+  border-color: rgba(52, 211, 153,0.25);
   transform: translateX(3px);
 }
 .content-links a .arr {
   opacity: 0;
-  color: #22D3EE;
+  color: #34D399;
   transition: opacity 0.2s ease;
 }
 .content-links a:hover .arr { opacity: 1; }
@@ -194,7 +211,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   align-items: center;
   gap: 10px;
   padding: 16px 40px;
-  background: #0891B2;
+  background: #059669;
   color: #fff;
   text-decoration: none;
   border-radius: 12px;
@@ -203,9 +220,9 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   transition: all 0.2s ease;
 }
 .cta-btn:hover {
-  background: #004182;
+  background: #047857;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(10,101,197,0.35);
+  box-shadow: 0 8px 24px rgba(5,150,105,0.35);
 }
 .cta-btn svg { width: 20px; height: 20px; fill: currentColor; }
 
@@ -218,10 +235,14 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
 
 <div class="hero-section">
   
-  <h1>Embedded Computer Vision<br>&amp; Edge AI at Scale</h1>
+  <img class="hero-avatar" src="{{ '/assets/a.jpg' | relative_url }}" alt="Dr. Farshid Pirahansiah" width="150" height="150">
+  <h1>Dr. Farshid Pirahansiah</h1>
   <p class="hero-subtitle">
-    I help businesses turn computer vision research into production-ready embedded applications.
+    Embedded Computer Vision &amp; Edge AI at Scale &mdash; I help businesses turn computer vision research into production-ready embedded applications.
     From model optimization to multi-camera deployment on NVIDIA Jetson, Raspberry Pi, Hailo, Axelera, and beyond.
+  </p>
+  <p class="hero-mentoring">
+    I am mentoring for AI in Germany &mdash; contact me for your first free session.
   </p>
   <a href="https://www.linkedin.com/in/pirahansiah/" class="hero-cta" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>

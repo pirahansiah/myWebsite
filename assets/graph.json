@@ -589,6 +589,55 @@
       "kind": "moc"
     },
     {
+      "id": "moc-about",
+      "label": "About",
+      "url": null,
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-crypto",
+      "label": "Crypto",
+      "url": "/crypto/",
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-metamask",
+      "label": "MetaMask",
+      "url": "/metamask/",
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-game",
+      "label": "Game",
+      "url": "/game/",
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-solana-games",
+      "label": "Solana Games",
+      "url": "/solana-games/",
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-shop",
+      "label": "Shop",
+      "url": "/shop/",
+      "raw": null,
+      "kind": "moc"
+    },
+    {
+      "id": "moc-book",
+      "label": "Book",
+      "url": "/book/",
+      "raw": null,
+      "kind": "moc"
+    },
+    {
       "id": "moc-research",
       "label": "Research",
       "url": null,
@@ -1163,6 +1212,13 @@
       "kind": "tag"
     },
     {
+      "id": "notes-docs-crypto",
+      "label": "crypto",
+      "url": "/notes/docs/crypto",
+      "raw": "/notes/docs/crypto",
+      "kind": "note"
+    },
+    {
       "id": "notes-docs-images-vscodecudawindows-png",
       "label": "VSCodeCUDAwindows",
       "url": "/view/?p=%2Fnotes%2Fdocs%2Fimages%2FVSCodeCUDAwindows.png",
@@ -1247,6 +1303,55 @@
       "kind": "note"
     },
     {
+      "id": "notes-docs-solana-games",
+      "label": "solana-games",
+      "url": "/notes/docs/solana-games",
+      "raw": "/notes/docs/solana-games",
+      "kind": "note"
+    },
+    {
+      "id": "tag-wallet-bar",
+      "label": "#wallet-bar",
+      "url": "/notes/docs/solana-games",
+      "raw": "/notes/docs/solana-games",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-wallet-address",
+      "label": "#wallet-address",
+      "url": "/notes/docs/solana-games",
+      "raw": "/notes/docs/solana-games",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-wallet-balance",
+      "label": "#wallet-balance",
+      "url": "/notes/docs/solana-games",
+      "raw": "/notes/docs/solana-games",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-panel-tetris",
+      "label": "#panel-tetris",
+      "url": "/notes/docs/solana-games",
+      "raw": "/notes/docs/solana-games",
+      "kind": "tag"
+    },
+    {
+      "id": "tag-tetris-next-canvas",
+      "label": "#tetris-next-canvas",
+      "url": "/notes/docs/solana-games",
+      "raw": "/notes/docs/solana-games",
+      "kind": "tag"
+    },
+    {
+      "id": "notes-docs-metamask",
+      "label": "metamask",
+      "url": "/notes/docs/metamask",
+      "raw": "/notes/docs/metamask",
+      "kind": "note"
+    },
+    {
       "id": "notes-docs-research",
       "label": "research",
       "url": "/notes/docs/research",
@@ -1293,13 +1398,6 @@
       "label": "guide",
       "url": "/notes/pkm/guide",
       "raw": "/notes/pkm/guide",
-      "kind": "note"
-    },
-    {
-      "id": "notes-boo",
-      "label": "boo",
-      "url": "/notes/boo",
-      "raw": "/notes/boo",
       "kind": "note"
     },
     {
@@ -1660,6 +1758,20 @@
       "kind": "tag"
     },
     {
+      "id": "notes-index",
+      "label": "index",
+      "url": "/notes/index",
+      "raw": "/notes/index",
+      "kind": "note"
+    },
+    {
+      "id": "notes-pkm-aboutme",
+      "label": "AboutMe",
+      "url": "/notes/pkm/AboutMe/",
+      "raw": "/notes/pkm/AboutMe/",
+      "kind": "note"
+    },
+    {
       "id": "tag-faceaugmentation",
       "label": "#FaceAugmentation",
       "url": "/notes/pubs/cv",
@@ -1786,27 +1898,6 @@
       "kind": "asset"
     },
     {
-      "id": "tag-handwritten",
-      "label": "#handwritten",
-      "url": "/notes/pubs/papers/handwritten-thresholding",
-      "raw": "/notes/pubs/papers/handwritten-thresholding",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-imagesegmentation",
-      "label": "#imagesegmentation",
-      "url": "/notes/pubs/papers/handwritten-thresholding",
-      "raw": "/notes/pubs/papers/handwritten-thresholding",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-psnr",
-      "label": "#psnr",
-      "url": "/notes/pubs/papers/handwritten-thresholding",
-      "raw": "/notes/pubs/papers/handwritten-thresholding",
-      "kind": "tag"
-    },
-    {
       "id": "notes-pubs-papers-comparison-thresholding-handwritten-png",
       "label": "comparison-thresholding-handwritten",
       "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fcomparison-thresholding-handwritten.png",
@@ -1861,13 +1952,6 @@
       "url": "/view/?p=%2Fnotes%2Fpubs%2Fpapers%2Fpattern-image-calibration.png",
       "raw": "/notes/pubs/papers/pattern-image-calibration.png",
       "kind": "asset"
-    },
-    {
-      "id": "tag-thresholding",
-      "label": "#thresholding",
-      "url": "/notes/pubs/papers/multi-threshold-plate",
-      "raw": "/notes/pubs/papers/multi-threshold-plate",
-      "kind": "tag"
     },
     {
       "id": "https-podcasters-spotify-com-pod-show-pirahansiah-episodes-my-conference-paper-multi-threshold-approach-for-license-plate-recognition-system-e2ps2fe",
@@ -1961,13 +2045,6 @@
       "kind": "asset"
     },
     {
-      "id": "tag-multimodal",
-      "label": "#multimodal",
-      "url": "/notes/pubs/keynotes/llm-cv",
-      "raw": "/notes/pubs/keynotes/llm-cv",
-      "kind": "tag"
-    },
-    {
       "id": "tag-costcalculator",
       "label": "#CostCalculator",
       "url": "/notes/pubs/keynotes/llm-cv",
@@ -2001,20 +2078,6 @@
       "url": "/notes/pubs/keynotes/index",
       "raw": "/notes/pubs/keynotes/index",
       "kind": "note"
-    },
-    {
-      "id": "tag-videostabilization",
-      "label": "#videostabilization",
-      "url": "/notes/pubs/books/computational-intelligence",
-      "raw": "/notes/pubs/books/computational-intelligence",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-fuzzylogic",
-      "label": "#fuzzylogic",
-      "url": "/notes/pubs/books/computational-intelligence",
-      "raw": "/notes/pubs/books/computational-intelligence",
-      "kind": "tag"
     },
     {
       "id": "notes-pubs-books-computational-intelligence-optical-flow-png",
@@ -2094,6 +2157,13 @@
       "kind": "note"
     },
     {
+      "id": "tag-multimodal",
+      "label": "#multimodal",
+      "url": "/notes/pubs/books/ai/cv-meets-llm",
+      "raw": "/notes/pubs/books/ai/cv-meets-llm",
+      "kind": "tag"
+    },
+    {
       "id": "tag-rag",
       "label": "#rag",
       "url": "/notes/pubs/books/ai/cv-meets-llm",
@@ -2140,13 +2210,6 @@
       "label": "#featuredetection",
       "url": "/notes/pubs/books/ai/opencv5-ch2",
       "raw": "/notes/pubs/books/ai/opencv5-ch2",
-      "kind": "tag"
-    },
-    {
-      "id": "tag-slam",
-      "label": "#slam",
-      "url": "/notes/pubs/books/camera-calibration",
-      "raw": "/notes/pubs/books/camera-calibration",
       "kind": "tag"
     },
     {
@@ -2206,6 +2269,13 @@
       "kind": "tag"
     },
     {
+      "id": "notes-site-share",
+      "label": "share",
+      "url": "/notes/site/share",
+      "raw": "/notes/site/share",
+      "kind": "note"
+    },
+    {
       "id": "notes-site-search",
       "label": "search",
       "url": "/notes/site/search",
@@ -2245,6 +2315,48 @@
       "label": "menus",
       "url": "/notes/site/menus",
       "raw": "/notes/site/menus",
+      "kind": "note"
+    },
+    {
+      "id": "crypto",
+      "label": "crypto",
+      "url": "/crypto/",
+      "raw": "/crypto/",
+      "kind": "note"
+    },
+    {
+      "id": "metamask",
+      "label": "metamask",
+      "url": "/metamask/",
+      "raw": "/metamask/",
+      "kind": "note"
+    },
+    {
+      "id": "game",
+      "label": "game",
+      "url": "/game/",
+      "raw": "/game/",
+      "kind": "note"
+    },
+    {
+      "id": "solana-games",
+      "label": "solana-games",
+      "url": "/solana-games/",
+      "raw": "/solana-games/",
+      "kind": "note"
+    },
+    {
+      "id": "shop",
+      "label": "shop",
+      "url": "/shop/",
+      "raw": "/shop/",
+      "kind": "note"
+    },
+    {
+      "id": "book",
+      "label": "book",
+      "url": "/book/",
+      "raw": "/book/",
       "kind": "note"
     },
     {
@@ -2322,6 +2434,13 @@
       "label": "prompts",
       "url": "/notes/site/prompts",
       "raw": "/notes/site/prompts",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-game",
+      "label": "game",
+      "url": "/notes/site/game",
+      "raw": "/notes/site/game",
       "kind": "note"
     },
     {
@@ -2744,6 +2863,41 @@
       "source": "moc-connect",
       "target": "notes-docs-solutions-connect",
       "kind": "link"
+    },
+    {
+      "source": "moc-atlas",
+      "target": "moc-about",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-about",
+      "target": "moc-crypto",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-about",
+      "target": "moc-metamask",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-about",
+      "target": "moc-game",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-about",
+      "target": "moc-solana-games",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-about",
+      "target": "moc-shop",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-about",
+      "target": "moc-book",
+      "kind": "moc"
     },
     {
       "source": "moc-atlas",
@@ -3446,6 +3600,31 @@
       "kind": "tag"
     },
     {
+      "source": "notes-docs-solana-games",
+      "target": "tag-wallet-bar",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-solana-games",
+      "target": "tag-wallet-address",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-solana-games",
+      "target": "tag-wallet-balance",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-solana-games",
+      "target": "tag-panel-tetris",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-docs-solana-games",
+      "target": "tag-tetris-next-canvas",
+      "kind": "tag"
+    },
+    {
       "source": "notes-docs-index",
       "target": "notes-docs-cv-3d",
       "kind": "mdlink"
@@ -3834,11 +4013,6 @@
       "source": "notes-pkm-proof",
       "target": "notes-courses",
       "kind": "mdlink"
-    },
-    {
-      "source": "notes-pkm-guide",
-      "target": "notes-boo",
-      "kind": "wiki"
     },
     {
       "source": "notes-pkm-use-cases",
@@ -4361,6 +4535,11 @@
       "kind": "tag"
     },
     {
+      "source": "notes-index",
+      "target": "notes-pkm-aboutme",
+      "kind": "mdlink"
+    },
+    {
       "source": "notes-pubs-cv",
       "target": "tag-faceaugmentation",
       "kind": "tag"
@@ -4582,21 +4761,6 @@
     },
     {
       "source": "notes-pubs-papers-handwritten-thresholding",
-      "target": "tag-handwritten",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-papers-handwritten-thresholding",
-      "target": "tag-imagesegmentation",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-papers-handwritten-thresholding",
-      "target": "tag-psnr",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-papers-handwritten-thresholding",
       "target": "notes-pubs-papers-comparison-thresholding-handwritten-png",
       "kind": "mdlink"
     },
@@ -4699,16 +4863,6 @@
       "source": "notes-pubs-papers-pattern-calibration",
       "target": "notes-pubs-papers-pattern-image-calibration-png",
       "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-papers-multi-threshold-plate",
-      "target": "tag-thresholding",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-papers-multi-threshold-plate",
-      "target": "tag-imagesegmentation",
-      "kind": "tag"
     },
     {
       "source": "notes-pubs-papers-multi-threshold-plate",
@@ -4827,11 +4981,6 @@
     },
     {
       "source": "notes-pubs-keynotes-llm-cv",
-      "target": "tag-multimodal",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-keynotes-llm-cv",
       "target": "tag-machinelearning",
       "kind": "tag"
     },
@@ -4864,16 +5013,6 @@
       "source": "notes-pubs-keynotes-index",
       "target": "notes-pubs-keynotes-llm-cv",
       "kind": "mdlink"
-    },
-    {
-      "source": "notes-pubs-books-computational-intelligence",
-      "target": "tag-videostabilization",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-computational-intelligence",
-      "target": "tag-fuzzylogic",
-      "kind": "tag"
     },
     {
       "source": "notes-pubs-books-computational-intelligence",
@@ -5048,21 +5187,6 @@
     {
       "source": "notes-pubs-books-ai-opencv5-ch2",
       "target": "tag-aicommunity",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-camera-calibration",
-      "target": "tag-videostabilization",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-camera-calibration",
-      "target": "tag-robotics",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-pubs-books-camera-calibration",
-      "target": "tag-slam",
       "kind": "tag"
     },
     {
@@ -5323,6 +5447,36 @@
     {
       "source": "notes-site-menus",
       "target": "notes-docs-solutions-connect",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-site-menus",
+      "target": "crypto",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-site-menus",
+      "target": "metamask",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-site-menus",
+      "target": "game",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-site-menus",
+      "target": "solana-games",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-site-menus",
+      "target": "shop",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-site-menus",
+      "target": "book",
       "kind": "mdlink"
     },
     {
