@@ -7,8 +7,16 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
 <style>
 .hero-section {
   text-align: center;
-  padding: 60px 24px 40px;
+  padding: 56px 28px 48px;
   position: relative;
+  margin: 28px auto 0;
+  max-width: 900px;
+  border-radius: 28px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
 }
 .hero-section h1 {
   font-size: 2.8rem;
@@ -33,7 +41,7 @@ description: "Dr. Farshid Pirahansiah — Embedded Computer Vision & Edge AI Eng
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--farshid-teal);
-  box-shadow: 0 8px 30px rgba(52, 211, 153, 0.35);
+  box-shadow: 0 12px 34px rgba(60, 70, 80, 0.18), 0 3px 12px rgba(52, 211, 153, 0.22);
   margin: 0 auto 24px;
   display: block;
 }
