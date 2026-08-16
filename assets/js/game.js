@@ -7,7 +7,10 @@
   'use strict';
 
   /* ----------------------------- Telegram init --------------------------- */
-  var TG = (window.Telegram && window.Telegram.WebApp) ? window.Telegram.WebApp : null;
+  var TGraw = (window.Telegram && window.Telegram.WebApp) ? window.Telegram.WebApp : null;
+  // telegram-web-app.js creates a WebApp stub (v6.0) even OUTSIDE Telegram;
+  // initData is only populated in a real Mini App, so it is the reliable check.
+  var TG = (TGraw && TGraw.initData) ? TGraw : null;
   var inTelegram = !!TG;
 
   var theme = {
@@ -84,7 +87,7 @@
   var scoreB = document.querySelector('#game-score b');
   var bestB = document.querySelector('#game-best b');
   var badge = $('game-tg-badge');
-  var stage = $('game-stage');
+  var stage = $('game-stage') || document.querySelector('.game-stage');
 
   var panels = { snake: $('game-snake'), flappy: $('game-flappy'), '2048': $('game-2048') };
   var overlays = { snake: $('snake-overlay'), flappy: $('flappy-overlay'), '2048': $('g2048-overlay') };

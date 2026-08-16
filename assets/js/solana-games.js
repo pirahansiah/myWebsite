@@ -12,7 +12,7 @@
   var B58 = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
   var SOL_RPC = 'https://api.mainnet-beta.solana.com';
   var SCORES_KEY = 'solana-arcade-scores-v1';
-  var TIP_ADDR = 'DPfX2mNvCqQuosQLe4nDBQRf8ZdNfS5LA4tvSsGPyCH4';
+  var TIP_ADDR = '4Ub6VYF69PdCjpCMWDysU54WPb1xB7s628ASkCuJmcib';
 
   /* ---------- base58 (BigInt) ---------- */
   function toBase58(bytes) {
@@ -162,7 +162,7 @@
     walletErrClear();
     var p = getProvider();
     if (!p) {
-      walletErr('No Solana wallet found. Install Phantom (phantom.app) or Backpack, then reload.');
+      walletErr('No Solana wallet in this browser. On mobile or inside Telegram, wallet apps can\u2019t inject a connection \u2014 the games still work here, and you can send a tip to the SOL address at the bottom of the page. On desktop, install Phantom (phantom.app) to connect and sign your scores.');
       return;
     }
     try {
@@ -722,6 +722,32 @@
     el.addEventListener('contextmenu', function (e) { e.preventDefault(); });
   }
 
+  /* ---------- swipe / tap controls (iPhone & touch screens) ---------- */
+  function bindSwipe(el, handlers) {
+    if (!el) return;
+    var sx = null, sy = null, st = 0;
+    el.addEventListener('touchstart', function (e) {
+      var t = e.touches[0];
+      sx = t.clientX; sy = t.clientY; st = Date.now();
+    }, { passive: true });
+    el.addEventListener('touchmove', function (e) {
+      if (sx !== null) e.preventDefault(); // stop page scroll while steering
+    }, { passive: false });
+    el.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var t = e.changedTouches[0];
+      var dx = t.clientX - sx, dy = t.clientY - sy;
+      var dur = Date.now() - st;
+      sx = null; sy = null;
+      if (Math.abs(dx) < 14 && Math.abs(dy) < 14 && dur < 350) {
+        if (handlers.tap) handlers.tap();
+        return;
+      }
+      if (Math.abs(dx) > Math.abs(dy)) { (dx > 0 ? handlers.right : handlers.left)(); }
+      else { (dy > 0 ? handlers.down : handlers.up)(); }
+    }, { passive: true });
+  }
+
   /* ---------- init ---------- */
   function init() {
     snakeGame.reset();
@@ -759,6 +785,22 @@
     holdButton($('tetris-down'), function () { tetrisGame.start(); tetrisGame.down(); });
     holdButton($('tetris-rotate'), function () { tetrisGame.start(); tetrisGame.rotate(); });
     holdButton($('tetris-drop'), function () { tetrisGame.start(); tetrisGame.drop(); });
+
+    // swipe / tap on the boards (mobile-friendly)
+    bindSwipe($('panel-snake'), {
+      tap: function () { snakeGame.start(); },
+      left: function () { snakeGame.setDir(-1, 0); snakeGame.start(); },
+      right: function () { snakeGame.setDir(1, 0); snakeGame.start(); },
+      up: function () { snakeGame.setDir(0, -1); snakeGame.start(); },
+      down: function () { snakeGame.setDir(0, 1); snakeGame.start(); }
+    });
+    bindSwipe($('panel-tetris'), {
+      tap: function () { tetrisGame.start(); tetrisGame.drop(); },
+      left: function () { tetrisGame.start(); tetrisGame.left(); },
+      right: function () { tetrisGame.start(); tetrisGame.right(); },
+      up: function () { tetrisGame.start(); tetrisGame.rotate(); },
+      down: function () { tetrisGame.start(); tetrisGame.down(); }
+    });
 
     document.addEventListener('keydown', onKey);
 
