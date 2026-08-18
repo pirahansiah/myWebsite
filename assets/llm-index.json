@@ -6,7 +6,7 @@ layout: none
 {%- for page in pages_with_title -%}
   {%- assign u = page.url -%}
   {%- assign skip = false -%}
-  {%- if u contains '/site/' or u contains '/view/' or u contains '/graph' or u contains '/search' or u contains '/webgpu-llm' or u contains '/assets/' -%}
+  {%- if u contains '/site/' or u contains '/view/' or u contains '/graph' or u contains '/search' or u contains '/webgpu-llm' or u contains '/assets/' or u contains '/swarm' -%}
     {%- assign skip = true -%}
   {%- endif -%}
   {%- unless skip -%}

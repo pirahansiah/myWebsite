@@ -1,0 +1,222 @@
+/* Agent Swarm page — full-screen tool page, siblings with graph.css */
+
+/* Full-bleed tool page: hide the share-line blockquote that pushes content
+   below the fold (kept in HTML for the LinkedIn manifest generator). */
+main.site-main:has(.swarm-page) > blockquote {
+  display: none;
+}
+main.site-main:has(.swarm-page),
+main.site-main.swarm-active {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.swarm-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  padding: 0.5rem 0.75rem 3rem;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.swarm-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+  padding: 0.5rem 0 0.4rem;
+}
+.swarm-header h1 { margin: 0; font-size: 1.05rem; font-weight: 700; }
+.swarm-stats { color: var(--text-muted); font-size: 0.72rem; }
+.swarm-controls { margin-left: auto; display: flex; gap: 0.3rem; flex-wrap: wrap; }
+.swarm-controls button,
+.swarm-controls a {
+  font: inherit; font-size: 0.72rem; padding: 0.3rem 0.6rem; border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.50); background: rgba(255, 255, 255, 0.28);
+  color: var(--text); text-decoration: none; cursor: pointer; transition: all 0.16s ease;
+}
+.swarm-controls a:hover {
+  background: rgba(255, 255, 255, 0.62); border-color: rgba(255, 255, 255, 0.90); color: var(--farshid-blue);
+}
+
+/* query row */
+.swarm-query-row { display: flex; gap: 0.5rem; margin: 0.6rem 0 0.3rem; }
+.swarm-search-box { position: relative; flex: 1; }
+.swarm-search-box input {
+  width: 100%; padding: 11px 40px 11px 14px; font-size: 14px;
+  border: 1px solid var(--glass-border); border-radius: 12px;
+  background: var(--glass-bg); color: var(--text); outline: none; box-sizing: border-box;
+}
+.swarm-search-box input:focus { border-color: #0a84ff; }
+.swarm-search-box input::placeholder { color: var(--text-muted); font-size: 13px; }
+.swarm-search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.95rem; pointer-events: none; }
+.swarm-ask-btn {
+  font: inherit; font-size: 0.82rem; font-weight: 600; padding: 0.55rem 1rem;
+  border-radius: 12px; border: 1px solid rgba(10, 132, 255, 0.45);
+  background: rgba(10, 132, 255, 0.14); color: #0a84ff; cursor: pointer;
+  transition: all 0.16s ease; white-space: nowrap;
+}
+.swarm-ask-btn:hover:not(:disabled) { background: rgba(10, 132, 255, 0.24); border-color: #0a84ff; }
+.swarm-ask-btn:disabled { opacity: 0.45; cursor: default; }
+
+.swarm-suggest {
+  display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center;
+  font-size: 0.75rem; color: var(--text-muted); margin: 0.2rem 0 0.4rem;
+}
+.swarm-suggest button {
+  font: inherit; font-size: 0.72rem; padding: 0.22rem 0.55rem; border-radius: 999px;
+  border: 1px solid rgba(128, 128, 128, 0.35); background: rgba(255, 255, 255, 0.22);
+  color: var(--text); cursor: pointer; transition: all 0.15s ease;
+}
+.swarm-suggest button:hover { border-color: #0a84ff; color: #0a84ff; background: rgba(10, 132, 255, 0.10); }
+
+.swarm-loading {
+  display: flex; align-items: center; gap: 0.5rem; justify-content: center;
+  color: var(--text-muted); font-size: 0.8rem; padding: 0.6rem 0;
+}
+.swarm-loading-spinner {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid rgba(10, 132, 255, 0.25); border-top-color: #0a84ff;
+  animation: swarmspin 0.8s linear infinite;
+}
+@keyframes swarmspin { to { transform: rotate(360deg); } }
+
+.swarm-notice {
+  margin: 0.4rem auto; padding: 0.5rem 0.9rem; font-size: 0.78rem; text-align: center;
+  border-radius: 10px; background: rgba(255, 149, 0, 0.12); border: 1px solid rgba(255, 149, 0, 0.4); color: #b27a00;
+}
+
+/* swarm canvas */
+.swarm-wrap {
+  height: 340px; border-radius: 16px; overflow: hidden; position: relative;
+}
+#swarm-canvas { display: block; width: 100%; height: 100%; }
+.swarm-hint { text-align: center; font-size: 0.72rem; color: var(--text-muted); margin: 0.35rem 0 0.7rem; }
+
+/* console log */
+.swarm-log {
+  max-height: 150px; overflow-y: auto; margin: 0.2rem 0 0.8rem;
+  border: 1px solid var(--glass-border); border-radius: 12px;
+  background: rgba(0, 0, 0, 0.20); padding: 0.5rem 0.7rem;
+  font-size: 0.72rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  display: none;
+}
+.swarm-log.has-rows { display: block; }
+.swarm-log-row { display: flex; gap: 0.5rem; padding: 1px 0; line-height: 1.55; }
+.swarm-log-who { color: #0a84ff; font-weight: 600; white-space: nowrap; }
+.swarm-log-row.ok .swarm-log-who { color: #30d158; }
+.swarm-log-row.warn .swarm-log-who { color: #ff9f0a; }
+.swarm-log-text { color: var(--text); opacity: 0.85; }
+
+/* sections */
+.swarm-section {
+  margin: 0.9rem 0; padding: 0.85rem 1rem;
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  border-radius: 16px;
+}
+.swarm-section h2 { margin: 0 0 0.55rem; font-size: 1rem; font-weight: 700; }
+.swarm-sub { margin-top: 0.75rem; }
+.swarm-sub h3 { margin: 0 0 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--text-muted); }
+
+.swarm-synthesis p { margin: 0.35rem 0; font-size: 0.9rem; line-height: 1.65; }
+.swarm-muted { color: var(--text-muted); font-size: 0.8rem; font-style: italic; }
+
+.swarm-kp { display: flex; gap: 0.5rem; padding: 0.3rem 0; font-size: 0.85rem; line-height: 1.55; }
+.swarm-kp-num {
+  flex: 0 0 auto; width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(10, 132, 255, 0.15); color: #0a84ff; font-size: 0.7rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 2px;
+}
+.swarm-kp-src { color: #0a84ff; text-decoration: none; font-size: 0.75rem; }
+.swarm-kp-src:hover { text-decoration: underline; }
+
+.swarm-chips-row { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; margin-top: 0.7rem; }
+.swarm-chips-label { font-size: 0.75rem; color: var(--text-muted); }
+.swarm-covered { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.swarm-chip {
+  font-size: 0.68rem; padding: 0.18rem 0.5rem; border-radius: 999px;
+  background: rgba(10, 132, 255, 0.10); border: 1px solid rgba(10, 132, 255, 0.30); color: #0a84ff;
+}
+
+/* viz grid */
+.swarm-viz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 720px) { .swarm-viz-grid { grid-template-columns: 1fr; } }
+.swarm-viz-sub { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+
+.swarm-cat-row { display: flex; align-items: center; gap: 0.5rem; padding: 2px 0; font-size: 0.78rem; }
+.swarm-cat-label { flex: 0 0 130px; text-align: right; color: var(--text); }
+.swarm-cat-bar-wrap { flex: 1; background: rgba(128, 128, 128, 0.15); border-radius: 6px; height: 10px; overflow: hidden; }
+.swarm-cat-bar { display: block; height: 100%; border-radius: 6px; background: linear-gradient(90deg, #0a84ff, #5e5ce6); transition: width 0.5s ease; }
+.swarm-cat-count { flex: 0 0 22px; color: var(--text-muted); font-size: 0.72rem; text-align: right; }
+
+.swarm-tagcloud { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; min-height: 60px; }
+.swarm-cloud-tag {
+  font: inherit; padding: 0.15rem 0.5rem; border-radius: 999px;
+  border: 1px solid rgba(175, 82, 222, 0.4); background: rgba(175, 82, 222, 0.10);
+  color: #af52de; cursor: pointer; transition: all 0.15s ease; line-height: 1.5;
+}
+.swarm-cloud-tag:hover { background: rgba(175, 82, 222, 0.22); border-color: #af52de; }
+
+/* refs */
+.swarm-refs { display: flex; flex-direction: column; gap: 0.4rem; }
+.swarm-ref {
+  display: flex; gap: 0.6rem; padding: 0.5rem 0.7rem; border-radius: 10px;
+  background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(128, 128, 128, 0.22);
+  text-decoration: none; transition: all 0.15s ease;
+}
+.swarm-ref:hover { border-color: #0a84ff; background: rgba(10, 132, 255, 0.08); transform: translateX(3px); }
+.swarm-ref-num {
+  flex: 0 0 auto; width: 22px; height: 22px; border-radius: 50%; font-size: 0.7rem; font-weight: 700;
+  background: rgba(10, 132, 255, 0.14); color: #0a84ff; display: flex; align-items: center; justify-content: center;
+}
+.swarm-ref-body { display: flex; flex-direction: column; min-width: 0; }
+.swarm-ref-title { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.swarm-ref-cat { font-size: 0.65rem; color: #30d158; margin-top: 1px; }
+.swarm-ref-snip { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; line-height: 1.45; }
+
+/* relations */
+.swarm-relations { display: flex; flex-direction: column; gap: 0.35rem; }
+.swarm-rel { display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; font-size: 0.8rem; }
+.swarm-rel-name { color: #0a84ff; text-decoration: none; font-weight: 600; }
+.swarm-rel-name:hover { text-decoration: underline; }
+.swarm-rel-kind { color: var(--text-muted); font-size: 0.68rem; font-style: italic; padding: 0.1rem 0.4rem; border-radius: 999px; background: rgba(128, 128, 128, 0.14); }
+
+/* dynamic graph */
+.swarm-graph-wrap { height: 380px; border-radius: 14px; overflow: hidden; }
+#swarm-graph-canvas { display: block; width: 100%; height: 100%; }
+
+/* X post */
+.swarm-xpost {
+  border: 1px solid rgba(10, 132, 255, 0.25); border-radius: 12px;
+  background: rgba(10, 132, 255, 0.06); padding: 0.7rem 0.9rem;
+}
+.swarm-xpost-body { font-size: 0.85rem; line-height: 1.6; margin-bottom: 0.6rem; }
+.swarm-xpost-actions { display: flex; gap: 0.5rem; align-items: center; }
+.swarm-xpost-open {
+  font-size: 0.75rem; color: #0a84ff; text-decoration: none; border: 1px solid rgba(10, 132, 255, 0.4);
+  padding: 0.35rem 0.75rem; border-radius: 10px; transition: all 0.15s ease;
+}
+.swarm-xpost-open:hover { background: rgba(10, 132, 255, 0.12); }
+
+.swarm-hint-line { font-size: 0.7rem; color: var(--text-muted); text-align: center; margin: 0.8rem 0 0; }
+.swarm-hint-line a { color: #0a84ff; text-decoration: none; }
+.swarm-hint-line a:hover { text-decoration: underline; }
+
+@media (min-width: 768px) {
+  .swarm-page { padding: 0.75rem 1.25rem 3rem; }
+  .swarm-header h1 { font-size: 1.15rem; }
+  .swarm-controls button, .swarm-controls a { font-size: 0.8rem; padding: 0.32rem 0.7rem; }
+  .swarm-wrap { height: 400px; }
+  .swarm-hint { font-size: 0.78rem; }
+  .swarm-query-row { margin-top: 0.8rem; }
+}
