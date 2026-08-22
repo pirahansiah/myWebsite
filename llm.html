@@ -1,0 +1,29 @@
+---
+layout: none
+permalink: /llm/
+noindex: true
+sitemap: false
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Local LLM chat</title>
+<script>
+(function () {
+  // Redirect to whatever the current local-LLM tunnel URL is.
+  var target = 'https://pirahansiah.com/llm-target.json?v=' + Date.now();
+  function go(url) { if (url) { location.replace(url); } else { location.replace('https://pirahansiah.com/'); } }
+  fetch(target)
+    .then(function (r) { return r.json(); })
+    .then(function (d) { go(d && d.url); })
+    .catch(function () { go(null); });
+})();
+</script>
+</head>
+<body>
+  <p>Redirecting to your local LLM chat…</p>
+  <p><a href="https://pirahansiah.com/">Go to pirahansiah.com instead</a></p>
+</body>
+</html>
