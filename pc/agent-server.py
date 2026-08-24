@@ -235,9 +235,11 @@ def ensure_profile(name):
     if not pj.exists():
         _write_json(pj, {"name": _slug(name), "display": (name or DEFAULT_PROFILE).strip(),
                          "created": _now_iso(), "model": current_model_id()})
-    for fn, default in (("memory.json", []), ("conversations.json", [])):
+    for fn, default in (("memory.json", []), ("conversations.json", []), ("notes.json", [])):
         if not (d / fn).exists():
             _write_json(d / fn, default)
+    if not (d / "notes.md").exists():
+        (d / "notes.md").write_text("# Notes — %s\n" % _slug(name), encoding="utf-8")
     if not (d / "memory.md").exists():
         (d / "memory.md").write_text("# Memory — %s\n" % _slug(name), encoding="utf-8")
     return d
@@ -340,6 +342,62 @@ def dump_memory_md(prof):
         lines.append("- (%s) %s" % (f.get("ts", ""), f.get("text", "")))
     (profile_dir(prof) / "memory.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
+# ---- deterministic PKM capture: verbatim notes + tags, NO model involved ----
+TAG_CATEGORIES = [
+    (re.compile(r"https?://", re.I), ["web", "url"]),
+    (re.compile(r"python", re.I), ["python"]),
+    (re.compile(r"\.py\b", re.I), ["code", "script"]),
+    (re.compile(r"server", re.I), ["server"]),
+    (re.compile(r"file", re.I), ["file"]),
+    (re.compile(r"\bpc\b|windows|wsl", re.I), ["pc"]),
+    (re.compile(r"pdf|document|doc\b", re.I), ["document"]),
+    (re.compile(r"image|photo|screenshot", re.I), ["image"]),
+    (re.compile(r"\bllm\b|model|inferenc", re.I), ["llm"]),
+    (re.compile(r"note|idea|todo|remind", re.I), ["note"]),
+]
+
+def get_capture(prof=None):
+    """Whether 'capture everything verbatim' is ON for this profile."""
+    prof = prof or current_profile()
+    return bool(_read_json(profile_dir(prof) / "profile.json", {}).get("capture"))
+
+def set_capture(prof, on):
+    pj = _read_json(profile_dir(prof) / "profile.json", {})
+    pj["capture"] = bool(on)
+    _write_json(profile_dir(prof) / "profile.json", pj)
+
+def derive_tags(text):
+    """Hashtags already in text + keyword categories + a safe default."""
+    tags = list(dict.fromkeys(re.findall(r"#([A-Za-z][\w-]*)", text or "")))
+    for pat, cats in TAG_CATEGORIES:
+        if pat.search(text or ""):
+            tags.extend(c for c in cats if c not in tags)
+    if not tags:
+        tags.append("note")
+    return tags
+
+def notes_path(prof):
+    return profile_dir(prof) / "notes.json"
+
+def get_notes(prof=None):
+    prof = prof or current_profile()
+    return _read_json(notes_path(prof), [])
+
+def add_note(prof, text):
+    """Save an entry VERBATIM with tags. Returns the tags list."""
+    text = (text or "").strip()
+    if not text:
+        return []
+    tags = derive_tags(text)
+    notes = get_notes(prof)
+    notes.append({"id": uuid.uuid4().hex[:8], "ts": _now_iso(), "text": text, "tags": tags})
+    _write_json(notes_path(prof), notes)
+    # keep a human-readable append-only .md mirror for easy browsing on the PC
+    md_path = profile_dir(prof) / "notes.md"
+    with md_path.open("a", encoding="utf-8") as fh:
+        fh.write("\n## %s  (#%s)\n%s\n" % (_now_iso(), ", #".join(tags), text))
+    return tags
+
 # --- automatic memory extraction from ordinary conversation ------------------
 AUTO_MEMORY_PATTERNS = [
     (re.compile(r"\bmy name is\s+([A-Za-z][\w'-]{1,30})", re.I), lambda m: "Name: " + m.group(1)),
@@ -388,6 +446,13 @@ RE_CMD_REMEMBER = re.compile(r"^\s*remember\s+(?:that\s+)?(.+)$", re.I | re.S)
 RE_CMD_MEMORY_SHOW = re.compile(r"^\s*(?:show\s+)?memory\s*[=?]?\s*$", re.I)
 RE_CMD_MEMORY_CLEAR = re.compile(r"^\s*(?:clear|erase|reset)\s+memory\s*$", re.I)
 RE_CMD_FORGET = re.compile(r"^\s*forget\s+profile\s+([A-Za-z0-9_\-]{1,40})\s*$", re.I)
+RE_CMD_PKM_ON = re.compile(r"^\s*(?:pkm|capture)\s+(?:on|start)\s*$", re.I)
+RE_CMD_PKM_OFF = re.compile(r"^\s*(?:pkm|capture)\s+(?:off|stop|end)\s*$", re.I)
+RE_CMD_PKM_STATUS = re.compile(r"^\s*(?:pkm|capture)\s*(?:status|state)?\s*[=?]?\s*$", re.I)
+RE_CMD_PKM_LIST = re.compile(r"^\s*(?:pkm|capture|notes?)\s+(?:list|show|view|all)\s*$", re.I)
+RE_CMD_PKM_CLEAR = re.compile(r"^\s*(?:pkm|capture|notes?)\s+clear\s*$", re.I)
+# one-shot save: "note: ..." / "save: ..." / "pkm: ..." — verbatim, no model
+RE_CMD_NOTE = re.compile(r"^\s*(?:note|save|pkm)\s*[:#]\s*(.+)$", re.I | re.S)
 
 def handle_commands(text):
     """Return an OpenAI-shaped direct reply if the text was a storage command, else None."""
@@ -438,6 +503,39 @@ def handle_commands(text):
             CURRENT_CONV.pop(DEFAULT_PROFILE, None)
         return _sys_reply("Deleted profile **%s** (chats + memory)." % slug)
 
+    # ---- PKM capture mode (verbatim notes, model NEVER involved) ----
+    if RE_CMD_PKM_ON.match(t):
+        set_capture(prof, True)
+        return _sys_reply("📥 **PKM capture ON** for **%s**. Every message you send from now on "
+                          "is saved VERBATIM (with auto tags) and the model is NOT asked to "
+                          "process it. Stop it any time with `pkm off`." % prof)
+
+    if RE_CMD_PKM_OFF.match(t):
+        set_capture(prof, False)
+        return _sys_reply("PKM capture OFF for **%s**. Next messages go to the chat model "
+                          "as normal." % prof)
+
+    if RE_CMD_PKM_STATUS.match(t):
+        on = get_capture(prof)
+        return _sys_reply("**%s** PKM capture is **%s**. `%s`"
+                          % (prof, "ON (verbatim save)" if on else "OFF (normal chat)",
+                             "type `pkm off` to switch" if on else "type `pkm on` to enable"))
+
+    if RE_CMD_PKM_LIST.match(t):
+        notes = get_notes(prof)
+        if not notes:
+            return _sys_reply("No notes saved for **%s** yet. Send `pkm on` then just type "
+                              "what you want to keep, or use `note: <text>`." % prof)
+        body = "\n".join("- (%s) `#%s` — %s"
+                         % (n["ts"], ", #".join(n.get("tags", [])), n["text"][:90])
+                         for n in notes[-25:])
+        return _sys_reply("**%s** notes (%d total, newest last):\n%s" % (prof, len(notes), body))
+
+    if RE_CMD_PKM_CLEAR.match(t):
+        _write_json(notes_path(prof), [])
+        (profile_dir(prof) / "notes.md").write_text("# Notes — %s\n" % prof, encoding="utf-8")
+        return _sys_reply("Cleared all notes for **%s**." % prof)
+
     return None
 
 def _sys_reply(text):
@@ -458,6 +556,11 @@ def export_markdown(prof):
     parts.append("\n---\n\n## Memory (%d facts)\n" % len(facts))
     for f in facts:
         parts.append("- (%s) %s\n" % (f.get("ts", ""), f.get("text", "")))
+    notes = get_notes(prof)
+    parts.append("\n---\n\n## Notes (%d, verbatim captures)\n" % len(notes))
+    for n in notes:
+        parts.append("- (%s) `#%s` — %s\n"
+                     % (n.get("ts", ""), ", #".join(n.get("tags", [])), n.get("text", "")))
     return "".join(parts)
 
 # ---- live tool activity feed (page polls while thinking) ---------------------
@@ -504,6 +607,8 @@ async def state_handler(request):
         "conversations": get_conv_index(prof),
         "conversation": conv,
         "memory": get_memory(prof),
+        "notes": get_notes(prof)[-15:],
+        "capture": get_capture(prof),
         "model": {"id": mid or "", "label": model_label(mid)},
         "models": [{"id": k, "label": v["label"]} for k, v in MODELS.items()],
         "storage": str(STORAGE),
@@ -792,7 +897,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 
   <div id="chatwrap"><div id="chat"></div></div>
 
-  <div class="hint">Say <b>profile = name</b> to isolate chats+memory · <b>memory = fact</b> to remember something</div>
+  <div class="hint">Say <b>profile = name</b> to isolate chats+memory · <b>memory = fact</b> to remember · <b>pkm on</b> to save everything verbatim</div>
   <div id="bar"><div id="barinner">
     <textarea id="inp" rows="1" placeholder="Message…  (Enter to send, Shift+Enter for newline)"></textarea>
     <button id="send">Send</button>
@@ -851,7 +956,8 @@ async function jpost(u,b){const r=await fetch(u,{method:'POST',headers:{'Content
 
 async function refreshState(){
   S=await jget('/__state');
-  $('proftitle').textContent=S.profile;
+  $('proftitle').textContent = S.capture ? (S.profile + ' 📥') : S.profile;
+  $('proftitle').title = S.capture ? 'PKM capture ON — every message saved verbatim' : 'profile';
   $('mlabel').textContent=S.model.label||S.model.id||'unknown';
   $('storepath').textContent=S.storage;
   renderProfiles();renderConvs();
@@ -1129,6 +1235,33 @@ async def chat_handler(request):
         return web.json_response(cmd_reply)
 
     prof = current_profile()
+
+    # 1.5) PKM capture: save VERBATIM, never involve the model.
+    #      Triggered by: capture mode ON for this profile, OR a one-shot note:/save:/pkm:
+    cap_on = get_capture(prof)
+    note_m = RE_CMD_NOTE.match(last_user)
+    if cap_on or note_m:
+        text = note_m.group(1).strip() if note_m else (last_user or "").strip()
+        cid = CURRENT_CONV.get(prof)
+        append_message(prof, cid, {"ts": _now_iso(), "role": "user",
+                                   "content": last_user}) if cid else None
+        if not cid:
+            conv = new_conv(prof, "note: " + text[:40])
+            CURRENT_CONV[prof] = conv["id"]
+            append_message(prof, conv["id"], {"ts": _now_iso(), "role": "user",
+                                              "content": last_user})
+        if text:
+            tags = add_note(prof, text)
+            reply = _sys_reply("📥 Saved verbatim to **%s** notes. Tags: `#%s`. "
+                               "(model not consulted)"
+                               % (prof, ", #".join(tags)))
+        else:
+            reply = _sys_reply("Nothing to save — the message was empty.")
+        append_message(current_profile(), CURRENT_CONV[current_profile()],
+                       {"ts": _now_iso(), "role": "assistant",
+                        "content": reply["choices"][0]["message"]["content"],
+                        "model": "storage", "model_label": "storage"})
+        return web.json_response(reply)
 
     # 2) make sure we have a conversation file and log the user prompt FIRST
     cid = CURRENT_CONV.get(prof)
