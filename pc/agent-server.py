@@ -365,12 +365,15 @@ def auto_extract_memories(prof, user_text):
     return added
 
 def memory_block_for_prompt(prof=None):
-    facts = get_memory(prof)[-16:]
+    facts = get_memory(prof)[-20:]
     if not facts:
         return ""
     lines = "\n".join("- " + f["text"] for f in reversed(facts))
-    return ("\n\nLong-term memory about the current user (use it silently, "
-            "never claim you cannot remember):\n" + lines)
+    return ("\n\n[PERSISTENT USER FACTS — always honor these. The user genuinely does have this "
+            "information and it is stored in memory. When the user's question relates to any of "
+            "these facts (their name, where they live, their job, likes/dislikes, etc.), answer "
+            "DIRECTLY using the fact below. NEVER claim you lack this memory or ask the user to "
+            "repeat something that is listed here — you already know it.]\n" + lines)
 
 def profile_meta_prompt():
     mid = current_model_id() or "local"
