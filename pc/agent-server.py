@@ -913,6 +913,11 @@ header h1{font-size:14px;margin:0;font-weight:600}
 #send,#stop{background:linear-gradient(135deg,var(--accent),var(--accent2));border:0;color:#fff;
   border-radius:12px;padding:11px 20px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap}
 #stop{background:var(--err)}
+#mic{background:var(--panel2);border:1px solid var(--border);color:var(--muted);border-radius:12px;
+  padding:11px 14px;font-size:15px;cursor:pointer;white-space:nowrap;transition:all .15s}
+#mic:hover{color:var(--text);border-color:var(--accent);transform:scale(1.06)}
+#mic.rec{background:var(--err);border-color:var(--err);color:#fff;animation:micpulse 1.2s infinite}
+@keyframes micpulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,107,.5)}50%{box-shadow:0 0 0 8px rgba(255,107,107,0)}}
 button:disabled{opacity:.45;cursor:not-allowed}
 .hint{text-align:center;color:var(--muted);font-size:11px;padding:0 0 6px}
 
@@ -975,6 +980,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
   <div class="hint">Say <b>profile = name</b> to isolate chats+memory · <b>memory = fact</b> to remember · <b>pkm on</b> to save everything verbatim</div>
   <div id="bar"><div id="barinner">
     <textarea id="inp" rows="1" placeholder="Message…  (Enter to send, Shift+Enter for newline)"></textarea>
+    <button id="mic" title="Voice input (type with your voice)">🎤</button>
     <button id="send">Send</button>
     <button id="stop" style="display:none">■ Stop</button>
   </div></div>
@@ -1247,6 +1253,56 @@ sendBtn.onclick=()=>{ask._t=inp.value.trim();ask._start=Date.now();ask();inp.val
 inp.addEventListener('keydown',e=>{
   if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask._t=inp.value.trim();ask._start=Date.now();ask();inp.value='';autosize();}
 });
+
+/* ---------- voice input (Web Speech API, in-browser STT) ---------- */
+const micBtn=$('mic');
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+let recog=null,micOn=false,micWanted=false,committed='';
+if(!SR){
+  micBtn.title='Voice input not supported in this browser (use Chrome/Edge)';
+  micBtn.style.opacity=.45;
+}else{
+  micBtn.onclick=()=>{
+    if(micOn){micWanted=false;recog.stop();return;}
+    micOn=true;micWanted=true;committed=inp.value;   // keep whatever was already typed
+    microg();
+    try{recog.start();}catch(e){}
+  };
+}
+function microg(){
+  recog=new SR();
+  recog.lang=micBtn.dataset.lang||'en-US';
+  recog.continuous=true;recog.interimResults=true;
+  recog.onresult=e=>{
+    let interim='',final=committed;
+    for(let i=e.resultIndex;i<e.results.length;i++){
+      const r=e.results[i];
+      if(r.isFinal)final=(final?final+' ':final)+r[0].transcript;
+      else interim+=r[0].transcript;
+    }
+    committed=final;
+    inp.value=(final?final+' ':'')+interim;
+    inp.placeholder=interim?'🎤 listening…':'Message…  (Enter to send, Shift+Enter for newline)';
+    autosize();
+  };
+  recog.onend=()=>{
+    if(micWanted){microg();try{recog.start();}catch(e){micWanted=false;}} // keep listening across silence gaps
+    if(micWanted)return;   // still listening — don't reset the button
+    micOn=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');
+    inp.placeholder='Message…  (Enter to send, Shift+Enter for newline)';autosize();
+  };
+  recog.onerror=e=>{
+    if(e.error==='not-allowed'||e.error==='service-not-allowed'){
+      micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');
+      inp.placeholder='🎤 microphone access denied — allow it in the address bar';setTimeout(()=>inp.placeholder='Message…',3500);return;
+    }
+    if(e.error!=='aborted'&&e.error!=='no-speech'&&e.error!=='network'){
+      micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');
+      inp.placeholder='🎤 error: '+e.error;setTimeout(()=>inp.placeholder='Message…',2500);
+    }
+  };
+  micBtn.classList.add('rec');micBtn.textContent='🔴';
+}
 
 refreshState();
 </script></body></html>"""
