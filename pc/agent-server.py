@@ -1027,7 +1027,15 @@ button:disabled{opacity:.45;cursor:not-allowed}
   #chatwrap{padding-top:env(safe-area-inset-top)}
   header{padding:max(10px,env(safe-area-inset-top)) 12px 8px}
 }
+/* mobile profile bar — ALWAYS visible on phones so profiles are never hidden */
+#profilebar{display:none}
 @media(max-width:820px){
+  #profilebar{display:flex;align-items:center;gap:8px;padding:7px 12px;
+    background:var(--panel);border-bottom:1px solid var(--border);
+    overflow-x:auto;-webkit-overflow-scrolling:touch;flex:none}
+  #profilebarTitle{font-size:11.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;flex:none}
+  #profilechips{display:flex;gap:7px;flex:1;min-width:0}
+  #profilechips .chip{flex:0 0 auto;white-space:nowrap}
   #sidebar{position:fixed;top:0;bottom:0;left:0;transform:translateX(-105%);box-shadow:var(--shadow)}
   #sidebar.open{transform:none}
   #scrim.show{display:block}
@@ -1086,6 +1094,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
     <button class="icobtn" id="palettebtn" title="Change colour">🎨</button>
   </header>
 
+  <div id="profilebar"><span id="profilebarTitle">Profiles</span><div id="profilechips"></div></div>
   <div id="chatwrap"><div id="chat"></div></div>
 
   <div class="hint">Say <b>profile = name</b> to isolate chats+memory · <b>memory = fact</b> to remember · <b>pkm on</b> to save everything verbatim</div>
@@ -1195,6 +1204,7 @@ function renderPalette(){
 }
 function renderProfiles(){
   const p=$('profiles');p.innerHTML='';
+  const m=$('profilechips');if(m){m.innerHTML='';}
   for(const pr of S.profiles){
     const b=document.createElement('button');b.className='chip'+(pr.name===S.profile?' active':'');
     b.innerHTML='<span class="dot" style="background:'+(pr.color||'#256278')+';width:9px;height:9px;border-radius:50%;display:inline-block"></span>'+
@@ -1214,6 +1224,13 @@ function renderProfiles(){
     }
     b.onclick=()=>switchProfile(pr.name);
     p.appendChild(b);
+    // mobile bar: simpler chip (name + active dot), no delete
+    if(m){
+      const mc=document.createElement('button');mc.className='chip'+(pr.name===S.profile?' active':'');
+      mc.innerHTML='<span class="dot" style="background:'+(pr.color||'#256278')+';width:8px;height:8px;border-radius:50%;display:inline-block"></span>'+esc(pr.display);
+      mc.onclick=()=>switchProfile(pr.name);
+      m.appendChild(mc);
+    }
   }
 }
 async function switchProfile(name){
@@ -1515,7 +1532,10 @@ async function recordAudio(){
         try{a.close()}catch(_){}
         res(pcm);
       }catch(e){ res(null); }
-      recCleanup();
+      // NOTE: do NOT call recCleanup() here — it clears micWanted and the
+      // consumer's `await` continuation runs AFTER this sync frame, so it would
+      // see micWanted=false and bail before transcribing. Cleanup belongs to the
+      // consumer (pcWhisper / startWhisper) in its own finally.
     };
     mediaRec.start();
   });
@@ -1545,7 +1565,6 @@ async function pcWhisper(){
   }catch(e){
     flagMic(false,'🎤 microphone access denied');setTimeout(()=>flagMic(false),2200);return;
   }
-  if(!micWanted){recCleanup();return;}
   if(!pcm){micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');inp.placeholder='🎤 audio decode failed on this browser';setTimeout(()=>{micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');inp.placeholder='Message…'},3000);return;}
   micBtn.textContent='🔍';inp.placeholder='🎤 sending to PC + transcribing…';autosize();
   const wav=encodeWav16(pcm,16000);
