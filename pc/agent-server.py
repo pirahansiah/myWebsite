@@ -72,6 +72,32 @@ MODELS = {
     "qwen38-2b": {"label": "Qwen3.8-2B Distill (Q4_K_M, tiny/fast)", "file": "/models/Qwen38-2B-Q4_K_M.gguf"},
 }
 
+# Per-profile accent colours (Soft Paper family). Keyed by name for the UI,
+# each can also store an arbitrary hex via `color = #RRGGBB`.
+PROFILE_COLORS = {
+    "blue":  "#256278", "teal": "#2f6a4a", "green": "#5b7a3f",
+    "olive": "#7d570c", "rose":  "#94425a", "red":  "#b3455b",
+    "purple": "#6b5b95", "cyan": "#286983", "sand": "#a0783f",
+    "slate": "#575279",
+}
+DEFAULT_PROFILE_COLOR = PROFILE_COLORS["blue"]
+
+def color_of(prof):
+    """Hex accent colour for a profile (from profile.json or default)."""
+    pj = _read_json(profile_dir(prof) / "profile.json", {})
+    c = pj.get("color")
+    if c and (c.lower().startswith("#") and len(c) in (4, 7) or c.lower() in PROFILE_COLORS):
+        return PROFILE_COLORS.get(c.lower(), c)
+    return DEFAULT_PROFILE_COLOR
+
+def set_color(prof, value):
+    value = (value or "").strip()
+    hexv = PROFILE_COLORS.get(value.lower(), value)
+    pj = _read_json(profile_dir(prof) / "profile.json", {})
+    pj["color"] = hexv
+    _write_json(profile_dir(prof) / "profile.json", pj)
+    return hexv
+
 TOOLS = [
     {"type": "function", "function": {
         "name": "web_search",
@@ -264,6 +290,7 @@ def list_profiles():
                 convs = len(_read_json(d / "conversations.json", []))
                 out.append({"name": d.name, "display": pj.get("display", d.name),
                             "created": pj.get("created"), "model": pj.get("model"),
+                            "color": color_of(d.name),
                             "facts": facts, "conversations": convs})
     if not out:
         ensure_profile(DEFAULT_PROFILE)
@@ -441,6 +468,7 @@ def profile_meta_prompt():
 # ---- chat-box command handling ----------------------------------------------
 RE_CMD_PROFILE = re.compile(r"^\s*profile\s*(?:=|\bis\b|:)\s*([A-Za-z0-9_\- ]{1,40})\s*$", re.I)
 RE_CMD_PROFILE_BARE = re.compile(r"^\s*profile\s+([A-Za-z0-9_\-]{1,40})\s*$", re.I)
+RE_CMD_COLOR = re.compile(r"^\s*color\s*(?:=|:)\s*([A-Za-z#0-9]{3,9})\s*$", re.I)
 RE_CMD_MEMORY_SET = re.compile(r"^\s*(?:memory|remember)\s*[=:]\s*(.+)$", re.I | re.S)
 RE_CMD_REMEMBER = re.compile(r"^\s*remember\s+(?:that\s+)?(.+)$", re.I | re.S)
 RE_CMD_MEMORY_SHOW = re.compile(r"^\s*(?:show\s+)?memory\s*[=?]?\s*$", re.I)
@@ -472,6 +500,16 @@ def handle_commands(text):
         return _sys_reply("%s **%s** (`%s`). From now on every prompt, response and memory "
                           "fact is saved under this profile. Say `public` as `profile = public` "
                           "to go back to the shared one." % (verb, pj.get("display", slug), slug))
+
+    m = RE_CMD_COLOR.match(t)
+    if m:
+        c = m.group(1).strip()
+        if c.lower() not in PROFILE_COLORS and not (c.lower().startswith("#") and len(c) in (4, 7)):
+            return _sys_reply("Unknown colour **%s**. Pick one: %s, or use a hex like `color = #a0783f`."
+                              % (c, ", ".join(PROFILE_COLORS)))
+        hexv = set_color(prof, c)
+        return _sys_reply("🎨 **%s** accent colour set to `%s`. It tints this profile's chip and bubbles."
+                          % (prof, hexv))
 
     m = RE_CMD_MEMORY_SET.match(t) or RE_CMD_REMEMBER.match(t)
     if m:
@@ -625,6 +663,8 @@ async def state_handler(request):
     conv = load_conv(prof, CURRENT_CONV.get(prof, "")) if CURRENT_CONV.get(prof) else None
     return web.json_response({
         "profile": prof,
+        "profile_color": color_of(prof),
+        "colors": PROFILE_COLORS,
         "profiles": list_profiles(),
         "conversations": get_conv_index(prof),
         "conversation": conv,
@@ -784,25 +824,23 @@ async def v1_models_handler(request):
                      "owned_by": "local"})
     return web.json_response({"object": "list", "data": data})
 
-PAGE = r"""<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+PAGE = r"""<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>Local LLM</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/github-dark.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/github.min.css">
 <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11/lib/common.min.js"></script>
 <style>
+/* ================= Soft Paper (Obsidian) light theme ================= */
 :root{
-  --bg:#101014;--panel:#17171d;--panel2:#1e1e26;--border:#2a2a34;
-  --text:#e8e8ee;--muted:#8b8b99;--accent:#4f8cff;--accent2:#7c5cff;
-  --user:#2f6fed;--bot:#1e1e26;--ok:#3ecf8e;--warn:#ffb454;--err:#ff6b6b;
-  --radius:14px;--shadow:0 8px 28px rgba(0,0,0,.45);
-}
-[data-theme="light"]{
-  --bg:#ffffff;--panel:#f3f3f3;--panel2:#e8e8e8;--border:#e0e0e0;
-  --text:#333333;--muted:#616161;--accent:#007ACC;--accent2:#1f6fb2;
-  --user:#007ACC;--bot:#ffffff;
-  --shadow:0 8px 24px rgba(0,0,0,.10);
+  --bg:#eee6dd;--panel:#e6dbd1;--panel2:#ddd0c6;--border:#dcd3cb;
+  --text:#575279;--muted:#7a6f6a;--accent:#256278;--accent2:#286983;
+  --user:#256278;--bot:#fbf7f0;--ok:#2f6a4a;--warn:#7d570c;--err:#94425a;
+  --primary-soft:#dfe9ec;--radius:16px;--shadow:0 6px 24px rgba(87,82,121,.12);
+  --accent-rgb:37,98,120;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%}
@@ -869,27 +907,23 @@ header h1{font-size:14px;margin:0;font-weight:600}
 .sys{align-self:center;background:none;color:var(--muted);font-size:12.5px;text-align:center;max-width:92%;
   border:1px dashed var(--border);border-radius:10px;padding:7px 14px}
 .meta{margin-top:7px;font-size:10.5px;color:var(--muted);display:flex;gap:8px;align-items:center}
-.msgdel{position:absolute;top:6px;right:8px;border:0;background:rgba(127,127,155,.18);color:var(--muted);
+.msgdel{position:absolute;top:6px;right:8px;border:0;background:var(--panel2);color:var(--muted);
   border-radius:6px;font-size:11px;line-height:1;padding:4px 6px;cursor:pointer;opacity:0;transition:opacity .15s}
-.msg:hover .msgdel{opacity:1}.msgdel:hover{color:var(--err);background:rgba(255,107,107,.2)}
-.pkm_del{border:1px solid transparent;background:none;color:#fff;border-radius:6px;font-size:11px;line-height:1;
+.msg:hover .msgdel{opacity:1}.msgdel:hover{color:var(--err);background:rgba(148,66,90,.2)}
+.pkm_del{border:1px solid transparent;background:none;color:var(--text);border-radius:6px;font-size:11px;line-height:1;
   padding:2px 5px;margin-left:4px;cursor:pointer;opacity:.6}
-.chip:hover .pkm_del{opacity:1;border-color:rgba(255,255,255,.35)}
+.chip:hover .pkm_del{opacity:1;border-color:var(--border)}
 .pkm_del:hover{color:#fff;background:var(--err);opacity:1}
-[data-theme="light"] .pkm_del{color:#007ACC}
-[data-theme="light"] .chip:hover .pkm_del{border-color:rgba(0,122,204,.4)}
 .msg.bot .meta{border-top:1px solid var(--border);padding-top:5px}
-.mtag{background:rgba(79,140,255,.15);color:var(--accent);border-radius:6px;padding:1px 7px;font-weight:600}
-[data-theme="light"] .mtag{background:rgba(47,111,237,.10)}
+.mtag{background:var(--primary-soft);color:var(--accent);border-radius:6px;padding:1px 7px;font-weight:600}
 /* markdown */
 .bot p{margin:.35em 0}.bot p:first-child{margin-top:0}.bot p:last-child{margin-bottom:0}
 .bot h1,.bot h2,.bot h3,.bot h4{margin:.7em 0 .3em;line-height:1.3}
 .bot ul,.bot ol{margin:.35em 0;padding-left:1.35em}
-.bot code{background:rgba(127,127,155,.18);padding:.12em .4em;border-radius:5px;font-size:.88em;
+.bot code{background:rgba(128,113,102,.14);padding:.12em .4em;border-radius:5px;font-size:.88em;
   font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-.bot pre{background:#0d0d12;border:1px solid var(--border);border-radius:10px;padding:12px;
+.bot pre{background:#efE9DE;border:1px solid var(--border);border-radius:10px;padding:12px;
   overflow-x:auto;margin:.55em 0;font-size:13px}
-[data-theme="light"] .bot pre{background:#f6f7fa}
 .bot pre code{background:none;padding:0;font-size:13px}
 .bot table{border-collapse:collapse;margin:.5em 0;width:100%;font-size:.92em}
 .bot th,.bot td{border:1px solid var(--border);padding:5px 9px;text-align:left}
@@ -935,6 +969,12 @@ button:disabled{opacity:.45;cursor:not-allowed}
 #scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:35}
 
 /* ---------- responsive ---------- */
+@media(max-width:1000px){
+  #sidebar{width:280px}
+  #chat{max-width:none;padding:14px 12px 6px}
+  #chatwrap{padding-top:env(safe-area-inset-top)}
+  header{padding:max(10px,env(safe-area-inset-top)) 12px 8px}
+}
 @media(max-width:820px){
   #sidebar{position:fixed;top:0;bottom:0;left:0;transform:translateX(-105%);box-shadow:var(--shadow)}
   #sidebar.open{transform:none}
@@ -942,7 +982,26 @@ button:disabled{opacity:.45;cursor:not-allowed}
   #burger{display:block}
   .msg{max-width:94%}
   #modelbadge{max-width:46vw}#modelbadge span.lbl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  header{padding-top:calc(env(safe-area-inset-top) + 6px)}
+  #inp{font-size:16px}            /* prevents iOS zoom-on-focus */
+  .chip{padding:6px 13px;font-size:13px}
+  .convitem{padding:11px 11px}
+  #sidefoot{display:none}
+  .sect{padding:12px 14px 4px}
 }
+
+/* ---------- accent palette popover ---------- */
+#palette{position:fixed;right:12px;top:calc(56px + env(safe-area-inset-top));z-index:120;
+  display:none;flex-direction:column;gap:4px;background:var(--panel);border:1px solid var(--border);
+  border-radius:14px;box-shadow:var(--shadow);padding:10px;min-width:150px}
+#palette.show{display:flex}
+#palette .sw{cursor:pointer;border-radius:10px;padding:8px 10px;font-size:12.5px;color:var(--text);
+  display:flex;align-items:center;gap:9px;border:1px solid transparent}
+#palette .sw:hover{background:var(--panel2)}
+#palette .dot{width:15px;height:15px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 1px var(--border)}
+#palette .sw.cur{border-color:var(--accent)}
+#palette .custom{margin-top:4px}
+#palette .custom input{width:100%}
 ::-webkit-scrollbar{width:9px;height:9px}
 ::-webkit-scrollbar-thumb{background:var(--border);border-radius:8px}
 </style></head><body>
@@ -972,7 +1031,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
     <h1 id="proftitle">public</h1>
     <div id="hspace"></div>
     <button class="icobtn" id="membtn" title="Memory">🧠</button>
-    <button class="icobtn" id="theme" title="Light/dark">☀️</button>
+    <button class="icobtn" id="palettebtn" title="Change colour">🎨</button>
   </header>
 
   <div id="chatwrap"><div id="chat"></div></div>
@@ -987,6 +1046,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 </div>
 
 <div id="overlay"></div>
+<div id="palette"></div>
 <div id="modal">
   <div id="modalhead"><span>🧠 Memory — <span id="memprof"></span></span>
     <span><button class="icobtn" id="memclear" title="Clear memory">🗑</button>
@@ -1043,12 +1103,43 @@ async function refreshState(){
   $('storepath').textContent=S.storage;
   renderProfiles();renderConvs();
   if(S.conversation&&!msgs.length)loadConvInto(S.conversation);
+  applyColor(S.profile_color);
+  renderPalette();
+}
+function hexToRgb(h){h=h.replace('#','');if(h.length===3)h=h.split('').map(c=>c+c).join('');
+  const n=parseInt(h,16);return [(n>>16)&255,(n>>8)&255,n&255];}
+function applyColor(hex){
+  hex=hex||'#256278';
+  const [r,g,b]=hexToRgb(hex);
+  const root=document.documentElement.style;
+  root.setProperty('--accent',hex);root.setProperty('--accent2',hex);
+  root.setProperty('--user',hex);root.setProperty('--accent-rgb',r+','+g+','+b);
+}
+function renderPalette(){
+  const p=$('palette');if(!p||!S)return;p.innerHTML='';
+  const cur=S.profile_color||'#256278';
+  for(const [name,hex] of Object.entries(S.colors||{})){
+    const c=document.createElement('div');c.className='sw'+(hex===cur?' cur':'');
+    c.innerHTML='<span class="dot" style="background:'+hex+'"></span> '+esc(name);
+    c.onclick=async()=>{await jpost('/v1/chat/completions',
+      {messages:[{role:'user',content:'color = '+name}]});await refreshState();};
+    p.appendChild(c);
+  }
+  const cust=document.createElement('div');cust.className='sw custom';
+  cust.innerHTML='<span class="dot" style="background:'+cur+'"></span> custom';
+  const inp=document.createElement('input');inp.type='color';inp.value=cur;
+  inp.style.display='none';
+  inp.onchange=async()=>{await jpost('/v1/chat/completions',
+    {messages:[{role:'user',content:'color = '+inp.value}]});await refreshState();};
+  cust.onclick=()=>inp.click();cust.appendChild(inp);
+  p.appendChild(cust);
 }
 function renderProfiles(){
   const p=$('profiles');p.innerHTML='';
   for(const pr of S.profiles){
     const b=document.createElement('button');b.className='chip'+(pr.name===S.profile?' active':'');
-    b.innerHTML=(pr.name===S.profile?'👤 ':'')+esc(pr.display)+
+    b.innerHTML='<span class="dot" style="background:'+(pr.color||'#256278')+';width:9px;height:9px;border-radius:50%;display:inline-block"></span>'+
+      (pr.name===S.profile?'👤 ':'')+esc(pr.display)+
       ' <span class="x">'+pr.facts+'🧠 '+pr.conversations+'💬</span>';
     b.title='facts: '+pr.facts+' · chats: '+pr.conversations+' · click to switch';
     if(pr.name!=='public'){
@@ -1162,15 +1253,12 @@ $('modelSel').onchange=async()=>{
   refreshState();
 };
 
-/* ---------- theme ---------- */
-$('theme').onclick=()=>{
-  const r=document.documentElement;
-  const nx=r.dataset.theme==='dark'?'light':'dark';
-  r.dataset.theme=nx;localStorage.setItem('llmtheme',nx);
-  $('theme').textContent=nx==='dark'?'☀️':'🌙';
-};
-(function(){const t=localStorage.getItem('llmtheme');
-  if(t){document.documentElement.dataset.theme=t;$('theme').textContent=t==='dark'?'☀️':'🌙'}})();
+/* ---------- colour palette popover (light theme fixed) ---------- */
+document.documentElement.dataset.theme='light';
+(function(){const t=localStorage.getItem('llmtheme');if(t)localStorage.removeItem('llmtheme')})();
+$('palettebtn').onclick=(ev)=>{ev.stopPropagation();$('palette').classList.toggle('show')};
+document.addEventListener('click',ev=>{if(!$('palette').contains(ev.target)&&ev.target.id!=='palettebtn')
+  $('palette').classList.remove('show')});
 
 /* ---------- sidebar mobile ---------- */
 $('burger').onclick=()=>{$('sidebar').classList.toggle('open');$('scrim').classList.toggle('show')};
