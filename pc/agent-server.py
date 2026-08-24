@@ -26,7 +26,7 @@ In the chat box:
 Listens on 0.0.0.0:8080, proxies to raw llama-server on 127.0.0.1:8100."""
 import aiohttp
 from aiohttp import web, ClientSession, ClientTimeout
-import json, asyncio, datetime, re, html, time, urllib.parse, os, uuid
+import json, asyncio, datetime, re, html, time, urllib.parse, os, uuid, subprocess, tempfile, shutil
 from pathlib import Path
 from collections import deque
 
@@ -731,6 +731,52 @@ async def delete_message_handler(request):
     return web.json_response({"ok": True, "removed": removed.get("role"),
                               "remaining": len(conv.get("messages", []))})
 
+WHISPER_BIN = os.environ.get("WHISPER_STT_BIN", "/opt/bin/whisper-stt.sh")
+
+def _whisper_block(wav_path, lang):
+    cmd = [WHISPER_BIN, wav_path, lang]
+    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+    return (proc.returncode, proc.stdout, proc.stderr)
+
+async def stt_handler(request):
+    """POST /__stt?lang=fa-IR — raw WAV bytes in the body -> Whisper text.
+    Returns {text} or {error} with a 500."""
+    lang = (request.query.get("lang") or "fa-IR").lower()
+    # map browser BCP47 -> whisper short code
+    lg = {"fa-ir":"fa","fa":"fa","en-us":"en","en":"en","ar-sa":"ar","ar":"ar",
+          "tr-tr":"tr","tr":"tr"}.get(lang, "fa")
+    ct = request.headers.get("Content-Type", "")
+    if "multipart" in ct:
+        # accept a single "file" part
+        reader = await request.multipart()
+        field = await reader.next()
+        buf = bytearray()
+        while field is not None and field.name == "file":
+            while True:
+                chunk = await field.read_chunk(65536)
+                if not chunk: break
+                buf += chunk
+            break
+        data = bytes(buf)
+    else:
+        data = await request.read()
+    if not data:
+        return web.json_response({"error": "no audio data"}, status=400)
+    if not os.path.exists(WHISPER_BIN):
+        return web.json_response({"error": "STT engine not installed on server yet"}, status=501)
+    tmp = tempfile.mkdtemp(prefix="stt_")
+    try:
+        wav = os.path.join(tmp, "in.wav")
+        with open(wav, "wb") as f:
+            f.write(data)
+        code, out, err = await asyncio.to_thread(_whisper_block, wav, lg)
+        if code != 0:
+            return web.json_response({"error": "transcription failed: " + (err or out)[:300]}, status=500)
+        text = (out or "").strip()
+        return web.json_response({"text": text})
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
 async def new_chat_handler(request):
     prof = current_profile()
     CURRENT_CONV[prof] = None
@@ -1362,16 +1408,19 @@ const langSel=$('langSel');
 const langMap={'fa-IR':'persian','en-US':'english','ar-SA':'arabic','tr-TR':'turkish'};
 const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
 let recog=null,micOn=false,micWanted=false,committed='';
-let sttMode=localStorage.getItem('llmstt')|| 'browser'; // or 'whisper'
+let sttMode=localStorage.getItem('llmstt')|| 'pc'; // 'browser' | 'whisper' | 'pc' (PC server Whisper)
 let whisper=null; // lazy transformers.js pipeline
 setSTTMode(sttMode);
 
+const STT_LABEL={'browser':'Browser','whisper':'Local','pc':'PC ⚡'};
+const STT_NEXT={'browser':'whisper','whisper':'pc','pc':'browser'};
 function setSTTMode(m){
   sttMode=m;localStorage.setItem('llmstt',m);
-  sttBtn.textContent=m==='whisper'?'Whisper':'Browser';
+  sttBtn.textContent=STT_LABEL[m]||m;
   sttBtn.classList.toggle('busy',m==='whisper');
+  sttBtn.title='STT: '+{browser:'Built-in browser recognition',whisper:'On-device Whisper (downloads model)',pc:'Whisper on your Windows/WSL PC (recommended)'}[m];
 }
-sttBtn.onclick=()=>setSTTMode(sttMode==='whisper'?'browser':'whisper');
+sttBtn.onclick=()=>setSTTMode(STT_NEXT[sttMode]||'browser');
 let persistLang=localStorage.getItem('llmlang');
 if(persistLang){langSel.value=persistLang;}
 langSel.onchange=()=>{localStorage.setItem('llmlang',langSel.value);};
@@ -1380,6 +1429,7 @@ micBtn.onclick=()=>{
   if(micOn){micWanted=false;stopCapture();return;}
   committed=inp.value;
   if(sttMode==='whisper'){startWhisper();}
+  else if(sttMode==='pc'){pcWhisper();}
   else{micOn=true;micWanted=true;microg();try{recog.start();}catch(e){}}
 };
 
@@ -1418,59 +1468,116 @@ function microg(){
   micBtn.classList.add('rec');micBtn.textContent='🔴';
 }
 
-/* ---- Whisper engine (transformers.js, on-demand model load) ---- */
-let mediaRec=null,audioChunks=[],actx=null;
-function preventSleep(){}
-function stopCapture(){ // shared stop for whisper recording
-  if(mediaRec&&mediaRec.state!=='inactive')mediaRec.stop();
-  if(whisper)micBtn.textContent='⏳';
+/* ---- recorded-capture engines: on-device Whisper OR PC-server Whisper ---- */
+let mediaRec=null,audioChunks=[],actx=null,recStream=null;
+function flagMic(on,txt){
+  micOn=on;micWanted=on;microTick();
+  if(!on){micBtn.textContent='🎤';micBtn.classList.remove('rec');recStop();}
+  inp.placeholder=txt||'Message…  (Enter to send, Shift+Enter for newline)';autosize();
 }
+function stopCapture(){
+  if(mediaRec&&mediaRec.state!=='inactive')mediaRec.stop();
+  else recCleanup();
+}
+function recStop(){try{recStream&&recStream.getTracks().forEach(t=>t.stop())}catch(_){}}
+function recCleanup(){recStop();micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec')}
+function microTick(){/*placeholder*/}
+
+/* record via MediaRecorder -> decode to mono 16k Float32 PCM */
+async function recordAudio(){
+  audioChunks=[];
+  recStream=await navigator.mediaDevices.getUserMedia({audio:true});
+  actx=new (window.AudioContext||window.webkitAudioContext)();
+  const src=actx.createMediaStreamSource(recStream);
+  const dest=actx.createMediaStreamDestination();
+  src.connect(dest);
+  mediaRec=new MediaRecorder(dest.stream);
+  return new Promise(res=>{
+    mediaRec.ondataavailable=e=>{if(e.data&&e.data.size)audioChunks.push(e.data)};
+    mediaRec.onstop=async()=>{
+      actx.close&&actx.close();
+      const blob=new Blob(audioChunks,{type:mediaRec.mimeType||'audio/webm'});
+      const buf=await blob.arrayBuffer();
+      const a=new AudioContext();
+      const ab=await a.decodeAudioData(buf);
+      const pcm=toMono16k(ab);
+      a.close();
+      res(pcm);
+    };
+    mediaRec.start();
+  });
+}
+
+/* encode Float32 PCM -> 16-bit PCM WAV bytes (standard header) */
+function encodeWav16(samples,sampleRate){
+  const n=samples.length,dataSize=n*2,buffer=new ArrayBuffer(44+dataSize);
+  const v=new DataView(buffer);
+  function setStr(o,s){for(let i=0;i<s.length;i++)v.setUint8(o+i,s.charCodeAt(i))}
+  setStr(0,'RIFF');v.setUint32(4,36+dataSize,true);setStr(8,'WAVE');
+  setStr(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);
+  v.setUint16(22,1,true);v.setUint32(24,sampleRate,true);
+  v.setUint32(28,sampleRate*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);
+  setStr(36,'data');v.setUint32(40,dataSize,true);
+  let o=44;for(let i=0;i<n;i++,o+=2){let s=Math.max(-1,Math.min(1,samples[i]));v.setInt16(o,s<0?s*0x8000:s*0x7FFF,true)}
+  return new Blob([buffer],{type:'audio/wav'});
+}
+
+async function pcWhisper(){
+  micBtn.textContent='🔴';micBtn.classList.add('rec');
+  inp.placeholder='🎤 speak now… (recording, tap again to stop)';autosize();
+  micOn=true;micWanted=true;
+  let pcm;
+  try{
+    pcm=await recordAudio();
+  }catch(e){
+    flagMic(false,'🎤 microphone access denied');setTimeout(()=>flagMic(false),2200);return;
+  }
+  if(!micWanted){recCleanup();return;}
+  micBtn.textContent='🔍';inp.placeholder='🎤 sending to PC + transcribing…';autosize();
+  const wav=encodeWav16(pcm,16000);
+  try{
+    const fd=new FormData();fd.append('lang',langSel.value||'fa-IR');fd.append('file',wav,'in.wav');
+    const r=await fetch('/__stt',{method:'POST',body:fd});
+    const j=await r.json();
+    const text=(j&&j.text||'').trim();
+    if(text){committed=committed?(committed+' '+text):text;inp.value=committed;}
+    else inp.placeholder='🎤 (no speech heard)';
+    autosize();
+  }catch(err){
+    inp.placeholder='🎤 PC error: '+err;setTimeout(()=>{flagMic(false)},3000);
+  }
+  recCleanup();micOn=false;latencyDone();
+}
+function latencyDone(){}
+
+/* on-device Whisper (transformers.js) */
 async function startWhisper(){
   micBtn.textContent='⏳';micBtn.classList.add('rec');
   inp.placeholder='🎤 loading Whisper model (first use downloads ~a model)…';
   try{
-    whisper = await loadWhisper();
+    whisper = whisper||await loadWhisper();
   }catch(err){
     micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');
     inp.placeholder='🎤 Whisper load failed — set engine to Browser. '+err;setTimeout(()=>inp.placeholder='Message…',4000);
     return;
   }
-  let stream;
-  try{ stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
-  catch(e){
-    micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');
-    inp.placeholder='🎤 microphone access denied';setTimeout(()=>inp.placeholder='Message…',3000);return;
-  }
+  micBtn.textContent='🔴';inp.placeholder='🎤 speak now… (tap again to stop)';autosize();
   micOn=true;micWanted=true;
-  actx=new (window.AudioContext||window.webkitAudioContext)();
-  const src=actx.createMediaStreamSource(stream);
-  const dest=actx.createMediaStreamDestination();
-  src.connect(dest);
-  mediaRec=new MediaRecorder(dest.stream);
-  audioChunks=[];
-  mediaRec.ondataavailable=e=>{if(e.data&&e.data.size)audioChunks.push(e.data)};
-  mediaRec.onstop=async()=>{
-    if(!micWanted){micOn=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');try{stream.getTracks().forEach(t=>t.stop())}catch(_){}return;}
-    micBtn.textContent='🔍';inp.placeholder='🎤 transcribing…';
-    try{
-      const blob=new Blob(audioChunks,{type:mediaRec.mimeType||'audio/webm'});
-      const buf=await blob.arrayBuffer();
-      const ab=await actx.decodeAudioData(buf);
-      const mon=toMono16k(ab);
-      const out=await whisper(mon,{language:langMap[langSel.value]||'persian',task:'transcribe',chunk_length_s:30});
-      const text=(out&&(out.text||(out.output&&out.output))||'').trim();
-      if(text){committed=committed?(committed+' '+text):text;inp.value=committed;}
-      else inp.placeholder='🎤 (no speech heard)';
-      autosize();
-    }catch(err){
-      inp.placeholder='🎤 transcribe error: '+err;setTimeout(()=>inp.placeholder='Message…',3500);
-    }
-    try{stream.getTracks().forEach(t=>t.stop())}catch(_){}
-    if(!micWanted)micCommittedDone();
-    else{micWanted=false;micDone();}
-  };
-  inp.placeholder='🎤 speak now…';
-  mediaRec.start();
+  let pcm;
+  try{ pcm=await recordAudio(); }
+  catch(e){ flagMic(false,'🎤 microphone access denied');setTimeout(()=>flagMic(false),2200);return; }
+  if(!micWanted){recCleanup();return;}
+  micBtn.textContent='🔍';inp.placeholder='🎤 transcribing…';
+  try{
+    const out=await whisper(pcm,{language:langMap[langSel.value]||'persian',task:'transcribe',chunk_length_s:30});
+    const text=(out&&(out.text||(out.output&&out.output))||'').trim();
+    if(text){committed=committed?(committed+' '+text):text;inp.value=committed;}
+    else inp.placeholder='🎤 (no speech heard)';
+    autosize();
+  }catch(err){
+    inp.placeholder='🎤 transcribe error: '+err;setTimeout(()=>{flagMic(false)},3500);
+  }
+  recCleanup();
 }
 function micDone(){micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');inp.placeholder='Message…  (Enter to send, Shift+Enter for newline)';autosize()}
 function micCommittedDone(){micDone()}
@@ -1494,8 +1601,7 @@ async function loadWhisper(){
   const {pipeline,env}=window.transformers;
   env.allowLocalModels=false;
   // Multilingual tiny is a good speed/accuracy balance for Persian on-device.
-  const asr=await pipeline('automatic-speech-recognition','Xenova/whisper-tiny');
-  return asr;
+  return await pipeline('automatic-speech-recognition','Xenova/whisper-tiny');
 }
 
 refreshState();
@@ -1766,6 +1872,7 @@ APP.router.add_get("/__state", state_handler)
 APP.router.add_post("/__profiles/switch", profiles_switch_handler)
 APP.router.add_post("/__profiles/delete", delete_profile_handler)
 APP.router.add_post("/__delete_message", delete_message_handler)
+APP.router.add_post("/__stt", stt_handler)
 APP.router.add_post("/__new_chat", new_chat_handler)
 APP.router.add_post("/__select_chat", select_chat_handler)
 APP.router.add_post("/__delete_chat", delete_chat_handler)
