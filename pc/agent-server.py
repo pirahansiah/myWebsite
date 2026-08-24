@@ -1641,59 +1641,59 @@ function microg(){
 }
 
 /* ---- recorded-capture engines: on-device Whisper OR PC-server Whisper ---- */
-let mediaRec=null,audioChunks=[],actx=null,recStream=null;
+let recStream=null;
 function flagMic(on,txt){
   micOn=on;micWanted=on;microTick();
   if(!on){micBtn.textContent='🎤';micBtn.classList.remove('rec');recStop();}
   inp.placeholder=txt||'Message…  (Enter to send, Shift+Enter for newline)';autosize();
 }
 function stopCapture(){
-  if(mediaRec&&mediaRec.state!=='inactive')mediaRec.stop();
+  if(recProc){ // stop ScriptProcessor capture -> resolve with collected PCM
+    try{recProc.disconnect()}catch(_){}
+    try{recSrc&&recSrc.disconnect()}catch(_){}
+    try{recCtx&&recCtx.close()}catch(_){}
+    recProc=recSrc=recCtx=null;
+  }
+  recStop();
+  const pcm=recCollect;
+  recCollect=null;
+  if(recResolve){const r=recResolve;recResolve=null;r(pcm);}
   else recCleanup();
 }
 function recStop(){try{recStream&&recStream.getTracks().forEach(t=>t.stop())}catch(_){}}
-function recCleanup(){recStop();micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec')}
+function recCleanup(){recStop();recProc=recSrc=recCtx=null;recCollect=null;micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec')}
 function microTick(){/*placeholder*/}
 
-/* record via MediaRecorder -> decode to mono 16k Float32 PCM.
-   IMPORTANT: record the RAW getUserMedia stream, NOT an AudioContext
-   destination. Safari/iOS record silence from the source->destination
-   loopback pattern (WebKit bug), so we never route audio through AudioContext
-   while recording. AudioContext is used only AFTER, to decode the blob. */
-function pickMime(){
-  if(window.MediaRecorder&&!window.MediaRecorder.isTypeSupported)return 'audio/webm';
-  const c=[];
-  ['audio/mp4','audio/aac','audio/webm;codecs=opus','audio/webm','audio/ogg;codecs=opus'].forEach(m=>{
-    try{ if(window.MediaRecorder.isTypeSupported(m))c.push(m); }catch(e){}
-  });
-  return c[0]||'audio/webm';
-}
+/* Direct PCM capture via ScriptProcessorNode — the most reliable path on
+   iOS/Safari (no MediaRecorder container, no decodeAudioData, no WebKit
+   source->destination loopback bug). Returns a Promise[TARGET Float32Array
+   mono@16000] that resolves when stopCapture() is called. */
+let recCtx=null,recSrc=null,recProc=null,recCollect=null,recResolve=null;
 async function recordAudio(){
-  audioChunks=[];
-  recStream=await navigator.mediaDevices.getUserMedia({audio:true}); // raw stream kept live
-  const mime=pickMime();
-  mediaRec=new MediaRecorder(recStream,{mimeType:mime});
-  return new Promise(res=>{
-    let stopped=false;
-    mediaRec.ondataavailable=e=>{if(e.data&&e.data.size)audioChunks.push(e.data)};
-    mediaRec.onstop=async()=>{ if(stopped)return; stopped=true;
-      try{
-        const blob=new Blob(audioChunks,{type:mediaRec.mimeType||mime});
-        const arr=new Uint8Array(await blob.arrayBuffer());
-        // minimal PCM16 WAV payload may be aac/mp4 on iOS; decode via AudioContext
-        const a=new (window.AudioContext||window.webkitAudioContext)();
-        const ab=await a.decodeAudioData(arr.buffer.slice(0));
-        const pcm=toMono16k(ab);
-        try{a.close()}catch(_){}
-        res(pcm);
-      }catch(e){ res(null); }
-      // NOTE: do NOT call recCleanup() here — it clears micWanted and the
-      // consumer's `await` continuation runs AFTER this sync frame, so it would
-      // see micWanted=false and bail before transcribing. Cleanup belongs to the
-      // consumer (pcWhisper / startWhisper) in its own finally.
-    };
-    mediaRec.start();
-  });
+  recStream=await navigator.mediaDevices.getUserMedia({audio:true});
+  recCtx=new (window.AudioContext||window.webkitAudioContext)();
+  if(recCtx.state==='suspended'){try{await recCtx.resume()}catch(_){}}
+  recSrc=recCtx.createMediaStreamSource(recStream);
+  const proc=recCtx.createScriptProcessor(4096,1,1);
+  recProc=proc; recCollect=new Float32Array(0);
+  const rate=recCtx.sampleRate||48000;
+  const step=rate/16000;
+  proc.onaudioprocess=e=>{
+    if(!recCollect)return;
+    const ch=e.inputBuffer.getChannelData(0);
+    // downsample to ~16k into a temp array, then append
+    const n=Math.floor(ch.length/step);
+    if(n<=0)return;
+    const tmp=new Float32Array(n);
+    for(let i=0;i<n;i++)tmp[i]=ch[Math.floor(i*step)];
+    const old=recCollect,cat=new Float32Array(old.length+tmp.length);
+    cat.set(old,0);cat.set(tmp,old.length);recCollect=cat;
+  };
+  recSrc.connect(proc);
+  // muted gain -> destination so onaudioprocess fires but mic never reaches speakers
+  const mute=recCtx.createGain();mute.gain.value=0;
+  proc.connect(mute);mute.connect(recCtx.destination);
+  return new Promise(res=>{recResolve=res;});
 }
 
 /* encode Float32 PCM -> 16-bit PCM WAV bytes (standard header) */
