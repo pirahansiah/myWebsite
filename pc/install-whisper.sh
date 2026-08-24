@@ -1,5 +1,7 @@
 #!/bin/bash
 # Install whisper.cpp (CUDA) + multilingual model + STT wrapper on the WSL PC.
+# Self-logging so it can be launched with a bare `bash <file>` (no shell metachar).
+exec > /tmp/whisper_install.log 2>&1
 set -e
 export PATH=/usr/local/cuda/bin:$PATH
 echo "=== git clone whisper.cpp ==="
