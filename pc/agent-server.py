@@ -1279,6 +1279,15 @@ button:disabled{opacity:.45;cursor:not-allowed}
 
 <script>
 const $=id=>document.getElementById(id);
+/* global error trap: a load-time JS error used to silently kill every handler
+   (mic, send, palette) — surface it visibly instead */
+window.onerror=function(msg,src,line,col){
+  try{
+    const el=document.getElementById('inp');
+    if(el){el.placeholder='⚠️ JS error: '+msg+' (line '+line+')';el.style.border='2px solid #c33';}
+  }catch(_){}
+  return false;
+};
 const chat=$('chat'),inp=$('inp'),sendBtn=$('send'),stopBtn=$('stop');
 let S=null,msgs=[],busy=false,aborter=null,pollTimer=null,sinceAct=Date.now()/1000;
 
@@ -1582,7 +1591,6 @@ const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
 let recog=null,micOn=false,micWanted=false,committed='';
 let sttMode=localStorage.getItem('llmstt')|| 'pc'; // 'browser' | 'whisper' | 'pc' (PC server Whisper)
 let whisper=null; // lazy transformers.js pipeline
-setSTTMode(sttMode);
 
 const STT_LABEL={'browser':'Browser','whisper':'Local','pc':'PC ⚡'};
 const STT_NEXT={'browser':'whisper','whisper':'pc','pc':'browser'};
@@ -1593,6 +1601,7 @@ function setSTTMode(m){
   sttBtn.title='STT: '+{browser:'Built-in browser recognition',whisper:'On-device Whisper (downloads model)',pc:'Whisper on your Windows/WSL PC (recommended)'}[m];
 }
 sttBtn.onclick=()=>setSTTMode(STT_NEXT[sttMode]||'browser');
+setSTTMode(sttMode); // AFTER declarations (was before -> ReferenceError killed all handlers)
 let persistLang=localStorage.getItem('llmlang');
 if(persistLang){langSel.value=persistLang;}
 langSel.onchange=()=>{localStorage.setItem('llmlang',langSel.value);};
