@@ -173,6 +173,79 @@ async def tool_get_datetime(_args):
 
 IMPLEMENTATIONS = {"web_search": tool_web_search, "open_url": tool_open_url, "get_datetime": tool_get_datetime}
 
+# ---- deterministic real-time price injection (no model/web_search needed) ----
+# ticker -> (display name, Binance symbol pair on USDT)
+PRICE_MAP = {
+    "btc": ("Bitcoin (BTC)", "BTCUSDT"), "bitcoin": ("Bitcoin (BTC)", "BTCUSDT"),
+    "بیت کوین": ("Bitcoin (BTC)", "BTCUSDT"), "بیتکوین": ("Bitcoin (BTC)", "BTCUSDT"),
+    "eth": ("Ethereum (ETH)", "ETHUSDT"), "ethereum": ("Ethereum (ETH)", "ETHUSDT"),
+    "اتریوم": ("Ethereum (ETH)", "ETHUSDT"),
+    "sol": ("Solana (SOL)", "SOLUSDT"), "solana": ("Solana (SOL)", "SOLUSDT"),
+    "سولانا": ("Solana (SOL)", "SOLUSDT"),
+    "xrp": ("Ripple (XRP)", "XRPUSDT"), "ripple": ("Ripple (XRP)", "XRPUSDT"),
+    "ada": ("Cardano (ADA)", "ADAUSDT"), "doge": ("Dogecoin (DOGE)", "DOGEUSDT"),
+    "bnb": ("BNB", "BNBUSDT"), "dot": ("Polkadot (DOT)", "DOTUSDT"),
+    "ltc": ("Litecoin (LTC)", "LTCUSDT"), "matic": ("Polygon (MATIC)", "MATICUSDT"),
+    "link": ("Chainlink (LINK)", "LINKUSDT"), "avax": ("Avalanche (AVAX)", "AVAXUSDT"),
+    "shib": ("Shiba Inu (SHIB)", "SHIBUSDT"), "ton": ("Toncoin (TON)", "TONUSDT"),
+    "near": ("NEAR", "NEARUSDT"), "apt": ("Aptos (APT)", "APTUSDT"),
+    "uni": ("Uniswap (UNI)", "UNIUSDT"), "trx": ("TRON (TRX)", "TRXUSDT"),
+    "بیت": ("Bitcoin (BTC)", "BTCUSDT"),
+}
+PRICE_RE = re.compile(
+    r"\b(price|قیمت|how much|cost|worth|cena|current|value of|of (btc|bitcoin|eth|sol)\b)"
+    r"|\b(btc|bitcoin|eth|ethereum|sol|solana|xrp|ripple|ada|doge|bnb|dot|ltc|matic|link|avax"
+    r"|shib|ton|near|apt|uni|trx)\b(?![a-z])", re.I)
+
+def _money(x):
+    try:
+        f = float(x)
+        if f >= 100: return f"${f:,.2f}"
+        if f >= 1:   return f"${f:,.4f}"
+        return f"${f:.8f}"
+    except Exception:
+        return str(x)
+
+async def live_price_note(user_text):
+    """If the user asks for a crypto price, fetch live Binance data and return a
+    one-line authoritative string (or '' if not a price query / fetch failed)."""
+    t = (user_text or "").strip()
+    if not t or len(t) > 200:
+        return ""
+    if not PRICE_RE.search(t):
+        return ""
+    # find which ticker(s) are actually mentioned
+    hits = [tick for tick in PRICE_MAP if re.search(r"\b"+tick+r"\b(?![a-z])", t, re.I)]
+    # dedupe aliases so "بیت کوین" and "بیت" don't fetch BTC twice
+    seen, ded = set(), []
+    for tick in hits:
+        sym = PRICE_MAP[tick][1]
+        if sym not in seen:
+            seen.add(sym); ded.append(tick)
+    hits = ded
+    if not hits:
+        # "price of ..." / generic — default to bitcoin if nothing matched
+        hits = ["btc"]
+    lines = []
+    for tick in hits[:2]:
+        name, sym = PRICE_MAP[tick]
+        try:
+            url = f"https://api.binance.com/api/v3/ticker/24hr?symbol={sym}"
+            async with ClientSession(timeout=ClientTimeout(total=10)) as s:
+                async with s.get(url, headers=UA) as r:
+                    if r.status != 200:
+                        continue
+                    d = await r.json()
+            price = _money(d.get("lastPrice"))
+            high = _money(d.get("highPrice")); low = _money(d.get("lowPrice"))
+            chg = d.get("priceChangePercent", "0")
+            lines.append(f"{name}: {price} USD  (24h: {chg}% | high {high} | low {low})")
+        except Exception:
+            continue
+    if not lines:
+        return ""
+    return "\n".join(lines) + f"  [as of {datetime.datetime.now().strftime('%Y-%m-%d %H:%M UTC')}]"
+
 MAX_STEPS = 6
 SYSTEM_PROMPT = ("You are a helpful assistant with tool access. You MUST use the web_search tool "
                  "whenever the user asks to find, look up, or search anything (URLs, facts, news, "
@@ -1703,6 +1776,18 @@ async def chat_handler(request):
         if m.get("role") == "user":
             last_user = m.get("content", "")
             break
+
+    # 0.5) Real-time price injection — deterministic, so the answer is ALWAYS
+    #      correct even if the small local model doesn't fire web-search.
+    #      Detect a crypto price query, fetch live data from Binance's public
+    #      API, and inject the authoritative price as a system note the model
+    #      must echo.
+    price_inject = await live_price_note(last_user)
+    if price_inject:
+        msgs.insert(0, {"role": "system",
+                        "content": "REAL-TIME MARKET DATA (authoritative, fetched "
+                                    "just now — report these exact numbers, do not "
+                                    "recalculate or disagree with them):\n" + price_inject})
 
     # 1) storage commands are answered locally, no model involved
     cmd_reply = handle_commands(last_user)
