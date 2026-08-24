@@ -951,6 +951,12 @@ header h1{font-size:14px;margin:0;font-weight:600}
   padding:11px 14px;font-size:15px;cursor:pointer;white-space:nowrap;transition:all .15s}
 #mic:hover{color:var(--text);border-color:var(--accent);transform:scale(1.06)}
 #mic.rec{background:var(--err);border-color:var(--err);color:#fff;animation:micpulse 1.2s infinite}
+#langSel{background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:12px;
+  padding:10px 8px;font-size:13px;cursor:pointer;max-width:86px;flex-shrink:0;outline:none}
+#langSel:focus{border-color:var(--accent)}
+#sttbtn{background:none;border:1px solid var(--border);color:var(--muted);border-radius:12px;
+  padding:11px 10px;font-size:12px;cursor:pointer;flex-shrink:0;white-space:nowrap}
+#sttbtn:hover{color:var(--text);border-color:var(--accent)}
 @keyframes micpulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,107,.5)}50%{box-shadow:0 0 0 8px rgba(255,107,107,0)}}
 button:disabled{opacity:.45;cursor:not-allowed}
 .hint{text-align:center;color:var(--muted);font-size:11px;padding:0 0 6px}
@@ -1039,6 +1045,13 @@ button:disabled{opacity:.45;cursor:not-allowed}
   <div class="hint">Say <b>profile = name</b> to isolate chats+memory · <b>memory = fact</b> to remember · <b>pkm on</b> to save everything verbatim</div>
   <div id="bar"><div id="barinner">
     <textarea id="inp" rows="1" placeholder="Message…  (Enter to send, Shift+Enter for newline)"></textarea>
+    <select id="langSel" title="Voice language">
+      <option value="fa-IR">فارسی</option>
+      <option value="en-US">English</option>
+      <option value="ar-SA">العربية</option>
+      <option value="tr-TR">Türkçe</option>
+    </select>
+    <button id="sttbtn" title="STT engine: Browser (fast) / Whisper (better Persian, loads model on first use)">Browser</button>
     <button id="mic" title="Voice input (type with your voice)">🎤</button>
     <button id="send">Send</button>
     <button id="stop" style="display:none">■ Stop</button>
@@ -1342,24 +1355,37 @@ inp.addEventListener('keydown',e=>{
   if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask._t=inp.value.trim();ask._start=Date.now();ask();inp.value='';autosize();}
 });
 
-/* ---------- voice input (Web Speech API, in-browser STT) ---------- */
+/* ---------- voice input (browser Web Speech API + optional Whisper) ---------- */
 const micBtn=$('mic');
+const sttBtn=$('sttbtn');
+const langSel=$('langSel');
+const langMap={'fa-IR':'persian','en-US':'english','ar-SA':'arabic','tr-TR':'turkish'};
 const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
 let recog=null,micOn=false,micWanted=false,committed='';
-if(!SR){
-  micBtn.title='Voice input not supported in this browser (use Chrome/Edge)';
-  micBtn.style.opacity=.45;
-}else{
-  micBtn.onclick=()=>{
-    if(micOn){micWanted=false;recog.stop();return;}
-    micOn=true;micWanted=true;committed=inp.value;   // keep whatever was already typed
-    microg();
-    try{recog.start();}catch(e){}
-  };
+let sttMode=localStorage.getItem('llmstt')|| 'browser'; // or 'whisper'
+let whisper=null; // lazy transformers.js pipeline
+setSTTMode(sttMode);
+
+function setSTTMode(m){
+  sttMode=m;localStorage.setItem('llmstt',m);
+  sttBtn.textContent=m==='whisper'?'Whisper':'Browser';
+  sttBtn.classList.toggle('busy',m==='whisper');
 }
+sttBtn.onclick=()=>setSTTMode(sttMode==='whisper'?'browser':'whisper');
+let persistLang=localStorage.getItem('llmlang');
+if(persistLang){langSel.value=persistLang;}
+langSel.onchange=()=>{localStorage.setItem('llmlang',langSel.value);};
+
+micBtn.onclick=()=>{
+  if(micOn){micWanted=false;stopCapture();return;}
+  committed=inp.value;
+  if(sttMode==='whisper'){startWhisper();}
+  else{micOn=true;micWanted=true;microg();try{recog.start();}catch(e){}}
+};
+
 function microg(){
   recog=new SR();
-  recog.lang=micBtn.dataset.lang||'en-US';
+  recog.lang=langSel.value||'fa-IR';
   recog.continuous=true;recog.interimResults=true;
   recog.onresult=e=>{
     let interim='',final=committed;
@@ -1374,8 +1400,8 @@ function microg(){
     autosize();
   };
   recog.onend=()=>{
-    if(micWanted){microg();try{recog.start();}catch(e){micWanted=false;}} // keep listening across silence gaps
-    if(micWanted)return;   // still listening — don't reset the button
+    if(micWanted){microg();try{recog.start();}catch(e){micWanted=false;}}
+    if(micWanted)return;
     micOn=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');
     inp.placeholder='Message…  (Enter to send, Shift+Enter for newline)';autosize();
   };
@@ -1390,6 +1416,86 @@ function microg(){
     }
   };
   micBtn.classList.add('rec');micBtn.textContent='🔴';
+}
+
+/* ---- Whisper engine (transformers.js, on-demand model load) ---- */
+let mediaRec=null,audioChunks=[],actx=null;
+function preventSleep(){}
+function stopCapture(){ // shared stop for whisper recording
+  if(mediaRec&&mediaRec.state!=='inactive')mediaRec.stop();
+  if(whisper)micBtn.textContent='⏳';
+}
+async function startWhisper(){
+  micBtn.textContent='⏳';micBtn.classList.add('rec');
+  inp.placeholder='🎤 loading Whisper model (first use downloads ~a model)…';
+  try{
+    whisper = await loadWhisper();
+  }catch(err){
+    micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');
+    inp.placeholder='🎤 Whisper load failed — set engine to Browser. '+err;setTimeout(()=>inp.placeholder='Message…',4000);
+    return;
+  }
+  let stream;
+  try{ stream = await navigator.mediaDevices.getUserMedia({audio:true}); }
+  catch(e){
+    micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');
+    inp.placeholder='🎤 microphone access denied';setTimeout(()=>inp.placeholder='Message…',3000);return;
+  }
+  micOn=true;micWanted=true;
+  actx=new (window.AudioContext||window.webkitAudioContext)();
+  const src=actx.createMediaStreamSource(stream);
+  const dest=actx.createMediaStreamDestination();
+  src.connect(dest);
+  mediaRec=new MediaRecorder(dest.stream);
+  audioChunks=[];
+  mediaRec.ondataavailable=e=>{if(e.data&&e.data.size)audioChunks.push(e.data)};
+  mediaRec.onstop=async()=>{
+    if(!micWanted){micOn=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');try{stream.getTracks().forEach(t=>t.stop())}catch(_){}return;}
+    micBtn.textContent='🔍';inp.placeholder='🎤 transcribing…';
+    try{
+      const blob=new Blob(audioChunks,{type:mediaRec.mimeType||'audio/webm'});
+      const buf=await blob.arrayBuffer();
+      const ab=await actx.decodeAudioData(buf);
+      const mon=toMono16k(ab);
+      const out=await whisper(mon,{language:langMap[langSel.value]||'persian',task:'transcribe',chunk_length_s:30});
+      const text=(out&&(out.text||(out.output&&out.output))||'').trim();
+      if(text){committed=committed?(committed+' '+text):text;inp.value=committed;}
+      else inp.placeholder='🎤 (no speech heard)';
+      autosize();
+    }catch(err){
+      inp.placeholder='🎤 transcribe error: '+err;setTimeout(()=>inp.placeholder='Message…',3500);
+    }
+    try{stream.getTracks().forEach(t=>t.stop())}catch(_){}
+    if(!micWanted)micCommittedDone();
+    else{micWanted=false;micDone();}
+  };
+  inp.placeholder='🎤 speak now…';
+  mediaRec.start();
+}
+function micDone(){micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');inp.placeholder='Message…  (Enter to send, Shift+Enter for newline)';autosize()}
+function micCommittedDone(){micDone()}
+function toMono16k(audioBuffer){
+  const src=audioBuffer.getChannelData(0);
+  const rate=audioBuffer.sampleRate;
+  const outLen=Math.round(src.length*16000/rate);
+  const out=new Float32Array(outLen);
+  let i=0;for(let t=0;t<outLen;t++){const k=Math.floor(t*rate/16000);out[i++]=src[k];}
+  return out;
+}
+async function loadWhisper(){
+  if(!window.transformers){
+    await new Promise((res,rej)=>{
+      const s=document.createElement('script');
+      s.src='https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.5.3';
+      s.onload=res;s.onerror=()=>rej(new Error('transformers.js CDN failed'));
+      document.head.appendChild(s);
+    });
+  }
+  const {pipeline,env}=window.transformers;
+  env.allowLocalModels=false;
+  // Multilingual tiny is a good speed/accuracy balance for Persian on-device.
+  const asr=await pipeline('automatic-speech-recognition','Xenova/whisper-tiny');
+  return asr;
 }
 
 refreshState();
