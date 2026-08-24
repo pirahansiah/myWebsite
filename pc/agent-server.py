@@ -197,6 +197,58 @@ PRICE_RE = re.compile(
     r"|\b(btc|bitcoin|eth|ethereum|sol|solana|xrp|ripple|ada|doge|bnb|dot|ltc|matic|link|avax"
     r"|shib|ton|near|apt|uni|trx)\b(?![a-z])", re.I)
 
+# Stock/ETF/commodity lookup: company name (or ticker) -> Yahoo ticker + display name.
+STOCK_MAP = {
+    # companies by common name
+    "nvidia": ("NVDA", "NVIDIA (NVDA)"), "nvda": ("NVDA", "NVIDIA (NVDA)"),
+    "apple": ("AAPL", "Apple (AAPL)"), "aapl": ("AAPL", "Apple (AAPL)"),
+    "tesla": ("TSLA", "Tesla (TSLA)"), "tsla": ("TSLA", "Tesla (TSLA)"),
+    "google": ("GOOGL", "Alphabet/Google (GOOGL)"), "googl": ("GOOGL", "Alphabet/Google (GOOGL)"),
+    "alphabet": ("GOOGL", "Alphabet/Google (GOOGL)"),
+    "microsoft": ("MSFT", "Microsoft (MSFT)"), "msft": ("MSFT", "Microsoft (MSFT)"),
+    "amazon": ("AMZN", "Amazon (AMZN)"), "amzn": ("AMZN", "Amazon (AMZN)"),
+    "meta": ("META", "Meta (META)"), "meta platforms": ("META", "Meta (META)"), "facebook": ("META", "Meta (META)"),
+    "netflix": ("NFLX", "Netflix (NFLX)"), "nflx": ("NFLX", "Netflix (NFLX)"),
+    "amd": ("AMD", "AMD (AMD)"),
+    "intel": ("INTC", "Intel (INTC)"), "intc": ("INTC", "Intel (INTC)"),
+    "spotify": ("SPOT", "Spotify (SPOT)"),
+    "palantir": ("PLTR", "Palantir (PLTR)"), "pltr": ("PLTR", "Palantir (PLTR)"),
+    "openai": ("OPEN", "OpenAI (OPEN)"),
+    # ETFs / indices / commodities
+    "spy": ("SPY", "S&P 500 ETF (SPY)"), "sp500": ("^GSPC", "S&P 500"),
+    "s&p 500": ("^GSPC", "S&P 500"), "nasdaq": ("^IXIC", "Nasdaq"),
+    "dow": ("^DJI", "Dow Jones"), "gold": ("GC=F", "Gold"), "silver": ("SI=F", "Silver"),
+    "oil": ("CL=F", "WTI Crude Oil"), "btc": ("BTC-USD", "Bitcoin (BTC)"),
+}
+STOCK_RE = re.compile(
+    r"\b(nvidia|nvda|apple|aapl|tesla|tsla|google|googl|alphabet|microsoft|msft|amazon|amzn|"
+    r"meta|facebook|netflix|nflx|amd|intel|intc|palantir|pltr|spotify|openai|spy|sp500|"
+    r"nasdaq|dow|gold|silver|oil|s&p 500)\b(?![a-z])", re.I)
+
+def _pct_now():
+    return datetime.datetime.now().strftime("%Y-%m-%d")
+
+async def _yahoo_quote(ticker):
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?interval=1d&range=1d"
+    async with ClientSession(timeout=ClientTimeout(total=10)) as s:
+        async with s.get(url, headers=UA) as r:
+            if r.status != 200:
+                return None
+            d = await r.json()
+    res = (d.get("chart") or {}).get("result") or []
+    if not res:
+        return None
+    meta = res[0].get("meta") or {}
+    price = meta.get("regularMarketPrice")
+    prev = meta.get("chartPreviousClose") or meta.get("previousClose")
+    if price is None:
+        return None
+    chg = None
+    if prev:
+        chg = (float(price) - float(prev)) / float(prev) * 100.0
+    return {"price": float(price), "chg": chg,
+            "date": datetime.datetime.utcfromtimestamp(meta.get("regularMarketTime") or 0).strftime("%Y-%m-%d")}
+
 def _money(x):
     try:
         f = float(x)
@@ -206,27 +258,36 @@ def _money(x):
     except Exception:
         return str(x)
 
-async def live_price_note(user_text):
-    """If the user asks for a crypto price, fetch live Binance data and return a
-    one-line authoritative string (or '' if not a price query / fetch failed)."""
+async def live_price_note(user_text, msgs=None):
+    """If the user asks for a price, fetch live Binance (crypto) or Yahoo (stock)
+    data and return an authoritative one-line string, or '' if not a price query.
+    `msgs` is the full message list; used to resolve a bare 'find the price'
+    follow-up by scanning recent user turns for an asset name."""
     t = (user_text or "").strip()
     if not t or len(t) > 200:
         return ""
-    if not PRICE_RE.search(t):
+    # A price query? Combine current turn + a few prior user turns for context.
+    ctx = t
+    if msgs:
+        taken = 0
+        for m in reversed(msgs):
+            if m.get("role") == "user":
+                ctx = m.get("content", "") + " " + ctx
+                taken += 1
+                if taken >= 3:
+                    break
+    if not (PRICE_RE.search(ctx) or STOCK_RE.search(ctx)):
         return ""
-    # find which ticker(s) are actually mentioned
-    hits = [tick for tick in PRICE_MAP if re.search(r"\b"+tick+r"\b(?![a-z])", t, re.I)]
-    # dedupe aliases so "بیت کوین" and "بیت" don't fetch BTC twice
+    today = datetime.datetime.now().strftime("%Y-%m-%d")
+    lines = []
+    # ---- crypto (Binance public API) ----
+    hits = [tick for tick in PRICE_MAP if re.search(r"\b"+tick+r"\b(?![a-z])", ctx, re.I)]
     seen, ded = set(), []
     for tick in hits:
         sym = PRICE_MAP[tick][1]
         if sym not in seen:
             seen.add(sym); ded.append(tick)
     hits = ded
-    if not hits:
-        # "price of ..." / generic — default to bitcoin if nothing matched
-        hits = ["btc"]
-    lines = []
     for tick in hits[:2]:
         name, sym = PRICE_MAP[tick]
         try:
@@ -239,12 +300,33 @@ async def live_price_note(user_text):
             price = _money(d.get("lastPrice"))
             high = _money(d.get("highPrice")); low = _money(d.get("lowPrice"))
             chg = d.get("priceChangePercent", "0")
-            lines.append(f"{name}: {price} USD  (24h: {chg}% | high {high} | low {low})")
+            lines.append(f"{name}: {price} USD  (24h: {chg}% | high {high} | low {low} | {today})")
         except Exception:
             continue
+    # ---- stocks / indices / commodities (Yahoo public chart API) ----
     if not lines:
+        shits = [k for k in STOCK_MAP if re.search(r"\b"+k.replace("&","\\&?")+r"\b(?![a-z])", ctx, re.I)]
+        # normalize: dedupe by ticker, keep first display
+        sseen, sded = set(), []
+        for k in shits:
+            tk = STOCK_MAP[k][0]
+            if tk not in sseen:
+                sseen.add(tk); sded.append(k)
+        for k in sded[:2]:
+            ticker, disp = STOCK_MAP[k]
+            try:
+                q = await _yahoo_quote(ticker)
+                if not q:
+                    continue
+                price = _money(q["price"])
+                chg = f"{q['chg']:+.2f}%" if q["chg"] is not None else "n/a"
+                lines.append(f"{disp}: {price} USD  (chg {chg} | {q['date']})")
+            except Exception:
+                continue
+    if not lines:
+        # fall back: price words present but no asset matched — skip injection
         return ""
-    return "\n".join(lines) + f"  [as of {datetime.datetime.now().strftime('%Y-%m-%d %H:%M UTC')}]"
+    return "\n".join(lines) + f"  [real-time as of {today} {datetime.datetime.now().strftime('%H:%M UTC')}]"
 
 MAX_STEPS = 6
 SYSTEM_PROMPT = ("You are a helpful assistant with tool access. You MUST use the web_search tool "
@@ -1782,7 +1864,7 @@ async def chat_handler(request):
     #      Detect a crypto price query, fetch live data from Binance's public
     #      API, and inject the authoritative price as a system note the model
     #      must echo.
-    price_inject = await live_price_note(last_user)
+    price_inject = await live_price_note(last_user, msgs)
     if price_inject:
         msgs.insert(0, {"role": "system",
                         "content": "REAL-TIME MARKET DATA (authoritative, fetched "
