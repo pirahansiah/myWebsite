@@ -1483,26 +1483,39 @@ function recStop(){try{recStream&&recStream.getTracks().forEach(t=>t.stop())}cat
 function recCleanup(){recStop();micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec')}
 function microTick(){/*placeholder*/}
 
-/* record via MediaRecorder -> decode to mono 16k Float32 PCM */
+/* record via MediaRecorder -> decode to mono 16k Float32 PCM.
+   IMPORTANT: record the RAW getUserMedia stream, NOT an AudioContext
+   destination. Safari/iOS record silence from the source->destination
+   loopback pattern (WebKit bug), so we never route audio through AudioContext
+   while recording. AudioContext is used only AFTER, to decode the blob. */
+function pickMime(){
+  if(window.MediaRecorder&&!window.MediaRecorder.isTypeSupported)return 'audio/webm';
+  const c=[];
+  ['audio/mp4','audio/aac','audio/webm;codecs=opus','audio/webm','audio/ogg;codecs=opus'].forEach(m=>{
+    try{ if(window.MediaRecorder.isTypeSupported(m))c.push(m); }catch(e){}
+  });
+  return c[0]||'audio/webm';
+}
 async function recordAudio(){
   audioChunks=[];
-  recStream=await navigator.mediaDevices.getUserMedia({audio:true});
-  actx=new (window.AudioContext||window.webkitAudioContext)();
-  const src=actx.createMediaStreamSource(recStream);
-  const dest=actx.createMediaStreamDestination();
-  src.connect(dest);
-  mediaRec=new MediaRecorder(dest.stream);
+  recStream=await navigator.mediaDevices.getUserMedia({audio:true}); // raw stream kept live
+  const mime=pickMime();
+  mediaRec=new MediaRecorder(recStream,{mimeType:mime});
   return new Promise(res=>{
+    let stopped=false;
     mediaRec.ondataavailable=e=>{if(e.data&&e.data.size)audioChunks.push(e.data)};
-    mediaRec.onstop=async()=>{
-      actx.close&&actx.close();
-      const blob=new Blob(audioChunks,{type:mediaRec.mimeType||'audio/webm'});
-      const buf=await blob.arrayBuffer();
-      const a=new AudioContext();
-      const ab=await a.decodeAudioData(buf);
-      const pcm=toMono16k(ab);
-      a.close();
-      res(pcm);
+    mediaRec.onstop=async()=>{ if(stopped)return; stopped=true;
+      try{
+        const blob=new Blob(audioChunks,{type:mediaRec.mimeType||mime});
+        const arr=new Uint8Array(await blob.arrayBuffer());
+        // minimal PCM16 WAV payload may be aac/mp4 on iOS; decode via AudioContext
+        const a=new (window.AudioContext||window.webkitAudioContext)();
+        const ab=await a.decodeAudioData(arr.buffer.slice(0));
+        const pcm=toMono16k(ab);
+        try{a.close()}catch(_){}
+        res(pcm);
+      }catch(e){ res(null); }
+      recCleanup();
     };
     mediaRec.start();
   });
@@ -1533,6 +1546,7 @@ async function pcWhisper(){
     flagMic(false,'🎤 microphone access denied');setTimeout(()=>flagMic(false),2200);return;
   }
   if(!micWanted){recCleanup();return;}
+  if(!pcm){micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');inp.placeholder='🎤 audio decode failed on this browser';setTimeout(()=>{micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');inp.placeholder='Message…'},3000);return;}
   micBtn.textContent='🔍';inp.placeholder='🎤 sending to PC + transcribing…';autosize();
   const wav=encodeWav16(pcm,16000);
   try{
@@ -1567,6 +1581,7 @@ async function startWhisper(){
   try{ pcm=await recordAudio(); }
   catch(e){ flagMic(false,'🎤 microphone access denied');setTimeout(()=>flagMic(false),2200);return; }
   if(!micWanted){recCleanup();return;}
+  if(!pcm){micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');inp.placeholder='🎤 audio decode failed on this browser';setTimeout(()=>{micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');inp.placeholder='Message…'},3000);return;}
   micBtn.textContent='🔍';inp.placeholder='🎤 transcribing…';
   try{
     const out=await whisper(pcm,{language:langMap[langSel.value]||'persian',task:'transcribe',chunk_length_s:30});
