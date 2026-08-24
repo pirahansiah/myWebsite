@@ -449,7 +449,8 @@ RE_CMD_FORGET = re.compile(r"^\s*forget\s+profile\s+([A-Za-z0-9_\-]{1,40})\s*$",
 RE_CMD_PKM_ON = re.compile(r"^\s*(?:pkm|capture)\s+(?:on|start)\s*$", re.I)
 RE_CMD_PKM_OFF = re.compile(r"^\s*(?:pkm|capture)\s+(?:off|stop|end)\s*$", re.I)
 RE_CMD_PKM_STATUS = re.compile(r"^\s*(?:pkm|capture)\s*(?:status|state)?\s*[=?]?\s*$", re.I)
-RE_CMD_PKM_LIST = re.compile(r"^\s*(?:pkm|capture|notes?)\s+(?:list|show|view|all)\s*$", re.I)
+RE_CMD_PKM_LIST = re.compile(r"^\s*(?:pkm|capture|notes?)\s+(?:list|all)\s*$", re.I)
+RE_CMD_PKM_SHOW = re.compile(r"^\s*(?:pkm|capture|notes?)\s+(?:show|view|get|read)\s+(\d+)\s*$", re.I)
 RE_CMD_PKM_CLEAR = re.compile(r"^\s*(?:pkm|capture|notes?)\s+clear\s*$", re.I)
 # one-shot save: "note: ..." / "save: ..." / "pkm: ..." — verbatim, no model
 RE_CMD_NOTE = re.compile(r"^\s*(?:note|save|pkm)\s*[:#]\s*(.+)$", re.I | re.S)
@@ -526,10 +527,31 @@ def handle_commands(text):
         if not notes:
             return _sys_reply("No notes saved for **%s** yet. Send `pkm on` then just type "
                               "what you want to keep, or use `note: <text>`." % prof)
-        body = "\n".join("- (%s) `#%s` — %s"
-                         % (n["ts"], ", #".join(n.get("tags", [])), n["text"][:90])
-                         for n in notes[-25:])
-        return _sys_reply("**%s** notes (%d total, newest last):\n%s" % (prof, len(notes), body))
+        total = len(notes)
+        shown = notes[-25:]
+        start_i = total - len(shown) + 1   # 1-based index of first shown note
+        body = "\n".join("**%d.** (%s) `#%s` — %s"
+                         % (start_i + i, n["ts"], ", #".join(n.get("tags", [])),
+                            n["text"][:120] + ("…" if len(n["text"]) > 120 else ""))
+                         for i, n in enumerate(shown))
+        return _sys_reply("**%s** notes — %d total (newest last). "
+                          "Use `pkm show N` to read one in FULL:\n%s\n\n"
+                          "%s" % (prof, total,
+                                 "Showing only the 25 newest." if total > len(shown) else "",
+                                 body))
+
+    m = RE_CMD_PKM_SHOW.match(t)
+    if m:
+        notes = get_notes(prof)
+        idx = int(m.group(1)) - 1 if m.group(1) else 0
+        if not notes:
+            return _sys_reply("No notes saved for **%s** yet." % prof)
+        if idx < 0 or idx >= len(notes):
+            return _sys_reply("No note #%s — **%s** has %d notes. Try `pkm list`."
+                              % (m.group(1), prof, len(notes)))
+        n = notes[idx]
+        return _sys_reply("**#%d** · (%s) · `#%s`\n\n%s"
+                          % (idx + 1, n["ts"], ", #".join(n.get("tags", [])), n["text"]))
 
     if RE_CMD_PKM_CLEAR.match(t):
         _write_json(notes_path(prof), [])
