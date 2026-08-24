@@ -626,6 +626,49 @@ async def profiles_switch_handler(request):
     set_current_profile(name)
     return web.json_response({"ok": True, "profile": current_profile()})
 
+async def delete_profile_handler(request):
+    try:
+        body = await request.json()
+    except Exception:
+        return web.json_response({"error": "bad json"}, status=400)
+    name = (body.get("name") or "").strip()
+    slug = _slug(name)
+    if not slug:
+        return web.json_response({"error": "missing name"}, status=400)
+    if slug == DEFAULT_PROFILE:
+        return web.json_response({"error": "public is the default profile and cannot be deleted"}, status=400)
+    import shutil
+    shutil.rmtree(profile_dir(slug), ignore_errors=True)
+    if current_profile() == slug:
+        set_current_profile(DEFAULT_PROFILE)
+        CURRENT_CONV.pop(DEFAULT_PROFILE, None)
+    return web.json_response({"ok": True, "deleted": slug, "profile": current_profile()})
+
+async def delete_message_handler(request):
+    try:
+        body = await request.json()
+    except Exception:
+        return web.json_response({"error": "bad json"}, status=400)
+    prof = current_profile()
+    cid = body.get("id", "")
+    idx = body.get("index")
+    if not cid or idx is None:
+        return web.json_response({"error": "missing id or index"}, status=400)
+    conv = load_conv(prof, cid)
+    if not conv:
+        return web.json_response({"error": "no such conversation"}, status=404)
+    try:
+        idx = int(idx)
+        if idx < 0 or idx >= len(conv.get("messages", [])):
+            return web.json_response({"error": "index out of range"}, status=400)
+        removed = conv["messages"].pop(idx)
+    except (ValueError, IndexError):
+        return web.json_response({"error": "invalid index"}, status=400)
+    conv["updated"] = _now_iso()
+    save_conv(prof, conv)
+    return web.json_response({"ok": True, "removed": removed.get("role"),
+                              "remaining": len(conv.get("messages", []))})
+
 async def new_chat_handler(request):
     prof = current_profile()
     CURRENT_CONV[prof] = None
@@ -734,9 +777,10 @@ PAGE = r"""<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset=
   --radius:14px;--shadow:0 8px 28px rgba(0,0,0,.45);
 }
 [data-theme="light"]{
-  --bg:#f4f4f8;--panel:#ffffff;--panel2:#eef0f6;--border:#dcdfe8;
-  --text:#1c1e26;--muted:#666b7d;--user:#2f6fed;--bot:#ffffff;
-  --shadow:0 8px 24px rgba(30,32,50,.10);
+  --bg:#ffffff;--panel:#f3f3f3;--panel2:#e8e8e8;--border:#e0e0e0;
+  --text:#333333;--muted:#616161;--accent:#007ACC;--accent2:#1f6fb2;
+  --user:#007ACC;--bot:#ffffff;
+  --shadow:0 8px 24px rgba(0,0,0,.10);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%}
@@ -803,6 +847,15 @@ header h1{font-size:14px;margin:0;font-weight:600}
 .sys{align-self:center;background:none;color:var(--muted);font-size:12.5px;text-align:center;max-width:92%;
   border:1px dashed var(--border);border-radius:10px;padding:7px 14px}
 .meta{margin-top:7px;font-size:10.5px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.msgdel{position:absolute;top:6px;right:8px;border:0;background:rgba(127,127,155,.18);color:var(--muted);
+  border-radius:6px;font-size:11px;line-height:1;padding:4px 6px;cursor:pointer;opacity:0;transition:opacity .15s}
+.msg:hover .msgdel{opacity:1}.msgdel:hover{color:var(--err);background:rgba(255,107,107,.2)}
+.pkm_del{border:1px solid transparent;background:none;color:#fff;border-radius:6px;font-size:11px;line-height:1;
+  padding:2px 5px;margin-left:4px;cursor:pointer;opacity:.6}
+.chip:hover .pkm_del{opacity:1;border-color:rgba(255,255,255,.35)}
+.pkm_del:hover{color:#fff;background:var(--err);opacity:1}
+[data-theme="light"] .pkm_del{color:#007ACC}
+[data-theme="light"] .chip:hover .pkm_del{border-color:rgba(0,122,204,.4)}
 .msg.bot .meta{border-top:1px solid var(--border);padding-top:5px}
 .mtag{background:rgba(79,140,255,.15);color:var(--accent);border-radius:6px;padding:1px 7px;font-weight:600}
 [data-theme="light"] .mtag{background:rgba(47,111,237,.10)}
@@ -970,6 +1023,17 @@ function renderProfiles(){
     b.innerHTML=(pr.name===S.profile?'👤 ':'')+esc(pr.display)+
       ' <span class="x">'+pr.facts+'🧠 '+pr.conversations+'💬</span>';
     b.title='facts: '+pr.facts+' · chats: '+pr.conversations+' · click to switch';
+    if(pr.name!=='public'){
+      const del=document.createElement('button');
+      del.className='pkm_del';del.textContent='🗑';del.title='Delete this profile (chats+memory+notes)';
+      del.onclick=async ev=>{ev.stopPropagation();
+        if(!confirm('Delete profile "'+pr.display+'" — ALL its chats, memory and notes?'))return;
+        const r=await jpost('/__profiles/delete',{name:pr.name});
+        if(r.ok){msgs=[];chat.innerHTML='';addSys('🗑 Deleted profile **'+pr.display+'**.');}
+        else addSys('⚠️ '+esc(r.error||'delete failed'));
+        await refreshState();};
+      b.appendChild(del);
+    }
     b.onclick=()=>switchProfile(pr.name);
     p.appendChild(b);
   }
@@ -1003,11 +1067,21 @@ function renderConvs(){
 function loadConvInto(cv){
   chat.innerHTML='';msgs=[];
   addSys('Loaded "'+(cv.title||cv.id)+'" ('+cv.messages.length+' messages)');
-  for(const m of cv.messages){
-    if(m.role==='user')addMsg('user',m.content,null);
-    else addMsg('bot',m.content,{label:m.model_label||m.model||'assistant',tps:m.tps,ts:(m.ts||'').slice(0,16)});
+  cv.messages.forEach((m,i)=>{
+    const el=m.role==='user'?addMsg('user',m.content,null):
+      addMsg('bot',m.content,{label:m.model_label||m.model||'assistant',tps:m.tps,ts:(m.ts||'').slice(0,16)});
+    // per-message delete (skip the tiny "Loaded..." sys row: it has no msgs entry)
+    const delb=document.createElement('button');
+    delb.className='msgdel';delb.textContent='✕';delb.title='Delete this message';
+    delb.onclick=async ev=>{ev.stopPropagation();
+      if(!confirm('Delete this message?'))return;
+      const cid=S.conversation&&S.conversation.id;
+      const r=await jpost('/__delete_message',{id:cid,index:i});
+      if(r.ok){const cv2=await jpost('/__select_chat',{id:cid});if(cv2&&cv2.messages)loadConvInto(cv2);}
+      else addSys('⚠️ '+esc(r.error||'delete failed'));};
+    el.appendChild(delb);
     msgs.push({role:m.role,content:m.content});
-  }
+  });
   S.conversation=cv;
   renderConvs();
 }
@@ -1418,6 +1492,8 @@ APP.router.add_get("/__models", models_handler)
 APP.router.add_post("/__switch", switch_handler)
 APP.router.add_get("/__state", state_handler)
 APP.router.add_post("/__profiles/switch", profiles_switch_handler)
+APP.router.add_post("/__profiles/delete", delete_profile_handler)
+APP.router.add_post("/__delete_message", delete_message_handler)
 APP.router.add_post("/__new_chat", new_chat_handler)
 APP.router.add_post("/__select_chat", select_chat_handler)
 APP.router.add_post("/__delete_chat", delete_chat_handler)
