@@ -1611,11 +1611,18 @@ let whisper=null; // lazy transformers.js pipeline
 
 const STT_LABEL={'browser':'Browser','whisper':'Local','pc':'PC ⚡'};
 const STT_NEXT={'browser':'whisper','whisper':'pc','pc':'browser'};
+// Built-in Web Speech recognition only works reliably on Chromium (Chrome/Edge).
+// Safari & Firefox either don't support it or can't recognise non-system langs,
+// so the PC Whisper engine is the only one that works there.
+const isChromium=/Chrome\/|Chromium\/|Edg\/|OPR\//.test(navigator.userAgent) && !/EdgiOS/.test(navigator.userAgent);
+function browserCanSTT(){return !!(window.SpeechRecognition||window.webkitSpeechRecognition) && isChromium;}
 function setSTTMode(m){
+  // never sit on the browser engine if it can't actually recognise here
+  if(m==='browser' && !browserCanSTT()) m='pc';
   sttMode=m;localStorage.setItem('llmstt',m);
   sttBtn.textContent=STT_LABEL[m]||m;
   sttBtn.classList.toggle('busy',m==='whisper');
-  sttBtn.title='STT: '+{browser:'Built-in browser recognition',whisper:'On-device Whisper (downloads model)',pc:'Whisper on your Windows/WSL PC (recommended)'}[m];
+  sttBtn.title='STT: '+{browser:'Built-in browser recognition (Chromium only)',whisper:'On-device Whisper (downloads model)',pc:'Whisper on your Windows/WSL PC (recommended)'}[m];
 }
 sttBtn.onclick=()=>setSTTMode(STT_NEXT[sttMode]||'browser');
 setSTTMode(sttMode); // AFTER declarations (was before -> ReferenceError killed all handlers)
@@ -1625,11 +1632,17 @@ if(persistLang){langSel.value=persistLang;}
 langSel.onchange=()=>{
   localStorage.setItem('llmlang',langSel.value);applyDir();
   const v=langSel.value||'';
-  // macOS/iOS browsers (Safari/FF) can't recognise Persian/Arabic via the
-  // built-in Web Speech API — only the Windows PC Whisper engine can. Auto-switch.
-  if((v==='fa-IR'||v==='ar-SA')&&sttMode==='browser'){
+  // Browser Web Speech on Chrome uses the OS keyboard language (needs a reload to
+  // switch) and can't do Persian/Arabic on Safari/FF at all. In either case, the
+  // PC Whisper engine handles the language directly — no OS lang switch, no reload.
+  if(v!=='en-US' && v!=='en-GB' && v!=='' && sttMode==='browser'){
     setSTTMode('pc');
-    inp.placeholder='🎤 Farsi/Arabic need the PC Whisper engine on macOS — switched to PC ⚡';
+    inp.placeholder='🎤 '+((v==='fa-IR'||v==='ar-SA')?'Farsi/Arabic':'non-English')+' → switched to PC ⚡ (no OS language switch needed)';
+    setTimeout(()=>{if(inp.placeholder.indexOf('PC ⚡')>=0)inp.placeholder='Message…  (Enter to send, Shift+Enter for newline)';},3500);
+  }
+  else if((v==='en-US'||v==='en-GB'||v==='') && !browserCanSTT() && sttMode==='browser'){
+    setSTTMode('pc');
+    inp.placeholder='🎤 This browser can\'t do built-in speech → switched to PC ⚡';
     setTimeout(()=>{if(inp.placeholder.indexOf('PC ⚡')>=0)inp.placeholder='Message…  (Enter to send, Shift+Enter for newline)';},3500);
   }
 };
@@ -1638,6 +1651,8 @@ applyDir();
 micBtn.onclick=()=>{
   if(micOn){micWanted=false;stopCapture();return;}
   committed=inp.value;
+  // If the browser engine isn't viable here (Safari/FF), use the PC engine.
+  if(sttMode==='browser' && !browserCanSTT()){setSTTMode('pc');}
   if(sttMode==='whisper'){startWhisper();}
   else if(sttMode==='pc'){pcWhisper();}
   else{micOn=true;micWanted=true;microg();try{recog.start();}catch(e){}}
