@@ -1302,6 +1302,7 @@ let S=null,msgs=[],busy=false,aborter=null,pollTimer=null,sinceAct=Date.now()/10
 
 marked.setOptions({breaks:true,mangle:false,headerIds:false});
 function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function isRTL(t){return /[֐-׿؀-ۿݐ-ݿ\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\u0590-\u05FF]/.test(t||'')}
 function md(t){
   try{
     let h=marked.parse(t);
@@ -1317,6 +1318,7 @@ function scroll(){const w=$('chatwrap');w.scrollTop=w.scrollHeight}
 
 function addMsg(cls,text,meta,raw){
   const d=document.createElement('div');d.className='msg '+cls;
+  if(isRTL(text))d.style.direction='rtl';
   if(raw){d.textContent=text;}
   else{d.innerHTML=cls==='user'?esc(text):md(text);decorate(d);}
   if(meta){
@@ -1586,10 +1588,16 @@ async function ask(){
   refreshState();   // refresh conv list + profile counts
 }
 stopBtn.onclick=()=>{if(aborter)aborter.abort()};
-sendBtn.onclick=()=>{ask._t=inp.value.trim();ask._start=Date.now();ask();inp.value='';autosize()};
+sendBtn.onclick=()=>{const t=inp.value.trim();if(!t)return;ask._t=t;ask._start=Date.now();ask();stopVoiceInput();};
 inp.addEventListener('keydown',e=>{
-  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ask._t=inp.value.trim();ask._start=Date.now();ask();inp.value='';autosize();}
+  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();const t=inp.value.trim();if(!t)return;ask._t=t;ask._start=Date.now();ask();stopVoiceInput();}
 });
+function stopVoiceInput(){
+  if(SR&&recog&&(micOn||micWanted)){micWanted=false;try{recog.stop()}catch(_){}}
+  try{stopCapture()}catch(_){}
+  committed='';
+  recCleanup();
+}
 
 /* ---------- voice input (browser Web Speech API + optional Whisper) ---------- */
 const micBtn=$('mic');
@@ -1611,9 +1619,21 @@ function setSTTMode(m){
 }
 sttBtn.onclick=()=>setSTTMode(STT_NEXT[sttMode]||'browser');
 setSTTMode(sttMode); // AFTER declarations (was before -> ReferenceError killed all handlers)
+function applyDir(){const v=langSel.value||'';inp.dir=(v==='fa-IR'||v==='ar-SA')?'rtl':'ltr';}
 let persistLang=localStorage.getItem('llmlang');
 if(persistLang){langSel.value=persistLang;}
-langSel.onchange=()=>{localStorage.setItem('llmlang',langSel.value);};
+langSel.onchange=()=>{
+  localStorage.setItem('llmlang',langSel.value);applyDir();
+  const v=langSel.value||'';
+  // macOS/iOS browsers (Safari/FF) can't recognise Persian/Arabic via the
+  // built-in Web Speech API — only the Windows PC Whisper engine can. Auto-switch.
+  if((v==='fa-IR'||v==='ar-SA')&&sttMode==='browser'){
+    setSTTMode('pc');
+    inp.placeholder='🎤 Farsi/Arabic need the PC Whisper engine on macOS — switched to PC ⚡';
+    setTimeout(()=>{if(inp.placeholder.indexOf('PC ⚡')>=0)inp.placeholder='Message…  (Enter to send, Shift+Enter for newline)';},3500);
+  }
+};
+applyDir();
 
 micBtn.onclick=()=>{
   if(micOn){micWanted=false;stopCapture();return;}
@@ -1628,6 +1648,7 @@ function microg(){
   recog.lang=(langSel.value&&langSel.value!=='')?langSel.value:'en-US';
   recog.continuous=true;recog.interimResults=true;
   recog.onresult=e=>{
+    if(!micWanted){committed='';return;}  // send stopped listening — don't repopulate
     let interim='',final=committed;
     for(let i=e.resultIndex;i<e.results.length;i++){
       const r=e.results[i];
