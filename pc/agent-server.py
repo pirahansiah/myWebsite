@@ -1610,39 +1610,45 @@ let sttMode=localStorage.getItem('llmstt')|| 'pc'; // 'browser' | 'whisper' | 'p
 let whisper=null; // lazy transformers.js pipeline
 
 const STT_LABEL={'browser':'Browser','whisper':'Local','pc':'PC ⚡'};
-const STT_NEXT={'browser':'whisper','whisper':'pc','pc':'browser'};
-// Built-in Web Speech recognition only works reliably on Chromium (Chrome/Edge).
-// Safari & Firefox either don't support it or can't recognise non-system langs,
-// so the PC Whisper engine is the only one that works there.
-const isChromium=/Chrome\/|Chromium\/|Edg\/|OPR\//.test(navigator.userAgent) && !/EdgiOS/.test(navigator.userAgent);
-function browserCanSTT(){return !!(window.SpeechRecognition||window.webkitSpeechRecognition) && isChromium;}
+// Which engine actually WORKS depends on the OS, not just the browser:
+//   macOS  : Browser speech is broken (Safari/FF/Chrome all bad) -> PC ⚡ works
+//   Windows: built-in Browser speech works (Chrome/Edge)        -> PC ⚡ is broken
+// Cycle order is chosen per-platform so the toggle only lands on a working engine.
+const isMac=/Macintosh|Mac OS X|iPhone|iPad|iPod/.test(navigator.platform||navigator.userAgent);
+const isWin=/Win32|Win64|Windows/.test(navigator.platform||navigator.userAgent);
+function preferredSTT(){return isMac ? 'pc' : (isWin ? 'browser' : 'pc');}
+function badSTT(m){ // is this engine known-broken on this platform?
+  if(m==='browser' && isMac) return true;   // macOS browser speech dead
+  if(m==='pc' && isWin) return true;        // Windows PC Whisper endpoint dead
+  return false;
+}
+// toggle cycles among WORKING engines for this platform
+const STT_CYCLE = isMac ? ['pc'] : (isWin ? ['browser','pc'] : ['pc','browser']);
 function setSTTMode(m){
-  // never sit on the browser engine if it can't actually recognise here
-  if(m==='browser' && !browserCanSTT()) m='pc';
+  if(badSTT(m)) m = preferredSTT();          // never sit on a broken engine
   sttMode=m;localStorage.setItem('llmstt',m);
   sttBtn.textContent=STT_LABEL[m]||m;
   sttBtn.classList.toggle('busy',m==='whisper');
-  sttBtn.title='STT: '+{browser:'Built-in browser recognition (Chromium only)',whisper:'On-device Whisper (downloads model)',pc:'Whisper on your Windows/WSL PC (recommended)'}[m];
+  sttBtn.title='STT: '+{browser:'Built-in browser recognition (works on Windows)',whisper:'On-device Whisper (downloads model)',pc:'Whisper on your Windows/WSL PC (works on macOS)'}[m];
 }
-sttBtn.onclick=()=>setSTTMode(STT_NEXT[sttMode]||'browser');
-setSTTMode(sttMode); // AFTER declarations (was before -> ReferenceError killed all handlers)
+sttBtn.onclick=()=>{
+  // cycle only through engines that work on this platform
+  let i=STT_CYCLE.indexOf(sttMode);i=(i+1)%STT_CYCLE.length;
+  setSTTMode(STT_CYCLE[i]);
+};
+setSTTMode(localStorage.getItem('llmstt')|| preferredSTT()); // start on the good one
 function applyDir(){const v=langSel.value||'';inp.dir=(v==='fa-IR'||v==='ar-SA')?'rtl':'ltr';}
 let persistLang=localStorage.getItem('llmlang');
 if(persistLang){langSel.value=persistLang;}
 langSel.onchange=()=>{
   localStorage.setItem('llmlang',langSel.value);applyDir();
   const v=langSel.value||'';
-  // Browser Web Speech on Chrome uses the OS keyboard language (needs a reload to
-  // switch) and can't do Persian/Arabic on Safari/FF at all. In either case, the
-  // PC Whisper engine handles the language directly — no OS lang switch, no reload.
-  if(v!=='en-US' && v!=='en-GB' && v!=='' && sttMode==='browser'){
+  // On Windows, Browser speech uses the OS keyboard language and needs a reload to
+  // switch langs; but it DOES work. On macOS, non-English must use PC ⚡. So only
+  // force a switch when PC is the working engine (macOS) and a non-English is chosen.
+  if(isMac && v!=='' && v!=='en-US' && v!=='en-GB' && sttMode!=='pc'){
     setSTTMode('pc');
-    inp.placeholder='🎤 '+((v==='fa-IR'||v==='ar-SA')?'Farsi/Arabic':'non-English')+' → switched to PC ⚡ (no OS language switch needed)';
-    setTimeout(()=>{if(inp.placeholder.indexOf('PC ⚡')>=0)inp.placeholder='Message…  (Enter to send, Shift+Enter for newline)';},3500);
-  }
-  else if((v==='en-US'||v==='en-GB'||v==='') && !browserCanSTT() && sttMode==='browser'){
-    setSTTMode('pc');
-    inp.placeholder='🎤 This browser can\'t do built-in speech → switched to PC ⚡';
+    inp.placeholder='🎤 '+((v==='fa-IR'||v==='ar-SA')?'Farsi/Arabic':'non-English')+' → PC ⚡ (macOS)';
     setTimeout(()=>{if(inp.placeholder.indexOf('PC ⚡')>=0)inp.placeholder='Message…  (Enter to send, Shift+Enter for newline)';},3500);
   }
 };
@@ -1651,8 +1657,8 @@ applyDir();
 micBtn.onclick=()=>{
   if(micOn){micWanted=false;stopCapture();return;}
   committed=inp.value;
-  // If the browser engine isn't viable here (Safari/FF), use the PC engine.
-  if(sttMode==='browser' && !browserCanSTT()){setSTTMode('pc');}
+  // ensure we never start a known-broken engine on this platform
+  if(badSTT(sttMode)){setSTTMode(preferredSTT());}
   if(sttMode==='whisper'){startWhisper();}
   else if(sttMode==='pc'){pcWhisper();}
   else{micOn=true;micWanted=true;microg();try{recog.start();}catch(e){}}
