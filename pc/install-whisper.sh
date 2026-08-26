@@ -20,13 +20,15 @@ echo "=== write STT wrapper ==="
 cat > /opt/bin/whisper-stt.sh <<'WRAP'
 #!/bin/bash
 # usage: whisper-stt.sh <wav-file> <lang>
+#   <lang> = whisper short code (fa/en/de/ar/tr) or empty/"auto" for detection
 export PATH=/usr/local/cuda/bin:$PATH
-/opt/whisper.cpp/build/bin/whisper-cli -m /opt/whisper.cpp/models/ggml-small.bin \
-  -f "$1" -l "$2" -nt -np 2>/dev/null
+ARGS=(-m /opt/whisper.cpp/models/ggml-small.bin -f "$1" -nt -np)
+if [ -n "$2" ] && [ "$2" != "auto" ]; then ARGS+=(-l "$2"); fi
+/opt/whisper.cpp/build/bin/whisper-cli "${ARGS[@]}" 2>/dev/null
 WRAP
 chmod +x /opt/bin/whisper-stt.sh
-echo "=== smoke test (must fail gracefully on non-wav, but binary runs) ==="
+echo "=== smoke test (differs from how deploy-agent.sh handles it) ==="
 echo "dummy" >/tmp/wsys_test.txt
-/opt/bin/whisper-stt.sh /tmp/wsys_test.txt fa >/tmp/wsys_smoke.txt 2>&1 || true
+/opt/bin/whisper-stt.sh /tmp/wsys_test.txt "" >/tmp/wsys_smoke.txt 2>&1 || true
 head -3 /tmp/wsys_smoke.txt || true
 echo "INSTALL_OK"

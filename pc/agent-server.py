@@ -894,24 +894,30 @@ def _whisper_block(wav_path, lang):
     return (proc.returncode, proc.stdout, proc.stderr)
 
 async def stt_handler(request):
-    """POST /__stt?lang=fa-IR — raw WAV bytes in the body -> Whisper text.
+    """POST /__stt?lang=<bcp47|auto> — raw WAV bytes in the body -> Whisper text.
+    lang defaults to auto-detect (whisper picks the language). Supports fa/en/de/ar/tr.
     Returns {text} or {error} with a 500."""
-    lang = (request.query.get("lang") or "fa-IR").lower()
-    # map browser BCP47 -> whisper short code
-    lg = {"fa-ir":"fa","fa":"fa","en-us":"en","en":"en","ar-sa":"ar","ar":"ar",
-          "tr-tr":"tr","tr":"tr"}.get(lang, "fa")
+    lang = (request.query.get("lang") or "auto").lower()
+    # map browser BCP47 -> whisper short code ("" = auto-detect)
+    lg = {"fa-ir":"fa","fa":"fa","en-us":"en","en-gb":"en","en":"en",
+          "de-de":"de","de":"de","ar-sa":"ar","ar":"ar","tr-tr":"tr","tr":"tr",
+          "auto":"","":"auto"}.get(lang, "")
     ct = request.headers.get("Content-Type", "")
     if "multipart" in ct:
-        # accept a single "file" part
+        # scan all parts; accept the first one named "file" (curl sends lang first)
         reader = await request.multipart()
-        field = await reader.next()
         buf = bytearray()
-        while field is not None and field.name == "file":
-            while True:
-                chunk = await field.read_chunk(65536)
-                if not chunk: break
-                buf += chunk
-            break
+        while True:
+            field = await reader.next()
+            if field is None:
+                break
+            if field.name == "file":
+                while True:
+                    chunk = await field.read_chunk(65536)
+                    if not chunk:
+                        break
+                    buf += chunk
+                break
         data = bytes(buf)
     else:
         data = await request.read()
@@ -1255,9 +1261,12 @@ button:disabled{opacity:.45;cursor:not-allowed}
   <div class="hint">Say <b>profile = name</b> to isolate chats+memory · <b>memory = fact</b> to remember · <b>pkm on</b> to save everything verbatim</div>
   <div id="bar"><div id="barinner">
     <textarea id="inp" rows="1" placeholder="Message…  (Enter to send, Shift+Enter for newline)"></textarea>
-    <select id="langSel" title="Voice language">
+    <select id="langSel" title="Voice language (Auto detects from speech)">
+      <option value="">Auto</option>
       <option value="fa-IR">فارسی</option>
       <option value="en-US">English</option>
+      <option value="en-GB">English (UK)</option>
+      <option value="de-DE">Deutsch</option>
       <option value="ar-SA">العربية</option>
       <option value="tr-TR">Türkçe</option>
     </select>
@@ -1586,7 +1595,7 @@ inp.addEventListener('keydown',e=>{
 const micBtn=$('mic');
 const sttBtn=$('sttbtn');
 const langSel=$('langSel');
-const langMap={'fa-IR':'persian','en-US':'english','ar-SA':'arabic','tr-TR':'turkish'};
+const langMap={'fa-IR':'persian','en-US':'english','en-GB':'english','de-DE':'german','ar-SA':'arabic','tr-TR':'turkish'};
 const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
 let recog=null,micOn=false,micWanted=false,committed='';
 let sttMode=localStorage.getItem('llmstt')|| 'pc'; // 'browser' | 'whisper' | 'pc' (PC server Whisper)
@@ -1616,7 +1625,7 @@ micBtn.onclick=()=>{
 
 function microg(){
   recog=new SR();
-  recog.lang=langSel.value||'fa-IR';
+  recog.lang=(langSel.value&&langSel.value!=='')?langSel.value:'en-US';
   recog.continuous=true;recog.interimResults=true;
   recog.onresult=e=>{
     let interim='',final=committed;
@@ -1733,7 +1742,7 @@ async function pcWhisper(){
   micBtn.textContent='🔍';inp.placeholder='🎤 sending to PC + transcribing…';autosize();
   const wav=encodeWav16(pcm,16000);
   try{
-    const fd=new FormData();fd.append('lang',langSel.value||'fa-IR');fd.append('file',wav,'in.wav');
+    const fd=new FormData();fd.append('lang',(langSel.value&&langSel.value!=='')?langSel.value:'auto');fd.append('file',wav,'in.wav');
     const r=await fetch('/__stt',{method:'POST',body:fd});
     const j=await r.json();
     const text=(j&&j.text||'').trim();
@@ -1767,7 +1776,7 @@ async function startWhisper(){
   if(!pcm){micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');inp.placeholder='🎤 audio decode failed on this browser';setTimeout(()=>{micOn=false;micWanted=false;micBtn.textContent='🎤';micBtn.classList.remove('rec');inp.placeholder='Message…'},3000);return;}
   micBtn.textContent='🔍';inp.placeholder='🎤 transcribing…';
   try{
-    const out=await whisper(pcm,{language:langMap[langSel.value]||'persian',task:'transcribe',chunk_length_s:30});
+    const out=await whisper(pcm,{language:langMap[langSel.value]||null,task:'transcribe',chunk_length_s:30});
     const text=(out&&(out.text||(out.output&&out.output))||'').trim();
     if(text){committed=committed?(committed+' '+text):text;inp.value=committed;}
     else inp.placeholder='🎤 (no speech heard)';
