@@ -10,49 +10,22 @@ sitemap: false
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI box SSH</title>
+<title>llm2</title>
 <style>
-  :root { --bg:#11151c; --card:#1a212c; --line:#2b3543; --txt:#e6edf3; --mut:#8b98a8; --acc:#58a6ff; --mono:ui-monospace,SFMono-Regular,Menlo,monospace; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--txt); font-family:var(--mono); font-size:15px; line-height:1.55; padding:28px; }
-  h1 { font-size:20px; margin:0 0 4px; }
-  .sub { color:var(--mut); margin-bottom:20px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px; }
-  .k { color:var(--mut); margin-bottom:6px; }
-  code { display:block; font-size:17px; word-break:break-all; color:#9ecbff; margin-bottom:14px; }
-  pre { background:#0d1117; border:1px solid var(--line); border-radius:8px; padding:12px 14px; overflow:auto; color:#9ecbff; margin:0 0 14px; }
-  .btn { padding:9px 16px; border-radius:8px; background:var(--acc); color:#0d1117; font-weight:700; border:0; cursor:pointer; }
-  .err { color:#f85149; margin-top:12px; }
+  html,body{margin:0;padding:0;background:#0d1117;color:#9ecbff}
+  body{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:24px;line-height:1.4;padding:28px;box-sizing:border-box;min-height:100vh}
 </style>
 </head>
 <body>
-  <h1>AI box &mdash; SSH target</h1>
-  <div class="sub">Unlisted page, direct URL only.</div>
-  <div class="card">
-    <div class="k">SSH host</div>
-    <code id="sshUrl">&hellip;</code>
-    <div class="k">Connect from this Mac (anywhere):</div>
-    <pre id="cmd"></pre>
-    <button class="btn" id="copyBtn">Copy SSH command</button>
-    <div class="err" id="err"></div>
-  </div>
+<span id="h">&hellip;</span>
 <script>
-(function () {
-  fetch('https://pirahansiah.com/llm2-target.json?v=' + Date.now())
-    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-    .then(function (d) {
-      var host = (d.ssh_url || '').replace(/^https:\/\//, '').replace(/\/$/, '');
-      document.getElementById('sshUrl').textContent = host || 'unavailable';
-      var cmd = 'cloudflared access ssh --hostname ' + host + ' --url localhost:2222\nssh -p 2222 farshid@localhost';
-      document.getElementById('cmd').textContent = cmd;
-      document.getElementById('copyBtn').onclick = function () {
-        navigator.clipboard.writeText(cmd); this.textContent = 'Copied!';
-      };
-    })
-    .catch(function (e) {
-      document.getElementById('err').textContent = 'Box offline or not yet published: ' + e.message;
-    });
-})();
+fetch('https://pirahansiah.com/llm2-target.json?v='+Date.now())
+  .then(function(r){return r.json();})
+  .then(function(d){
+    var u=(d.ssh_url||'').replace(/^https:\/\//,'');
+    document.getElementById('h').textContent=u.replace(/\.trycloudflare\.com$/,'');
+  })
+  .catch(function(){document.getElementById('h').textContent='—';});
 </script>
 </body>
 </html>
