@@ -1,14 +1,14 @@
 {
-  "updated": "2026-08-28T12:37:41Z",
+  "updated": "2026-08-28T12:54:31Z",
   "hostname": "ai",
-  "lan_ip": "172.20.10.2/28",
+  "lan_ip": "172.20.10.2",
   "ssh_url": "https://hash-wool-rca-sticky.trycloudflare.com",
   "llm_url": "https://computing-vegas-oil-blend.trycloudflare.com",
   "services": {
     "ollama": "up",
     "sshd": "up"
   },
-  "uptime": "up 1 hour, 11 minutes",
+  "uptime": "up 1 hour, 28 minutes",
   "disk": "334G free of 393G",
   "mem_pct": "6%"
 }
