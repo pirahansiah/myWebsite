@@ -10,87 +10,47 @@ sitemap: false
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI box status</title>
+<title>AI box SSH</title>
 <style>
-  :root { --bg:#11151c; --card:#1a212c; --line:#2b3543; --txt:#e6edf3; --mut:#8b98a8; --ok:#3fb950; --bad:#f85149; --acc:#58a6ff; --mono:ui-monospace,SFMono-Regular,Menlo,monospace; }
+  :root { --bg:#11151c; --card:#1a212c; --line:#2b3543; --txt:#e6edf3; --mut:#8b98a8; --acc:#58a6ff; --mono:ui-monospace,SFMono-Regular,Menlo,monospace; }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--txt); font-family:var(--mono); font-size:14px; line-height:1.5; padding:24px; }
-  h1 { font-size:18px; font-weight:600; margin:0 0 4px; }
+  body { margin:0; background:var(--bg); color:var(--txt); font-family:var(--mono); font-size:15px; line-height:1.55; padding:28px; }
+  h1 { font-size:20px; margin:0 0 4px; }
   .sub { color:var(--mut); margin-bottom:20px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; margin-bottom:14px; }
-  .row { display:flex; gap:10px; align-items:baseline; padding:5px 0; border-bottom:1px dashed var(--line); }
-  .row:last-child { border-bottom:0; }
-  .row .k { color:var(--mut); min-width:150px; flex:none; }
-  .row .v { word-break:break-all; }
-  .badge { display:inline-block; padding:2px 10px; border-radius:999px; font-weight:600; }
-  .up { background:rgba(63,185,80,.15); color:var(--ok); }
-  .down { background:rgba(248,81,73,.15); color:var(--bad); }
-  code { word-break:break-all; }
-  .cmd { background:#0d1117; border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin:8px 0; color:#9ecbff; }
-  .btn { display:inline-block; margin-top:6px; padding:8px 14px; border-radius:8px; background:var(--acc); color:#0d1117; font-weight:700; text-decoration:none; }
-  .err { color:var(--bad); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px; }
+  .k { color:var(--mut); margin-bottom:6px; }
+  code { display:block; font-size:17px; word-break:break-all; color:#9ecbff; margin-bottom:14px; }
+  pre { background:#0d1117; border:1px solid var(--line); border-radius:8px; padding:12px 14px; overflow:auto; color:#9ecbff; margin:0 0 14px; }
+  .btn { padding:9px 16px; border-radius:8px; background:var(--acc); color:#0d1117; font-weight:700; border:0; cursor:pointer; }
+  .err { color:#f85149; margin-top:12px; }
 </style>
 </head>
 <body>
-  <h1>AI box — live status</h1>
-  <div class="sub">This page is unlisted. Only reachable by direct URL. <span id="upd">loading…</span></div>
-  <div class="card"><div class="v" id="status">Fetching <code>llm2-target.json</code>…</div></div>
-
-  <div class="card" id="sshCard" style="display:none">
-    <div class="row"><span class="k">SSH target</span><span class="v"><code id="sshUrl">—</code></span></div>
-    <div class="sub" style="margin:8px 0 0">From this Mac, SSH to the AI box from anywhere:</div>
-    <div class="cmd" id="sshCmd">—</div>
+  <h1>AI box &mdash; SSH target</h1>
+  <div class="sub">Unlisted page, direct URL only.</div>
+  <div class="card">
+    <div class="k">SSH host</div>
+    <code id="sshUrl">&hellip;</code>
+    <div class="k">Connect from this Mac (anywhere):</div>
+    <pre id="cmd"></pre>
     <button class="btn" id="copyBtn">Copy SSH command</button>
+    <div class="err" id="err"></div>
   </div>
-
-  <div class="card" id="infoCard" style="display:none">
-    <div class="row"><span class="k">hostname</span><span class="v" id="hostname">—</span></div>
-    <div class="row"><span class="k">LAN IP</span><span class="v" id="lanip">—</span></div>
-    <div class="row"><span class="k">uptime</span><span class="v" id="uptime">—</span></div>
-    <div class="row"><span class="k">disk</span><span class="v" id="disk">—</span></div>
-    <div class="row"><span class="k">memory</span><span class="v" id="mem">—</span></div>
-    <div class="row"><span class="k">ollama</span><span class="v" id="ollama">—</span></div>
-    <div class="row"><span class="k">sshd</span><span class="v" id="sshd">—</span></div>
-    <div class="row"><span class="k">LLM chat</span><span class="v"><a id="llmUrl" href="#" target="_blank" rel="noopener">open /llm</a></span></div>
-  </div>
-
 <script>
 (function () {
-  var base = 'https://pirahansiah.com/llm2-target.json?v=' + Date.now();
-  fetch(base).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  fetch('https://pirahansiah.com/llm2-target.json?v=' + Date.now())
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
     .then(function (d) {
-      var s = document.getElementById('status');
-      s.innerHTML = '';
-      document.getElementById('upd').textContent = 'updated ' + (d.updated || '—');
-      document.getElementById('sshCard').style.display = 'block';
-      document.getElementById('infoCard').style.display = 'block';
-
       var host = (d.ssh_url || '').replace(/^https:\/\//, '').replace(/\/$/, '');
       document.getElementById('sshUrl').textContent = host || 'unavailable';
       var cmd = 'cloudflared access ssh --hostname ' + host + ' --url localhost:2222\nssh -p 2222 farshid@localhost';
-      var el = document.getElementById('sshCmd');
-      el.textContent = cmd;
-      el.setAttribute('data-host', host);
-      document.getElementById('copyBtn').addEventListener('click', function () {
-        navigator.clipboard.writeText('cd ~; cloudflared access ssh --hostname ' + host + ' --url localhost:2222 & sleep 4; ssh -p 2222 farshid@localhost').then(function () {
-          document.getElementById('copyBtn').textContent = 'Copied!';
-        });
-      });
-
-      function badge(v) { return '<span class="badge ' + (v === 'up' ? 'up' : 'down') + '">' + (v || '—') + '</span>'; }
-      document.getElementById('hostname').textContent = d.hostname || '—';
-      document.getElementById('lanip').textContent = d.lan_ip || '—';
-      document.getElementById('uptime').textContent = d.uptime || '—';
-      document.getElementById('disk').textContent = d.disk || '—';
-      document.getElementById('mem').textContent = d.mem_pct || '—';
-      var svc = d.services || {};
-      document.getElementById('ollama').innerHTML = badge(svc.ollama);
-      document.getElementById('sshd').innerHTML = badge(svc.sshd);
-      if (d.llm_url && d.llm_url !== 'none') { document.getElementById('llmUrl').href = d.llm_url; }
-      else { document.getElementById('llmUrl').textContent = 'unavailable'; }
+      document.getElementById('cmd').textContent = cmd;
+      document.getElementById('copyBtn').onclick = function () {
+        navigator.clipboard.writeText(cmd); this.textContent = 'Copied!';
+      };
     })
     .catch(function (e) {
-      document.getElementById('status').innerHTML = '<span class="err">Box offline or endpoint not yet published: ' + e.message + '</span>';
+      document.getElementById('err').textContent = 'Box offline or not yet published: ' + e.message;
     });
 })();
 </script>
