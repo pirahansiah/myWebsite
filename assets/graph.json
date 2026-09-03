@@ -617,6 +617,13 @@
       "kind": "moc"
     },
     {
+      "id": "moc-qr-codes",
+      "label": "QR Codes",
+      "url": "/qr/",
+      "raw": null,
+      "kind": "moc"
+    },
+    {
       "id": "moc-solana-games",
       "label": "Solana Games",
       "url": "/solana-games/",
@@ -2304,6 +2311,13 @@
       "kind": "note"
     },
     {
+      "id": "notes-site-qr",
+      "label": "qr",
+      "url": "/notes/site/qr",
+      "raw": "/notes/site/qr",
+      "kind": "note"
+    },
+    {
       "id": "notes-site-wiki",
       "label": "wiki",
       "url": "/notes/site/wiki",
@@ -2336,6 +2350,13 @@
       "label": "game",
       "url": "/game/",
       "raw": "/game/",
+      "kind": "note"
+    },
+    {
+      "id": "qr",
+      "label": "qr",
+      "url": "/qr/",
+      "raw": "/qr/",
       "kind": "note"
     },
     {
@@ -2413,6 +2434,13 @@
       "label": "README",
       "url": "/notes/site/README",
       "raw": "/notes/site/README",
+      "kind": "note"
+    },
+    {
+      "id": "notes-site-swarm",
+      "label": "swarm",
+      "url": "/notes/site/swarm",
+      "raw": "/notes/site/swarm",
       "kind": "note"
     },
     {
@@ -2882,6 +2910,11 @@
     {
       "source": "moc-about",
       "target": "moc-game",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-about",
+      "target": "moc-qr-codes",
       "kind": "moc"
     },
     {
@@ -5462,6 +5495,11 @@
     {
       "source": "notes-site-menus",
       "target": "game",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-site-menus",
+      "target": "qr",
       "kind": "mdlink"
     },
     {
