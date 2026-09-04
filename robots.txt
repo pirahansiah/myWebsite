@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://pirahansiah.com/sitemap.xml
+# Machine-readable index for LLMs / AI agents (llmstxt.org standard)
+LLMS: https://pirahansiah.com/llms.txt

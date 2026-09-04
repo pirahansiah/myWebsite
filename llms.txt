@@ -1,0 +1,144 @@
+# pirahansiah.com — Dr. Farshid Pirahansiah
+
+> Embedded Computer Vision & Edge AI Engineer. Computer vision, deep learning, CUDA, LLM integration, model optimization and deployment on Jetson, Hailo, and Raspberry Pi. This file is a machine-readable index of the entire knowledge base; every entry links to a full page so LLMs can traverse the site's knowledge graph.
+
+Last updated: 2026-09-04
+
+## Main topics
+
+- [Computer Vision & AI Engineering](https://pirahansiah.com/) — homepage & profile
+- [Knowledge Graph](https://pirahansiah.com/graph/) — interactive map of how all notes connect
+- [Search](https://pirahansiah.com/search/) — full-text search across the site
+- [Agent Swarm](https://pirahansiah.com/swarm/) — multi-agent research over the whole site
+- [In-browser LLM (WebGPU)](https://pirahansiah.com/webgpu-llm/) — local RAG over all pages
+
+## Top-Level Pages
+
+- [AI Prompt & Agent Toolkit](https://pirahansiah.com/ai-toolkit/) — 27 battle-tested Claude Code skills, code-review agents, MCP tools, and coding rules — the AI engineering stack behind pirahansiah.com, packaged as prompt packs for modern LLMs.
+- [Book — Computer Vision & AI: An Engineer's Guide](https://pirahansiah.com/book/) — Computer Vision & AI: An Engineer's Guide by Dr. Farshid Pirahansiah — a 406-page practical reference covering 3D vision, GPU & CUDA programming, LLMs, optimization, and startup strategy.
+- [Digital Downloads & AI Prompt Packs](https://pirahansiah.com/shop/) — Technical guides, cheat sheets, AI prompt packs, and tutorials by Dr. Farshid Pirahansiah — computer vision, AI, CUDA, and software engineering.
+- [Privacy Policy](https://pirahansiah.com/privacy/) — Privacy policy for pirahansiah.com: what data is collected, how Google AdSense and Google Analytics are used, cookie policy, GDPR rights, and contact details.
+- [Share — Invite & Referral Links](https://pirahansiah.com/go/) — Share these invite and referral links with your friends — OpenCode, Trade Republic, Scalable Capital, Wise, eToro and Kraken.
+
+## Documentation & Technical Notes
+
+- [3D Vision & Real-Time Multi-Camera Systems](https://pirahansiah.com/notes/docs/cv/3d/) — Real-time 3D point cloud generation, depth sensing, and multi-camera synchronization for computer vision applications.
+- [Accelerate Python with Numba's @jit(nopython=True)](https://pirahansiah.com/notes/docs/cuda/numba/) — Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.
+- [Advanced LLM Concepts](https://pirahansiah.com/notes/docs/llm/llm-concepts/) — Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production deployment.
+- [AI Model Cost Calculator](https://pirahansiah.com/notes/docs/projects/ai-cost-calculator/) — Estimate text and image processing costs for GPT-4, Claude, and Gemini — token-aware cost planning for computer vision and multimodal AI.
+- [Blog: AI, LLMs, and Computer Vision](https://pirahansiah.com/notes/docs/llm/blog/) — Blog posts on RAG vs CAG, multi-agent architectures, AI's impact on jobs, and the future of software development.
+- [C++ Quick Reference](https://pirahansiah.com/notes/docs/cpp/) — Quick reference for C++ memory management, data structures, debugging tools, and shell basics.
+- [Crypto Payments — Support](https://pirahansiah.com/crypto/) — Support Dr. Farshid Pirahansiah's open-source computer vision and edge AI work with cryptocurrency. Bitcoin, Ethereum, Solana, Base and BNB Smart Chain wallet addresses.
+- [CUDA Development Environment in VS Code on Windows](https://pirahansiah.com/notes/docs/cuda/cuda-vscode/) — Step-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and debugging.
+- [Curated Links & Resources](https://pirahansiah.com/notes/docs/links/) — Hand-picked tools, tutorials, and references for CV, AI, and software engineering.
+- [CV Coaching & Teaching Roadmap](https://pirahansiah.com/notes/docs/coaching/) — Personalized computer vision coaching with a structured curriculum from fundamentals to edge AI.
+- [Developer Tools & Setup Guide](https://pirahansiah.com/notes/docs/dev-tools/) — Curated developer tools, shell essentials, Docker tips, and GitHub tricks.
+- [Dr. Farshid Pirahansiah — CV & AI](https://pirahansiah.com/notes/docs/cv-overview/) — Overview of Dr. Farshid Pirahansiah's computer vision and AI expertise: 3D vision, multi-camera systems, optical flow, model optimization, and edge AI deployment.
+- [How PyCUDA Reads and Runs C Kernels](https://pirahansiah.com/notes/docs/cuda/pycuda/) — Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.
+- [Local Video Avatar Generator with Ollama](https://pirahansiah.com/notes/docs/llm/avatar/) — Build a fully local video avatar generator using Ollama LLM, Piper TTS, and Wav2Lip without cloud services.
+- [MetaMask — Connect & Receive](https://pirahansiah.com/metamask/) — Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive address. Private test page.
+- [Mind Map: Orchestrating AI Agents](https://pirahansiah.com/notes/docs/llm/agents/) — Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.
+- [MLX, CoreML, and Metal for Apple Silicon](https://pirahansiah.com/notes/docs/cuda/apple-ml/) — Guide to Numba JIT, PyCUDA-to-Metal transition, CoreML conversion, and MLX framework on Apple Silicon.
+- [Optical Flow: Challenges and Solutions](https://pirahansiah.com/notes/docs/cv/optical-flow/) — Comprehensive guide to optical flow challenges including illumination changes, occlusions, fast motion, and their solutions.
+- [Portfolio & Publications](https://pirahansiah.com/notes/docs/resources/) — Complete portfolio of patents, publications, books, and project highlights.
+- [Product — Embedded CV & Edge AI](https://pirahansiah.com/notes/docs/product/) — Embedded computer vision and edge AI systems portfolio.
+- [Real-Time Multi-Camera Vision Systems](https://pirahansiah.com/notes/docs/cv/multi-camera/) — Deep technical guide to building real-time multi-camera vision systems with heterogeneous processing and scaling to 100+ cameras.
+- [Research — Publications & Patents](https://pirahansiah.com/notes/docs/research/) — Complete list of patents, journal articles, conference papers, books, and keynotes.
+- [Shell & Vim Quick Reference](https://pirahansiah.com/notes/docs/shell-vim/) — Quick reference for shell commands, vim basics, and essential CLI tools.
+- [Solana Arcade — Snake & Tetris](https://pirahansiah.com/solana-games/) — Play Snake and Tetris in your browser, connect a Phantom wallet, and sign your high score as a cryptographic proof on Solana. No install, no account, runs locally.
+- [Solutions — AI Courses & Workshops](https://pirahansiah.com/notes/docs/solutions/) — AI 2026 courses, workshops, and business solutions for production-ready products.
+- [Startup Guide: Edge AI Business](https://pirahansiah.com/notes/docs/startup/) — Edge AI business plan, fundraising in Germany, pitch decks, and growth strategies.
+- [Top LinkedIn Posts 2024](https://pirahansiah.com/notes/docs/linkedin/) — Highlights from 2024 LinkedIn posts covering camera calibration, C++, NVIDIA optimization, and robotics.
+
+## Publications (Papers, Journals, Books, Patents, Keynotes)
+
+- [10 Years of CV Debugging Lessons](https://pirahansiah.com/notes/pubs/10-years/) — Lessons learned from a decade of debugging computer vision systems in production.
+- [2D vs 3D Mapping for Moving Objects](https://pirahansiah.com/notes/pubs/papers/2d-3d-mapping/) — Comparison of 2D and 3D mapping approaches for environment movement detection.
+- [3D SLAM and Humanoid Robot Linkages](https://pirahansiah.com/notes/pubs/journals/slam-humanoid/) — Survey of 3D SLAM techniques for localization, mapping, and humanoid robot applications.
+- [Adaptive Thresholding Based on PSNR](https://pirahansiah.com/notes/pubs/journals/adaptive-thresholding/) — PSNR-based adaptive thresholding for image segmentation in OCR and license plate recognition.
+- [Ant Colony Optimization for Image Processing](https://pirahansiah.com/notes/pubs/journals/ant-colony/) — ACO-based optimization for image thresholding and edge detection in OCR systems.
+- [Augmented Optical Flow for Video Stabilization](https://pirahansiah.com/notes/pubs/books/computational-intelligence/) — Book chapter on Type-2 Fuzzy Gaussian Pyramid optical flow for video stabilization.
+- [Camera Calibration & Video Stabilization](https://pirahansiah.com/notes/pubs/books/camera-calibration/) — Springer book chapter on fuzzy camera calibration and video stabilization for robot localization.
+- [Camera Calibration for Multi-Modal Vision](https://pirahansiah.com/notes/pubs/papers/multimodal-calibration/) — Automatic calibration framework for multi-modal robot vision using IQA metrics.
+- [Character & Object Recognition via Features](https://pirahansiah.com/notes/pubs/journals/character-recognition/) — Global feature extraction methods for character and object recognition in computer vision.
+- [Character Recognition via Global Features](https://pirahansiah.com/notes/pubs/papers/global-feature-recognition/) — Hybrid GLCM and EDMS method for character recognition in OCR applications.
+- [Classification with Geometrical Features](https://pirahansiah.com/notes/pubs/papers/geometrical-topological/) — Evaluation of classification techniques using enhanced geometrical and topological features.
+- [Computer Vision Meets LLM](https://pirahansiah.com/notes/pubs/books/ai/cv-meets-llm/) — Book exploring multimodal AI combining computer vision with large language models.
+- [CV — Dr. Farshid Pirahansiah](https://pirahansiah.com/notes/pubs/cv/) — Curriculum vitae covering 12+ years of computer vision R&D, 21 publications, and 3 patents.
+- [Entropy-Based Multi-Threshold LPR](https://pirahansiah.com/notes/pubs/papers/license-plate/) — Multi-threshold license plate recognition using entropy-based image segmentation.
+- [Face Image Augmentation WO2021060971A1](https://pirahansiah.com/notes/pubs/patents/face-augmentation/) — GAN-based method for augmenting face images from surveillance with fuzzy logic quality filtering.
+- [Facial Analysis Advertisement WO2020141969A2](https://pirahansiah.com/notes/pubs/patents/facial-analysis/) — System for targeted digital advertising using real-time facial analysis and demographic detection.
+- [GSFT-PSNR: Fuzzy Threshold Method](https://pirahansiah.com/notes/pubs/journals/fuzzy-thresholding/) — Fuzzy logic approach to global single thresholding using PSNR for image segmentation.
+- [Journal Publications](https://pirahansiah.com/) — Peer-reviewed journal articles on image processing, pattern recognition, and robotics.
+- [LLMs Meet Computer Vision](https://pirahansiah.com/notes/pubs/keynotes/llm-cv/) — Keynote on token economics, multimodal RAG, and practical CV+LLM applications.
+- [Moving Vehicle Detection WO2021107761A1](https://pirahansiah.com/notes/pubs/patents/vehicle-detection/) — Image processing method for detecting moving vehicles using CLAHE, Sobel, and geometric filtering.
+- [Multi-Threshold for License Plate Recognition](https://pirahansiah.com/notes/pubs/papers/multi-threshold-plate/) — Adaptive multi-threshold approach using MLP for license plate recognition systems.
+- [OpenCV 5 — Chapter 0: Introduction](https://pirahansiah.com/notes/pubs/books/ai/new-developer-era/) — Introduction to the new developer era, AI agents, and multi-agent systems.
+- [OpenCV 5 — Chapter 1: Image Basics](https://pirahansiah.com/notes/pubs/books/ai/opencv5-ch1/) — Glossary of AI/ML terms, references, and resources for computer vision practitioners.
+- [OpenCV 5 — Chapter 2: Feature Detection](https://pirahansiah.com/notes/pubs/books/ai/opencv5-ch2/) — Comprehensive guide to AI/ML concepts, tools, best practices, and ethical considerations.
+- [OpenCV 5 — Chapter 3: Advanced Topics](https://pirahansiah.com/notes/pubs/books/ai/opencv5-ch3/) — Advanced computer vision techniques including filtering, morphology, and G-API integration.
+- [Pattern Image for Camera Calibration](https://pirahansiah.com/notes/pubs/papers/pattern-calibration/) — Analysis of how pattern image design impacts camera calibration accuracy and reliability.
+- [PSNR Threshold for Image Segmentation](https://pirahansiah.com/notes/pubs/journals/psnr-segmentation/) — PSNR-based thresholding method for image segmentation in automated visual inspection.
+- [PSNR-Based Segmentation for LPR](https://pirahansiah.com/notes/pubs/papers/adaptive-segmentation/) — Adaptive image segmentation using PSNR for license plate recognition systems.
+- [Publications — Conference Papers](https://pirahansiah.com/notes/pubs/papers/conference-paper/) — All peer-reviewed conference papers by Dr. Farshid Pirahansiah on image processing, camera calibration, pattern recognition, and grid computing.
+- [TafreshGrid: Grid Computing](https://pirahansiah.com/notes/pubs/papers/grid-computing/) — Grid computing infrastructure implementation and evaluation at Tafresh University.
+- [Thresholding for Handwritten Segmentation](https://pirahansiah.com/notes/pubs/papers/handwritten-thresholding/) — Comparison of PSNR and Otsu thresholding for handwritten image segmentation.
+
+## Courses & Learning Paths
+
+- [AI Hardware Accelerators](https://pirahansiah.com/notes/courses/ai-hardware/) — Workshop covering custom accelerators, NPUs, and edge AI chips.
+- [Book Summaries](https://pirahansiah.com/notes/courses/book-summary/) — Book summaries and knowledge management resources.
+- [Cloud-Native with Kubernetes](https://pirahansiah.com/notes/courses/cloud-native/) — Docker and Kubernetes fundamentals for cloud-native infrastructure.
+- [Edge AI Summit 2020](https://pirahansiah.com/notes/courses/edge-ai-summit/) — Notes from Edge AI Summit covering tinyML, neuromorphic computing, and edge inference.
+- [Embedded IoT](https://pirahansiah.com/notes/courses/iot/) — Workshop on embedded IoT systems and edge computing applications.
+- [FSDL 2022 Notes](https://pirahansiah.com/notes/courses/fsdl-2022/) — Notes from Full Stack Deep Learning 2022 covering ML lifecycle, data management, and continual learning.
+- [Full Stack Deep Learning](https://pirahansiah.com/notes/courses/fsdl/) — Full Stack Deep Learning course notes covering ML production from data to deployment.
+- [IoT Scholarship: Edge AI with OpenVINO](https://pirahansiah.com/notes/courses/iot-scholarship/) — IoT and Edge AI with OpenVINO: face recognition, object detection, pose estimation, and semantic segmentation.
+- [Machine Learning Specialization](https://pirahansiah.com/notes/courses/ml-spec/) — Coursera ML Specialization notes covering regression, classification, clustering, and neural networks.
+- [Metaverse & XR](https://pirahansiah.com/notes/courses/metaverse/) — Workshop on extended reality, spatial computing, and immersive technologies.
+- [MLOps](https://pirahansiah.com/notes/courses/mlops/) — Coursera MLOps Specialization covering ML production, data lifecycle, modeling pipelines, and deployment.
+- [Modern C++ for Image Processing](https://pirahansiah.com/notes/courses/modern-cpp/) — Modern C++23 for image processing: memory management, design patterns, CUDA, and OpenCV.
+- [OpenVINO Deep Learning](https://pirahansiah.com/notes/courses/openvino/) — Intel OpenVINO toolkit for optimizing and deploying deep learning models.
+- [Parallel Programming for Computer Vision](https://pirahansiah.com/notes/courses/parallel/) — Python parallel programming techniques for computer vision applications.
+- [RISC-V for AI](https://pirahansiah.com/notes/courses/risc-v/) — RISC-V open-source processor architecture for AI at the edge.
+- [ROS: Robot Operating System](https://pirahansiah.com/notes/courses/ros/) — ETH Zurich lecture on ROS architecture, navigation, simulation, and robot models.
+- [TensorFlow Deployment Specialization](https://pirahansiah.com/notes/courses/tf-deploy/) — TensorFlow deployment: browser-based TF.js, device-based TF Lite, data pipelines, and optimization.
+- [Tesla AI](https://pirahansiah.com/notes/courses/tesla/) — Workshop on Tesla's autonomous driving technology and AI systems.
+
+## Knowledge Base / Portfolio
+
+- [Complete Portfolio](https://pirahansiah.com/notes/pkm/use-cases/) — Publications, patents, expertise, tools, and GitHub projects across CV and AI
+- [Curated Links & Resources](https://pirahansiah.com/notes/pkm/links/) — Collection of AI, CV, ML, and software development tools and tutorials
+- [Guide to This Knowledge Base](https://pirahansiah.com/notes/pkm/guide/) — A practical guide to navigating this personal knowledge base: how notes are organized, how to search, and how to use the knowledge graph and LLM search.
+- [PKM Methods & Website Structure](https://pirahansiah.com/notes/pkm/TOC/) — Personal knowledge management approaches from top practitioners and site architecture
+- [Site Link Index](https://pirahansiah.com/notes/pkm/proof/) — Complete index of all pages, publications, and resources on pirahansiah.com
+
+## Presentations
+
+- [Reducing Token Usage in AI-Assisted Development](https://pirahansiah.com/notes/slides/presentation/) — Presentation: practical techniques to reduce token usage and cost when using AI assistants for software development.
+
+## Utilities
+
+- [test mindmap](https://pirahansiah.com/notes/tools/image-in-md/) — Quick mind-map test page for the pirahansiah.com markmap renderer.
+
+## Site Tools & Interfaces
+
+- [Agent Swarm](https://pirahansiah.com/swarm/) — Agent Swarm — ask a question and watch a live swarm of research agents map and synthesize the whole pirahansiah.com knowledge base.
+- [All Pages — pirahansiah.com](https://pirahansiah.com/notes/wiki/) — A complete alphabetical index of every page on pirahansiah.com — computer vision, AI, LLM, CUDA and edge-deployment knowledge base.
+- [Games](https://pirahansiah.com/game/) — Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as a Telegram Mini App. High scores, haptics and a share button.
+- [Hashtag Graph](https://pirahansiah.com/graph-tags/) — Hashtag knowledge graph of pirahansiah.com — see how #ai, #llm, #cuda, #computervision and other topics cluster and connect.
+- [Knowledge Graph](https://pirahansiah.com/graph/) — Interactive knowledge graph of pirahansiah.com — explore how AI, computer vision, CUDA, LLM and edge-deployment notes connect.
+- [Knowledge Graph — Files & Architecture](https://pirahansiah.com/graph-notes/) — How the pirahansiah.com knowledge graph is built from the Obsidian vault — file architecture, link extraction and the generator pipeline.
+- [QR Codes — Scan to Join & Refer](https://pirahansiah.com/qr/) — Scan or tap QR codes to open Dr. Farshid Pirahansiah's referral and join links — OpenCode, Trade Republic, Scalable Capital, Wise and eToro — and share them with friends.
+- [Search](https://pirahansiah.com/search/) — Search the entire pirahansiah.com knowledge base — computer vision, deep learning, CUDA, LLM integration and edge-AI deployment notes.
+- [Share](https://pirahansiah.com/share/) — Invite friends to join — trading, investing, and AI tools.
+- [Sitemap & Page Summaries](https://pirahansiah.com/notes/site/menus/) — Complete navigation index with summaries of all site pages
+- [Sitemap — All Pages](https://pirahansiah.com/notes/sitemap/) — Full sitemap of pirahansiah.com — every computer-vision, AI, LLM, CUDA and edge-AI page listed in one place.
+- [Terms of Service](https://pirahansiah.com/terms/) — Terms of service for pirahansiah.com: acceptable use of the content, intellectual property notice, disclaimers, and contact information.
+- [View](https://pirahansiah.com/view/) — In-page viewer for PDFs, code and media assets from pirahansiah.com, with the site navigation and styling kept visible.
+- [WebGPU LLM](https://pirahansiah.com/webgpu-llm/) — Run a large language model entirely in your browser with WebGPU — ask questions across all pirahansiah.com notes, 100% locally, nothing sent to a server.
+- [Why This Site Exists](https://pirahansiah.com/notes/site/why-not/) — Why this personal knowledge base exists, what it covers, and the principles behind how it is built and maintained.
+
+## Optional
+
+- [Full text of every page (RAG corpus)](https://pirahansiah.com/llm-full.txt) — complete cleaned Markdown of all pages for retrieval-augmented generation and full ingestion.
