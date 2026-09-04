@@ -46,6 +46,27 @@
   var TEXT = isDark ? "#f5f5f7" : "#1d1d1f";
   var EDGE_COLOR = isDark ? "rgba(139,148,158,0.28)" : "rgba(100,116,139,0.20)";
 
+  /* Topic stop-list: structural / self-name tags that are not real content
+     keywords (e.g. #about, #Topics, #papers, #publications, #courses, brand
+     / person-name tags). These clutter the explorer with menu/index-style
+     labels instead of meaningful hashtags. */
+  var TOPIC_STOPS = new Set([
+    "about", "aboutme", "index", "menu", "menus", "toc", "readme", "navigation",
+    "sidebar", "home", "tags", "topic", "topics", "main", "root", "hub",
+    "papers", "paper", "publications", "publication", "books", "book", "journals",
+    "journal", "conference-papers", "keynotes", "keynote", "courses", "course",
+    "workshops--events", "workshops", "projects", "project", "github-projects-portfolio",
+    "products--tools", "hardware--platforms", "technical-content", "ai-resources",
+    "ai-community", "tech-education", "professional-development", "knowledge-management",
+    "innovation", "summit", "stackdeeplearning", "ai--llm", "computer-vision-edge-ai",
+    "farshid", "pirahansiah", "drfarshidpirahansiah", "farshidpirahansiah", "tiziran"
+  ]);
+  function isStopTopic(label) {
+    if (!label) return true;
+    var s = label.toLowerCase().replace(/^#/, "").replace(/[^a-z0-9]+/g, "-").replace(/-+/g, "-").replace(/^-|-$/g, "");
+    return TOPIC_STOPS.has(s);
+  }
+
   /* ---------- geometry ---------- */
   function resize() {
     dpr = window.devicePixelRatio || 1;
@@ -254,7 +275,7 @@
   function buildTopicBar() {
     var bar = document.getElementById("graph-topics");
     if (!bar) return;
-    var topics = graphNodes.filter(function (n) { return n.category === "tag"; })
+    var topics = graphNodes.filter(function (n) { return n.category === "tag" && !isStopTopic(n.label); })
       .sort(function (a, b) { return (b.connections || 0) - (a.connections || 0); });
     // de-dup by label (some tags may repeat)
     var seen = {}, uniq = [];
@@ -482,7 +503,10 @@
         var rect = wrap.getBoundingClientRect();
         var hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
         if (!hit) { clearTopic(); return; }
-        if (hit.category === "tag") { focusTopic(hit.id); return; }
+        if (hit.category === "tag") {
+          if (isStopTopic(hit.label)) { clearTopic(); return; }
+          focusTopic(hit.id); return;
+        }
         if (isClickablePage(hit)) { openPage(hit); return; }
         selectedNode = (selectedNode === hit) ? null : hit; render();
       })
@@ -498,7 +522,7 @@
       var rect = wrap.getBoundingClientRect();
       var hit = hitTest(t.clientX - rect.left, t.clientY - rect.top);
       if (!hit) { clearTopic(); return; }
-      if (hit.category === "tag") focusTopic(hit.id);
+      if (hit.category === "tag") { if (isStopTopic(hit.label)) { clearTopic(); } else { focusTopic(hit.id); } }
       else if (isClickablePage(hit)) openPage(hit);
       else { selectedNode = hit; render(); }
     });
