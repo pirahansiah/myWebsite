@@ -24,8 +24,7 @@
   var hoveredNode = null, selectedNode = null;
   var draggingNode = null;
   var highlightedSet = new Set();      // node indices highlighted by search
-  var activeTopic = null;               // currently selected topic id
-  var topicNeighbors = new Set();       // node ids related to activeTopic
+  var selectionNeighbors = new Set();   // node ids directly related to the selected node
   var activeCategories = new Set();
   var tooltipEl = null;
   var gFuse = null;
@@ -79,11 +78,17 @@
     return Math.sqrt((d.connections || 0) + 1) * 2.4 + 3;
   }
 
-  /* ---------- highlight helpers ---------- */
+  /* ---------- highlight / selection model ----------
+     Single click  -> SELECT a node + highlight its neighbourhood (the "main idea"
+                      and everything relevant to it). No navigation.
+     Double click  -> OPEN the selected node (pages/hubs open in the reader;
+                      topics stay focused and list related pages).
+     Click empty   -> clear selection.
+  */
   function isDimmedByFilter(n) {
-    if (!activeTopic) return false;
-    // when a topic is active: show only topic + its pages + their connecting edges
-    return !topicNeighbors.has(n.id);
+    if (!selectedNode) return false;
+    // show only the selected node + its directly-relevant neighbours
+    return !selectionNeighbors.has(n.id);
   }
   function isClickablePage(n) {
     if (!n || !n.url) return false;
@@ -91,7 +96,18 @@
     if (/^\/view\//.test(n.url)) return false;
     return true;
   }
-  function pageNeighborsForTopic(topicId) {
+  // Direct neighbours of any node (used as the "relevant to the main idea only" set)
+  function computeNeighbors(nodeId) {
+    var set = new Set([nodeId]);
+    graphLinks.forEach(function (l) {
+      var s = l.source, t = l.target;
+      if (s === nodeId) set.add(t);
+      else if (t === nodeId) set.add(s);
+    });
+    return set;
+  }
+  // For a topic, prefer the topic->page relationships for a tighter cluster
+  function computeTopicNeighbors(topicId) {
     var set = new Set([topicId]);
     graphLinks.forEach(function (l) {
       if (l.kind !== "tag" && l.kind !== "cooccur") return;
@@ -99,6 +115,8 @@
       if (s === topicId) set.add(t);
       else if (t === topicId) set.add(s);
     });
+    // fallback: if the topic has no tag-links (e.g. hashtags graph), use all links
+    if (set.size <= 1) return computeNeighbors(topicId);
     return set;
   }
 
@@ -129,18 +147,18 @@
       if (isDimmedByFilter(s) || isDimmedByFilter(t)) return;
 
       var isHL = active && (s === active || t === active);
-      var isTopicEdge = activeTopic && (topicNeighbors.has(s.id) && topicNeighbors.has(t.id)) && (l.kind === "tag" || l.kind === "cooccur" || s.id === activeTopic || t.id === activeTopic);
+      var isSelEdge = selectedNode && (selectionNeighbors.has(s.id) && selectionNeighbors.has(t.id)) && (s.id === selectedNode.id || t.id === selectedNode.id);
       var isSearch = highlightedSet.has(s.index) || highlightedSet.has(t.index);
 
       ctx.beginPath();
       ctx.moveTo(s.x, s.y); ctx.lineTo(t.x, t.y);
-      if (isTopicEdge) {
+      if (isSelEdge) {
         ctx.strokeStyle = "#22D3EE"; ctx.lineWidth = 1.8 / transform.k; ctx.globalAlpha = 0.85;
       } else if (isHL) {
         ctx.strokeStyle = "#22D3EE"; ctx.lineWidth = 1.6 / transform.k; ctx.globalAlpha = 0.9;
       } else if (isSearch) {
         ctx.strokeStyle = "#ff9500"; ctx.lineWidth = 2 / transform.k; ctx.globalAlpha = 1;
-      } else if (active || activeTopic) {
+      } else if (active || selectedNode) {
         ctx.strokeStyle = EDGE_COLOR; ctx.lineWidth = 0.4 / transform.k; ctx.globalAlpha = 0.12;
       } else {
         ctx.strokeStyle = EDGE_COLOR; ctx.lineWidth = 0.7 / transform.k; ctx.globalAlpha = 0.45;
@@ -157,32 +175,32 @@
       var isSel = selectedNode === n;
       var isHov = hoveredNode === n;
       var isConn = active && connected.has(n);
-      var isTopicNode = activeTopic && topicNeighbors.has(n.id);
+      var isSelNode = selectedNode && selectionNeighbors.has(n.id);
       var isSearch = highlightedSet.has(n.index);
 
       var fill = COLORS[n.category] || "#8e8e93";
       var isDim = active && !isSel && !isHov && !isConn;
 
-      if (isSel || isHov || isSearch || isTopicNode) {
+      if (isSel || isHov || isSearch || isSelNode) {
         ctx.globalAlpha = 0.22; ctx.beginPath();
         ctx.arc(n.x, n.y, r + 9, 0, Math.PI * 2); ctx.fillStyle = fill; ctx.fill();
       }
 
       ctx.globalAlpha = isDim ? 0.12 : 1;
       ctx.beginPath();
-      ctx.arc(n.x, n.y, isSel ? r + 3 : isHov ? r + 2 : isTopicNode ? r + 1.5 : r, 0, Math.PI * 2);
+      ctx.arc(n.x, n.y, isSel ? r + 3 : isHov ? r + 2 : isSelNode ? r + 1.5 : r, 0, Math.PI * 2);
       ctx.fillStyle = fill; ctx.fill();
-      ctx.strokeStyle = isSel ? "#ff9500" : isTopicNode ? "#22D3EE" : isHov ? "#22D3EE" : "rgba(255,255,255,0.18)";
-      ctx.lineWidth = (isSel ? 2.5 : isTopicNode ? 2 : isHov ? 2 : 0.5) / Math.max(transform.k, 0.5);
+      ctx.strokeStyle = isSel ? "#ff9500" : isSelNode ? "#22D3EE" : isHov ? "#22D3EE" : "rgba(255,255,255,0.18)";
+      ctx.lineWidth = (isSel ? 2.5 : isSelNode ? 2 : isHov ? 2 : 0.5) / Math.max(transform.k, 0.5);
       ctx.stroke();
 
-      var showLabel = isSel || isHov || isConn || isSearch || isTopicNode || (!active && !activeTopic && transform.k > 0.55);
+      var showLabel = isSel || isHov || isConn || isSearch || isSelNode || (!active && !selectedNode && transform.k > 0.55);
       if (showLabel) {
         var label = n.label || n.id;
-        if (!isSel && !isHov && !isConn && !isSearch && !isTopicNode && label.length > 22) label = label.substring(0, 20) + "…";
-        ctx.globalAlpha = isDim ? 0.12 : (isSel || isHov || isTopicNode || isSearch) ? 1 : 0.45;
-        ctx.fillStyle = isTopicNode ? "#22D3EE" : (isSel ? "#ff9500" : TEXT);
-        ctx.font = ((isSel || isHov || isTopicNode) ? "600 " : "400 ") + Math.max(8, 10 / Math.max(transform.k, 0.5)) + "px -apple-system, system-ui, sans-serif";
+        if (!isSel && !isHov && !isConn && !isSearch && !isSelNode && label.length > 22) label = label.substring(0, 20) + "…";
+        ctx.globalAlpha = isDim ? 0.12 : (isSel || isHov || isSelNode || isSearch) ? 1 : 0.45;
+        ctx.fillStyle = isSelNode ? "#22D3EE" : (isSel ? "#ff9500" : TEXT);
+        ctx.font = ((isSel || isHov || isSelNode) ? "600 " : "400 ") + Math.max(8, 10 / Math.max(transform.k, 0.5)) + "px -apple-system, system-ui, sans-serif";
         ctx.textAlign = "center";
         ctx.fillText(label, n.x, n.y + r + 10 / Math.max(transform.k, 0.5));
       }
@@ -235,7 +253,7 @@
   function showTooltip(node, px, py) {
     if (!tooltipEl) { tooltipEl = document.createElement("div"); tooltipEl.className = "graph-tooltip"; wrap.appendChild(tooltipEl); }
     var c = COLORS[node.category] || "#8e8e93";
-    var action = node.category === "tag" ? "Click to focus topic" : (isClickablePage(node) ? "Click to open" : "");
+    var action = node.category === "tag" ? "Click to select · double-click to open" : (isClickablePage(node) ? "Click to select · double-click to open" : "Click to select");
     tooltipEl.innerHTML = '<div class="gt-title">' + (node.label || node.id) + '</div>' +
       '<div class="gt-cat" style="color:' + c + '">' + (CAT_LABEL[node.category] || node.category) +
       (action ? ' · <span class="gt-action">' + action + '</span>' : '') + '</div>';
@@ -245,20 +263,24 @@
   }
   function hideTooltip() { if (tooltipEl) tooltipEl.style.display = "none"; }
 
-  /* ---------- topic focus ---------- */
-  function focusTopic(topicId) {
-    if (activeTopic === topicId) { clearTopic(); return; }
-    activeTopic = topicId;
-    topicNeighbors = pageNeighborsForTopic(topicId);
-    var t = nodeById(topicId);
+  /* ---------- selection (single click = select + highlight; the "main idea") ---------- */
+  function selectNode(node) {
+    if (selectedNode === node) { clearSelection(); return; }   // click again to clear
+    selectedNode = node;
+    selectionNeighbors = (node.category === "tag") ? computeTopicNeighbors(node.id) : computeNeighbors(node.id);
     updateTopicBar();
-    renderTopicPanel(topicId);
+    // topic selection also lists related pages in the side panel (optional, relevant view)
+    if (node.category === "tag") renderTopicPanel(node.id);
+    else renderTopicPanel(null);
     var hint = document.getElementById("graph-tag-hint");
-    if (hint) { hint.style.display = "block"; hint.innerHTML = "Focused topic <strong>" + (t ? t.label : topicId) + "</strong> — " + (topicNeighbors.size - 1) + " related pages. Click a page to open it · Esc to clear."; }
+    if (hint) {
+      hint.style.display = "block";
+      hint.innerHTML = "Selected <strong>" + (node.label || node.id) + "</strong> — showing only what's relevant. Double-click to open · Esc to clear.";
+    }
     render();
   }
-  function clearTopic() {
-    activeTopic = null; topicNeighbors = new Set();
+  function clearSelection() {
+    selectedNode = null; selectionNeighbors = new Set();
     updateTopicBar();
     renderTopicPanel(null);
     var hint = document.getElementById("graph-tag-hint");
@@ -288,7 +310,7 @@
       b.className = "graph-topic-chip";
       b.textContent = t.label;
       b.dataset.id = t.id;
-      b.addEventListener("click", function () { focusTopic(t.id); });
+      b.addEventListener("click", function () { selectNode(t); });
       bar.appendChild(b);
     });
     var more = uniq.length - top.length;
@@ -305,7 +327,7 @@
     var bar = document.getElementById("graph-topics");
     if (!bar) return;
     bar.querySelectorAll(".graph-topic-chip").forEach(function (c) {
-      c.classList.toggle("active", c.dataset.id === activeTopic);
+      c.classList.toggle("active", !!selectedNode && c.dataset.id === selectedNode.id);
     });
   }
 
@@ -322,7 +344,7 @@
 
     // pages related to this topic
     var ids = [];
-    topicNeighbors.forEach(function (id) {
+    selectionNeighbors.forEach(function (id) {
       if (id === topicId) return;
       var n = nodeById(id);
       if (n && (n.category === "page" || n.category === "hub")) ids.push(n);
@@ -330,7 +352,7 @@
     var isTopicsOnly = ids.length === 0;
     if (isTopicsOnly) {
       // hashtags graph: neighbors are other tags
-      topicNeighbors.forEach(function (id) {
+      selectionNeighbors.forEach(function (id) {
         if (id === topicId) return;
         var n = nodeById(id);
         if (n) ids.push(n);
@@ -346,7 +368,7 @@
       li.innerHTML = '<span class="gpi-dot" style="background:' + (COLORS[n.category] || "#8e8e93") + '"></span>' +
         '<span class="gpi-label">' + (n.label || n.id) + '</span>';
       li.addEventListener("click", function () {
-        if (n.category === "tag") focusTopic(n.id);
+        if (n.category === "tag") selectNode(n);
         else openPage(n);
       });
       list.appendChild(li);
@@ -502,18 +524,18 @@
         if (draggingNode) return;
         var rect = wrap.getBoundingClientRect();
         var hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
-        if (!hit) { clearTopic(); return; }
-        if (hit.category === "tag") {
-          if (isStopTopic(hit.label)) { clearTopic(); return; }
-          focusTopic(hit.id); return;
-        }
-        if (isClickablePage(hit)) { openPage(hit); return; }
-        selectedNode = (selectedNode === hit) ? null : hit; render();
+        if (!hit) { clearSelection(); return; }
+        if (hit.category === "tag" && isStopTopic(hit.label)) { clearSelection(); return; }
+        // single click = SELECT + HIGHLIGHT only (no navigation)
+        selectNode(hit);
       })
       .on("dblclick", function (e) {
         var rect = wrap.getBoundingClientRect();
         var hit = hitTest(e.clientX - rect.left, e.clientY - rect.top);
-        if (hit && isClickablePage(hit)) window.location.href = hit.url;
+        if (!hit) return;
+        // double click = OPEN the selected/hovered node
+        if (isClickablePage(hit)) openPage(hit);
+        else if (hit.category === "tag" && !isStopTopic(hit.label)) selectNode(hit);
       });
 
     canvas.addEventListener("touchend", function (e) {
@@ -521,18 +543,18 @@
       var t = e.changedTouches[0];
       var rect = wrap.getBoundingClientRect();
       var hit = hitTest(t.clientX - rect.left, t.clientY - rect.top);
-      if (!hit) { clearTopic(); return; }
-      if (hit.category === "tag") { if (isStopTopic(hit.label)) { clearTopic(); } else { focusTopic(hit.id); } }
-      else if (isClickablePage(hit)) openPage(hit);
-      else { selectedNode = hit; render(); }
+      if (!hit) { clearSelection(); return; }
+      if (hit.category === "tag") { if (isStopTopic(hit.label)) { clearSelection(); } else { selectNode(hit); } }
+      else if (isClickablePage(hit)) selectNode(hit);
+      else { selectNode(hit); }
     });
 
     d3.select(window).on("keydown", function (e) {
-      if (e && e.key === "Escape") { clearTopic(); }
+      if (e && e.key === "Escape") { clearSelection(); }
       if (e && e.key === "Backspace" && history.length && histIndex > 0 && document.activeElement === document.body) { e.preventDefault(); goHistory(-1); }
     });
 
-    // reader close on Esc handled above via clearTopic; ensure reader close button wired in loadReader
+    // reader close on Esc handled above via clearSelection; ensure reader close button wired in loadReader
     var stat = document.getElementById("graph-stats");
     if (stat) stat.textContent = graphNodes.filter(function (n) { return n.category !== "asset"; }).length + " pages · " + (graphNodes.filter(function (n) { return n.category === "tag"; }).length) + " topics · " + graphLinks.length + " links";
 
@@ -574,7 +596,7 @@
   // controls
   var resetBtn = document.getElementById("graph-reset");
   if (resetBtn) resetBtn.addEventListener("click", function () {
-    selectedNode = null; hoveredNode = null; highlightedSet.clear(); clearTopic();
+    selectedNode = null; hoveredNode = null; highlightedSet.clear(); clearSelection();
     simulation.alpha(1).restart();
   });
   var freezeBtn = document.getElementById("graph-freeze");
