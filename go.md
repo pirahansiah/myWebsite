@@ -7,8 +7,12 @@ permalink: /go/
 sitemap: false
 noindex: true
 ---
-
+last_modified_at: 2026-09-04
 > **Share** — invite & referral links to pass along to friends — https://pirahansiah.com/go/
+Share these invite and referral links with your friends — OpenCode, Trade Republic, Scalable Capital, Wise, eToro and Kraken.
+
+*Last updated: 2026-09-04.*  <!--ENHANCED-->
+
 
 <style>
 .share-wrap { max-width: 880px; margin: 0 auto; padding: 8px 16px 56px; }

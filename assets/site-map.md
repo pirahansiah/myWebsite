@@ -18,7 +18,11 @@ markmap: |
   - Optimization
   - Knowledge
 ---
+last_modified_at: 2026-09-04
 
+Complete navigation index with summaries of all site pages
+
+*Last updated: 2026-09-04.*  <!--ENHANCED-->
 # Sitemap — All Pages
 
 ## Product

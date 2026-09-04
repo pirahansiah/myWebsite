@@ -140,6 +140,9 @@
     - title: Game
       items: []
       url: "/game/"
+    - title: QR Codes
+      items: []
+      url: "/qr/"
     - title: Solana Games
       items: []
       url: "/solana-games/"

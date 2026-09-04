@@ -18,6 +18,53 @@
   {% endif %}
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="{% if page.layout == 'farshid_default' %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 200 }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 200 }}">
+
+  <!-- JSON-LD structured data (LLM / search-platform friendly) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Farshid Pirahansiah",
+    "alternateName": "Farshid Pirahansiah",
+    "url": "{{ site.url }}/",
+    "image": "{{ '/assets/a.jpg' | absolute_url }}",
+    "jobTitle": "Embedded Computer Vision & Edge AI Engineer",
+    "description": "Computer vision, deep learning, CUDA, LLM integration, and model optimization/deployment on Jetson, Hailo, and Raspberry Pi.",
+    "sameAs": [
+      "https://www.linkedin.com/company/pirahansiah",
+      "https://github.com/pirahansiah"
+    ],
+    "knowsAbout": ["Computer Vision", "Deep Learning", "CUDA", "Edge AI", "LLM", "Model Optimization", "Embedded Systems"]
+  }
+  </script>
+  {% if page.url == '/' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ site.url }}/search/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  {% endif %}
+
   <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
   <style>
   .markmap-container {

@@ -5,8 +5,12 @@ title: "Book — Computer Vision & AI: An Engineer's Guide"
 description: "Computer Vision & AI: An Engineer's Guide by Dr. Farshid Pirahansiah — a 406-page practical reference covering 3D vision, GPU & CUDA programming, LLMs, optimization, and startup strategy."
 tags: [book, computer vision, ai, gpu, cuda, llm, pdf]
 ---
-
+last_modified_at: 2026-08-16
 > **The Book** — Computer Vision & AI: An Engineer's Guide — 406 pages · 21 chapters · 7 parts — https://pirahansiah.com/book/
+Computer Vision & AI: An Engineer's Guide by Dr. Farshid Pirahansiah — a 406-page practical reference covering 3D vision, GPU & CUDA programming, LLMs, optimization, and startup strategy.
+
+*Last updated: 2026-08-16.*  <!--ENHANCED-->
+
 
 <style>
 .book-hero { text-align: center; padding: 40px 20px 16px; }

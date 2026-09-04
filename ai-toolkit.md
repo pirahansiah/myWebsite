@@ -5,8 +5,12 @@ title: "AI Prompt & Agent Toolkit"
 description: "27 battle-tested Claude Code skills, code-review agents, MCP tools, and coding rules — the AI engineering stack behind pirahansiah.com, packaged as prompt packs for modern LLMs."
 tags: [prompts, claude, gpt, mcp, skills, agents, ai-toolkit, etsy]
 ---
-
+last_modified_at: 2026-08-16
 > **AI Toolkit** — 27 skills · 3 agents · MCP tools · coding rules — https://pirahansiah.com/ai-toolkit/
+27 battle-tested Claude Code skills, code-review agents, MCP tools, and coding rules — the AI engineering stack behind pirahansiah.com, packaged as prompt packs for modern LLMs.
+
+*Last updated: 2026-08-16.*  <!--ENHANCED-->
+
 
 <style>
 .tk-hero { text-align: center; padding: 36px 20px 12px; }

@@ -4,7 +4,11 @@ title: Privacy Policy
 permalink: /privacy/
 description: "Privacy policy for pirahansiah.com: what data is collected, how Google AdSense and Google Analytics are used, cookie policy, GDPR rights, and contact details."
 ---
+last_modified_at: 2026-08-14
 
+Privacy policy for pirahansiah.com: what data is collected, how Google AdSense and Google Analytics are used, cookie policy, GDPR rights, and contact details.
+
+*Last updated: 2026-08-14.*  <!--ENHANCED-->
 # Privacy Policy
 
 **Effective date:** 2025-11-30

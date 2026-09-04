@@ -4,8 +4,12 @@ permalink: /shop/
 title: "Digital Downloads & AI Prompt Packs"
 description: "Technical guides, cheat sheets, AI prompt packs, and tutorials by Dr. Farshid Pirahansiah — computer vision, AI, CUDA, and software engineering."
 ---
-
+last_modified_at: 2026-08-16
 > **Digital Downloads** — Technical guides, cheat sheets, and tutorials by Dr. Farshid Pirahansiah — https://pirahansiah.com/shop/
+Technical guides, cheat sheets, AI prompt packs, and tutorials by Dr. Farshid Pirahansiah — computer vision, AI, CUDA, and software engineering.
+
+*Last updated: 2026-08-16.*  <!--ENHANCED-->
+
 
 <style>
 .shop-hero { text-align: center; padding: 30px 16px 4px; }

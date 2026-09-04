@@ -2297,6 +2297,13 @@
       "kind": "note"
     },
     {
+      "id": "tag-cuda",
+      "label": "#cuda",
+      "url": "/notes/site/graph-tags",
+      "raw": "/notes/site/graph-tags",
+      "kind": "tag"
+    },
+    {
       "id": "notes-site-webgpu-llm",
       "label": "webgpu-llm",
       "url": "/notes/site/webgpu-llm",
@@ -5290,6 +5297,21 @@
     {
       "source": "notes-pubs-10-years",
       "target": "tag-computervision-edge-ai",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-site-graph-tags",
+      "target": "tag-llm",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-site-graph-tags",
+      "target": "tag-cuda",
+      "kind": "tag"
+    },
+    {
+      "source": "notes-site-graph-tags",
+      "target": "tag-computervision",
       "kind": "tag"
     },
     {
