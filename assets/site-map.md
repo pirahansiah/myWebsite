@@ -39,6 +39,7 @@ Complete navigation index with summaries of all site pages
 - **[Orchestrating Agents](/notes/docs/llm/agents/)** — Multi-agent systems, task decomposition, LLM orchestration
 - **[Blog: AI & LLMs](/notes/docs/llm/blog/)** — RAG vs CAG, multi-agent architectures, AI's impact
 - **[Avatar Generator](/notes/docs/llm/avatar/)** — Local video avatar with Ollama + Wav2Lip (no cloud)
+- **[Local LLM Optimization](/notes/docs/llm/local-llm-optimization/)** — Fastest Qwen3.5 at 64K context on Apple M3 via MLX (oMLX/llama.cpp), with downloadable scripts
 
 ### CUDA & GPU
 - **[Numba JIT](/notes/docs/cuda/numba/)** — Python 10-100x speedup with @jit(nopython=True)

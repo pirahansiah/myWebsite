@@ -32,6 +32,9 @@
     - title: Avatar Generator
       items: []
       url: "/notes/docs/llm/avatar/"
+    - title: Local LLM Optimization
+      items: []
+      url: "/notes/docs/llm/local-llm-optimization/"
   - title: CUDA & GPU
     items:
     - title: Numba JIT

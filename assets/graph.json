@@ -148,6 +148,20 @@
       "kind": "note"
     },
     {
+      "id": "moc-local-llm-optimization",
+      "label": "Local LLM Optimization",
+      "url": "/notes/docs/llm/local-llm-optimization/",
+      "raw": "/notes/docs/llm/local-llm-optimization/",
+      "kind": "moc"
+    },
+    {
+      "id": "notes-docs-llm-local-llm-optimization",
+      "label": "local-llm-optimization",
+      "url": "/notes/docs/llm/local-llm-optimization/",
+      "raw": "/notes/docs/llm/local-llm-optimization/",
+      "kind": "note"
+    },
+    {
       "id": "moc-cuda-gpu",
       "label": "CUDA & GPU",
       "url": null,
@@ -2595,6 +2609,16 @@
       "kind": "link"
     },
     {
+      "source": "moc-ai-llms",
+      "target": "moc-local-llm-optimization",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-local-llm-optimization",
+      "target": "notes-docs-llm-local-llm-optimization",
+      "kind": "link"
+    },
+    {
       "source": "moc-product",
       "target": "moc-cuda-gpu",
       "kind": "moc"
@@ -3527,6 +3551,11 @@
     {
       "source": "notes-docs-llm-index",
       "target": "notes-docs-llm-avatar",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-llm-index",
+      "target": "notes-docs-llm-local-llm-optimization",
       "kind": "mdlink"
     },
     {
@@ -5357,6 +5386,11 @@
     {
       "source": "notes-site-menus",
       "target": "notes-docs-llm-avatar",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-site-menus",
+      "target": "notes-docs-llm-local-llm-optimization",
       "kind": "mdlink"
     },
     {
