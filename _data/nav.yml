@@ -35,6 +35,9 @@
     - title: Local LLM Optimization
       items: []
       url: "/notes/docs/llm/local-llm-optimization/"
+    - title: K2-Horizon Locally
+      items: []
+      url: "/notes/docs/llm/k2-horizon-local/"
   - title: CUDA & GPU
     items:
     - title: Numba JIT

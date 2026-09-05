@@ -466,11 +466,6 @@
       "kind": "tag"
     },
     {
-      "id": "tag-cuda",
-      "label": "#cuda",
-      "kind": "tag"
-    },
-    {
       "id": "tag-edge",
       "label": "#edge",
       "kind": "tag"
@@ -3466,36 +3461,6 @@
       "source": "notes-pubs-10-years",
       "target": "tag-computervision-edge-ai",
       "kind": "tag"
-    },
-    {
-      "source": "notes-site-graph-tags",
-      "target": "tag-llm",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-site-graph-tags",
-      "target": "tag-cuda",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-site-graph-tags",
-      "target": "tag-computervision",
-      "kind": "tag"
-    },
-    {
-      "source": "tag-llm",
-      "target": "tag-cuda",
-      "kind": "cooccur"
-    },
-    {
-      "source": "tag-llm",
-      "target": "tag-computervision",
-      "kind": "cooccur"
-    },
-    {
-      "source": "tag-cuda",
-      "target": "tag-computervision",
-      "kind": "cooccur"
     },
     {
       "source": "notes-site-graph-notes",

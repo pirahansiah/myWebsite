@@ -162,6 +162,20 @@
       "kind": "note"
     },
     {
+      "id": "moc-k2-horizon-locally",
+      "label": "K2-Horizon Locally",
+      "url": "/notes/docs/llm/k2-horizon-local/",
+      "raw": "/notes/docs/llm/k2-horizon-local/",
+      "kind": "moc"
+    },
+    {
+      "id": "notes-docs-llm-k2-horizon-local",
+      "label": "k2-horizon-local",
+      "url": "/notes/docs/llm/k2-horizon-local/",
+      "raw": "/notes/docs/llm/k2-horizon-local/",
+      "kind": "note"
+    },
+    {
       "id": "moc-cuda-gpu",
       "label": "CUDA & GPU",
       "url": null,
@@ -2311,13 +2325,6 @@
       "kind": "note"
     },
     {
-      "id": "tag-cuda",
-      "label": "#cuda",
-      "url": "/notes/site/graph-tags",
-      "raw": "/notes/site/graph-tags",
-      "kind": "tag"
-    },
-    {
       "id": "notes-site-webgpu-llm",
       "label": "webgpu-llm",
       "url": "/notes/site/webgpu-llm",
@@ -2616,6 +2623,16 @@
     {
       "source": "moc-local-llm-optimization",
       "target": "notes-docs-llm-local-llm-optimization",
+      "kind": "link"
+    },
+    {
+      "source": "moc-ai-llms",
+      "target": "moc-k2-horizon-locally",
+      "kind": "moc"
+    },
+    {
+      "source": "moc-k2-horizon-locally",
+      "target": "notes-docs-llm-k2-horizon-local",
       "kind": "link"
     },
     {
@@ -3524,6 +3541,11 @@
       "kind": "mdlink"
     },
     {
+      "source": "notes-docs-llm-k2-horizon-local",
+      "target": "notes-docs-llm-local-llm-optimization",
+      "kind": "mdlink"
+    },
+    {
       "source": "notes-docs-llm-blog",
       "target": "notes-docs-cuda-numba",
       "kind": "mdlink"
@@ -3556,6 +3578,16 @@
     {
       "source": "notes-docs-llm-index",
       "target": "notes-docs-llm-local-llm-optimization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-llm-index",
+      "target": "notes-docs-llm-k2-horizon-local",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-docs-llm-local-llm-optimization",
+      "target": "notes-docs-llm-k2-horizon-local",
       "kind": "mdlink"
     },
     {
@@ -5329,21 +5361,6 @@
       "kind": "tag"
     },
     {
-      "source": "notes-site-graph-tags",
-      "target": "tag-llm",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-site-graph-tags",
-      "target": "tag-cuda",
-      "kind": "tag"
-    },
-    {
-      "source": "notes-site-graph-tags",
-      "target": "tag-computervision",
-      "kind": "tag"
-    },
-    {
       "source": "notes-site-menus",
       "target": "notes-docs-cv-3d",
       "kind": "mdlink"
@@ -5391,6 +5408,11 @@
     {
       "source": "notes-site-menus",
       "target": "notes-docs-llm-local-llm-optimization",
+      "kind": "mdlink"
+    },
+    {
+      "source": "notes-site-menus",
+      "target": "notes-docs-llm-k2-horizon-local",
       "kind": "mdlink"
     },
     {
