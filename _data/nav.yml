@@ -216,6 +216,9 @@
         - title: The New Era of Research Tools
           items: []
           url: "/notes/slides/research-tools/"
+        - title: New LLM Optimization Methods
+          items: []
+          url: "/notes/slides/llm-optimization/"
         - title: Hermes for Research Assistance
           items: []
           url: "/notes/slides/presentation/"
