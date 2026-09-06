@@ -209,8 +209,23 @@
       items: []
       url: "/notes/sitemap/"
     - title: Presentations
-      items: []
-      url: "/notes/slides/presentation/"
+      items:
+        - title: All Decks
+          items: []
+          url: "/notes/slides/"
+        - title: The New Era of Research Tools
+          items: []
+          url: "/notes/slides/research-tools/"
+        - title: Hermes for Research Assistance
+          items: []
+          url: "/notes/slides/presentation/"
+        - title: Hermes for Big CV Projects
+          items: []
+          url: "/notes/slides/presentation-cv/"
+        - title: Hermes Updates & Feature Guide
+          items: []
+          url: "/notes/slides/presentation-updates/"
+      url: "/notes/slides/"
     - title: Portfolio
       items: []
       url: "/notes/pkm/use-cases/"
