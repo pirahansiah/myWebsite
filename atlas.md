@@ -28,12 +28,10 @@ The single index of everything on pirahansiah.com. Every publication, course, no
 - [License Plate Recognition with Multi-threshold based on Entropy](/content/papers-license-plate-recognition.md)
 - [Multi-threshold Approach for License Plate Recognition System](/content/papers-multi-threshold-plate.md)
 - [Camera Calibration for Multi-Modal Robot Vision](/content/papers-multimodal-calibration.md)
-- [Conference Papers](/content/papers-overview.md)
 - [Pattern Image Significance for Camera Calibration](/content/papers-pattern-calibration.md)
 - [Patents Face Augmentation](/content/patents-face-augmentation.md)
 - [Patent Application WO 2020/141969 A2 - Digital Advertising System](/content/patents-facial-analysis.md)
 - [Mind Map: A Method for Detecting a Moving Vehicle](/content/patents-vehicle-detection.md)
-- [update Aug. 2026](/content/publications-overview.md)
 
 ## Courses
 
@@ -79,8 +77,6 @@ The single index of everything on pirahansiah.com. Every publication, course, no
 - [The New Era of SEO: Optimizing Websites for LLMs](/content/note-seo-for-llms.md)
 - [tools](/content/note-shell-vim.md)
 - [Edge AI Solutions: Local LLM Implementation Business Plan](/content/note-startup-guide.md)
-- [Pirahansiah.com — Complete Link Index](/content/portfolio-proof.md)
-- [Table of Contents](/content/portfolio-use-cases.md)
 
 ## Slides & Talks
 
