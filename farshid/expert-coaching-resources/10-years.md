@@ -20,19 +20,18 @@ tags: [computer-vision, debugging, lessons-learned, opencv]
 hashtags: "#cv #debugging #lessonslearned #opencv"
 ---
 
-[Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/expert-coaching-resources/localAI.md)
-
-
-# Vision-Language-Action models
-design, implement and scale VLA models and foundation architectures for robotic manipulation and navigation.
-Vision-Language-Action models that let robots understand and interact with the world with unprecedented generalisation; large-scale foundation models and real-world robotic execution, bridging the gap between research and deployed embodied intelligence. 
-
-> **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production. 
-Lessons learned from a decade of debugging computer vision systems in production.
-
 # 10 Years of CV Debugging Lessons
 
+> **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production.
+
 *Last updated: 2026-08-08.*  <!--ENHANCED-->
+
+[Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/expert-coaching-resources/localAI.md)
+
+## Vision-Language-Action models
+
+design, implement and scale VLA models and foundation architectures for robotic manipulation and navigation.
+Vision-Language-Action models that let robots understand and interact with the world with unprecedented generalisation; large-scale foundation models and real-world robotic execution, bridging the gap between research and deployed embodied intelligence.
 
 
 I engage directly with investors, customers, and companies to present our solutions and understand their concerns and product needs. By organizing and analyzing these requirements from a professional, technical perspective, I design and architect robust software systems. I translate these user needs into actionable user stories, project milestones, and tasks to deliver reliable solutions, while planning future optimizations and feature roadmaps.

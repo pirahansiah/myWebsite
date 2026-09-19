@@ -15,7 +15,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <nav class="atlas-jump" aria-label="Atlas sections">
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
-  <a href="#notes-guides">Notes &amp; Guides <span>40</span></a>
+  <a href="#notes-guides">Notes &amp; Guides <span>41</span></a>
   <a href="#products">Products <span>27</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
   <a href="#site-pages">Site Pages <span>6</span></a>
@@ -108,6 +108,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/note-cpp.md">git</a></li>
     <li><a href="/farshid/content/note-pycuda.md">How PyCUDA Reads and Runs C Kernels</a></li>
     <li><a href="/farshid/content/prompts.md">LLM Prompts for Knowledge Graph</a></li>
+    <li><a href="/farshid/expert-coaching-resources/post.md">Mentoring, Consulting &amp; Coaching</a></li>
     <li><a href="/farshid/content/metamask.md">MetaMask — Connect &amp; Receive</a></li>
     <li><a href="/farshid/content/note-llm-agents.md">Mind Map: Orchestrating Agents</a></li>
     <li><a href="/farshid/content/note-llm-concepts.md">Mind Map: Orchestrating Agents &amp; Advanced LLM Concepts</a></li>
@@ -10604,19 +10605,18 @@ https://www.pirahansiah.com/notes/pubs/papers/Comparison_single_thresholding_met
 ## 10 Years of CV Debugging Lessons
 URL: https://pirahansiah.com/farshid/expert-coaching-resources/10-years.md
 
-[Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/expert-coaching-resources/localAI.md)
-
-
-
-
-
-
-> **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production. 
-Lessons learned from a decade of debugging computer vision systems in production.
-
 # 10 Years of CV Debugging Lessons
 
+> **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production.
+
 *Last updated: 2026-08-08.*  
+
+[Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/expert-coaching-resources/localAI.md)
+
+## Vision-Language-Action models
+
+design, implement and scale VLA models and foundation architectures for robotic manipulation and navigation.
+Vision-Language-Action models that let robots understand and interact with the world with unprecedented generalisation; large-scale foundation models and real-world robotic execution, bridging the gap between research and deployed embodied intelligence.
 
 
 I engage directly with investors, customers, and companies to present our solutions and understand their concerns and product needs. By organizing and analyzing these requirements from a professional, technical perspective, I design and architect robust software systems. I translate these user needs into actionable user stories, project milestones, and tasks to deliver reliable solutions, while planning future optimizations and feature roadmaps.
@@ -15892,6 +15892,40 @@ You now have a completely local video avatar generator pipeline that:
 - Optionally adds captions using Whisper
 
 All components run locally without any cloud services, online dependencies, or API keys. This approach gives you full control over the process and protects your privacy, though it requires more computational resources than cloud-based alternatives.
+
+---
+
+## Mentoring, Consulting & Coaching
+URL: https://pirahansiah.com/farshid/expert-coaching-resources/post.md
+
+# Mentoring, Consulting & Coaching
+
+I mentor engineers and consult for teams building computer vision and edge AI systems that have to survive production — from camera calibration and image processing to CUDA kernels, model optimization and on-device LLMs.
+
+**12+ years** in the field · **21 publications** · **3 patents**.
+
+## What I do
+
+- **One-on-one mentoring & tutoring** — your pace, your code, your problem, from CV fundamentals to edge deployment
+- **Group workshops** — one topic worked through together, with hands-on exercises
+- **Project-based coaching** — architecture, milestones and debugging while you build
+- **Code review** — a read of your implementation, with concrete suggestions
+- **Career guidance** — mentorship for computer vision careers and research
+- **Consulting & engineering** — when the system has to ship: real-time vision, GPU acceleration, model optimization, on-device LLMs
+
+## The resources
+
+- **[10 Years of CV Debugging Lessons](/farshid/expert-coaching-resources/10-years.md)** — lessons learned from a decade of debugging computer vision systems in production.
+- **[Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/expert-coaching-resources/localAI.md)** — budgeting a 32k context between instructions, references and the answer, and a yes/no filter that picks the chunks before the main model sees them.
+- **[CV Coaching & Teaching Roadmap](/farshid/content/note-coaching-roadmap.md)** — the curriculum I teach, from image formation to multi-camera systems.
+- **[OpenCV 5 Cheat Sheet (PDF)](/farshid/expert-coaching-resources/OpenCV_5_Cheat_Sheet_pirahansiah.pdf)** — the functions that come up in every session, on one page.
+- **[Computer Vision Coaching Roadmap (PDF)](/farshid/products/cv-coaching-roadmap.pdf)** — the same learning path as a printable sheet.
+
+## Getting started
+
+Tell me what you are building and where it is stuck. Email **info@pirahansiah.com** or reach me on [LinkedIn](https://www.linkedin.com/in/pirahansiah/).
+
+<img src="/farshid/expert-coaching-resources/linkedin.JPG" alt="LinkedIn QR card for Dr. Farshid Pirahansiah — scan to connect" style="max-width: 100%; height: auto;">
 
 ---
 
@@ -23637,6 +23671,11 @@ URL: https://pirahansiah.com/farshid/expert-coaching-resources/localAI.md
 # Tips and tricks to run a local model for Hermes Agent on your laptop
 
 A local model on a laptop is small in one thing only: the context window. The tips below keep that window for the answer, not for the packing.
+
+## On my laptop with 8gb vram
+
+- 131k qwen3.5-9b q4
+- 32k Ternary-Bonsai-2-27B (based on qwen3.8-27b) it is q1
 
 ## Writing prompts on a 32k budget
 

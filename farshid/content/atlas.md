@@ -12,7 +12,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <nav class="atlas-jump" aria-label="Atlas sections">
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
-  <a href="#notes-guides">Notes &amp; Guides <span>40</span></a>
+  <a href="#notes-guides">Notes &amp; Guides <span>41</span></a>
   <a href="#products">Products <span>27</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
   <a href="#site-pages">Site Pages <span>6</span></a>
@@ -105,6 +105,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/note-cpp.md">git</a></li>
     <li><a href="/farshid/content/note-pycuda.md">How PyCUDA Reads and Runs C Kernels</a></li>
     <li><a href="/farshid/content/prompts.md">LLM Prompts for Knowledge Graph</a></li>
+    <li><a href="/farshid/expert-coaching-resources/post.md">Mentoring, Consulting &amp; Coaching</a></li>
     <li><a href="/farshid/content/metamask.md">MetaMask — Connect &amp; Receive</a></li>
     <li><a href="/farshid/content/note-llm-agents.md">Mind Map: Orchestrating Agents</a></li>
     <li><a href="/farshid/content/note-llm-concepts.md">Mind Map: Orchestrating Agents &amp; Advanced LLM Concepts</a></li>

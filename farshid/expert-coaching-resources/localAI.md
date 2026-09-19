@@ -4,17 +4,14 @@ title: "Tips and tricks to run a local model for Hermes Agent on your laptop"
 permalink: /expert-coaching-resources/localAI/
 description: "Running a local model for Hermes Agent on a laptop: budgeting a 32k context between instructions, references and the answer, a yes/no filter that picks the chunks before the main model sees them, and notes from two AMD laptops."
 ---
-# On my laptop with 8gb vram 
-- 131k qwen3.5-9b q4
-- 32k Ternary-Bonsai-2-27B (based on qwen3.8-27b) it is q1 
-
-
-
-
-
 # Tips and tricks to run a local model for Hermes Agent on your laptop
 
 A local model on a laptop is small in one thing only: the context window. The tips below keep that window for the answer, not for the packing.
+
+## On my laptop with 8gb vram
+
+- 131k qwen3.5-9b q4
+- 32k Ternary-Bonsai-2-27B (based on qwen3.8-27b) it is q1
 
 ## Writing prompts on a 32k budget
 
