@@ -90,6 +90,7 @@
     c.querySelectorAll('h1,h2,h3').forEach(function(h,i){ if(!h.id) h.id = slug(h.textContent); });
     highlightNav(file, anchor||'');
     wireLinks(c);
+    wireCopy(c);
     initDeckIfPresent(c);   // reveal.js deck pages render as slide presentations
     if(anchor && anchor!=='top'){
       var el=c.querySelector('#'+slug(anchor));
@@ -207,6 +208,47 @@
         a.addEventListener('click', function(e){ e.preventDefault(); setHash(mp+(targetAnchor?':'+slug(targetAnchor):'')); });
       }
       // internal absolute paths (canonical static pages, qr/swarm tools) navigate in the same tab
+    });
+  }
+
+  /* Copy buttons. A markdown page cannot carry <script> (HTML injected through
+     innerHTML never executes), so the engine wires them: any element with a
+     data-copy attribute copies its value and flashes the label. Works on the QR
+     page (URLs, referral links, wallet addresses) and anywhere else. */
+  function copyLegacy(v){
+    try{
+      var ta=document.createElement('textarea');
+      ta.value=v; ta.setAttribute('readonly','');
+      ta.style.position='fixed'; ta.style.top='-1000px'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, v.length);
+      var ok=document.execCommand('copy');
+      document.body.removeChild(ta); return ok;
+    }catch(err){ return false; }
+  }
+  function copyValue(v){
+    if(navigator.clipboard && window.isSecureContext){
+      return navigator.clipboard.writeText(v).then(function(){ return true; }, function(){ return copyLegacy(v); });
+    }
+    return Promise.resolve(copyLegacy(v));
+  }
+  function wireCopy(c){
+    if(!c) return;
+    c.querySelectorAll('[data-copy]').forEach(function(el){
+      if(el.__copyWired) return;
+      el.__copyWired=true;
+      var label = el.getAttribute('data-label') || el.textContent || 'Copy';
+      el.setAttribute('data-label', label);
+      el.addEventListener('click', function(e){
+        e.preventDefault(); e.stopPropagation();
+        copyValue(el.getAttribute('data-copy')).then(function(ok){
+          el.classList.add(ok ? 'is-copied' : 'is-copy-failed');
+          el.textContent = ok ? 'Copied' : 'Press Ctrl+C';
+          setTimeout(function(){
+            el.classList.remove('is-copied','is-copy-failed');
+            el.textContent = label;
+          }, 1600);
+        });
+      });
     });
   }
 
