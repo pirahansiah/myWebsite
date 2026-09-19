@@ -1,64 +1,10 @@
-> **Hermes Agent for Research Assistance** — Autonomous AI Research Partner for Academia & Engineering — https://www.pirahansiah.com/notes/slides/presentation/
-> Presentation: Comprehensive setup, configurations, workflow automation, ArXiv integration, and multi-agent execution for researchers.
-
-*Last updated: 2026-09-06.*
-
-<style>
-  #content { background: #050b14 !important; }
-  .site-main { padding: 0 !important; margin: 0 !important; background: #000 !important; border: none !important; box-shadow: none !important; max-width: none !important; width: 100% !important; }
-  .toolbar, .site-footer, footer { display: none !important; }
-  .presentation-panel { position: relative; width: 100%; height: min(72vh, 760px); overflow: hidden; background: #050b14; }
-  .reveal .slides section { height: 100%; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; padding: 20px !important; box-sizing: border-box !important; }
-  .reveal { height: 100%; } .reveal .slides { height: 100%; }
-  .reveal { height: 100%; width: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-  .reveal h1 { font-size: 2.0em; margin-bottom: 0.2em; color: #fff; text-align: center; font-weight: 800; background: linear-gradient(135deg, #22D3EE, #06B6D4, #3B82F6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .reveal h2 { font-size: 1.22em; margin: 0.18em 0 0.4em; color: #22D3EE; text-align: center; font-weight: 700; }
-  .reveal h3 { font-size: 1.1em; color: #A855F7; margin: 0.2em 0; }
-  .reveal p, .reveal li { font-size: 0.76em; color: #cbd5e1; line-height: 1.4; }
-  .reveal ul { list-style: none; padding: 0; text-align: left; margin: 0.5em 0; }
-  .reveal .controls { color: #22D3EE; }
-  .reveal .progress { color: #22D3EE; height: 4px; }
-  
-  /* Grid & Card layout */
-  .m { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; width: 98%; max-width: 1100px; margin: 0.5em auto; }
-  .m-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; width: 98%; max-width: 1100px; margin: 0.5em auto; }
-  .m-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 98%; max-width: 1100px; margin: 0.5em auto; }
-  
-  .c { background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 12px; padding: 16px; text-align: center; backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(0,0,0,0.37); }
-  .c-left { text-align: left; }
-  .c p { text-align: left; margin: 6px 0; font-size: 0.82em; }
-  
-  /* Big Metric Numbers */
-  .n { font-size: 2.2em; font-weight: 800; margin: 0; line-height: 1.1; }
-  .n.g { color: #30d158; } 
-  .n.r { color: #0284C7; } 
-  .n.b { color: #22D3EE; } 
-  .n.p { color: #A855F7; } 
-  .n.o { color: #ff9f0a; }
-  
-  /* Code blocks */
-  .code-box { background: #090d16; border: 1px solid rgba(34,211,238,0.3); border-radius: 8px; padding: 10px 14px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 0.68em; color: #38bdf8; text-align: left; width: 95%; max-width: 1000px; overflow-x: auto; box-shadow: inset 0 2px 8px rgba(0,0,0,0.6); }
-  .code-box pre { margin: 0; padding: 0; }
-  .code-box .cmd { color: #34d399; font-weight: bold; }
-  .code-box .cmt { color: #64748b; italic; }
-  .code-box .str { color: #fbbf24; }
-  .code-box .kw { color: #f472b6; font-weight: bold; }
-  
-  .tag { display: inline-block; background: rgba(34, 211, 238, 0.15); border: 1px solid rgba(34, 211, 238, 0.4); color: #38bdf8; padding: 2px 8px; border-radius: 6px; font-size: 0.75em; font-weight: 600; margin-right: 4px; }
-  
-  .nav-hint { position: absolute; bottom: 8px; font-size: 0.55em; opacity: 0.4; color: #94a3b8; pointer-events: none; z-index: 10; }
-  
-  @media (max-width: 768px) { 
-    .m, .m-2, .m-3 { grid-template-columns: 1fr; } 
-    .n { font-size: 1.6em; } 
-    .reveal h1 { font-size: 1.4em; } 
-    .reveal h2 { font-size: 1.1em; } 
-    .code-box { font-size: 0.65em; }
-  }
-</style>
+---
+title: Hermes Agent for Research Assistance
+description: Autonomous AI research partner for academia and engineering: setup, configuration, workflow automation, ArXiv integration, and multi-agent execution.
+---
 
 <div class="presentation-panel">
-  <div class="nav-hint">← Tap Left / Press Left Arrow | Tap Right / Press Right Arrow →</div>
+  <div class="nav-hint">Tap the right side for the next slide · tap the left side to go back · swipe or arrow keys work too</div>
   <div class="reveal">
     <div class="slides">
 
@@ -67,9 +13,9 @@
         <span class="tag">UNIVERSITY LECTURE & RESEARCH SEMINAR</span>
         <h1>Hermes Agent for Research Assistance</h1>
         <h2>Autonomous Workflows, Literature Sweeps, Code Execution & Paper Drafting</h2>
-        <p style="color:#94a3b8; margin-top:1.2em; font-size: 0.95em;">
+        <p style="color:#6b7280; margin-top:1.2em; font-size: 0.95em">
           <strong>Dr. Farshid Pirahansiah</strong><br>
-          <span style="color:#38bdf8;">AI & Computer Vision Engineer • pirahansiah.com</span>
+          <span style="color:#1a56db">AI & Computer Vision Engineer • pirahansiah.com</span>
         </p>
       </section>
 
@@ -78,53 +24,53 @@
         <h2>Why Hermes Agent for Researchers?</h2>
         <div class="m-2">
           <div class="c c-left">
-            <h3 style="color:#f87171;">⚠️ Academic Research Pain Points</h3>
+            <h3 style="color:#b42318">⚠️ Academic Research Pain Points</h3>
             <p>• <strong>10,000+ papers/year</strong> per field (ArXiv overload).</p>
             <p>• <strong>Manual literature synthesis</strong> & BibTeX management.</p>
             <p>• <strong>Broken code repos</strong>, missing dependencies, failed builds.</p>
             <p>• Passive LLM chats lose context and cannot touch local files/tools.</p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#34d399;">🚀 Hermes Agent Solution</h3>
+            <h3 style="color:#15803d">🚀 Hermes Agent Solution</h3>
             <p>• <strong>Autonomous tool calling</strong>: Terminal, ArXiv, Python, Web extraction.</p>
             <p>• <strong>Persistent Memory</strong> & reusable <strong>Skill System</strong>.</p>
             <p>• <strong>Parallel subagents</strong> (`delegate_task`) for concurrent sweeps.</p>
             <p>• Runs on <strong>Local LLMs</strong> (oMLX/llama.cpp) & <strong>Cloud Providers</strong>.</p>
           </div>
         </div>
-        <p style="margin-top:0.8em; color:#cbd5e1;">A unified terminal & GUI agent that acts as a full-time research assistant.</p>
+        <p style="margin-top:0.8em; color:#2b3038">A unified terminal & GUI agent that acts as a full-time research assistant.</p>
       </section>
 
       
       <section>
         <h2>Hermes Research Skills Catalog</h2>
-        <p style="font-size:0.7em; color:#94a3b8; text-align:center;">8 new research skills installed + 8 existing — full toolkit for literature sweeps, critique & synthesis.</p>
-        <div style="width:96%; max-height:62vh; overflow-y:auto; font-size:0.5em; margin:0.3em auto;">
-          <table style="width:100%; border-collapse:collapse; color:#cbd5e1;">
+        <p style="font-size:0.7em; color:#6b7280; text-align:center">8 new research skills installed + 8 existing — full toolkit for literature sweeps, critique & synthesis.</p>
+        <div style="width:96%; max-height:62vh; overflow-y:auto; font-size:0.5em; margin:0.3em auto">
+          <table style="width:100%; border-collapse:collapse; color:#2b3038">
             <thead>
-              <tr style="color:#22D3EE; text-align:left;">
-                <th style="padding:5px 10px; border-bottom:1px solid rgba(34,211,238,0.5);">Skill</th>
-                <th style="padding:5px 10px; border-bottom:1px solid rgba(34,211,238,0.5);">Trigger / what it does</th>
-                <th style="padding:5px 10px; border-bottom:1px solid rgba(34,211,238,0.5);">Status</th>
+              <tr style="color:#1a56db; text-align:left">
+                <th style="padding:5px 10px; border-bottom:1px solid rgba(26,86,219,.35)">Skill</th>
+                <th style="padding:5px 10px; border-bottom:1px solid rgba(26,86,219,.35)">Trigger / what it does</th>
+                <th style="padding:5px 10px; border-bottom:1px solid rgba(26,86,219,.35)">Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>deepdive</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Deep multi-source investigation; cited synthesis with confidence + disagreement mapping</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><span class="tag">NEW</span></td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>researchgap</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Finds gaps, contradictions & open problems in a topic's literature; proposes research questions</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><span class="tag">NEW</span></td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>critic</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Rigorous critique of a paper/claim/argument with severity-rated weaknesses + verdict</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><span class="tag">NEW</span></td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>literature-review</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Themed survey of a topic with annotated bibliography</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><span class="tag">NEW</span></td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>synthesise</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Merges several sources into one attributed synthesis; flags consensus vs open questions</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><span class="tag">NEW</span></td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>factcheck</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Verifies claims against sources; labels each supported/contradicted/unverifiable</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><span class="tag">NEW</span></td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>question-storm</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Generates diverse, prioritized research questions across levels</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><span class="tag">NEW</span></td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>cite</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Formats references in a citation style (APA/MLA/IEEE/BibTeX); finds real sources</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><span class="tag">NEW</span></td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>arxiv</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Search arXiv papers by keyword/author/category</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">existing</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>llm-wiki</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Build/query interlinked markdown knowledge base</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">existing</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>grounded-citations</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Ground answers in cited verifiable sources</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">existing</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>reference-curation</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Audit/curate doc reference links</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">existing</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>polymarket</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Query Polymarket markets/prices</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">existing</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>competitor-news-monitor</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Watch companies for material news</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">existing</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>blogwatcher</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Monitor blogs/RSS feeds</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">existing</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><code>research-paper-writing</code></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Authoring structure for research papers</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">existing</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>deepdive</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Deep multi-source investigation; cited synthesis with confidence + disagreement mapping</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><span class="tag">NEW</span></td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>researchgap</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Finds gaps, contradictions & open problems in a topic's literature; proposes research questions</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><span class="tag">NEW</span></td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>critic</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Rigorous critique of a paper/claim/argument with severity-rated weaknesses + verdict</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><span class="tag">NEW</span></td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>literature-review</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Themed survey of a topic with annotated bibliography</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><span class="tag">NEW</span></td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>synthesise</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Merges several sources into one attributed synthesis; flags consensus vs open questions</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><span class="tag">NEW</span></td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>factcheck</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Verifies claims against sources; labels each supported/contradicted/unverifiable</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><span class="tag">NEW</span></td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>question-storm</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Generates diverse, prioritized research questions across levels</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><span class="tag">NEW</span></td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>cite</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Formats references in a citation style (APA/MLA/IEEE/BibTeX); finds real sources</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><span class="tag">NEW</span></td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>arxiv</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Search arXiv papers by keyword/author/category</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">existing</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>llm-wiki</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Build/query interlinked markdown knowledge base</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">existing</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>grounded-citations</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Ground answers in cited verifiable sources</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">existing</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>reference-curation</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Audit/curate doc reference links</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">existing</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>polymarket</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Query Polymarket markets/prices</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">existing</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>competitor-news-monitor</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Watch companies for material news</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">existing</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>blogwatcher</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Monitor blogs/RSS feeds</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">existing</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><code>research-paper-writing</code></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Authoring structure for research papers</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">existing</td></tr>
             </tbody>
           </table>
         </div>
@@ -136,22 +82,22 @@
         <div class="m">
           <div class="c">
             <div class="n b">Skills</div>
-            <p style="text-align:center;"><strong>Procedural Memory</strong><br>ArXiv, LaTeX, W&B, PyTorch, Git workflows.</p>
+            <p style="text-align:center"><strong>Procedural Memory</strong><br>ArXiv, LaTeX, W&B, PyTorch, Git workflows.</p>
           </div>
           <div class="c">
             <div class="n g">Memory</div>
-            <p style="text-align:center;"><strong>Durable Profile</strong><br>User bio, SSH nodes, GPU clusters, research domain.</p>
+            <p style="text-align:center"><strong>Durable Profile</strong><br>User bio, SSH nodes, GPU clusters, research domain.</p>
           </div>
           <div class="c">
             <div class="n p">Subagents</div>
-            <p style="text-align:center;"><strong>Parallel Workers</strong><br>`delegate_task` for parallel experiments & sweeps.</p>
+            <p style="text-align:center"><strong>Parallel Workers</strong><br>`delegate_task` for parallel experiments & sweeps.</p>
           </div>
           <div class="c">
             <div class="n o">Gateway</div>
-            <p style="text-align:center;"><strong>Multi-Surface</strong><br>CLI, Desktop GUI, Web Dashboard, Telegram, Discord.</p>
+            <p style="text-align:center"><strong>Multi-Surface</strong><br>CLI, Desktop GUI, Web Dashboard, Telegram, Discord.</p>
           </div>
         </div>
-        <p style="margin-top:0.8em; font-size: 0.8em; color:#94a3b8;">Supports 35+ providers: Local oMLX, vLLM, OpenAI, Anthropic, Gemini, DeepSeek, OpenRouter.</p>
+        <p style="margin-top:0.8em; font-size: 0.8em; color:#6b7280">Supports 35+ providers: Local oMLX, vLLM, OpenAI, Anthropic, Gemini, DeepSeek, OpenRouter.</p>
       </section>
 
       
@@ -176,7 +122,7 @@
       
       <section>
         <h2>Tailored Research Configuration</h2>
-        <p style="color:#38bdf8;">Configuring <code>~/.hermes/config.yaml</code> for Research Labs</p>
+        <p style="color:#1a56db">Configuring <code>~/.hermes/config.yaml</code> for Research Labs</p>
         <div class="code-box">
           <pre><span class="kw">model</span>:
   <span class="kw">default</span>: <span class="str">Qwen3.5-4B-OptiQ-4bit</span>        <span class="cmt"># Fast local model for baseline task</span>
@@ -201,19 +147,19 @@
         <h2>Essential Hermes Skills for Academic Work</h2>
         <div class="m-3">
           <div class="c c-left">
-            <h3 style="color:#22D3EE;">📚 Paper & Lit Review</h3>
+            <h3 style="color:#1a56db">📚 Paper & Lit Review</h3>
             <p>• <code>arxiv</code> — Direct paper search & downloading.</p>
             <p>• <code>grounded-citations</code> — Verified source grounding.</p>
             <p>• <code>llm-wiki</code> — Karpathy-style Markdown Knowledge Base.</p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#30D158;">📊 Code & Execution</h3>
+            <h3 style="color:#15803d">📊 Code & Execution</h3>
             <p>• <code>jupyter-live-kernel</code> — Live Python kernel.</p>
             <p>• <code>evaluating-llms-harness</code> — Benchmark suites.</p>
             <p>• <code>systematic-debugging</code> — 4-phase root cause analysis.</p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#A855F7;">📝 Publishing & Docs</h3>
+            <h3 style="color:#6d28d9">📝 Publishing & Docs</h3>
             <p>• <code>docx</code> / <code>pdf</code> — Parse & edit research papers.</p>
             <p>• <code>architecture-diagram</code> — Dark-theme SVG diagrams.</p>
             <p>• <code>markdown-to-pdf</code> — Export clean PDF preprints.</p>
@@ -224,7 +170,7 @@
       
       <section>
         <h2>Workflow 1: Automated ArXiv Literature Sweeps</h2>
-        <p style="color:#34d399;">Command: <em>"Find recent papers on 3D SLAM and build a literature matrix"</em></p>
+        <p style="color:#15803d">Command: <em>"Find recent papers on 3D SLAM and build a literature matrix"</em></p>
         <div class="code-box">
           <pre><span class="cmt"># Hermes executes ArXiv search -> parses PDFs -> builds references matrix</span>
 <span class="kw">from</span> hermes_tools <span class="kw">import</span> web_search, read_file, write_file
@@ -258,13 +204,13 @@ write_file(<span class="str">"references.bib"</span>, format_bibtex(matrix))</pr
           </div>
           <div class="c c-left">
             <h3>💻 Live Tool Output</h3>
-            <div style="background:#020617; border-radius:6px; padding:8px; font-family:monospace; font-size:0.75em; color:#38bdf8;">
+            <div style="background:#f6f7f9; border-radius:6px; padding:8px; font-family:monospace; font-size:0.75em; color:#1a56db">
               $ hermes chat -q "Clone repository X, fix bugs, and run benchmark script"<br><br>
-              <span style="color:#30d158;">[tool call]</span> terminal("git clone ...")<br>
-              <span style="color:#30d158;">[tool call]</span> search_files(pattern="CUDA")<br>
-              <span style="color:#30d158;">[tool call]</span> patch(file="model.py", old=..., new=...)<br>
-              <span style="color:#30d158;">[tool call]</span> terminal("python eval.py --batch 32")<br>
-              <span style="color:#fbbf24;">✓ Benchmark Complete: Accuracy = 94.2%</span>
+              <span style="color:#15803d">[tool call]</span> terminal("git clone ...")<br>
+              <span style="color:#15803d">[tool call]</span> search_files(pattern="CUDA")<br>
+              <span style="color:#15803d">[tool call]</span> patch(file="model.py", old=..., new=...)<br>
+              <span style="color:#15803d">[tool call]</span> terminal("python eval.py --batch 32")<br>
+              <span style="color:#92400e">✓ Benchmark Complete: Accuracy = 94.2%</span>
             </div>
           </div>
         </div>
@@ -287,13 +233,13 @@ write_file(<span class="str">"references.bib"</span>, format_bibtex(matrix))</pr
             <p>Produces publication-ready SVG architecture diagrams, flowcharts, or Manim mathematical animations.</p>
           </div>
         </div>
-        <p style="margin-top:0.8em; font-size:0.8em; color:#94a3b8;">Zero hallucinated citations: claims are mechanically verified against PDF extractions.</p>
+        <p style="margin-top:0.8em; font-size:0.8em; color:#6b7280">Zero hallucinated citations: claims are mechanically verified against PDF extractions.</p>
       </section>
 
       
       <section>
         <h2>Workflow 4: Parallel Research Swarms (`delegate_task`)</h2>
-        <p style="color:#a855f7;">Spawning Concurrent Subagents for Heavy Academic Workloads</p>
+        <p style="color:#6d28d9">Spawning Concurrent Subagents for Heavy Academic Workloads</p>
         <div class="code-box">
           <pre><span class="cmt"># Main Hermes Agent dispatches 3 subagents in parallel</span>
 delegate_task(tasks=[
@@ -318,14 +264,14 @@ delegate_task(tasks=[
         <h2>Persistent Memory & Custom Lab Skills</h2>
         <div class="m-2">
           <div class="c c-left">
-            <h3 style="color:#38bdf8;">🧠 Persistent Memory (<code>memory</code>)</h3>
+            <h3 style="color:#1a56db">🧠 Persistent Memory (<code>memory</code>)</h3>
             <p>Stores facts that survive across every terminal session:</p>
             <p>• Primary research focus (e.g. <em>Computer Vision, 3D Reconstruction</em>).</p>
             <p>• Lab GPU Cluster details (e.g. <em>SLURM partition <code>a100-80gb</code>, node IPs</em>).</p>
             <p>• Preferred paper format & writing style guidelines.</p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#fbbf24;">⚡ Custom Skills (<code>skill_manage</code>)</h3>
+            <h3 style="color:#92400e">⚡ Custom Skills (<code>skill_manage</code>)</h3>
             <p>Teaches Hermes specialized lab procedures:</p>
             <p>• <strong>Slurm Job Submission</strong>: <code>sbatch</code> script creation & queue monitoring.</p>
             <p>• <strong>HuggingFace Dataset Uploads</strong>: Automated push of custom datasets.</p>
@@ -355,7 +301,7 @@ delegate_task(tasks=[
             <p><strong>Speedup</strong><br>Parallel subagent sweeps vs manual searching.</p>
           </div>
         </div>
-        <p style="margin-top:0.8em; font-size: 0.85em;">Local models handle draft tasks & code execution; Cloud models handle complex reasoning.</p>
+        <p style="margin-top:0.8em; font-size: 0.85em">Local models handle draft tasks & code execution; Cloud models handle complex reasoning.</p>
       </section>
 
       
@@ -363,7 +309,7 @@ delegate_task(tasks=[
         <h2>Case Study: Computer Vision & 3D Reconstruction</h2>
         <div class="m-2">
           <div class="c c-left">
-            <h3 style="color:#22D3EE;">Project Goal</h3>
+            <h3 style="color:#1a56db">Project Goal</h3>
             <p>Build an end-to-end multi-camera 3D point cloud generation pipeline and publish open source benchmarks on pirahansiah.com.</p>
             <p><strong>Hermes Execution</strong>:</p>
             <p>• Pulled 15 camera calibration papers from ArXiv.</p>
@@ -371,7 +317,7 @@ delegate_task(tasks=[
             <p>• Generated benchmark tables and SVG pipeline diagrams.</p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#30D158;">Deliverables Produced</h3>
+            <h3 style="color:#15803d">Deliverables Produced</h3>
             <p>✓ <code>3d-vision.md</code> documentation page on website.</p>
             <p>✓ Verified OpenCV C++ code with zero memory leaks.</p>
             <p>✓ BibTeX reference database with 15 verified citations.</p>
@@ -383,13 +329,13 @@ delegate_task(tasks=[
       
       <section>
         <h1>Summary & Key Takeaways</h1>
-        <div style="text-align:left; max-width:800px; margin:0.8em auto; font-size:0.9em; line-height:1.7;">
+        <div style="text-align:left; max-width:800px; margin:0.8em auto; font-size:0.9em; line-height:1.7">
           <p>✔ <strong>Autonomous Research Agent</strong>: Move from passive chatting to active tool execution.</p>
           <p>✔ <strong>End-to-End Workflow</strong>: Literature review → Code reproduction → Experimentation → Paper drafting.</p>
           <p>✔ <strong>Lab Privacy & Local Serving</strong>: Run on local oMLX / llama.cpp or Cloud APIs seamlessly.</p>
           <p>✔ <strong>Parallel Power</strong>: Use subagents (`delegate_task`) for concurrent paper sweeps.</p>
         </div>
-        <p style="margin-top:1.2em; color:#22D3EE; font-size:1.1em; font-weight: bold;">
+        <p style="margin-top:1.2em; color:#1a56db; font-size:1.1em; font-weight: bold">
           Explore the Knowledge Base & Code: pirahansiah.com
         </p>
       </section>
@@ -397,107 +343,107 @@ delegate_task(tasks=[
       
       <section>
         <h2>How to Write a Paper — Write in This Order</h2>
-        <p style="font-size:0.7em; color:#94a3b8; text-align:center;">Draft bottom-up: build the evidence first, then frame it. Read top-down.</p>
-        <ol style="text-align:left; max-width:860px; margin:0.5em auto; font-size:0.82em; line-height:1.6; color:#cbd5e1; counter-reset:step;">
-          <li style="margin:0.25em 0;"><strong style="color:#22D3EE;">1 · Methods</strong> — Lock the protocol, setup, datasets & metrics. The foundation everything cites.</li>
-          <li style="margin:0.25em 0;"><strong style="color:#22D3EE;">2 · Results</strong> — Report what happened, raw: numbers, curves, observed behaviour.</li>
-          <li style="margin:0.25em 0;"><strong style="color:#22D3EE;">3 · Figures</strong> — Build the visuals: plots, diagrams, architecture art. One idea each.</li>
-          <li style="margin:0.25em 0;"><strong style="color:#22D3EE;">4 · Tables</strong> — Assemble comparison/benchmark tables; numbers must match figures.</li>
-          <li style="margin:0.25em 0;"><strong style="color:#A855F7;">5 · Discussion</strong> — Interpret: why it works, limits, implications, relation to prior work.</li>
-          <li style="margin:0.25em 0;"><strong style="color:#A855F7;">6 · Introduction</strong> — Open with the gap & motivation; now you know what you proved.</li>
-          <li style="margin:0.25em 0;"><strong style="color:#34d399;">7 · Abstract</strong> — Written last: the 200-word distillation of the finished paper.</li>
+        <p style="font-size:0.7em; color:#6b7280; text-align:center">Draft bottom-up: build the evidence first, then frame it. Read top-down.</p>
+        <ol style="text-align:left; max-width:860px; margin:0.5em auto; font-size:0.82em; line-height:1.6; color:#2b3038; counter-reset:step">
+          <li style="margin:0.25em 0"><strong style="color:#1a56db">1 · Methods</strong> — Lock the protocol, setup, datasets & metrics. The foundation everything cites.</li>
+          <li style="margin:0.25em 0"><strong style="color:#1a56db">2 · Results</strong> — Report what happened, raw: numbers, curves, observed behaviour.</li>
+          <li style="margin:0.25em 0"><strong style="color:#1a56db">3 · Figures</strong> — Build the visuals: plots, diagrams, architecture art. One idea each.</li>
+          <li style="margin:0.25em 0"><strong style="color:#1a56db">4 · Tables</strong> — Assemble comparison/benchmark tables; numbers must match figures.</li>
+          <li style="margin:0.25em 0"><strong style="color:#6d28d9">5 · Discussion</strong> — Interpret: why it works, limits, implications, relation to prior work.</li>
+          <li style="margin:0.25em 0"><strong style="color:#6d28d9">6 · Introduction</strong> — Open with the gap & motivation; now you know what you proved.</li>
+          <li style="margin:0.25em 0"><strong style="color:#15803d">7 · Abstract</strong> — Written last: the 200-word distillation of the finished paper.</li>
         </ol>
-        <p style="margin-top:0.5em; font-size:0.74em; color:#94a3b8;">Hermes: <code>researchgap</code> scopes the gap · <code>critic</code> stress-tests claims · <code>cite</code> formats refs · <code>research-paper-writing</code> structures the draft.</p>
+        <p style="margin-top:0.5em; font-size:0.74em; color:#6b7280">Hermes: <code>researchgap</code> scopes the gap · <code>critic</code> stress-tests claims · <code>cite</code> formats refs · <code>research-paper-writing</code> structures the draft.</p>
       </section>
 
       
       <section>
         <h2>PaperBanana: Automating Academic Illustration</h2>
-        <p style="font-size:0.68em; color:#94a3b8; text-align:center;">Text-to-figure AI for researchers — publication-ready diagrams & charts from a description.</p>
+        <p style="font-size:0.68em; color:#6b7280; text-align:center">Text-to-figure AI for researchers — publication-ready diagrams & charts from a description.</p>
         <div class="m-2">
           <div class="c c-left">
-            <h3 style="color:#22D3EE;">🔧 What it does</h3>
+            <h3 style="color:#1a56db">🔧 What it does</h3>
             <p>• <strong>Methodology diagrams</strong> — model architectures, algorithm flows, encoders, system pipelines.</p>
             <p>• <strong>Statistical plots</strong> — generates executable <strong>Matplotlib code</strong> from raw data (no numeric hallucination).</p>
             <p>• <strong>Aesthetic enhancement</strong> — turns hand sketches / whiteboard notes into top-venue art.</p>
             <p>• <strong>Styles</strong> — Transformer, GAN, RAG, Multi-Agent templates; posters & more.</p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#A855F7;">🤖 How it works</h3>
+            <h3 style="color:#6d28d9">🤖 How it works</h3>
             <p>• <strong>5-agent closed loop</strong> (Planner → Visualizer → …) for faithful, precise, polished figures.</p>
             <p>• <strong>Planner</strong> turns text into structured visual layouts.</p>
             <p>• <strong>Visualizer</strong> renders via Nano-Banana-Pro — exact shapes, connectors, icons.</p>
             <p>• <strong>Trusted by</strong> SNU, Stanford, UC Berkeley, CMU, Tsinghua, SJTU, Yonsei, IIT Madras, Monash, Broad Institute.</p>
           </div>
         </div>
-        <p style="margin-top:0.5em; font-size:0.74em; color:#94a3b8;">Example: prompt <em>"encoder–decoder segmentation pipeline with skip connections"</em> → ready architecture diagram in seconds. Reference: <a href="https://paper-banana.org" style="color:#38bdf8; text-decoration:underline;">paper-banana.org</a></p>
+        <p style="margin-top:0.5em; font-size:0.74em; color:#6b7280">Example: prompt <em>"encoder–decoder segmentation pipeline with skip connections"</em> → ready architecture diagram in seconds. Reference: <a href="https://paper-banana.org" style="color:#1a56db; text-decoration:underline">paper-banana.org</a></p>
       </section>
 
       
       <section>
         <h2>Academic Peer-Review Loop</h2>
-        <p style="font-size:0.68em; color:#94a3b8; text-align:center;">From submission to camera-ready — and how Hermes shortens each cycle.</p>
+        <p style="font-size:0.68em; color:#6b7280; text-align:center">From submission to camera-ready — and how Hermes shortens each cycle.</p>
         <div class="m-3">
           <div class="c c-left">
-            <h3 style="color:#22D3EE;">📤 Submit</h3>
+            <h3 style="color:#1a56db">📤 Submit</h3>
             <p>• Format to venue template (IEEE/ACM).</p>
             <p>• <code>grounded-citations</code> checks every claim links to a real source.</p>
             <p>• <code>cite</code> exports clean BibTeX/references.</p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#A855F7;">🔍 Review</h3>
+            <h3 style="color:#6d28d9">🔍 Review</h3>
             <p>• Editors assign 2–3 anonymous reviewers.</p>
             <p>• <code>critic</code> pre-empts weaknesses before submission.</p>
             <p>• <code>factcheck</code> flags unsupported claims.</p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#30D158;">✏️ Revise</h3>
+            <h3 style="color:#15803d">✏️ Revise</h3>
             <p>• Address each point (accept / rebut).</p>
             <p>• <code>deepdive</code> gathers new evidence for gaps.</p>
             <p>• <code>synthesise</code> merges reviewer feedback.</p>
           </div>
         </div>
-        <p style="margin-top:0.6em; font-size:0.74em; color:#94a3b8;">Loop repeats per round (R1 → R2 → …) until <strong>accept</strong>; then camera-ready + <code>research-paper-writing</code> polish. Average: 2–4 months per round.</p>
+        <p style="margin-top:0.6em; font-size:0.74em; color:#6b7280">Loop repeats per round (R1 → R2 → …) until <strong>accept</strong>; then camera-ready + <code>research-paper-writing</code> polish. Average: 2–4 months per round.</p>
       </section>
 
       
       <section>
         <h2>Agent Swarms: Parallel Research at Scale</h2>
-        <p style="font-size:0.68em; color:#94a3b8; text-align:center;">One orchestrator fans out to many specialized workers, then merges results.</p>
+        <p style="font-size:0.68em; color:#6b7280; text-align:center">One orchestrator fans out to many specialized workers, then merges results.</p>
         <div class="m-2">
           <div class="c c-left">
-            <h3 style="color:#22D3EE;">🐝 How a swarm runs</h3>
+            <h3 style="color:#1a56db">🐝 How a swarm runs</h3>
             <p>• <strong>Orchestrator</strong> splits the task into independent sub-goals.</p>
             <p>• <strong>Swarm</strong> = N parallel subagents, each with its own context & tools.</p>
             <p>• <strong>Merge</strong>: results aggregated, deduplicated, cross-checked.</p>
             <p>• <strong>Hermes</strong>: <code>delegate_task</code> spawns concurrent workers (no shared context bloat).</p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#A855F7;">🌊 Example: kimi.com → swarm</h3>
+            <h3 style="color:#6d28d9">🌊 Example: kimi.com → swarm</h3>
             <p>1. <strong>kimi.com</strong> receives the research question (e.g. "compare 2025 VLM agents").</p>
             <p>2. <strong>→ swarm</strong>: fans out to subagents — ArXiv sweep, benchmark mining, repo cloning.</p>
             <p>3. <strong>→ …</strong>: each worker returns findings; orchestrator synthesizes one report + BibTeX.</p>
             <p>• Same pattern in Hermes: 3 <code>delegate_task</code> calls → one literature matrix.</p>
           </div>
         </div>
-        <p style="margin-top:0.5em; font-size:0.74em; color:#94a3b8;">Why: 10× speedup vs serial search, isolated failures, no single context overflow. Pair with <code>synthesise</code> + <code>critic</code>.</p>
+        <p style="margin-top:0.5em; font-size:0.74em; color:#6b7280">Why: 10× speedup vs serial search, isolated failures, no single context overflow. Pair with <code>synthesise</code> + <code>critic</code>.</p>
       </section>
 
       
       <section>
         <h2>LeapSpace &amp; Your Research Profile</h2>
-        <p style="font-size:0.66em; color:#94a3b8; text-align:center;">Elsevier's research-grade AI workspace (Scopus data) — and the author record it surfaces.</p>
+        <p style="font-size:0.66em; color:#6b7280; text-align:center">Elsevier's research-grade AI workspace (Scopus data) — and the author record it surfaces.</p>
         <div class="m-2">
           <div class="c c-left">
-            <h3 style="color:#22D3EE;">🪐 LeapSpace (Elsevier)</h3>
+            <h3 style="color:#1a56db">🪐 LeapSpace (Elsevier)</h3>
             <p>• AI workspace powered by <strong>Scopus</strong> + Elsevier full-text.</p>
             <p>• <strong>Deep Research</strong> reports: patterns, contradictions, evidence gaps.</p>
             <p>• <strong>Trust Cards</strong> + <strong>Claim Radar</strong>: sources &amp; contradictions shown.</p>
             <p>• <strong>Writing Coach</strong>, Funding Scout, Author Search, collaborators.</p>
-            <p>• <a href="https://researcher.elsevier.com/eur/" style="color:#38bdf8; text-decoration:underline;">researcher.elsevier.com/eur</a></p>
+            <p>• <a href="https://researcher.elsevier.com/eur/" style="color:#1a56db; text-decoration:underline">researcher.elsevier.com/eur</a></p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#A855F7;">👤 Farshid Pirahansiah — Scopus</h3>
+            <h3 style="color:#6d28d9">👤 Farshid Pirahansiah — Scopus</h3>
             <p>• <strong>h-index 6</strong> · <strong>12 publications</strong> · <strong>73 citations</strong></p>
             <p>• Affiliation: Center for AI Technology, Bangi, Malaysia.</p>
             <p>• Active years: 2010–2022.</p>
@@ -505,50 +451,50 @@ delegate_task(tasks=[
             <p>• Profile generated by LeapSpace, Sun Sep 06 2026.</p>
           </div>
         </div>
-        <p style="margin-top:0.5em; font-size:0.72em; color:#94a3b8;">Hermes mapping: <code>deepdive</code>/<code>literature-review</code> ≈ Deep Research · <code>grounded-citations</code>/<code>factcheck</code> ≈ Trust Cards/Claim Radar · <code>cite</code> ≈ Author Search/BibTeX.</p>
+        <p style="margin-top:0.5em; font-size:0.72em; color:#6b7280">Hermes mapping: <code>deepdive</code>/<code>literature-review</code> ≈ Deep Research · <code>grounded-citations</code>/<code>factcheck</code> ≈ Trust Cards/Claim Radar · <code>cite</code> ≈ Author Search/BibTeX.</p>
       </section>
 
       
       <section>
         <h2>Best Reference Finder — AI Citation Tools</h2>
-        <p style="font-size:0.66em; color:#94a3b8; text-align:center;">Dedicated finders query Crossref / Semantic Scholar — no hallucinated refs like chatbots.</p>
-        <div style="width:97%; max-height:58vh; overflow-y:auto; font-size:0.5em; margin:0.3em auto;">
-          <table style="width:100%; border-collapse:collapse; color:#cbd5e1;">
+        <p style="font-size:0.66em; color:#6b7280; text-align:center">Dedicated finders query Crossref / Semantic Scholar — no hallucinated refs like chatbots.</p>
+        <div style="width:97%; max-height:58vh; overflow-y:auto; font-size:0.5em; margin:0.3em auto">
+          <table style="width:100%; border-collapse:collapse; color:#2b3038">
             <thead>
-              <tr style="color:#22D3EE; text-align:left;">
-                <th style="padding:3px 8px; border-bottom:1px solid rgba(34,211,238,0.5);">Tool</th>
-                <th style="padding:3px 8px; border-bottom:1px solid rgba(34,211,238,0.5);">Best for</th>
-                <th style="padding:3px 8px; border-bottom:1px solid rgba(34,211,238,0.5);">Standout</th>
-                <th style="padding:3px 8px; border-bottom:1px solid rgba(34,211,238,0.5);">Styles</th>
+              <tr style="color:#1a56db; text-align:left">
+                <th style="padding:3px 8px; border-bottom:1px solid rgba(26,86,219,.35)">Tool</th>
+                <th style="padding:3px 8px; border-bottom:1px solid rgba(26,86,219,.35)">Best for</th>
+                <th style="padding:3px 8px; border-bottom:1px solid rgba(26,86,219,.35)">Standout</th>
+                <th style="padding:3px 8px; border-bottom:1px solid rgba(26,86,219,.35)">Styles</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><a href="https://www.sourcely.net/" style="color:#38bdf8;">Sourcely</a></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Bulk / paragraph</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Scans essays, highlights text needing support, summaries</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">700+ (BibTeX, RIS)</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><a href="https://citely.ai/citation-finder" style="color:#38bdf8;">Citely AI</a></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Claim verification</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Paste claim → matched to verified DOIs</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">APA, MLA</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><a href="https://www.grammarly.com/ai-agents/citation-finder" style="color:#38bdf8;">Grammarly</a></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">In-line writing</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Flags missing sources in editor, inserts citations</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">APA, MLA, Chicago</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><a href="https://paperpal.com/tools/citation-generator" style="color:#38bdf8;">Paperpal</a></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">MS Word flow</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">250M+ articles, search by title/DOI</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">10,000+</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><a href="https://scispace.com/agents/citation-finder-6ewdpowc" style="color:#38bdf8;">SciSpace</a></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Partial metadata</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Broken URL/author → complete citation</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">BibTeX, RIS, CSV</td></tr>
-              <tr><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);"><a href="https://writeless.ai/ai-reference-finder" style="color:#38bdf8;">Writeless</a></td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">PDF uploads</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">Filter by min year, inline insertion</td><td style="padding:3px 8px; border-bottom:1px solid rgba(148,163,184,0.12);">APA, MLA, Harvard…</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><a href="https://www.sourcely.net/" style="color:#1a56db">Sourcely</a></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Bulk / paragraph</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Scans essays, highlights text needing support, summaries</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">700+ (BibTeX, RIS)</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><a href="https://citely.ai/citation-finder" style="color:#1a56db">Citely AI</a></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Claim verification</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Paste claim → matched to verified DOIs</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">APA, MLA</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><a href="https://www.grammarly.com/ai-agents/citation-finder" style="color:#1a56db">Grammarly</a></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">In-line writing</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Flags missing sources in editor, inserts citations</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">APA, MLA, Chicago</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><a href="https://paperpal.com/tools/citation-generator" style="color:#1a56db">Paperpal</a></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">MS Word flow</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">250M+ articles, search by title/DOI</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">10,000+</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><a href="https://scispace.com/agents/citation-finder-6ewdpowc" style="color:#1a56db">SciSpace</a></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Partial metadata</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Broken URL/author → complete citation</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">BibTeX, RIS, CSV</td></tr>
+              <tr><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec"><a href="https://writeless.ai/ai-reference-finder" style="color:#1a56db">Writeless</a></td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">PDF uploads</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">Filter by min year, inline insertion</td><td style="padding:3px 8px; border-bottom:1px solid #e6e8ec">APA, MLA, Harvard…</td></tr>
             </tbody>
           </table>
         </div>
-        <p style="margin-top:0.4em; font-size:0.7em; color:#94a3b8;">Beyond find: <strong>Scite</strong> labels citations support/challenge/mention · <strong>Google Scholar</strong> (free, manual) · <strong>Consensus</strong> (Consensus Meter) · manage with <strong>Zotero / Mendeley / <a href="https://www.mybib.com/" style="color:#38bdf8;">MyBib</a></strong>. Hermes: <code>cite</code> formats, <code>factcheck</code> verifies, <code>grounded-citations</code> grounds.</p>
+        <p style="margin-top:0.4em; font-size:0.7em; color:#6b7280">Beyond find: <strong>Scite</strong> labels citations support/challenge/mention · <strong>Google Scholar</strong> (free, manual) · <strong>Consensus</strong> (Consensus Meter) · manage with <strong>Zotero / Mendeley / <a href="https://www.mybib.com/" style="color:#1a56db">MyBib</a></strong>. Hermes: <code>cite</code> formats, <code>factcheck</code> verifies, <code>grounded-citations</code> grounds.</p>
       </section>
 
       
       <section>
         <h2>Second Brain: Obsidian &times; Hermes</h2>
-        <p style="font-size:0.66em; color:#94a3b8; text-align:center;">Turn your notes into a queryable, agent-editable knowledge base.</p>
+        <p style="font-size:0.66em; color:#6b7280; text-align:center">Turn your notes into a queryable, agent-editable knowledge base.</p>
         <div class="m-2">
           <div class="c c-left">
-            <h3 style="color:#22D3EE;">🧠 Connect Obsidian</h3>
+            <h3 style="color:#1a56db">🧠 Connect Obsidian</h3>
             <p>• Vault = plain markdown; Hermes reads/writes via the <code>obsidian</code> skill.</p>
             <p>• Path from <code>OBSIDIAN_VAULT_PATH</code> or <code>~/Documents/Obsidian Vault</code>.</p>
             <p>• Use <code>[[wikilinks]]</code> + YAML frontmatter (tags, aliases) for structure.</p>
             <p>• Two-way sync: edit in Obsidian, Hermes sees it next turn.</p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#A855F7;">🔌 Hermes skills for your vault</h3>
+            <h3 style="color:#6d28d9">🔌 Hermes skills for your vault</h3>
             <p>• <code>obsidian</code> — search, read, create, edit notes & wikilinks.</p>
             <p>• <code>llm-wiki</code> — build interlinked markdown KB.</p>
             <p>• <code>synthesise</code> — merge notes into one.</p>
@@ -556,42 +502,42 @@ delegate_task(tasks=[
             <p>• <code>factcheck</code> / <code>grounded-citations</code> — verify before saving.</p>
           </div>
         </div>
-        <p style="margin-top:0.5em; font-size:0.72em; color:#94a3b8;">Flow: capture → Hermes tags & links → query with <code>search_files</code> → surface in <code>deepdive</code> / <code>literature-review</code>. Your second brain, always current.</p>
+        <p style="margin-top:0.5em; font-size:0.72em; color:#6b7280">Flow: capture → Hermes tags & links → query with <code>search_files</code> → surface in <code>deepdive</code> / <code>literature-review</code>. Your second brain, always current.</p>
       </section>
 
       
       <section>
         <h2>Google Opal <span class="tag">Experiment</span></h2>
-        <p style="font-size:0.66em; color:#94a3b8; text-align:center;">Google's experimental AI app platform — verified facts only; function not yet documented publicly.</p>
+        <p style="font-size:0.66em; color:#6b7280; text-align:center">Google's experimental AI app platform — verified facts only; function not yet documented publicly.</p>
         <div class="m-2">
           <div class="c c-left">
-            <h3 style="color:#22D3EE;">🔎 What is confirmed</h3>
+            <h3 style="color:#1a56db">🔎 What is confirmed</h3>
             <p>• Official Google product labelled <strong>"Opal [Experiment]"</strong>.</p>
             <p>• Web app (opal.google) loading in a sandboxed iframe.</p>
             <p>• Requires <strong>Google sign-in</strong> (OAuth) to use.</p>
             <p>• Requests <strong>camera &amp; microphone</strong> permissions.</p>
           </div>
           <div class="c c-left">
-            <h3 style="color:#A855F7;">❓ Not yet public</h3>
+            <h3 style="color:#6d28d9">❓ Not yet public</h3>
             <p>• Exact purpose / feature set is not in the page source.</p>
             <p>• Positioned in Google's "experiments" track (like Labs).</p>
             <p>• Likely an AI app-/agent-building surface — <em>unconfirmed</em>.</p>
-            <p>• Check <a href="https://opal.google" style="color:#38bdf8; text-decoration:underline;">opal.google</a> after sign-in for live capability.</p>
+            <p>• Check <a href="https://opal.google" style="color:#1a56db; text-decoration:underline">opal.google</a> after sign-in for live capability.</p>
           </div>
         </div>
-        <p style="margin-top:0.5em; font-size:0.72em; color:#94a3b8;">Hermes angle: if Opal is an app/agent builder, it parallels <code>skill_manage</code> (custom skills) &amp; <code>delegate_task</code> (subagents) — but treat as speculation until docs ship.</p>
+        <p style="margin-top:0.5em; font-size:0.72em; color:#6b7280">Hermes angle: if Opal is an app/agent builder, it parallels <code>skill_manage</code> (custom skills) &amp; <code>delegate_task</code> (subagents) — but treat as speculation until docs ship.</p>
       </section>
 
       
       <section>
         <h2>Validated Skills Library <span class="tag">installed &amp; scanned</span></h2>
-        <p style="font-size:0.6em; color:#94a3b8;">All installed via <code>hermes skills install</code>, security-scanned, and verified (valid SKILL.md, enabled).</p>
+        <p style="font-size:0.6em; color:#6b7280">All installed via <code>hermes skills install</code>, security-scanned, and verified (valid SKILL.md, enabled).</p>
         <div class="m-3">
-          <div class="c"><h3 style="color:#38bdf8;">Web &amp; Research</h3><p style="font-size:0.6em;">agent-reach · youtube-full · defuddle · resemble-detect</p></div>
-          <div class="c"><h3 style="color:#a855f7;">Build &amp; Engineering</h3><p style="font-size:0.6em;">using-agent-skills · setup-matt-pocock-skills · make-interfaces-feel-better · humanizer</p></div>
-          <div class="c"><h3 style="color:#22d3ee;">Agents &amp; Ops</h3><p style="font-size:0.6em;">browser-harness · i-have-adhd · loopy · loop-library · skillclaw</p></div>
+          <div class="c"><h3 style="color:#1a56db">Web &amp; Research</h3><p style="font-size:0.6em">agent-reach · youtube-full · defuddle · resemble-detect</p></div>
+          <div class="c"><h3 style="color:#6d28d9">Build &amp; Engineering</h3><p style="font-size:0.6em">using-agent-skills · setup-matt-pocock-skills · make-interfaces-feel-better · humanizer</p></div>
+          <div class="c"><h3 style="color:#1a56db">Agents &amp; Ops</h3><p style="font-size:0.6em">browser-harness · i-have-adhd · loopy · loop-library · skillclaw</p></div>
         </div>
-        <div class="code-box" style="font-size:0.56em; margin-top:10px;">
+        <div class="code-box" style="font-size:0.56em; margin-top:10px">
 <span class="cmt"># list active skills</span>
 hermes skills list
 <span class="cmt"># 14 validated community/url skills now active</span>
@@ -601,19 +547,19 @@ hermes skills list
       
       <section>
         <h2>Command Cheat Sheet <span class="tag">DESK · CLI · MSG · SHELL</span></h2>
-        <p style="font-size:0.5em; color:#94a3b8;">Everyday commands — Desktop, CLI chat, messaging, shell. (Verified vs current Hermes source, Sep 2026.)</p>
+        <p style="font-size:0.5em; color:#6b7280">Everyday commands — Desktop, CLI chat, messaging, shell. (Verified vs current Hermes source, Sep 2026.)</p>
         <div class="m-3">
-          <div class="c"><h3 style="color:#38bdf8;">Sessions &amp; Context</h3><p style="font-size:0.55em;">/new · /resume · /sessions · /title · /branch · /compress · /context · /status</p></div>
-          <div class="c"><h3 style="color:#38bdf8;">Control Work</h3><p style="font-size:0.55em;">/queue · /steer · /bg · /btw · /agents · /stop</p></div>
-          <div class="c"><h3 style="color:#38bdf8;">Goals, Loops &amp; Plans</h3><p style="font-size:0.55em;">/goal · /subgoal · /heartbeat · /loop · /plan · /review · /refine</p></div>
-          <div class="c"><h3 style="color:#a855f7;">Models &amp; Behavior</h3><p style="font-size:0.55em;">/model · /moa · /personality · /reasoning · /fast · /approvals · /yolo · /busy · /voice</p></div>
-          <div class="c"><h3 style="color:#a855f7;">Skills, Memory &amp; Tools</h3><p style="font-size:0.55em;">/skills · /learn · /memory · /init · /tools · /browser</p></div>
-          <div class="c"><h3 style="color:#a855f7;">Automation &amp; Coord</h3><p style="font-size:0.55em;">/cron · /suggestions · /blueprint · /kanban</p></div>
-          <div class="c"><h3 style="color:#22d3ee;">Inspect, Recover &amp; Fix</h3><p style="font-size:0.55em;">/retry · /undo · /save · /diff · /rollback · /usage · /debug · /help</p></div>
-          <div class="c"><h3 style="color:#f472b6;">Messaging / Gateway</h3><p style="font-size:0.55em;">/sethome · /topic · /commands · /approve · /deny · /pause · /platform · /restart</p></div>
-          <div class="c"><h3 style="color:#22d3ee;">Terminal Essentials</h3><p style="font-size:0.55em;">hermes / hermes chat · -z "prompt" · model · status · doctor · gateway status · --safe-mode · update</p></div>
+          <div class="c"><h3 style="color:#1a56db">Sessions &amp; Context</h3><p style="font-size:0.55em">/new · /resume · /sessions · /title · /branch · /compress · /context · /status</p></div>
+          <div class="c"><h3 style="color:#1a56db">Control Work</h3><p style="font-size:0.55em">/queue · /steer · /bg · /btw · /agents · /stop</p></div>
+          <div class="c"><h3 style="color:#1a56db">Goals, Loops &amp; Plans</h3><p style="font-size:0.55em">/goal · /subgoal · /heartbeat · /loop · /plan · /review · /refine</p></div>
+          <div class="c"><h3 style="color:#6d28d9">Models &amp; Behavior</h3><p style="font-size:0.55em">/model · /moa · /personality · /reasoning · /fast · /approvals · /yolo · /busy · /voice</p></div>
+          <div class="c"><h3 style="color:#6d28d9">Skills, Memory &amp; Tools</h3><p style="font-size:0.55em">/skills · /learn · /memory · /init · /tools · /browser</p></div>
+          <div class="c"><h3 style="color:#6d28d9">Automation &amp; Coord</h3><p style="font-size:0.55em">/cron · /suggestions · /blueprint · /kanban</p></div>
+          <div class="c"><h3 style="color:#1a56db">Inspect, Recover &amp; Fix</h3><p style="font-size:0.55em">/retry · /undo · /save · /diff · /rollback · /usage · /debug · /help</p></div>
+          <div class="c"><h3 style="color:#be185d">Messaging / Gateway</h3><p style="font-size:0.55em">/sethome · /topic · /commands · /approve · /deny · /pause · /platform · /restart</p></div>
+          <div class="c"><h3 style="color:#1a56db">Terminal Essentials</h3><p style="font-size:0.55em">hermes / hermes chat · -z "prompt" · model · status · doctor · gateway status · --safe-mode · update</p></div>
         </div>
-        <div class="code-box" style="font-size:0.52em; margin-top:8px;">
+        <div class="code-box" style="font-size:0.52em; margin-top:8px">
 <span class="cmt"># repeat-work modes</span>
 /goal  = work until objective met   /loop  = repeat w/ stop conditions
 /heartbeat = one recurring check    /cron  = durable schedule outside chat
@@ -624,13 +570,13 @@ hermes skills list
       
       <section>
         <h1>Thank You & Discussion</h1>
-        <h2 style="color:#cbd5e1;">Hermes Agent for Research Assistance</h2>
-        <p style="margin-top:1.5em;">
-          <a href="https://www.pirahansiah.com/notes/docs/research/" style="color:#38bdf8; text-decoration:underline;">Research Publications & Notes</a> • 
-          <a href="https://github.com/pirahansiah" style="color:#38bdf8; text-decoration:underline;">GitHub Repositories</a>
+        <h2 style="color:#2b3038">Hermes Agent for Research Assistance</h2>
+        <p style="margin-top:1.5em">
+          <a href="https://www.pirahansiah.com/notes/docs/research/" style="color:#1a56db; text-decoration:underline">Research Publications & Notes</a> • 
+          <a href="https://github.com/pirahansiah" style="color:#1a56db; text-decoration:underline">GitHub Repositories</a>
         </p>
-        <div style="margin-top:2em;">
-          <button id="restart-btn" style="background:rgba(34,211,238,0.2); color:#22D3EE; border:1px solid #22D3EE; padding:12px 24px; border-radius:10px; cursor:pointer; font-size:0.9em; font-weight:bold;">
+        <div style="margin-top:2em">
+          <button id="restart-btn" style="background:#f1f5f9; color:#1a56db; border:1px solid #d1d5db; padding:12px 24px; border-radius:10px; cursor:pointer; font-size:0.9em; font-weight:bold">
             🔄 Restart Presentation
           </button>
         </div>
@@ -639,4 +585,3 @@ hermes skills list
     </div>
   </div>
 </div>
-

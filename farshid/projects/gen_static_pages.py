@@ -329,6 +329,84 @@ def slugify(text):
     return re.sub(r'^-|-$', '', re.sub(r'[^a-z0-9]+', '-', text.lower()))
 
 
+def deck_doc(title, description, canonical, slug, jsonld, slides):
+    """A standalone presentation page: nothing but the deck on screen.
+
+    The slide markup stays in the document (crawlers still read every line of the deck),
+    but no site chrome is rendered above it and the page itself never scrolls, so on a
+    phone a swipe changes slides instead of moving the page.
+    """
+    return f'''<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{html.escape(title)}</title>
+<meta name="description" content="{html.escape(description, quote=True)}">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="{canonical}">
+<link rel="alternate" type="text/markdown" href="/farshid/content/{slug}.md">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{html.escape(title, quote=True)}">
+<meta property="og:description" content="{html.escape(description, quote=True)}">
+<meta property="og:url" content="{canonical}">
+<meta property="og:image" content="{ORIGIN}/farshid/avatar.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/farshid/favicon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
+<link rel="stylesheet" href="/farshid/deck.css">
+<script type="application/ld+json">{jsonld}</script>
+<noscript><style>
+  .presentation-panel{{height:auto}}
+  .presentation-panel .reveal .slides section{{display:block !important;height:auto;padding:28px 24px !important;border-bottom:1px solid #e6e8ec}}
+  .presentation-panel .nav-hint{{display:none}}
+</style></noscript>
+</head>
+<body class="deck-page">
+{slides}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.js"></script>
+<script>
+(function () {{
+  var panel = document.querySelector('.presentation-panel');
+  if (!panel || !window.Reveal) return;          // no CDN: the noscript layout above still reads
+  function portrait() {{ return window.innerWidth < 760 && window.innerHeight > window.innerWidth; }}
+  var deck = new Reveal(panel, {{
+    embedded: true, hash: false, center: true, touch: true, keyboard: true,
+    controls: true, progress: true, slideNumber: 'c/t',
+    width: portrait() ? 760 : 1120, height: portrait() ? 1080 : 760,
+    margin: 0.05, minScale: 0.2, maxScale: 2.0
+  }});
+  deck.initialize();
+  deck.on('slidechanged', function () {{ panel.classList.add('deck-started'); }});
+  window.__deck = deck;                          // handy for debugging and for the resume-hint
+  var rb = document.getElementById('restart-btn');
+  if (rb) rb.addEventListener('click', function (e) {{ e.stopPropagation(); deck.slide(0); }});
+  // tap right -> next slide, tap left -> previous (dragging still swipes)
+  var down = null;
+  panel.addEventListener('pointerdown', function (e) {{ down = {{x: e.clientX, y: e.clientY, t: Date.now()}}; }}, true);
+  panel.addEventListener('pointerup', function (e) {{
+    if (!down) return;
+    var dx = Math.abs(e.clientX - down.x), dy = Math.abs(e.clientY - down.y);
+    var quick = (Date.now() - down.t) < 600, still = (dx < 12 && dy < 12);
+    down = null;
+    if (!quick || !still) return;
+    if (e.target.closest && e.target.closest('a,button,input,select,summary,.controls,.progress,.slide-number')) return;
+    var r = panel.getBoundingClientRect();
+    if ((e.clientX - r.left) < r.width * 0.45) {{ deck.prev(); }} else {{ deck.next(); }}
+  }}, true);
+  window.addEventListener('orientationchange', function () {{
+    deck.configure({{ width: portrait() ? 760 : 1120, height: portrait() ? 1080 : 760 }});
+    deck.layout();
+  }});
+}}());
+</script>
+</body>
+</html>
+'''
+
+
 def build_pages(md_files):
     import markdown
     _SLUGS.clear()
@@ -344,11 +422,13 @@ def build_pages(md_files):
         title = title_of(slug, body, meta)
         description = truncate(first_paragraph(body, meta)) or f'{title} — Dr. Farshid Pirahansiah, computer vision and edge AI engineer.'
 
+        is_deck = 'presentation-panel' in body
         md = markdown.Markdown(extensions=['extra', 'sane_lists', 'toc'])
         rendered = md.convert(body)
-        # the page already has one h1 (the title); body headings drop a level so agents
-        # and screen readers get a single, honest outline
-        rendered = strip_leading_title(re.sub(r'<(/?)h1([^>]*)>', r'<\1h2\2>', rendered), title)
+        if not is_deck:
+            # the page already has one h1 (the title); body headings drop a level so agents
+            # and screen readers get a single, honest outline. Decks keep their own h1 titles.
+            rendered = strip_leading_title(re.sub(r'<(/?)h1([^>]*)>', r'<\1h2\2>', rendered), title)
         # interactive pages keep their own standalone HTML twin; never ship their scripts here
         rendered = re.sub(r'<script\b.*?</script>', '', rendered, flags=re.S | re.I)
         rendered = literal_emphasis(rendered)
@@ -356,16 +436,20 @@ def build_pages(md_files):
 
         canonical = f'{ORIGIN}/farshid/content/{slug}.html'
         modified = date_modified(os.path.relpath(src_path, SITE))
-        is_deck = 'presentation-panel' in body
+        jsonld = jsonld_for(slug, title, description, canonical, modified)
+
+        if is_deck:
+            # a presentation is a room, not an article: no chrome, nothing above the slides
+            doc = deck_doc(title, description, canonical, slug, jsonld, rendered.strip())
+            open(os.path.join(CONTENT, slug + '.html'), 'w', encoding='utf-8').write(doc)
+            pages.append({'slug': slug, 'title': title, 'description': description, 'path': src_path,
+                          'url': canonical, 'section': section_of(slug), 'modified': modified, 'deck': True})
+            continue
 
         head_extra = []
-        if is_deck:
-            head_extra.append('.deck-invite{margin:0 0 26px;padding:18px 20px;border:1px solid var(--rule);'
-                              'border-radius:14px;background:var(--surface-2)}'
-                              '.deck-invite p{margin:0 0 12px;color:var(--ink-2);font-size:15px}')
         head = BOILER_HEAD.format(title=html.escape(title), description=html.escape(description, quote=True),
                                   canonical=canonical, md=f'/farshid/content/{slug}.md',
-                                  jsonld=jsonld_for(slug, title, description, canonical, modified))
+                                  jsonld=jsonld)
         if head_extra:
             head += '\n' + BOILER_HEAD_STYLE.format(extra='\n'.join(head_extra))
 

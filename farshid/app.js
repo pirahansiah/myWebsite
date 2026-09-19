@@ -68,20 +68,24 @@
 
   /* ---- reveal.js decks: render a slide presentation from the .md source ---- */
   var __deckPanel=null, __deckReloading=false;
+  function deckAssets(){
+    if(document.getElementById('reveal-theme')) return;
+    var base='https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/';
+    [['reveal-core','reveal.min.css'],['reveal-theme','theme/white.min.css'],['deck-css','/farshid/deck.css']]
+      .forEach(function(p){
+        var l=document.createElement('link'); l.id=p[0]; l.rel='stylesheet';
+        l.href = p[1].charAt(0)==='/' ? p[1] : base+p[1];
+        document.head.appendChild(l);
+      });
+  }
   function initDeckIfPresent(c){
     var panel=c.querySelector('.presentation-panel');
-    if(__deckPanel){ __deckPanel.__deck && __deckPanel.__deck.destroy && __deckPanel.__deck.destroy(); __deckPanel.__deck=null; __deckPanel=null; }
+    if(__deckPanel){ __deckPanel.__deck && __deckPanel.__deck.destroy && __deckPanel.__deck.destroy(); __deckPanel.__deck=null; __deckPanel.__taps=false; __deckPanel=null; }
+    document.body.classList.remove('deck-mode');
     if(!panel){ __deckReloading=false; return; }
     __deckPanel=panel;
-    // reveal theme css must load once
-    if(!document.getElementById('reveal-theme')){
-      var l=document.createElement('link'); l.id='reveal-theme'; l.rel='stylesheet';
-      l.href='https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css';
-      document.head.appendChild(l);
-      var t=document.createElement('link'); t.rel='stylesheet';
-      t.href='https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css';
-      document.head.appendChild(t);
-    }
+    document.body.classList.add('deck-mode');   // the deck owns the screen: no title, nav or footer above it
+    deckAssets();
     if(window.Reveal){ bootDeck(panel); }
     else if(!__deckReloading){
       __deckReloading=true;
@@ -92,14 +96,37 @@
     }
   }
   function bootDeck(panel){
+    var portrait = window.innerWidth < 760 && window.innerHeight > window.innerWidth;
     panel.__deck = new Reveal(panel, {
-      embedded: true, hash: false, center: true, touch: true,
+      embedded: true, hash: false, center: true, touch: true, keyboard: true,
       controls: true, progress: true, slideNumber: 'c/t',
-      width: 1120, height: 760, margin: 0.06, minScale: 0.2, maxScale: 2.0
+      width: portrait ? 760 : 1120, height: portrait ? 1080 : 760,
+      margin: 0.05, minScale: 0.2, maxScale: 2.0
     });
     panel.__deck.initialize();
+    panel.__deck.on('slidechanged', function(){ panel.classList.add('deck-started'); });
     var rb=document.getElementById('restart-btn');
     if(rb) rb.addEventListener('click', function(e){ e.stopPropagation(); panel.__deck.slide(0); });
+    wireDeckTaps(panel);
+  }
+  /* Tap navigation: tap the right side -> next slide, tap the left side -> previous.
+     Reveal's own swipe handling stays on, so a drag works too. Taps that land on a link,
+     a button or the controls are left alone. */
+  function wireDeckTaps(panel){
+    if(panel.__taps) return;
+    panel.__taps=true;
+    var down=null;
+    panel.addEventListener('pointerdown', function(e){ down={x:e.clientX,y:e.clientY,t:Date.now()}; }, true);
+    panel.addEventListener('pointerup', function(e){
+      if(!down||!panel.__deck){ down=null; return; }
+      var dx=Math.abs(e.clientX-down.x), dy=Math.abs(e.clientY-down.y);
+      var quick=(Date.now()-down.t)<600, still=(dx<12&&dy<12);
+      down=null;
+      if(!quick||!still) return;
+      if(e.target&&e.target.closest&&e.target.closest('a,button,input,select,summary,.controls,.progress,.slide-number')) return;
+      var r=panel.getBoundingClientRect();
+      if((e.clientX-r.left) < r.width*0.45){ panel.__deck.prev(); } else { panel.__deck.next(); }
+    }, true);
   }
 
   function highlightNav(file, anchor){

@@ -389,6 +389,25 @@ body.has-consent-sheet { padding-bottom: 118px; }   /* the consent sheet never c
   .article .atlas-jump a { font-size: 12.5px; padding: 4px 9px; }
 }
 
+/* ---------- deck pages: the presentation owns the screen ----------
+   Nothing above the slides: no title, breadcrumb, nav, ad slot or footer. The deck
+   fills the viewport and the page itself does not scroll, so a swipe moves slides
+   instead of rubber-banding the document. The consent sheet stays (it is required). */
+body.deck-mode { overflow: hidden; background: #fff; }
+body.deck-mode .topbar,
+body.deck-mode .crumbs,
+body.deck-mode .page-foot,
+body.deck-mode .deck-invite,
+body.deck-mode .ad-slot,
+body.deck-mode footer.site-footer,
+body.deck-mode footer { display: none !important; }
+body.deck-mode main.wrap,
+body.deck-mode .wrap { max-width: none; width: 100%; margin: 0; padding: 0; }
+body.deck-mode .article { max-width: none; margin: 0; padding: 0; }
+body.deck-mode .article > h1 { display: none; }
+body.deck-mode .presentation-panel { height: 100dvh; }
+@media (max-width: 820px) { body.deck-mode .topbar-inner { padding-top: 14px; } }
+
 /* ---------- ads (subdued, labelled) ---------- */
 .ad-slot { margin: 36px 0; padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .ad-slot ins { display: block; min-height: 0; }
