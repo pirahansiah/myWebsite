@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accelerate Python with Numba&#x27;s @jit(nopython=True) — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Tutorial on using Numba&#x27;s @jit decorator to compile Python functions into optimized machine code for faster numerical computing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/notes/numba.html">
+<meta property="og:title" content="Accelerate Python with Numba&#x27;s @jit(nopython=True)">
+<meta property="og:description" content="Tutorial on using Numba&#x27;s @jit decorator to compile Python functions into optimized machine code for faster numerical computing.">
+<meta property="og:url" content="https://pirahansiah.com/content/notes/numba.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.</p>
+<p>Accelerate Python with Numba’s <code>@jit(nopython=True)</code> </p>
+<h1>🚀 Accelerate Python with Numba’s <code>@jit(nopython=True)</code> 🚀</h1>
+<p>Are you looking to <strong>optimize your Python code</strong> for better performance? If you work with <strong>large datasets</strong> or run complex numerical computations, the <strong>Numba</strong> library can be a game-changer!</p>
+<p>With <strong><code>@jit(nopython=True)</code></strong>, Numba translates Python functions into <strong>machine code</strong> using Just-In-Time (JIT) compilation. This drastically reduces execution time, especially for <strong>loops</strong> and <strong>numerical operations</strong>.</p>
+<p>Let me show you how it works! 👇</p>
+<h2>🚀 What is <code>@jit(nopython=True)</code>?</h2>
+<p><code>@jit(nopython=True)</code> is a decorator from the Numba library. It compiles the entire function into machine code at runtime. Here’s why it’s special:</p>
+<ul>
+<li><strong><code>nopython=True</code></strong>: Forces Numba to fully compile the function to machine code, skipping the Python interpreter. This ensures maximum performance.</li>
+<li>It’s great for <strong>numerical computing</strong> or operations involving large arrays, matrices, or loops.</li>
+</ul>
+<p>💡 If Numba detects a dynamic type (like Python objects), it will throw an error with <code>nopython=True</code>, ensuring you stay in the compiled mode.</p>
+<hr />
+<h2>🛠️ Example: Summing Squares Without Numba</h2>
+<p>Let’s start with a simple Python function that computes the sum of squares of a list of numbers.</p>
+<pre><code class="language-python">import time
+
+# Regular Python function (without Numba)
+def sum_of_squares(arr):
+    total = 0
+    for num in arr:
+        total += num * num
+    return total
+
+arr = list(range(10000000))  # A list of 10 million numbers
+
+start_time = time.time()
+result = sum_of_squares(arr)
+end_time = time.time()
+
+print(f&quot;Result: {result}&quot;)
+print(f&quot;Time taken (without Numba): {end_time - start_time:.4f} seconds&quot;)
+</code></pre>
+<h3>⏳ Output:</h3>
+<pre><code>Result: 333332833333500000
+Time taken (without Numba): X.XXXX seconds
+</code></pre>
+<hr />
+<h2>⚡ Now, Let’s Optimize It with <code>@jit(nopython=True)</code></h2>
+<p>Here’s the same function, but this time we’ll add <strong>Numba’s <code>@jit(nopython=True)</code></strong> to speed it up.</p>
+<pre><code class="language-python">import time
+from numba import jit
+
+# Numba-optimized function using @jit(nopython=True)
+@jit(nopython=True)
+def sum_of_squares_jit(arr):
+    total = 0
+    for num in arr:
+        total += num * num
+    return total
+
+arr = list(range(10000000))  # A list of 10 million numbers
+
+start_time = time.time()
+result = sum_of_squares_jit(arr)
+end_time = time.time()
+
+print(f&quot;Result: {result}&quot;)
+print(f&quot;Time taken (with Numba): {end_time - start_time:.4f} seconds&quot;)
+</code></pre>
+<h3>⚡ Output:</h3>
+<pre><code>Result: 333332833333500000
+Time taken (with Numba): Y.YYYY seconds
+</code></pre>
+<hr />
+<h2>🧑‍🏫 Why Is Numba So Fast?</h2>
+<ul>
+<li><strong>Machine Code Execution</strong>: Numba converts Python code into <strong>machine instructions</strong>, which run <strong>directly on the CPU</strong>.</li>
+<li><strong>Optimized Loops</strong>: Python’s for-loops are notoriously slow. Numba transforms these into fast, compiled loops.</li>
+<li><strong>No Python Overhead</strong>: By skipping the Python interpreter, Numba eliminates overhead from Python's dynamic type system.</li>
+</ul>
+<hr />
+<h2>🚀 Real-World Performance Gains</h2>
+<p>In this example, for 10 million numbers, the Numba-optimized function can run <strong>several times faster</strong> compared to the pure Python version. With even larger datasets or more complex computations, the performance gains will be even more impressive!</p>
+<hr />
+<h2>🔥 More Examples of Using <code>@jit(nopython=True)</code></h2>
+<h3>Example 1: Computing Factorials</h3>
+<pre><code class="language-python">from numba import jit
+
+@jit(nopython=True)
+def factorial(n):
+    result = 1
+    for i in range(2, n+1):
+        result *= i
+    return result
+
+print(factorial(10))  # Output: 3628800
+</code></pre>
+<h3>Example 2: Matrix Multiplication</h3>
+<pre><code class="language-python">import numpy as np
+from numba import jit
+
+@jit(nopython=True)
+def matrix_mult(A, B):
+    rows_A, cols_A = A.shape
+    rows_B, cols_B = B.shape
+    result = np.zeros((rows_A, cols_B))
+    for i in range(rows_A):
+        for j in range(cols_B):
+            for k in range(cols_A):
+                result[i, j] += A[i, k] * B[k, j]
+    return result
+
+A = np.random.rand(1000, 1000)
+B = np.random.rand(1000, 1000)
+
+result = matrix_mult(A, B)
+print(result)
+</code></pre>
+<hr />
+<h2>🚀 Conclusion</h2>
+<p><strong>Numba</strong> is a powerful tool to boost the performance of your Python code, especially when dealing with <strong>numerical computations</strong> and <strong>large datasets</strong>. Using <code>@jit(nopython=True)</code>, you can transform your slow Python functions into <strong>blazing-fast machine code</strong> with minimal effort.</p>
+<p>Next time you need to optimize your Python code, give <strong>Numba</strong> a try!</p>
+<hr />
+<p>🔗 <strong>Resources</strong>:
+- <a href="https://numba.pydata.org/">Numba Documentation</a>
+- <a href="https://github.com/numba/numba">Numba GitHub Repository</a></p>
+<p>Feel free to connect with me for more tips on optimizing your Python code! 👨‍💻</p>
+<h1>Python #Numba #MachineLearning #PerformanceOptimization #BigData #DataScience</h1>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

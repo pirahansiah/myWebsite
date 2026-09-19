@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSNR Threshold for Image Segmentation — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="PSNR-based thresholding method for image segmentation in automated visual inspection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/journals/psnr-segmentation.html">
+<meta property="og:title" content="PSNR Threshold for Image Segmentation">
+<meta property="og:description" content="PSNR-based thresholding method for image segmentation in automated visual inspection.">
+<meta property="og:url" content="https://pirahansiah.com/content/journals/psnr-segmentation.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>PSNR-based thresholding method for image segmentation in automated visual inspection.</p>
+<p>PEAK_SIGNAL-TO-NOISE_RATIO_BASED_ON_THRESHOLD_METHOD_FOR_IMAGE_SEGMENTATION</p>
+<p>https://www.pirahansiah.com/notes/pubs/journals/PEAK_SIGNAL-TO-NOISE_RATIO_BASED_ON_THRESHOLD_METHOD_FOR_IMAGE_SEGMENTATION/</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/PEAK-SIGNAL-TO-NOISE-RATIO-BASED-ON-THRESHOLD-METHOD-FOR-IMAGE-SEGMENTATION-e2prep9">spotify</a></p>
+<p><a href="http://www.jatit.org/volumes/Vol57No2/4Vol57No2.pdf">PDF Download</a></p>
+<p><img alt="PEAK SIGNAL-TO-NOISE RATIO BASED ON THRESHOLD METHOD FOR IMAGE SEGMENTATION" src="/publications.html" /></p>
+<h1>Mind Map: Peak Signal-to-Noise Ratio Based on Threshold Method for Image Segmentation</h1>
+<h2>1. Introduction</h2>
+<ul>
+<li><strong>Importance of Thresholding</strong>: Separates objects from the background, crucial in image processing and pattern recognition.</li>
+<li><strong>Types of Thresholding</strong>:</li>
+<li><strong>Single Thresholding</strong>: Produces binary images (0 and 1).</li>
+<li><strong>Multilevel Thresholding</strong>: Produces images with pixel values between 0 and 255.</li>
+<li><strong>Objective</strong>: Develop a new algorithm using Peak Signal-to-Noise Ratio (PSNR) for image segmentation.</li>
+</ul>
+<h2>2. Thresholding Techniques</h2>
+<h3>2.1 Single Thresholding</h3>
+<ul>
+<li><strong>Definition</strong>: Uses a single threshold value to convert the image into binary.</li>
+<li><strong>Goal</strong>: Maximize segmentation accuracy and reduce storage requirements.</li>
+<li><strong>Methods</strong>:</li>
+<li><strong>Kittler and Illingworth’s MET</strong>.</li>
+<li><strong>Potential Difference</strong>.</li>
+</ul>
+<h3>2.2 Multilevel Thresholding</h3>
+<ul>
+<li><strong>Definition</strong>: Uses more than one threshold value to segment images.</li>
+<li><strong>Goal</strong>: Applied when a single threshold is insufficient for global segmentation.</li>
+<li><strong>Method</strong>:</li>
+<li>Arora’s Recursive Algorithm.</li>
+</ul>
+<h3>2.3 Multi-Thresholding</h3>
+<ul>
+<li><strong>Definition</strong>: Applies multiple threshold values, calculates blobs/objects in the image.</li>
+<li><strong>Goal</strong>: Selects peak threshold values based on object count.</li>
+<li><strong>Method</strong>: Abdullah’s Multi-Threshold Algorithm.</li>
+</ul>
+<h3>2.4 Otsu’s Method</h3>
+<ul>
+<li><strong>Definition</strong>: Unsupervised, nonparametric method for automatic threshold selection.</li>
+<li><strong>Goal</strong>: Maximizes the variance between classes to select optimal thresholds.</li>
+</ul>
+<h2>3. PSNR-Based Thresholding</h2>
+<ul>
+<li><strong>Proposed Method</strong>: Utilizes PSNR as a measure to select the optimal threshold.</li>
+<li>
+<p><strong>Formula</strong>:PSNR = 10 * log10(MAX^2 / MSE)
+where <code>MSE</code> is the mean squared error and <code>MAX</code> is the maximum possible pixel value.</p>
+</li>
+<li>
+<p><strong>Algorithm</strong>:
+1. Calculate PSNR for each threshold value.
+2. Select the threshold that maximizes PSNR.</p>
+</li>
+</ul>
+<h2>4. Results and Evaluation</h2>
+<ul>
+<li><strong>Datasets</strong>:</li>
+<li>DIBCO 2011 (handwritten and printed images).</li>
+<li><strong>Metrics</strong>:</li>
+<li><strong>F-Measure</strong>: Evaluates binary classification accuracy.</li>
+<li><strong>PSNR</strong>: Measures similarity between the original and thresholded images.</li>
+</ul>
+<h3>4.1 Performance</h3>
+<ul>
+<li>The proposed method showed better PSNR and acceptable F-measure for printed images.</li>
+<li>Comparison with Kittler and Illingworth, Otsu, and other methods highlighted superior performance of the proposed method in certain conditions.</li>
+</ul>
+<h2>5. Application Areas</h2>
+<ul>
+<li><strong>Automated Visual Inspection</strong>.</li>
+<li><strong>License Plate Recognition</strong>.</li>
+<li><strong>Handwritten Image Segmentation</strong>.</li>
+<li><strong>Image Processing in Mobile Devices</strong> (with resource limitations).</li>
+</ul>
+<h2>6. Conclusion</h2>
+<ul>
+<li><strong>Proposed Method</strong>: Adaptive PSNR-based thresholding is a viable approach for image segmentation.</li>
+<li><strong>Results</strong>: Competitive performance in standard, printed, and handwritten images.</li>
+<li><strong>Future Work</strong>: Potential for further improvement, especially in handling complex images with varying contrast.</li>
+</ul>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advanced LLM Concepts — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production deployment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/notes/llm-concepts.html">
+<meta property="og:title" content="Advanced LLM Concepts">
+<meta property="og:description" content="Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production deployment.">
+<meta property="og:url" content="https://pirahansiah.com/content/notes/llm-concepts.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production deployment.</p>
+<h1>Mind Map: Orchestrating Agents &amp; Advanced LLM Concepts</h1>
+<h2>1. Introduction</h2>
+<ul>
+<li><strong>Main Concept</strong>: Coordination of multiple AI agents for complex tasks, enhanced by Large Language Models (LLMs) and multimodal technologies.</li>
+<li><strong>Goals</strong>: Solve tasks beyond a single agent's capability, using agents and LLMs in harmony.</li>
+<li><strong>Key Technologies</strong>: LLMs, multimodal models (vision + text), task orchestration.</li>
+</ul>
+<h2>2. Core Components of Agent Systems</h2>
+<h3>2.1 Agents</h3>
+<ul>
+<li><strong>Definition</strong>: Autonomous entities carrying out specific functions.</li>
+<li><strong>Types</strong>:</li>
+<li><strong>Single-purpose</strong>: Designed for specific tasks.</li>
+<li><strong>General-purpose</strong>: Flexible agents capable of performing various tasks.</li>
+<li><strong>Capabilities</strong>:</li>
+<li><strong>Interaction</strong> with environments.</li>
+<li><strong>Processing inputs</strong> and generating outputs.</li>
+<li><strong>Self-contained</strong> decision-making.</li>
+</ul>
+<h3>2.2 Orchestrator</h3>
+<ul>
+<li><strong>Definition</strong>: Central controller managing multiple agents and interacting with LLMs.</li>
+<li><strong>Roles</strong>:</li>
+<li>Delegates tasks to agents.</li>
+<li>Monitors progress.</li>
+<li>Facilitates communication between agents and LLMs.</li>
+<li>Combines results for task completion.</li>
+</ul>
+<h3>2.3 Communication Between Agents and LLMs</h3>
+<ul>
+<li><strong>Importance</strong>: Efficient communication enables effective agent-LLM collaboration.</li>
+<li><strong>Methods</strong>:</li>
+<li><strong>Message Passing</strong> between agents.</li>
+<li><strong>API Calls</strong> to trigger LLMs for specific operations (like function calling).</li>
+<li><strong>Shared Memory</strong> or databases for data exchange.</li>
+</ul>
+<h2>3. Advanced LLM Techniques</h2>
+<h3>3.1 Function Calling</h3>
+<ul>
+<li><strong>Definition</strong>: Triggering LLM functions based on tasks, allowing for interaction with external APIs.</li>
+<li><strong>Similar Concepts</strong>:</li>
+<li>API Calls.</li>
+<li>Agent Invocation.</li>
+</ul>
+<h3>3.2 Subtask Processing</h3>
+<ul>
+<li><strong>Definition</strong>: Dividing complex tasks into smaller subtasks handled by individual agents or LLMs.</li>
+<li><strong>Similar Concepts</strong>:</li>
+<li>Task Decomposition.</li>
+<li>Multi-step Learning.</li>
+</ul>
+<h3>3.3 Tools Through Prompting</h3>
+<ul>
+<li><strong>Definition</strong>: Prompting LLMs to interact with external tools, such as databases or browsers, enhancing their capability.</li>
+<li><strong>Similar Concepts</strong>:</li>
+<li>Tool-Augmented Models.</li>
+<li>Retrieval-Augmented Generation (RAG).</li>
+</ul>
+<h2>4. Multimodal LLM Technologies</h2>
+<h3>4.1 VisionLLM v2</h3>
+<ul>
+<li><strong>Overview</strong>: Handles both vision and language tasks. Excels in <strong>image segmentation</strong>, <strong>object detection</strong>, and <strong>caption generation</strong>.</li>
+<li><strong>Use Case</strong>: Medical image analysis or automated content creation where visual and text-based processing is needed.</li>
+</ul>
+<h3>4.2 NVLM 1.0 (NVIDIA)</h3>
+<ul>
+<li><strong>Overview</strong>: Specializes in <strong>OCR</strong>, <strong>visual reasoning</strong>, and <strong>localization</strong>. Handles complex vision-text integrations for real-world applications.</li>
+<li><strong>Use Case</strong>: Autonomous driving, where vehicles and pedestrians are detected in real-time using visual cues.</li>
+</ul>
+<h3>4.3 Apple’s 4M Multimodal Model</h3>
+<ul>
+<li><strong>Overview</strong>: Excels in <strong>image editing</strong> and <strong>3D scene manipulation</strong> based on natural language commands.</li>
+<li><strong>Use Case</strong>: Advanced photo editing or 3D modeling, e.g., "brighten the sky" or "remove an object" via commands.</li>
+</ul>
+<h3>4.4 Molmo</h3>
+<ul>
+<li><strong>Overview</strong>: Designed for <strong>dense image captioning</strong> and <strong>object pointing</strong>, using the <strong>PixMo</strong> dataset.</li>
+<li><strong>Use Case</strong>: Geospatial analysis, where satellite images can be analyzed and annotated for buildings or geographic markers.</li>
+</ul>
+<h3>4.5 Qwen2-VL</h3>
+<ul>
+<li><strong>Overview</strong>: Multimodal model that integrates <strong>video comprehension</strong> and <strong>multilingual text recognition</strong>.</li>
+<li><strong>Use Case</strong>: Sports analytics, tracking player performance and answering questions related to game footage.</li>
+</ul>
+<h3>4.6 Pixtral by Mistral</h3>
+<ul>
+<li><strong>Overview</strong>: Capable of <strong>multi-image processing</strong> at native resolutions with an outstanding ability to follow instructions.</li>
+<li><strong>Use Case</strong>: Security monitoring by processing multiple camera feeds for detecting and tracking objects in different locations.</li>
+</ul>
+<h2>5. Embedding and Vector Technologies</h2>
+<h3>5.1 Knowledge Graphs</h3>
+<ul>
+<li><strong>Definition</strong>: Represents structured knowledge by entities and their relationships to enhance reasoning in LLMs.</li>
+<li><strong>Use Cases</strong>: Question-answering, data retrieval.</li>
+</ul>
+<h3>5.2 pgvector</h3>
+<ul>
+<li><strong>Definition</strong>: PostgreSQL extension for handling vectors in similarity search and embedding-based queries.</li>
+<li><strong>Use Cases</strong>: Efficient storage and search of embeddings in recommendation systems or LLM-driven queries.</li>
+</ul>
+<h2>6. Localization of LLMs</h2>
+<ul>
+<li><strong>Definition</strong>: Optimizing LLMs for region-specific tasks, addressing local language nuances and data regulations.</li>
+<li><strong>Similar Concepts</strong>:</li>
+<li>Language Adaptation.</li>
+<li>Regional Compliance.</li>
+</ul>
+<h2>7. Advanced Prompting and RAG Techniques</h2>
+<h3>7.1 Superposition Prompting</h3>
+<ul>
+<li><strong>Definition</strong>: Layering multiple prompts for richer context, improving the LLM’s decision-making.</li>
+<li><strong>Use Cases</strong>: Multi-step decision-making tasks.</li>
+</ul>
+<h3>7.2 RAG in Computer Vision (CV)</h3>
+<ul>
+<li><strong>Definition</strong>: Combines retrieval systems with generation models, leveraging external image data for visual task processing.</li>
+<li><strong>Use Case</strong>: Document processing where both text and images need to be integrated, such as legal document review.</li>
+</ul>
+<h3>7.3 Embedding Models</h3>
+<ul>
+<li><strong>Definition</strong>: Vectorizing input data (images, text) for similarity search or clustering in LLM workflows.</li>
+<li><strong>Use Cases</strong>: Product recommendations, clustering similar documents for faster access.</li>
+</ul>
+<h2>8. Productionizing LLMs</h2>
+<h3>8.1 Production-Ready LLMs</h3>
+<ul>
+<li><strong>Definition</strong>: Deploying LLMs in real-world applications, considering performance, cost, and scalability.</li>
+<li><strong>Use Cases</strong>: Chatbots, real-time language translation.</li>
+</ul>
+<h3>8.2 LLM with RAG (Retrieval-Augmented Generation)</h3>
+<ul>
+<li><strong>Definition</strong>: Enhancing LLMs by coupling them with retrieval-based systems for information generation, albeit at higher costs.</li>
+<li><strong>Use Cases</strong>: Advanced customer service, legal text generation from large databases.</li>
+</ul>
+<h3>8.3 LLM with IoT</h3>
+<ul>
+<li><strong>Definition</strong>: Integrating LLMs with IoT devices to process data and control smart systems through natural language interfaces.</li>
+<li><strong>Use Cases</strong>: Home automation, real-time smart sensor monitoring.</li>
+</ul>
+<h2>9. Example Workflow</h2>
+<h3>9.1 Research Task</h3>
+<ul>
+<li><strong>Step 1</strong>: Task is divided into subtasks (research, summarizing, final report).</li>
+<li><strong>Step 2</strong>: Agents handle subtasks, and LLMs assist with content generation and summarization.</li>
+<li><strong>Step 3</strong>: Results from agents are aggregated into a cohesive report by the orchestrator.</li>
+</ul>
+<h3>9.2 Multi-Agent &amp; LLM Collaboration</h3>
+<ul>
+<li><strong>Scenario</strong>: Writing a complex essay.</li>
+<li><strong>Agent 1</strong>: Researches the topic.</li>
+<li><strong>Agent 2</strong>: Summarizes key points.</li>
+<li><strong>Agent 3</strong>: Drafts the essay.</li>
+<li><strong>LLM</strong>: Enhances writing style and content.</li>
+<li><strong>Orchestrator</strong>: Oversees, revises, and finalizes the report.</li>
+</ul>
+<h2>10. Benefits</h2>
+<ul>
+<li><strong>Efficiency</strong>: Tasks are completed faster with parallel agent and LLM collaboration.</li>
+<li><strong>Scalability</strong>: Able to handle larger, more complex tasks with both agents and LLMs.</li>
+<li><strong>Flexibility</strong>: Agents and LLMs can adapt to different scenarios.</li>
+<li><strong>Improved Decision-Making</strong>: Real-time adaptability via dynamic task handling.</li>
+</ul>
+<h2>11. Challenges</h2>
+<ul>
+<li><strong>Coordination Complexity</strong>: Synchronizing multiple agents and LLMs.</li>
+<li><strong>Communication Overhead</strong>: Managing the communication between agents and LLMs.</li>
+<li><strong>Error Handling</strong>: Failures can affect the entire workflow.</li>
+<li><strong>Cost &amp; Resources</strong>: High costs, especially with retrieval and multimodal systems like RAG.</li>
+</ul>
+<h2>12. Applications</h2>
+<ul>
+<li><strong>Research &amp; Analysis</strong>: For deep analysis and data extraction across domains.</li>
+<li><strong>Content Creation</strong>: Multi-agent systems producing high-quality written content.</li>
+<li><strong>Project Management</strong>: Automating and organizing complex, large-scale projects.</li>
+</ul>
+<hr />
+<ul>
+<li>Function Calling</li>
+<li>Subtasks </li>
+<li>Tools Using Prompting</li>
+<li>Knowledge Graphs</li>
+<li>pgVector</li>
+<li>open source LLM </li>
+<li>Superposition Prompting</li>
+<li>Retrieval-Augmented Generation (RAG) in Computer vision </li>
+<li>Embedding Models</li>
+<li>Production-Level LLMs</li>
+<li>Production-Level LLMs with RAG</li>
+<li>Production-Level LLMs in IoT</li>
+<li>Cost Management</li>
+</ul>
+<hr />
+<ul>
+<li>In managing costs for production-level LLMs with RAG, strategies like embedding retrieval systems and optimizing model queries can help reduce resource use. Leveraging cloud-based solutions or fine-tuning smaller models for specific tasks are also common methods to reduce the expense of running these models in real-time .</li>
+<li>Running LLMs in production at scale can be expensive, particularly when combined with RAG (Retrieval-Augmented Generation). This is because both the LLM and the external retrieval system (like a knowledge graph) need to work in tandem, which can increase computational overhead. When applied to IoT (Internet of Things), where data sources are vast and diverse, the cost of maintaining such systems can become prohibitive  .</li>
+<li>Embedding models help LLMs convert text into vector representations, enabling tasks like search, similarity comparison, and context retrieval. These models, when integrated with LLMs, allow for scaling up chunk processing for large datasets, making them essential for production environments where real-time data retrieval is required .</li>
+<li>Function calling within LLMs allows these models to interact with external APIs and tools by converting user queries into function calls. For example, if a user asks about the weather, the model can trigger a function like get_current_weather(location), passing the necessary parameters to retrieve the correct data. This capability enhances the integration of LLMs with external systems, enabling a more interactive and task-specific approach  .</li>
+<li>When combined with subtasks, LLMs can divide complex tasks into manageable parts. For instance, a user query can trigger multiple functions or tools to handle different subtasks, such as searching databases or summarizing documents .
+Tool integration with LLMs through prompting enables the models to call upon specialized tools for tasks that require external data or specific functionality. For example, using tools like LangChain, LLMs can be prompted to interact with knowledge graphs, retrieve data from external APIs, or handle subtasks like document chunking or embedding generation . These prompts allow the LLM to understand when and how to invoke external resources, ensuring more accurate responses.</li>
+<li>A knowledge graph allows LLMs to structure unstructured data by mapping entities and relationships in a graph format, making it easier for models to retrieve, reason about, and respond to queries based on complex datasets . Tools like pgVector enhance this by enabling vectorized searches, allowing models to retrieve semantically similar content from large datasets efficiently.</li>
+<li>
+<p>Superposition prompting is an advanced technique that presents multiple prompts to the model at once, helping it learn or decide between different potential tasks. This method increases the model’s ability to handle ambiguity or multiple concurrent tasks efficiently. The application of such techniques can be seen in sectors like Apple, where AI-driven interfaces need to handle complex decision-making processes.</p>
+</li>
+<li>
+<p>Keyword Search vs. Vector Search:</p>
+<p>•   When comparing keyword search and vector search, an alpha-based selection helps determine which method is more appropriate depending on the data and task.
+•   Chunking Data: Data can be divided or “chunked” into meaningful units such as paraphrases, pages, or chapters. This approach helps structure information for more efficient retrieval and processing.
+•   Imagine an 8MP picture: Whether it’s an image of one person or many people, the resolution remains 8MP. In the same way, the numerical representation of data, like vectors, maintains its “size” regardless of what is being represented.
+•   GraphQL: GraphQL offers a flexible query system, enabling precise data retrieval by requesting only the fields needed, making it an effective alternative to traditional REST APIs in many cases.</p>
+</li>
+<li>
+<p>Best Methods for Keyword Search:</p>
+<p>•   For a keyword-only search, BM25 is considered one of the most effective models. It excels in ranking documents based on keyword occurrences and relevance.
+•   To measure keyword frequency or how common a keyword is, approaches like term frequency (TF) and inverse document frequency (IDF) can provide insight into the importance of keywords within a dataset.</p>
+</li>
+</ul>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

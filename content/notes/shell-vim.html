@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shell &amp; Vim Quick Reference — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Quick reference for shell commands, vim basics, and essential CLI tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/notes/shell-vim.html">
+<meta property="og:title" content="Shell &amp; Vim Quick Reference">
+<meta property="og:description" content="Quick reference for shell commands, vim basics, and essential CLI tools.">
+<meta property="og:url" content="https://pirahansiah.com/content/notes/shell-vim.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Quick reference for shell commands, vim basics, and essential CLI tools.</p>
+<h2>- <a href="https://github.com/Abdenasser/neohtop">NeoHtop</a></h2>
+<ul>
+<li>The Shell<ul>
+<li>
+<p>echo</p>
+<ul>
+<li>"" \ </li>
+<li>$PATH</li>
+<li>
+<p>cd -</p>
+</li>
+<li>
+<p>ctrl+L to clean </p>
+</li>
+<li>
+<p>ctrl+r</p>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>append</p>
+</blockquote>
+</blockquote>
+</li>
+<li>output into | input</li>
+<li>
+<h1>into root or sudo su</h1>
+</li>
+<li>xdg-open opent the file with reletive app</li>
+<li>foo=bar ; must be without space </li>
+<li>echo "value is $foo" -&gt; value is bar</li>
+<li>echo 'value is $foo' -&gt; value is $foo</li>
+<li>mcd () {
+    mkdir -p "$1"
+    cv "$1"
+}
+source mcd.sh
+!!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!--  -->
+<p>command + /
+option+shif+a</p>
+<h1>!/usr/bin/env python</h1>
+<p>import sys
+for arg in reversed(sys.argv[1:]):
+    print(arg)</p>
+<h1>tools</h1>
+<p>tldr
+locate 
+grep 
+ripgrep = rg
+fzf
+broot
+nnn</p>
+<h1>vim</h1>
+<p>i
+ esc
+ r
+ k
+ s-v
+ c-v
+ :</p>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

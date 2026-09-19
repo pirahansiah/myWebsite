@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modern C++ for Image Processing — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Modern C++23 for image processing: memory management, design patterns, CUDA, and OpenCV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/courses/modern-cpp.html">
+<meta property="og:title" content="Modern C++ for Image Processing">
+<meta property="og:description" content="Modern C++23 for image processing: memory management, design patterns, CUDA, and OpenCV.">
+<meta property="og:url" content="https://pirahansiah.com/content/courses/modern-cpp.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Modern C++23 for image processing: memory management, design patterns, CUDA, and OpenCV.</p>
+<h1>Advanced Programming with Modern C++ 23 for Image Processing</h1>
+<h2>Key Topics</h2>
+<h3>Memory Management</h3>
+<ul>
+<li>Call by value (stack) vs call by reference (heap)</li>
+<li>Stack: LIFO, compile-time, 8MB limit, fast</li>
+<li>Heap: manual management, runtime, dynamic, slower</li>
+<li>Tools: valgrind, fsanitize</li>
+</ul>
+<h3>Design Patterns (Gang of Four)</h3>
+<p><strong>Creational (5):</strong> Factory method, Abstract factory, Builder, Prototype, Singleton
+<strong>Structural (7):</strong> Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy
+<strong>Behavioral (12):</strong> Chain of responsibility, Command, Mediator, Observer, Interpreter, State, Strategy, Template method, Visitor, Iterator, Memento, Null-object</p>
+<h3>Smart Pointers</h3>
+<ul>
+<li><code>std::unique_ptr</code> — exclusive ownership</li>
+<li><code>std::shared_ptr</code> — shared ownership</li>
+<li><code>std::weak_ptr</code> — non-owning reference</li>
+<li>Rule of five for custom memory management</li>
+</ul>
+<h3>Compilation</h3>
+<ul>
+<li>CUDA Jetson: <code>nvcc -std=c++14 -arch=sm_62 -o main.run main.cu</code></li>
+<li>C++20 modules: <code>clang++ -std=c++2a -c file.cpp -Xclang -emit-module-interface -o file.pcm</code></li>
+</ul>
+<h2>OpenCV C++ Tips</h2>
+<ul>
+<li><code>cv::Mat</code> is a smart pointer — use <code>.clone()</code> for deep copy in vectors</li>
+<li><code>imagesVector.push_back(imageMat.clone());</code></li>
+</ul>
+<h1>OpenCV #C++ #tiziran #CPlusPlus</h1>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

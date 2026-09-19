@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Camera Calibration &amp; Video Stabilization — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Springer book chapter on fuzzy camera calibration and video stabilization for robot localization.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/books/camera-calibration.html">
+<meta property="og:title" content="Camera Calibration &amp; Video Stabilization">
+<meta property="og:description" content="Springer book chapter on fuzzy camera calibration and video stabilization for robot localization.">
+<meta property="og:url" content="https://pirahansiah.com/content/books/camera-calibration.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Springer book chapter on fuzzy camera calibration and video stabilization for robot localization.</p>
+<p>My_Book_chapter_Camera_Calibration_and_Video_Stabilization_Framework_for_Robot_Localization  in the Book entitled “Control Engineering in Robotics and Industrial Automation" published in Springer</p>
+<p>https://www.pirahansiah.com/notes/pubs/books/My_Book_chapter_Camera_Calibration_and_Video_Stabilization_Framework_for_Robot_Localization/</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-book-chapter-titled-Camera-Calibration-and-Video-Stabilization-Framework-for-Robot-Localization-in-the-Book-entitled-Control-Engineering-in-Robotics-and-Industrial-Automation-published-Springer-e2prs80">spotify</a></p>
+<p><a href="https://www.waterstones.com/book/control-engineering-in-robotics-and-industrial-automation/muralindran-mariappan/mohd-rizal-arshad/9783030745394">PDF Download book chapter titled “book chapter titled “Camera Calibration and Video Stabilization Framework for Robot Localization” in the Book entitled “Control Engineering in Robotics and Industrial Automation" published in Springer</a></p>
+<p><img alt="My book chapter titled &quot;Camera Calibration and Video Stabilization Framework for Robot Localization&quot; in the Book entitled Control Engineering in Robotics and Industrial Automation published in Springer" src="/publications.html" /></p>
+<h1>Camera Calibration and Video Stabilization Framework for Robot Localization</h1>
+<h2>1. Introduction</h2>
+<ul>
+<li><strong>Key Issues in Localization</strong>: Camera calibration (CC) and video stabilization (VS).</li>
+<li><strong>Problems in Camera Calibration</strong>:</li>
+<li>Current methods use fixed thresholds, neglecting slope information, leading to blurring.</li>
+<li>Gaussian pyramid parameters in optical flow require manual tuning.</li>
+<li><strong>Challenges in Robot Vision</strong>:</li>
+<li>Large motion, motion blur, and defocus blur.</li>
+<li>Landmark recognition and probabilistic models fail due to image distortion.</li>
+<li><strong>Proposed Solution</strong>: A framework using Fuzzy Camera Calibration (FCC) and Fuzzy Optical Flow (FOF) for video stabilization.</li>
+</ul>
+<h2>2. Overview of Robot Localization</h2>
+<ul>
+<li><strong>Simultaneous Localization and Mapping (SLAM)</strong>:</li>
+<li>Central focus in robotics.</li>
+<li>Provides real-time mapping and robot localization.</li>
+<li><strong>Applications of SLAM</strong>:</li>
+<li>Robotics competitions (e.g., RoboCup).</li>
+<li>Autonomous vehicles and unmanned aerial systems.</li>
+</ul>
+<h2>3. Robot Localization Approaches</h2>
+<h3>3.1 Multi-Sensor Fusion</h3>
+<ul>
+<li><strong>Laser Rangefinder</strong>:</li>
+<li>Accurate but faces issues with glass and reflective surfaces.</li>
+<li>Ultrasonic beacons improve accuracy but are more error-prone.</li>
+<li><strong>Sensor Networks</strong>:</li>
+<li>Combines multiple sensors for improved accuracy.</li>
+<li>Sensors include ultrasonic, depth cameras, and lasers.</li>
+</ul>
+<h3>3.2 Vision Localization</h3>
+<ul>
+<li><strong>Model-Based</strong>:</li>
+<li>Uses edges, lines, and contours for comparison with object models.</li>
+<li>Challenges with occlusion and universal models.</li>
+<li><strong>Appearance-Based</strong>:</li>
+<li>Utilizes local features like Harris corners and SIFT for object recognition and tracking.</li>
+</ul>
+<h2>4. Proposed Framework for Robot Localization</h2>
+<ul>
+<li><strong>Fuzzy Camera Calibration (FCC)</strong>:</li>
+<li>Provides intrinsic and extrinsic camera parameters.</li>
+<li>Adjusts for camera distortions and motion blur.</li>
+<li><strong>Fuzzy Optical Flow (FOF)</strong>:</li>
+<li>Stabilizes video frames for improved localization.</li>
+<li>Adaptive parameters based on image quality and motion.</li>
+</ul>
+<h2>5. Experimental Setup</h2>
+<ul>
+<li><strong>Humanoid Robot Platform</strong>:</li>
+<li>Uses DARWIN-OP humanoid robot equipped with stereo cameras.</li>
+<li>Cameras mounted for stereo vision and depth detection in RoboCup environments.</li>
+<li><strong>Camera Calibration Experiment</strong>:</li>
+<li>Calibration using chessboard pattern with 9×6 points.</li>
+<li>Tests conducted with different blurriness and distances.</li>
+</ul>
+<h2>6. Dataset and Evaluation</h2>
+<ul>
+<li><strong>Dataset Structure</strong>:</li>
+<li>700 images (350 pairs) with varying angles, blur, and noise.</li>
+<li>Tests conducted using Mono vision and Stereo vision methods.</li>
+<li><strong>Ground Truth Measurements</strong>:</li>
+<li>Distance measurement for robot localization using stereo vision.</li>
+<li>Comparison with ground truth and Mono vision methods.</li>
+</ul>
+<h2>7. Results</h2>
+<ul>
+<li><strong>Comparison with Mono Vision</strong>:</li>
+<li>FCC and FOF methods show significantly improved distance accuracy.</li>
+<li>Errors reduced in distance measurements for various landmark positions.</li>
+<li><strong>Stereo Vision Performance</strong>:</li>
+<li>Stereo vision outperforms Mono vision in accuracy.</li>
+<li>Fewer errors in robot localization even when landmarks are partially visible.</li>
+</ul>
+<h2>8. Proposed Framework for Robot Localization</h2>
+<ul>
+<li><strong>Framework Steps</strong>:</li>
+<li>Step 1: Apply FCC for camera calibration.</li>
+<li>Step 2: Use FOF for video stabilization.</li>
+<li>Step 3: Measure distance and localize landmarks.</li>
+<li><strong>Stereo Vision Method</strong>:</li>
+<li>Un-distortion, rectification, correspondence, and re-projection for distance measurement.</li>
+</ul>
+<h2>9. Comparisons with Other Methods</h2>
+<ul>
+<li><strong>Comparison with Zhang’s Method</strong>:</li>
+<li>Proposed FCC shows 15% lower error in distance measurements.</li>
+<li>FCC has 12% lower standard deviation than Zhang’s method.</li>
+<li><strong>Fuzzy Gaussian Pyramid for Video Stabilization</strong>:</li>
+<li>Dynamic adjustment of parameters based on image sharpness and motion.</li>
+<li>Outperforms fixed-parameter methods in handling large motions.</li>
+</ul>
+<h2>10. Conclusion</h2>
+<ul>
+<li><strong>Framework Effectiveness</strong>:</li>
+<li>FCC and FOF improve robot localization and distance measurements.</li>
+<li>Stereo vision system enhances localization accuracy in dynamic environments.</li>
+<li><strong>Broader Applications</strong>:</li>
+<li>Proposed methods applicable in augmented reality, autonomous vehicles, and 3D mapping.</li>
+</ul>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

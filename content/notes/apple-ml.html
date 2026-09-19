@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLX, CoreML, and Metal for Apple Silicon — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Guide to Numba JIT, PyCUDA-to-Metal transition, CoreML conversion, and MLX framework on Apple Silicon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/notes/apple-ml.html">
+<meta property="og:title" content="MLX, CoreML, and Metal for Apple Silicon">
+<meta property="og:description" content="Guide to Numba JIT, PyCUDA-to-Metal transition, CoreML conversion, and MLX framework on Apple Silicon.">
+<meta property="og:url" content="https://pirahansiah.com/content/notes/apple-ml.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Guide to Numba JIT, PyCUDA-to-Metal transition, CoreML conversion, and MLX framework on Apple Silicon.</p>
+<h1>Numba JIT Tutorial and PyCUDA with Apple Silicon Adaptation</h1>
+<h2>Numba JIT on Apple Silicon</h2>
+<p>This tutorial explores using Numba’s <code>@jit(nopython=True)</code> decorator to optimize Python code for faster execution. The <code>@jit(nopython=True)</code> decorator from Numba compiles Python functions into machine code for improved performance, especially for numerical tasks.</p>
+<h3>Basic Example: Sum of Squares</h3>
+<pre><code class="language-python">from numba import jit
+
+@jit(nopython=True)
+def sum_of_squares(n):
+    total = 0
+    for i in range(n):
+        total += i * i
+    return total
+
+print(sum_of_squares(10))  # Output: 285
+</code></pre>
+<p>On Apple Silicon, Numba can be used to optimize CPU-bound tasks. Although it doesn’t directly support GPU via Metal or NPU, you can use it to significantly speed up CPU computations, which Apple’s <strong>M1/M2</strong> chips handle efficiently with multiple cores.</p>
+<h3>Transition to Metal for GPU</h3>
+<p>To offload heavy parallel tasks to the GPU, Apple uses <strong>Metal</strong>, an API for high-performance graphics and computation on macOS. Metal's <strong>Metal Shading Language (MSL)</strong> provides a way to run GPU tasks that would otherwise be written for CUDA in environments like PyCUDA.</p>
+<h2>PyCUDA to Metal for Apple Silicon</h2>
+<p>PyCUDA is typically used for running GPU tasks on NVIDIA hardware using CUDA. However, on Apple Silicon, you can transition from PyCUDA to <strong>Metal</strong> for GPU programming. Metal can handle parallel GPU tasks on macOS or iOS.</p>
+<h3>Metal Shading Language (MSL) for Compute Kernels</h3>
+<p>Here is an example of using MSL for performing an addition operation on two arrays:</p>
+<pre><code class="language-c">#include &lt;metal_stdlib&gt;
+using namespace metal;
+
+kernel void add_arrays(const device float* inA [[buffer(0)]],
+                       const device float* inB [[buffer(1)]],
+                       device float* out [[buffer(2)]],
+                       uint id [[thread_position_in_grid]]) {
+    out[id] = inA[id] + inB[id];
+}
+</code></pre>
+<p>You can compile and run this code using Swift to dispatch the compute kernel on the GPU.</p>
+<h3>Running Metal from Swift</h3>
+<pre><code class="language-swift">import Metal
+
+let device = MTLCreateSystemDefaultDevice()
+let commandQueue = device?.makeCommandQueue()
+
+let shader = '''
+#include &lt;metal_stdlib&gt;
+using namespace metal;
+kernel void add_arrays(const device float* inA [[buffer(0)]],
+                       const device float* inB [[buffer(1)]],
+                       device float* out [[buffer(2)]],
+                       uint id [[thread_position_in_grid]]) {
+    out[id] = inA[id] + inB[id];
+}
+'''
+
+let library = try! device?.makeLibrary(source: shader, options: nil)
+let addFunction = library?.makeFunction(name: &quot;add_arrays&quot;)
+let computePipelineState = try! device?.makeComputePipelineState(function: addFunction!)
+
+let commandBuffer = commandQueue?.makeCommandBuffer()
+let computeEncoder = commandBuffer?.makeComputeCommandEncoder()
+computeEncoder?.setComputePipelineState(computePipelineState!)
+
+computeEncoder?.dispatchThreads(MTLSize(width: data.count, height: 1, depth: 1),
+                                threadsPerThreadgroup: MTLSize(width: 32, height: 1, depth: 1))
+computeEncoder?.endEncoding()
+commandBuffer?.commit()
+commandBuffer?.waitUntilCompleted()
+</code></pre>
+<h2>CoreML for Apple NPU</h2>
+<p><strong>CoreML</strong> is optimized for running machine learning models on Apple Silicon’s <strong>Neural Engine (NPU)</strong>. You can train models using <strong>MLX</strong> or other machine learning frameworks like PyTorch or TensorFlow, and convert them to CoreML for inference on iOS and macOS devices.</p>
+<h3>Example of CoreML Conversion:</h3>
+<pre><code class="language-python">import coremltools as ct
+import torch
+
+# Convert PyTorch model to CoreML format
+model = torch.load('model.pth')
+input_shape = ct.Shape([1, 3, 224, 224])
+mlmodel = ct.convert(model, inputs=[ct.TensorType(name=&quot;input&quot;, shape=input_shape)])
+mlmodel.save('model.mlmodel')
+</code></pre>
+<h2>Using MLX on Apple Silicon</h2>
+<p>The <strong>MLX</strong> framework is highly adaptable to Apple Silicon. It provides support for training and deploying machine learning models across various platforms and hardware types. On Apple hardware, it can integrate with <strong>Metal Performance Shaders (MPS)</strong> and <strong>CoreML</strong> to run models on the <strong>GPU</strong> or <strong>Neural Engine</strong>.</p>
+<h3>Fullmoon iOS Integration with MLX and Metal</h3>
+<p>The <strong>Fullmoon iOS</strong> project by <strong>Mainframe Computer</strong> demonstrates how to run large language models like <strong>LLaMA</strong> on Apple devices using <strong>MLX</strong>, <strong>CoreML</strong>, and <strong>Metal</strong>. It leverages Apple's GPU for model inference, showing how you can deploy ML models optimized for Apple’s <strong>M1/M2 chips</strong> using the <strong>MLX</strong> framework. You can explore more about <strong>Fullmoon iOS</strong> at its <a href="https://github.com/mainframecomputer/fullmoon-ios">GitHub repository</a>.</p>
+<h2>Summary</h2>
+<ul>
+<li><strong>Numba JIT</strong>: Optimize CPU-bound Python code on Apple Silicon.</li>
+<li><strong>Metal</strong>: Replace PyCUDA with Metal for GPU programming on macOS and iOS, using <strong>MSL</strong> for kernel code.</li>
+<li><strong>CoreML</strong>: Run machine learning models on the NPU or GPU, converting them from TensorFlow or PyTorch using <strong>coremltools</strong>.</li>
+<li><strong>MLX</strong>: Use <strong>MLX</strong> to develop and deploy machine learning models efficiently across Apple's hardware accelerators.</li>
+<li><strong>Fullmoon iOS</strong>: Demonstrates the use of <strong>MLX</strong> and <strong>Metal</strong> for running large models like <strong>LLaMA</strong> on Apple Silicon.</li>
+</ul>
+<p>Relevant links:
+- <a href="https://github.com/ml-explore/mlx">MLX GitHub Repository</a>
+- <a href="https://github.com/mainframecomputer/fullmoon-ios">Fullmoon iOS GitHub Repository</a></p>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

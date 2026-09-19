@@ -1,14 +1,12 @@
----
-layout: null
----
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for page in site.pages %}
-    {% if page.url != "/404.html" and page.url != "/feed.xml" and page.sitemap != false %}
-  <url>
-    <loc>{{ page.url | absolute_url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-  </url>
-    {% endif %}
-  {% endfor %}
+  <url><loc>https://pirahansiah.com/</loc></url>
+  <url><loc>https://pirahansiah.com/about.html</loc></url>
+  <url><loc>https://pirahansiah.com/publications.html</loc></url>
+  <url><loc>https://pirahansiah.com/courses.html</loc></url>
+  <url><loc>https://pirahansiah.com/notes.html</loc></url>
+  <url><loc>https://pirahansiah.com/book.html</loc></url>
+  <url><loc>https://pirahansiah.com/slides.html</loc></url>
+  <url><loc>https://pirahansiah.com/contact.html</loc></url>
+  <url><loc>https://pirahansiah.com/privacy.html</loc></url>
 </urlset>

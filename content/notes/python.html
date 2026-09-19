@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python Configuration &amp; C++ Integration — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/notes/python.html">
+<meta property="og:title" content="Python Configuration &amp; C++ Integration">
+<meta property="og:description" content="Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.">
+<meta property="og:url" content="https://pirahansiah.com/content/notes/python.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.</p>
+<h1>Python</h1>
+<p><a href="https://www.pirahansiah.com/notes/docs/python">Python</a>
+A comparison of built-in and third-party configuration options for Python projects
+This guide compares Python's native configuration methods and popular third-party libraries, helping developers choose the best fit for their project's needs.</p>
+<h1>Python #DevTools #Configuration #ConfigFiles #PythonTips #OpenSource #MachineLearning #WebDev #FastAP</h1>
+<ul>
+<li>
+<p>Python Configuration Management</p>
+<p><a href="#python-configuration-management">Python Configuration Management</a></p>
+</li>
+<li>
+<p>Tips and tricks python scale up projects </p>
+<p><a href="#tips">Ttips</a></p>
+</li>
+</ul>
+<h1>Python Configuration Management</h1>
+<p>A comparison of built-in and third-party configuration options for Python projects</p>
+<p>📌 Summary</p>
+<p>This guide compares Python's native configuration methods and popular third-party libraries, helping developers choose the best fit for their project's needs.</p>
+<p>⸻</p>
+<p>🔧 Built-in Configuration Tools</p>
+<p>ConfigParser (INI Files)
+    •   📄 Simple structured text files
+    •   ✅ Built-in
+    •   ❗ Limitations: String-only, no nesting</p>
+<p>argparse (Command Line Arguments)
+    •   🧰 Used in CLI tools
+    •   ✅ Built-in
+    •   📝 Supports help text, types, defaults</p>
+<p>Environment Variables (os.environ)
+    •   🔒 Ideal for secrets and deployment
+    •   ✅ Built-in
+    •   ❗ Flat and string-only</p>
+<p>Python Module as Config
+    •   🐍 Python file for configuration
+    •   ✅ Built-in
+    •   🚀 Full flexibility and dynamic logic</p>
+<p>JSON Files
+    •   📦 Structured data format
+    •   ✅ Built-in
+    •   ❗ No comments, strict format</p>
+<p>TOML (e.g. pyproject.toml)
+    •   🧪 Used in packaging
+    •   ✅ Built-in (Python 3.11+)
+    •   ✅ Easy syntax and nesting</p>
+<p>YAML (via PyYAML)
+    •   📚 Readable with nested structures
+    •   ❌ Not built-in (requires install)
+    •   ✅ Human-friendly and widely used</p>
+<p>⸻</p>
+<p>🔌 Third-Party Configuration Libraries</p>
+<p>python-dotenv
+    •   📁 Loads .env into os.environ
+    •   ✅ Simple and effective</p>
+<p>python-decouple
+    •   🔒 Separates config from code
+    •   ✅ Supports .env, .ini, etc.</p>
+<p>dynaconf
+    •   🔁 Supports multi-environment configs
+    •   ✅ Compatible with YAML, JSON, TOML</p>
+<p>pydantic
+    •   🛡️ Type-safe configs with validation
+    •   ✅ Popular in FastAPI</p>
+<p>hydra
+    •   🧪 Hierarchical configs for ML apps
+    •   ✅ Handles complex parameter sweeps</p>
+<p>OmegaConf
+    •   🌊 YAML-based hierarchical config
+    •   ✅ Designed for deep learning projects</p>
+<hr />
+<h1>tips</h1>
+<h3>mmap -&gt; optimization memory usage best</h3>
+<pre><code>df =pd.series()
+all=pd.dataFrame()
+df['a']=x
+all=pd.Concat([all, pd.DataFrame(df).T])
+all.to_csv('fn.csv', index=false, na_rep=&quot;NULL')
+
+def pow(*arge):
+    x,y,z=args
+
+def pow (x,y,z=None,/): #The forward slash (/) ensures you must call it like pow(2, 3) and not pow(x=2, y=3).
+
+
+*args
+**kwargs
+/ positional
+
+
+def timer(func):
+    def wrapper(*args, ** kwargs):
+        start_t=time.time()
+        result=func(*args,**kwargs)
+        end_t=time.time()
+        print(f&quot; function {func.__name__!r} took: {end_t - start_t: 0.4f} sec&quot;)
+        return result
+    return wrapper
+
+@functools.cash
+@dataclass
+
+
+
+from collections import deque
+stk=deque()
+stk.append('asadfas')
+stk.pop() 
+- o(n)
+stk=[]
+stk.pop().rstk[-1]
+
+collections import lifo
+deque()
+appendLeft(5)
+pop
+</code></pre>
+<hr />
+<pre><code>more *.md
+</code></pre>
+<p>pip install pybind11  </p>
+<p>// add.cpp</p>
+<h1>include <pybind11/pybind11.h></h1>
+<p>// Simple C++ function to add two numbers
+int add(int a, int b) {
+    return a + b;
+}</p>
+<p>// This creates the Python module and adds the function <code>add</code>
+PYBIND11_MODULE(mycpp, m) {
+    m.def("add", &amp;add, "A function which adds two numbers");
+}</p>
+<p>cl /LD /IC:\Users-winUser.conda\envs\py314\Include /IC:\Users-winUser.conda\envs\py314\Lib\site-packages\pybind11\include add.cpp /link /OUT:mycpp.pyd /LIBPATH:C:\Users-winUser.conda\envs\py314\libs python314.lib</p>
+<p>import mycpp
+print(mycpp.add(2, 3))  # Output should be: 5</p>
+<h1>2</h1>
+<p>pip install setuptools
+pip install cython</p>
+<h2>header</h2>
+<h1>pragma once</h1>
+<p>int add(int a, int b);</p>
+<h2>cpp</h2>
+<h1>include "add.h"</h1>
+<p>int add(int a, int b) { return a + b; }</p>
+<h2>add_wrapper.pyx</h2>
+<h1>add_wrapper.pyx</h1>
+<p>cdef extern from "add.h":
+    int add(int a, int b)</p>
+<p>def py_add(int a, int b):
+    return add(a, b)</p>
+<h2>setup.py</h2>
+<h1>setup.py</h1>
+<p>from setuptools import setup, Extension
+from Cython.Build import cythonize</p>
+<p>ext = Extension(
+    "mycython",
+    sources=["add_wrapper.pyx", "add.cpp"],
+    language="c++",
+    include_dirs=["."],  # Path to add.h
+)</p>
+<p>setup(
+    ext_modules = cythonize([ext])
+)</p>
+<h2></h2>
+<p>python setup.py build_ext --inplace</p>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

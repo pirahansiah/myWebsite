@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moving Vehicle Detection WO2021107761A1 — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Image processing method for detecting moving vehicles using CLAHE, Sobel, and geometric filtering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/patents/vehicle-detection.html">
+<meta property="og:title" content="Moving Vehicle Detection WO2021107761A1">
+<meta property="og:description" content="Image processing method for detecting moving vehicles using CLAHE, Sobel, and geometric filtering.">
+<meta property="og:url" content="https://pirahansiah.com/content/patents/vehicle-detection.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Image processing method for detecting moving vehicles using CLAHE, Sobel, and geometric filtering.</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/A-METHOD-FOR-DETECTING-A-MOVING-VEHICLE-WO2021107761A1-e2pk5mj">spotify</a></p>
+<p><audio controls>
+  <source src="/publications.html" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio></p>
+<p><a href="https://patentimages.storage.googleapis.com/16/41/83/2576e20c4a0af5/WO2021107761A1.pdf">PDF Download</a></p>
+<p><img alt="A METHOD FOR DETECTING A MOVING VEHICLE WO2021107761A1" src="/publications.html" /></p>
+<p>Patent Summary:</p>
+<p>Field of Invention:</p>
+<p>This patent relates to a method for detecting moving vehicles, specifically in the field of traffic surveillance and law enforcement. It aims to improve vehicle detection accuracy under poor lighting conditions.</p>
+<p>Background:</p>
+<p>Existing methods for detecting moving vehicles, such as edge processing and comparison between target and reference images, struggle under low light or bad weather conditions. This patent seeks to overcome these challenges.</p>
+<p>Summary of Invention:</p>
+<p>The patented method enhances the detection of moving vehicles by processing video streams, focusing on improving the illumination and edge detection of the vehicle in the captured image. It involves:</p>
+<pre><code>1.  Grabbing an initial image from a video stream.
+2.  Enhancing illumination of the image using Contrast Limited Adaptive Histogram Equalization (CLAHE) if necessary.
+3.  Enhancing edges using Sobel edge detection to create a binary image that highlights object edges.
+4.  Detecting the vehicle based on the homogenous properties of the vehicle body. This includes:
+•   Closing open edges.
+•   Inverting the binary image.
+•   Segmenting the image into multiple parts.
+•   Filtering noise based on geometric features and relationships.
+</code></pre>
+<p>Key Steps in the Process:</p>
+<pre><code>•   Image Enhancement: Adjusts image illumination based on darkness or brightness, improving visibility.
+•   Edge Detection: Highlights edges in the image, which is crucial for distinguishing vehicles from the background.
+•   Binary Image Processing: Converts images to binary form, filters noise, and identifies vehicles based on homogenous vehicle body properties.
+</code></pre>
+<p>Claims:</p>
+<p>The patent claims cover:</p>
+<pre><code>1.  A method for detecting a moving vehicle involving image grabbing, illumination enhancement, edge enhancement, and vehicle location detection based on homogenous properties.
+2.  Techniques for improving illumination and edge detection, including the use of CLAHE and Sobel edge detection.
+3.  Steps for filtering noise and improving detection accuracy by evaluating geometric features and relationships between image segments.
+</code></pre>
+<p>Applications:</p>
+<p>This method is intended for use in traffic surveillance systems, law enforcement, and smart city technologies, where it can be applied to monitor and analyze traffic, even under challenging conditions such as poor lighting.</p>
+<p>Technical Advantages:</p>
+<pre><code>•   Improved accuracy of vehicle detection under varying lighting conditions.
+•   The method handles both dark and bright images effectively, making it more robust than previous methods that rely heavily on good lighting.
+•   Sophisticated noise filtering ensures that irrelevant objects are not mistakenly detected as vehicles.
+</code></pre>
+<p>This invention provides a significant advancement in vehicle detection for traffic management, reducing errors caused by lighting conditions and improving the robustness of detection systems in real-world environments.</p>
+<h1>Mind Map: A Method for Detecting a Moving Vehicle</h1>
+<h2>1. Field of Invention</h2>
+<ul>
+<li><strong>Traffic surveillance</strong></li>
+<li><strong>Vehicle detection under poor lighting conditions</strong></li>
+<li><strong>Law enforcement applications</strong></li>
+</ul>
+<h2>2. Background</h2>
+<ul>
+<li><strong>Problems in Existing Methods:</strong></li>
+<li>Poor accuracy in low light conditions</li>
+<li>Challenges with edge processing and image comparison</li>
+<li>Inability to detect vehicles reliably in overcast or dark conditions</li>
+</ul>
+<h2>3. Summary of Invention</h2>
+<ul>
+<li><strong>Goal:</strong> Improve vehicle detection under challenging conditions</li>
+<li><strong>Steps in Detection:</strong></li>
+<li>Grab initial image from a video stream</li>
+<li>Enhance illumination of the image</li>
+<li>Enhance edges within the image</li>
+<li>Detect vehicle based on homogenous properties</li>
+</ul>
+<h3>3.1. Image Processing Steps</h3>
+<ul>
+<li><strong>Step 1: Grab Initial Image</strong></li>
+<li>From video stream</li>
+<li>Video can be real-time or pre-recorded</li>
+<li>Image suspected to contain a vehicle</li>
+<li><strong>Step 2: Enhance Illumination</strong></li>
+<li><strong>CLAHE:</strong> Adjust contrast for dark images</li>
+<li>Check brightness and tag the image (dark/bright)</li>
+<li><strong>Step 3: Enhance Edges</strong></li>
+<li>Use <strong>Sobel edge detection</strong> to highlight object edges</li>
+<li>Convert image to a binary format (black &amp; white)</li>
+<li><strong>Step 4: Detect Vehicle</strong></li>
+<li>Identify vehicle based on body properties</li>
+<li>Close open edges</li>
+<li>Invert binary image</li>
+<li>Segment the image into parts</li>
+<li>Filter noise based on geometric features and relationships</li>
+</ul>
+<h2>4. Detailed Steps</h2>
+<h3>4.1. Enhancing Illumination</h3>
+<ul>
+<li>Analyze grayscale levels and density distribution</li>
+<li>Apply <strong>CLAHE</strong> to dark images</li>
+<li>Tag image as dark or bright based on grayscale density</li>
+</ul>
+<h3>4.2. Enhancing Edges</h3>
+<ul>
+<li>Assign threshold values for edge detection</li>
+<li>Generate two grayscale images</li>
+<li>Apply <strong>Sobel edge detection</strong> to create binary images</li>
+<li>Choose the best binary image for vehicle detection based on white density</li>
+</ul>
+<h3>4.3. Detecting Vehicle Based on Properties</h3>
+<ul>
+<li>Close open edges in the binary image</li>
+<li>Invert the binary image</li>
+<li>Segment the image into parts</li>
+<li>Filter out noise:</li>
+<li>Based on geometric features</li>
+<li>Based on relationships (distance, similarity)</li>
+</ul>
+<h2>5. System Components</h2>
+<ul>
+<li><strong>Vehicle Detection Module (1100)</strong></li>
+<li><strong>Vehicle Classification Module (1200)</strong></li>
+<li><strong>Vehicle Tracking Module (1300)</strong></li>
+<li><strong>Post-Analyzer Module (1400)</strong></li>
+</ul>
+<h2>6. Claims</h2>
+<h3>Claim 1</h3>
+<ul>
+<li>Steps for detecting a moving vehicle:
+  1. Grabbing image
+  2. Enhancing illumination
+  3. Enhancing edges
+  4. Detecting vehicle based on homogenous properties</li>
+</ul>
+<h3>Claim 2-9</h3>
+<ul>
+<li>Methods for enhancing illumination and edges</li>
+<li>Filtering noise based on geometric and relational properties</li>
+</ul>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

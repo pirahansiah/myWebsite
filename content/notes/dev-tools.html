@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Developer Tools &amp; Setup Guide — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Curated developer tools, shell essentials, Docker tips, and GitHub tricks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/notes/dev-tools.html">
+<meta property="og:title" content="Developer Tools &amp; Setup Guide">
+<meta property="og:description" content="Curated developer tools, shell essentials, Docker tips, and GitHub tricks.">
+<meta property="og:url" content="https://pirahansiah.com/content/notes/dev-tools.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Curated developer tools, shell essentials, Docker tips, and GitHub tricks.</p>
+<h2>Recommended Tools</h2>
+<ul>
+<li><a href="https://github.com/Abdenasser/neohtop">NeoHtop</a> — Modern htop alternative</li>
+<li><a href="https://github.com/CapSoftware/Cap">Cap</a> — Open source Loom alternative for screen recordings</li>
+<li><a href="https://rustdesk.com/">RustDesk</a> — Open source remote desktop</li>
+<li><a href="https://github.com/helix-editor/helix">Helix Editor</a> — Post-modern modal editor</li>
+<li><a href="https://github.com/ahujasid/blender-mcp">Blender MCP</a> — Blender + MCP integration</li>
+<li><a href="https://rxresu.me/">RX Resume</a> — Resume builder</li>
+<li><a href="https://github.com/andandandand/practical-computer-vision">Practical Computer Vision</a> — CV learning resources</li>
+<li><a href="https://github.com/Maharshi-Pandya/cudacodes">CUDA Codes</a> — CUDA flash attention algorithms</li>
+<li><a href="https://dev.intelrealsense.com/docs/high-dynamic-range-with-stereoscopic-depth-cameras">Intel RealSense HDR</a> — HDR depth cameras</li>
+<li><a href="https://github.com/apple/ml-gbc">Apple ML-GBC</a> — Apple ML framework</li>
+<li><a href="https://github.com/mohsen12999/my-python-cli">Python CLI</a> — Python CLI tool</li>
+<li><a href="https://newsletter.francofernando.com/p/data-structures-for-image-processing">Data Structures for Image Processing</a> — Newsletter</li>
+</ul>
+<hr />
+<h2>Shell Essentials</h2>
+<h3>Echo &amp; Variables</h3>
+<ul>
+<li><code>echo "value is $foo"</code> → value is bar (variable expanded)</li>
+<li><code>echo 'value is $foo'</code> → value is $foo (literal)</li>
+<li><code>foo=bar</code> — no space around <code>=</code></li>
+<li><code>$PATH</code> — environment variable</li>
+<li><code>cd -</code> — go to previous directory</li>
+</ul>
+<h3>Navigation</h3>
+<ul>
+<li><code>/</code> — root directory</li>
+<li><code>~</code> — home folder</li>
+<li><code>.</code> — current folder</li>
+<li><code>..</code> — parent folder</li>
+<li>Absolute path starts with <code>/</code>, relative path starts with <code>folder/file</code></li>
+</ul>
+<h3>Shortcuts</h3>
+<ul>
+<li><code>Ctrl+L</code> — clear terminal</li>
+<li><code>Ctrl+R</code> — reverse search history</li>
+<li><code>!!</code> — repeat last command</li>
+</ul>
+<h3>Pipes &amp; Redirection</h3>
+<ul>
+<li><code>;</code> — run commands sequentially</li>
+<li><code>&amp;&amp;</code> — run next only if previous succeeded</li>
+<li><code>|</code> — pipe output to next command</li>
+<li><code>&gt;&gt;</code> — append to file</li>
+<li><code>#</code> — root/sudo prompt</li>
+</ul>
+<h3>Useful Commands</h3>
+<ul>
+<li><code>xdg-open file</code> — open with default app</li>
+<li><code>ulimit -a</code> — show memory limits</li>
+<li><code>htop</code> — process monitor</li>
+<li><code>tldr</code> — simplified man pages</li>
+<li><code>locate</code> / <code>ripgrep (rg)</code> / <code>fzf</code> / <code>broot</code> / <code>nnn</code> — search &amp; file managers</li>
+</ul>
+<h3>Custom Functions</h3>
+<pre><code class="language-bash">mcd () {
+    mkdir -p &quot;$1&quot;
+    cd &quot;$1&quot;
+}
+source mcd.sh
+</code></pre>
+<h3>Python One-Liner</h3>
+<pre><code class="language-python">#!/usr/bin/env python
+import sys
+for arg in reversed(sys.argv[1:]):
+    print(arg)
+</code></pre>
+<hr />
+<h2>Vim Quick Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i</code></td>
+<td>Enter insert mode</td>
+</tr>
+<tr>
+<td><code>Esc</code></td>
+<td>Exit insert mode</td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>Replace character</td>
+</tr>
+<tr>
+<td><code>k</code></td>
+<td>Move up</td>
+</tr>
+<tr>
+<td><code>s-v</code></td>
+<td>Visual line select</td>
+</tr>
+<tr>
+<td><code>c-v</code></td>
+<td>Visual block select</td>
+</tr>
+<tr>
+<td><code>:</code></td>
+<td>Command mode</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Docker Tips</h2>
+<h3>Shrink WSL Disk</h3>
+<pre><code class="language-bash">wsl --shutdown
+diskpart
+select disk file=&quot;C:\Users\[USER]\AppData\Local\Docker\wsl\disk\docker_data.vhdx&quot;
+compact disk
+</code></pre>
+<hr />
+<h2>GitHub Tips</h2>
+<h3>Quick Access</h3>
+<ul>
+<li>Press <code>.</code> on any GitHub repo to open web-based VS Code editor</li>
+</ul>
+<h3>GitIngest</h3>
+<p>Turn any GitHub repo into readable text for LLMs. Replace "hub" with "ingest" in the URL:
+- Repo: <code>https://github.com/user/repo</code>
+- Ingest: <code>https://gitingest.com/user/repo</code></p>
+<h3>PR Code Review</h3>
+<p>Add <code>.diff</code> to the end of any PR URL to see raw changes. Paste into ChatGPT/Grok for AI code review:
+- PR: <code>https://github.com/user/repo/pull/42</code>
+- Diff: <code>https://github.com/user/repo/pull/42.diff</code></p>
+<h3>GitSummarize</h3>
+<p>Replace "hub" with "summarize" in any GitHub URL for AI-powered documentation:
+- Repo: <code>https://github.com/user/repo</code>
+- Summary: <code>https://gitsummarize.com/user/repo</code></p>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

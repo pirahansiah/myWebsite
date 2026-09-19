@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thresholding for Handwritten Segmentation — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Comparison of PSNR and Otsu thresholding for handwritten image segmentation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/papers/handwritten-thresholding.html">
+<meta property="og:title" content="Thresholding for Handwritten Segmentation">
+<meta property="og:description" content="Comparison of PSNR and Otsu thresholding for handwritten image segmentation.">
+<meta property="og:url" content="https://pirahansiah.com/content/papers/handwritten-thresholding.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Comparison of PSNR and Otsu thresholding for handwritten image segmentation.</p>
+<p>Comparison_single_thresholding_method_for_handwritten_images_segmentation</p>
+<p>https://www.pirahansiah.com/notes/pubs/papers/Comparison_single_thresholding_method_for_handwritten_images_segmentation</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Comparison-single-thresholding-method-for-handwritten-images-segmentation-e2ps22i">spotify</a></p>
+<p><a href="https://doi.org/10.1109/ICPAIR.2011.5976918">PDF Download My Conference Paper</a></p>
+<p><img alt="My Conference Paper  Comparison single thresholding method for handwritten images segmentation " src="/publications.html" /></p>
+<h1>Comparison Single Thresholding Method for Handwritten Images Segmentation</h1>
+<h2>1. Introduction</h2>
+<ul>
+<li><strong>Objective</strong>: Propose and compare single thresholding methods for handwritten image segmentation.</li>
+<li><strong>Key Concepts</strong>:<ul>
+<li>Thresholding separates objects from the background in images.</li>
+<li>Peak Signal-to-Noise Ratio (PSNR) is used to measure image quality.</li>
+</ul>
+</li>
+<li><strong>Importance</strong>:<ul>
+<li>Handwritten recognition has various applications in mobile devices and OCR systems.</li>
+</ul>
+</li>
+</ul>
+<h2>2. State of the Art</h2>
+<ul>
+<li><strong>Otsu’s Method</strong>:<ul>
+<li>An unsupervised, nonparametric method for automatic threshold selection.</li>
+<li>Uses bounding boxes of fragments and calculates global thresholds by maximizing class variance.</li>
+</ul>
+</li>
+<li><strong>Thresholding Techniques</strong>:<ul>
+<li><strong>Single Thresholding</strong>: Applies a single threshold value to the entire image.</li>
+<li><strong>Multi-Level Thresholding</strong>: Uses multiple threshold values for segmenting complex images.</li>
+</ul>
+</li>
+</ul>
+<h2>3. Proposed Method</h2>
+<ul>
+<li><strong>PSNR-Based Thresholding</strong>:<ul>
+<li>Uses PSNR to determine the quality of image segmentation.</li>
+<li>Measures the effectiveness of separating objects (characters) from the background in handwritten images.</li>
+</ul>
+</li>
+<li><strong>Advantages</strong>:<ul>
+<li>Optimized for average-quality handwritten images.</li>
+<li>Improves segmentation performance compared to other methods.</li>
+</ul>
+</li>
+</ul>
+<h2>4. Experimental Results</h2>
+<ul>
+<li><strong>Method Comparison</strong>:<ul>
+<li>The proposed PSNR-based method is compared with Otsu's method and other techniques.</li>
+</ul>
+</li>
+<li><strong>Performance</strong>:<ul>
+<li>The proposed method shows better PSNR values, indicating superior image segmentation quality.</li>
+<li>Optimized for real-world handwritten images where object-background separation is crucial.</li>
+</ul>
+</li>
+</ul>
+<h2>5. Conclusion</h2>
+<ul>
+<li><strong>Key Findings</strong>:<ul>
+<li>PSNR-based single thresholding outperforms traditional methods like Otsu's in segmenting handwritten images.</li>
+</ul>
+</li>
+<li><strong>Implications</strong>:<ul>
+<li>Suitable for OCR systems and mobile applications involving handwritten text recognition.</li>
+</ul>
+</li>
+</ul>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

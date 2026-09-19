@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entropy-Based Multi-Threshold LPR — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Multi-threshold license plate recognition using entropy-based image segmentation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/papers/license-plate.html">
+<meta property="og:title" content="Entropy-Based Multi-Threshold LPR">
+<meta property="og:description" content="Multi-threshold license plate recognition using entropy-based image segmentation.">
+<meta property="og:url" content="https://pirahansiah.com/content/papers/license-plate.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Multi-threshold license plate recognition using entropy-based image segmentation.</p>
+<p>License_Plate_Recognition_with_Multi-Threshold_Based_on_Entropy</p>
+<p>https://www.pirahansiah.com/notes/pubs/papers/License_Plate_Recognition_with_Multi-Threshold_Based_on_Entropy</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290">spotify</a></p>
+<p><a href="https://doi.org/10.1109/ICEEI.2011.6021627">PDF Download My Conference Paper</a></p>
+<p><img alt="My Conference Paper License Plate Recognition with Multi-Threshold Based on Entropy  " src="/publications.html" /></p>
+<h1>License Plate Recognition with Multi-threshold based on Entropy</h1>
+<h2>1. Introduction</h2>
+<ul>
+<li><strong>Objective</strong>: Propose a multi-thresholding method for license plate recognition.</li>
+<li><strong>Importance of Thresholding</strong>:<ul>
+<li>Simplifies image segmentation</li>
+<li>Ensures robustness and accuracy in recognizing license plate characters.</li>
+</ul>
+</li>
+<li><strong>Challenges</strong>:<ul>
+<li>Selecting the correct threshold values for better segmentation results.</li>
+</ul>
+</li>
+</ul>
+<h2>2. Entropy-based Thresholding</h2>
+<ul>
+<li><strong>Method</strong>:<ul>
+<li>Based on maximizing the cross entropy between the original image and the segmented image.</li>
+<li>Entropy is treated as a probability distribution of the image histogram.</li>
+</ul>
+</li>
+<li><strong>Historical Background</strong>:<ul>
+<li>Originally proposed by Pun and later improved by Kapur for image segmentation.</li>
+<li>Entropy-based thresholding is widely used for bi-level and multi-level thresholding.</li>
+</ul>
+</li>
+</ul>
+<h2>3. Proposed Method</h2>
+<ul>
+<li><strong>Multi-thresholding Based on Maximum Entropy</strong>:<ul>
+<li>Selects several threshold values by maximizing the entropy.</li>
+<li>Integrates partial ranges of the image histogram to achieve better segmentation.</li>
+</ul>
+</li>
+<li><strong>Comparison with Other Methods</strong>:<ul>
+<li>Compared to single-thresholding techniques based on maximum entropy.</li>
+<li>Evaluates how multi-thresholding enhances the recognition accuracy.</li>
+</ul>
+</li>
+</ul>
+<h2>4. License Plate Recognition Process</h2>
+<ul>
+<li><strong>Steps</strong>:<ol>
+<li><strong>Image Segmentation</strong>: Separates the license plate region using multi-thresholding.</li>
+<li><strong>Character Segmentation</strong>: Applies the selected thresholds to segment individual characters.</li>
+<li><strong>Recognition</strong>: Recognizes the segmented characters to produce the license plate number.</li>
+</ol>
+</li>
+</ul>
+<h2>5. Results and Discussion</h2>
+<ul>
+<li><strong>Performance</strong>:<ul>
+<li>The proposed multi-threshold method outperforms single-thresholding techniques.</li>
+<li>Shows improved segmentation results for varying lighting and environmental conditions.</li>
+</ul>
+</li>
+</ul>
+<h2>6. Conclusion</h2>
+<ul>
+<li><strong>Key Findings</strong>:<ul>
+<li>Multi-thresholding based on entropy enhances the accuracy of license plate recognition.</li>
+</ul>
+</li>
+<li><strong>Implications</strong>:<ul>
+<li>Can be applied in real-world license plate recognition systems with better robustness.</li>
+</ul>
+</li>
+</ul>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

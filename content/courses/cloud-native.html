@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloud-Native with Kubernetes — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Docker and Kubernetes fundamentals for cloud-native infrastructure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/courses/cloud-native.html">
+<meta property="og:title" content="Cloud-Native with Kubernetes">
+<meta property="og:description" content="Docker and Kubernetes fundamentals for cloud-native infrastructure.">
+<meta property="og:url" content="https://pirahansiah.com/content/courses/cloud-native.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Docker and Kubernetes fundamentals for cloud-native infrastructure.</p>
+<h1>Cloud-Native Infrastructure with Kubernetes</h1>
+<h2>Docker Basics</h2>
+<pre><code class="language-bash">docker run -ti ubuntu:latest bash
+docker ps -format $FORMAT
+docker ps -l
+docker commit ID
+docker tag imageID my-image
+docker run --rm -ti ubuntu sleep 5
+docker run -d -ti ubuntu bash    # detached
+docker attach name               # Ctrl+P /Q to detach
+docker logs container_name -p
+docker images
+</code></pre>
+<h1>Docker #Kubernetes #CloudNative</h1>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

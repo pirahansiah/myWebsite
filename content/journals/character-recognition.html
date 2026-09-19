@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Character &amp; Object Recognition via Features — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Global feature extraction methods for character and object recognition in computer vision.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://pirahansiah.com/content/journals/character-recognition.html">
+<meta property="og:title" content="Character &amp; Object Recognition via Features">
+<meta property="og:description" content="Global feature extraction methods for character and object recognition in computer vision.">
+<meta property="og:url" content="https://pirahansiah.com/content/journals/character-recognition.html">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" href="/assets/img/favicon.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav"><a class="nav-toggle" aria-label="Menu">&#9776;</a>
+      <a href="/about.html">About</a><a href="/publications.html">Publications</a><a href="/courses.html">Courses</a><a href="/notes.html">Notes</a><a href="/slides.html">Slides</a><a href="/book.html">Book</a><a href="/contact.html">Contact</a></nav>
+  </div>
+</header>
+<main>
+<div class="article wrap">
+<p>Global feature extraction methods for character and object recognition in computer vision.</p>
+<p>CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/Character-and-Object-Recognition-Based-on-Global-Feature-Extraction-e2pptrp">spotify</a></p>
+<p><a href="http://www.jatit.org/volumes/Vol52No2/6Vol52No2.pdf">PDF Download</a></p>
+<p><img alt="CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION" src="/publications.html" /></p>
+<h1>Mind Map: Character and Object Recognition Based on Global Feature Extraction</h1>
+<h2>1. Introduction</h2>
+<ul>
+<li><strong>Optical Character Recognition (OCR)</strong>: Recognizes handwritten, irregular, and machine-printed characters.</li>
+<li><strong>Key Tasks in OCR</strong>:</li>
+<li>Pre-processing</li>
+<li>Segmentation</li>
+<li>Feature Extraction</li>
+<li>Classification</li>
+<li>Recognition</li>
+</ul>
+<h2>2. Feature Extraction Methods</h2>
+<h3>2.1 Global Feature Extraction</h3>
+<ul>
+<li><strong>Definition</strong>: Uses entire image characteristics to extract features.</li>
+<li><strong>Methods</strong>:</li>
+<li><strong>Gray Level Co-occurrence Matrix (GLCM)</strong>: Uses spatial distribution of gray-level values.</li>
+<li><strong>Edge Direction Matrix (EDMS)</strong>: Captures edge directions but produces a limited number of features.</li>
+<li><strong>Challenges</strong>: </li>
+<li>Less discriminative features.</li>
+<li>Higher dimensionality leads to longer processing times.</li>
+</ul>
+<h3>2.2 Spatial Feature Extraction</h3>
+<ul>
+<li><strong>Definition</strong>: Focuses on local image characteristics.</li>
+<li><strong>Techniques</strong>:</li>
+<li><strong>Robinson Compass Mask</strong>: Uses gradient filters in eight directions.</li>
+<li><strong>Strengths</strong>: Better for character recognition.</li>
+<li><strong>Limitations</strong>: Time-consuming due to high-dimensional data.</li>
+</ul>
+<h2>3. Proposed Method</h2>
+<ul>
+<li><strong>Combination of GLCM and EDMS</strong>:</li>
+<li>Aims to improve recognition rates by combining features.</li>
+<li><strong>Feature Selection</strong>: Uses gain ratio to reduce feature set size.</li>
+<li><strong>Datasets</strong>: License plates, font styles, and large binary images.</li>
+</ul>
+<h2>4. Experimental Results</h2>
+<ul>
+<li><strong>Performance Metrics</strong>:</li>
+<li><strong>Character Recognition Accuracy</strong>:<ul>
+<li>Proposed method: 85.99% with feature selection.</li>
+<li>EDMS: 80.19%, GLCM: 38.84%, Combination without feature selection: 58.78%.</li>
+</ul>
+</li>
+<li><strong>Object Recognition Accuracy</strong>:<ul>
+<li>Proposed method: 92.5% accuracy with feature selection.</li>
+<li>Robinson filter (spatial method) outperforms in character recognition (100% accuracy).</li>
+</ul>
+</li>
+<li><strong>Conclusion</strong>: Global feature extraction is better for object recognition, while spatial methods are better for character recognition.</li>
+</ul>
+<h2>5. Applications</h2>
+<ul>
+<li><strong>Character Recognition</strong>:</li>
+<li>License Plate Recognition (LPR).</li>
+<li>Handwritten text recognition.</li>
+<li><strong>Object Recognition</strong>:</li>
+<li>Recognizing binary shapes in images.</li>
+<li>Differentiating between object categories using extracted features.</li>
+</ul>
+<h2>6. Future Work</h2>
+<ul>
+<li><strong>Improvements</strong>: Modify feature selection to further enhance recognition rates.</li>
+<li><strong>New Applications</strong>: Adapt method for complex character recognition and extend to other domains.</li>
+</ul>
+<h2>7. Summary</h2>
+<ul>
+<li><strong>Goal</strong>: Improve OCR by combining global and spatial feature extraction techniques.</li>
+<li><strong>Key Findings</strong>: Proposed method shows promise for object recognition with efficient feature extraction.</li>
+</ul>
+</div>
+</main>
+<footer>
+  <div class="footer-inner">
+<div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+      <div class="footer-links">
+        <a href="/about.html">About</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/notes.html">Notes</a>
+        <a href="/slides.html">Slides</a>
+        <a href="/book.html">Book</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+      <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
