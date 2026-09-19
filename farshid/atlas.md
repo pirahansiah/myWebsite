@@ -97,11 +97,11 @@ The single index of everything on pirahansiah.com. Every publication, course, no
 
 ### Presentations &amp; Slide Decks
 
-- [**The New Era of Research Tools**](/farshid/notes/slides/research-tools.md)
-- [**Hermes Agent for Research Assistance**](/farshid/notes/slides/presentation.md)
-- [**Hermes Agent for Big Computer Vision Projects**](/farshid/notes/slides/presentation-cv.md)
-- [**Hermes Agent — Recent Updates &amp; Complete Feature Guide**](/farshid/notes/slides/presentation-updates.md)
-- [**New LLM Optimization Methods — Run Local &amp; Fast**](/farshid/notes/slides/llm-optimization.md)
+- [**The New Era of Research Tools**](/farshid/notes/slides/research-tools.html)
+- [**Hermes Agent for Research Assistance**](/farshid/notes/slides/presentation.html)
+- [**Hermes Agent for Big Computer Vision Projects**](/farshid/notes/slides/presentation-cv.html)
+- [**Hermes Agent — Recent Updates &amp; Complete Feature Guide**](/farshid/notes/slides/presentation-updates.html)
+- [**New LLM Optimization Methods — Run Local &amp; Fast**](/farshid/notes/slides/llm-optimization.html)
 
 - [Reducing Token Usage](/farshid/content/slides-token-optimization.md)
 - [**Research Tools — talks &amp; keynotes hub**](/farshid/notes/slides/research-tools/)

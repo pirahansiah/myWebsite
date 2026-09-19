@@ -103,11 +103,11 @@ def render():
         L.append(f'## {sec}'); L.append('')
         if sec=='Talks, Presentations & Keynotes':
             L.append('### Presentations &amp; Slide Decks'); L.append('')
-            L.append('- [**The New Era of Research Tools**](/farshid/notes/slides/research-tools.md)')
-            L.append('- [**Hermes Agent for Research Assistance**](/farshid/notes/slides/presentation.md)')
-            L.append('- [**Hermes Agent for Big Computer Vision Projects**](/farshid/notes/slides/presentation-cv.md)')
-            L.append('- [**Hermes Agent — Recent Updates &amp; Complete Feature Guide**](/farshid/notes/slides/presentation-updates.md)')
-            L.append('- [**New LLM Optimization Methods — Run Local &amp; Fast**](/farshid/notes/slides/llm-optimization.md)')
+            L.append('- [**The New Era of Research Tools**](/farshid/notes/slides/research-tools.html)')
+            L.append('- [**Hermes Agent for Research Assistance**](/farshid/notes/slides/presentation.html)')
+            L.append('- [**Hermes Agent for Big Computer Vision Projects**](/farshid/notes/slides/presentation-cv.html)')
+            L.append('- [**Hermes Agent — Recent Updates &amp; Complete Feature Guide**](/farshid/notes/slides/presentation-updates.html)')
+            L.append('- [**New LLM Optimization Methods — Run Local &amp; Fast**](/farshid/notes/slides/llm-optimization.html)')
             L.append('')
         for sub in subs:
             items=sorted(buckets[(sec,sub)], key=lambda x:x[1].lower())
