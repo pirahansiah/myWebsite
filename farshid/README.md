@@ -15,10 +15,11 @@ Nothing is duplicated: the browser app renders the same file a crawler reads.
   no chrome. `/llms.txt` (every page + one-line summary), `/llms-full.txt` (the
   whole site in one file) and `/sitemap.xml` list those same markdown URLs.
 
-Only five `.html` files exist, and each one is a program rather than a page:
-`content/index.html` (the app shell / home), `content/swarm.html` (search),
-`404.html` (routes old links into the app), and two redirect stubs
-(`index.html`, `farshid/index.html`). Interactive pages cannot live in markdown:
+Only six `.html` files exist, and each one is a program or a redirect stub
+rather than a page: `content/index.html` (the app shell / home),
+`content/swarm.html` (search), `404.html` (routes old links into the app), `qr/`
+(the permanent short link, see below) and two stubs (`index.html`,
+`farshid/index.html`). Interactive pages cannot live in markdown:
 scripts inside markdown are stripped, so anything with a `<script>` stays a
 standalone `.html`.
 
@@ -36,11 +37,59 @@ standalone `.html`.
   - `farshid/app.js`, `farshid/md.js`, `farshid/style.css`, `farshid/deck.css`,
     `farshid/search-index.js` — engine (markdown renderer, hash router, Reveal deck
     boot, search index, design system).
+  - `farshid/permalinks.js`, `farshid/page-aliases.js` — generated URL maps
+    (permalinks → page, legacy `/notes/...` → page) used by root `404.html`.
+  - `qr/index.html` — the `/qr/` permanent short link.
   - `farshid/content/` — every publication, course, note and talk as flat `.md`
     files, with images/mp3s/mindmaps colocated beside them; `atlas.md` is the index
     of everything; `swarm.html` is the standalone search tool.
   - `farshid/projects/` — the generators and the projects they index (each project
     is a `README.md`, read through the app).
+
+## Page front matter
+
+Every page file opens with its page header — the wording comes from the matching
+note in the PKM vault (`../PKM`):
+
+```yaml
+---
+layout: farshid_default
+title: "10 Years of CV Debugging Lessons"
+permalink: /notes/pubs/10-years/
+description: "Lessons learned from a decade of debugging computer vision systems."
+---
+```
+
+* `title` / `description` — what the app puts in the browser tab and what the
+  indexes (`llms.txt`, `search-index.js`, `atlas.md`) quote. The app prefers the
+  front-matter title over the H1.
+* `permalink` — the page's stable URL. Legacy `/notes/...` paths are used because
+  those are the URLs the pages were exported from and are linked internally.
+* `sitemap: false` + `noindex: true` — add to a page that should stay out of the
+  indexes; no page needs it today.
+* A header is never rendered: `farshid/md.js` strips front matter before markdown
+  is converted.
+
+`gen_front_matter.py` writes and maintains the headers (it is idempotent —
+`--check` is a dry run). Run it before the other generators when pages change:
+
+```bash
+python3 farshid/projects/gen_front_matter.py   # page headers + farshid/page-aliases.js
+```
+
+## Permanent links (short URLs)
+
+* **`/qr/`** — the QR hub, a real page (HTTP 200, `noindex`, OpenGraph card) that
+  opens `#content/qr`. Put `/qr/` on a business card or behind a printed QR code:
+  short, permanent, and the content behind it can change freely.
+* **Every front-matter `permalink` resolves.** `farshid/permalinks.js` (generated)
+  maps permalink → page route; root `404.html` resolves it in the browser. So
+  `/notes/pubs/10-years/`, `/notes/wiki/`, `/projects/rag/` and the rest open the
+  right page (HTTP 404 → instant redirect; only the `.md` URLs are 200, which is
+  what `sitemap.xml` and `llms.txt` list).
+* **`farshid/page-aliases.js`** (generated from the vault) adds ~170 older
+  `/notes/<section>/<note>/` aliases, so links written years ago — the ones inside
+  the pages themselves — land on the page that now serves that content.
 
 ## How it works
 
@@ -56,9 +105,10 @@ Drop a `.md` file into `farshid/content/` (images next to it), then run all thre
 generators:
 
 ```bash
+python3 farshid/projects/gen_front_matter.py   # page headers, page-aliases.js
 python3 farshid/projects/gen_atlas.py          # farshid/content/atlas.md
 python3 farshid/projects/gen_search_index.py   # farshid/search-index.js
-python3 farshid/projects/gen_static_pages.py   # llms.txt, llms-full.txt, sitemap.xml
+python3 farshid/projects/gen_static_pages.py   # llms.txt, llms-full.txt, sitemap.xml, permalinks.js
 ```
 
 `gen_atlas.py` and `gen_static_pages.py` need `python3 -m pip install markdown`.
