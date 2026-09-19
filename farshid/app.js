@@ -41,18 +41,42 @@
     fetch(path)
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
       .then(function(txt){ renderInto(txt, file, anchor); })
-      .catch(function(){
-        $id('content').innerHTML =
-          '<p class="err">Page not found. <a id="err-back" href="#atlas">Back to the Atlas.</a></p>';
-        var eb=$id('err-back');
-        if(eb) eb.addEventListener('click', function(e){ e.preventDefault(); navigate('atlas'); });
-      });
+      .catch(function(){ routeMissing(file, anchor); });
+  }
+
+  /* A route this site no longer has: an old bookmark, a stale QR code, or — the
+     common one — an in-page anchor that got promoted to a whole route
+     (…/index.html#talks-presentations-keynotes). Those ids belong to the Atlas,
+     so land on the right section instead of dead-ending on "Page not found". */
+  var ATLAS_SECTIONS = ['publications','courses','notes-guides','talks-presentations-keynotes','site-pages','projects'];
+  var LEGACY_ROUTES = {
+    'slides'  : 'atlas:talks-presentations-keynotes',
+    'talks'   : 'atlas:talks-presentations-keynotes',
+    'presentations': 'atlas:talks-presentations-keynotes',
+    'docs'    : 'atlas:notes-guides',
+    'notes'   : 'atlas:notes-guides',
+    'research': 'atlas:publications',
+    'pubs'    : 'atlas:publications'
+  };
+  function routeMissing(file, anchor){
+    var name = (file||'').replace(/^\/+|\/+$/g,'');
+    if(LEGACY_ROUTES[name]){ setHash(LEGACY_ROUTES[name]); return; }
+    var sec = ATLAS_SECTIONS.indexOf(name)>=0 ? name
+            : (ATLAS_SECTIONS.indexOf(anchor||'')>=0 ? anchor : null);
+    if(sec && name!=='atlas'){ setHash('atlas:'+sec); return; }
+    var c=$id('content');
+    if(c) c.innerHTML = '<p class="err">That page is gone. The <a id="err-atlas" href="#atlas">Atlas</a>'+
+      ' indexes every publication, note, talk and project on this site.</p>';
+    var eb=$id('err-atlas');
+    if(eb) eb.addEventListener('click', function(e){ e.preventDefault(); setHash('atlas'); });
+    document.title='Not found — Farshid Pirahansiah';
   }
 
   function renderInto(txt, file, anchor){
     var c=$id('content');
     var h1m = txt.match(/^#\s+(.+)$/m);
-    document.title = (h1m?h1m[1].trim()+' — ':'')+'Farshid Pirahansiah';
+    var h1 = h1m ? h1m[1].replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]/gu,'').trim() : '';
+    document.title = (h1?h1+' — ':'')+'Farshid Pirahansiah';
     c.innerHTML = '<article class="article">'+window.renderMarkdown(txt)+'</article>';
     c.querySelectorAll('h1,h2,h3').forEach(function(h,i){ if(!h.id) h.id = slug(h.textContent); });
     highlightNav(file, anchor||'');
@@ -140,7 +164,27 @@
     if(!c) return;
     c.querySelectorAll('a[href]').forEach(function(a){
       var href=a.getAttribute('href').replace(/&amp;/g,'&');
-      if(/^(#|mailto:)/.test(href)) return;
+      if(/^(mailto:|tel:)/.test(href)) return;
+      /* In-page anchor (Atlas jump pills, "back to top"). Following it bare would
+         replace the whole route — index.html#talks-presentations-keynotes — and the
+         app would then hunt for a page by that name. Scroll instead, and keep the
+         URL a valid route so a reload or a shared link still works. */
+      if(/^#/.test(href)){
+        if(/^#\//.test(href)) return;              // reveal.js controls
+        var id=href.slice(1); if(!id) return;
+        a.addEventListener('click', function(e){
+          var el=document.getElementById(id);
+          var route=(currentRoute||'').replace(/^#+/,'').split(':')[0];
+          if(el){
+            e.preventDefault();
+            el.scrollIntoView({behavior:'smooth',block:'start'});
+            try{ history.replaceState(null,'','#'+route+':'+slug(id)); }catch(err){}
+          } else if(route){
+            e.preventDefault(); setHash('atlas:'+slug(id));   // the anchor lives on the Atlas
+          }
+        });
+        return;
+      }
       if(/^(https?:)?\/\//.test(href)){ a.setAttribute('target','_blank'); return; }
       // internal .md link -> route (strip permanent /farshid/ prefix, then /content/)
       if(/\.md(?:[#:]|$)/.test(href)){
@@ -220,6 +264,7 @@
 
   function init(){
     buildNav();
+    wireLinks($id('baked-home'));   // baked home links: keep in-page anchors from hijacking the route
     // mobile nav toggle already handled below via initMobileNav
     navigate(location.hash||'');
   }

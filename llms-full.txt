@@ -23993,7 +23993,7 @@ delegate_task(tasks=[
           <p>✔ <strong>Operate autonomously</strong>: cron jobs + group bots run the ops loop.</p>
           <p>✔ <strong>Profile & ship</strong>: bottleneck calls + traced artifact lineage.</p>
         </div>
-        <p style="margin-top:1em; color:#1a56db; font-size:1.05em; font-weight:bold">pirahansiah.com/notes/docs/cv/</p>
+        <p style="margin-top:1em; color:#1a56db; font-size:1.05em; font-weight:bold">pirahansiah.com/farshid/content/computer-vision.html</p>
       </section>
 
       
@@ -24040,7 +24040,8 @@ hermes skills list
         <h1>Thank You & Discussion</h1>
         <h2 style="color:#2b3038">Hermes Agent for Big Computer Vision Projects</h2>
         <p style="margin-top:1.5em">
-          <a href="https://www.pirahansiah.com/notes/docs/cv/" style="color:#1a56db; text-decoration:underline">CV Documentation</a> •
+          <a href="/farshid/content/research-tools.html" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
+          <a href="/farshid/content/computer-vision.html" style="color:#1a56db; text-decoration:underline">CV &amp; Publications</a> •
           <a href="https://github.com/pirahansiah" style="color:#1a56db; text-decoration:underline">GitHub</a>
         </p>
         <div style="margin-top:2em">
@@ -24626,7 +24627,8 @@ hermes skills list
         <h1>Thank You & Discussion</h1>
         <h2 style="color:#2b3038">Hermes Agent for Research Assistance</h2>
         <p style="margin-top:1.5em">
-          <a href="https://www.pirahansiah.com/notes/docs/research/" style="color:#1a56db; text-decoration:underline">Research Publications & Notes</a> • 
+          <a href="/farshid/content/research-tools.html" style="color:#1a56db; text-decoration:underline">All Presentations</a> • 
+          <a href="/farshid/content/atlas.html#publications" style="color:#1a56db; text-decoration:underline">Publications & Notes</a> • 
           <a href="https://github.com/pirahansiah" style="color:#1a56db; text-decoration:underline">GitHub Repositories</a>
         </p>
         <div style="margin-top:2em">
@@ -24949,7 +24951,7 @@ delegate_task(tasks=[
           <p>✔ <strong>Operate anywhere</strong> — CLI, GUI, web, 21+ messengers.</p>
           <p>✔ <strong>Ship traced artifacts</strong> — reproducible, push-button.</p>
         </div>
-        <p style="margin-top:0.8em; color:#1a56db; font-size:1.0em; font-weight:bold">pirahansiah.com/notes/slides/</p>
+        <p style="margin-top:0.8em; color:#1a56db; font-size:1.0em; font-weight:bold">pirahansiah.com/farshid/content/research-tools.html</p>
       </section>
 
       
@@ -24996,7 +24998,8 @@ hermes skills list
         <h1>Thank You</h1>
         <h2 style="color:#2b3038">Hermes Agent — Updates & Complete Feature Guide</h2>
         <p style="margin-top:1.2em">
-          <a href="https://www.pirahansiah.com/notes/docs/" style="color:#1a56db; text-decoration:underline">Documentation</a> •
+          <a href="/farshid/content/research-tools.html" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
+          <a href="/farshid/content/atlas.html#notes-guides" style="color:#1a56db; text-decoration:underline">Notes &amp; Guides</a> •
           <a href="https://github.com/NousResearch/hermes-agent" style="color:#1a56db; text-decoration:underline">GitHub</a> •
           <a href="https://hermes-agent.nousresearch.com/docs/" style="color:#1a56db; text-decoration:underline">Official Docs</a>
         </p>
@@ -25328,7 +25331,7 @@ hermes skills list
       <section>
         <h1>Thank You & Discussion</h1>
         <p style="color:#6b7280; font-size:.7em">Quantize smart · Draft in parallel · Fuse the kernel · Run native</p>
-        <p style="font-size:.6em; margin-top:8px"><a href="/farshid/content/research-tools.md" style="color:#1a56db">← All presentations</a> · <a href="/farshid/content/research-tools.md" style="color:#6d28d9">New Era of Research Tools</a></p>
+        <p style="font-size:.6em; margin-top:8px"><a href="/farshid/content/research-tools.html" style="color:#1a56db">← All presentations</a> · <a href="/farshid/content/presentation-research-tools.html" style="color:#6d28d9">New Era of Research Tools</a></p>
       </section>
 
     </div>
@@ -25996,7 +25999,7 @@ hermes skills list
         <h1>Thank You & Discussion</h1>
         <h2 style="color:#2b3038">The New Era of Research Tools</h2>
         <p style="margin-top:1.5em">
-          <a href="https://www.pirahansiah.com/notes/slides/" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
+          <a href="/farshid/content/research-tools.html" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
           <a href="https://github.com/pirahansiah" style="color:#1a56db; text-decoration:underline">GitHub Repositories</a>
         </p>
         <div style="margin-top:2em">

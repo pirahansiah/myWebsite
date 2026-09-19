@@ -57,6 +57,12 @@
   } else if (OLD[legacy]) {
     var v = OLD[legacy];
     target = (v.charAt(0) === '/') ? v : HOME + '#content/' + v;
+  } else if (/^\/notes\/slides/.test(legacy)) {
+    target = '/farshid/content/research-tools.html';          /* talks hub */
+  } else if (/^\/notes\/docs(\/|$)/.test(legacy)) {
+    target = HOME + '#atlas:notes-guides';
+  } else if (/^\/notes\/pubs/.test(legacy)) {
+    target = HOME + '#atlas:publications';
   } else if (/^\/notes(\/|$)/.test(legacy)) {
     target = HOME + '#atlas';              /* legacy Google Sites paths */
   } else {
