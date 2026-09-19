@@ -96,24 +96,24 @@ The single index of everything on pirahansiah.com. Every publication, course, no
 ## Talks, Presentations & Keynotes
 
 - [Reducing Token Usage](/content/slides-token-optimization.md)
-- [**Research Tools — talks &amp; keynotes hub**](/notes/slides/research-tools/)
+- [**Research Tools — talks &amp; keynotes hub**](/farshid/notes/slides/research-tools/)
 - [Where LLMs Meet Computer Vision: Unlocking Multimodal AI](/content/keynotes-llm-cv.md)
 
 ## Connect & Share
 
-- [**🔍 Search — the whole knowledge base**](/search)
-- [**🕸️ Search Swarm — live agent search**](/swarm)
-- [**🔗 Scan &amp; Share — all links + QR codes**](/qr)
+- [**🔍 Search — the whole knowledge base**](/farshid/search/)
+- [**🕸️ Search Swarm — live agent search**](/farshid/swarm/)
+- [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/qr/)
 
 
 ## Projects
 
 Source code and scripts live under `projects/`. Each project has its own folder with its own README.
 
-- [llm-tools](/projects/llm-tools/README.md)
-- [mimo](/projects/mimo/README.md)
-- [rag](/projects/rag/README.md)
-- [site-tools](/projects/site-tools/README.md)
+- [llm-tools](/farshid/projects/llm-tools/README.md)
+- [mimo](/farshid/projects/mimo/README.md)
+- [rag](/farshid/projects/rag/README.md)
+- [site-tools](/farshid/projects/site-tools/README.md)
 
 ---
 

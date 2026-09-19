@@ -7,11 +7,23 @@ branch root (pinned static by `.nojekyll`).
 
 ## Structure
 
+- `index.html` — the home page (About, publications, patents) + thin shell that
+  loads the current `.md` by hash and renders it. Also carries Google Analytics
+  (GA4) and AdSense tracking.
 - `atlas.md` — the single index for the whole site. One file to navigate everything.
+- `farshid/` — all the standalone source folders:
+  - `farshid/qr/` — the permanent QR / Scan & Share page
+  - `farshid/search/` — full-text search page
+  - `farshid/swarm/` — animated Search Swarm page
+  - `farshid/notes/slides/research-tools/` — talks & keynotes hub
+  - `farshid/projects/` — one folder per project (README lives with each)
+  - `farshid/scripts/` — generators (`gen_atlas.py`, `gen_search_index.py`)
 - `content/` — every publication, course, note, and talk as flat `.md` files.
-- `projects/` — one folder per project (source, docs, scripts live together).
-- `assets/` — shared CSS, JS (a dependency-free markdown renderer), and images.
-- `index.html` — thin shell that loads the current `.md` by hash and renders it.
+- `assets/` — shared CSS, JS (a dependency-free markdown renderer, hash router,
+  search index), and images (including `assets/qr/`).
+- Root redirect stubs (`qr/`, `search/`, `swarm/`, `notes/`, `projects/`) forward
+  old permanent URLs to their `farshid/` locations so bookmarks and QR codes
+  keep working.
 
 ## How it works
 
@@ -22,11 +34,13 @@ the page; everything else opens in a new tab.
 
 ## Editing / adding content
 
-Drop any `.md` file into `content/`, add one link to it in `atlas.md` (and, if
-you want it in the top nav, update `assets/js/manifest.js`). HTML is allowed
-inside markdown for styling and images. Done — push to `main`.
+Drop any `.md` file into `content/`, then run `python3 farshid/scripts/gen_atlas.py`
+to regenerate `atlas.md`, and `python3 farshid/scripts/gen_search_index.py` to
+rebuild `assets/js/search-index.js`. HTML is allowed inside markdown for
+styling and images. Done — push to `main`.
 
 ## Deploy
 
 Push to `main`. GitHub Pages (already configured `build_type: legacy` from
 `main`/root) serves the files as-is; `.nojekyll` keeps it from running Jekyll.
+CDN cache is ~2 minutes, so content takes a short while to appear after a push.

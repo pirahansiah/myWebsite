@@ -8,7 +8,7 @@
   var SECTIONS = [ // nav items: ONLY these three (per user)
     { label:'Home',          icon:'🏠', type:'hash', file:'home', anchor:'top' },
     { label:'Atlas',         icon:'🗂️', type:'hash', file:'atlas', anchor:'top' },
-    { label:'Search Swarm',  icon:'🕸️', type:'link', href:'/swarm' },
+    { label:'Search Swarm',  icon:'🕸️', type:'link', href:'/farshid/swarm/' },
   ];
 
   function $id(i){ return document.getElementById(i); }

@@ -3,9 +3,9 @@
 Run: python3 gen_atlas.py  (writes atlas.md next to content/)"""
 import os, re
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 CONTENT = os.path.join(ROOT, 'content')
-PROJ = os.path.join(ROOT, 'projects')
+PROJ = os.path.join(ROOT, 'farshid', 'projects')
 
 def title(slug, body):
     m = re.search(r'^#\s+(.+)$', body, re.M)
@@ -58,9 +58,9 @@ def render():
         if sec=='Connect & Share':
             items=sorted(buckets.get(('Connect & Share',None),[]), key=lambda x:x[1].lower())
             L.append('## Connect & Share'); L.append('')
-            L.append('- [**🔍 Search — the whole knowledge base**](/search)')
-            L.append('- [**🕸️ Search Swarm — live agent search**](/swarm)')
-            L.append('- [**🔗 Scan &amp; Share — all links + QR codes**](/qr)')
+            L.append('- [**🔍 Search — the whole knowledge base**](/farshid/search/)')
+            L.append('- [**🕸️ Search Swarm — live agent search**](/farshid/swarm/)')
+            L.append('- [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/qr/)')
             L.append('')
             rest = [x for x in items if x[0]!='qr']
             for slug,t in rest:
@@ -81,7 +81,7 @@ def render():
                             rb=open(rm,encoding='utf-8').read()
                             m=re.search(r'^#\s+(.+)$',rb,re.M)
                             if m: label=' '.join(m.group(1).split())
-                        L.append(f'- [{label}](/projects/{d}/README.md)')
+                        L.append(f'- [{label}](/farshid/projects/{d}/README.md)')
             L.append(''); continue
         # collect subgroups for this section
         subs=[s for (s_s,s) in buckets if s_s==sec]
@@ -95,7 +95,7 @@ def render():
                 L.append(f'### {sub}'); L.append('')
             for slug,t in items:
                 if slug=='research-tools':
-                    L.append('- [**Research Tools — talks &amp; keynotes hub**](/notes/slides/research-tools/)')
+                    L.append('- [**Research Tools — talks &amp; keynotes hub**](/farshid/notes/slides/research-tools/)')
                 else:
                     L.append(f'- [{t}](/content/{slug}.md)')
             L.append('')
