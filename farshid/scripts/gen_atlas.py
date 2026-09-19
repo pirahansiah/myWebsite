@@ -47,7 +47,7 @@ for slug,t in entries:
     sec, sub = group(slug)
     buckets.setdefault((sec,sub), []).append((slug,t))
 
-SECTIONS = ['Publications','Courses','Notes & Guides','Talks, Presentations & Keynotes','Connect & Share','Projects']
+SECTIONS = ['Publications','Courses','Notes & Guides','Talks, Presentations & Keynotes','Site Pages','Connect & Share','Projects']
 
 # publication subgroup order
 PUBSUB = ['Book Chapters','Journal Articles','Conference Papers','Patents','Keynotes','Profile']
@@ -55,11 +55,23 @@ PUBSUB = ['Book Chapters','Journal Articles','Conference Papers','Patents','Keyn
 def render():
     L=['# Atlas','','The single index of everything on pirahansiah.com. Every publication, course, note, talk, and project lives here. Pick a section.','']
     for sec in SECTIONS:
+        if sec=='Site Pages':
+            L.append('## Site Pages'); L.append('')
+            L.append('- [**🏠 Home — about &amp; overview**](/farshid/)')
+            L.append('- [**🕸️ Search Swarm — one search for the whole knowledge base**](/farshid/swarm/)')
+            L.append('- [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/qr/)')
+            L.append('- [**🗂️ Atlas — this index**](/farshid/atlas.md)')
+            L.append('- [**Talk: Reducing Token Usage in AI-Assisted Development**](/farshid/content/slides-token-optimization.md)')
+            L.append('- [**Keynote: LLMs Meet Computer Vision**](/farshid/content/keynotes-llm-cv.md)')
+            L.append('- [**Research Tools — talks &amp; keynotes hub**](/farshid/notes/slides/research-tools/)')
+            L.append('- [Contact](/farshid/contact.md)')
+            L.append('- [Privacy](/farshid/privacy.md)')
+            L.append('')
+            continue
         if sec=='Connect & Share':
             items=sorted(buckets.get(('Connect & Share',None),[]), key=lambda x:x[1].lower())
             L.append('## Connect & Share'); L.append('')
-            L.append('- [**🔍 Search — the whole knowledge base**](/farshid/search/)')
-            L.append('- [**🕸️ Search Swarm — live agent search**](/farshid/swarm/)')
+            L.append('- [**🕸️ Search Swarm — one search for the whole knowledge base**](/farshid/swarm/)')
             L.append('- [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/qr/)')
             L.append('')
             rest = [x for x in items if x[0]!='qr']
@@ -89,6 +101,14 @@ def render():
             subs=[s for s in PUBSUB if (sec,s) in buckets]
         if not subs: continue
         L.append(f'## {sec}'); L.append('')
+        if sec=='Talks, Presentations & Keynotes':
+            L.append('### Presentations &amp; Slide Decks'); L.append('')
+            L.append('- [**The New Era of Research Tools**](/farshid/notes/slides/research-tools.md)')
+            L.append('- [**Hermes Agent for Research Assistance**](/farshid/notes/slides/presentation.md)')
+            L.append('- [**Hermes Agent for Big Computer Vision Projects**](/farshid/notes/slides/presentation-cv.md)')
+            L.append('- [**Hermes Agent — Recent Updates &amp; Complete Feature Guide**](/farshid/notes/slides/presentation-updates.md)')
+            L.append('- [**New LLM Optimization Methods — Run Local &amp; Fast**](/farshid/notes/slides/llm-optimization.md)')
+            L.append('')
         for sub in subs:
             items=sorted(buckets[(sec,sub)], key=lambda x:x[1].lower())
             if sub:

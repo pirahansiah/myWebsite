@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#F2F3F7">
 <title>Search Swarm — Farshid Pirahansiah</title>
-<meta name="description" content="Ask a question and watch a swarm of research agents map and synthesize the whole pirahansiah.com knowledge base.">
+<meta name="description" content="One search for the whole pirahansiah.com knowledge base — type a question, get ranked matches, and watch a swarm of agents map and synthesize every publication, course, note, talk, and project.">
 <link rel="icon" href="/farshid/assets/img/favicon.png">
 <link rel="stylesheet" href="/farshid/assets/css/style.css">
 <meta name="robots" content="index, follow">
@@ -28,7 +28,7 @@
   background: var(--glass-strong); border: 1px solid var(--rule); border-radius: 18px;
   box-shadow: var(--shadow-lg); overflow: hidden; position: relative;
 }
-.swarm-visual { position: relative; height: 340px; background: radial-gradient(620px 300px at 50% 0%, rgba(10,102,255,0.10), transparent 70%); }
+.swarm-visual { position: relative; height: 300px; background: radial-gradient(620px 300px at 50% 0%, rgba(10,102,255,0.10), transparent 70%); }
 .swarm-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .swarm-ask { display: flex; gap: 10px; padding: 14px; border-top: 1px solid var(--rule); }
 .swarm-ask input {
@@ -41,15 +41,37 @@
   background: var(--accent); color: #fff; cursor: pointer; transition: background .15s;
 }
 .swarm-ask button:hover { background: #0652cf; }
-.swarm-synth { padding: 0 22px 22px; max-height: 320px; overflow-y: auto; display: none; }
-.swarm-synth.show { display: block; }
+.swarm-legend { display: flex; gap: 16px; justify-content: center; padding: 10px; font-size: 12px; color: var(--ink-2); flex-wrap: wrap; }
+.swarm-legend span i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+
+/* merged results + synthesis */
+.swarm-results { padding: 0 22px 10px; }
+.swarm-meta { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin: 16px 0 12px; font-size: 13px; color: var(--ink-2); }
+.swarm-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.swarm-tag {
+  padding: 6px 13px; font-size: 13px; border-radius: 24px; cursor: pointer;
+  background: var(--glass); border: 1px solid var(--rule); color: var(--ink-2); transition: all .18s;
+}
+.swarm-tag:hover, .swarm-tag.active { background: rgba(10,102,255,0.12); border-color: var(--accent); color: var(--accent); }
+.swarm-list { list-style: none; padding: 0; margin: 0; }
+.swarm-result {
+  background: var(--glass-strong); border: 1px solid var(--rule); border-radius: 14px;
+  box-shadow: var(--shadow-sm); padding: 18px 20px; margin-bottom: 12px; display: block;
+  text-decoration: none; color: var(--ink); transition: transform .15s, box-shadow .2s;
+}
+.swarm-result .sr-title { font-family: var(--ui-display); font-weight: 650; font-size: 17px; color: var(--ink); margin: 0 0 6px; }
+.swarm-result .sr-snippet { font-size: 14px; color: var(--ink-2); line-height: 1.55; margin: 0 0 8px; }
+.swarm-result .sr-path { font-family: var(--mono); font-size: 11px; color: var(--accent); }
+.swarm-result:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+mark { background: rgba(10,102,255,0.18); color: inherit; border-radius: 3px; padding: 0 1px; }
+.swarm-empty { text-align: center; color: var(--ink-2); padding: 30px 0; }
+.swarm-empty h2 { font-family: var(--ui-display); font-weight: 650; font-size: 20px; color: var(--ink); margin: 0 0 6px; }
+.swarm-count { font-size: 13px; color: var(--ink-2); margin: 0 0 6px; }
+.swarm-synth { padding: 0 22px 24px; }
 .swarm-synth h3 { font-family: var(--ui-display); font-weight: 650; font-size: 17px; margin: 16px 0 8px; color: var(--ink); }
 .swarm-synth p, .swarm-synth li { font-size: 14.5px; color: var(--ink-2); line-height: 1.6; }
 .swarm-synth ul { padding-left: 20px; }
 .swarm-synth a { color: var(--accent); text-decoration: none; }
-.swarm-synth .swarm-rel-rows a { display: block; margin: 6px 0; }
-.swarm-legend { display: flex; gap: 16px; justify-content: center; padding: 10px; font-size: 12px; color: var(--ink-2); flex-wrap: wrap; }
-.swarm-legend span i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
 </style>
 </head>
 <body>
@@ -59,8 +81,7 @@
     <nav class="nav" aria-label="Primary">
       <a href="/">Home</a>
       <a class="active" href="/farshid/swarm/">🕸️ Search Swarm</a>
-      <a href="/farshid/search/">🔍 Search</a>
-      <a href="/index.html#atlas">Atlas</a>
+      <a href="/farshid/index.html#atlas">Atlas</a>
     </nav>
   </div>
 </header>
@@ -68,7 +89,7 @@
 <main class="wrap">
   <div class="swarm-hero">
     <h1>Search Swarm</h1>
-    <p>Ask a question and watch a swarm of AI research agents map the whole knowledge base — publications, courses, notes, talks, and projects — then synthesize an answer.</p>
+    <p>One search over the whole knowledge base. Type a question — get ranked matches, then watch a swarm of AI agents map and synthesize every publication, course, note, talk, and project.</p>
   </div>
 
   <div class="swarm-studio">
@@ -82,11 +103,22 @@
         </div>
       </div>
       <div class="swarm-ask">
-        <input id="swarm-input" type="text" placeholder="e.g. camera calibration, optical flow, OpenAI agents..." autocomplete="off">
-        <button id="swarm-go">Swarm &rarr;</button>
+        <input id="swarm-input" type="search" placeholder="e.g. camera calibration, optical flow, CUDA, agents, patents…" autocomplete="off">
+        <button id="swarm-go" type="button">Search</button>
       </div>
-      <div class="swarm-synth" id="swarm-synth"></div>
     </div>
+
+    <div class="swarm-tags" id="swarm-tags"></div>
+    <div class="swarm-results" id="swarm-results">
+      <p class="swarm-count" id="swarm-count"></p>
+      <ul class="swarm-list" id="swarm-list"></ul>
+      <div class="swarm-empty" id="swarm-empty" hidden>
+        <h2>No results</h2>
+        <p>Try a different keyword, or browse the <a href="/farshid/index.html#atlas">Atlas</a>.</p>
+      </div>
+    </div>
+
+    <div class="swarm-synth" id="swarm-synth"></div>
   </div>
 </main>
 
@@ -95,9 +127,8 @@
     <div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
     <div class="footer-links">
       <a href="/">Home</a>
-      <a href="/farshid/search/">Search</a>
       <a href="/farshid/swarm/">Search Swarm</a>
-      <a href="/index.html#atlas">Atlas</a>
+      <a href="/farshid/index.html#atlas">Atlas</a>
       <a href="/farshid/qr/">Connect</a>
     </div>
     <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
@@ -108,33 +139,28 @@
 (function(){
   'use strict';
   var INDEX = window.SEARCH_INDEX || [];
+
+  /* ---- swarm animation ---- */
   var canvas = document.getElementById('swarm-canvas');
   var ctx = canvas.getContext('2d');
-  var synth = document.getElementById('swarm-synth');
-  var input = document.getElementById('swarm-input');
-  var go = document.getElementById('swarm-go');
-  var W, H, agents = [], run = null;
-
+  var W, H, agents = [], animId = null;
   function resize(){ W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
   window.addEventListener('resize', resize); resize();
-
-  function spawn(n){
+  function spawn(n, colors){
     agents=[];
     for(var i=0;i<n;i++){
-      agents.push({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*1.6, vy:(Math.random()-.5)*1.6, r:2+Math.random()*3, hue:Math.random()<0.55?220:(Math.random()<0.7?260:160)});
+      agents.push({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*1.6, vy:(Math.random()-.5)*1.6,
+        r:2+Math.random()*3, hue: colors ? colors[i%colors.length] : (Math.random()<0.55?220:(Math.random()<0.7?260:160))});
     }
   }
   var last=performance.now();
   function frame(now){
     var dt=Math.min(0.05,(now-last)/1000); last=now;
     ctx.clearRect(0,0,W,H);
-    // links
-    for(var i=0;i<agents.length;i++){
-      for(var j=i+1;j<agents.length;j++){
-        var a=agents[i],b=agents[j];
-        var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
-        if(d<90){ ctx.strokeStyle='rgba(10,102,255,'+(0.25*(1-d/90))+')'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
-      }
+    for(var i=0;i<agents.length;i++) for(var j=i+1;j<agents.length;j++){
+      var a=agents[i],b=agents[j];
+      var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<90){ ctx.strokeStyle='rgba(10,102,255,'+(0.25*(1-d/90))+')'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
     }
     agents.forEach(function(a){
       a.x+=a.vx*dt*30; a.y+=a.vy*dt*30;
@@ -142,27 +168,72 @@
       ctx.beginPath(); ctx.arc(a.x,a.y,a.r,0,6.28);
       ctx.fillStyle='hsla('+a.hue+',70%,55%,0.85)'; ctx.fill();
     });
-    run=requestAnimationFrame(frame);
+    animId=requestAnimationFrame(frame);
   }
-  spawn(40); run=requestAnimationFrame(frame);
+  spawn(40); animId=requestAnimationFrame(frame);
 
-  function esc(s){return s.replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
+  /* ---- search + synthesis ---- */
+  var input = document.getElementById('swarm-input');
+  var go = document.getElementById('swarm-go');
+  var list = document.getElementById('swarm-list');
+  var countEl = document.getElementById('swarm-count');
+  var emptyEl = document.getElementById('swarm-empty');
+  var tagsEl = document.getElementById('swarm-tags');
+  var synthEl = document.getElementById('swarm-synth');
 
-  function swarm(){
-    var q=input.value.trim();
-    if(!q) return;
-    spawn(60);
-    var terms=q.split(/\s+/).filter(Boolean);
-    var found=INDEX.filter(function(e){
-      var hay=(e.title+' '+e.tags.join(' ')+' '+e.text).toLowerCase();
-      return terms.every(function(t){return hay.indexOf(t.toLowerCase())>=0;});
+  var CHIPS = ['camera', 'optical flow', 'CUDA', 'LLM', 'agents', 'patent', 'OpenCV', 'edge AI'];
+  function buildChips(){
+    CHIPS.forEach(function(c){
+      var t=document.createElement('button'); t.className='swarm-tag'; t.textContent=c;
+      t.addEventListener('click', function(){ input.value=c; run(); });
+      tagsEl.appendChild(t);
     });
-    // build synthesis
-    var cats=[];
+  }
+
+  function esc(s){ return s.replace(/[&<>"]/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];}); }
+  function highlight(text, terms){
+    var re = new RegExp('('+terms.join('|').replace(/[.*+?^${}()|[\]\\]/g,'\\$&').slice(0,200)+')','gi');
+    return esc(text).replace(re, function(m){ return m && /^[a-z0-9 ]+$/i.test(m) ? '<mark>'+m+'</mark>' : m; });
+  }
+  function snippetFor(entry, terms){
+    var lower = entry.text.toLowerCase();
+    var idx = terms.map(function(t){ return lower.indexOf(t.toLowerCase()); }).filter(function(i){return i>=0;});
+    var start = Math.max(0, (Math.min.apply(null, idx.length?idx:[0]) ) - 40);
+    var cut = entry.text.slice(start, start + 180);
+    if(start>0) cut = '…'+cut;
+    if(start+180 < entry.text.length) cut = cut+'…';
+    return cut;
+  }
+
+  function match(q){
+    var terms = q.split(/\s+/).filter(Boolean);
+    return INDEX.filter(function(e){
+      var hay = (e.title+' '+e.tags.join(' ')+' '+e.text).toLowerCase();
+      return terms.every(function(t){ return hay.indexOf(t.toLowerCase())>=0; });
+    });
+  }
+
+  function run(){
+    var q = input.value.trim();
+    if(!q){ countEl.textContent=''; list.innerHTML=''; emptyEl.hidden=true; synthEl.innerHTML=''; synthEl.classList.remove('show'); return; }
+    var terms = q.split(/\s+/).filter(Boolean);
+    var found = match(q);
+
+    // ranked result cards (full-text search)
+    countEl.textContent = found.length ? found.length+' result'+(found.length>1?'s':'')+' for "'+esc(q)+'"' : '';
+    emptyEl.hidden = found.length>0;
+    list.innerHTML = found.slice(0,24).map(function(e){
+      return '<a class="swarm-result" href="'+e.url+'"><h3 class="sr-title">'+esc(e.title)+'</h3>'+
+        '<p class="sr-snippet">'+highlight(snippetFor(e,terms), terms)+'</p>'+
+        '<span class="sr-path">'+e.tags.slice(0,3).join(' · ')+'</span></a>';
+    }).join('');
+
+    // swarm: recolor agents to match (blue=pages found, purple=tags, green=agents idle)
+    spawn(60, [220,260,160]);
+
+    // synthesis
     var tagSet={};
-    found.forEach(function(e){
-      (e.tags||[]).forEach(function(t){tagSet[t]=true;});
-    });
+    found.forEach(function(e){ (e.tags||[]).forEach(function(t){tagSet[t]=true;}); });
     var html='<h3>Swarm synthesis</h3><p><strong>'+found.length+' pages</strong> matched your question.</p>';
     if(found.length){
       html+='<h3>Top related pages</h3><ul>'+found.slice(0,8).map(function(e){
@@ -171,13 +242,16 @@
       var tags=Object.keys(tagSet).slice(0,8);
       if(tags.length) html+='<h3>Tags in play</h3><p>'+tags.map(esc).join(' · ')+'</p>';
     } else {
-      html+='<p>No exact match — try <a href="/farshid/search/">full search</a> for partial results.</p>';
+      html+='<p>No exact match — try a broader keyword, or browse the <a href="/farshid/index.html#atlas">Atlas</a>.</p>';
     }
-    html+='<h3>Related</h3><p><a href="/farshid/search/">Open full search</a> · <a href="/index.html#atlas">Browse the Atlas</a></p>';
-    synth.innerHTML=html; synth.classList.add('show');
+    html+='<h3>Browse</h3><p><a href="/farshid/index.html#atlas">Browse the full Atlas</a></p>';
+    synthEl.innerHTML=html; synthEl.classList.add('show');
   }
-  go.addEventListener('click', swarm);
-  input.addEventListener('keydown', function(e){ if(e.key==='Enter') swarm(); });
+
+  go.addEventListener('click', run);
+  input.addEventListener('input', run);
+  input.addEventListener('keydown', function(e){ if(e.key==='Enter') run(); });
+  buildChips();
   document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear();});
 })();
 </script>

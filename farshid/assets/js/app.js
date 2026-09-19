@@ -28,6 +28,7 @@
     var path;
     // permanent absolute paths — the site lives under /farshid/
     if (file==='home' || file==='atlas') path='/farshid/'+file+'.md';
+    else if (file==='contact' || file==='privacy') path='/farshid/'+file+'.md';
     else if (file.indexOf('content/')===0) path='/farshid/'+file+'.md';
     else if (file.indexOf('/')>=0) path=file+'.md';       // already absolute
     else path='/farshid/content/'+file+'.md';
@@ -76,7 +77,7 @@
         var m=href.match(/^([^#:]+\.md)(?:[#:](.+))?$/);
         var mp=m[1].replace(/\.[mM][dD]$/,'').replace(/^\/farshid\//,'').replace(/^\/content\//,'').replace(/^\//,'');
         var targetAnchor=m[2]||'';
-        a.addEventListener('click', function(e){ e.preventDefault(); navigate(mp+(targetAnchor?':'+slug(targetAnchor):'')); });
+        a.addEventListener('click', function(e){ e.preventDefault(); setHash(mp+(targetAnchor?':'+slug(targetAnchor):'')); });
       } else {
         a.setAttribute('target','_blank');
       }
@@ -106,6 +107,7 @@
 
   function showHome(){
     var baked=$id('baked-home'), c=$id('content');
+    c.setAttribute('hidden','');          // markdown container hidden — home is baked
     if(baked) baked.removeAttribute('hidden');
     c.innerHTML='';
     document.title='Dr. Farshid Pirahansiah — Computer Vision & Edge AI Engineer';
@@ -115,6 +117,7 @@
   function showMarkdown(file, anchor){
     var baked=$id('baked-home');
     if(baked) baked.setAttribute('hidden','');
+    $id('content').removeAttribute('hidden');   // reveal markdown container
     renderMarkdownRoute(file, anchor);
   }
 

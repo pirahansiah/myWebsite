@@ -95,14 +95,33 @@ The single index of everything on pirahansiah.com. Every publication, course, no
 
 ## Talks, Presentations & Keynotes
 
+### Presentations &amp; Slide Decks
+
+- [**The New Era of Research Tools**](/farshid/notes/slides/research-tools.md)
+- [**Hermes Agent for Research Assistance**](/farshid/notes/slides/presentation.md)
+- [**Hermes Agent for Big Computer Vision Projects**](/farshid/notes/slides/presentation-cv.md)
+- [**Hermes Agent — Recent Updates &amp; Complete Feature Guide**](/farshid/notes/slides/presentation-updates.md)
+- [**New LLM Optimization Methods — Run Local &amp; Fast**](/farshid/notes/slides/llm-optimization.md)
+
 - [Reducing Token Usage](/farshid/content/slides-token-optimization.md)
 - [**Research Tools — talks &amp; keynotes hub**](/farshid/notes/slides/research-tools/)
 - [Where LLMs Meet Computer Vision: Unlocking Multimodal AI](/farshid/content/keynotes-llm-cv.md)
 
+## Site Pages
+
+- [**🏠 Home — about &amp; overview**](/farshid/)
+- [**🕸️ Search Swarm — one search for the whole knowledge base**](/farshid/swarm/)
+- [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/qr/)
+- [**🗂️ Atlas — this index**](/farshid/atlas.md)
+- [**Talk: Reducing Token Usage in AI-Assisted Development**](/farshid/content/slides-token-optimization.md)
+- [**Keynote: LLMs Meet Computer Vision**](/farshid/content/keynotes-llm-cv.md)
+- [**Research Tools — talks &amp; keynotes hub**](/farshid/notes/slides/research-tools/)
+- [Contact](/farshid/contact.md)
+- [Privacy](/farshid/privacy.md)
+
 ## Connect & Share
 
-- [**🔍 Search — the whole knowledge base**](/farshid/search/)
-- [**🕸️ Search Swarm — live agent search**](/farshid/swarm/)
+- [**🕸️ Search Swarm — one search for the whole knowledge base**](/farshid/swarm/)
 - [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/qr/)
 
 

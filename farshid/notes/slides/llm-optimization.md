@@ -1,0 +1,402 @@
+<style>
+  html, body { background: transparent !important; overflow: auto !important; }
+  .site-main { padding: 0 !important; margin: 0 !important; background: #000 !important; border: none !important; box-shadow: none !important; max-width: none !important; width: 100% !important; }
+  .toolbar, .site-footer, footer { display: none !important; }
+  .presentation-panel { width: 100%; overflow: visible; background: #050b14; }
+  .reveal .slides section { height: auto; display: block !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; padding: 20px !important; box-sizing: border-box !important; }
+  .reveal .slides { height: 100%; }
+  .reveal { height: auto; width: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .reveal h1 { font-size: 2.0em; margin-bottom: 0.2em; color: #fff; text-align: center; font-weight: 800; background: linear-gradient(135deg, #22D3EE, #06B6D4, #3B82F6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .reveal h2 { font-size: 1.22em; margin: 0.18em 0 0.4em; color: #22D3EE; text-align: center; font-weight: 700; }
+  .reveal h3 { font-size: 1.05em; color: #A855F7; margin: 0.2em 0; text-align: left; }
+  .reveal p, .reveal li { font-size: 0.74em; color: #cbd5e1; line-height: 1.42; }
+  .reveal ul { list-style: none; padding: 0; text-align: left; margin: 0.5em 0; }
+  .reveal .controls { color: #22D3EE; }
+  .reveal .progress { color: #22D3EE; height: 4px; }
+
+  .m   { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; width: 98%; max-width: 1100px; margin: 0.5em auto; }
+  .m-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; width: 98%; max-width: 1100px; margin: 0.5em auto; }
+  .m-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 98%; max-width: 1100px; margin: 0.5em auto; }
+
+  .c { background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 12px; padding: 16px; text-align: left; backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(0,0,0,0.37); }
+  .c p { text-align: left; margin: 6px 0; font-size: 0.82em; }
+  .c h3 { text-align: left; }
+
+  .n { font-size: 2.2em; font-weight: 800; margin: 0; line-height: 1.1; }
+  .n.g { color: #30d158; } .n.r { color: #0284C7; } .n.b { color: #22D3EE; }
+  .n.p { color: #A855F7; } .n.o { color: #ff9f0a; }
+
+  .code-box { background: #090d16; border: 1px solid rgba(34,211,238,0.3); border-radius: 8px; padding: 10px 14px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 0.62em; color: #38bdf8; text-align: left; width: 95%; max-width: 1000px; overflow-x: auto; box-shadow: inset 0 2px 8px rgba(0,0,0,0.6); }
+  .code-box pre { margin: 0; padding: 0; }
+  .code-box .cmd { color: #34d399; font-weight: bold; }
+  .code-box .cmt { color: #64748b; font-style: italic; }
+  .code-box .str { color: #fbbf24; }
+  .code-box .kw  { color: #f472b6; font-weight: bold; }
+
+  .tag { display: inline-block; background: rgba(34, 211, 238, 0.15); border: 1px solid rgba(34, 211, 238, 0.4); color: #38bdf8; padding: 2px 8px; border-radius: 6px; font-size: 0.75em; font-weight: 600; margin-right: 4px; }
+  .tag.p { background: rgba(168,85,247,0.15); border-color: rgba(168,85,247,0.4); color: #c4b5fd; }
+
+  .metric { display: inline-block; text-align: center; margin: 6px 14px; }
+  .metric .n { font-size: 1.9em; }
+  .metric .l { font-size: 0.55em; color: #94a3b8; text-transform: uppercase; letter-spacing: .06em; }
+
+  /* era comparison */
+  .era { display: grid; grid-template-columns: 1fr 60px 1fr; align-items: center; gap: 10px; width: 96%; max-width: 1060px; margin: 0.4em auto; }
+  .era .box { border-radius: 12px; padding: 14px 16px; text-align: left; }
+  .era .old { background: rgba(220,38,38,0.12); border: 1px solid rgba(220,38,38,0.4); }
+  .era .new { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.4); }
+  .era .arrow { font-size: 1.6em; color: #22D3EE; text-align: center; }
+
+  /* strip of metric chips */
+  .strip { display: inline-block; background: rgba(15,23,42,.8); border: 1px solid rgba(56,189,248,.25); border-radius: 10px; padding: 8px 12px; margin: 4px; text-align: center; }
+  .strip b { display: block; font-size: 1.1em; color: #22D3EE; }
+  .strip span { font-size: .55em; color: #94a3b8; text-transform: uppercase; }
+
+  /* bars for size/speed */
+  .vis { width: 96%; max-width: 1000px; margin: 8px auto; }
+  .bar { background: rgba(15,23,42,.7); border-radius: 6px; margin: 4px 0; overflow: hidden; }
+  .bar span { display: block; padding: 3px 8px; font-size: .9em; color: #001018; font-weight: 700; white-space: nowrap; }
+
+  /* draft/verify flow */
+  .flow { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+  .flow .node { background: rgba(15,23,42,.9); border: 1px solid rgba(56,189,248,.35); border-radius: 8px; padding: 8px 12px; font-size: .9em; text-align: center; }
+  .flow .node.ok { border-color: rgba(16,185,129,.6); }
+  .flow .arrow { color: #22D3EE; font-size: 1.2em; }
+
+  /* generic card grid */
+  .card { background: rgba(15,23,42,.7); border: 1px solid rgba(56,189,248,.25); border-radius: 12px; padding: 14px; text-align: left; }
+  .card p { text-align: left; font-size: .8em; }
+
+  .nav-hint { position: absolute; bottom: 8px; font-size: 0.55em; opacity: 0.4; color: #94a3b8; pointer-events: none; z-index: 10; }
+
+  @media (max-width: 768px) {
+    .m, .m-2, .m-3, .era { grid-template-columns: 1fr; }
+    .era .arrow { transform: rotate(90deg); }
+    .n { font-size: 1.6em; }
+    .reveal h1 { font-size: 1.4em; }
+    .reveal h2 { font-size: 1.1em; }
+    .code-box { font-size: 0.58em; }
+  }
+</style>
+
+<div class="presentation-panel">
+  <div class="nav-hint">← Tap Left / Press Left Arrow | Tap Right / Press Right Arrow →</div>
+  <div class="reveal">
+    <div class="slides">
+
+      
+      <section>
+        <div style="background:radial-gradient(900px 400px at 30% 20%, rgba(56,189,248,.18), transparent), radial-gradient(700px 380px at 80% 70%, rgba(168,85,247,.16), transparent); padding:34px 40px; border-radius:18px;">
+          <div style="font-size:.6em; letter-spacing:.18em; color:#67e8f9; text-transform:uppercase;">Inference Engineering · 2026</div>
+          <h1>New LLM Optimization Methods</h1>
+          <p style="color:#cbd5e1; max-width:760px;">How to run frontier-scale models on a laptop, a single GPU, or Apple Silicon — fast and cheap. One method per page, with a visualization, then a synthesis for the <b>Qwen3.8-Flash</b> class.</p>
+          <div style="margin-top:18px;">
+            <div class="strip"><b>5</b><span>core methods</span></div>
+            <div class="strip"><b>2×–10×</b><span>typical speedup</span></div>
+            <div class="strip"><b>1-bit</b><span>to 4-bit viable</span></div>
+            <div class="strip"><b>Qwen3.8</b><span>target model</span></div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section>
+        <h2>The Bottleneck: Where the Cost Lives</h2>
+        <div class="m-3">
+          <div class="c">
+            <h3 style="color:#38bdf8;">Memory (weights + KV)</h3>
+            <p>Model size dominates. 27B @ BF16 ≈ 54 GB. Quantization shrinks weights; KV-cache grows with context length.</p>
+            <div class="code-box">
+<span class="cmt"># RAM needed (decode)</span>
+RAM ≈ params × bits/8  +  seq × layers × 2 × d_model × 2
+27B × 16b = 54 GB   →   27B × 4b = 13.5 GB
+            </div>
+          </div>
+          <div class="c">
+            <h3 style="color:#a855f7;">Compute (decode loop)</h3>
+            <p>Autoregressive: 1 token per forward pass. Each pass is a big matmul over all weights — bandwidth-bound on most hardware.</p>
+            <div class="code-box">
+<span class="kw">for</span> t <span class="kw">in</span> range(N):        <span class="cmt"># N sequential passes</span>
+    logits = model(x[:, -1:]) <span class="cmt"># full-weight matmul</span>
+    x = cat(x, sample(logits))
+            </div>
+          </div>
+          <div class="c">
+            <h3 style="color:#22d3ee;">Attention IO</h3>
+            <p>Naive attention materializes N×N scores → quadratic memory + HBM traffic. FlashAttention fixes this at the kernel level.</p>
+            <div class="code-box">
+<span class="cmt"># standard</span>
+S = QKᵀ            <span class="cmt"># N×N, stored to HBM</span>
+<span class="cmt"># flash</span>
+tile→SRAM, online softmax, never materialize S
+            </div>
+          </div>
+        </div>
+        <p style="color:#94a3b8; font-size:.6em;">Three levers → three families: <b>shrink weights</b>, <b>draft many tokens per pass</b>, <b>fuse the kernel</b>.</p>
+      </section>
+
+      
+      <section>
+        <h2>1 · Unsloth Dynamic 3.0 — Smart Quantization <span class="tag p">PTQ</span></h2>
+        <div class="m-2">
+          <div class="c">
+            <h3 style="color:#a855f7;">What it does</h3>
+            <p>Post-training quantization that assigns <b>different bit-widths per layer / per tensor</b>. Important tensors stay 8/16-bit; unimportant ones drop to 1–2-bit. Pure PTQ — no QAT, no QAD, no training on the calibration set.</p>
+            <ul style="font-size:.62em;">
+              <li>Improved <b>imatrix calibration</b> tuned for agentic coding, chat, multilingual</li>
+              <li>Per-model, per-layer quantization schemes (Gemma-3 ≠ Llama-4 ≠ Qwen)</li>
+              <li>Ships as GGUF (llama.cpp, Ollama) and safetensors</li>
+              <li>New metric <b>Divergence-300@32</b>: 32-token trajectory vs BF16 (vs Top-1 / KL-Div)</li>
+              <li>Calibration & test sets fully separated → low overfit risk</li>
+            </ul>
+          </div>
+          <div class="c">
+            <h3 style="color:#22d3ee;">Qwen3.8-27B, measured</h3>
+            <div class="code-box">
+Quant          Size      Top-1     Note
+UD-IQ1_S       6.2 GB    ~72%      -89% size, 1-bit
+UD-Q2_K_XL     9.83 GB   +8%       best agent tier
+UD-Q4_0        ~13 GB    higher    MTP optional
+<span class="cmt"># >10% Top-1 better at same disk vs other providers</span>
+            </div>
+            <div class="vis" style="font-size:.5em; margin-top:8px;">
+              <div class="bar"><span style="width:12%; background:#a855f7;">IQ1_S 6.2GB</span></div>
+              <div class="bar"><span style="width:18%; background:#7c3aed;">Q2_K_XL 9.8GB</span></div>
+              <div class="bar"><span style="width:24%; background:#38bdf8;">Q4_0 ~13GB</span></div>
+              <div class="bar"><span style="width:100%; background:#334155;">BF16 54GB</span></div>
+            </div>
+            <p style="font-size:.5em; color:#94a3b8;">Bar width ∝ disk size. Lower bars = runs on consumer HW.</p>
+            <p style="font-size:.52em; color:#fbbf24;">Gotcha: sub-Q2_K_XL loops/empty replies in agent mode → set <code>presence_penalty=1.5</code>; 1-bit not for tool-calls.</p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section>
+        <h2>2 · Multi-Token Prediction (MTP) — Self-Speculative <span class="tag">decode</span></h2>
+        <div class="m-2">
+          <div class="c">
+            <h3 style="color:#38bdf8;">Mechanism</h3>
+            <p>A tiny <b>draft head</b> baked into the model (e.g. Qwen3.5/3.6 ship <code>mtp.*</code>, 1 transformer layer) predicts t+2, t+3 … cheaply. The main model verifies them in <b>one</b> extra forward pass and accepts the longest matching prefix.</p>
+            <div class="code-box">
+t2, t3 = mtp_head(hidden_t, emb(t1))  <span class="cmt"># draft</span>
+L      = model([t1,t2,t3], kv=shared) <span class="cmt"># verify (1 pass)</span>
+accept longest prefix where argmax(L) == draft
+            </div>
+            <ul style="font-size:.58em;">
+              <li>Lossless (greedy verify) — identical output to AR</li>
+              <li>Trained jointly → draft matches main-model distribution</li>
+              <li>No separate draft model; needs MTP-shipped checkpoint</li>
+            </ul>
+          </div>
+          <div class="c">
+            <h3 style="color:#22d3ee;">Why it is "free tokens"</h3>
+            <div class="flow">
+              <div class="node">t₁<br><small>main</small></div>
+              <div class="arrow">→ draft →</div>
+              <div class="node ok">t₂ t₃<br><small>MTP head</small></div>
+              <div class="arrow">→ 1 verify →</div>
+              <div class="node ok">accept 2<br><small>2 tok/1 pass</small></div>
+            </div>
+            <ul style="font-size:.58em;">
+              <li>Qwen3.5: <b>~70 → 131 tok/s</b> (GB10); <b>1.5–1.6×</b> on M4 Pro</li>
+              <li>Acceptance ~80–88% (temp 0–1)</li>
+              <li>Sweet spot: depth <b>1</b> on Metal; n_max <b>2–3</b> on CUDA</li>
+              <li>Does not affect prefill (prompt is parallel anyway)</li>
+            </ul>
+            <p style="font-size:.5em; color:#fbbf24;">Gotcha: single-head MTP → acceptance decays geometrically with depth; llama.cpp default was 16 (catastrophic) → now 3. MoE wants n_max=2, dense wants 3.</p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section>
+        <h2>3 · DFlash2 — Parallel Speculative Decoding <span class="tag p">z-lab / Inco AI</span></h2>
+        <div class="m-2">
+          <div class="c">
+            <h3 style="color:#a855f7;">Block-diffusion drafter</h3>
+            <p>Unlike sequential drafters, DFlash2 proposes the <b>whole draft block in one parallel pass</b> via a small block-diffusion network. A <b>path selector</b> keeps top-16 candidates per slot; a <b>two-tap conv</b> keeps coherence. Adds ~2M + 16.5M params, ~1.3% latency.</p>
+            <ul style="font-size:.6em;">
+              <li>+21% acceptance length over DFlash (16–25% per case)</li>
+              <li>Runs on SGLang, vLLM, llama.cpp (PR #27342), oMLX</li>
+              <li>MLX build for Apple Silicon (Qwen3.8-27B)</li>
+              <li>Depth/default block-size 5–8; small quality loss vs AR = 0</li>
+            </ul>
+          </div>
+          <div class="c">
+            <h3 style="color:#22d3ee;">Measured speedup</h3>
+            <div class="code-box">
+Setup                     Base    DFlash2    ×speed
+A100 (Qwen3.8-27B)        28.9    59.1       ~2.0×
+M5 Pro Q4_K_M            10.42   19.31      1.85×
+RTX 5050 (8GB, starved)   6.8     11.6       1.7×
+            </div>
+            <div class="vis" style="font-size:.5em; margin-top:8px;">
+              <div class="bar"><span style="width:35%; background:#334155;">baseline</span></div>
+              <div class="bar"><span style="width:100%; background:#a855f7;">DFlash2 ~2×</span></div>
+            </div>
+            <p style="font-size:.5em; color:#94a3b8;">Biggest gain when baseline is compute/VRAM-starved.</p>
+            <p style="font-size:.5em; color:#fbbf24;">Gotcha: speculation is single-stream only — at concurrency ≥2 it can cost ~25% vs no-draft. Needs ~77GB VRAM for main+draft on A100.</p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section>
+        <h2>4 · oMLX / MLX — Apple-Silicon Native Runtime <span class="tag">runtime</span></h2>
+        <div class="m-2">
+          <div class="c">
+            <h3 style="color:#38bdf8;">Unified memory advantage</h3>
+            <p>MLX (Apple ML Research) keeps tensors in <b>shared memory</b> — no CPU↔GPU copy. On 128 GB M-series, a 27B model sits fully resident and bandwidth-efficient, so quantized + MTP/DFlash overhead is amortized.</p>
+            <div class="code-box">
+<span class="cmd">pip install mlx-lm</span>
+mlx_lm.generate --model Qwen3.8-27B-4bit --mtp
+mlx_lm.server   --model Qwen3.8-27B-4bit --mtp
+            </div>
+            <p style="font-size:.58em;">oMLX = optimized local MLX serving stack (e.g. Qwen3.5-4B-OptiQ on 127.0.0.1:8000).</p>
+          </div>
+          <div class="c">
+            <h3 style="color:#22d3ee;">Why it matters for these methods</h3>
+            <ul style="font-size:.6em;">
+              <li>Native <b>MTP</b> in mlx-lm (#990): 1.5× Qwen3.6-27B on M4 Pro</li>
+              <li>DFlash2 ships an <b>oMLX build</b> for Apple Silicon</li>
+              <li>Lazy eval + dynamic graphs → no recompile per shape</li>
+              <li>Skip MTP below ~4B (overhead &gt; gain); 4B+ wins</li>
+              <li>M1/M2 need <code>--dtype float16</code> (no native BF16)</li>
+            </ul>
+            <div class="flow">
+              <div class="node">weights<br><small>unified</small></div>
+              <div class="arrow">→ no copy →</div>
+              <div class="node ok">GPU+CPU<br><small>same RAM</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section>
+        <h2>5 · FlashAttention-2 — IO-Aware Kernel <span class="tag p">foundation</span></h2>
+        <div class="m-2">
+          <div class="c">
+            <h3 style="color:#38bdf8;">The kernel everything rides on</h3>
+            <p>Exact (no approximation) attention that tiles Q/K/V into SRAM, does online softmax, and <b>never writes the N×N score matrix to HBM</b>. Memory becomes <b>linear</b> in sequence length; the decode matmul stays bandwidth-bound, not memory-bound.</p>
+            <div class="code-box">
+FlashAttention : 2–4× faster, 10–20× less memory (linear)
+FlashAttention-2: +2× again → up to 73% A100 FLOPs
+  · split Q across warps (not K/V) → less shared-mem traffic
+  · parallelize over sequence length
+  · supports head_dim ≤ 256, MQA/GQA
+            </div>
+          </div>
+          <div class="c">
+            <h3 style="color:#22d3ee;">Impact on the other 4 methods</h3>
+            <div class="vis" style="font-size:.5em;">
+              <div class="bar"><span style="width:100%; background:#334155;">naive (quadratic)</span></div>
+              <div class="bar"><span style="width:42%; background:#38bdf8;">FlashAttn</span></div>
+              <div class="bar"><span style="width:22%; background:#22d3ee;">FlashAttn-2</span></div>
+            </div>
+            <ul style="font-size:.56em;">
+              <li>MTP/DFlash2 verify a <b>batch</b> of draft tokens — FA-2 makes that batched verify nearly free</li>
+              <li>Long-context KV cache stays small enough to keep on-chip</li>
+              <li>Underpins vLLM, SGLang, llama.cpp, MLX backends</li>
+              <li>Up to 9× vs PyTorch attention; 225 TFLOPs/s GPT training</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      
+      <section>
+        <h2>Method Map — Where Each Lever Hits</h2>
+        <div class="m-3">
+          <div class="card"><h3 style="color:#a855f7;">Shrink weights</h3><p style="font-size:.6em;">Unsloth Dynamic 3.0 → fits 27B in 6–14 GB.</p></div>
+          <div class="card"><h3 style="color:#38bdf8;">Draft tokens</h3><p style="font-size:.6em;">MTP (self) + DFlash2 (parallel) → 1.5–2× decode.</p></div>
+          <div class="card"><h3 style="color:#22d3ee;">Fuse kernel</h3><p style="font-size:.6em;">FlashAttention-2 → linear memory, free batched verify.</p></div>
+          <div class="card"><h3 style="color:#67e8f9;">Run natively</h3><p style="font-size:.6em;">oMLX/MLX → unified memory removes copy cost.</p></div>
+        </div>
+        <p style="color:#94a3b8; font-size:.58em;">Stack them: <b>quantize → load in MLX → enable MTP/DFlash2 → rely on FlashAttn-2 under the hood</b>.</p>
+      </section>
+
+      
+      <section>
+        <h2>Synthesis — Qwen3.8-Flash: Stack the Stack</h2>
+        <div style="background:linear-gradient(135deg, rgba(56,189,248,.12), rgba(168,85,247,.12)); border:1px solid #1e293b; border-radius:14px; padding:16px 20px; width:96%; max-width:1080px;">
+          <p style="font-size:.66em; color:#e2e8f0;">The <b>Qwen3.8-Flash</b> class (next-gen small/fast variant) is the ideal target for the full stack. Recipe for a 27B-class model on a single Apple-Silicon or 24 GB GPU box:</p>
+          <div class="m-2" style="margin-top:8px;">
+            <div class="c">
+              <ol style="font-size:.58em; line-height:1.45;">
+                <li><b>Quantize</b> with Unsloth Dynamic 3.0 → <code>UD-Q4_K_M</code> (~13 GB) or <code>UD-Q2_K_XL</code> (~9.8 GB, best agent tier).</li>
+                <li><b>Load</b> via oMLX / mlx-lm (unified memory) — no CPU↔GPU copies.</li>
+                <li><b>Enable MTP</b> (<code>--mtp</code>); depth 1 on Metal, n_max 2–3 on CUDA → +1.5× decode.</li>
+                <li><b>Add DFlash2</b> drafter when VRAM allows → up to +2×; pairs with MTP on llama.cpp.</li>
+                <li><b>FlashAttention-2</b> is automatic in the backend — keeps long context cheap.</li>
+              </ol>
+            </div>
+            <div class="c">
+              <div class="code-box">
+<span class="cmt"># Apple Silicon, 27B, ~2× throughput</span>
+mlx_lm.server --model Qwen3.8-27B-4bit \
+              --mtp
+
+<span class="cmt"># CUDA / llama.cpp, chain drafters</span>
+llama-server -m Qwen3.8-27B-UD-Q4_K_M.gguf \
+  --spec-type draft-mtp --spec-draft-n-max 3 \
+  --spec-draft dflash2-q8   <span class="cmt"># optional</span>
+              </div>
+              <p style="font-size:.5em; color:#94a3b8;">Expected: BF16-class quality at 4-bit, 1.5–2× faster, runs on a laptop or single GPU.</p>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:.5em; color:#64748b;">Numbers from vendor/repro benchmarks (Unsloth, z-lab, mlx-lm, Dao et al.); real throughput is hardware- and prompt-dependent.</p>
+      </section>
+
+      
+      <section>
+        <h2>Validated Skills Library <span class="tag">installed &amp; scanned</span></h2>
+        <p style="font-size:0.6em; color:#94a3b8;">All installed via <code>hermes skills install</code>, security-scanned, and verified (valid SKILL.md, enabled).</p>
+        <div class="m-3">
+          <div class="c"><h3 style="color:#38bdf8;">Web &amp; Research</h3><p style="font-size:0.6em;">agent-reach · youtube-full · defuddle · resemble-detect</p></div>
+          <div class="c"><h3 style="color:#a855f7;">Build &amp; Engineering</h3><p style="font-size:0.6em;">using-agent-skills · setup-matt-pocock-skills · make-interfaces-feel-better · humanizer</p></div>
+          <div class="c"><h3 style="color:#22d3ee;">Agents &amp; Ops</h3><p style="font-size:0.6em;">browser-harness · i-have-adhd · loopy · loop-library · skillclaw</p></div>
+        </div>
+        <div class="code-box" style="font-size:0.56em; margin-top:10px;">
+<span class="cmt"># list active skills</span>
+hermes skills list
+<span class="cmt"># 14 validated community/url skills now active</span>
+        </div>
+      </section>
+
+      
+      <section>
+        <h2>Command Cheat Sheet <span class="tag">DESK · CLI · MSG · SHELL</span></h2>
+        <p style="font-size:0.5em; color:#94a3b8;">Everyday commands — Desktop, CLI chat, messaging, shell. (Verified vs current Hermes source, Sep 2026.)</p>
+        <div class="m-3">
+          <div class="c"><h3 style="color:#38bdf8;">Sessions &amp; Context</h3><p style="font-size:0.55em;">/new · /resume · /sessions · /title · /branch · /compress · /context · /status</p></div>
+          <div class="c"><h3 style="color:#38bdf8;">Control Work</h3><p style="font-size:0.55em;">/queue · /steer · /bg · /btw · /agents · /stop</p></div>
+          <div class="c"><h3 style="color:#38bdf8;">Goals, Loops &amp; Plans</h3><p style="font-size:0.55em;">/goal · /subgoal · /heartbeat · /loop · /plan · /review · /refine</p></div>
+          <div class="c"><h3 style="color:#a855f7;">Models &amp; Behavior</h3><p style="font-size:0.55em;">/model · /moa · /personality · /reasoning · /fast · /approvals · /yolo · /busy · /voice</p></div>
+          <div class="c"><h3 style="color:#a855f7;">Skills, Memory &amp; Tools</h3><p style="font-size:0.55em;">/skills · /learn · /memory · /init · /tools · /browser</p></div>
+          <div class="c"><h3 style="color:#a855f7;">Automation &amp; Coord</h3><p style="font-size:0.55em;">/cron · /suggestions · /blueprint · /kanban</p></div>
+          <div class="c"><h3 style="color:#22d3ee;">Inspect, Recover &amp; Fix</h3><p style="font-size:0.55em;">/retry · /undo · /save · /diff · /rollback · /usage · /debug · /help</p></div>
+          <div class="c"><h3 style="color:#f472b6;">Messaging / Gateway</h3><p style="font-size:0.55em;">/sethome · /topic · /commands · /approve · /deny · /pause · /platform · /restart</p></div>
+          <div class="c"><h3 style="color:#22d3ee;">Terminal Essentials</h3><p style="font-size:0.55em;">hermes / hermes chat · -z "prompt" · model · status · doctor · gateway status · --safe-mode · update</p></div>
+        </div>
+        <div class="code-box" style="font-size:0.52em; margin-top:8px;">
+<span class="cmt"># repeat-work modes</span>
+/goal  = work until objective met   /loop  = repeat w/ stop conditions
+/heartbeat = one recurring check    /cron  = durable schedule outside chat
+<span class="cmt"># type / + letters for autocomplete; /help for full list</span>
+        </div>
+      </section>
+
+      
+      <section>
+        <h1>Thank You & Discussion</h1>
+        <p style="color:#94a3b8; font-size:.7em;">Quantize smart · Draft in parallel · Fuse the kernel · Run native</p>
+        <p style="font-size:.6em; margin-top:8px;"><a href="/notes/slides/" style="color:#38bdf8;">← All presentations</a> · <a href="/notes/slides/research-tools/" style="color:#a855f7;">New Era of Research Tools</a></p>
+      </section>
+
+    </div>
+  </div>
+</div>
+
