@@ -109,6 +109,7 @@
       .forEach(function(p){
         var l=document.createElement('link'); l.id=p[0]; l.rel='stylesheet';
         l.href = p[1].charAt(0)==='/' ? p[1] : base+p[1];
+        l.onload=function(){ if(__deckPanel) fitDeckSlides(__deckPanel); };
         document.head.appendChild(l);
       });
   }
@@ -135,13 +136,104 @@
       embedded: true, hash: false, center: true, touch: true, keyboard: true,
       controls: true, progress: true, slideNumber: 'c/t',
       width: portrait ? 760 : 1120, height: portrait ? 1080 : 760,
-      margin: 0.05, minScale: 0.2, maxScale: 2.0
+      margin: 0.05, minScale: 0.2, maxScale: 2.0,
+      viewDistance: 99                   // keep every slide laid out: the fit pass measures them all
     });
     panel.__deck.initialize();
-    panel.__deck.on('slidechanged', function(){ panel.classList.add('deck-started'); });
+    panel.__deck.on('slidechanged', function(){ panel.classList.add('deck-started'); fitDeckSlides(panel); });
+    panel.__deck.on('ready', function(){ fitDeckSlides(panel); });
+    panel.__deck.on('resize', function(){ fitDeckSlides(panel); });
+    // Webfonts change the text metrics, so a deck fitted with the fallback face overflows
+    // again the moment Ubuntu Sans arrives.
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ fitDeckSlides(panel); });
     var rb=document.getElementById('restart-btn');
     if(rb) rb.addEventListener('click', function(e){ e.stopPropagation(); panel.__deck.slide(0); });
+    deckMenu(panel);
     wireDeckTaps(panel);
+    fitDeckSlides(panel);
+  }
+
+  /* A dense slide must still fit the screen. Reveal scales the deck as one unit, so a slide
+     whose content is taller than the slide box is simply clipped — the lecture decks ran up to
+     1.45x their box, which pushed a third of the text off screen. Each slide is fitted on its
+     own instead: its content is wrapped once, the wrapper is measured in layout pixels (Reveal
+     moves slides around with transforms, so rendered boxes are meaningless here), and the
+     wrapper is scaled about its own centre — which the slide's flex centring keeps centred. */
+  function deckWrap(s){
+    var w=s.querySelector(':scope > .deck-fit');
+    if(w) return w;
+    w=document.createElement('div');
+    w.className='deck-fit';
+    while(s.firstChild) w.appendChild(s.firstChild);
+    s.appendChild(w);
+    return w;
+  }
+  /* The first measurement after boot can be wrong: reveal's stylesheet and deck.css arrive
+     asynchronously and change every box. Watch the wrappers and refit when a slide's content
+     actually changes size (stylesheet applied, font swapped, image decoded). Transforms are
+     not layout, so this cannot loop. */
+  var __deckObs = window.ResizeObserver ? new ResizeObserver(function(list){
+    for(var i=0;i<list.length;i++){
+      var panel=list[i].target.closest ? list[i].target.closest('.presentation-panel') : null;
+      if(panel && panel.__deck) fitDeckSlides(panel);
+    }
+  }) : null;
+
+  function fitDeckSlides(panel){
+    if(!panel.clientHeight) return;                        // hidden container: nothing to measure
+    var secs=panel.querySelectorAll('.slides > section');
+    for(var i=0;i<secs.length;i++){
+      var s=secs[i], w=deckWrap(s);
+      if(__deckObs && !w.__fitObserved){ w.__fitObserved=true; __deckObs.observe(w); }
+      w.style.transform='';
+      var h=w.offsetHeight, wd=w.offsetWidth;
+      if(!h || !wd || !s.clientHeight) continue;           // display:none slide, or empty
+      var k=Math.min(1, s.clientHeight/h, s.clientWidth/wd);
+      k=Math.max(k, 0.5);                                  // below half size the text stops helping
+      if(k<1) w.style.transform='scale('+k.toFixed(3)+')';
+    }
+  }
+
+  /* A menu inside the deck: the deck owns the screen, so the site header is gone and there was
+     no way back to the rest of the site. It behaves like player chrome — visible when the deck
+     opens and whenever the pointer or a key moves, then out of the way while presenting. */
+  function deckMenu(panel){
+    if(panel.querySelector('.deck-menu')) return;
+    var wrap=document.createElement('div');
+    wrap.className='deck-menu';
+    var shell='/farshid/content/index.html#';
+    wrap.innerHTML =
+      '<button class="deck-menu-btn" type="button" aria-expanded="false" aria-controls="deck-menu-list">'+
+        '<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" '+
+        'stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg>'+
+        '<span>Menu</span></button>'+
+      '<div class="deck-menu-list" id="deck-menu-list" hidden>'+
+        '<a href="'+shell+'home">Home</a>'+
+        '<a href="'+shell+'atlas">Atlas</a>'+
+        '<a href="'+shell+'atlas:talks-presentations-keynotes">Presentations</a>'+
+        '<a href="/farshid/content/swarm.html">Search Swarm</a>'+
+        '<a href="/qr/">Scan &amp; share</a>'+
+      '</div>';
+    panel.appendChild(wrap);
+    var btn=wrap.querySelector('.deck-menu-btn'), list=wrap.querySelector('.deck-menu-list');
+    function close(){ list.hidden=true; btn.setAttribute('aria-expanded','false'); }
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open=list.hidden; list.hidden=!open; btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+    panel.addEventListener('pointerdown', function(e){ if(!e.target.closest('.deck-menu')) close(); }, true);
+
+    var idle=null;
+    function chrome(){
+      panel.classList.add('deck-chrome');
+      clearTimeout(idle);
+      idle=setTimeout(function(){ panel.classList.remove('deck-chrome'); }, 2600);
+    }
+    panel.addEventListener('pointermove', chrome);
+    panel.addEventListener('pointerdown', chrome);
+    document.addEventListener('keydown', chrome);
+    chrome();
   }
   /* Tap navigation: tap the right side -> next slide, tap the left side -> previous.
      Reveal's own swipe handling stays on, so a drag works too. Taps that land on a link,
@@ -157,7 +249,7 @@
       var quick=(Date.now()-down.t)<600, still=(dx<12&&dy<12);
       down=null;
       if(!quick||!still) return;
-      if(e.target&&e.target.closest&&e.target.closest('a,button,input,select,summary,.controls,.progress,.slide-number')) return;
+      if(e.target&&e.target.closest&&e.target.closest('a,button,input,select,summary,.controls,.progress,.slide-number,.deck-menu')) return;
       var r=panel.getBoundingClientRect();
       if((e.clientX-r.left) < r.width*0.45){ panel.__deck.prev(); } else { panel.__deck.next(); }
     }, true);

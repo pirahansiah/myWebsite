@@ -179,6 +179,42 @@ body.deck-page { margin: 0; background: #fff; overflow: hidden; }
 .presentation-panel button:hover { background: #ebe9e7; }
 .presentation-panel.deck-started .nav-hint { opacity: 0; }   /* out of the way once presenting */
 
+/* ---------- in-deck menu (player chrome) ----------
+   The deck owns the screen, so the site header is gone and there was no way back to the rest
+   of the site. This is the way back: visible when the deck opens and whenever the pointer or
+   a key moves, then out of the way while presenting. */
+.presentation-panel .deck-menu {
+  position: absolute; top: 14px; left: 14px; z-index: 30;
+  opacity: 1; transition: opacity 250ms ease;
+}
+.presentation-panel.deck-started:not(.deck-chrome) .deck-menu { opacity: 0; }
+.presentation-panel .deck-menu:focus-within { opacity: 1; }
+.presentation-panel .deck-menu-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font: inherit; font-size: 13px; font-weight: 600;
+  color: var(--dk-ink); background: rgba(255,255,255,.94);
+  border: 1px solid var(--dk-rule); border-radius: 999px; padding: 7px 13px;
+  cursor: pointer; box-shadow: 0 1px 3px rgba(17,20,24,.08);
+}
+.presentation-panel .deck-menu-btn:hover { background: #fff; }
+.presentation-panel .deck-menu-list {
+  margin-top: 8px; min-width: 190px; padding: 6px;
+  background: #fff; border: 1px solid var(--dk-rule); border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(17,20,24,.14);
+}
+.presentation-panel .deck-menu-list a {
+  display: block; padding: 9px 11px; border: 0; border-radius: 8px;
+  font-size: 14px; color: var(--dk-ink); text-decoration: none;
+}
+.presentation-panel .deck-menu-list a:hover { background: var(--dk-surface); }
+
+/* The slide's content is wrapped once so a dense slide can be scaled to fit: the wrapper is a
+   flex item of the slide, full width so the percentage widths inside it still resolve against
+   the slide, and it scales about its own centre — which the slide's centring keeps centred. */
+.presentation-panel .reveal .slides > section > .deck-fit {
+  width: 100%; display: block; transform-origin: center center;
+}
+
 /* ---------- phones: portrait decks, one column ---------- */
 @media (max-width: 768px) {
   .presentation-panel .m, .presentation-panel .m-2, .presentation-panel .m-3,
