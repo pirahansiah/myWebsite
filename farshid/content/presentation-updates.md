@@ -307,7 +307,7 @@ delegate_task(tasks=[
           <p>✔ <strong>Operate anywhere</strong> — CLI, GUI, web, 21+ messengers.</p>
           <p>✔ <strong>Ship traced artifacts</strong> — reproducible, push-button.</p>
         </div>
-        <p style="margin-top:0.8em; color:#1a56db; font-size:1.0em; font-weight:bold">pirahansiah.com/farshid/content/research-tools.html</p>
+        <p style="margin-top:0.8em; color:#1a56db; font-size:1.0em; font-weight:bold">pirahansiah.com/farshid/content/research-tools.md</p>
       </section>
 
       
@@ -354,8 +354,8 @@ hermes skills list
         <h1>Thank You</h1>
         <h2 style="color:#2b3038">Hermes Agent — Updates & Complete Feature Guide</h2>
         <p style="margin-top:1.2em">
-          <a href="/farshid/content/research-tools.html" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
-          <a href="/farshid/content/atlas.html#notes-guides" style="color:#1a56db; text-decoration:underline">Notes &amp; Guides</a> •
+          <a href="/farshid/content/research-tools.md" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
+          <a href="/farshid/content/atlas.md#notes-guides" style="color:#1a56db; text-decoration:underline">Notes &amp; Guides</a> •
           <a href="https://github.com/NousResearch/hermes-agent" style="color:#1a56db; text-decoration:underline">GitHub</a> •
           <a href="https://hermes-agent.nousresearch.com/docs/" style="color:#1a56db; text-decoration:underline">Official Docs</a>
         </p>

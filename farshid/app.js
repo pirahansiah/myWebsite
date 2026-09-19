@@ -14,7 +14,7 @@
   };
   var SECTIONS = [ // nav items: ONLY these three (per user)
     { label:'Home',          icon:'home',   type:'hash', file:'home', anchor:'top' },
-    { label:'Atlas',         icon:'atlas',  type:'link', href:'/farshid/content/atlas.html' },
+    { label:'Atlas',         icon:'atlas',  type:'hash', file:'atlas', anchor:'top' },
     { label:'Search Swarm',  icon:'search', type:'link', href:'/farshid/content/swarm.html' },
   ];
 

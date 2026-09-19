@@ -58,12 +58,10 @@ for slug,t in entries:
 
 SECTIONS = ['Publications','Courses','Notes & Guides','Talks, Presentations & Keynotes','Site Pages','Projects']
 
-# Links inside atlas.md point at the canonical static pages (#content/<slug>), NOT raw .md paths:
-# markdown is rendered client-side only, so a raw .md URL shows the source file when
-# opened in a new tab, opened from a search result, or clicked from outside the app.
+# Links point at the page files themselves: each page is one markdown file, which the
+# browser app renders in place (and which a crawler or an LLM reads as the final text).
 def content_url(slug):
-    # Canonical static page: crawlers (and no-JS fetches) cannot follow hash routes.
-    return f'/farshid/content/{slug}.html'
+    return f'/farshid/content/{slug}.md'
 
 # publication subgroup order
 PUBSUB = ['Book Chapters','Journal Articles','Conference Papers','Patents','Keynotes','Profile']
@@ -134,20 +132,20 @@ def render():
 
 
 def entry_url(slug):
-    """Canonical static page for a slug (raw .md would show source to crawlers)."""
+    """The page file: one markdown file per page, or a lessoned hand-written app path."""
     if slug.startswith('/'):        # already a site path (swarm.html, qrcode.html, index.html)
         return slug
-    return f'/farshid/content/{slug}.html'
+    return f'/farshid/content/{slug}.md'
 
 
 def site_pages_items():
     return [
         ('/farshid/content/index.html', 'Home — about & overview'),
-        ('/farshid/content/atlas.html', 'Atlas — this index'),
+        ('/farshid/content/index.html#atlas', 'Atlas — this index'),
         ('/farshid/content/swarm.html', 'Search Swarm — one search for the whole knowledge base'),
-        ('/farshid/content/qrcode.html', 'Scan & Share — all links + QR codes'),
-        ('/farshid/content/contact.html', 'Contact'),
-        ('/farshid/content/privacy.html', 'Privacy'),
+        ('/farshid/content/qr.md', 'Scan & Share — all links + QR codes'),
+        ('/farshid/content/contact.md', 'Contact'),
+        ('/farshid/content/privacy.md', 'Privacy'),
     ]
 
 
@@ -175,7 +173,7 @@ def project_items():
                 m = re.search(r'^#\s+(.+)$', rb, re.M)
                 if m:
                     label = ' '.join(m.group(1).split())
-            out.append((f'/farshid/projects/{d}/', label + ' — ' + d if label != d else d))
+            out.append((f'/farshid/projects/{d}/README.md', label + ' — ' + d if label != d else d))
     return out
 
 out=render()

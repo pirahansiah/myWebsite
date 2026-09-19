@@ -572,8 +572,8 @@ hermes skills list
         <h1>Thank You & Discussion</h1>
         <h2 style="color:#2b3038">Hermes Agent for Research Assistance</h2>
         <p style="margin-top:1.5em">
-          <a href="/farshid/content/research-tools.html" style="color:#1a56db; text-decoration:underline">All Presentations</a> • 
-          <a href="/farshid/content/atlas.html#publications" style="color:#1a56db; text-decoration:underline">Publications & Notes</a> • 
+          <a href="/farshid/content/research-tools.md" style="color:#1a56db; text-decoration:underline">All Presentations</a> • 
+          <a href="/farshid/content/atlas.md#publications" style="color:#1a56db; text-decoration:underline">Publications & Notes</a> • 
           <a href="https://github.com/pirahansiah" style="color:#1a56db; text-decoration:underline">GitHub Repositories</a>
         </p>
         <div style="margin-top:2em">

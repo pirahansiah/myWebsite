@@ -230,7 +230,7 @@ delegate_task(tasks=[
           <p>✔ <strong>Operate autonomously</strong>: cron jobs + group bots run the ops loop.</p>
           <p>✔ <strong>Profile & ship</strong>: bottleneck calls + traced artifact lineage.</p>
         </div>
-        <p style="margin-top:1em; color:#1a56db; font-size:1.05em; font-weight:bold">pirahansiah.com/farshid/content/computer-vision.html</p>
+        <p style="margin-top:1em; color:#1a56db; font-size:1.05em; font-weight:bold">pirahansiah.com/farshid/content/computer-vision.md</p>
       </section>
 
       
@@ -277,8 +277,8 @@ hermes skills list
         <h1>Thank You & Discussion</h1>
         <h2 style="color:#2b3038">Hermes Agent for Big Computer Vision Projects</h2>
         <p style="margin-top:1.5em">
-          <a href="/farshid/content/research-tools.html" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
-          <a href="/farshid/content/computer-vision.html" style="color:#1a56db; text-decoration:underline">CV &amp; Publications</a> •
+          <a href="/farshid/content/research-tools.md" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
+          <a href="/farshid/content/computer-vision.md" style="color:#1a56db; text-decoration:underline">CV &amp; Publications</a> •
           <a href="https://github.com/pirahansiah" style="color:#1a56db; text-decoration:underline">GitHub</a>
         </p>
         <div style="margin-top:2em">

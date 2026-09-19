@@ -6,7 +6,7 @@ Each section is one page, in the order of the Atlas.
 # Site
 
 ## Atlas
-URL: https://pirahansiah.com/farshid/content/atlas.html
+URL: https://pirahansiah.com/farshid/content/atlas.md
 
 # Atlas
 
@@ -25,114 +25,114 @@ The single index of everything on pirahansiah.com — every publication, course,
   <h2>Publications</h2>
   <h3 class="atlas-sub" id="book-chapters">Book Chapters <span class="atlas-count">7</span></h3>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/books-cv-meets-llm.html">AI computer vision locally LLMs on device</a></li>
-    <li><a href="/farshid/content/books-opencv5-ch3.html">Books Opencv5 Ch3</a></li>
-    <li><a href="/farshid/content/books-camera-calibration.html">Camera Calibration and Video Stabilization Framework for Robot Localization</a></li>
-    <li><a href="/farshid/content/books-computational-intelligence.html">Computational Intelligence: From Theory to Application</a></li>
-    <li><a href="/farshid/content/books-opencv5-ch2.html">Mastering AI and Machine Learning: A Comprehensive Summary</a></li>
-    <li><a href="/farshid/content/books-opencv5-ch1.html">Mastering AI and Machine Learning: Essential Glossary, Resources, and References</a></li>
-    <li><a href="/farshid/content/books-new-developer-era.html">The New Developer Era: Transforming Your Career and Building Production Ready AI Agents in 2027</a></li>
+    <li><a href="/farshid/content/books-cv-meets-llm.md">AI computer vision locally LLMs on device</a></li>
+    <li><a href="/farshid/content/books-opencv5-ch3.md">Books Opencv5 Ch3</a></li>
+    <li><a href="/farshid/content/books-camera-calibration.md">Camera Calibration and Video Stabilization Framework for Robot Localization</a></li>
+    <li><a href="/farshid/content/books-computational-intelligence.md">Computational Intelligence: From Theory to Application</a></li>
+    <li><a href="/farshid/content/books-opencv5-ch2.md">Mastering AI and Machine Learning: A Comprehensive Summary</a></li>
+    <li><a href="/farshid/content/books-opencv5-ch1.md">Mastering AI and Machine Learning: Essential Glossary, Resources, and References</a></li>
+    <li><a href="/farshid/content/books-new-developer-era.md">The New Developer Era: Transforming Your Career and Building Production Ready AI Agents in 2027</a></li>
   </ul>
   <h3 class="atlas-sub" id="journal-articles">Journal Articles <span class="atlas-count">6</span></h3>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/journals-ant-colony.html">Ant Colony Optimization for Image Edge Detection</a></li>
-    <li><a href="/farshid/content/journals-adaptive-thresholding.html">Mind Map: Adaptive Image Thresholding Based on PSNR</a></li>
-    <li><a href="/farshid/content/journals-character-recognition.html">Mind Map: Character and Object Recognition Based on Global Feature Extraction</a></li>
-    <li><a href="/farshid/content/journals-fuzzy-thresholding.html">Mind Map: GSFT-PSNR Global Single Fuzzy Threshold</a></li>
-    <li><a href="/farshid/content/journals-psnr-segmentation.html">Mind Map: Peak Signal-to-Noise Ratio Based on Threshold Method for Image Segmentation</a></li>
-    <li><a href="/farshid/content/journals-3d-slam-humanoid.html">Simultaneous Localization and Mapping Trends and Humanoid Robot Linkages</a></li>
+    <li><a href="/farshid/content/journals-ant-colony.md">Ant Colony Optimization for Image Edge Detection</a></li>
+    <li><a href="/farshid/content/journals-adaptive-thresholding.md">Mind Map: Adaptive Image Thresholding Based on PSNR</a></li>
+    <li><a href="/farshid/content/journals-character-recognition.md">Mind Map: Character and Object Recognition Based on Global Feature Extraction</a></li>
+    <li><a href="/farshid/content/journals-fuzzy-thresholding.md">Mind Map: GSFT-PSNR Global Single Fuzzy Threshold</a></li>
+    <li><a href="/farshid/content/journals-psnr-segmentation.md">Mind Map: Peak Signal-to-Noise Ratio Based on Threshold Method for Image Segmentation</a></li>
+    <li><a href="/farshid/content/journals-3d-slam-humanoid.md">Simultaneous Localization and Mapping Trends and Humanoid Robot Linkages</a></li>
   </ul>
   <h3 class="atlas-sub" id="conference-papers">Conference Papers <span class="atlas-count">10</span></h3>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/papers-adaptive-segmentation.html">Adaptive Image Segmentation Based on PSNR for License Plate Recognition</a></li>
-    <li><a href="/farshid/content/papers-geometrical-topological.html">An Evaluation of Classification Techniques Using Enhanced Geometrical Topological Feature Analysis</a></li>
-    <li><a href="/farshid/content/papers-multimodal-calibration.html">Camera Calibration for Multi-Modal Robot Vision</a></li>
-    <li><a href="/farshid/content/papers-global-feature-recognition.html">Character Recognition Based on Global Feature Extraction</a></li>
-    <li><a href="/farshid/content/papers-handwritten-thresholding.html">Comparison Single Thresholding Method for Handwritten Images Segmentation</a></li>
-    <li><a href="/farshid/content/papers-license-plate-recognition.html">License Plate Recognition with Multi-threshold based on Entropy</a></li>
-    <li><a href="/farshid/content/papers-multi-threshold-plate.html">Multi-threshold Approach for License Plate Recognition System</a></li>
-    <li><a href="/farshid/content/papers-2d-3d-mapping.html">Paper: 2D versus 3D Map for Environment Movement Objects</a></li>
-    <li><a href="/farshid/content/papers-pattern-calibration.html">Pattern Image Significance for Camera Calibration</a></li>
-    <li><a href="/farshid/content/papers-grid-computing.html">TafreshGrid: Grid Computing in Tafresh University</a></li>
+    <li><a href="/farshid/content/papers-adaptive-segmentation.md">Adaptive Image Segmentation Based on PSNR for License Plate Recognition</a></li>
+    <li><a href="/farshid/content/papers-geometrical-topological.md">An Evaluation of Classification Techniques Using Enhanced Geometrical Topological Feature Analysis</a></li>
+    <li><a href="/farshid/content/papers-multimodal-calibration.md">Camera Calibration for Multi-Modal Robot Vision</a></li>
+    <li><a href="/farshid/content/papers-global-feature-recognition.md">Character Recognition Based on Global Feature Extraction</a></li>
+    <li><a href="/farshid/content/papers-handwritten-thresholding.md">Comparison Single Thresholding Method for Handwritten Images Segmentation</a></li>
+    <li><a href="/farshid/content/papers-license-plate-recognition.md">License Plate Recognition with Multi-threshold based on Entropy</a></li>
+    <li><a href="/farshid/content/papers-multi-threshold-plate.md">Multi-threshold Approach for License Plate Recognition System</a></li>
+    <li><a href="/farshid/content/papers-2d-3d-mapping.md">Paper: 2D versus 3D Map for Environment Movement Objects</a></li>
+    <li><a href="/farshid/content/papers-pattern-calibration.md">Pattern Image Significance for Camera Calibration</a></li>
+    <li><a href="/farshid/content/papers-grid-computing.md">TafreshGrid: Grid Computing in Tafresh University</a></li>
   </ul>
   <h3 class="atlas-sub" id="patents">Patents <span class="atlas-count">3</span></h3>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/patents-vehicle-detection.html">Mind Map: A Method for Detecting a Moving Vehicle</a></li>
-    <li><a href="/farshid/content/patents-facial-analysis.html">Patent Application WO 2020/141969 A2 - Digital Advertising System</a></li>
-    <li><a href="/farshid/content/patents-face-augmentation.html">Patents Face Augmentation</a></li>
+    <li><a href="/farshid/content/patents-vehicle-detection.md">Mind Map: A Method for Detecting a Moving Vehicle</a></li>
+    <li><a href="/farshid/content/patents-facial-analysis.md">Patent Application WO 2020/141969 A2 - Digital Advertising System</a></li>
+    <li><a href="/farshid/content/patents-face-augmentation.md">Patents Face Augmentation</a></li>
   </ul>
   <h3 class="atlas-sub" id="profile">Profile <span class="atlas-count">1</span></h3>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/computer-vision.html">Me</a></li>
+    <li><a href="/farshid/content/computer-vision.md">Me</a></li>
   </ul>
 </section>
 
 <section class="atlas-sec" id="courses">
   <h2>Courses</h2>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/course-modern-cpp.html">Advanced Programming with Modern C++ 23 for Image Processing</a></li>
-    <li><a href="/farshid/content/course-ai-hardware.html">AI Hardware Accelerators</a></li>
-    <li><a href="/farshid/content/course-ai-engineers-guide.html">Book Summaries</a></li>
-    <li><a href="/farshid/content/course-cloud-native.html">Cloud-Native Infrastructure with Kubernetes</a></li>
-    <li><a href="/farshid/content/course-edge-ai-summit.html">Edge AI Summit 2020 (Nov 18-20)</a></li>
-    <li><a href="/farshid/content/course-iot.html">Embedded IoT</a></li>
-    <li><a href="/farshid/content/course-full-stack-dl.html">Full Stack Deep Learning</a></li>
-    <li><a href="/farshid/content/course-full-stack-dl-2022.html">Full Stack Deep Learning 2022</a></li>
-    <li><a href="/farshid/content/course-iot-scholarship.html">IoT Scholarship Foundation</a></li>
-    <li><a href="/farshid/content/course-ml-specialization.html">Machine Learning Specialization 2022</a></li>
-    <li><a href="/farshid/content/course-metaverse.html">Metaverse &amp; XR</a></li>
-    <li><a href="/farshid/content/course-mlops.html">MLOps — Machine Learning Engineering for Production</a></li>
-    <li><a href="/farshid/content/course-openvino.html">OpenVINO Deep Learning</a></li>
-    <li><a href="/farshid/content/course-parallel-computing.html">Parallel Programming</a></li>
-    <li><a href="/farshid/content/course-risc-v.html">RISC-V for AI</a></li>
-    <li><a href="/farshid/content/course-ros.html">ROS — Robot Operating System</a></li>
-    <li><a href="/farshid/content/course-tensorflow-deploy.html">TensorFlow: Data and Deployment Specialization</a></li>
-    <li><a href="/farshid/content/course-tesla.html">Tesla AI</a></li>
+    <li><a href="/farshid/content/course-modern-cpp.md">Advanced Programming with Modern C++ 23 for Image Processing</a></li>
+    <li><a href="/farshid/content/course-ai-hardware.md">AI Hardware Accelerators</a></li>
+    <li><a href="/farshid/content/course-ai-engineers-guide.md">Book Summaries</a></li>
+    <li><a href="/farshid/content/course-cloud-native.md">Cloud-Native Infrastructure with Kubernetes</a></li>
+    <li><a href="/farshid/content/course-edge-ai-summit.md">Edge AI Summit 2020 (Nov 18-20)</a></li>
+    <li><a href="/farshid/content/course-iot.md">Embedded IoT</a></li>
+    <li><a href="/farshid/content/course-full-stack-dl.md">Full Stack Deep Learning</a></li>
+    <li><a href="/farshid/content/course-full-stack-dl-2022.md">Full Stack Deep Learning 2022</a></li>
+    <li><a href="/farshid/content/course-iot-scholarship.md">IoT Scholarship Foundation</a></li>
+    <li><a href="/farshid/content/course-ml-specialization.md">Machine Learning Specialization 2022</a></li>
+    <li><a href="/farshid/content/course-metaverse.md">Metaverse &amp; XR</a></li>
+    <li><a href="/farshid/content/course-mlops.md">MLOps — Machine Learning Engineering for Production</a></li>
+    <li><a href="/farshid/content/course-openvino.md">OpenVINO Deep Learning</a></li>
+    <li><a href="/farshid/content/course-parallel-computing.md">Parallel Programming</a></li>
+    <li><a href="/farshid/content/course-risc-v.md">RISC-V for AI</a></li>
+    <li><a href="/farshid/content/course-ros.md">ROS — Robot Operating System</a></li>
+    <li><a href="/farshid/content/course-tensorflow-deploy.md">TensorFlow: Data and Deployment Specialization</a></li>
+    <li><a href="/farshid/content/course-tesla.md">Tesla AI</a></li>
   </ul>
 </section>
 
 <section class="atlas-sec" id="notes-guides">
   <h2>Notes &amp; Guides</h2>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/note-llm-blog.html">2025</a></li>
-    <li><a href="/farshid/content/note-swarm.html">Agent Swarm</a></li>
-    <li><a href="/farshid/content/wiki.html">All Pages</a></li>
-    <li><a href="/farshid/content/note-llm-avatar.html">Building a Local Video Avatar Generator Using Ollama and Open-Source Tools</a></li>
-    <li><a href="/farshid/content/note-coaching-roadmap.html">Computer Vision Expertise: Teaching &amp; Coaching Services</a></li>
-    <li><a href="/farshid/content/conference-paper.html">Conference Papers</a></li>
-    <li><a href="/farshid/content/note-computer-vision-overview.html">Dr. Farshid Pirahansiah</a></li>
-    <li><a href="/farshid/content/note-startup-guide.html">Edge AI Solutions: Local LLM Implementation Business Plan</a></li>
-    <li><a href="/farshid/content/note-cpp.html">git</a></li>
-    <li><a href="/farshid/content/note-pycuda.html">How PyCUDA Reads and Runs C Kernels</a></li>
-    <li><a href="/farshid/content/prompts.html">LLM Prompts for Knowledge Graph</a></li>
-    <li><a href="/farshid/content/metamask.html">MetaMask — Connect &amp; Receive</a></li>
-    <li><a href="/farshid/content/note-llm-agents.html">Mind Map: Orchestrating Agents</a></li>
-    <li><a href="/farshid/content/note-llm-concepts.html">Mind Map: Orchestrating Agents &amp; Advanced LLM Concepts</a></li>
-    <li><a href="/farshid/content/note-linkedin-2024.html">My Top LinkedIn Posts from the Past Year</a></li>
-    <li><a href="/farshid/content/note-developer-tools.html">Note Developer Tools</a></li>
-    <li><a href="/farshid/content/note-optical-flow.html">Note Optical Flow</a></li>
-    <li><a href="/farshid/content/note-prompt-templates.html">Note Prompt Templates</a></li>
-    <li><a href="/farshid/content/note-apple-ml.html">Numba JIT Tutorial and PyCUDA with Apple Silicon Adaptation</a></li>
-    <li><a href="/farshid/content/note-optimization-guide.html">Optimization</a></li>
-    <li><a href="/farshid/content/optimization-index.html">Optimization</a></li>
-    <li><a href="/farshid/content/product.html">Product</a></li>
-    <li><a href="/farshid/content/note-python-configuration.html">Python</a></li>
-    <li><a href="/farshid/content/note-3d-vision.html">Real-Time 3D Point Cloud Generation and Visualization from Depth Data</a></li>
-    <li><a href="/farshid/content/note-multi-camera.html">Real-Time Multi-Camera Vision Systems</a></li>
-    <li><a href="/farshid/content/k2-horizon-local.html">Running K2-Horizon Locally on Apple Silicon (M3, 16GB)</a></li>
-    <li><a href="/farshid/content/note-cuda-vscode.html">Simple Setting Up a CUDA Development Environment in VS Code in Windows</a></li>
-    <li><a href="/farshid/content/menus.html">Sitemap — All Pages</a></li>
-    <li><a href="/farshid/content/solana-games.html">Solana Arcade</a></li>
-    <li><a href="/farshid/content/solutions.html">Solutions</a></li>
-    <li><a href="/farshid/content/crypto.html">Support via Crypto</a></li>
-    <li><a href="/farshid/content/use-cases.html">Table of Contents</a></li>
-    <li><a href="/farshid/content/terms.html">Terms of Service</a></li>
-    <li><a href="/farshid/content/note-seo-for-llms.html">The New Era of SEO: Optimizing Websites for LLMs</a></li>
-    <li><a href="/farshid/content/note-shell-vim.html">tools</a></li>
-    <li><a href="/farshid/content/10-years.html">update Aug. 2026</a></li>
-    <li><a href="/farshid/content/why-not.html">Why Not</a></li>
-    <li><a href="/farshid/content/game.html">🎮 Arcade</a></li>
-    <li><a href="/farshid/content/note-numba.html">🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀</a></li>
+    <li><a href="/farshid/content/note-llm-blog.md">2025</a></li>
+    <li><a href="/farshid/content/note-swarm.md">Agent Swarm</a></li>
+    <li><a href="/farshid/content/wiki.md">All Pages</a></li>
+    <li><a href="/farshid/content/note-llm-avatar.md">Building a Local Video Avatar Generator Using Ollama and Open-Source Tools</a></li>
+    <li><a href="/farshid/content/note-coaching-roadmap.md">Computer Vision Expertise: Teaching &amp; Coaching Services</a></li>
+    <li><a href="/farshid/content/conference-paper.md">Conference Papers</a></li>
+    <li><a href="/farshid/content/note-computer-vision-overview.md">Dr. Farshid Pirahansiah</a></li>
+    <li><a href="/farshid/content/note-startup-guide.md">Edge AI Solutions: Local LLM Implementation Business Plan</a></li>
+    <li><a href="/farshid/content/note-cpp.md">git</a></li>
+    <li><a href="/farshid/content/note-pycuda.md">How PyCUDA Reads and Runs C Kernels</a></li>
+    <li><a href="/farshid/content/prompts.md">LLM Prompts for Knowledge Graph</a></li>
+    <li><a href="/farshid/content/metamask.md">MetaMask — Connect &amp; Receive</a></li>
+    <li><a href="/farshid/content/note-llm-agents.md">Mind Map: Orchestrating Agents</a></li>
+    <li><a href="/farshid/content/note-llm-concepts.md">Mind Map: Orchestrating Agents &amp; Advanced LLM Concepts</a></li>
+    <li><a href="/farshid/content/note-linkedin-2024.md">My Top LinkedIn Posts from the Past Year</a></li>
+    <li><a href="/farshid/content/note-developer-tools.md">Note Developer Tools</a></li>
+    <li><a href="/farshid/content/note-optical-flow.md">Note Optical Flow</a></li>
+    <li><a href="/farshid/content/note-prompt-templates.md">Note Prompt Templates</a></li>
+    <li><a href="/farshid/content/note-apple-ml.md">Numba JIT Tutorial and PyCUDA with Apple Silicon Adaptation</a></li>
+    <li><a href="/farshid/content/note-optimization-guide.md">Optimization</a></li>
+    <li><a href="/farshid/content/optimization-index.md">Optimization</a></li>
+    <li><a href="/farshid/content/product.md">Product</a></li>
+    <li><a href="/farshid/content/note-python-configuration.md">Python</a></li>
+    <li><a href="/farshid/content/note-3d-vision.md">Real-Time 3D Point Cloud Generation and Visualization from Depth Data</a></li>
+    <li><a href="/farshid/content/note-multi-camera.md">Real-Time Multi-Camera Vision Systems</a></li>
+    <li><a href="/farshid/content/k2-horizon-local.md">Running K2-Horizon Locally on Apple Silicon (M3, 16GB)</a></li>
+    <li><a href="/farshid/content/note-cuda-vscode.md">Simple Setting Up a CUDA Development Environment in VS Code in Windows</a></li>
+    <li><a href="/farshid/content/menus.md">Sitemap — All Pages</a></li>
+    <li><a href="/farshid/content/solana-games.md">Solana Arcade</a></li>
+    <li><a href="/farshid/content/solutions.md">Solutions</a></li>
+    <li><a href="/farshid/content/crypto.md">Support via Crypto</a></li>
+    <li><a href="/farshid/content/use-cases.md">Table of Contents</a></li>
+    <li><a href="/farshid/content/terms.md">Terms of Service</a></li>
+    <li><a href="/farshid/content/note-seo-for-llms.md">The New Era of SEO: Optimizing Websites for LLMs</a></li>
+    <li><a href="/farshid/content/note-shell-vim.md">tools</a></li>
+    <li><a href="/farshid/content/10-years.md">update Aug. 2026</a></li>
+    <li><a href="/farshid/content/why-not.md">Why Not</a></li>
+    <li><a href="/farshid/content/game.md">🎮 Arcade</a></li>
+    <li><a href="/farshid/content/note-numba.md">🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀</a></li>
   </ul>
 </section>
 
@@ -140,21 +140,21 @@ The single index of everything on pirahansiah.com — every publication, course,
   <h2>Talks, Presentations &amp; Keynotes</h2>
   <h3 class="atlas-sub" id="presentations-slide-decks">Presentations &amp; Slide Decks <span class="atlas-count">5</span></h3>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/presentation-research-tools.html">The New Era of Research Tools</a></li>
-    <li><a href="/farshid/content/presentation.html">Hermes Agent for Research Assistance</a></li>
-    <li><a href="/farshid/content/presentation-cv.html">Hermes Agent for Big Computer Vision Projects</a></li>
-    <li><a href="/farshid/content/presentation-updates.html">Hermes Agent — Recent Updates &amp; Complete Feature Guide</a></li>
-    <li><a href="/farshid/content/presentation-llm-optimization.html">New LLM Optimization Methods — Run Local &amp; Fast</a></li>
+    <li><a href="/farshid/content/presentation-research-tools.md">The New Era of Research Tools</a></li>
+    <li><a href="/farshid/content/presentation.md">Hermes Agent for Research Assistance</a></li>
+    <li><a href="/farshid/content/presentation-cv.md">Hermes Agent for Big Computer Vision Projects</a></li>
+    <li><a href="/farshid/content/presentation-updates.md">Hermes Agent — Recent Updates &amp; Complete Feature Guide</a></li>
+    <li><a href="/farshid/content/presentation-llm-optimization.md">New LLM Optimization Methods — Run Local &amp; Fast</a></li>
   </ul>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/presentation-updates.html">Hermes Agent</a></li>
-    <li><a href="/farshid/content/presentation-cv.html">Hermes Agent for Big Computer Vision Projects</a></li>
-    <li><a href="/farshid/content/presentation.html">Hermes Agent for Research Assistance</a></li>
-    <li><a href="/farshid/content/presentation-llm-optimization.html">New LLM Optimization Methods</a></li>
-    <li><a href="/farshid/content/slides-token-optimization.html">Reducing Token Usage</a></li>
-    <li><a href="/farshid/content/research-tools.html">Research Tools — Talks, Presentations &amp; Keynotes</a></li>
-    <li><a href="/farshid/content/presentation-research-tools.html">The New Era of Research Tools</a></li>
-    <li><a href="/farshid/content/keynotes-llm-cv.html">Where LLMs Meet Computer Vision: Unlocking Multimodal AI</a></li>
+    <li><a href="/farshid/content/presentation-updates.md">Hermes Agent</a></li>
+    <li><a href="/farshid/content/presentation-cv.md">Hermes Agent for Big Computer Vision Projects</a></li>
+    <li><a href="/farshid/content/presentation.md">Hermes Agent for Research Assistance</a></li>
+    <li><a href="/farshid/content/presentation-llm-optimization.md">New LLM Optimization Methods</a></li>
+    <li><a href="/farshid/content/slides-token-optimization.md">Reducing Token Usage</a></li>
+    <li><a href="/farshid/content/research-tools.md">Research Tools — Talks, Presentations &amp; Keynotes</a></li>
+    <li><a href="/farshid/content/presentation-research-tools.md">The New Era of Research Tools</a></li>
+    <li><a href="/farshid/content/keynotes-llm-cv.md">Where LLMs Meet Computer Vision: Unlocking Multimodal AI</a></li>
   </ul>
 </section>
 
@@ -162,21 +162,21 @@ The single index of everything on pirahansiah.com — every publication, course,
   <h2>Site Pages</h2>
   <ul class="atlas-list">
     <li><a href="/farshid/content/index.html">Home — about &amp; overview</a></li>
-    <li><a href="/farshid/content/atlas.html">Atlas — this index</a></li>
+    <li><a href="/farshid/content/index.html#atlas">Atlas — this index</a></li>
     <li><a href="/farshid/content/swarm.html">Search Swarm — one search for the whole knowledge base</a></li>
-    <li><a href="/farshid/content/qrcode.html">Scan &amp; Share — all links + QR codes</a></li>
-    <li><a href="/farshid/content/contact.html">Contact</a></li>
-    <li><a href="/farshid/content/privacy.html">Privacy</a></li>
+    <li><a href="/farshid/content/qr.md">Scan &amp; Share — all links + QR codes</a></li>
+    <li><a href="/farshid/content/contact.md">Contact</a></li>
+    <li><a href="/farshid/content/privacy.md">Privacy</a></li>
   </ul>
 </section>
 
 <section class="atlas-sec" id="projects">
   <h2>Projects</h2>
   <ul class="atlas-list">
-    <li><a href="/farshid/projects/llm-tools/">llm-tools</a></li>
-    <li><a href="/farshid/projects/mimo/">mimo</a></li>
-    <li><a href="/farshid/projects/rag/">rag</a></li>
-    <li><a href="/farshid/projects/site-tools/">site-tools</a></li>
+    <li><a href="/farshid/projects/llm-tools/README.md">llm-tools</a></li>
+    <li><a href="/farshid/projects/mimo/README.md">mimo</a></li>
+    <li><a href="/farshid/projects/rag/README.md">rag</a></li>
+    <li><a href="/farshid/projects/site-tools/README.md">site-tools</a></li>
   </ul>
 </section>
 
@@ -185,7 +185,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 ---
 
 ## Contact
-URL: https://pirahansiah.com/farshid/content/contact.html
+URL: https://pirahansiah.com/farshid/content/contact.md
 
 # Contact
 
@@ -201,7 +201,7 @@ For work on computer vision, edge AI, embedded systems, and multimodal LLM proje
 ---
 
 ## Privacy
-URL: https://pirahansiah.com/farshid/content/privacy.html
+URL: https://pirahansiah.com/farshid/content/privacy.md
 
 # Privacy
 
@@ -218,7 +218,7 @@ Contact: info@pirahansiah.com. Last updated: September 2026.
 # Publications
 
 ## Adaptive Image Segmentation Based on PSNR for License Plate Recognition
-URL: https://pirahansiah.com/farshid/content/papers-adaptive-segmentation.html
+URL: https://pirahansiah.com/farshid/content/papers-adaptive-segmentation.md
 
 Adaptive image segmentation using PSNR for license plate recognition systems.
 
@@ -296,7 +296,7 @@ https://www.pirahansiah.com/notes/pubs/papers/Adaptive_Image_Segmentation_Based_
 ---
 
 ## AI computer vision locally LLMs on device
-URL: https://pirahansiah.com/farshid/content/books-cv-meets-llm.html
+URL: https://pirahansiah.com/farshid/content/books-cv-meets-llm.md
 
 Book exploring multimodal AI combining computer vision with large language models.
 
@@ -540,7 +540,7 @@ Image inputs are metered and charged in tokens
 ---
 
 ## An Evaluation of Classification Techniques Using Enhanced Geometrical Topological Feature Analysis
-URL: https://pirahansiah.com/farshid/content/papers-geometrical-topological.html
+URL: https://pirahansiah.com/farshid/content/papers-geometrical-topological.md
 
 Evaluation of classification techniques using enhanced geometrical and topological features.
 
@@ -604,7 +604,7 @@ https://www.pirahansiah.com/notes/pubs/papers/An_evaluation_of_classification_te
 ---
 
 ## Ant Colony Optimization for Image Edge Detection
-URL: https://pirahansiah.com/farshid/content/journals-ant-colony.html
+URL: https://pirahansiah.com/farshid/content/journals-ant-colony.md
 
 ACO-based optimization for image thresholding and edge detection in OCR systems.
 
@@ -659,14 +659,14 @@ USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM
 ---
 
 ## Books Opencv5 Ch3
-URL: https://pirahansiah.com/farshid/content/books-opencv5-ch3.html
+URL: https://pirahansiah.com/farshid/content/books-opencv5-ch3.md
 
 Advanced computer vision techniques including filtering, morphology, and G-API integration.
 
 ---
 
 ## Camera Calibration and Video Stabilization Framework for Robot Localization
-URL: https://pirahansiah.com/farshid/content/books-camera-calibration.html
+URL: https://pirahansiah.com/farshid/content/books-camera-calibration.md
 
 Springer book chapter on fuzzy camera calibration and video stabilization for robot localization.
 
@@ -775,7 +775,7 @@ https://www.pirahansiah.com/notes/pubs/books/My_Book_chapter_Camera_Calibration_
 ---
 
 ## Camera Calibration for Multi-Modal Robot Vision
-URL: https://pirahansiah.com/farshid/content/papers-multimodal-calibration.html
+URL: https://pirahansiah.com/farshid/content/papers-multimodal-calibration.md
 
 Automatic calibration framework for multi-modal robot vision using IQA metrics.
 
@@ -838,7 +838,7 @@ https://www.pirahansiah.com/notes/pubs/papers/Camera_Calibration_for_Multi-Modal
 ---
 
 ## Character Recognition Based on Global Feature Extraction
-URL: https://pirahansiah.com/farshid/content/papers-global-feature-recognition.html
+URL: https://pirahansiah.com/farshid/content/papers-global-feature-recognition.md
 
 Hybrid GLCM and EDMS method for character recognition in OCR applications.
 
@@ -900,7 +900,7 @@ https://www.pirahansiah.com/notes/pubs/papers/Character_Recognition_Based_on_Glo
 ---
 
 ## Comparison Single Thresholding Method for Handwritten Images Segmentation
-URL: https://pirahansiah.com/farshid/content/papers-handwritten-thresholding.html
+URL: https://pirahansiah.com/farshid/content/papers-handwritten-thresholding.md
 
 Comparison of PSNR and Otsu thresholding for handwritten image segmentation.
 
@@ -958,7 +958,7 @@ https://www.pirahansiah.com/notes/pubs/papers/Comparison_single_thresholding_met
 ---
 
 ## Computational Intelligence: From Theory to Application
-URL: https://pirahansiah.com/farshid/content/books-computational-intelligence.html
+URL: https://pirahansiah.com/farshid/content/books-computational-intelligence.md
 
 Book chapter on Type-2 Fuzzy Gaussian Pyramid optical flow for video stabilization.
 
@@ -1078,7 +1078,7 @@ https://www.pirahansiah.com/notes/pubs/books/Book_Computational_Intelligence_Fro
 ---
 
 ## License Plate Recognition with Multi-threshold based on Entropy
-URL: https://pirahansiah.com/farshid/content/papers-license-plate-recognition.html
+URL: https://pirahansiah.com/farshid/content/papers-license-plate-recognition.md
 
 Multi-threshold license plate recognition using entropy-based image segmentation.
 
@@ -1140,7 +1140,7 @@ https://www.pirahansiah.com/notes/pubs/papers/License_Plate_Recognition_with_Mul
 ---
 
 ## Mastering AI and Machine Learning: A Comprehensive Summary
-URL: https://pirahansiah.com/farshid/content/books-opencv5-ch2.html
+URL: https://pirahansiah.com/farshid/content/books-opencv5-ch2.md
 
 Comprehensive guide to AI/ML concepts, tools, best practices, and ethical considerations.
 
@@ -1269,7 +1269,7 @@ Mastering AI and Machine Learning requires a blend of theoretical understanding,
 ---
 
 ## Mastering AI and Machine Learning: Essential Glossary, Resources, and References
-URL: https://pirahansiah.com/farshid/content/books-opencv5-ch1.html
+URL: https://pirahansiah.com/farshid/content/books-opencv5-ch1.md
 
 Glossary of AI/ML terms, references, and resources for computer vision practitioners.
 
@@ -1430,7 +1430,7 @@ Mastering AI and Machine Learning requires a solid grasp of key concepts, access
 ---
 
 ## Me
-URL: https://pirahansiah.com/farshid/content/computer-vision.html
+URL: https://pirahansiah.com/farshid/content/computer-vision.md
 
 Curriculum vitae covering 12+ years of computer vision R&D, 21 publications, and 3 patents.
 
@@ -1610,7 +1610,7 @@ Experienced in Full Stack LLM development, including model training, fine-tuning
 ---
 
 ## Mind Map: A Method for Detecting a Moving Vehicle
-URL: https://pirahansiah.com/farshid/content/patents-vehicle-detection.html
+URL: https://pirahansiah.com/farshid/content/patents-vehicle-detection.md
 
 Image processing method for detecting moving vehicles using CLAHE, Sobel, and geometric filtering.
 
@@ -1755,7 +1755,7 @@ This invention provides a significant advancement in vehicle detection for traff
 ---
 
 ## Mind Map: Adaptive Image Thresholding Based on PSNR
-URL: https://pirahansiah.com/farshid/content/journals-adaptive-thresholding.html
+URL: https://pirahansiah.com/farshid/content/journals-adaptive-thresholding.md
 
 PSNR-based adaptive thresholding for image segmentation in OCR and license plate recognition.
 
@@ -1844,7 +1844,7 @@ Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio
 ---
 
 ## Mind Map: Character and Object Recognition Based on Global Feature Extraction
-URL: https://pirahansiah.com/farshid/content/journals-character-recognition.html
+URL: https://pirahansiah.com/farshid/content/journals-character-recognition.md
 
 Global feature extraction methods for character and object recognition in computer vision.
 
@@ -1921,7 +1921,7 @@ CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION
 ---
 
 ## Mind Map: GSFT-PSNR Global Single Fuzzy Threshold
-URL: https://pirahansiah.com/farshid/content/journals-fuzzy-thresholding.html
+URL: https://pirahansiah.com/farshid/content/journals-fuzzy-thresholding.md
 
 Fuzzy logic approach to global single thresholding using PSNR for image segmentation.
 
@@ -2035,7 +2035,7 @@ The GSFT-PSNR method offers a robust, adaptive thresholding approach that can ha
 ---
 
 ## Mind Map: Peak Signal-to-Noise Ratio Based on Threshold Method for Image Segmentation
-URL: https://pirahansiah.com/farshid/content/journals-psnr-segmentation.html
+URL: https://pirahansiah.com/farshid/content/journals-psnr-segmentation.md
 
 PSNR-based thresholding method for image segmentation in automated visual inspection.
 
@@ -2117,7 +2117,7 @@ where `MSE` is the mean squared error and `MAX` is the maximum possible pixel va
 ---
 
 ## Multi-threshold Approach for License Plate Recognition System
-URL: https://pirahansiah.com/farshid/content/papers-multi-threshold-plate.html
+URL: https://pirahansiah.com/farshid/content/papers-multi-threshold-plate.md
 
 Adaptive multi-threshold approach using MLP for license plate recognition systems.
 
@@ -2170,7 +2170,7 @@ https://www.pirahansiah.com/notes/pubs/papers/Multi-threshold_Approach_for_Licen
 ---
 
 ## Paper: 2D versus 3D Map for Environment Movement Objects
-URL: https://pirahansiah.com/farshid/content/papers-2d-3d-mapping.html
+URL: https://pirahansiah.com/farshid/content/papers-2d-3d-mapping.md
 
 Comparison of 2D and 3D mapping approaches for environment movement detection.
 
@@ -2237,7 +2237,7 @@ https://www.pirahansiah.com/notes/pubs/papers/conference-paper_2D_versus_3D_Map_
 ---
 
 ## Patent Application WO 2020/141969 A2 - Digital Advertising System
-URL: https://pirahansiah.com/farshid/content/patents-facial-analysis.html
+URL: https://pirahansiah.com/farshid/content/patents-facial-analysis.md
 
 System for targeted digital advertising using real-time facial analysis and demographic detection.
 
@@ -2337,7 +2337,7 @@ This innovative approach overcomes the limitations of traditional digital advert
 ---
 
 ## Patents Face Augmentation
-URL: https://pirahansiah.com/farshid/content/patents-face-augmentation.html
+URL: https://pirahansiah.com/farshid/content/patents-face-augmentation.md
 
 GAN-based method for augmenting face images from surveillance with fuzzy logic quality filtering.
 
@@ -2394,7 +2394,7 @@ Main Topic: A Method for Augmenting a Plurality of Face Images
 ---
 
 ## Pattern Image Significance for Camera Calibration
-URL: https://pirahansiah.com/farshid/content/papers-pattern-calibration.html
+URL: https://pirahansiah.com/farshid/content/papers-pattern-calibration.md
 
 Analysis of how pattern image design impacts camera calibration accuracy and reliability.
 
@@ -2452,7 +2452,7 @@ https://www.pirahansiah.com/notes/pubs/papers/Pattern_Image_Significance_for_Cam
 ---
 
 ## Simultaneous Localization and Mapping Trends and Humanoid Robot Linkages
-URL: https://pirahansiah.com/farshid/content/journals-3d-slam-humanoid.html
+URL: https://pirahansiah.com/farshid/content/journals-3d-slam-humanoid.md
 
 Survey of 3D SLAM techniques for localization, mapping, and humanoid robot applications.
 
@@ -2527,7 +2527,7 @@ https://www.pirahansiah.com/notes/pubs/journals/3D_SLAM_Simultaneous_Localizatio
 ---
 
 ## TafreshGrid: Grid Computing in Tafresh University
-URL: https://pirahansiah.com/farshid/content/papers-grid-computing.html
+URL: https://pirahansiah.com/farshid/content/papers-grid-computing.md
 
 Grid computing infrastructure implementation and evaluation at Tafresh University.
 
@@ -2592,7 +2592,7 @@ The project demonstrates the successful installation of the grid computing envir
 ---
 
 ## The New Developer Era: Transforming Your Career and Building Production Ready AI Agents in 2027
-URL: https://pirahansiah.com/farshid/content/books-new-developer-era.html
+URL: https://pirahansiah.com/farshid/content/books-new-developer-era.md
 
 Introduction to the new developer era, AI agents, and multi-agent systems.
 
@@ -10428,7 +10428,7 @@ This index provides a high-level overview of the key terms and resources discuss
 ---
 
 ## Where LLMs Meet Computer Vision: Unlocking Multimodal AI
-URL: https://pirahansiah.com/farshid/content/keynotes-llm-cv.html
+URL: https://pirahansiah.com/farshid/content/keynotes-llm-cv.md
 
 Keynote on token economics, multimodal RAG, and practical CV+LLM applications.
 
@@ -10538,7 +10538,7 @@ Seeing AI
 # Notes & Guides
 
 ## 10 Years of CV Debugging Lessons
-URL: https://pirahansiah.com/farshid/content/10-years.html
+URL: https://pirahansiah.com/farshid/content/10-years.md
 
 > **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production. — https://www.pirahansiah.com/notes/pubs/10-years/
 Lessons learned from a decade of debugging computer vision systems in production.
@@ -10768,7 +10768,7 @@ Notes:
 ---
 
 ## 2025
-URL: https://pirahansiah.com/farshid/content/note-llm-blog.html
+URL: https://pirahansiah.com/farshid/content/note-llm-blog.md
 
 Blog posts on RAG vs CAG, multi-agent architectures, AI's impact on jobs, and the future of software development.
 
@@ -10964,7 +10964,7 @@ A **Multi-Agent Swarm Architecture** entails multiple (semi)autonomous agents co
 ---
 
 ## Accelerate Python with Numba’s @jit(nopython=True)
-URL: https://pirahansiah.com/farshid/content/note-numba.html
+URL: https://pirahansiah.com/farshid/content/note-numba.md
 
 Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.
 
@@ -11133,7 +11133,7 @@ Feel free to connect with me for more tips on optimizing your Python code! 👨�
 ---
 
 ## Agent Swarm
-URL: https://pirahansiah.com/farshid/content/note-swarm.html
+URL: https://pirahansiah.com/farshid/content/note-swarm.md
 
 # Agent Swarm
 
@@ -11154,7 +11154,7 @@ This tool runs in-browser against the site index and knowledge graph. It previou
 ---
 
 ## All Pages — pirahansiah.com
-URL: https://pirahansiah.com/farshid/content/wiki.html
+URL: https://pirahansiah.com/farshid/content/wiki.md
 
 A complete alphabetical index of every page on pirahansiah.com — computer vision, AI, LLM, CUDA and edge-deployment knowledge base.
 
@@ -11413,7 +11413,7 @@ A complete alphabetical index of every page on pirahansiah.com — computer visi
 ---
 
 ## Building a Local Video Avatar Generator Using Ollama and Open-Source Tools
-URL: https://pirahansiah.com/farshid/content/note-llm-avatar.html
+URL: https://pirahansiah.com/farshid/content/note-llm-avatar.md
 
 Build a fully local video avatar generator using Ollama LLM, Piper TTS, and Wav2Lip without cloud services.
 
@@ -11676,7 +11676,7 @@ All components run locally without any cloud services, online dependencies, or A
 ---
 
 ## Complete Portfolio
-URL: https://pirahansiah.com/farshid/content/use-cases.html
+URL: https://pirahansiah.com/farshid/content/use-cases.md
 
 > **Complete Portfolio** — Publications, patents, expertise, tools, and GitHub projects across CV and AI — https://www.pirahansiah.com/notes/pkm/use-cases/
 Publications, patents, expertise, tools, and GitHub projects across CV and AI
@@ -12385,7 +12385,7 @@ Technical achievement documentation. STAR-format resume bullets, benchmarking da
 ---
 
 ## Computer Vision Expertise: Teaching & Coaching Services
-URL: https://pirahansiah.com/farshid/content/note-coaching-roadmap.html
+URL: https://pirahansiah.com/farshid/content/note-coaching-roadmap.md
 
 Personalized computer vision coaching with a structured curriculum from fundamentals to edge AI.
 
@@ -12563,7 +12563,7 @@ my roadmap to become expert in computer vision which i teach, coach, tutor, onli
 ---
 
 ## Crypto Payments — Support
-URL: https://pirahansiah.com/farshid/content/crypto.html
+URL: https://pirahansiah.com/farshid/content/crypto.md
 
 > **Crypto Payments** — Support open-source computer vision and edge AI work with cryptocurrency. — https://pirahansiah.com/crypto/
 Support Dr. Farshid Pirahansiah's open-source computer vision and edge AI work with cryptocurrency. Bitcoin, Ethereum, Solana, Base and BNB Smart Chain wallet addresses.
@@ -12700,7 +12700,7 @@ Support Dr. Farshid Pirahansiah's open-source computer vision and edge AI work w
 ---
 
 ## CV, DL & ML Optimization Guide
-URL: https://pirahansiah.com/farshid/content/optimization-index.html
+URL: https://pirahansiah.com/farshid/content/optimization-index.md
 
 > **CV, DL & ML Optimization Guide** — Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines. — https://www.pirahansiah.com/notes/docs/optimization/
 Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines.
@@ -13089,7 +13089,7 @@ Tips to Reduce RAM Usage:
 ---
 
 ## Dr. Farshid Pirahansiah
-URL: https://pirahansiah.com/farshid/content/note-computer-vision-overview.html
+URL: https://pirahansiah.com/farshid/content/note-computer-vision-overview.md
 
 Overview of Dr. Farshid Pirahansiah's computer vision and AI expertise: 3D vision, multi-camera systems, optical flow, model optimization, and edge AI deployment.
 
@@ -13184,7 +13184,7 @@ I offer personalized coaching, tutoring, and consulting in computer vision and A
 ---
 
 ## Edge AI Solutions: Local LLM Implementation Business Plan
-URL: https://pirahansiah.com/farshid/content/note-startup-guide.html
+URL: https://pirahansiah.com/farshid/content/note-startup-guide.md
 
 Edge AI business plan, fundraising in Germany, pitch decks, and growth strategies.
 
@@ -18063,7 +18063,7 @@ By focusing on genuine connections and clear communication, you create the found
 ---
 
 ## Games
-URL: https://pirahansiah.com/farshid/content/game.html
+URL: https://pirahansiah.com/farshid/content/game.md
 
 > **Games** — Play classic arcade games — Snake, Flappy Bird & 2048 — right in your browser or as a Telegram Mini App — https://pirahansiah.com/game/
 Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as a Telegram Mini App. High scores, haptics and a share button.
@@ -18146,7 +18146,7 @@ Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as 
 ---
 
 ## git
-URL: https://pirahansiah.com/farshid/content/note-cpp.html
+URL: https://pirahansiah.com/farshid/content/note-cpp.md
 
 Quick reference for C++ memory management, data structures, debugging tools, and shell basics.
 
@@ -18247,7 +18247,7 @@ md5sum
 ---
 
 ## How PyCUDA Reads and Runs C Kernels
-URL: https://pirahansiah.com/farshid/content/note-pycuda.html
+URL: https://pirahansiah.com/farshid/content/note-pycuda.md
 
 Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.
 
@@ -18384,7 +18384,7 @@ In your specific example, `GraphTsetlinMachine.kernels` likely contains CUDA ker
 ---
 
 ## LLM Prompts for Knowledge Graph
-URL: https://pirahansiah.com/farshid/content/prompts.html
+URL: https://pirahansiah.com/farshid/content/prompts.md
 
 # LLM Prompts for Knowledge Graph
 
@@ -18440,7 +18440,7 @@ Output requirements:
 ---
 
 ## MetaMask — Connect & Receive
-URL: https://pirahansiah.com/farshid/content/metamask.html
+URL: https://pirahansiah.com/farshid/content/metamask.md
 
 > **MetaMask Connect** — Connect your wallet, receive, or send crypto automatically. — https://pirahansiah.com/metamask/
 Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive address. Private test page.
@@ -18642,7 +18642,7 @@ Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive
 ---
 
 ## Mind Map: Orchestrating Agents
-URL: https://pirahansiah.com/farshid/content/note-llm-agents.html
+URL: https://pirahansiah.com/farshid/content/note-llm-agents.md
 
 Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.
 
@@ -18731,7 +18731,7 @@ Mind map and guide to orchestrating multiple AI agents for complex task completi
 ---
 
 ## Mind Map: Orchestrating Agents & Advanced LLM Concepts
-URL: https://pirahansiah.com/farshid/content/note-llm-concepts.html
+URL: https://pirahansiah.com/farshid/content/note-llm-concepts.md
 
 Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production deployment.
 
@@ -18938,7 +18938,7 @@ Tool integration with LLMs through prompting enables the models to call upon spe
 ---
 
 ## My Top LinkedIn Posts from the Past Year
-URL: https://pirahansiah.com/farshid/content/note-linkedin-2024.html
+URL: https://pirahansiah.com/farshid/content/note-linkedin-2024.md
 
 > **Top LinkedIn Posts 2024** — Highlights from 2024 LinkedIn posts covering camera calibration, C++, NVIDIA optimization, and robotics. — https://www.pirahansiah.com/farshid/content/note-linkedin-2024.md
 Highlights from 2024 LinkedIn posts covering camera calibration, C++, NVIDIA optimization, and robotics.
@@ -19139,7 +19139,7 @@ On-Device Training in **ONNX Runtime (ORT)** allows models to be trained directl
 ---
 
 ## Note Developer Tools
-URL: https://pirahansiah.com/farshid/content/note-developer-tools.html
+URL: https://pirahansiah.com/farshid/content/note-developer-tools.md
 
 Curated developer tools, shell essentials, Docker tips, and GitHub tricks.
 
@@ -19263,7 +19263,7 @@ Replace "hub" with "summarize" in any GitHub URL for AI-powered documentation:
 ---
 
 ## Note Optical Flow
-URL: https://pirahansiah.com/farshid/content/note-optical-flow.html
+URL: https://pirahansiah.com/farshid/content/note-optical-flow.md
 
 Comprehensive guide to optical flow challenges including illumination changes, occlusions, fast motion, and their solutions.
 
@@ -19545,7 +19545,7 @@ Variable performance in extreme conditions
 ---
 
 ## Note Prompt Templates
-URL: https://pirahansiah.com/farshid/content/note-prompt-templates.html
+URL: https://pirahansiah.com/farshid/content/note-prompt-templates.md
 
 Reusable prompt templates for text simplification, mind maps, and structured content processing.
 
@@ -19579,7 +19579,7 @@ For any text I provide, please process it according to these specific guidelines
 ---
 
 ## Numba JIT Tutorial and PyCUDA with Apple Silicon Adaptation
-URL: https://pirahansiah.com/farshid/content/note-apple-ml.html
+URL: https://pirahansiah.com/farshid/content/note-apple-ml.md
 
 Guide to Numba JIT, PyCUDA-to-Metal transition, CoreML conversion, and MLX framework on Apple Silicon.
 
@@ -19696,7 +19696,7 @@ Relevant links:
 ---
 
 ## Optimization
-URL: https://pirahansiah.com/farshid/content/note-optimization-guide.html
+URL: https://pirahansiah.com/farshid/content/note-optimization-guide.md
 
 Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines.
 
@@ -20078,7 +20078,7 @@ Tips to Reduce RAM Usage:
 ---
 
 ## Product — Embedded CV & Edge AI
-URL: https://pirahansiah.com/farshid/content/product.html
+URL: https://pirahansiah.com/farshid/content/product.md
 
 > **Product — Embedded CV & Edge AI** — Embedded computer vision and edge AI systems portfolio. — https://www.pirahansiah.com/farshid/content/product.md
 Embedded computer vision and edge AI systems portfolio.
@@ -20286,7 +20286,7 @@ Embedded computer vision and edge AI systems portfolio.
 ---
 
 ## Publications — Conference Papers
-URL: https://pirahansiah.com/farshid/content/conference-paper.html
+URL: https://pirahansiah.com/farshid/content/conference-paper.md
 
 > **Publications — Conference Papers** — All peer-reviewed conference papers by Dr. Farshid Pirahansiah on image processing, camera calibration, pattern recognition, and grid computing. — https://www.pirahansiah.com/notes/pubs/papers/conference-paper/
 All peer-reviewed conference papers by Dr. Farshid Pirahansiah on image processing, camera calibration, pattern recognition, and grid computing.
@@ -20350,7 +20350,7 @@ Grid computing infrastructure and implementation at Tafresh University.
 ---
 
 ## Python
-URL: https://pirahansiah.com/farshid/content/note-python-configuration.html
+URL: https://pirahansiah.com/farshid/content/note-python-configuration.md
 
 Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.
 
@@ -20558,7 +20558,7 @@ python setup.py build_ext --inplace
 ---
 
 ## Real-Time 3D Point Cloud Generation and Visualization from Depth Data
-URL: https://pirahansiah.com/farshid/content/note-3d-vision.html
+URL: https://pirahansiah.com/farshid/content/note-3d-vision.md
 
 Real-time 3D point cloud generation, depth sensing, and multi-camera synchronization for computer vision applications.
 
@@ -21964,7 +21964,7 @@ double latency_ms = (double)(end.QuadPart - start.QuadPart) * 1000.0 / freq.Quad
 ---
 
 ## Real-Time Multi-Camera Vision Systems
-URL: https://pirahansiah.com/farshid/content/note-multi-camera.html
+URL: https://pirahansiah.com/farshid/content/note-multi-camera.md
 
 Deep technical guide to building real-time multi-camera vision systems with heterogeneous processing and scaling to 100+ cameras.
 
@@ -22197,7 +22197,7 @@ Target: ≥15 FPS per camera with GPU-accelerated OCR.
 ---
 
 ## Running K2-Horizon Locally on Apple Silicon
-URL: https://pirahansiah.com/farshid/content/k2-horizon-local.html
+URL: https://pirahansiah.com/farshid/content/k2-horizon-local.md
 
 > **Running K2-Horizon Locally on Apple Silicon** — Serve IFM's K2-Horizon GGUF via the MBZUAI-IFM llama.cpp fork and wire it into Hermes at 64K context. — https://www.pirahansiah.com/notes/docs/llm/k2-horizon-local/
 
@@ -22310,8 +22310,166 @@ guide (§7a). Only one process may hold :8080.
 
 ---
 
+## Scan & Share
+URL: https://pirahansiah.com/farshid/content/qr.md
+
+<div class="qr-hero">
+  <h1>Scan &amp; Share</h1>
+  <p>Point your phone camera at any code to open the link, or tap the Open button. QR codes can be downloaded and shared.</p>
+</div>
+
+<style>
+.qr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; margin: 28px 0; }
+.qr-card { background: #fff; border: 1px solid var(--rule); border-radius: 14px; padding: 18px; text-align: center; }
+.qr-card img { width: 140px; height: 140px; margin: 6px auto 10px; display: block; border-radius: 8px; background: #fff; padding: 4px; }
+.qr-card h3 { font-size: 15px; margin: 0 0 4px; color: var(--accent); }
+.qr-card p { font-size: 12.5px; color: var(--muted); margin: 0 0 8px; }
+.qr-card a.qr-link { display: inline-block; font-size: 11.5px; font-weight: 600; word-break: break-all; color: var(--accent2); text-decoration: none; margin-bottom: 8px; }
+.qr-card a.qr-link:hover { text-decoration: underline; }
+.qr-card .qr-actions { display: flex; gap: 8px; justify-content: center; }
+.qr-btn { flex: 1; font-size: 12px; font-weight: 700; padding: 8px 10px; border-radius: 8px; text-align: center; text-decoration: none; cursor: pointer; border: none; }
+.qr-btn.open { background: var(--accent); color: #fff; }
+.qr-btn.open:hover { background: #a83809; }
+.qr-btn.copy { background: rgba(200,65,10,0.12); color: var(--accent); }
+.qr-topics { margin: 18px 0 0; font-size: 12.5px; line-height: 1.7; color: var(--muted); }
+.qr-note { background: var(--surface-2); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; font-size: 13.5px; line-height: 1.55; color: var(--ink-2); margin: 0 0 22px; max-width: 68ch; }
+.qr-addr { font-family: var(--mono); font-size: 12.5px; line-height: 1.55; word-break: break-all; color: var(--ink); background: var(--surface-2); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; margin: 2px 0 8px; -webkit-user-select: all; user-select: all; cursor: text; font-variant-numeric: tabular-nums; }
+.qr-addr-note { font-size: 12px; color: var(--muted); margin: 10px 0 0; }
+</style>
+
+## Social &amp; Web
+
+<div class="qr-grid">
+  <div class="qr-card"><h3>pirahansiah.com</h3><p>Website</p><img src="/farshid/content/pirahansiah.png" alt="Website QR" loading="lazy"><a class="qr-link" href="/">pirahansiah.com</a></div>
+  <div class="qr-card"><h3>LinkedIn</h3><p>Profile</p><img src="/farshid/content/linkedin2.png" alt="LinkedIn QR" loading="lazy"><a class="qr-link" href="https://www.linkedin.com/in/pirahansiah/" target="_blank">linkedin.com/in/pirahansiah</a></div>
+  <div class="qr-card"><h3>GitHub</h3><p>Code</p><img src="/farshid/content/github.png" alt="GitHub QR" loading="lazy"><a class="qr-link" href="https://github.com/pirahansiah" target="_blank">github.com/pirahansiah</a></div>
+  <div class="qr-card"><h3>X / Twitter</h3><p>Posts</p><img src="/farshid/content/twitter.png" alt="Twitter QR" loading="lazy"><a class="qr-link" href="https://x.com/pirahansiah" target="_blank">x.com/pirahansiah</a></div>
+  <div class="qr-card"><h3>https://www.linkedin.com/groups/10320678/</h3><p>Computer Vision,Generative AI,Edge Computing,Fine-tune Multimodal LLMs,Robotics,IoT,AR/VR,Medical</p><img src="/farshid/content/linkedin.png" alt="https://www.linkedin.com/groups/10320678/" loading="lazy">target="_blank">linkedin.com/in/pirahansiah</a></div></div>
+  <div class="qr-card"><h3>Telegram</h3><p>Channel</p><img src="/farshid/content/telegram.png" alt="Telegram QR" loading="lazy"></div>
+  <div class="qr-card"><h3>YouTube</h3><p>Videos</p><img src="/farshid/content/youtube.png" alt="YouTube QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Instagram</h3><p>Photos</p><img src="/farshid/content/instagram.png" alt="Instagram QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Facebook</h3><p>Page</p><img src="/farshid/content/facebook.png" alt="Facebook QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Discord</h3><p>Community</p><img src="/farshid/content/discord.png" alt="Discord QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Mastodon</h3><p>Fediverse</p><img src="/farshid/content/mastodon.png" alt="Mastodon QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Reddit</h3><p>Community</p><img src="/farshid/content/reddit.png" alt="Reddit QR" loading="lazy"><a class="qr-link" href="https://reddit.com/u/pirahansiah" target="_blank">u/pirahansiah</a></div>
+  <div class="qr-card"><h3>TikTok</h3><p>Short videos</p><img src="/farshid/content/tiktok.png" alt="TikTok QR" loading="lazy"></div>
+  <div class="qr-card"><h3>WhatsApp</h3><p>Chat</p><img src="/farshid/content/whatsapp.png" alt="WhatsApp QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Mind Maps</h3><p>Notes</p><img src="/farshid/content/mindmaps.png" alt="Mind Maps QR" loading="lazy"><a class="qr-link" href="/farshid/content/atlas.md">Mind maps</a></div>
+  <div class="qr-card"><h3>Slides</h3><p>Talks</p><img src="/farshid/content/slides.png" alt="Slides QR" loading="lazy"><a class="qr-link" href="/farshid/content/index.html#content/slides-token-optimization">Slides</a></div>
+  <div class="qr-card"><h3>tiziran</h3><p>Site</p><img src="/farshid/content/tiziran.png" alt="Tiziran QR" loading="lazy"></div>
+</div>
+
+## Referrals &amp; Invites
+
+<div class="qr-grid">
+  <div class="qr-card">
+    <h3>OpenCode</h3><p>Low cost coding models for everyone.</p>
+    <img src="/farshid/content/opencode.png" alt="OpenCode QR" loading="lazy">
+    <a class="qr-link" href="https://opencode.ai/go?ref=3KMNQG0CS4" target="_blank" rel="noopener">opencode.ai/go?ref=3KMNQG0CS4</a>
+    <div class="qr-actions">
+      <a class="qr-btn open" href="https://opencode.ai/go?ref=3KMNQG0CS4" target="_blank">Open</a>
+      <a class="qr-btn copy" href="/farshid/content/opencode.png" download>Download</a>
+    </div>
+  </div>
+
+  <div class="qr-card">
+    <h3>Trade Republic</h3><p>Invest, spend and bank — create a free account.</p>
+    <img src="/farshid/content/trade.png" alt="Trade Republic QR" loading="lazy">
+    <a class="qr-link" href="https://refnocode.trade.re/z28xmjp6" target="_blank" rel="noopener">refnocode.trade.re/z28xmjp6</a>
+    <div class="qr-actions">
+      <a class="qr-btn open" href="https://refnocode.trade.re/z28xmjp6" target="_blank">Open</a>
+      <a class="qr-btn copy" href="/farshid/content/trade.png" download>Download</a>
+    </div>
+  </div>
+
+  <div class="qr-card">
+    <h3>Scalable Capital</h3><p>Invest with a €25 start bonus.</p>
+    <img src="/farshid/content/scalable.png" alt="Scalable Capital QR" loading="lazy">
+    <a class="qr-link" href="https://de.scalable.capital/en/invitation/bj2bkn" target="_blank" rel="noopener">de.scalable.capital/en/invitation/bj2bkn</a>
+    <div class="qr-actions">
+      <a class="qr-btn open" href="https://de.scalable.capital/en/invitation/bj2bkn" target="_blank">Open</a>
+      <a class="qr-btn copy" href="/farshid/content/scalable.png" download>Download</a>
+    </div>
+  </div>
+
+  <div class="qr-card">
+    <h3>Wise</h3><p>Send and receive money internationally, low fees.</p>
+    <img src="/farshid/content/wise.png" alt="Wise QR" loading="lazy">
+    <a class="qr-link" href="https://wise.com/invite/ilpn/farshidp1" target="_blank" rel="noopener">wise.com/invite/ilpn/farshidp1</a>
+    <div class="qr-actions">
+      <a class="qr-btn open" href="https://wise.com/invite/ilpn/farshidp1" target="_blank">Open</a>
+      <a class="qr-btn copy" href="/farshid/content/wise.png" download>Download</a>
+    </div>
+  </div>
+
+  <div class="qr-card">
+    <h3>eToro</h3><p>Trade 1,000s of assets on eToro.</p>
+    <img src="/farshid/content/etoro.png" alt="eToro QR" loading="lazy">
+    <a class="qr-link" href="https://etoro.tw/3XGZzNz" target="_blank" rel="noopener">etoro.tw/3XGZzNz</a>
+    <div class="qr-actions">
+      <a class="qr-btn open" href="https://etoro.tw/3XGZzNz" target="_blank">Open</a>
+      <a class="qr-btn copy" href="/farshid/content/etoro.png" download>Download</a>
+    </div>
+  </div>
+
+  <div class="qr-card">
+    <h3>Kraken</h3><p>Buy, sell and trade crypto on Kraken.</p>
+    <img src="/farshid/content/kraken.png" alt="Kraken QR" loading="lazy">
+    <a class="qr-link" href="https://invite.kraken.com/JDNW/sqqgzc9a" target="_blank" rel="noopener">invite.kraken.com/JDNW/sqqgzc9a</a>
+    <div class="qr-actions">
+      <a class="qr-btn open" href="https://invite.kraken.com/JDNW/sqqgzc9a" target="_blank">Open</a>
+      <a class="qr-btn copy" href="/farshid/content/kraken.png" download>Download</a>
+    </div>
+  </div>
+</div>
+
+## Crypto Addresses
+
+<p class="qr-note">Purely optional &mdash; this is a tip jar, nothing more, for the open-source projects and free tools I build and maintain. No invoice, no obligation, nothing to sign. If you would rather not, everything stays free to use.</p>
+
+<div class="qr-grid">
+  <div class="qr-card">
+    <h3>Bitcoin (BTC)</h3><p>Bitcoin network &middot; BTC only</p>
+    <img src="/farshid/content/btc.svg" alt="Bitcoin address QR code" loading="lazy">
+    <div class="qr-addr">bc1q922uu6uwu3x2grlkypeuyywet9msk2fzxypy6d</div>
+    <div class="qr-actions"><a class="qr-btn copy" href="/farshid/content/btc.svg" download>Download QR</a></div>
+  </div>
+  <div class="qr-card">
+    <h3>Ethereum (ETH)</h3><p>Ethereum mainnet &middot; ETH &amp; ERC-20</p>
+    <img src="/farshid/content/eth.svg" alt="Ethereum address QR code" loading="lazy">
+    <div class="qr-addr">0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C</div>
+    <div class="qr-actions"><a class="qr-btn copy" href="/farshid/content/eth.svg" download>Download QR</a></div>
+  </div>
+  <div class="qr-card">
+    <h3>BNB</h3><p>BNB Smart Chain &middot; BNB &amp; BEP-20</p>
+    <img src="/farshid/content/bnb.svg" alt="BNB address QR code" loading="lazy">
+    <div class="qr-addr">0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C</div>
+    <div class="qr-actions"><a class="qr-btn copy" href="/farshid/content/bnb.svg" download>Download QR</a></div>
+  </div>
+  <div class="qr-card">
+    <h3>Solana (SOL)</h3><p>Solana network &middot; SOL &amp; SPL tokens</p>
+    <img src="/farshid/content/sol.svg" alt="Solana address QR code" loading="lazy">
+    <div class="qr-addr">4Ub6VYF69PdCjpCMWDysU54WPb1xB7s628ASkCuJmcib</div>
+    <div class="qr-actions"><a class="qr-btn copy" href="/farshid/content/sol.svg" download>Download QR</a></div>
+  </div>
+  <div class="qr-card">
+    <h3>Base</h3><p>Base L2 &middot; ETH on Base only</p>
+    <img src="/farshid/content/base.svg" alt="Base address QR code" loading="lazy">
+    <div class="qr-addr">0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C</div>
+    <div class="qr-actions"><a class="qr-btn copy" href="/farshid/content/base.svg" download>Download QR</a></div>
+  </div>
+</div>
+
+<p class="qr-topics">Computer Vision, Generative AI, Edge Computing, Fine-tune Multimodal LLMs, Robotics, IoT, AR/VR, Medical Imaging, Autonomous Vehicles, Smart Cities, Industrial Automation, Surveillance Systems, Gesture Recognition, Facial Recognition, Emotion Detection, Object Tracking, 3D Reconstruction, Augmented Reality Applications, Virtual Reality Experiences, Edge AI Model Optimization, Real-time Video Analytics, Deep Learning Model Deployment, AI-powered Drones, AI in Healthcare Imaging</p>
+
+<p class="qr-addr-note">The same address covers ETH, BNB and Base &mdash; always check it on the device that signs, and send only on the network named above each code.</p>
+
+<p class="swarm-hint">Scan to open each link, or tap the Open button. All QR codes can be downloaded and shared.</p>
+
+---
+
 ## Simple Setting Up a CUDA Development Environment in VS Code in Windows
-URL: https://pirahansiah.com/farshid/content/note-cuda-vscode.html
+URL: https://pirahansiah.com/farshid/content/note-cuda-vscode.md
 
 Step-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and debugging.
 
@@ -22452,7 +22610,7 @@ This config is especially useful for developers who prefer the lightweight and c
 ---
 
 ## Sitemap & Page Summaries
-URL: https://pirahansiah.com/farshid/content/menus.html
+URL: https://pirahansiah.com/farshid/content/menus.md
 
 Complete navigation index with summaries of all site pages
 
@@ -22523,7 +22681,7 @@ Complete navigation index with summaries of all site pages
 - **[Crypto](/farshid/content/crypto.md)** — Support the site with crypto donations (ETH, BTC, SOL, Base, BNB)
 - **[MetaMask](/farshid/content/metamask.md)** — Connect a crypto wallet and test send/receive
 - **[Game](/farshid/content/game.md)** — Play Snake, Flappy Bird and 2048 in your browser
-- **[QR Codes](/farshid/content/qrcode.html)** — Scan QR codes to open referral & join links (OpenCode, Trade Republic, Scalable, Wise, eToro)
+- **[QR Codes](/farshid/content/qr.md)** — Scan QR codes to open referral & join links (OpenCode, Trade Republic, Scalable, Wise, eToro)
 - **[Solana Games](/farshid/content/solana-games.md)** — Simple Solana games and on-chain mini-games
 - **[Shop](/shop/)** — Digital downloads: branded PDF guides and ebooks
 - **[Book](/book/)** — Computer Vision & AI Engineer's Guide (free PDF)
@@ -22563,7 +22721,7 @@ Complete navigation index with summaries of all site pages
 ---
 
 ## Solana Arcade — Snake & Tetris
-URL: https://pirahansiah.com/farshid/content/solana-games.html
+URL: https://pirahansiah.com/farshid/content/solana-games.md
 
 > **Solana Arcade** — Play Snake & Tetris, connect Phantom, and sign your high score as a cryptographic proof. — https://pirahansiah.com/solana-games/
 Play Snake and Tetris in your browser, connect a Phantom wallet, and sign your high score as a cryptographic proof on Solana. No install, no account, runs locally.
@@ -22843,7 +23001,7 @@ Play Snake and Tetris in your browser, connect a Phantom wallet, and sign your h
 ---
 
 ## Solutions — AI Courses & Workshops
-URL: https://pirahansiah.com/farshid/content/solutions.html
+URL: https://pirahansiah.com/farshid/content/solutions.md
 
 > **Solutions — AI Courses & Workshops** — AI 2026 courses, workshops, and business solutions for production-ready products. — https://www.pirahansiah.com/notes/docs/solutions/
 AI 2026 courses, workshops, and business solutions for production-ready products.
@@ -23060,7 +23218,7 @@ AI 2026 courses, workshops, and business solutions for production-ready products
 ---
 
 ## Terms of Service
-URL: https://pirahansiah.com/farshid/content/terms.html
+URL: https://pirahansiah.com/farshid/content/terms.md
 
 > **Terms of Service** — Terms of Service — https://www.pirahansiah.com/terms/
 Terms of service for pirahansiah.com: acceptable use of the content, intellectual property notice, disclaimers, and contact information.
@@ -23119,7 +23277,7 @@ For questions about these terms, contact: [info@pirahansiah.com](mailto:info@pir
 ---
 
 ## The New Era of SEO: Optimizing Websites for LLMs
-URL: https://pirahansiah.com/farshid/content/note-seo-for-llms.html
+URL: https://pirahansiah.com/farshid/content/note-seo-for-llms.md
 
 How to optimize websites for LLM-powered search engines using structured data and AI-friendly content.
 
@@ -23219,7 +23377,7 @@ BUY:
 ---
 
 ## tools
-URL: https://pirahansiah.com/farshid/content/note-shell-vim.html
+URL: https://pirahansiah.com/farshid/content/note-shell-vim.md
 
 Quick reference for shell commands, vim basics, and essential CLI tools.
 
@@ -23278,7 +23436,7 @@ nnn
 ---
 
 ## Why This Site Exists
-URL: https://pirahansiah.com/farshid/content/why-not.html
+URL: https://pirahansiah.com/farshid/content/why-not.md
 
 Why this personal knowledge base exists, what it covers, and the principles behind how it is built and maintained.
 
@@ -23308,7 +23466,7 @@ Many pages document specific solutions: deployment on Jetson and Hailo devices, 
 # Courses
 
 ## Advanced Programming with Modern C++ 23 for Image Processing
-URL: https://pirahansiah.com/farshid/content/course-modern-cpp.html
+URL: https://pirahansiah.com/farshid/content/course-modern-cpp.md
 
 Modern C++23 for image processing: memory management, design patterns, CUDA, and OpenCV.
 
@@ -23346,7 +23504,7 @@ Modern C++23 for image processing: memory management, design patterns, CUDA, and
 ---
 
 ## AI Hardware Accelerators
-URL: https://pirahansiah.com/farshid/content/course-ai-hardware.html
+URL: https://pirahansiah.com/farshid/content/course-ai-hardware.md
 
 Workshop covering custom accelerators, NPUs, and edge AI chips.
 
@@ -23359,7 +23517,7 @@ Workshop on custom AI accelerators, NPUs, and edge computing chips.
 ---
 
 ## Book Summaries
-URL: https://pirahansiah.com/farshid/content/course-ai-engineers-guide.html
+URL: https://pirahansiah.com/farshid/content/course-ai-engineers-guide.md
 
 Book summaries and knowledge management resources.
 
@@ -23376,7 +23534,7 @@ Book summaries and knowledge management resources.
 ---
 
 ## Cloud-Native Infrastructure with Kubernetes
-URL: https://pirahansiah.com/farshid/content/course-cloud-native.html
+URL: https://pirahansiah.com/farshid/content/course-cloud-native.md
 
 Docker and Kubernetes fundamentals for cloud-native infrastructure.
 
@@ -23402,7 +23560,7 @@ docker images
 ---
 
 ## Edge AI Summit 2020 (Nov 18-20)
-URL: https://pirahansiah.com/farshid/content/course-edge-ai-summit.html
+URL: https://pirahansiah.com/farshid/content/course-edge-ai-summit.md
 
 Notes from Edge AI Summit covering tinyML, neuromorphic computing, and edge inference.
 
@@ -23436,7 +23594,7 @@ Notes from Edge AI Summit covering tinyML, neuromorphic computing, and edge infe
 ---
 
 ## Embedded IoT
-URL: https://pirahansiah.com/farshid/content/course-iot.html
+URL: https://pirahansiah.com/farshid/content/course-iot.md
 
 Workshop on embedded IoT systems and edge computing applications.
 
@@ -23449,7 +23607,7 @@ Workshop on embedded IoT systems and edge computing applications.
 ---
 
 ## Full Stack Deep Learning
-URL: https://pirahansiah.com/farshid/content/course-full-stack-dl.html
+URL: https://pirahansiah.com/farshid/content/course-full-stack-dl.md
 
 Full Stack Deep Learning course notes covering ML production from data to deployment.
 
@@ -23486,7 +23644,7 @@ Reference: [https://fullstackdeeplearning.com/spring2021](https://fullstackdeepl
 ---
 
 ## Full Stack Deep Learning 2022
-URL: https://pirahansiah.com/farshid/content/course-full-stack-dl-2022.html
+URL: https://pirahansiah.com/farshid/content/course-full-stack-dl-2022.md
 
 Notes from Full Stack Deep Learning 2022 covering ML lifecycle, data management, and continual learning.
 
@@ -23524,7 +23682,7 @@ Notes from Full Stack Deep Learning 2022 covering ML lifecycle, data management,
 ---
 
 ## IoT Scholarship Foundation
-URL: https://pirahansiah.com/farshid/content/course-iot-scholarship.html
+URL: https://pirahansiah.com/farshid/content/course-iot-scholarship.md
 
 IoT and Edge AI with OpenVINO: face recognition, object detection, pose estimation, and semantic segmentation.
 
@@ -23559,7 +23717,7 @@ IoT and Edge AI with OpenVINO: face recognition, object detection, pose estimati
 ---
 
 ## Machine Learning Specialization 2022
-URL: https://pirahansiah.com/farshid/content/course-ml-specialization.html
+URL: https://pirahansiah.com/farshid/content/course-ml-specialization.md
 
 Coursera ML Specialization notes covering regression, classification, clustering, and neural networks.
 
@@ -23595,7 +23753,7 @@ Download source code and full text of Mind map: [GitHub](https://github.com/tizi
 ---
 
 ## Metaverse & XR
-URL: https://pirahansiah.com/farshid/content/course-metaverse.html
+URL: https://pirahansiah.com/farshid/content/course-metaverse.md
 
 Workshop on extended reality, spatial computing, and immersive technologies.
 
@@ -23608,7 +23766,7 @@ Workshop on extended reality, spatial computing, and immersive technologies.
 ---
 
 ## MLOps — Machine Learning Engineering for Production
-URL: https://pirahansiah.com/farshid/content/course-mlops.html
+URL: https://pirahansiah.com/farshid/content/course-mlops.md
 
 Coursera MLOps Specialization covering ML production, data lifecycle, modeling pipelines, and deployment.
 
@@ -23644,7 +23802,7 @@ Coursera: Machine Learning Engineering for Production (MLOps) Specialization
 ---
 
 ## OpenVINO Deep Learning
-URL: https://pirahansiah.com/farshid/content/course-openvino.html
+URL: https://pirahansiah.com/farshid/content/course-openvino.md
 
 Intel OpenVINO toolkit for optimizing and deploying deep learning models.
 
@@ -23657,7 +23815,7 @@ Intel OpenVINO toolkit for optimizing and deploying deep learning models on Inte
 ---
 
 ## Parallel Programming
-URL: https://pirahansiah.com/farshid/content/course-parallel-computing.html
+URL: https://pirahansiah.com/farshid/content/course-parallel-computing.md
 
 Python parallel programming techniques for computer vision applications.
 
@@ -23676,7 +23834,7 @@ Topics covered:
 ---
 
 ## RISC-V for AI
-URL: https://pirahansiah.com/farshid/content/course-risc-v.html
+URL: https://pirahansiah.com/farshid/content/course-risc-v.md
 
 RISC-V open-source processor architecture for AI at the edge.
 
@@ -23696,7 +23854,7 @@ RISC-V open-source processor architecture for AI at the edge.
 ---
 
 ## ROS — Robot Operating System
-URL: https://pirahansiah.com/farshid/content/course-ros.html
+URL: https://pirahansiah.com/farshid/content/course-ros.md
 
 ETH Zurich lecture on ROS architecture, navigation, simulation, and robot models.
 
@@ -23719,7 +23877,7 @@ Lecturers: Péter Fankhauser, Dominic Jud, Martin Wermelinger
 ---
 
 ## TensorFlow: Data and Deployment Specialization
-URL: https://pirahansiah.com/farshid/content/course-tensorflow-deploy.html
+URL: https://pirahansiah.com/farshid/content/course-tensorflow-deploy.md
 
 TensorFlow deployment: browser-based TF.js, device-based TF Lite, data pipelines, and optimization.
 
@@ -23749,7 +23907,7 @@ TensorFlow deployment: browser-based TF.js, device-based TF Lite, data pipelines
 ---
 
 ## Tesla AI
-URL: https://pirahansiah.com/farshid/content/course-tesla.html
+URL: https://pirahansiah.com/farshid/content/course-tesla.md
 
 Workshop on Tesla's autonomous driving technology and AI systems.
 
@@ -23764,7 +23922,7 @@ Workshop on Tesla's autonomous driving technology and AI systems.
 # Talks & Presentations
 
 ## Hermes Agent for Big Computer Vision Projects
-URL: https://pirahansiah.com/farshid/content/presentation-cv.html
+URL: https://pirahansiah.com/farshid/content/presentation-cv.md
 
 <div class="presentation-panel">
   <div class="nav-hint">Tap the right side for the next slide · tap the left side to go back · swipe or arrow keys work too</div>
@@ -23993,7 +24151,7 @@ delegate_task(tasks=[
           <p>✔ <strong>Operate autonomously</strong>: cron jobs + group bots run the ops loop.</p>
           <p>✔ <strong>Profile & ship</strong>: bottleneck calls + traced artifact lineage.</p>
         </div>
-        <p style="margin-top:1em; color:#1a56db; font-size:1.05em; font-weight:bold">pirahansiah.com/farshid/content/computer-vision.html</p>
+        <p style="margin-top:1em; color:#1a56db; font-size:1.05em; font-weight:bold">pirahansiah.com/farshid/content/computer-vision.md</p>
       </section>
 
       
@@ -24040,8 +24198,8 @@ hermes skills list
         <h1>Thank You & Discussion</h1>
         <h2 style="color:#2b3038">Hermes Agent for Big Computer Vision Projects</h2>
         <p style="margin-top:1.5em">
-          <a href="/farshid/content/research-tools.html" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
-          <a href="/farshid/content/computer-vision.html" style="color:#1a56db; text-decoration:underline">CV &amp; Publications</a> •
+          <a href="/farshid/content/research-tools.md" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
+          <a href="/farshid/content/computer-vision.md" style="color:#1a56db; text-decoration:underline">CV &amp; Publications</a> •
           <a href="https://github.com/pirahansiah" style="color:#1a56db; text-decoration:underline">GitHub</a>
         </p>
         <div style="margin-top:2em">
@@ -24056,7 +24214,7 @@ hermes skills list
 ---
 
 ## Hermes Agent for Research Assistance
-URL: https://pirahansiah.com/farshid/content/presentation.html
+URL: https://pirahansiah.com/farshid/content/presentation.md
 
 <div class="presentation-panel">
   <div class="nav-hint">Tap the right side for the next slide · tap the left side to go back · swipe or arrow keys work too</div>
@@ -24627,8 +24785,8 @@ hermes skills list
         <h1>Thank You & Discussion</h1>
         <h2 style="color:#2b3038">Hermes Agent for Research Assistance</h2>
         <p style="margin-top:1.5em">
-          <a href="/farshid/content/research-tools.html" style="color:#1a56db; text-decoration:underline">All Presentations</a> • 
-          <a href="/farshid/content/atlas.html#publications" style="color:#1a56db; text-decoration:underline">Publications & Notes</a> • 
+          <a href="/farshid/content/research-tools.md" style="color:#1a56db; text-decoration:underline">All Presentations</a> • 
+          <a href="/farshid/content/atlas.md#publications" style="color:#1a56db; text-decoration:underline">Publications & Notes</a> • 
           <a href="https://github.com/pirahansiah" style="color:#1a56db; text-decoration:underline">GitHub Repositories</a>
         </p>
         <div style="margin-top:2em">
@@ -24645,7 +24803,7 @@ hermes skills list
 ---
 
 ## Hermes Agent — Recent Updates & Complete Feature Guide
-URL: https://pirahansiah.com/farshid/content/presentation-updates.html
+URL: https://pirahansiah.com/farshid/content/presentation-updates.md
 
 <div class="presentation-panel">
   <div class="nav-hint">Tap the right side for the next slide · tap the left side to go back · swipe or arrow keys work too</div>
@@ -24951,7 +25109,7 @@ delegate_task(tasks=[
           <p>✔ <strong>Operate anywhere</strong> — CLI, GUI, web, 21+ messengers.</p>
           <p>✔ <strong>Ship traced artifacts</strong> — reproducible, push-button.</p>
         </div>
-        <p style="margin-top:0.8em; color:#1a56db; font-size:1.0em; font-weight:bold">pirahansiah.com/farshid/content/research-tools.html</p>
+        <p style="margin-top:0.8em; color:#1a56db; font-size:1.0em; font-weight:bold">pirahansiah.com/farshid/content/research-tools.md</p>
       </section>
 
       
@@ -24998,8 +25156,8 @@ hermes skills list
         <h1>Thank You</h1>
         <h2 style="color:#2b3038">Hermes Agent — Updates & Complete Feature Guide</h2>
         <p style="margin-top:1.2em">
-          <a href="/farshid/content/research-tools.html" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
-          <a href="/farshid/content/atlas.html#notes-guides" style="color:#1a56db; text-decoration:underline">Notes &amp; Guides</a> •
+          <a href="/farshid/content/research-tools.md" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
+          <a href="/farshid/content/atlas.md#notes-guides" style="color:#1a56db; text-decoration:underline">Notes &amp; Guides</a> •
           <a href="https://github.com/NousResearch/hermes-agent" style="color:#1a56db; text-decoration:underline">GitHub</a> •
           <a href="https://hermes-agent.nousresearch.com/docs/" style="color:#1a56db; text-decoration:underline">Official Docs</a>
         </p>
@@ -25015,7 +25173,7 @@ hermes skills list
 ---
 
 ## New LLM Optimization Methods — Run Local & Fast
-URL: https://pirahansiah.com/farshid/content/presentation-llm-optimization.html
+URL: https://pirahansiah.com/farshid/content/presentation-llm-optimization.md
 
 <div class="presentation-panel">
   <div class="nav-hint">Tap the right side for the next slide · tap the left side to go back · swipe or arrow keys work too</div>
@@ -25331,7 +25489,7 @@ hermes skills list
       <section>
         <h1>Thank You & Discussion</h1>
         <p style="color:#6b7280; font-size:.7em">Quantize smart · Draft in parallel · Fuse the kernel · Run native</p>
-        <p style="font-size:.6em; margin-top:8px"><a href="/farshid/content/research-tools.html" style="color:#1a56db">← All presentations</a> · <a href="/farshid/content/presentation-research-tools.html" style="color:#6d28d9">New Era of Research Tools</a></p>
+        <p style="font-size:.6em; margin-top:8px"><a href="/farshid/content/research-tools.md" style="color:#1a56db">← All presentations</a> · <a href="/farshid/content/presentation-research-tools.md" style="color:#6d28d9">New Era of Research Tools</a></p>
       </section>
 
     </div>
@@ -25341,7 +25499,7 @@ hermes skills list
 ---
 
 ## Reducing Token Usage in AI-Assisted Development
-URL: https://pirahansiah.com/farshid/content/slides-token-optimization.html
+URL: https://pirahansiah.com/farshid/content/slides-token-optimization.md
 
 <div class="presentation-panel">
   <div class="nav-hint">Tap the right side for the next slide · tap the left side to go back · swipe or arrow keys work too</div>
@@ -25620,7 +25778,7 @@ URL: https://pirahansiah.com/farshid/content/slides-token-optimization.html
 ---
 
 ## Research Tools — Talks, Presentations & Keynotes
-URL: https://pirahansiah.com/farshid/content/research-tools.html
+URL: https://pirahansiah.com/farshid/content/research-tools.md
 
 # Research Tools — Talks, Presentations &amp; Keynotes
 
@@ -25642,12 +25800,12 @@ Dr. Farshid Pirahansiah speaks on **computer vision, edge &amp; on-device AI, mo
 >For a speaking engagement or keynote, reach out at **info@pirahansiah.com**.
 
 ---
-*Browse the [full Atlas](/farshid/content/atlas.html) for everything else.*
+*Browse the [full Atlas](/farshid/content/atlas.md) for everything else.*
 
 ---
 
 ## The New Era of Research Tools
-URL: https://pirahansiah.com/farshid/content/presentation-research-tools.html
+URL: https://pirahansiah.com/farshid/content/presentation-research-tools.md
 
 <div class="presentation-panel">
   <div class="nav-hint">Tap the right side for the next slide · tap the left side to go back · swipe or arrow keys work too</div>
@@ -25999,7 +26157,7 @@ hermes skills list
         <h1>Thank You & Discussion</h1>
         <h2 style="color:#2b3038">The New Era of Research Tools</h2>
         <p style="margin-top:1.5em">
-          <a href="/farshid/content/research-tools.html" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
+          <a href="/farshid/content/research-tools.md" style="color:#1a56db; text-decoration:underline">All Presentations</a> •
           <a href="https://github.com/pirahansiah" style="color:#1a56db; text-decoration:underline">GitHub Repositories</a>
         </p>
         <div style="margin-top:2em">
@@ -26018,7 +26176,7 @@ hermes skills list
 # Projects
 
 ## llm-tools
-URL: https://pirahansiah.com/farshid/projects/llm-tools/
+URL: https://pirahansiah.com/farshid/projects/llm-tools/README.md
 
 # llm-tools
 
@@ -26027,7 +26185,7 @@ Source files for the `llm-tools` project.
 ---
 
 ## mimo
-URL: https://pirahansiah.com/farshid/projects/mimo/
+URL: https://pirahansiah.com/farshid/projects/mimo/README.md
 
 # mimo
 
@@ -26036,7 +26194,7 @@ Source files for the `mimo` project.
 ---
 
 ## rag
-URL: https://pirahansiah.com/farshid/projects/rag/
+URL: https://pirahansiah.com/farshid/projects/rag/README.md
 
 # rag
 
@@ -26045,7 +26203,7 @@ Source files for the `rag` project.
 ---
 
 ## site-tools
-URL: https://pirahansiah.com/farshid/projects/site-tools/
+URL: https://pirahansiah.com/farshid/projects/site-tools/README.md
 
 # site-tools
 

@@ -41,7 +41,7 @@ for fn in sorted(os.listdir(CONTENT)):
 
 # add atlas + qr + swarm permanent pages
 entries.append({'slug':'atlas','title':'Atlas — index of everything','text':'the single index of all publications courses notes slides projects connect','tags':['index','publications','courses','notes'],'url':'/farshid/content/index.html#atlas'})
-entries.append({'slug':'qr','title':'Scan & Share — QR links','text':'qr codes referrals social profiles crypto addresses all links scan share','tags':['qr','links','social','crypto'],'url':'/farshid/content/qrcode.html'})
+entries.append({'slug':'qr','title':'Scan & Share — QR links','text':'qr codes referrals social profiles crypto addresses all links scan share','tags':['qr','links','social','crypto'],'url':'/farshid/content/index.html#content/qr'})
 entries.append({'slug':'search','title':'Search Swarm','text':'search the entire knowledge base swarm search agents','tags':['search','swarm'],'url':'/farshid/content/swarm.html'})
 
 # presentations / slide decks (live under content/, renamed to presentation-*)

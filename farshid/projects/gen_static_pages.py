@@ -1,34 +1,33 @@
 #!/usr/bin/env python3
-"""Generate crawler-readable static HTML pages from content/*.md.
+"""Write the site's machine-readable indexes from the markdown sources.
 
-Why: the site rendered every page client-side from raw .md. An LLM/answer-engine
-crawler (or any no-JS fetch) therefore saw either a 10 KB JS shell or the raw
-markdown source: no title, no description, no canonical, no structured data.
+Every page on pirahansiah.com is ONE file: a markdown file in farshid/content/.
+The browser app (farshid/app.js + md.js) renders it client-side, and the same .md
+file is what a crawler, an answer engine or a language model reads. There is no
+build step and no generated HTML twin to keep in sync (the per-page HTML pages
+were removed on the owner's request in Sep 2026 — see farshid/README.md).
 
-This script renders each markdown page into a real HTML document that shares the
-site chrome and design system, and emits the machine-readable entry points:
-  content/<slug>.html   one canonical page per markdown source
-  llms.txt              curated index for LLMs (llmstxt.org convention)
-  llms-full.txt         the same index plus the full text of every page
-  sitemap.xml           canonical HTML URLs only
+What this script writes, all at the repository root:
+  llms.txt        the LLM index: one line per page, grouped by section
+  llms-full.txt   the same list plus the full text of every page in one file
+  sitemap.xml     the same page list, for search engines
 
-Run after adding/editing content:  python3 farshid/projects/gen_static_pages.py
+Run after adding or editing content:  python3 farshid/projects/gen_static_pages.py
 """
-import os, re, sys, json, html, subprocess, datetime
+import os, re, sys, html, subprocess, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..'))          # .../myWebsite/farshid
 SITE = os.path.abspath(os.path.join(ROOT, '..'))          # .../myWebsite
 CONTENT = os.path.join(ROOT, 'content')
+PROJECTS = os.path.join(ROOT, 'projects')
 ORIGIN = 'https://pirahansiah.com'
-SPA = ORIGIN + '/farshid/content/index.html'              # interactive app entry
+SPA = ORIGIN + '/farshid/content/index.html'              # the interactive app entry
+LLMS_SECTIONS = ['Site', 'Publications', 'Notes & Guides', 'Courses', 'Talks & Presentations', 'Projects']
 
-# qr.md is the markdown twin of the standalone qrcode.html — one indexable URL is enough.
-SKIP = {'qr'}
-
-NAV = [('Home', '/farshid/content/index.html'),
-       ('Atlas', '/farshid/content/atlas.html'),
-       ('Search Swarm', '/farshid/content/swarm.html')]
+# Hand-written pages that are not markdown (small apps, not content pages).
+STANDALONE = [('/farshid/content/index.html', 'daily', '1.0'),
+              ('/farshid/content/swarm.html', 'monthly', '0.5')]
 
 
 def split_front_matter(body):
@@ -44,30 +43,6 @@ def split_front_matter(body):
     return meta, body[m.end():]
 
 
-def literal_emphasis(html_in):
-    """`**bold**` inside a raw-HTML block is not parsed by markdown — render it instead of leaking asterisks."""
-    return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', html_in, flags=re.S)
-
-
-def _norm(s):
-    return re.sub(r'[^a-z0-9]+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', s)).lower()).strip()
-
-
-def strip_leading_title(rendered, title):
-    """Drop the body's opening heading when it only repeats the page title (already an h1).
-
-    Looks only at the very top of the document: some pages open with a figure or a
-    `<div>`, and deep inside a slide deck a matching heading must be left alone.
-    """
-    m = re.search(r'<h[12][^>]*>(.*?)</h[12]>', rendered[:600], re.S)
-    if not m:
-        return rendered
-    body_head, t = _norm(m.group(1)), _norm(title)
-    if body_head and body_head == t:
-        return rendered[:m.start()] + rendered[m.end():]
-    return rendered
-
-
 def title_of(slug, body, meta=None):
     if meta and meta.get('title'):
         return ' '.join(meta['title'].split())
@@ -77,7 +52,7 @@ def title_of(slug, body, meta=None):
     if m:
         t = re.sub(r'<[^>]+>', '', m.group(1))
         t = re.sub(r'[*_`]', '', t)
-        t = re.sub(r'[\U0001F000-\U0001FAFF\u2190-\u21FF\u2600-\u27BF\uFE0F]', ' ', t)  # emoji: body may keep them, metadata must not
+        t = re.sub(r'[\U0001F000-\U0001FAFF\u2190-\u21FF\u2600-\u27BF\uFE0F]', ' ', t)  # body may keep emoji, metadata must not
         return ' '.join(html.unescape(t).split())
     return ' '.join(w.capitalize() for w in slug.replace('-', ' ').split())
 
@@ -114,14 +89,20 @@ def truncate(text, limit=155):
 
 
 def section_of(slug):
-    if slug.startswith('books-'): return 'Publications'
-    if slug.startswith(('journals-', 'papers-', 'patents-', 'keynotes-')): return 'Publications'
-    if slug == 'computer-vision': return 'Publications'
-    if slug.startswith('course-'): return 'Courses'
-    if slug.startswith('note-'): return 'Notes & Guides'
-    if slug.startswith('slides-') or slug.startswith('presentation'): return 'Talks & Presentations'
-    if slug in ('research-tools',): return 'Talks & Presentations'
-    if slug in ('atlas', 'contact', 'privacy'): return 'Site'
+    if slug.startswith(('books-', 'journals-', 'papers-', 'patents-', 'keynotes-')):
+        return 'Publications'
+    if slug == 'computer-vision':
+        return 'Publications'
+    if slug.startswith('course-'):
+        return 'Courses'
+    if slug.startswith('note-'):
+        return 'Notes & Guides'
+    if slug.startswith(('slides-', 'presentation')):
+        return 'Talks & Presentations'
+    if slug == 'research-tools':
+        return 'Talks & Presentations'
+    if slug in ('atlas', 'contact', 'privacy'):
+        return 'Site'
     return 'Notes & Guides'
 
 
@@ -137,361 +118,40 @@ def date_modified(rel_path):
     return datetime.date.today().isoformat()
 
 
-_SLUGS = set()
-LEGACY_SEGMENT_PREFIXES = ['course-', 'note-', 'journals-', 'papers-', 'books-', 'talk-']
-
-# Hand-checked targets for legacy paths whose intent is section-level (they point at
-# the Atlas index) or abbreviated (/notes/courses/fsdl/ = full-stack deep learning).
-LEGACY_ALIASES = {
-    '/notes/':                      '/farshid/content/atlas.html#site-pages',
-    '/notes/sitemap/':              '/farshid/content/atlas.html',
-    '/notes/docs/':                 '/farshid/content/atlas.html#notes-guides',
-    '/notes/docs/links/':           '/farshid/content/atlas.html#site-pages',
-    '/notes/docs/resources/':       '/farshid/content/atlas.html#notes-guides',
-    '/notes/docs/dev-tools/':       '/farshid/content/atlas.html#notes-guides',
-    '/notes/docs/shell-vim/':       '/farshid/content/atlas.html#notes-guides',
-    '/notes/docs/optimization/':    '/farshid/content/note-optimization-guide.html',
-    '/notes/docs/llm/local-llm-optimization/': '/farshid/content/note-optimization-guide.html',
-    '/notes/docs/cv/3d/':           '/farshid/content/note-3d-vision.html',
-    '/notes/docs/research/':        '/farshid/content/research-tools.html',
-    '/notes/courses/':              '/farshid/content/atlas.html#courses',
-    '/notes/courses/book-summary/': '/farshid/content/atlas.html#book-chapters',
-    '/notes/courses/fsdl/':         '/farshid/content/course-full-stack-dl.html',
-    '/notes/courses/fsdl-2022/':    '/farshid/content/course-full-stack-dl-2022.html',
-    '/notes/courses/tf-deploy/':    '/farshid/content/course-tensorflow-deploy.html',
-    '/notes/courses/ml-spec/':      '/farshid/content/course-ml-specialization.html',
-    '/notes/courses/parallel/':     '/farshid/content/course-parallel-computing.html',
-    '/notes/pubs/':                 '/farshid/content/atlas.html#publications',
-    '/notes/pubs/books/':           '/farshid/content/atlas.html#book-chapters',
-    '/notes/pubs/journals/':        '/farshid/content/atlas.html#journal-articles',
-    '/notes/pubs/papers/':          '/farshid/content/atlas.html#conference-papers',
-    '/notes/pubs/patents/':         '/farshid/content/atlas.html#patents',
-    '/notes/pubs/cv/':              '/farshid/content/atlas.html#publications',
-    '/notes/pubs/keynotes/llm-cv/': '/farshid/content/keynotes-llm-cv.html',
-    '/notes/pkm/':                  '/farshid/content/atlas.html#notes-guides',
-    '/notes/pkm/TOC/':              '/farshid/content/atlas.html#notes-guides',
-    '/notes/pkm/links/':            '/farshid/content/atlas.html#notes-guides',
-    '/notes/pkm/proof/':            '/farshid/content/atlas.html#notes-guides',
-}
-
-
-def resolve_legacy(href):
-    """Map a Google-Sites-era path (/notes/docs/cv/optical-flow/) onto the page that
-    exists today. Rewrites only when exactly one slug matches — never a guess."""
-    parts = [p for p in href.strip('/').split('/') if p]
-    if not parts or not _SLUGS:
-        return None
-    seg = parts[-1].lower()
-    cands = {seg} | {pre + seg for pre in LEGACY_SEGMENT_PREFIXES}
-    hits = [s for s in _SLUGS if s.lower() in cands]
-    if len(hits) == 1:
-        return hits[0]
-    toks = [t for t in re.split(r'[-_]+', seg) if len(t) > 2]
-    hits = [s for s in _SLUGS if toks and all(t in s.lower() for t in toks)]
-    return hits[0] if len(hits) == 1 else None
-
-
-def rewrite_links(fragment):
-    """Point in-page links at the canonical static pages, so crawlers can follow them.
-
-    Matches `href=` attributes explicitly. (Pairing bare quotes across the whole
-    fragment drifts on apostrophes in prose and silently skips links.)"""
-    def repl(m):
-        quote, h_raw = m.group('q'), m.group('h')
-        h = h_raw.strip()
-        if re.match(r'^(https?:)?//|^mailto:|^tel:|^data:', h):
-            return m.group(0)
-        # #content/slug or #content/slug:anchor  ->  /farshid/content/slug.html#anchor
-        mm = re.match(r'^#?/?content/([A-Za-z0-9._-]+?)(?:\.md)?(?::([A-Za-z0-9._-]+))?$', h)
-        if mm:
-            return f'href={quote}/farshid/content/{mm.group(1)}.html' + (f'#{mm.group(2)}' if mm.group(2) else '') + quote
-        if h in ('#atlas', '/farshid/content/atlas.md', 'atlas.md'):
-            return f'href={quote}/farshid/content/atlas.html{quote}'
-        if h in ('#home', '/'):
-            return m.group(0)
-        # /farshid/content/<slug>.md  or  <slug>.md (relative)
-        mm = re.match(r'^(?:/farshid/content/|/content/|\./)?([A-Za-z0-9._-]+)\.md(?:#(.+))?$', h)
-        if mm:
-            return f'href={quote}/farshid/content/{mm.group(1)}.html' + (f'#{mm.group(2)}' if mm.group(2) else '') + quote
-        # hand-checked aliases for Google-Sites-era section roots and acronyms
-        path, _, frag = h.partition('#')
-        if path in LEGACY_ALIASES:
-            target = LEGACY_ALIASES[path]
-            return f'href={quote}{target}{("#" + frag) if frag else ""}{quote}'
-        # legacy Google-Sites paths (/notes/docs/cv/optical-flow/) -> the page that exists
-        if path.startswith('/') and not path.startswith('//'):
-            target = resolve_legacy(path)
-            if target:
-                return f'href={quote}/farshid/content/{target}.html' + (f'#{frag}' if frag else '') + quote
-        # in-page hash to a heading on the same deck/section: leave alone
-        return m.group(0)
-    return re.sub(r'href=(?P<q>["\'])(?P<h>[^"\']+)(?P=q)', repl, fragment)
-
-
-BOILER_HEAD = '''<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-'<meta name="theme-color" content="#EEF0F4">
-<title>{title} · Farshid Pirahansiah</title>
-<meta name="description" content="{description}">
-<link rel="canonical" href="{canonical}">
-<link rel="alternate" type="text/markdown" href="{md}" title="Markdown source">
-<link rel="icon" href="/farshid/favicon.png">
-<link rel="stylesheet" href="/farshid/style.css">
-<meta property="og:site_name" content="Farshid Pirahansiah">
-<meta property="og:type" content="article">
-<meta property="og:url" content="{canonical}">
-<meta property="og:title" content="{title}">
-<meta property="og:description" content="{description}">
-<meta name="twitter:card" content="summary">
-<meta name="author" content="Dr. Farshid Pirahansiah">
-<link rel="llms" href="/llms.txt">
-<script type="application/ld+json">{jsonld}</script>
-</head>'''
-
-BOILER_HEAD_STYLE = '<style>\n{extra}\n</style>'
-
-
-def nav_html(active):
-    out = ['<header class="topbar"><div class="topbar-inner">',
-           f'<a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>',
-           '<nav class="nav" aria-label="Primary">']
-    for label, href in NAV:
-        cls = 'nav-item active' if label == active else 'nav-item'
-        out.append(f'<a class="{cls}" href="{href}">{label}</a>')
-    out.append('</nav></div></header>')
-    return '\n'.join(out)
-
-
-def footer_html():
-    return ('<footer class="footer">\n  <div class="footer-inner">\n'
-            '    <div class="footer-brand">Dr. Farshid Pirahansiah</div>\n'
-            '    <div class="footer-links">\n'
-            '      <a href="/farshid/content/index.html">Home</a>\n'
-            '      <a href="/farshid/content/atlas.html">Atlas</a>\n'
-            '      <a href="/farshid/content/swarm.html">Search Swarm</a>\n'
-            '      <a href="/farshid/content/qrcode.html">Scan &amp; Share</a>\n'
-            '    </div>\n'
-            '    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>\n'
-            '  </div>\n</footer>\n'
-            '<script>document.querySelectorAll(\'[data-year]\').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>')
-
-
-def jsonld_for(slug, title, description, canonical, modified):
-    person = {
-        "@type": "Person",
-        "@id": ORIGIN + "/#person",
-        "name": "Dr. Farshid Pirahansiah",
-        "url": ORIGIN + "/",
-        "jobTitle": "Computer Vision & Edge AI Engineer",
-        "email": "info@pirahansiah.com",
-        "knowsAbout": ["Computer Vision", "Edge AI", "Model Optimization", "On-device LLMs",
-                       "GPU Acceleration", "Image Processing"],
-        "sameAs": ["https://www.linkedin.com/in/pirahansiah/",
-                   "https://github.com/pirahansiah",
-                   "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
-                   "https://x.com/pirahansiah"],
-    }
-    article = {
-        "@type": "Article",
-        "@id": canonical + "#article",
-        "url": canonical,
-        "name": title,
-        "headline": title,
-        "description": description,
-        "inLanguage": "en",
-        "dateModified": modified,
-        "author": {"@id": ORIGIN + "/#person"},
-        "publisher": {"@id": ORIGIN + "/#person"},
-        "isPartOf": {"@id": ORIGIN + "/#website"},
-        "mainEntityOfPage": {"@id": canonical},
-    }
-    if slug.startswith(('journals-', 'papers-', 'books-')):
-        article["@type"] = "ScholarlyArticle"
-    site = {"@type": "WebSite", "@id": ORIGIN + "/#website", "url": ORIGIN + "/",
-            "name": "Farshid Pirahansiah", "inLanguage": "en",
-            "publisher": {"@id": ORIGIN + "/#person"}}
-    crumbs = {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": ORIGIN + "/farshid/content/index.html"},
-            {"@type": "ListItem", "position": 2, "name": "Atlas", "item": ORIGIN + "/farshid/content/atlas.html"},
-            {"@type": "ListItem", "position": 3, "name": title, "item": canonical},
-        ],
-    }
-    return json.dumps({"@context": "https://schema.org", "@graph": [person, site, article, crumbs]},
-                      ensure_ascii=False, separators=(',', ':'))
-
-
-def slugify(text):
-    return re.sub(r'^-|-$', '', re.sub(r'[^a-z0-9]+', '-', text.lower()))
-
-
-def deck_doc(title, description, canonical, slug, jsonld, slides):
-    """A standalone presentation page: nothing but the deck on screen.
-
-    The slide markup stays in the document (crawlers still read every line of the deck),
-    but no site chrome is rendered above it and the page itself never scrolls, so on a
-    phone a swipe changes slides instead of moving the page.
-    """
-    return f'''<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{html.escape(title)}</title>
-<meta name="description" content="{html.escape(description, quote=True)}">
-<meta name="author" content="Dr. Farshid Pirahansiah">
-<link rel="canonical" href="{canonical}">
-<link rel="alternate" type="text/markdown" href="/farshid/content/{slug}.md">
-<meta property="og:type" content="article">
-<meta property="og:title" content="{html.escape(title, quote=True)}">
-<meta property="og:description" content="{html.escape(description, quote=True)}">
-<meta property="og:url" content="{canonical}">
-<meta property="og:image" content="{ORIGIN}/farshid/avatar.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#FFFFFF">
-<link rel="icon" href="/farshid/favicon.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
-<link rel="stylesheet" href="/farshid/deck.css">
-<script type="application/ld+json">{jsonld}</script>
-<noscript><style>
-  .presentation-panel{{height:auto}}
-  .presentation-panel .reveal .slides section{{display:block !important;height:auto;padding:28px 24px !important;border-bottom:1px solid #e6e8ec}}
-  .presentation-panel .nav-hint{{display:none}}
-</style></noscript>
-</head>
-<body class="deck-page">
-{slides}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.js"></script>
-<script>
-(function () {{
-  var panel = document.querySelector('.presentation-panel');
-  if (!panel || !window.Reveal) return;          // no CDN: the noscript layout above still reads
-  function portrait() {{ return window.innerWidth < 760 && window.innerHeight > window.innerWidth; }}
-  var deck = new Reveal(panel, {{
-    embedded: true, hash: false, center: true, touch: true, keyboard: true,
-    controls: true, progress: true, slideNumber: 'c/t',
-    width: portrait() ? 760 : 1120, height: portrait() ? 1080 : 760,
-    margin: 0.05, minScale: 0.2, maxScale: 2.0
-  }});
-  deck.initialize();
-  deck.on('slidechanged', function () {{ panel.classList.add('deck-started'); }});
-  window.__deck = deck;                          // handy for debugging and for the resume-hint
-  var rb = document.getElementById('restart-btn');
-  if (rb) rb.addEventListener('click', function (e) {{ e.stopPropagation(); deck.slide(0); }});
-  // tap right -> next slide, tap left -> previous (dragging still swipes)
-  var down = null;
-  panel.addEventListener('pointerdown', function (e) {{ down = {{x: e.clientX, y: e.clientY, t: Date.now()}}; }}, true);
-  panel.addEventListener('pointerup', function (e) {{
-    if (!down) return;
-    var dx = Math.abs(e.clientX - down.x), dy = Math.abs(e.clientY - down.y);
-    var quick = (Date.now() - down.t) < 600, still = (dx < 12 && dy < 12);
-    down = null;
-    if (!quick || !still) return;
-    if (e.target.closest && e.target.closest('a,button,input,select,summary,.controls,.progress,.slide-number')) return;
-    var r = panel.getBoundingClientRect();
-    if ((e.clientX - r.left) < r.width * 0.45) {{ deck.prev(); }} else {{ deck.next(); }}
-  }}, true);
-  window.addEventListener('orientationchange', function () {{
-    deck.configure({{ width: portrait() ? 760 : 1120, height: portrait() ? 1080 : 760 }});
-    deck.layout();
-  }});
-}}());
-</script>
-</body>
-</html>
-'''
-
-
-def build_pages(md_files):
-    import markdown
-    _SLUGS.clear()
-    _SLUGS.update(n[:-3] for n in md_files if n[:-3] not in SKIP)   # only slugs that get a page
+def build_pages():
+    """One entry per markdown page. The page URL is the markdown file itself."""
     pages = []
-    for name in md_files:
+    for name in sorted(f for f in os.listdir(CONTENT) if f.endswith('.md')):
         slug = name[:-3]
-        if slug in SKIP:
-            continue
-        src_path = os.path.join(CONTENT, name)
-        body = open(src_path, encoding='utf-8').read()
-        meta, body = split_front_matter(body)
-        title = title_of(slug, body, meta)
-        description = truncate(first_paragraph(body, meta)) or f'{title} — Dr. Farshid Pirahansiah, computer vision and edge AI engineer.'
-
-        is_deck = 'presentation-panel' in body
-        md = markdown.Markdown(extensions=['extra', 'sane_lists', 'toc'])
-        rendered = md.convert(body)
-        if not is_deck:
-            # the page already has one h1 (the title); body headings drop a level so agents
-            # and screen readers get a single, honest outline. Decks keep their own h1 titles.
-            rendered = strip_leading_title(re.sub(r'<(/?)h1([^>]*)>', r'<\1h2\2>', rendered), title)
-        # interactive pages keep their own standalone HTML twin; never ship their scripts here
-        rendered = re.sub(r'<script\b.*?</script>', '', rendered, flags=re.S | re.I)
-        rendered = literal_emphasis(rendered)
-        rendered = rewrite_links(rendered)
-
-        canonical = f'{ORIGIN}/farshid/content/{slug}.html'
-        modified = date_modified(os.path.relpath(src_path, SITE))
-        jsonld = jsonld_for(slug, title, description, canonical, modified)
-
-        if is_deck:
-            # a presentation is a room, not an article: no chrome, nothing above the slides
-            doc = deck_doc(title, description, canonical, slug, jsonld, rendered.strip())
-            open(os.path.join(CONTENT, slug + '.html'), 'w', encoding='utf-8').write(doc)
-            pages.append({'slug': slug, 'title': title, 'description': description, 'path': src_path,
-                          'url': canonical, 'section': section_of(slug), 'modified': modified, 'deck': True})
-            continue
-
-        head_extra = []
-        head = BOILER_HEAD.format(title=html.escape(title), description=html.escape(description, quote=True),
-                                  canonical=canonical, md=f'/farshid/content/{slug}.md',
-                                  jsonld=jsonld)
-        if head_extra:
-            head += '\n' + BOILER_HEAD_STYLE.format(extra='\n'.join(head_extra))
-
-        crumbs = ('<nav class="crumbs" aria-label="Breadcrumb">'
-                  f'<a href="/farshid/content/index.html">Home</a><span>/</span>'
-                  f'<a href="/farshid/content/atlas.html">Atlas</a><span>/</span>'
-                  f'<a href="/farshid/content/atlas.html#{slugify(section_of(slug))}">{html.escape(section_of(slug))}</a>'
-                  '</nav>')
-
-        invite = ''
-        if is_deck:
-            invite = ('<div class="deck-invite"><p>Slide deck — this page holds the full text of every slide. '
-                      f'<a href="/farshid/content/index.html#content/{slug}">Open it as a presentation</a>.</p></div>')
-
-        doc = '\n'.join([
-            head,
-            '<body>',
-            nav_html(''),
-            '<main class="wrap">',
-            crumbs,
-            '<article class="article">',
-            f'<h1>{html.escape(title)}</h1>',
-            invite,
-            rendered,
-            '</article>',
-            '<p class="page-foot">'
-            f'Source: <a href="/farshid/content/{slug}.md">content/{slug}.md</a> · '
-            'Last modified ' + modified + ' · '
-            '<a href="/farshid/content/atlas.html">All pages</a></p>',
-            '</main>',
-            footer_html(),
-            '</body>',
-            '</html>',
-            '',
-        ])
-        open(os.path.join(CONTENT, slug + '.html'), 'w', encoding='utf-8').write(doc)
-        pages.append({'slug': slug, 'title': title, 'description': description, 'path': src_path,
-                      'url': canonical, 'section': section_of(slug), 'modified': modified})
+        src = os.path.join(CONTENT, name)
+        _meta, body = split_front_matter(open(src, encoding='utf-8').read())
+        title = title_of(slug, body, _meta)
+        description = truncate(first_paragraph(body, _meta)) or \
+            f'{title} — Dr. Farshid Pirahansiah, computer vision and edge AI engineer.'
+        pages.append({'slug': slug, 'title': title, 'description': description, 'path': src,
+                      'url': f'{ORIGIN}/farshid/content/{slug}.md', 'md': f'/farshid/content/{slug}.md',
+                      'section': section_of(slug),
+                      'modified': date_modified(os.path.relpath(src, SITE))})
     return pages
 
 
-LLMS_SECTIONS = ['Site', 'Publications', 'Notes & Guides', 'Courses', 'Talks & Presentations', 'Projects']
+def build_projects():
+    """Each project README.md is a page too (its source of truth is on GitHub as well)."""
+    out = []
+    if not os.path.isdir(PROJECTS):
+        return out
+    for d in sorted(os.listdir(PROJECTS)):
+        readme = os.path.join(PROJECTS, d, 'README.md')
+        if not os.path.isfile(readme):
+            continue
+        meta, body = split_front_matter(open(readme, encoding='utf-8').read())
+        title = title_of(d, body, meta)
+        description = truncate(first_paragraph(body, meta)) or f'{title} — project by Dr. Farshid Pirahansiah.'
+        out.append({'slug': 'project-' + d, 'title': title, 'description': description, 'path': readme,
+                    'url': f'{ORIGIN}/farshid/projects/{d}/README.md',
+                    'md': f'/farshid/projects/{d}/README.md', 'section': 'Projects',
+                    'modified': date_modified(os.path.relpath(readme, SITE))})
+    return out
 
 
 def write_llms(pages):
@@ -504,19 +164,17 @@ def write_llms(pages):
         '> Dr. Farshid Pirahansiah — computer vision and edge AI engineer. 21 publications, 3 patents, '
         '12+ years turning computer-vision and deep-learning research into production systems for edge and cloud.',
         '',
-        'Every page below is a static HTML document; the markdown source is linked from each page '
-        '(`<link rel="alternate" type="text/markdown">`). Cite the canonical URL shown in the link. '
-        'Contact: info@pirahansiah.com · Full text of the whole site: /llms-full.txt',
+        'Every page is a markdown file: the links below go straight to it (markdown is the full, '
+        'final text — there is no separate HTML edition). The browser app renders the same files at '
+        f'{SPA}#content/<name>. Contact: info@pirahansiah.com · Full text of the whole site: /llms-full.txt',
         '',
     ]
     for sec in LLMS_SECTIONS:
         items = by.get(sec) or []
         if not items:
             continue
-        lines.append(f'## {sec}')
-        lines.append('')
-        for p in items:
-            lines.append(f"- [{p['title']}]({p['url']}): {p['description']}")
+        lines += [f'## {sec}', '']
+        lines += [f"- [{p['title']}]({p['url']}): {p['description']}" for p in items]
         lines.append('')
     open(os.path.join(SITE, 'llms.txt'), 'w', encoding='utf-8').write('\n'.join(lines))
 
@@ -529,81 +187,34 @@ def write_llms(pages):
             continue
         full += [f'# {sec}', '']
         for p in items:
-            raw = open(p['path'], encoding='utf-8').read()
-            _meta, raw = split_front_matter(raw)
+            _meta, raw = split_front_matter(open(p['path'], encoding='utf-8').read())
             raw = re.sub(r'<script\b.*?</script>', '', raw, flags=re.S | re.I)
             full += [f"## {p['title']}", f"URL: {p['url']}", '', raw.strip(), '', '---', '']
     open(os.path.join(SITE, 'llms-full.txt'), 'w', encoding='utf-8').write('\n'.join(full))
 
 
 def write_sitemap(pages):
-    fixed = [('/farshid/content/index.html', 'daily', '1.0'),
-             ('/farshid/content/atlas.html', 'weekly', '0.9'),
-             ('/farshid/content/qrcode.html', 'monthly', '0.6'),
-             ('/farshid/content/swarm.html', 'monthly', '0.5')]
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
-           '<!-- Canonical HTML pages. Markdown sources are linked from each page and are not listed here. -->',
+           '<!-- One URL per page. Pages are markdown files; the browser app renders them. -->',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    for loc, freq, prio in fixed:
+    for loc, freq, prio in STANDALONE:
         out.append(f'  <url><loc>{ORIGIN}{loc}</loc><changefreq>{freq}</changefreq><priority>{prio}</priority></url>')
     for p in sorted(pages, key=lambda x: x['slug']):
-        if p['slug'] in ('atlas',):
-            continue
-        out.append(f"  <url><loc>{p['url']}</loc><lastmod>{p['modified']}</lastmod><priority>0.7</priority></url>")
-    out.append('</urlset>')
-    out.append('')
+        out.append(f"  <url><loc>{p['url']}</loc><lastmod>{p['modified']}</lastmod>"
+                   f"<changefreq>monthly</changefreq><priority>0.7</priority></url>")
+    out += ['</urlset>', '']
     open(os.path.join(SITE, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(out))
-
-
-def build_project_pages():
-    """projects/<dir>/README.md -> projects/<dir>/index.html (a real URL for each project)."""
-    proj = os.path.join(ROOT, 'projects')
-    made = []
-    if not os.path.isdir(proj):
-        return made
-    import markdown
-    for d in sorted(os.listdir(proj)):
-        readme = os.path.join(proj, d, 'README.md')
-        if not os.path.isfile(readme):
-            continue
-        body = open(readme, encoding='utf-8').read()
-        meta, body = split_front_matter(body)
-        title = title_of(d, body, meta)
-        description = truncate(first_paragraph(body, meta)) or f'{title} — project by Dr. Farshid Pirahansiah.'
-        rendered = markdown.Markdown(extensions=['extra', 'sane_lists', 'toc']).convert(body)
-        rendered = strip_leading_title(re.sub(r'<(/?)h1([^>]*)>', r'<\1h2\2>', rendered), title)
-        rendered = rewrite_links(re.sub(r'<script\b.*?</script>', '', rendered, flags=re.S | re.I))
-        canonical = f'{ORIGIN}/farshid/projects/{d}/'
-        head = BOILER_HEAD.format(title=html.escape(title), description=html.escape(description, quote=True),
-                                  canonical=canonical, md=f'/farshid/projects/{d}/README.md',
-                                  jsonld=jsonld_for(d, title, description, canonical, date_modified(os.path.relpath(readme, SITE))))
-        doc = '\n'.join([head, '<body>', nav_html(''), '<main class="wrap">',
-                         '<nav class="crumbs" aria-label="Breadcrumb">'
-                         '<a href="/farshid/content/index.html">Home</a><span>/</span>'
-                         '<a href="/farshid/content/atlas.html">Atlas</a><span>/</span>Projects</nav>',
-                         '<article class="article">',
-                         f'<h1>{html.escape(title)}</h1>',
-                         rendered, '</article>',
-                         f'<p class="page-foot">Source: <a href="/farshid/projects/{d}/README.md">projects/{d}/README.md</a>'
-                         ' · <a href="/farshid/content/atlas.html">All pages</a></p>',
-                         '</main>', footer_html(), '</body>', '</html>', ''])
-        open(os.path.join(proj, d, 'index.html'), 'w', encoding='utf-8').write(doc)
-        made.append({'slug': 'project-' + d, 'title': title, 'description': description, 'path': readme,
-                     'url': canonical, 'section': 'Projects', 'modified': date_modified(os.path.relpath(readme, SITE))})
-    return made
 
 
 def main():
     if not os.path.isdir(CONTENT):
         sys.exit('missing content dir: ' + CONTENT)
-    md_files = sorted(f for f in os.listdir(CONTENT) if f.endswith('.md'))
-    pages = build_pages(md_files)
-    projects = build_project_pages()
-    all_pages = pages + projects
-    write_llms(all_pages)
-    write_sitemap(all_pages)
-    print(f'static pages: {len(pages)} content pages, {len(projects)} project pages')
-    print('llms.txt, llms-full.txt, sitemap.xml written')
+    pages = build_pages() + build_projects()
+    write_llms(pages)
+    write_sitemap(pages)
+    print(f'indexes: {len(pages)} markdown pages '
+          f'({sum(1 for p in pages if p["section"] == "Projects")} projects) '
+          '-> llms.txt, llms-full.txt, sitemap.xml')
 
 
 if __name__ == '__main__':

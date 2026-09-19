@@ -18,4 +18,4 @@ Dr. Farshid Pirahansiah speaks on **computer vision, edge &amp; on-device AI, mo
 >For a speaking engagement or keynote, reach out at **info@pirahansiah.com**.
 
 ---
-*Browse the [full Atlas](/farshid/content/atlas.html) for everything else.*
+*Browse the [full Atlas](/farshid/content/atlas.md) for everything else.*

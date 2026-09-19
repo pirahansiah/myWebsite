@@ -16,6 +16,7 @@
 .qr-btn.open { background: var(--accent); color: #fff; }
 .qr-btn.open:hover { background: #a83809; }
 .qr-btn.copy { background: rgba(200,65,10,0.12); color: var(--accent); }
+.qr-topics { margin: 18px 0 0; font-size: 12.5px; line-height: 1.7; color: var(--muted); }
 .qr-note { background: var(--surface-2); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; font-size: 13.5px; line-height: 1.55; color: var(--ink-2); margin: 0 0 22px; max-width: 68ch; }
 .qr-addr { font-family: var(--mono); font-size: 12.5px; line-height: 1.55; word-break: break-all; color: var(--ink); background: var(--surface-2); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; margin: 2px 0 8px; -webkit-user-select: all; user-select: all; cursor: text; font-variant-numeric: tabular-nums; }
 .qr-addr-note { font-size: 12px; color: var(--muted); margin: 10px 0 0; }
@@ -38,7 +39,7 @@
   <div class="qr-card"><h3>Reddit</h3><p>Community</p><img src="/farshid/content/reddit.png" alt="Reddit QR" loading="lazy"><a class="qr-link" href="https://reddit.com/u/pirahansiah" target="_blank">u/pirahansiah</a></div>
   <div class="qr-card"><h3>TikTok</h3><p>Short videos</p><img src="/farshid/content/tiktok.png" alt="TikTok QR" loading="lazy"></div>
   <div class="qr-card"><h3>WhatsApp</h3><p>Chat</p><img src="/farshid/content/whatsapp.png" alt="WhatsApp QR" loading="lazy"></div>
-  <div class="qr-card"><h3>Mind Maps</h3><p>Notes</p><img src="/farshid/content/mindmaps.png" alt="Mind Maps QR" loading="lazy"><a class="qr-link" href="/farshid/content/atlas.html">Mind maps</a></div>
+  <div class="qr-card"><h3>Mind Maps</h3><p>Notes</p><img src="/farshid/content/mindmaps.png" alt="Mind Maps QR" loading="lazy"><a class="qr-link" href="/farshid/content/atlas.md">Mind maps</a></div>
   <div class="qr-card"><h3>Slides</h3><p>Talks</p><img src="/farshid/content/slides.png" alt="Slides QR" loading="lazy"><a class="qr-link" href="/farshid/content/index.html#content/slides-token-optimization">Slides</a></div>
   <div class="qr-card"><h3>tiziran</h3><p>Site</p><img src="/farshid/content/tiziran.png" alt="Tiziran QR" loading="lazy"></div>
 </div>
@@ -143,6 +144,8 @@
     <div class="qr-actions"><a class="qr-btn copy" href="/farshid/content/base.svg" download>Download QR</a></div>
   </div>
 </div>
+
+<p class="qr-topics">Computer Vision, Generative AI, Edge Computing, Fine-tune Multimodal LLMs, Robotics, IoT, AR/VR, Medical Imaging, Autonomous Vehicles, Smart Cities, Industrial Automation, Surveillance Systems, Gesture Recognition, Facial Recognition, Emotion Detection, Object Tracking, 3D Reconstruction, Augmented Reality Applications, Virtual Reality Experiences, Edge AI Model Optimization, Real-time Video Analytics, Deep Learning Model Deployment, AI-powered Drones, AI in Healthcare Imaging</p>
 
 <p class="qr-addr-note">The same address covers ETH, BNB and Base &mdash; always check it on the device that signs, and send only on the network named above each code.</p>
 

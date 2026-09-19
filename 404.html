@@ -22,7 +22,7 @@
 
   /* old root-level page paths -> current target (true = html page, not markdown) */
   var OLD = {
-    '/qr'            : '/farshid/content/qrcode.html',
+    '/qr'            : '/farshid/content/index.html#content/qr',
     '/crypto'        : 'crypto',
     '/metamask'      : 'metamask',
     '/game'          : 'game',
@@ -46,19 +46,26 @@
   var target = null;
 
   var md = path.match(/\/([^\/]+)\.md$/i);
+  var htm = path.match(/\/([^\/]+)\.html$/i);   /* pages used to be shipped as .html */
   var legacy = path.replace(/^\/farshid/, '');   /* /farshid/crypto -> /crypto */
 
   if (md) {
-    /* raw markdown URL (old slide decks, bookmarks, search results) */
+    /* the page file itself (old decks, bookmarks, search results) */
     var slug = md[1].toLowerCase();
     target = HOME + '#content/' + (SLUG[slug] || slug);
+  } else if (htm) {
+    /* a page that used to exist as .html (every link shared before Sep 2026) */
+    var slug = htm[1].toLowerCase();
+    if (slug === 'atlas')      target = HOME + '#atlas';
+    else if (slug === 'index') target = HOME + (hash || '#home');
+    else                       target = HOME + '#content/' + (SLUG[slug] || slug);
   } else if (path === '' || path === '/' || path === '/farshid' || path === '/farshid/content') {
     target = HOME + hash;
   } else if (OLD[legacy]) {
     var v = OLD[legacy];
     target = (v.charAt(0) === '/') ? v : HOME + '#content/' + v;
   } else if (/^\/notes\/slides/.test(legacy)) {
-    target = '/farshid/content/research-tools.html';          /* talks hub */
+    target = HOME + '#content/research-tools';                /* talks hub */
   } else if (/^\/notes\/docs(\/|$)/.test(legacy)) {
     target = HOME + '#atlas:notes-guides';
   } else if (/^\/notes\/pubs/.test(legacy)) {

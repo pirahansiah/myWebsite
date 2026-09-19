@@ -88,7 +88,7 @@ Complete navigation index with summaries of all site pages
 - **[Crypto](/farshid/content/crypto.md)** — Support the site with crypto donations (ETH, BTC, SOL, Base, BNB)
 - **[MetaMask](/farshid/content/metamask.md)** — Connect a crypto wallet and test send/receive
 - **[Game](/farshid/content/game.md)** — Play Snake, Flappy Bird and 2048 in your browser
-- **[QR Codes](/farshid/content/qrcode.html)** — Scan QR codes to open referral & join links (OpenCode, Trade Republic, Scalable, Wise, eToro)
+- **[QR Codes](/farshid/content/qr.md)** — Scan QR codes to open referral & join links (OpenCode, Trade Republic, Scalable, Wise, eToro)
 - **[Solana Games](/farshid/content/solana-games.md)** — Simple Solana games and on-chain mini-games
 - **[Shop](/shop/)** — Digital downloads: branded PDF guides and ebooks
 - **[Book](/book/)** — Computer Vision & AI Engineer's Guide (free PDF)
