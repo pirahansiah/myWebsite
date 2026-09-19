@@ -1,0 +1,15 @@
+FROM /Users/farshid/Downloads/Qwen3.6-27B-UD-IQ2_XXS.gguf
+
+# Critical for VS Code Copilot Tools / Agent mode
+TEMPLATE {{ .Prompt }}
+RENDERER qwen3.6
+PARSER qwen3.6
+
+# Highest safe context (native max for this model)
+PARAMETER num_ctx 262144
+
+# Good defaults for coding
+PARAMETER temperature 0.7
+PARAMETER top_k 20
+PARAMETER top_p 0.95
+PARAMETER num_predict 8192

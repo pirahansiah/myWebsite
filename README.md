@@ -1,24 +1,32 @@
-# pirahansiah.com — Dr. Farshid Pirahansiah
+# pirahansiah.com
 
-A pure static (no build, no dependencies) personal site served on GitHub Pages from the `main` branch root.
+A pure static, markdown-first personal site for Dr. Farshid Pirahansiah.
+No build step, no dependencies, no submodules — every page is a plain Markdown
+file rendered in the browser. GitHub Pages serves it directly from the `main`
+branch root (pinned static by `.nojekyll`).
 
 ## Structure
 
-```
-assets/     shared CSS, JS, and images (avatar, favicon, content images)
-content/    the knowledge base — baked static HTML (papers, journals, books,
-            patents, keynotes, courses, notes, slides)
-*.html      top-level pages: index, about, publications, courses, notes,
-            slides, book, contact, privacy, 404
-```
+- `atlas.md` — the single index for the whole site. One file to navigate everything.
+- `content/` — every publication, course, note, and talk as flat `.md` files.
+- `projects/` — one folder per project (source, docs, scripts live together).
+- `assets/` — shared CSS, JS (a dependency-free markdown renderer), and images.
+- `index.html` — thin shell that loads the current `.md` by hash and renders it.
 
-## Editing
+## How it works
 
-Edit the top-level `.html` hub pages directly. Individual content pages under
-`content/` were generated from the PKM markdown vault; regenerate by re-running
-the one-time bake script (`/tmp/bake.py`) then `python3 assemble.py` in staging.
+`index.html` reads the URL hash (e.g. `#content/course-ros`), fetches that
+markdown file, and renders it client-side with the bundled `assets/js/md.js`
+renderer. No network, no server, no build. Internal `.md` links navigate within
+the page; everything else opens in a new tab.
+
+## Editing / adding content
+
+Drop any `.md` file into `content/`, add one link to it in `atlas.md` (and, if
+you want it in the top nav, update `assets/js/manifest.js`). HTML is allowed
+inside markdown for styling and images. Done — push to `main`.
 
 ## Deploy
 
-GitHub Pages serves from branch `main` at `/`. `.nojekyll` pins it to pure
-static (no Jekyll build). Push to `main` and it goes live.
+Push to `main`. GitHub Pages (already configured `build_type: legacy` from
+`main`/root) serves the files as-is; `.nojekyll` keeps it from running Jekyll.

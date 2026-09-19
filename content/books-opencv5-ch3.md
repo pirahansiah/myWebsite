@@ -1,0 +1,1 @@
+Advanced computer vision techniques including filtering, morphology, and G-API integration.

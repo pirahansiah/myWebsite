@@ -1,0 +1,1 @@
+window.NAV_ITEMS = [{file:"atlas",label:"Atlas"},{file:"content/publications-overview",label:"Publications"},{file:"content/course-ml-specialization",label:"Courses"},{file:"content/note-computer-vision-overview",label:"Notes"},{file:"content/slides-token-optimization",label:"Slides"}];

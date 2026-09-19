@@ -1,0 +1,6 @@
+FROM lfm2.5:latest
+PARAMETER num_ctx 65536
+PARAMETER temperature 0.0
+# ollama create lfm-mimo -f mimo-lfm.Modelfile
+# ~/.mimo/config.json
+# ollama serve
