@@ -1,5 +1,7 @@
-/* Static markdown site loader: route by hash -> fetch .md -> render.
-   Supports #file and #file:anchor (e.g. #atlas:publications scrolls to section). */
+/* Static site loader.
+   Home (') / #home) content is baked into index.html (id="baked-home").
+   Other routes (e.g. #atlas, #content/slug) are fetched as .md and rendered
+   into #content. Supports #file:anchor section scrolling. */
 (function(){
   'use strict';
   var DEFAULT = 'home';
@@ -13,6 +15,7 @@
     'Projects':       { file:'atlas', anchor:'Projects' },
   };
 
+  function $id(i){ return document.getElementById(i); }
   function hashParts(){
     var h=(location.hash||'').replace(/^#\/?/,'').replace(/\.md$/,'');
     var parts=h.split(':');
@@ -20,54 +23,35 @@
   }
   function slug(s){ return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
 
-  function load(){
-    var hp = hashParts();
-    var file = hp.file || DEFAULT;
-    var anchor = hp.anchor;
+  function isHome(){
+    var h=(location.hash||'').replace(/^#\/?/,'').replace(/\.md$/,'');
+    return (h==='' || h==='home');
+  }
+
+  function renderMarkdownRoute(file, anchor){
     var path;
-    if (file==='home' || file==='atlas') path=file+'.md';  // root-level pages
-    else if (file.indexOf('/')>=0) path=file+'.md';   // real subpath (e.g. projects/rag/README)
-    else path='content/'+file+'.md';                   // content slug
+    if (file==='home' || file==='atlas') path=file+'.md';
+    else if (file.indexOf('/')>=0) path=file+'.md';
+    else path='content/'+file+'.md';
     fetch(path)
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
       .then(function(txt){ renderInto(txt, file, anchor); })
       .catch(function(){
-        document.getElementById('content').innerHTML =
+        $id('content').innerHTML =
           '<p class="err">Page not found. <a id="err-back" href="#atlas">Back to the Atlas.</a></p>';
-        document.getElementById('err-back') && document.getElementById('err-back').addEventListener('click',function(e){e.preventDefault();load();});
+        var eb=$id('err-back');
+        if(eb) eb.addEventListener('click', function(e){ e.preventDefault(); navigate('atlas'); });
       });
   }
 
   function renderInto(txt, file, anchor){
-    var c=document.getElementById('content');
+    var c=$id('content');
     var h1m = txt.match(/^#\s+(.+)$/m);
     document.title = (h1m?h1m[1].trim()+' — ':'')+'Farshid Pirahansiah';
-    c.innerHTML = '<article class="article wrap">'+window.renderMarkdown(txt)+'</article>';
-    // give headings ids for anchor nav
-    c.querySelectorAll('h1,h2,h3').forEach(function(h,i){
-      if(!h.id) h.id = slug(h.textContent);
-    });
-    // highlight active nav
-    document.querySelectorAll('.nav a').forEach(function(a){
-      a.classList.toggle('active', a.getAttribute('data-key')=== (file+'|'+(anchor||'')));
-    });
-    // links
-    c.querySelectorAll('a[href]').forEach(function(a){
-      var href=a.getAttribute('href').replace(/&amp;/g,'&');
-      if(/^(#|mailto:)/.test(href)) return;
-      if(/^(https?:)?\/\//.test(href)){ a.setAttribute('target','_blank'); return; }
-      // internal .md link -> route
-      if(/\.md(?:[#:]|$)/.test(href)){
-        var m=href.match(/^([^#:#]*\.md)(?:[#:](.+))?$/);
-        var targetFile=m[1].replace(/\.md$/,'').replace(/^\/content\//,'').replace(/^\//,'');
-        var targetAnchor=m[2]||'';
-        var targetKey = targetFile+'|'+(slug(targetAnchor)||'');
-        a.addEventListener('click', function(e){ e.preventDefault(); setHash(targetFile+(targetAnchor?':'+slug(targetAnchor):'')); });
-      } else {
-        a.setAttribute('target','_blank');
-      }
-    });
-    // scroll to anchor if requested
+    c.innerHTML = '<article class="article">'+window.renderMarkdown(txt)+'</article>';
+    c.querySelectorAll('h1,h2,h3').forEach(function(h,i){ if(!h.id) h.id = slug(h.textContent); });
+    highlightNav(file, anchor||'');
+    wireLinks(c);
     if(anchor && anchor!=='top'){
       var el=c.querySelector('#'+slug(anchor));
       if(el) setTimeout(function(){ el.scrollIntoView({behavior:'smooth',block:'start'}); },30);
@@ -76,14 +60,68 @@
     }
   }
 
-  function setHash(h){ 
-    try{ history.replaceState(null,'','#'+h); }catch(e){}
-    // trigger load directly (replaceState fires no hashchange)
-    load();
+  function highlightNav(file, anchor){
+    document.querySelectorAll('.nav a').forEach(function(a){
+      var k = file+'|'+((anchor&&anchor!=='top')?slug(anchor):'');
+      a.classList.toggle('active', a.getAttribute('data-key')===k);
+    });
+  }
+
+  function wireLinks(c){
+    if(!c) return;
+    c.querySelectorAll('a[href]').forEach(function(a){
+      var href=a.getAttribute('href').replace(/&amp;/g,'&');
+      if(/^(#|mailto:)/.test(href)) return;
+      if(/^(https?:)?\/\//.test(href)){ a.setAttribute('target','_blank'); return; }
+      // internal .md link -> route
+      if(/\.md(?:[#:]|$)/.test(href)){
+        var m=href.match(/^([^#:]+\.md)(?:[#:](.+))?$/);
+        var targetFile=m[1].replace(/\.md$/,'').replace(/^\/content\//,'').replace(/^\//,'');
+        var targetAnchor=m[2]||'';
+        a.addEventListener('click', function(e){ e.preventDefault(); navigate(targetFile+(targetAnchor?':'+slug(targetAnchor):'')); });
+      } else {
+        a.setAttribute('target','_blank');
+      }
+    });
+  }
+
+  /* The single entry point: decide home (baked) vs fetched markdown. */
+  function navigate(h){
+    currentRoute = h||'';
+    var hp = hashPartsFrom(h||'');
+    var file = hp.file || DEFAULT;
+    var anchor = hp.anchor;
+    if(isHomeHash(file, anchor)){
+      showHome();
+    } else {
+      showMarkdown(file, anchor);
+    }
+  }
+
+  var currentRoute='';
+  function hashPartsFrom(h){
+    h=h.replace(/^#\/?/,'').replace(/\.md$/,'');
+    var parts=h.split(':');
+    return {file:parts[0], anchor:parts[1]||null};
+  }
+  function isHomeHash(file, anchor){ return (file===''||file==='home'); }
+
+  function showHome(){
+    var baked=$id('baked-home'), c=$id('content');
+    if(baked) baked.removeAttribute('hidden');
+    c.innerHTML='';
+    document.title='Dr. Farshid Pirahansiah — Computer Vision & Edge AI Engineer';
+    highlightNav('home','');
+    window.scrollTo(0,0);
+  }
+  function showMarkdown(file, anchor){
+    var baked=$id('baked-home');
+    if(baked) baked.setAttribute('hidden','');
+    renderMarkdownRoute(file, anchor);
   }
 
   function buildNav(){
-    var nav=document.getElementById('nav'); if(!nav) return;
+    var nav=$id('nav'); if(!nav) return;
     var html='';
     Object.keys(SECTIONS).forEach(function(label){
       var s=SECTIONS[label];
@@ -96,26 +134,40 @@
     });
   }
 
-  window.addEventListener('hashchange', load);
+  // ---- routing by hash ----
+  function setHash(h){
+    try{ history.replaceState(null,'','#'+h); }catch(e){}
+    navigate(h);
+  }
+  function onHashChange(){
+    navigate(location.hash||'');
+  }
+
+  function init(){
+    buildNav();
+    // mobile nav toggle already handled below via initMobileNav
+    navigate(location.hash||'');
+  }
 
   // mobile nav toggle
   function closeNav(){
-    var nav=document.getElementById('nav'), btn=document.getElementById('nav-toggle');
+    var nav=$id('nav'), btn=$id('nav-toggle');
     if(nav) nav.classList.remove('open');
     if(btn) btn.setAttribute('aria-expanded','false');
   }
   function initMobileNav(){
-    var nav=document.getElementById('nav'), btn=document.getElementById('nav-toggle');
+    var nav=$id('nav'), btn=$id('nav-toggle');
     if(!nav||!btn||!('click' in btn)) return;
     btn.addEventListener('click', function(e){
       e.stopPropagation();
       var open=nav.classList.toggle('open');
       btn.setAttribute('aria-expanded', open?'true':'false');
     });
-    nav.addEventListener('click', function(e){ closeNav(); }); // any nav tap closes
+    nav.addEventListener('click', function(){ closeNav(); });
     document.addEventListener('click', function(e){ if(!nav.contains(e.target)&&!btn.contains(e.target)) closeNav(); });
   }
 
-  document.addEventListener('DOMContentLoaded', function(){ buildNav(); initMobileNav(); load(); });
-  if(document.readyState!=='loading'){ buildNav(); initMobileNav(); load(); }
+  window.addEventListener('hashchange', onHashChange);
+  document.addEventListener('DOMContentLoaded', function(){ initMobileNav(); init(); });
+  if(document.readyState!=='loading'){ initMobileNav(); init(); }
 })();
