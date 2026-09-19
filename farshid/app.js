@@ -198,7 +198,12 @@
       if(/^(https?:)?\/\//.test(href)){ a.setAttribute('target','_blank'); return; }
       // internal .md link -> route (strip permanent /farshid/ prefix, then /content/);
       // a relative link (localAI.md) is resolved against the page you are reading
-      if(/\.md(?:[#:]|$)/.test(href)){
+      // ... but only markdown that IS a page: files under content/, expert-coaching-resources/
+      // or a project folder. A .md inside products/ is a download, not a page — routing it
+      // would send the reader to "Page not found" instead of the file.
+      var mdTarget=href.replace(/^\/farshid\//,'').replace(/[#:].*$/,'');
+      var mdIsPage=!/^\//.test(href) || /^(content|expert-coaching-resources|projects)\//.test(mdTarget);
+      if(mdIsPage && /\.md(?:[#:]|$)/.test(href)){
         var m=href.match(/^([^#:]+\.md)(?:[#:](.+))?$/);
         var rel=m[1], base=(currentFile||'').indexOf('/')>=0 ? currentFile.replace(/\/[^\/]*$/,'')+'/' : '';
         var mp=rel.replace(/\.[mM][dD]$/,'');

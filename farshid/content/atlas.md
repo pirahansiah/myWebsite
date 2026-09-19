@@ -13,6 +13,7 @@ The single index of everything on pirahansiah.com — every publication, course,
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
   <a href="#notes-guides">Notes &amp; Guides <span>40</span></a>
+  <a href="#products">Products <span>27</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
   <a href="#site-pages">Site Pages <span>6</span></a>
   <a href="#projects">Projects <span>4</span></a>
@@ -134,6 +135,64 @@ The single index of everything on pirahansiah.com — every publication, course,
   </ul>
 </section>
 
+<section class="atlas-sec" id="products">
+  <h2>Products</h2>
+  <h3 class="atlas-sub" id="books-guides">Books &amp; guides <span class="atlas-count">1</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/computer-vision-ai-engineers-guide.pdf" target="_blank" rel="noopener" title="The collected edition — every guide above in one PDF (406 pages).">Computer Vision &amp; AI — A Practical Engineer's Guide</a> <span class="atlas-count">406 pp · 10.6 MB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="computer-vision">Computer Vision <span class="atlas-count">4</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/3d-vision-multi-camera.pdf" target="_blank" rel="noopener" title="A practical deep dive into stereo vision, depth estimation, point clouds, and synchronized multi-camera pipelines for production computer vision — from camera calibration to real-time 3D reconstruction.">3D Vision &amp; Multi-Camera Systems</a> <span class="atlas-count">36 pp · 1.7 MB</span></li>
+    <li><a href="/farshid/products/cv-coaching-roadmap.pdf" target="_blank" rel="noopener" title="A structured learning path from CV fundamentals to production systems — the exact skills, tools, and milestones to become a computer vision engineer.">Computer Vision Coaching Roadmap</a> <span class="atlas-count">4 pp · 336 KB</span></li>
+    <li><a href="/farshid/products/optical-flow.pdf" target="_blank" rel="noopener" title="Dense and sparse optical flow algorithms explained with real-world tradeoffs: handling illumination change, occlusion, and fast motion in video analysis and tracking systems.">Optical Flow — Motion Estimation</a> <span class="atlas-count">6 pp · 164 KB</span></li>
+    <li><a href="/farshid/products/multi-camera-systems.pdf" target="_blank" rel="noopener" title="How to scale computer vision from 2 to 100+ synchronized cameras using GStreamer and GPU acceleration — hardware selection, synchronization, and pipeline design.">Real-Time Multi-Camera Systems</a> <span class="atlas-count">7 pp · 461 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="cuda-gpu">CUDA &amp; GPU <span class="atlas-count">4</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/apple-silicon-ml.pdf" target="_blank" rel="noopener" title="Run and optimize machine learning on Apple Silicon with MLX, CoreML, and Metal — the frameworks, workflows, and best practices.">Apple Silicon ML — MLX, CoreML &amp; Metal</a> <span class="atlas-count">4 pp · 331 KB</span></li>
+    <li><a href="/farshid/products/cuda-vscode.pdf" target="_blank" rel="noopener" title="A complete setup guide for CUDA development in VS Code on Windows — toolchain installation, IntelliSense, build tasks, and debugging.">CUDA in VS Code on Windows</a> <span class="atlas-count">4 pp · 1.8 MB</span></li>
+    <li><a href="/farshid/products/numba-jit.pdf" target="_blank" rel="noopener" title="Speed up Python loops with just-in-time compilation. A hands-on Numba tutorial covering @jit, @vectorize, and GPU kernels with practical performance examples.">Numba JIT — Accelerate Python Loops</a> <span class="atlas-count">5 pp · 716 KB</span></li>
+    <li><a href="/farshid/products/pycuda.pdf" target="_blank" rel="noopener" title="Write custom CUDA kernels directly from Python: memory management, grid/block configuration, and kernel optimization explained step by step.">PyCUDA — CUDA Kernels from Python</a> <span class="atlas-count">4 pp · 614 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="ai-llms">AI &amp; LLMs <span class="atlas-count">3</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/llm-concepts.pdf" target="_blank" rel="noopener" title="Transformer architecture, attention mechanisms, RAG, embeddings, and scaling laws — a clear technical guide for anyone building with LLMs.">Advanced LLM Concepts</a> <span class="atlas-count">7 pp · 364 KB</span></li>
+    <li><a href="/farshid/products/video-avatar.pdf" target="_blank" rel="noopener" title="Build a local AI video avatar with Ollama and Wav2Lip — a complete tutorial for offline talking-head generation with no cloud dependency.">Local Video Avatar Generator</a> <span class="atlas-count">7 pp · 361 KB</span></li>
+    <li><a href="/farshid/products/ai-agents.pdf" target="_blank" rel="noopener" title="Multi-agent systems, tool use, and RAG pipelines — how to design, coordinate, and deploy autonomous AI agents in production.">Orchestrating AI Agents</a> <span class="atlas-count">3 pp · 694 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="optimization">Optimization <span class="atlas-count">2</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/model-optimization.pdf" target="_blank" rel="noopener" title="Model quantization, pruning, and edge deployment strategies to make models smaller, faster, and cheaper to run on any hardware.">CV, DL &amp; ML Model Optimization</a> <span class="atlas-count">10 pp · 485 KB</span></li>
+    <li><a href="/farshid/products/prompt-templates.pdf" target="_blank" rel="noopener" title="Reusable LLM prompt patterns and templates to get better, more consistent results from ChatGPT, Claude, and local models.">Prompt Engineering Templates</a> <span class="atlas-count">1 pp · 160 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="programming">Programming <span class="atlas-count">4</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/cpp-reference.pdf" target="_blank" rel="noopener" title="A concise C++ cheat sheet: stack vs heap memory, STL containers, debugging, and Linux essentials — the reference you'll reach for daily.">C++ Quick Reference</a> <span class="atlas-count">2 pp · 180 KB</span></li>
+    <li><a href="/farshid/products/dev-tools.pdf" target="_blank" rel="noopener" title="Essential developer tooling: Docker workflows, GitHub tricks, and CLI tools for modern software engineering and DevOps.">Developer Tools &amp; Setup</a> <span class="atlas-count">3 pp · 293 KB</span></li>
+    <li><a href="/farshid/products/python-config.pdf" target="_blank" rel="noopener" title="ConfigParser, argparse, pydantic, hydra, pybind11, and Cython — production-grade Python configuration and C/C++ binding patterns.">Python Configuration &amp; Binding</a> <span class="atlas-count">5 pp · 484 KB</span></li>
+    <li><a href="/farshid/products/shell-vim.pdf" target="_blank" rel="noopener" title="Terminal essentials and Vim basics — a quick reference for working faster in the shell and editing like a pro.">Shell &amp; Vim Reference</a> <span class="atlas-count">1 pp · 125 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="business">Business <span class="atlas-count">3</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/seo-llm.pdf" target="_blank" rel="noopener" title="Structured data and AI-friendly content optimization to get your content surfaced by LLM search engines and answer engines.">SEO for LLM-Powered Search</a> <span class="atlas-count">3 pp · 247 KB</span></li>
+    <li><a href="/farshid/products/startup-guide.pdf" target="_blank" rel="noopener" title="A complete edge-AI business plan, a fundraising guide for Germany, pitch deck templates, and growth strategies for startup founders.">Startup Guide — Edge AI &amp; Fundraising</a> <span class="atlas-count">131 pp · 2.1 MB</span></li>
+    <li><a href="/farshid/products/linkedin-posts.pdf" target="_blank" rel="noopener" title="High-performing technical LinkedIn posts on camera calibration, C++, and robotics — inspiration and templates for technical content.">Top LinkedIn Posts — Technical Writing</a> <span class="atlas-count">5 pp · 338 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="research">Research <span class="atlas-count">1</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/portfolio.pdf" target="_blank" rel="noopener" title="A complete portfolio of patents, books, journal papers, and projects — 12+ years of computer vision and AI research at a glance.">Portfolio &amp; Publications</a> <span class="atlas-count">3 pp · 223 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="source-files">Source files <span class="atlas-count">5</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/local-llm-optimization-20260905.zip" download>Local LLM optimization — source archive (2026-09-05)</a> <span class="atlas-count">10 KB</span></li>
+    <li><a href="/farshid/products/OPTIMIZATION.md" download>OPTIMIZATION.md — local LLM optimization notes</a> <span class="atlas-count">11 KB</span></li>
+    <li><a href="/farshid/products/optimize_local_llm.sh" download>optimize_local_llm.sh — local LLM tuning script</a> <span class="atlas-count">7 KB</span></li>
+    <li><a href="/farshid/products/prompts.md" download>Prompt templates — source text</a> <span class="atlas-count">4 KB</span></li>
+    <li><a href="/farshid/products/etsy-listings.txt" download>Store listing copy (source text)</a> <span class="atlas-count">9 KB</span></li>
+  </ul>
+</section>
+
 <section class="atlas-sec" id="talks-presentations-keynotes">
   <h2>Talks, Presentations &amp; Keynotes</h2>
   <h3 class="atlas-sub" id="presentations-slide-decks">Presentations &amp; Slide Decks <span class="atlas-count">5</span></h3>
@@ -178,4 +237,4 @@ The single index of everything on pirahansiah.com — every publication, course,
   </ul>
 </section>
 
-<p class="atlas-note">Generated index — every page is one markdown file under <code>content/</code> or <code>expert-coaching-resources/</code>.</p>
+<p class="atlas-note">Generated index — every page is one markdown file under <code>content/</code> or <code>expert-coaching-resources/</code>; the downloads are the files in <code>products/</code>.</p>

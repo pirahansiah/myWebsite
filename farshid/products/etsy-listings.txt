@@ -1,0 +1,167 @@
+============================================================
+TITLE: 3D Vision & Multi-Camera Systems
+CATEGORY: Computer Vision
+DESCRIPTION:
+A practical deep dive into stereo vision, depth estimation, point clouds, and synchronized multi-camera pipelines for production computer vision — from camera calibration to real-time 3D reconstruction.
+
+WHAT'S INSIDE: A self-contained PDF (36 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Computer Vision Coaching Roadmap
+CATEGORY: Computer Vision
+DESCRIPTION:
+A structured learning path from CV fundamentals to production systems — the exact skills, tools, and milestones to become a computer vision engineer.
+
+WHAT'S INSIDE: A self-contained PDF (4 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Real-Time Multi-Camera Systems
+CATEGORY: Computer Vision
+DESCRIPTION:
+How to scale computer vision from 2 to 100+ synchronized cameras using GStreamer and GPU acceleration — hardware selection, synchronization, and pipeline design.
+
+WHAT'S INSIDE: A self-contained PDF (7 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Optical Flow — Motion Estimation
+CATEGORY: Computer Vision
+DESCRIPTION:
+Dense and sparse optical flow algorithms explained with real-world tradeoffs: handling illumination change, occlusion, and fast motion in video analysis and tracking systems.
+
+WHAT'S INSIDE: A self-contained PDF (6 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Apple Silicon ML — MLX, CoreML & Metal
+CATEGORY: CUDA & GPU
+DESCRIPTION:
+Run and optimize machine learning on Apple Silicon with MLX, CoreML, and Metal — the frameworks, workflows, and best practices.
+
+WHAT'S INSIDE: A self-contained PDF (4 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: CUDA in VS Code on Windows
+CATEGORY: CUDA & GPU
+DESCRIPTION:
+A complete setup guide for CUDA development in VS Code on Windows — toolchain installation, IntelliSense, build tasks, and debugging.
+
+WHAT'S INSIDE: A self-contained PDF (4 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Numba JIT — Accelerate Python Loops
+CATEGORY: CUDA & GPU
+DESCRIPTION:
+Speed up Python loops with just-in-time compilation. A hands-on Numba tutorial covering @jit, @vectorize, and GPU kernels with practical performance examples.
+
+WHAT'S INSIDE: A self-contained PDF (5 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: PyCUDA — CUDA Kernels from Python
+CATEGORY: CUDA & GPU
+DESCRIPTION:
+Write custom CUDA kernels directly from Python: memory management, grid/block configuration, and kernel optimization explained step by step.
+
+WHAT'S INSIDE: A self-contained PDF (4 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Orchestrating AI Agents
+CATEGORY: AI & LLMs
+DESCRIPTION:
+Multi-agent systems, tool use, and RAG pipelines — how to design, coordinate, and deploy autonomous AI agents in production.
+
+WHAT'S INSIDE: A self-contained PDF (3 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Advanced LLM Concepts
+CATEGORY: AI & LLMs
+DESCRIPTION:
+Transformer architecture, attention mechanisms, RAG, embeddings, and scaling laws — a clear technical guide for anyone building with LLMs.
+
+WHAT'S INSIDE: A self-contained PDF (7 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Local Video Avatar Generator
+CATEGORY: AI & LLMs
+DESCRIPTION:
+Build a local AI video avatar with Ollama and Wav2Lip — a complete tutorial for offline talking-head generation with no cloud dependency.
+
+WHAT'S INSIDE: A self-contained PDF (7 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: CV, DL & ML Model Optimization
+CATEGORY: Optimization
+DESCRIPTION:
+Model quantization, pruning, and edge deployment strategies to make models smaller, faster, and cheaper to run on any hardware.
+
+WHAT'S INSIDE: A self-contained PDF (10 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Prompt Engineering Templates
+CATEGORY: Optimization
+DESCRIPTION:
+Reusable LLM prompt patterns and templates to get better, more consistent results from ChatGPT, Claude, and local models.
+
+WHAT'S INSIDE: A self-contained PDF (1 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: C++ Quick Reference
+CATEGORY: Programming
+DESCRIPTION:
+A concise C++ cheat sheet: stack vs heap memory, STL containers, debugging, and Linux essentials — the reference you'll reach for daily.
+
+WHAT'S INSIDE: A self-contained PDF (2 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Developer Tools & Setup
+CATEGORY: Programming
+DESCRIPTION:
+Essential developer tooling: Docker workflows, GitHub tricks, and CLI tools for modern software engineering and DevOps.
+
+WHAT'S INSIDE: A self-contained PDF (3 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Python Configuration & Binding
+CATEGORY: Programming
+DESCRIPTION:
+ConfigParser, argparse, pydantic, hydra, pybind11, and Cython — production-grade Python configuration and C/C++ binding patterns.
+
+WHAT'S INSIDE: A self-contained PDF (5 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Shell & Vim Reference
+CATEGORY: Programming
+DESCRIPTION:
+Terminal essentials and Vim basics — a quick reference for working faster in the shell and editing like a pro.
+
+WHAT'S INSIDE: A self-contained PDF (1 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Top LinkedIn Posts — Technical Writing
+CATEGORY: Business
+DESCRIPTION:
+High-performing technical LinkedIn posts on camera calibration, C++, and robotics — inspiration and templates for technical content.
+
+WHAT'S INSIDE: A self-contained PDF (5 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: SEO for LLM-Powered Search
+CATEGORY: Business
+DESCRIPTION:
+Structured data and AI-friendly content optimization to get your content surfaced by LLM search engines and answer engines.
+
+WHAT'S INSIDE: A self-contained PDF (3 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Startup Guide — Edge AI & Fundraising
+CATEGORY: Business
+DESCRIPTION:
+A complete edge-AI business plan, a fundraising guide for Germany, pitch deck templates, and growth strategies for startup founders.
+
+WHAT'S INSIDE: A self-contained PDF (131 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.
+
+============================================================
+TITLE: Portfolio & Publications
+CATEGORY: Research
+DESCRIPTION:
+A complete portfolio of patents, books, journal papers, and projects — 12+ years of computer vision and AI research at a glance.
+
+WHAT'S INSIDE: A self-contained PDF (3 pages) by Dr. Farshid Pirahansiah (PhD, Computer Vision & AI). Instant download — no physical item shipped. For personal use.

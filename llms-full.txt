@@ -16,6 +16,7 @@ The single index of everything on pirahansiah.com — every publication, course,
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
   <a href="#notes-guides">Notes &amp; Guides <span>40</span></a>
+  <a href="#products">Products <span>27</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
   <a href="#site-pages">Site Pages <span>6</span></a>
   <a href="#projects">Projects <span>4</span></a>
@@ -137,6 +138,64 @@ The single index of everything on pirahansiah.com — every publication, course,
   </ul>
 </section>
 
+<section class="atlas-sec" id="products">
+  <h2>Products</h2>
+  <h3 class="atlas-sub" id="books-guides">Books &amp; guides <span class="atlas-count">1</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/computer-vision-ai-engineers-guide.pdf" target="_blank" rel="noopener" title="The collected edition — every guide above in one PDF (406 pages).">Computer Vision &amp; AI — A Practical Engineer's Guide</a> <span class="atlas-count">406 pp · 10.6 MB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="computer-vision">Computer Vision <span class="atlas-count">4</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/3d-vision-multi-camera.pdf" target="_blank" rel="noopener" title="A practical deep dive into stereo vision, depth estimation, point clouds, and synchronized multi-camera pipelines for production computer vision — from camera calibration to real-time 3D reconstruction.">3D Vision &amp; Multi-Camera Systems</a> <span class="atlas-count">36 pp · 1.7 MB</span></li>
+    <li><a href="/farshid/products/cv-coaching-roadmap.pdf" target="_blank" rel="noopener" title="A structured learning path from CV fundamentals to production systems — the exact skills, tools, and milestones to become a computer vision engineer.">Computer Vision Coaching Roadmap</a> <span class="atlas-count">4 pp · 336 KB</span></li>
+    <li><a href="/farshid/products/optical-flow.pdf" target="_blank" rel="noopener" title="Dense and sparse optical flow algorithms explained with real-world tradeoffs: handling illumination change, occlusion, and fast motion in video analysis and tracking systems.">Optical Flow — Motion Estimation</a> <span class="atlas-count">6 pp · 164 KB</span></li>
+    <li><a href="/farshid/products/multi-camera-systems.pdf" target="_blank" rel="noopener" title="How to scale computer vision from 2 to 100+ synchronized cameras using GStreamer and GPU acceleration — hardware selection, synchronization, and pipeline design.">Real-Time Multi-Camera Systems</a> <span class="atlas-count">7 pp · 461 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="cuda-gpu">CUDA &amp; GPU <span class="atlas-count">4</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/apple-silicon-ml.pdf" target="_blank" rel="noopener" title="Run and optimize machine learning on Apple Silicon with MLX, CoreML, and Metal — the frameworks, workflows, and best practices.">Apple Silicon ML — MLX, CoreML &amp; Metal</a> <span class="atlas-count">4 pp · 331 KB</span></li>
+    <li><a href="/farshid/products/cuda-vscode.pdf" target="_blank" rel="noopener" title="A complete setup guide for CUDA development in VS Code on Windows — toolchain installation, IntelliSense, build tasks, and debugging.">CUDA in VS Code on Windows</a> <span class="atlas-count">4 pp · 1.8 MB</span></li>
+    <li><a href="/farshid/products/numba-jit.pdf" target="_blank" rel="noopener" title="Speed up Python loops with just-in-time compilation. A hands-on Numba tutorial covering @jit, @vectorize, and GPU kernels with practical performance examples.">Numba JIT — Accelerate Python Loops</a> <span class="atlas-count">5 pp · 716 KB</span></li>
+    <li><a href="/farshid/products/pycuda.pdf" target="_blank" rel="noopener" title="Write custom CUDA kernels directly from Python: memory management, grid/block configuration, and kernel optimization explained step by step.">PyCUDA — CUDA Kernels from Python</a> <span class="atlas-count">4 pp · 614 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="ai-llms">AI &amp; LLMs <span class="atlas-count">3</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/llm-concepts.pdf" target="_blank" rel="noopener" title="Transformer architecture, attention mechanisms, RAG, embeddings, and scaling laws — a clear technical guide for anyone building with LLMs.">Advanced LLM Concepts</a> <span class="atlas-count">7 pp · 364 KB</span></li>
+    <li><a href="/farshid/products/video-avatar.pdf" target="_blank" rel="noopener" title="Build a local AI video avatar with Ollama and Wav2Lip — a complete tutorial for offline talking-head generation with no cloud dependency.">Local Video Avatar Generator</a> <span class="atlas-count">7 pp · 361 KB</span></li>
+    <li><a href="/farshid/products/ai-agents.pdf" target="_blank" rel="noopener" title="Multi-agent systems, tool use, and RAG pipelines — how to design, coordinate, and deploy autonomous AI agents in production.">Orchestrating AI Agents</a> <span class="atlas-count">3 pp · 694 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="optimization">Optimization <span class="atlas-count">2</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/model-optimization.pdf" target="_blank" rel="noopener" title="Model quantization, pruning, and edge deployment strategies to make models smaller, faster, and cheaper to run on any hardware.">CV, DL &amp; ML Model Optimization</a> <span class="atlas-count">10 pp · 485 KB</span></li>
+    <li><a href="/farshid/products/prompt-templates.pdf" target="_blank" rel="noopener" title="Reusable LLM prompt patterns and templates to get better, more consistent results from ChatGPT, Claude, and local models.">Prompt Engineering Templates</a> <span class="atlas-count">1 pp · 160 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="programming">Programming <span class="atlas-count">4</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/cpp-reference.pdf" target="_blank" rel="noopener" title="A concise C++ cheat sheet: stack vs heap memory, STL containers, debugging, and Linux essentials — the reference you'll reach for daily.">C++ Quick Reference</a> <span class="atlas-count">2 pp · 180 KB</span></li>
+    <li><a href="/farshid/products/dev-tools.pdf" target="_blank" rel="noopener" title="Essential developer tooling: Docker workflows, GitHub tricks, and CLI tools for modern software engineering and DevOps.">Developer Tools &amp; Setup</a> <span class="atlas-count">3 pp · 293 KB</span></li>
+    <li><a href="/farshid/products/python-config.pdf" target="_blank" rel="noopener" title="ConfigParser, argparse, pydantic, hydra, pybind11, and Cython — production-grade Python configuration and C/C++ binding patterns.">Python Configuration &amp; Binding</a> <span class="atlas-count">5 pp · 484 KB</span></li>
+    <li><a href="/farshid/products/shell-vim.pdf" target="_blank" rel="noopener" title="Terminal essentials and Vim basics — a quick reference for working faster in the shell and editing like a pro.">Shell &amp; Vim Reference</a> <span class="atlas-count">1 pp · 125 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="business">Business <span class="atlas-count">3</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/seo-llm.pdf" target="_blank" rel="noopener" title="Structured data and AI-friendly content optimization to get your content surfaced by LLM search engines and answer engines.">SEO for LLM-Powered Search</a> <span class="atlas-count">3 pp · 247 KB</span></li>
+    <li><a href="/farshid/products/startup-guide.pdf" target="_blank" rel="noopener" title="A complete edge-AI business plan, a fundraising guide for Germany, pitch deck templates, and growth strategies for startup founders.">Startup Guide — Edge AI &amp; Fundraising</a> <span class="atlas-count">131 pp · 2.1 MB</span></li>
+    <li><a href="/farshid/products/linkedin-posts.pdf" target="_blank" rel="noopener" title="High-performing technical LinkedIn posts on camera calibration, C++, and robotics — inspiration and templates for technical content.">Top LinkedIn Posts — Technical Writing</a> <span class="atlas-count">5 pp · 338 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="research">Research <span class="atlas-count">1</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/portfolio.pdf" target="_blank" rel="noopener" title="A complete portfolio of patents, books, journal papers, and projects — 12+ years of computer vision and AI research at a glance.">Portfolio &amp; Publications</a> <span class="atlas-count">3 pp · 223 KB</span></li>
+  </ul>
+  <h3 class="atlas-sub" id="source-files">Source files <span class="atlas-count">5</span></h3>
+  <ul class="atlas-list">
+    <li><a href="/farshid/products/local-llm-optimization-20260905.zip" download>Local LLM optimization — source archive (2026-09-05)</a> <span class="atlas-count">10 KB</span></li>
+    <li><a href="/farshid/products/OPTIMIZATION.md" download>OPTIMIZATION.md — local LLM optimization notes</a> <span class="atlas-count">11 KB</span></li>
+    <li><a href="/farshid/products/optimize_local_llm.sh" download>optimize_local_llm.sh — local LLM tuning script</a> <span class="atlas-count">7 KB</span></li>
+    <li><a href="/farshid/products/prompts.md" download>Prompt templates — source text</a> <span class="atlas-count">4 KB</span></li>
+    <li><a href="/farshid/products/etsy-listings.txt" download>Store listing copy (source text)</a> <span class="atlas-count">9 KB</span></li>
+  </ul>
+</section>
+
 <section class="atlas-sec" id="talks-presentations-keynotes">
   <h2>Talks, Presentations &amp; Keynotes</h2>
   <h3 class="atlas-sub" id="presentations-slide-decks">Presentations &amp; Slide Decks <span class="atlas-count">5</span></h3>
@@ -181,7 +240,7 @@ The single index of everything on pirahansiah.com — every publication, course,
   </ul>
 </section>
 
-<p class="atlas-note">Generated index — every page is one markdown file under <code>content/</code> or <code>expert-coaching-resources/</code>.</p>
+<p class="atlas-note">Generated index — every page is one markdown file under <code>content/</code> or <code>expert-coaching-resources/</code>; the downloads are the files in <code>products/</code>.</p>
 
 ---
 
@@ -10552,7 +10611,7 @@ URL: https://pirahansiah.com/farshid/expert-coaching-resources/10-years.md
 
 
 
-> **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production. — https://www.pirahansiah.com/notes/pubs/10-years/
+> **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production. 
 Lessons learned from a decade of debugging computer vision systems in production.
 
 # 10 Years of CV Debugging Lessons
@@ -23577,8 +23636,9 @@ URL: https://pirahansiah.com/farshid/expert-coaching-resources/localAI.md
 
 # Tips and tricks to run a local model for Hermes Agent on your laptop
 
+## A
 
-## How do I write good prompts when my context is 32k and I also need to include reference material?
+### How do I write good prompts when my context is 32k and I also need to include reference material?
 
 Treat the 32k as a budget. Everything counts against it: your instructions, the reference text, the chat history, and the model's answer.
 
@@ -23598,7 +23658,8 @@ Treat the 32k as a budget. Everything counts against it: your instructions, the 
 
 
 
-## Jev — https://console.typesafe.ai/home
+## B
+### Jev — https://console.typesafe.ai/home
 
 Jev does not generate text. It returns a constrained decision, like a yes/no probability or a choice among fixed options, and your code decides what to do with it. That fits your idea well. Jev is the picker. Your normal LLM is the writer.
 
@@ -23637,6 +23698,112 @@ def rank(question, chunks):
 - **Hostile text.** Text in the state that argues for its own classification can move the answer. Be careful with web docs.
 - **Access.** It is in early access with a waitlist. Keys are at console.typesafe.ai/settings/keys.
 - **Pin the version.** `jev-latest` can change under you, so use `jev-1.13.0`.
+
+
+
+
+handoff documents summarized 
+jason as databade 
+gork build
+
+
+How to Access It
+1.  Press Windows key + S and search for “Task Scheduler”.
+2.  Or run taskschd.msc in the Run dialog (Win + R).
+It’s very similar to cron jobs on Linux/macOS.
+
+
+
+vision intelligence 
+technical product engineer lead managembt 
+Motion Graphics
+Session   Push to GitHub
+what is domin knowldeg and why solve this problem 
+
+Vision-Language-Action (VLA) models that enable robots to understand and interact with the
+world with unprecedented generalization. You will work on the intersection of large-scale
+foundation models and real-world robotic execution, bridging the gap between state-of-the-art research and deployed embodied
+intelligence.
+Your Responsibilities:
+Research & Development:
+• Design, implement, and scale VLA models and foundation architectures for robotic
+manipulation and navigation.
+
+
+add always remmber agent/llm/chat 
+Write in ASD-STE100.
+
+
+
+
+## C
+
+### Ternary-Bonsai-2-27B
+AMD Ryzen AI 400 Series and Ryzen AI Max PC Processors
+### Lenovo Legion 5 15AGP11 laptop AMD Ryzen™ AI 7 450 processor, 32 GB of RAM, a 1 TB SSD, and an NVIDIA GeForce RTX™ 5060 GPU
+I evaluated Ternary-Bonsai-2-27B on a Lenovo Legion 5 15AGP11 laptop featuring an AMD Ryzen™ AI 7 450 processor, 32 GB of RAM, a 1 TB SSD, and an NVIDIA GeForce RTX™ 5060 GPU. Performance was both rapid and accurate; however, the updated model, Ternary Bonsai 2 27B PTQ1_0, requires a different version of the Ollama server, necessitating custom compilation and build procedures. Due to the 8 GB VRAM constraint, the context window is limited to 32K tokens, making this model well suited for short tasks. For larger projects, I continue to use Qwen3.5-9B, which supports a 100K token context window.
+
+On a Lenovo Legion 5 (Ryzen AI 7 450, 32 GB RAM, 1 TB SSD, RTX 5060), Ternary-Bonsai-2-27B performed quickly and accurately. The PTQ1_0 version needs a custom-built Ollama server; with 8 GB VRAM, its 32K token context suits short tasks. For larger projects, I use Qwen3.5-9B (100K tokens).
+
+### STRIX HALO and 128 GB of unified memory, 
+### HP ZBook Ultra G1a (14-inch, 2.8 K touch display) featuring the Ryzen AI MAX+ PRO 395
+Performance was rapid and accurate; however, the AMD architecture required extensive compilation and configuration, as no components functioned out of the box. 
+
+
+## D
+### PKM
+atomic note
+not more than 255 charteerrs if possible
+down/more depth
+up
+
+
+
+## E
+List of key tasks specialists (expert developers) will increasingly need to handle in the AI era:
+* Design and maintain high-level system architecture and overall software structure
+* Thoroughly review, validate, and critique AI-generated code for correctness, security, and quality
+* Refactor AI output to improve reusability, reduce duplication, and lower complexity
+* Write precise prompts, set constraints, and effectively guide AI agents or coding tools
+* Identify and resolve complex bugs, edge cases, and integration issues that AI struggles with
+* Enforce coding standards, design patterns, and long-term maintainability
+* Manage technical debt created by rapid AI-assisted development
+* Optimize performance, scalability, and resource usage beyond what basic AI suggestions provide
+* Ensure domain-specific logic, business rules, and regulatory/compliance requirements are correctly implemented
+* Integrate multiple AI tools, models, and pipelines while controlling costs and reliability
+* Conduct advanced testing strategies (including adversarial and system-level testing)
+* Mentor teams and establish best practices for productive human-AI collaboration
+* Make critical trade-off decisions on when to use AI versus writing or redesigning code manually
+These responsibilities shift the specialist’s role from pure code production toward oversight, architecture, quality control, and strategic guidance.
+
+
+
+## F
+Low cost coding models for everyone.
+https://opencode.ai/go?ref=3KMNQG0CS4
+
+
+Join Trade Republic. The smartest way to invest, spend and bank. Create an account via the link to secure a welcome bonus.
+https://refnocode.trade.re/z28xmjp6
+
+scalable
+https://de.scalable.capital/en/invitation/bj2bkn
+
+Join me at Scalable, the best place to invest in your financial future. Open an account in just a few minutes using my link and secure a start bonus of €25. Start now.
+
+WISE
+https://wise.com/invite/ilpn/farshidp1
+
+EToro
+Hey! I’m trading with etoro. They have 1,000s of assets and awesome tools. Want to join me? Use my link to sign up:
+https://etoro.tw/3XGZzNz 
+
+
+kraken. byt crypto
+https://invite.kraken.com/JDNW/sqqgzc9a
+
+
+## G
 
 ---
 
