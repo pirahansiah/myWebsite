@@ -4,13 +4,13 @@
 *Last updated: 2026-09-06.*
 
 <style>
-  html, body { background: transparent !important; overflow: auto !important; }
+  #content { background: #050b14 !important; }
   .site-main { padding: 0 !important; margin: 0 !important; background: #000 !important; border: none !important; box-shadow: none !important; max-width: none !important; width: 100% !important; }
   .toolbar, .site-footer, footer { display: none !important; }
-  .presentation-panel { width: 100%; overflow: visible; background: #050b14; }
-  .reveal .slides section { height: auto; display: block !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; padding: 20px !important; box-sizing: border-box !important; }
-  .reveal .slides { height: 100%; }
-  .reveal { height: auto; width: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .presentation-panel { position: relative; width: 100%; height: min(72vh, 760px); overflow: hidden; background: #050b14; }
+  .reveal .slides section { height: 100%; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; padding: 20px !important; box-sizing: border-box !important; }
+  .reveal { height: 100%; } .reveal .slides { height: 100%; }
+  .reveal { height: 100%; width: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
   .reveal h1 { font-size: 2.0em; margin-bottom: 0.2em; color: #fff; text-align: center; font-weight: 800; background: linear-gradient(135deg, #22D3EE, #06B6D4, #3B82F6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .reveal h2 { font-size: 1.22em; margin: 0.18em 0 0.4em; color: #22D3EE; text-align: center; font-weight: 700; }
   .reveal h3 { font-size: 1.1em; color: #A855F7; margin: 0.2em 0; }

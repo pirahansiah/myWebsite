@@ -51,12 +51,49 @@
     c.querySelectorAll('h1,h2,h3').forEach(function(h,i){ if(!h.id) h.id = slug(h.textContent); });
     highlightNav(file, anchor||'');
     wireLinks(c);
+    initDeckIfPresent(c);   // reveal.js deck pages render as slide presentations
     if(anchor && anchor!=='top'){
       var el=c.querySelector('#'+slug(anchor));
       if(el) setTimeout(function(){ el.scrollIntoView({behavior:'smooth',block:'start'}); },30);
     } else {
       window.scrollTo(0,0);
     }
+  }
+
+  /* ---- reveal.js decks: render a slide presentation from the .md source ---- */
+  var __deckPanel=null, __deckReloading=false;
+  function initDeckIfPresent(c){
+    var panel=c.querySelector('.presentation-panel');
+    if(__deckPanel){ __deckPanel.__deck && __deckPanel.__deck.destroy && __deckPanel.__deck.destroy(); __deckPanel.__deck=null; __deckPanel=null; }
+    if(!panel){ __deckReloading=false; return; }
+    __deckPanel=panel;
+    // reveal theme css must load once
+    if(!document.getElementById('reveal-theme')){
+      var l=document.createElement('link'); l.id='reveal-theme'; l.rel='stylesheet';
+      l.href='https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css';
+      document.head.appendChild(l);
+      var t=document.createElement('link'); t.rel='stylesheet';
+      t.href='https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css';
+      document.head.appendChild(t);
+    }
+    if(window.Reveal){ bootDeck(panel); }
+    else if(!__deckReloading){
+      __deckReloading=true;
+      var s=document.createElement('script'); s.src='https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.js';
+      s.onload=function(){ __deckReloading=false; bootDeck(panel); };
+      s.onerror=function(){ __deckReloading=false; /* CDN blocked: keep stacked slides (already readable) */ };
+      document.head.appendChild(s);
+    }
+  }
+  function bootDeck(panel){
+    panel.__deck = new Reveal(panel, {
+      embedded: true, hash: true, center: true, touch: true,
+      controls: true, progress: true, slideNumber: 'c/t',
+      width: 1120, height: 760, margin: 0.06, minScale: 0.2, maxScale: 2.0
+    });
+    panel.__deck.initialize();
+    var rb=document.getElementById('restart-btn');
+    if(rb) rb.addEventListener('click', function(e){ e.stopPropagation(); panel.__deck.slide(0); });
   }
 
   function highlightNav(file, anchor){
