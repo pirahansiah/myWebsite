@@ -3,9 +3,9 @@
 Run: python3 gen_atlas.py  (writes atlas.md next to content/)"""
 import os, re
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 CONTENT = os.path.join(ROOT, 'content')
-PROJ = os.path.join(ROOT, 'farshid', 'projects')
+PROJ = os.path.join(ROOT, 'projects')
 
 def title(slug, body):
     m = re.search(r'^#\s+(.+)$', body, re.M)
@@ -64,7 +64,7 @@ def render():
             L.append('')
             rest = [x for x in items if x[0]!='qr']
             for slug,t in rest:
-                L.append(f'- [{t}](/content/{slug}.md)')
+                L.append(f'- [{t}](/farshid/content/{slug}.md)')
             L.append('')
             continue
         if sec=='Projects':
@@ -97,7 +97,7 @@ def render():
                 if slug=='research-tools':
                     L.append('- [**Research Tools — talks &amp; keynotes hub**](/farshid/notes/slides/research-tools/)')
                 else:
-                    L.append(f'- [{t}](/content/{slug}.md)')
+                    L.append(f'- [{t}](/farshid/content/{slug}.md)')
             L.append('')
     L.append('---'); L.append('')
     L.append('*Generated index — every page is a plain Markdown file under `content/`.*')

@@ -4,7 +4,7 @@ Run: python3 scripts/gen_search_index.py
 Output: window.SEARCH_INDEX = [ {slug, title, text, tags, url}, ... ]"""
 import os, re, json
 
-ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 CONTENT = os.path.join(ROOT, 'content')
 
 def slug_title(title):
