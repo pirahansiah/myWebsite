@@ -11,8 +11,8 @@
     s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
     // images before links
     s = s.replace(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+&quot;[^&]*&quot;)?\)/g, '<img src="$2" alt="$1" loading="lazy">');
-    // links [text](url)
-    s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>');
+    // links [text](url) — tolerate a stray trailing space before the `)`
+    s = s.replace(/\[([^\]]+)\]\(([^)\s]+)(\s*)\)/g, '<a href="$2">$1</a>');
     // bold
     s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
     s = s.replace(/__([^_]+)__/g, '<strong>$1</strong>');

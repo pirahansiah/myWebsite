@@ -96,6 +96,25 @@
   }
 
   window.addEventListener('hashchange', load);
-  document.addEventListener('DOMContentLoaded', function(){ buildNav(); load(); });
-  if(document.readyState!=='loading'){ buildNav(); load(); }
+
+  // mobile nav toggle
+  function closeNav(){
+    var nav=document.getElementById('nav'), btn=document.getElementById('nav-toggle');
+    if(nav) nav.classList.remove('open');
+    if(btn) btn.setAttribute('aria-expanded','false');
+  }
+  function initMobileNav(){
+    var nav=document.getElementById('nav'), btn=document.getElementById('nav-toggle');
+    if(!nav||!btn||!('click' in btn)) return;
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open=nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+    nav.addEventListener('click', function(e){ closeNav(); }); // any nav tap closes
+    document.addEventListener('click', function(e){ if(!nav.contains(e.target)&&!btn.contains(e.target)) closeNav(); });
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){ buildNav(); initMobileNav(); load(); });
+  if(document.readyState!=='loading'){ buildNav(); initMobileNav(); load(); }
 })();
