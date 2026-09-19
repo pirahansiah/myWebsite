@@ -2,8 +2,9 @@
    Supports #file and #file:anchor (e.g. #atlas:publications scrolls to section). */
 (function(){
   'use strict';
-  var DEFAULT = 'atlas';
+  var DEFAULT = 'home';
   var SECTIONS = { // nav targets: label -> {file, anchor (raw heading text)}
+    'Home':           { file:'home', anchor:'top' },
     'Atlas':          { file:'atlas', anchor:'top' },
     'Publications':   { file:'atlas', anchor:'Publications' },
     'Courses':        { file:'atlas', anchor:'Courses' },
@@ -24,7 +25,7 @@
     var file = hp.file || DEFAULT;
     var anchor = hp.anchor;
     var path;
-    if (file==='atlas') path='atlas.md';
+    if (file==='home' || file==='atlas') path=file+'.md';  // root-level pages
     else if (file.indexOf('/')>=0) path=file+'.md';   // real subpath (e.g. projects/rag/README)
     else path='content/'+file+'.md';                   // content slug
     fetch(path)
