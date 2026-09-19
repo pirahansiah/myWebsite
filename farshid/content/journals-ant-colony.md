@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Ant Colony Optimization for Image Processing"
+permalink: /notes/pubs/journals/ant-colony/
+description: "ACO-based optimization for image thresholding and edge detection in OCR systems."
+---
+
 ACO-based optimization for image thresholding and edge detection in OCR systems.
 
 USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM

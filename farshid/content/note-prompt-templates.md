@@ -1,3 +1,12 @@
+---
+layout: farshid_default
+title: "Prompt Engineering Templates"
+permalink: /notes/docs/prompt-templates/
+description: "Reusable prompt templates for text simplification, mind maps, and structured content processing."
+---
+
+# Prompt Engineering Templates
+
 Reusable prompt templates for text simplification, mind maps, and structured content processing.
 
 - a

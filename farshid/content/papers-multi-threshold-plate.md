@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Multi-Threshold for License Plate Recognition"
+permalink: /notes/pubs/papers/multi-threshold-plate/
+description: "Adaptive multi-threshold approach using MLP for license plate recognition systems."
+---
+
 Adaptive multi-threshold approach using MLP for license plate recognition systems.
 
 Multi-threshold_Approach_for_License_Plate_Recognition_System

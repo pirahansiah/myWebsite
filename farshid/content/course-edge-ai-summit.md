@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Edge AI Summit 2020"
+permalink: /notes/courses/edge-ai-summit/
+description: "Notes from Edge AI Summit covering tinyML, neuromorphic computing, and edge inference."
+---
+
 Notes from Edge AI Summit covering tinyML, neuromorphic computing, and edge inference.
 
 # Edge AI Summit 2020 (Nov 18-20)

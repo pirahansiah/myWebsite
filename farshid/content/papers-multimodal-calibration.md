@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Camera Calibration for Multi-Modal Vision"
+permalink: /notes/pubs/papers/multimodal-calibration/
+description: "Automatic calibration framework for multi-modal robot vision using IQA metrics."
+---
+
 Automatic calibration framework for multi-modal robot vision using IQA metrics.
 
 Camera_Calibration_for_Multi-Modal_Robot_Vision

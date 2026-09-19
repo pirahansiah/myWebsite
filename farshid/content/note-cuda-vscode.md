@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "CUDA Development Environment in VS Code on Windows"
+permalink: /notes/docs/cuda-vscode/
+description: "Step-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and debugging."
+---
+
 Step-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and debugging.
 
 # Simple Setting Up a CUDA Development Environment in VS Code in Windows 

@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Shell & Vim Quick Reference"
+permalink: /notes/docs/shell-vim/
+description: "Quick reference for shell commands, vim basics, and essential CLI tools."
+---
+
 Quick reference for shell commands, vim basics, and essential CLI tools.
 
 - [NeoHtop](https://github.com/Abdenasser/neohtop)

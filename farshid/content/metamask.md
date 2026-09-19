@@ -1,11 +1,10 @@
 ---
 layout: farshid_default
-permalink: /metamask/
 title: "MetaMask — Connect & Receive"
+permalink: /metamask/
 description: "Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive address. Private test page."
-sitemap: false
-noindex: true
 ---
+
 > **MetaMask Connect** — Connect your wallet, receive, or send crypto automatically. — https://pirahansiah.com/metamask/
 Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive address. Private test page.
 

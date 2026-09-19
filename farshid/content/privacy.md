@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Privacy"
+permalink: /privacy/
+description: "pirahansiah.com is a wholly static site. There are no analytics scripts, no cookies, no trackers, and no server-side logging of personal data."
+---
+
 # Privacy
 
 pirahansiah.com is a wholly static site. There are no analytics scripts, no cookies, no trackers, and no server-side logging of personal data.

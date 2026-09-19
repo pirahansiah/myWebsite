@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Adaptive Thresholding Based on PSNR"
+permalink: /notes/pubs/journals/adaptive-thresholding/
+description: "PSNR-based adaptive thresholding for image segmentation in OCR and license plate recognition."
+---
+
 PSNR-based adaptive thresholding for image segmentation in OCR and license plate recognition.
 
 Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio

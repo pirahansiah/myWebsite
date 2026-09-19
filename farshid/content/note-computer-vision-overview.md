@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Computer Vision"
+permalink: /notes/docs/computer-vision-overview/
+description: "Computer vision topics: 3D vision, optical flow, multi-camera systems."
+---
+
 Overview of Dr. Farshid Pirahansiah's computer vision and AI expertise: 3D vision, multi-camera systems, optical flow, model optimization, and edge AI deployment.
 
 # Dr. Farshid Pirahansiah

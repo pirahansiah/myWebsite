@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "PSNR-Based Segmentation for LPR"
+permalink: /notes/pubs/papers/adaptive-segmentation/
+description: "Adaptive image segmentation using PSNR for license plate recognition systems."
+---
+
 Adaptive image segmentation using PSNR for license plate recognition systems.
 
 Adaptive_Image_Segmentation_Based_on_PSNR_for_License_Plate_Recognition

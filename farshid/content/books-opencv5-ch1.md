@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "OpenCV 5 — Chapter 1: Image Basics"
+permalink: /notes/pubs/books/opencv5-ch1/
+description: "Glossary of AI/ML terms, references, and resources for computer vision practitioners."
+---
+
 Glossary of AI/ML terms, references, and resources for computer vision practitioners.
 
 tags: [opencv, image-processing, computer-vision, python]

@@ -1,3 +1,12 @@
+---
+layout: farshid_default
+title: "Face Image Augmentation WO2021060971A1"
+permalink: /notes/pubs/patents/face-augmentation/
+description: "GAN-based method for augmenting face images from surveillance with fuzzy logic quality filtering."
+---
+
+# Face Image Augmentation WO2021060971A1
+
 GAN-based method for augmenting face images from surveillance with fuzzy logic quality filtering.
 
 [spotify](https://spotifyanchor-web.app.link/e/XZpmcmHCFNb)

@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "CV — Dr. Farshid Pirahansiah"
+permalink: /notes/computer-vision/
+description: "Curriculum vitae covering 12+ years of computer vision R&D, 21 publications, and 3 patents."
+---
+
 Curriculum vitae covering 12+ years of computer vision R&D, 21 publications, and 3 patents.
 
 As an AI and computer vision expert with over a decade of experience collaborating with esteemed global organizations, my expertise encompasses AI research and development, machine learning, deep learning, Internet of Things (IoT), and model optimization for edge and cloud-based solutions. With a portfolio of 21 publications, three patents, and extensive practical experience in real-time computer vision applications, I have spearheaded groundbreaking projects in generative AI, video analytics, and intelligent systems. Proficient in C++, Python, OpenCV, and advanced GPU optimization, I am recognized for bridging the gap between cutting-edge research and commercially viable products.

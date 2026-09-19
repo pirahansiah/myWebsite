@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "GSFT-PSNR: Fuzzy Threshold Method"
+permalink: /notes/pubs/journals/fuzzy-thresholding/
+description: "Fuzzy logic approach to global single thresholding using PSNR for image segmentation."
+---
+
 Fuzzy logic approach to global single thresholding using PSNR for image segmentation.
 
 GSFT-PSNR_Global_Single_Fuzzy_Threshold

@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Accelerate Python with Numba's @jit(nopython=True)"
+permalink: /notes/docs/numba/
+description: "Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing."
+---
+
 Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.
 
 Accelerate Python with Numba’s `@jit(nopython=True)` 

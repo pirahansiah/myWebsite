@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "TafreshGrid: Grid Computing"
+permalink: /notes/pubs/papers/grid-computing/
+description: "Grid computing infrastructure implementation and evaluation at Tafresh University."
+---
+
 Grid computing infrastructure implementation and evaluation at Tafresh University.
 
 TafreshGrid_Grid_computing_in_Tafresh_university

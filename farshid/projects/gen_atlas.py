@@ -176,6 +176,14 @@ def project_items():
             out.append((f'/farshid/projects/{d}/README.md', label + ' — ' + d if label != d else d))
     return out
 
-out=render()
+HEADER = ('---\n'
+          'layout: farshid_default\n'
+          'title: "Atlas"\n'
+          'permalink: /atlas/\n'
+          'description: "The single index of everything on pirahansiah.com — every publication, '
+          'course, note, talk and project on one page."\n'
+          '---\n\n')
+
+out = HEADER + render()
 open(os.path.join(ROOT,'content','atlas.md'),'w',encoding='utf-8').write(out)
 print('atlas.md written,', sum(len(v) for v in buckets.values()), 'content pages grouped by type')

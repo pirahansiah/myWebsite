@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Python Configuration & C++ Integration"
+permalink: /notes/docs/python/
+description: "Python configuration methods comparison plus pybind11 and Cython tips for C++ integration."
+---
+
 Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.
 
 # Python

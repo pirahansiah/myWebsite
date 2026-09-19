@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "OpenCV 5 — Chapter 0: Introduction"
+permalink: /notes/pubs/books/new-developer-era/
+description: "Introduction to the new developer era, AI agents, and multi-agent systems."
+---
+
 Introduction to the new developer era, AI agents, and multi-agent systems.
 
 reference index: [[index]]

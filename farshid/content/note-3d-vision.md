@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "3D Vision & Real-Time Multi-Camera Systems"
+permalink: /notes/docs/3d-vision/
+description: "Real-time 3D point cloud generation, depth sensing, and multi-camera synchronization for computer vision applications."
+---
+
 Real-time 3D point cloud generation, depth sensing, and multi-camera synchronization for computer vision applications.
 
 - [MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors](https://edexheim.github.io/mast3r-slam/)

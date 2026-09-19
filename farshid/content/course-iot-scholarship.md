@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "IoT Scholarship: Edge AI with OpenVINO"
+permalink: /notes/courses/iot-scholarship/
+description: "IoT and Edge AI with OpenVINO: face recognition, object detection, pose estimation, and semantic segmentation."
+---
+
 IoT and Edge AI with OpenVINO: face recognition, object detection, pose estimation, and semantic segmentation.
 
 # IoT Scholarship Foundation

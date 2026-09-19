@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Camera Calibration & Video Stabilization"
+permalink: /notes/pubs/books/camera-calibration/
+description: "Springer book chapter on fuzzy camera calibration and video stabilization for robot localization."
+---
+
 Springer book chapter on fuzzy camera calibration and video stabilization for robot localization.
 
 My_Book_chapter_Camera_Calibration_and_Video_Stabilization_Framework_for_Robot_Localization  in the Book entitled “Control Engineering in Robotics and Industrial Automation" published in Springer

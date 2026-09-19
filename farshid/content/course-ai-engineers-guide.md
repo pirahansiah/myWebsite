@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Book Summaries"
+permalink: /notes/courses/ai-engineers-guide/
+description: "Book summaries and knowledge management resources."
+---
+
 Book summaries and knowledge management resources.
 
 # Book Summaries

@@ -1,6 +1,7 @@
 ---
 layout: farshid_default
 title: "Publications — Conference Papers"
+permalink: /notes/pubs/papers/conference-paper/
 description: "All peer-reviewed conference papers by Dr. Farshid Pirahansiah on image processing, camera calibration, pattern recognition, and grid computing."
 markmap: |
   # Conference Papers
@@ -17,6 +18,7 @@ markmap: |
   ## Grid Computing
   - TafreshGrid
 ---
+
 > **Publications — Conference Papers** — All peer-reviewed conference papers by Dr. Farshid Pirahansiah on image processing, camera calibration, pattern recognition, and grid computing. — https://www.pirahansiah.com/notes/pubs/papers/conference-paper/
 All peer-reviewed conference papers by Dr. Farshid Pirahansiah on image processing, camera calibration, pattern recognition, and grid computing.
 

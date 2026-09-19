@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Atlas"
+permalink: /atlas/
+description: "The single index of everything on pirahansiah.com — every publication, course, note, talk and project on one page."
+---
+
 # Atlas
 
 The single index of everything on pirahansiah.com — every publication, course, note, talk and project on one page.
@@ -16,11 +23,11 @@ The single index of everything on pirahansiah.com — every publication, course,
   <h3 class="atlas-sub" id="book-chapters">Book Chapters <span class="atlas-count">7</span></h3>
   <ul class="atlas-list">
     <li><a href="/farshid/content/books-cv-meets-llm.md">AI computer vision locally LLMs on device</a></li>
-    <li><a href="/farshid/content/books-opencv5-ch3.md">Books Opencv5 Ch3</a></li>
     <li><a href="/farshid/content/books-camera-calibration.md">Camera Calibration and Video Stabilization Framework for Robot Localization</a></li>
     <li><a href="/farshid/content/books-computational-intelligence.md">Computational Intelligence: From Theory to Application</a></li>
     <li><a href="/farshid/content/books-opencv5-ch2.md">Mastering AI and Machine Learning: A Comprehensive Summary</a></li>
     <li><a href="/farshid/content/books-opencv5-ch1.md">Mastering AI and Machine Learning: Essential Glossary, Resources, and References</a></li>
+    <li><a href="/farshid/content/books-opencv5-ch3.md">OpenCV 5 — Chapter 3: Advanced Topics</a></li>
     <li><a href="/farshid/content/books-new-developer-era.md">The New Developer Era: Transforming Your Career and Building Production Ready AI Agents in 2027</a></li>
   </ul>
   <h3 class="atlas-sub" id="journal-articles">Journal Articles <span class="atlas-count">6</span></h3>
@@ -47,9 +54,9 @@ The single index of everything on pirahansiah.com — every publication, course,
   </ul>
   <h3 class="atlas-sub" id="patents">Patents <span class="atlas-count">3</span></h3>
   <ul class="atlas-list">
+    <li><a href="/farshid/content/patents-face-augmentation.md">Face Image Augmentation WO2021060971A1</a></li>
     <li><a href="/farshid/content/patents-vehicle-detection.md">Mind Map: A Method for Detecting a Moving Vehicle</a></li>
     <li><a href="/farshid/content/patents-facial-analysis.md">Patent Application WO 2020/141969 A2 - Digital Advertising System</a></li>
-    <li><a href="/farshid/content/patents-face-augmentation.md">Patents Face Augmentation</a></li>
   </ul>
   <h3 class="atlas-sub" id="profile">Profile <span class="atlas-count">1</span></h3>
   <ul class="atlas-list">
@@ -84,12 +91,14 @@ The single index of everything on pirahansiah.com — every publication, course,
 <section class="atlas-sec" id="notes-guides">
   <h2>Notes &amp; Guides</h2>
   <ul class="atlas-list">
+    <li><a href="/farshid/content/10-years.md">10 Years of CV Debugging Lessons</a></li>
     <li><a href="/farshid/content/note-llm-blog.md">2025</a></li>
     <li><a href="/farshid/content/note-swarm.md">Agent Swarm</a></li>
     <li><a href="/farshid/content/wiki.md">All Pages</a></li>
     <li><a href="/farshid/content/note-llm-avatar.md">Building a Local Video Avatar Generator Using Ollama and Open-Source Tools</a></li>
     <li><a href="/farshid/content/note-coaching-roadmap.md">Computer Vision Expertise: Teaching &amp; Coaching Services</a></li>
     <li><a href="/farshid/content/conference-paper.md">Conference Papers</a></li>
+    <li><a href="/farshid/content/note-developer-tools.md">Developer Tools &amp; Setup Guide</a></li>
     <li><a href="/farshid/content/note-computer-vision-overview.md">Dr. Farshid Pirahansiah</a></li>
     <li><a href="/farshid/content/note-startup-guide.md">Edge AI Solutions: Local LLM Implementation Business Plan</a></li>
     <li><a href="/farshid/content/note-cpp.md">git</a></li>
@@ -99,13 +108,12 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/note-llm-agents.md">Mind Map: Orchestrating Agents</a></li>
     <li><a href="/farshid/content/note-llm-concepts.md">Mind Map: Orchestrating Agents &amp; Advanced LLM Concepts</a></li>
     <li><a href="/farshid/content/note-linkedin-2024.md">My Top LinkedIn Posts from the Past Year</a></li>
-    <li><a href="/farshid/content/note-developer-tools.md">Note Developer Tools</a></li>
-    <li><a href="/farshid/content/note-optical-flow.md">Note Optical Flow</a></li>
-    <li><a href="/farshid/content/note-prompt-templates.md">Note Prompt Templates</a></li>
     <li><a href="/farshid/content/note-apple-ml.md">Numba JIT Tutorial and PyCUDA with Apple Silicon Adaptation</a></li>
+    <li><a href="/farshid/content/note-optical-flow.md">Optical Flow: Challenges and Solutions</a></li>
     <li><a href="/farshid/content/note-optimization-guide.md">Optimization</a></li>
     <li><a href="/farshid/content/optimization-index.md">Optimization</a></li>
     <li><a href="/farshid/content/product.md">Product</a></li>
+    <li><a href="/farshid/content/note-prompt-templates.md">Prompt Engineering Templates</a></li>
     <li><a href="/farshid/content/note-python-configuration.md">Python</a></li>
     <li><a href="/farshid/content/note-3d-vision.md">Real-Time 3D Point Cloud Generation and Visualization from Depth Data</a></li>
     <li><a href="/farshid/content/note-multi-camera.md">Real-Time Multi-Camera Vision Systems</a></li>
@@ -119,8 +127,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/terms.md">Terms of Service</a></li>
     <li><a href="/farshid/content/note-seo-for-llms.md">The New Era of SEO: Optimizing Websites for LLMs</a></li>
     <li><a href="/farshid/content/note-shell-vim.md">tools</a></li>
-    <li><a href="/farshid/content/10-years.md">update Aug. 2026</a></li>
-    <li><a href="/farshid/content/why-not.md">Why Not</a></li>
+    <li><a href="/farshid/content/why-not.md">Why This Site Exists</a></li>
     <li><a href="/farshid/content/game.md">🎮 Arcade</a></li>
     <li><a href="/farshid/content/note-numba.md">🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀</a></li>
   </ul>

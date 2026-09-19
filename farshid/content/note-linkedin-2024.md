@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Top LinkedIn Posts 2024"
+permalink: /notes/docs/linkedin-2024/
+description: "Highlights from 2024 LinkedIn posts covering camera calibration, C++, NVIDIA optimization, and robotics."
+---
+
 > **Top LinkedIn Posts 2024** — Highlights from 2024 LinkedIn posts covering camera calibration, C++, NVIDIA optimization, and robotics. — https://www.pirahansiah.com/farshid/content/note-linkedin-2024.md
 Highlights from 2024 LinkedIn posts covering camera calibration, C++, NVIDIA optimization, and robotics.
 

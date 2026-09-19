@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Machine Learning Specialization"
+permalink: /notes/courses/ml-specialization/
+description: "Coursera ML Specialization notes covering regression, classification, clustering, and neural networks."
+---
+
 Coursera ML Specialization notes covering regression, classification, clustering, and neural networks.
 
 # Machine Learning Specialization 2022

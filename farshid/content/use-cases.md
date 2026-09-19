@@ -1,7 +1,8 @@
 ---
 layout: farshid_default
-title: Complete Portfolio
-description: Publications, patents, expertise, tools, and GitHub projects across CV and AI
+title: "Complete Portfolio"
+permalink: /notes/pkm/use-cases/
+description: "Publications, patents, expertise, tools, and GitHub projects across CV and AI"
 tags: [portfolio, computer-vision, edge-ai, github-projects]
 hashtags: "#portfolio #computervision #edgeai #github"
 markmap: |
@@ -32,6 +33,7 @@ markmap: |
   - CV Coaching Roadmap
   - Workshops
 ---
+
 > **Complete Portfolio** — Publications, patents, expertise, tools, and GitHub projects across CV and AI — https://www.pirahansiah.com/notes/pkm/use-cases/
 Publications, patents, expertise, tools, and GitHub projects across CV and AI
 

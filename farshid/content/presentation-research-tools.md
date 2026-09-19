@@ -1,6 +1,8 @@
 ---
-title: The New Era of Research Tools
-description: From passive chat to autonomous research workflows: Hermes Agent, LeapSpace, PaperBanana, AI citation finders, agent swarms, peer review, and an Obsidian second brain.
+layout: farshid_default
+title: "The New Era of Research Tools"
+permalink: /notes/slides/research-tools/
+description: "From passive chat to autonomous research workflows: Hermes Agent, LeapSpace, PaperBanana, AI citation finders, agent swarms, peer review, and an Obsidian second brain."
 ---
 
 <div class="presentation-panel">

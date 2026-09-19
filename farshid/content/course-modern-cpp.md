@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Modern C++ for Image Processing"
+permalink: /notes/courses/modern-cpp/
+description: "Modern C++23 for image processing: memory management, design patterns, CUDA, and OpenCV."
+---
+
 Modern C++23 for image processing: memory management, design patterns, CUDA, and OpenCV.
 
 # Advanced Programming with Modern C++ 23 for Image Processing

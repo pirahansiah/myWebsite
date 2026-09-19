@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "How PyCUDA Reads and Runs C Kernels"
+permalink: /notes/docs/pycuda/
+description: "Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples."
+---
+
 Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.
 
 How PyCUDA Reads and Runs C Kernels

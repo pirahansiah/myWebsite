@@ -1,11 +1,12 @@
 ---
 layout: farshid_default
-permalink: /crypto/
 title: "Crypto Payments — Support"
+permalink: /crypto/
 description: "Support Dr. Farshid Pirahansiah's open-source computer vision and edge AI work with cryptocurrency. Bitcoin, Ethereum, Solana, Base and BNB Smart Chain wallet addresses."
 tags: [crypto, bitcoin, ethereum, solana, base, bnb, donations, support]
 hashtags: "#crypto #bitcoin #ethereum #solana #base #bnb #donate #web3"
 ---
+
 > **Crypto Payments** — Support open-source computer vision and edge AI work with cryptocurrency. — https://pirahansiah.com/crypto/
 Support Dr. Farshid Pirahansiah's open-source computer vision and edge AI work with cryptocurrency. Bitcoin, Ethereum, Solana, Base and BNB Smart Chain wallet addresses.
 

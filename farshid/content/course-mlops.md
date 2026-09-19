@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "MLOps"
+permalink: /notes/courses/mlops/
+description: "Coursera MLOps Specialization covering ML production, data lifecycle, modeling pipelines, and deployment."
+---
+
 Coursera MLOps Specialization covering ML production, data lifecycle, modeling pipelines, and deployment.
 
 # MLOps — Machine Learning Engineering for Production

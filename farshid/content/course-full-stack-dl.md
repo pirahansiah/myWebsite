@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Full Stack Deep Learning"
+permalink: /notes/courses/full-stack-dl/
+description: "Full Stack Deep Learning course notes covering ML production from data to deployment."
+---
+
 Full Stack Deep Learning course notes covering ML production from data to deployment.
 
 # Full Stack Deep Learning

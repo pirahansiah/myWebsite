@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Augmented Optical Flow for Video Stabilization"
+permalink: /notes/pubs/books/computational-intelligence/
+description: "Book chapter on Type-2 Fuzzy Gaussian Pyramid optical flow for video stabilization."
+---
+
 Book chapter on Type-2 Fuzzy Gaussian Pyramid optical flow for video stabilization.
 
 Book_Computational_Intelligence_From_Theory_to_Application_explores_augmented_optical_flow_methods_for_video_stabilization

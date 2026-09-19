@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "OpenCV 5 — Chapter 2: Feature Detection"
+permalink: /notes/pubs/books/opencv5-ch2/
+description: "Comprehensive guide to AI/ML concepts, tools, best practices, and ethical considerations."
+---
+
 Comprehensive guide to AI/ML concepts, tools, best practices, and ethical considerations.
 
 tags: [opencv, feature-detection, computer-vision, ai]

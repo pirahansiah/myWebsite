@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Computer Vision Meets LLM"
+permalink: /notes/pubs/books/cv-meets-llm/
+description: "Book exploring multimodal AI combining computer vision with large language models."
+---
+
 Book exploring multimodal AI combining computer vision with large language models.
 
 tags: [computer-vision, llm, multimodal, rag]

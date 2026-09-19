@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Facial Analysis Advertisement WO2020141969A2"
+permalink: /notes/pubs/patents/facial-analysis/
+description: "System for targeted digital advertising using real-time facial analysis and demographic detection."
+---
+
 System for targeted digital advertising using real-time facial analysis and demographic detection.
 
 date_modified: 2024-10-12

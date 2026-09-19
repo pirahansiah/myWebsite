@@ -1,6 +1,8 @@
 ---
-title: Hermes Agent for Big Computer Vision Projects
-description: Production-scale computer vision engineering with autonomous agents: setup, bots, multi-agent orchestration, research, profiling, cron jobs, messaging, group bots, and artifacts for large CV teams.
+layout: farshid_default
+title: "Hermes Agent for Big Computer Vision Projects"
+permalink: /notes/slides/cv/
+description: "Production-scale computer vision engineering with autonomous agents: setup, bots, multi-agent orchestration, research, profiling, cron jobs, messaging, group bots, and artifacts for large CV teams."
 ---
 
 <div class="presentation-panel">

@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Character & Object Recognition via Features"
+permalink: /notes/pubs/journals/character-recognition/
+description: "Global feature extraction methods for character and object recognition in computer vision."
+---
+
 Global feature extraction methods for character and object recognition in computer vision.
 
 CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION

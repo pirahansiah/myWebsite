@@ -1,6 +1,8 @@
 ---
-title: Hermes Agent for Research Assistance
-description: Autonomous AI research partner for academia and engineering: setup, configuration, workflow automation, ArXiv integration, and multi-agent execution.
+layout: farshid_default
+title: "Hermes Agent for Research Assistance"
+permalink: /notes/slides/presentation/
+description: "Autonomous AI research partner for academia and engineering: setup, configuration, workflow automation, ArXiv integration, and multi-agent execution."
 ---
 
 <div class="presentation-panel">

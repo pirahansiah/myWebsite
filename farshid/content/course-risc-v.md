@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "RISC-V for AI"
+permalink: /notes/courses/risc-v/
+description: "RISC-V open-source processor architecture for AI at the edge."
+---
+
 RISC-V open-source processor architecture for AI at the edge.
 
 # RISC-V for AI

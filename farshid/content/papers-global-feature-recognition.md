@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Character Recognition via Global Features"
+permalink: /notes/pubs/papers/global-feature-recognition/
+description: "Hybrid GLCM and EDMS method for character recognition in OCR applications."
+---
+
 Hybrid GLCM and EDMS method for character recognition in OCR applications.
 
 Character_Recognition_Based_on_Global_Feature

@@ -3,6 +3,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Redirecting — pirahansiah.com</title>
+<script src="/farshid/permalinks.js"></script>
+<script src="/farshid/page-aliases.js"></script>
 <script>
 /* Any URL that reaches this page is routed into the single-page app, which is the
    only place markdown gets rendered. Raw .md files are served by GitHub Pages as
@@ -45,11 +47,17 @@
   var hash = location.hash || '';
   var target = null;
 
+  /* front-matter permalinks (PIRAHANSIAH page headers): /qr/, /notes/pubs/10-years/, … */
+  var PERM = window.PERMALINKS || {};
+  var permKey = path.replace(/^\/farshid\/content/, '').replace(/^\/+|\/+$/g, '').toLowerCase();
   var md = path.match(/\/([^\/]+)\.md$/i);
   var htm = path.match(/\/([^\/]+)\.html$/i);   /* pages used to be shipped as .html */
   var legacy = path.replace(/^\/farshid/, '');   /* /farshid/crypto -> /crypto */
 
-  if (md) {
+  if (PERM[permKey]) {
+    var ps = PERM[permKey];
+    target = HOME + (ps === 'atlas' ? '#atlas' : '#content/' + ps);
+  } else if (md) {
     /* the page file itself (old decks, bookmarks, search results) */
     var slug = md[1].toLowerCase();
     target = HOME + '#content/' + (SLUG[slug] || slug);

@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "CV, DL & ML Optimization Guide"
+permalink: /notes/docs/optimization-guide/
+description: "Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines."
+---
+
 Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines.
 
 # Optimization 

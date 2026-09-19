@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Startup Guide: Edge AI Business"
+permalink: /notes/docs/startup-guide/
+description: "Edge AI business plan, fundraising in Germany, pitch decks, and growth strategies."
+---
+
 Edge AI business plan, fundraising in Germany, pitch decks, and growth strategies.
 
 # Edge AI Solutions: Local LLM Implementation Business Plan

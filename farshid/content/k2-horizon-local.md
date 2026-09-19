@@ -1,6 +1,7 @@
 ---
 layout: farshid_default
 title: "Running K2-Horizon Locally on Apple Silicon"
+permalink: /notes/docs/llm/k2-horizon-local/
 description: "Serve IFM's K2-Horizon (custom k2-horizon architecture GGUF) on Apple M3 via the MBZUAI-IFM llama.cpp fork, and wire it into Hermes Agent at 64K context."
 tags: [ai, llm, apple-silicon, llama.cpp, k2-horizon, hermes]
 hashtags: "#ai #llm #applesilicon #llamacpp #k2horizon #hermes"

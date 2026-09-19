@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "FSDL 2022 Notes"
+permalink: /notes/courses/full-stack-dl-2022/
+description: "Notes from Full Stack Deep Learning 2022 covering ML lifecycle, data management, and continual learning."
+---
+
 Notes from Full Stack Deep Learning 2022 covering ML lifecycle, data management, and continual learning.
 
 # Full Stack Deep Learning 2022

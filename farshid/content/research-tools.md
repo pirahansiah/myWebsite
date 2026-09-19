@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "The New Era of Research Tools — Comprehensive Presentation"
+permalink: /notes/slides/
+description: "The new era of research tools: from passive chat to autonomous agents, AI illustration, verifiable citation finders, second brains, and agent swarms — with a unified workflow for real papers."
+---
+
 # Research Tools — Talks, Presentations &amp; Keynotes
 
 Presentations and keynotes by Dr. Farshid Pirahansiah — practical talks on computer vision, edge AI, on-device LLMs, and research tooling.

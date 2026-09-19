@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Classification with Geometrical Features"
+permalink: /notes/pubs/papers/geometrical-topological/
+description: "Evaluation of classification techniques using enhanced geometrical and topological features."
+---
+
 Evaluation of classification techniques using enhanced geometrical and topological features.
 
 An_evaluation_of_classification_techniques_using_enhanced_Geometrical_Topological_Feature_Analysis

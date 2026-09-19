@@ -1,6 +1,7 @@
 ---
 layout: farshid_default
 title: "Solutions — AI Courses & Workshops"
+permalink: /notes/docs/solutions/
 description: "AI 2026 courses, workshops, and business solutions for production-ready products."
 tags: [ai, courses, workshops, deep-learning]
 hashtags: "#ai #courses #workshops #deeplearning"
@@ -24,6 +25,7 @@ markmap: |
   - LinkedIn Posts
   - Book Summaries
 ---
+
 > **Solutions — AI Courses & Workshops** — AI 2026 courses, workshops, and business solutions for production-ready products. — https://www.pirahansiah.com/notes/docs/solutions/
 AI 2026 courses, workshops, and business solutions for production-ready products.
 

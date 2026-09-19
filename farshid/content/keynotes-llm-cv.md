@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "LLMs Meet Computer Vision"
+permalink: /notes/pubs/keynotes/llm-cv/
+description: "Keynote on token economics, multimodal RAG, and practical CV+LLM applications."
+---
+
 Keynote on token economics, multimodal RAG, and practical CV+LLM applications.
 
 # Where LLMs Meet Computer Vision: Unlocking Multimodal AI

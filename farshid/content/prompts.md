@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "LLM Prompts for Knowledge Graph"
+permalink: /notes/prompts/
+description: "Write ONE short sentence (max 20 words) summarising a technical note. Title: {title} Key terms: {topterms} Headings: {headings} Reply with the sentence only, no labels."
+---
+
 # LLM Prompts for Knowledge Graph
 
 ## Summarize Note

@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "SEO for LLM-Powered Search"
+permalink: /notes/docs/seo-for-llms/
+description: "How to optimize websites for LLM-powered search engines using structured data and AI-friendly content."
+---
+
 How to optimize websites for LLM-powered search engines using structured data and AI-friendly content.
 
 # The New Era of SEO: Optimizing Websites for LLMs

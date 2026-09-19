@@ -1,6 +1,7 @@
 ---
 layout: farshid_default
 title: "Product — Embedded CV & Edge AI"
+permalink: /notes/product/
 description: "Embedded computer vision and edge AI systems portfolio."
 tags: [computer-vision, edge-ai, embedded-systems, product]
 hashtags: "#cv #edgeai #embeddedsystems #product"
@@ -22,6 +23,7 @@ markmap: |
   - C++ & Python
   - Shell & Vim
 ---
+
 > **Product — Embedded CV & Edge AI** — Embedded computer vision and edge AI systems portfolio. — https://www.pirahansiah.com/farshid/content/product.md
 Embedded computer vision and edge AI systems portfolio.
 

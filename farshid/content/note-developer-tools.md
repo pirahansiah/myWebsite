@@ -1,3 +1,12 @@
+---
+layout: farshid_default
+title: "Developer Tools & Setup Guide"
+permalink: /notes/docs/developer-tools/
+description: "Curated developer tools, shell essentials, Docker tips, and GitHub tricks."
+---
+
+# Developer Tools & Setup Guide
+
 Curated developer tools, shell essentials, Docker tips, and GitHub tricks.
 
 ## Recommended Tools

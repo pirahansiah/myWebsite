@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Cloud-Native with Kubernetes"
+permalink: /notes/courses/cloud-native/
+description: "Docker and Kubernetes fundamentals for cloud-native infrastructure."
+---
+
 Docker and Kubernetes fundamentals for cloud-native infrastructure.
 
 # Cloud-Native Infrastructure with Kubernetes

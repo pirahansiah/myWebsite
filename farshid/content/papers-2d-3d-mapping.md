@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "2D vs 3D Mapping for Moving Objects"
+permalink: /notes/pubs/papers/2d-3d-mapping/
+description: "Comparison of 2D and 3D mapping approaches for environment movement detection."
+---
+
 Comparison of 2D and 3D mapping approaches for environment movement detection.
 
 tags: [3d-mapping, object-detection, computer-vision, robotics]

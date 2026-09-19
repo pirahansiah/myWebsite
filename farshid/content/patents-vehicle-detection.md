@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Moving Vehicle Detection WO2021107761A1"
+permalink: /notes/pubs/patents/vehicle-detection/
+description: "Image processing method for detecting moving vehicles using CLAHE, Sobel, and geometric filtering."
+---
+
 Image processing method for detecting moving vehicles using CLAHE, Sobel, and geometric filtering.
 
 [spotify](https://podcasters.spotify.com/pod/show/pirahansiah/episodes/A-METHOD-FOR-DETECTING-A-MOVING-VEHICLE-WO2021107761A1-e2pk5mj)

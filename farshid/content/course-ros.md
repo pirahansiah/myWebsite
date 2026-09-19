@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "ROS: Robot Operating System"
+permalink: /notes/courses/ros/
+description: "ETH Zurich lecture on ROS architecture, navigation, simulation, and robot models."
+---
+
 ETH Zurich lecture on ROS architecture, navigation, simulation, and robot models.
 
 # ROS — Robot Operating System

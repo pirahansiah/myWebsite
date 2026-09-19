@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "TensorFlow Deployment Specialization"
+permalink: /notes/courses/tensorflow-deploy/
+description: "TensorFlow deployment: browser-based TF.js, device-based TF Lite, data pipelines, and optimization."
+---
+
 TensorFlow deployment: browser-based TF.js, device-based TF Lite, data pipelines, and optimization.
 
 # TensorFlow: Data and Deployment Specialization

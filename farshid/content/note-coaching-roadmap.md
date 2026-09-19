@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "CV Coaching & Teaching Roadmap"
+permalink: /notes/docs/coaching-roadmap/
+description: "Personalized computer vision coaching with a structured curriculum from fundamentals to edge AI."
+---
+
 Personalized computer vision coaching with a structured curriculum from fundamentals to edge AI.
 
 # Computer Vision Expertise: Teaching & Coaching Services

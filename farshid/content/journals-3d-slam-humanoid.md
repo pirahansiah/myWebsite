@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "3D SLAM and Humanoid Robot Linkages"
+permalink: /notes/pubs/journals/3d-slam-humanoid/
+description: "Survey of 3D SLAM techniques for localization, mapping, and humanoid robot applications."
+---
+
 Survey of 3D SLAM techniques for localization, mapping, and humanoid robot applications.
 
 3D_SLAM_Simultaneous_Localization_And_Mapping_Trends_And_Humanoid_Robot_Linkages

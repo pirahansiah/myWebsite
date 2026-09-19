@@ -1,6 +1,8 @@
 ---
-title: Reducing Token Usage in AI-Assisted Development
-description: Practical techniques to reduce token usage and cost when using AI assistants for software development.
+layout: farshid_default
+title: "Reducing Token Usage in AI-Assisted Development"
+permalink: /notes/slides/token-optimization/
+description: "Practical techniques to reduce token usage and cost when using AI assistants for software development."
 ---
 
 <div class="presentation-panel">

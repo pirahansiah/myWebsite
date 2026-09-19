@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Entropy-Based Multi-Threshold LPR"
+permalink: /notes/pubs/papers/license-plate-recognition/
+description: "Multi-threshold license plate recognition using entropy-based image segmentation."
+---
+
 Multi-threshold license plate recognition using entropy-based image segmentation.
 
 License_Plate_Recognition_with_Multi-Threshold_Based_on_Entropy

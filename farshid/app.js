@@ -76,6 +76,9 @@
     var c=$id('content');
     var h1m = txt.match(/^#\s+(.+)$/m);
     var h1 = h1m ? h1m[1].replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]/gu,'').trim() : '';
+    var fm = txt.match(/^---\s*\n([\s\S]*?)\n---/);            // front matter: the page's own title wins
+    var ft = fm && fm[1].match(/^title:\s*(.+)$/m);
+    if(ft) h1 = ft[1].replace(/^["']|["']$/g,'').trim();
     document.title = (h1?h1+' — ':'')+'Farshid Pirahansiah';
     c.innerHTML = '<article class="article">'+window.renderMarkdown(txt)+'</article>';
     c.querySelectorAll('h1,h2,h3').forEach(function(h,i){ if(!h.id) h.id = slug(h.textContent); });

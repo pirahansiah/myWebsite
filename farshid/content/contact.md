@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Contact"
+permalink: /contact/
+description: "Dr. Farshid Pirahansiah — computer vision & edge AI engineer."
+---
+
 # Contact
 
 Dr. Farshid Pirahansiah — computer vision & edge AI engineer.

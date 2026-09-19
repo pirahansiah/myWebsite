@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "QR Codes — Scan to Join & Refer"
+permalink: /qr/
+description: "Scan or tap QR codes to open Dr. Farshid Pirahansiah's referral and join links — OpenCode, Trade Republic, Scalable Capital, Wise and eToro — and share them with friends."
+---
+
 <div class="qr-hero">
   <h1>Scan &amp; Share</h1>
   <p>Point your phone camera at any code to open the link, or tap the Open button. QR codes can be downloaded and shared.</p>

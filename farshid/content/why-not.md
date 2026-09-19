@@ -1,8 +1,11 @@
 ---
 layout: farshid_default
 title: "Why This Site Exists"
+permalink: /notes/why-not/
 description: "Why this personal knowledge base exists, what it covers, and the principles behind how it is built and maintained."
 ---
+
+# Why This Site Exists
 
 Why this personal knowledge base exists, what it covers, and the principles behind how it is built and maintained.
 

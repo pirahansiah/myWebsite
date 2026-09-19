@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Agent Swarm"
+permalink: /notes/docs/swarm/
+description: "Agent Swarm — ask a question and watch a live swarm of research agents map and synthesize the whole pirahansiah.com knowledge base."
+---
+
 # Agent Swarm
 
 Agent Swarm — ask a question and watch a live swarm of research agents map and synthesize the whole pirahansiah.com knowledge base.

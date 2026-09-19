@@ -1,3 +1,12 @@
+---
+layout: farshid_default
+title: "Optical Flow: Challenges and Solutions"
+permalink: /notes/docs/optical-flow/
+description: "Comprehensive guide to optical flow challenges including illumination changes, occlusions, fast motion, and their solutions."
+---
+
+# Optical Flow: Challenges and Solutions
+
 Comprehensive guide to optical flow challenges including illumination changes, occlusions, fast motion, and their solutions.
 
 1. Illumination Variations

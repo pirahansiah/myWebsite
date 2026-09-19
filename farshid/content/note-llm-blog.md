@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Blog: AI, LLMs, and Computer Vision"
+permalink: /notes/docs/llm-blog/
+description: "Blog posts on RAG vs CAG, multi-agent architectures, AI's impact on jobs, and the future of software development."
+---
+
 Blog posts on RAG vs CAG, multi-agent architectures, AI's impact on jobs, and the future of software development.
 
 # 2025

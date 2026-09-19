@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Local Video Avatar Generator with Ollama"
+permalink: /notes/docs/llm-avatar/
+description: "Build a fully local video avatar generator using Ollama LLM, Piper TTS, and Wav2Lip without cloud services."
+---
+
 Build a fully local video avatar generator using Ollama LLM, Piper TTS, and Wav2Lip without cloud services.
 
 # Building a Local Video Avatar Generator Using Ollama and Open-Source Tools

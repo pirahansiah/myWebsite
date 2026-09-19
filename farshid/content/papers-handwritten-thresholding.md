@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Thresholding for Handwritten Segmentation"
+permalink: /notes/pubs/papers/handwritten-thresholding/
+description: "Comparison of PSNR and Otsu thresholding for handwritten image segmentation."
+---
+
 Comparison of PSNR and Otsu thresholding for handwritten image segmentation.
 
 Comparison_single_thresholding_method_for_handwritten_images_segmentation

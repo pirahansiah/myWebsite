@@ -1,6 +1,8 @@
 ---
-title: New LLM Optimization Methods — Run Local & Fast
-description: Practical methods for running LLMs locally and fast: quantization, KV-cache strategies, attention variants, and measured throughput on consumer hardware.
+layout: farshid_default
+title: "New LLM Optimization Methods — Run Local & Fast"
+permalink: /notes/slides/llm-optimization/
+description: "Practical methods for running LLMs locally and fast: quantization, KV-cache strategies, attention variants, and measured throughput on consumer hardware."
 ---
 
 <div class="presentation-panel">

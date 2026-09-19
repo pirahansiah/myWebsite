@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "MLX, CoreML, and Metal for Apple Silicon"
+permalink: /notes/docs/apple-ml/
+description: "Guide to Numba JIT, PyCUDA-to-Metal transition, CoreML conversion, and MLX framework on Apple Silicon."
+---
+
 Guide to Numba JIT, PyCUDA-to-Metal transition, CoreML conversion, and MLX framework on Apple Silicon.
 
 # Numba JIT Tutorial and PyCUDA with Apple Silicon Adaptation

@@ -1,7 +1,8 @@
 ---
 layout: farshid_default
-title: Sitemap & Page Summaries
-description: Complete navigation index with summaries of all site pages
+title: "Sitemap & Page Summaries"
+permalink: /notes/sitemap/
+description: "Complete navigation index with summaries of all site pages"
 markmap: |
   # Sitemap
   ## Product

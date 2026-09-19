@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Mind Map: Orchestrating AI Agents"
+permalink: /notes/docs/llm-agents/
+description: "Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs."
+---
+
 Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.
 
 <img src="/farshid/content/Mind_Map_Orchestrating_Agents.png" alt="Mind Map Orchestrating Agents" style="max-width: 100%; height: auto;">

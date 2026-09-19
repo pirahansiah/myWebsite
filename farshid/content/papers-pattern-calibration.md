@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Pattern Image for Camera Calibration"
+permalink: /notes/pubs/papers/pattern-calibration/
+description: "Analysis of how pattern image design impacts camera calibration accuracy and reliability."
+---
+
 Analysis of how pattern image design impacts camera calibration accuracy and reliability.
 
 Pattern_Image_Significance_for_Camera_Calibration

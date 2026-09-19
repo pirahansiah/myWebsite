@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "PSNR Threshold for Image Segmentation"
+permalink: /notes/pubs/journals/psnr-segmentation/
+description: "PSNR-based thresholding method for image segmentation in automated visual inspection."
+---
+
 PSNR-based thresholding method for image segmentation in automated visual inspection.
 
 PEAK_SIGNAL-TO-NOISE_RATIO_BASED_ON_THRESHOLD_METHOD_FOR_IMAGE_SEGMENTATION

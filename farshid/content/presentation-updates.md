@@ -1,6 +1,8 @@
 ---
-title: Hermes Agent — Recent Updates & Complete Feature Guide
-description: One deck covering every Hermes Agent feature with runnable examples: setup, bots, multi-agent, research, profiling, cron, messaging, group bots, artifacts.
+layout: farshid_default
+title: "Hermes Agent — Recent Updates & Complete Feature Guide"
+permalink: /notes/slides/updates/
+description: "One deck covering every Hermes Agent feature with runnable examples: setup, bots, multi-agent, research, profiling, cron, messaging, group bots, artifacts."
 ---
 
 <div class="presentation-panel">

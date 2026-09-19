@@ -1,6 +1,7 @@
 ---
 layout: farshid_default
 title: "CV, DL & ML Optimization Guide"
+permalink: /notes/docs/optimization/
 description: "Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines."
 tags: [optimization, deep-learning, machine-learning, computer-vision]
 hashtags: "#optimization #deeplearning #machinelearning #cv"
@@ -22,6 +23,7 @@ markmap: |
   - PyTorch, TensorFlow
   - ONNX Runtime, CoreML
 ---
+
 > **CV, DL & ML Optimization Guide** — Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines. — https://www.pirahansiah.com/notes/docs/optimization/
 Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines.
 

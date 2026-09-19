@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Real-Time Multi-Camera Vision Systems"
+permalink: /notes/docs/multi-camera/
+description: "Deep technical guide to building real-time multi-camera vision systems with heterogeneous processing and scaling to 100+ cameras."
+---
+
 Deep technical guide to building real-time multi-camera vision systems with heterogeneous processing and scaling to 100+ cameras.
 
 # Real-Time Multi-Camera Vision Systems

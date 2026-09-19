@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "C++ Quick Reference"
+permalink: /notes/docs/cpp/
+description: "Quick reference for C++ memory management, data structures, debugging tools, and shell basics."
+---
+
 Quick reference for C++ memory management, data structures, debugging tools, and shell basics.
 
 C++
