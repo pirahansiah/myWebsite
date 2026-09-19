@@ -110,8 +110,18 @@ prefer the `.md` form inside pages.
 
 ## Design system
 
-The site is themed as the Ubuntu 26 desktop (Yaru / GNOME) brought to the web, and
-the reading surface fills the display instead of sitting in a narrow centred column.
+The site is themed as the Ubuntu desktop brought to the web — Yaru / GNOME chrome
+on the Ubuntu 26.10 desktop, wallpaper included — and the reading surface fills the
+display instead of sitting in a narrow centred column.
+
+- **The page is a window, not a document.** `body::before` paints the Ubuntu 26.10
+  "Stonking Stingray" wallpaper (aubergine `#4d1436` with a lit fold `#7b4465` and a
+  folded dark corner `#2c0b1e`; sampled from the release artwork, colours only — the
+  stingray is Canonical's) as a fixed layer, `body` is padded by `--inset` /
+  `--inset-top`, and everything else lives in `.app-window`: a rounded, shadowed,
+  at-least-one-screen-tall surface. The header bar is the window's header bar and
+  rises to the top of the display on scroll. A deck (`body.deck-mode`) drops the
+  frame and the wallpaper and owns the screen.
 
 - **Tokens** live at the top of `farshid/style.css`: `--canvas` `#fafafa`, surfaces
   `#fff`/`#f6f5f4`/`#ebebeb`, ink `#1d1d1d`/`#5c5c5c`, `--accent` `#e95420` (Yaru

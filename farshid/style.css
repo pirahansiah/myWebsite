@@ -8,8 +8,11 @@
    - the reading surface fills the display: no narrow centred
      column, prose caps at a readable measure and then splits
      into columns on wide screens instead of leaving empty margins
-   - flat surfaces, depth from a hairline plus one soft shadow
-     (Yaru has no gradients, no glassy washes, no wallpapers)
+   - flat surfaces, depth from a hairline plus one soft shadow; the one
+     gradient in the system is the desktop wallpaper the window sits on
+     (Ubuntu 26.10, --wall-* below)
+   - the page is a WINDOW, not a document: it is inset from the display, at
+     least a screen tall, with the header bar as its header bar
    - chrome (header bar, sheet) may be translucent; text never
      sits on glass
    - no gradient text, no pastel blobs, no uppercase eyebrow
@@ -85,6 +88,18 @@
   --radius-sm: 9px;
   --radius-pill: 999px;
 
+  /* the frame: how far the wallpaper shows around the window */
+  --inset: clamp(12px, 1.6vw, 30px);
+  --inset-top: clamp(16px, 2vw, 42px);
+
+  /* Ubuntu 26.10 "Stonking Stingray" wallpaper, reduced to its colour structure:
+     aubergine ground, a folded dark corner, and the lit fold opening from the
+     top right (sampled from the release artwork: #4d1436 ground, #7b4465 lit
+     fold, #340a24 fold shadow). Colours only — the stingray is Canonical's. */
+  --wall-base: #4d1436;
+  --wall-light: #7b4465;
+  --wall-dark: #2c0b1e;
+
   /* geometry — the page is the window: it fills the display */
   --maxw: 100%;
   --gutter: clamp(18px, 2.2vw, 52px);
@@ -126,8 +141,33 @@ body {
   caret-color: var(--accent);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--canvas);
-  background-image: none;          /* Yaru is flat */
+  background-color: var(--wall-base);   /* behind the fixed wallpaper layer */
+  padding: var(--inset-top) var(--inset) var(--inset);
+}
+
+/* The wallpaper. Fixed, so the window scrolls over it the way a desktop does;
+   body::before instead of background-attachment (which iOS ignores). */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(115% 82% at 84% -14%, var(--wall-light) 0%, rgba(123, 68, 101, 0) 56%),
+    radial-gradient(92% 68% at 2% 108%, var(--wall-dark) 0%, rgba(44, 11, 30, 0) 60%),
+    conic-gradient(from 196deg at 72% 24%, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 17%, rgba(0, 0, 0, 0.22) 26%, rgba(0, 0, 0, 0) 50%),
+    linear-gradient(158deg, #5b1a41 0%, var(--wall-base) 46%, #350c24 100%);
+}
+
+/* ---------- the window on the desktop ---------- */
+.app-window {
+  background: var(--canvas);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  /* at least one screen tall, so a short page still fills the desktop frame */
+  min-height: calc(100vh - var(--inset-top) - var(--inset));
+}
+/* dvh where it exists: mobile URL bars must not leave a strip of wallpaper at the foot */
+@supports (height: 100dvh) {
+  .app-window { min-height: calc(100dvh - var(--inset-top) - var(--inset)); }
 }
 img, video, canvas { max-width: 100%; height: auto; }
 a { color: var(--accent-ink); text-underline-offset: 0.22em; text-decoration-thickness: 1px; }
@@ -143,16 +183,17 @@ a, button { -webkit-tap-highlight-color: transparent; }
 ::-webkit-scrollbar-thumb:hover { background-color: rgba(0, 0, 0, 0.45); background-clip: content-box; }
 ::-webkit-scrollbar-track { background: transparent; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
-h1, h2, h3, h4 { scroll-margin-top: 84px; text-wrap: balance; }
+h1, h2, h3, h4 { scroll-margin-top: calc(84px + var(--inset-top)); text-wrap: balance; }
 p { text-wrap: pretty; }
 
 /* ---------- top bar (GNOME header bar) ---------- */
 .topbar {
-  position: sticky; top: 0; z-index: 50;
+  position: sticky; top: 0; z-index: 50;   /* on scroll it rises to the top of the display */
   background: var(--glass);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   border-bottom: 1px solid var(--rule);
+  border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0;
 }
 .topbar-inner {
   max-width: none; margin: 0;
@@ -343,7 +384,10 @@ main { min-height: 60vh; padding-bottom: 64px; }
 body.has-consent-sheet { padding-bottom: 118px; }   /* the consent sheet never covers text */
 
 /* ---------- footer ---------- */
-.footer { border-top: 1px solid var(--rule); margin-top: 48px; background: var(--surface-3); }
+.footer {
+  border-top: 1px solid var(--rule); margin-top: 48px; background: var(--surface-3);
+  border-radius: 0 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px);
+}
 .footer-inner {
   max-width: none; margin: 0;
   padding: 34px var(--gutter);
@@ -453,7 +497,9 @@ body.has-consent-sheet { padding-bottom: 118px; }   /* the consent sheet never c
    Nothing above the slides: no title, breadcrumb, nav, ad slot or footer. The deck
    fills the viewport and the page itself does not scroll, so a swipe moves slides
    instead of rubber-banding the document. The consent sheet stays (it is required). */
-body.deck-mode { overflow: hidden; background: #fff; color: #1d1d1d; color-scheme: light; }
+body.deck-mode { overflow: hidden; background: #fff; color: #1d1d1d; color-scheme: light; padding: 0; }
+body.deck-mode::before { display: none; }
+body.deck-mode .app-window { background: #fff; border: 0; border-radius: 0; box-shadow: none; min-height: 0; }
 body.deck-mode .topbar,
 body.deck-mode .crumbs,
 body.deck-mode .page-foot,
@@ -528,6 +574,10 @@ body.deck-mode .presentation-panel { height: 100dvh; }
     --rule-strong: rgba(255, 255, 255, 0.28);
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 22px -16px rgba(0, 0, 0, 0.7);
     --shadow-lg: 0 2px 6px rgba(0, 0, 0, 0.4), 0 28px 52px -30px rgba(0, 0, 0, 0.8);
+    /* the wallpaper at night: same aubergine, dimmed, behind a dark window */
+    --wall-base: #3d1030;
+    --wall-light: #673754;
+    --wall-dark: #220817;
   }
   ::selection { background: rgba(240, 101, 58, 0.35); }
   ::-webkit-scrollbar-thumb { background-color: rgba(255, 255, 255, 0.3); }
