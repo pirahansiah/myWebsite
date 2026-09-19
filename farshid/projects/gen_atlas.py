@@ -28,8 +28,10 @@ def load(folder):
 entries = load(CONTENT)
 
 def group(slug):
-    if slug=='qr': return 'Connect & Share',None
+    if slug in ('qr','atlas','contact','privacy'): return None,None  # handled in Site Pages / Connect & Share
     if slug in ('research-tools','slides-token-optimization','keynotes-llm-cv'):
+        return 'Talks, Presentations & Keynotes',None
+    if slug.startswith('presentation-') or slug=='presentation':
         return 'Talks, Presentations & Keynotes',None
     if slug.startswith('books-'): return 'Publications','Book Chapters'
     if slug.startswith('journals-'): return 'Publications','Journal Articles'
@@ -45,9 +47,16 @@ def group(slug):
 buckets = {}  # (section, subgroup) -> list
 for slug,t in entries:
     sec, sub = group(slug)
+    if sec is None: continue
     buckets.setdefault((sec,sub), []).append((slug,t))
 
 SECTIONS = ['Publications','Courses','Notes & Guides','Talks, Presentations & Keynotes','Site Pages','Connect & Share','Projects']
+
+# Links inside atlas.md use in-app hash routes (#content/<slug>), NOT raw .md paths:
+# markdown is rendered client-side only, so a raw .md URL shows the source file when
+# opened in a new tab, opened from a search result, or clicked from outside the app.
+def content_url(slug):
+    return '#content/'+slug
 
 # publication subgroup order
 PUBSUB = ['Book Chapters','Journal Articles','Conference Papers','Patents','Keynotes','Profile']
@@ -57,26 +66,26 @@ def render():
     for sec in SECTIONS:
         if sec=='Site Pages':
             L.append('## Site Pages'); L.append('')
-            L.append('- [**🏠 Home — about &amp; overview**](/farshid/)')
-            L.append('- [**🕸️ Search Swarm — one search for the whole knowledge base**](/farshid/swarm/)')
-            L.append('- [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/qr/)')
-            L.append('- [**🗂️ Atlas — this index**](/farshid/atlas.md)')
-            L.append('- [**Talk: Reducing Token Usage in AI-Assisted Development**](/farshid/content/slides-token-optimization.md)')
-            L.append('- [**Keynote: LLMs Meet Computer Vision**](/farshid/content/keynotes-llm-cv.md)')
-            L.append('- [**Research Tools — talks &amp; keynotes hub**](/farshid/notes/slides/research-tools/)')
-            L.append('- [Contact](/farshid/contact.md)')
-            L.append('- [Privacy](/farshid/privacy.md)')
+            L.append('- [**🏠 Home — about &amp; overview**](/farshid/content/index.html)')
+            L.append('- [**🕸️ Search Swarm — one search for the whole knowledge base**](/farshid/content/swarm.html)')
+            L.append('- [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/content/qrcode.html)')
+            L.append('- [**🗂️ Atlas — this index**](#atlas)')
+            L.append('- [**Talk: Reducing Token Usage in AI-Assisted Development**](#content/slides-token-optimization)')
+            L.append('- [**Keynote: LLMs Meet Computer Vision**](#content/keynotes-llm-cv)')
+            L.append('- [**Research Tools — talks &amp; keynotes hub**](#content/research-tools)')
+            L.append('- [Contact](#content/contact)')
+            L.append('- [Privacy](#content/privacy)')
             L.append('')
             continue
         if sec=='Connect & Share':
             items=sorted(buckets.get(('Connect & Share',None),[]), key=lambda x:x[1].lower())
             L.append('## Connect & Share'); L.append('')
-            L.append('- [**🕸️ Search Swarm — one search for the whole knowledge base**](/farshid/swarm/)')
-            L.append('- [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/qr/)')
+            L.append('- [**🕸️ Search Swarm — one search for the whole knowledge base**](/farshid/content/swarm.html)')
+            L.append('- [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/content/qrcode.html)')
             L.append('')
             rest = [x for x in items if x[0]!='qr']
             for slug,t in rest:
-                L.append(f'- [{t}](/farshid/content/{slug}.md)')
+                L.append(f'- [{t}]({content_url(slug)})')
             L.append('')
             continue
         if sec=='Projects':
@@ -103,11 +112,11 @@ def render():
         L.append(f'## {sec}'); L.append('')
         if sec=='Talks, Presentations & Keynotes':
             L.append('### Presentations &amp; Slide Decks'); L.append('')
-            L.append('- [**The New Era of Research Tools**](/farshid/notes/slides/research-tools.md)')
-            L.append('- [**Hermes Agent for Research Assistance**](/farshid/notes/slides/presentation.md)')
-            L.append('- [**Hermes Agent for Big Computer Vision Projects**](/farshid/notes/slides/presentation-cv.md)')
-            L.append('- [**Hermes Agent — Recent Updates &amp; Complete Feature Guide**](/farshid/notes/slides/presentation-updates.md)')
-            L.append('- [**New LLM Optimization Methods — Run Local &amp; Fast**](/farshid/notes/slides/llm-optimization.md)')
+            L.append('- [**The New Era of Research Tools**](#content/presentation-research-tools)')
+            L.append('- [**Hermes Agent for Research Assistance**](#content/presentation)')
+            L.append('- [**Hermes Agent for Big Computer Vision Projects**](#content/presentation-cv)')
+            L.append('- [**Hermes Agent — Recent Updates &amp; Complete Feature Guide**](#content/presentation-updates)')
+            L.append('- [**New LLM Optimization Methods — Run Local &amp; Fast**](#content/presentation-llm-optimization)')
             L.append('')
         for sub in subs:
             items=sorted(buckets[(sec,sub)], key=lambda x:x[1].lower())
@@ -115,14 +124,14 @@ def render():
                 L.append(f'### {sub}'); L.append('')
             for slug,t in items:
                 if slug=='research-tools':
-                    L.append('- [**Research Tools — talks &amp; keynotes hub**](/farshid/notes/slides/research-tools/)')
+                    L.append(f'- [**Research Tools — talks &amp; keynotes hub**]({content_url(slug)})')
                 else:
-                    L.append(f'- [{t}](/farshid/content/{slug}.md)')
+                    L.append(f'- [{t}]({content_url(slug)})')
             L.append('')
     L.append('---'); L.append('')
     L.append('*Generated index — every page is a plain Markdown file under `content/`.*')
     return '\n'.join(L)
 
 out=render()
-open(os.path.join(ROOT,'atlas.md'),'w',encoding='utf-8').write(out)
+open(os.path.join(ROOT,'content','atlas.md'),'w',encoding='utf-8').write(out)
 print('atlas.md written,', sum(len(v) for v in buckets.values()), 'content pages grouped by type')

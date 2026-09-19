@@ -59,11 +59,11 @@ CAG skips the retrieval step by loading important information into the model's c
 
 ## April
 
-- **VSCode: C++, CUDA, Windows** — [Set up C++, CUDA in VS Code with nvcc, MSVC paths, IntelliSense, and debugging](https://www.pirahansiah.com/notes/docs/cuda/cuda-vscode/)
-- **The New Era of SEO: Optimizing Websites for LLMs** — [Structured data, Q&A formats, and authoritative citations for LLM-driven search](https://www.pirahansiah.com/notes/docs/seo/)
-- **The All-Local Video Avatar Generator** — [Create talking video avatars locally using Ollama LLM, Piper TTS, and Wav2Lip](https://www.pirahansiah.com/notes/docs/llm/avatar/)
-- **Computer Vision Coaching and Tutoring Service** — [Personalized online tutoring from fundamentals to advanced techniques](https://www.pirahansiah.com/notes/docs/coaching/)
-- **3D Vision & Real-Time Multi-Camera** — [Converting 2D depth maps to 3D point clouds in real-time with multi-camera sync](https://www.pirahansiah.com/notes/docs/cv/3d/)
+- **VSCode: C++, CUDA, Windows** — [Set up C++, CUDA in VS Code with nvcc, MSVC paths, IntelliSense, and debugging](https://www.pirahansiah.com/farshid/content/note-cuda-vscode.md)
+- **The New Era of SEO: Optimizing Websites for LLMs** — [Structured data, Q&A formats, and authoritative citations for LLM-driven search](https://www.pirahansiah.com/farshid/content/note-seo-for-llms.md)
+- **The All-Local Video Avatar Generator** — [Create talking video avatars locally using Ollama LLM, Piper TTS, and Wav2Lip](https://www.pirahansiah.com/farshid/content/note-llm-avatar.md)
+- **Computer Vision Coaching and Tutoring Service** — [Personalized online tutoring from fundamentals to advanced techniques](https://www.pirahansiah.com/farshid/content/note-coaching-roadmap.md)
+- **3D Vision & Real-Time Multi-Camera** — [Converting 2D depth maps to 3D point clouds in real-time with multi-camera sync](https://www.pirahansiah.com/farshid/content/note-3d-vision.md)
 
 ---
 
@@ -71,8 +71,8 @@ CAG skips the retrieval step by loading important information into the model's c
 
 Leveraging CUDA for High-Performance GPU Computing with PyCUDA and Numba.
 
-- [Numba JIT Tutorial](/notes/docs/cuda/numba) — Speed up Python with `@jit(nopython=True)`
-- [PyCUDA Kernel Explanation](/notes/docs/cuda/pycuda) — Run CUDA C kernels from Python
+- [Numba JIT Tutorial](/farshid/content/note-numba.md) — Speed up Python with `@jit(nopython=True)`
+- [PyCUDA Kernel Explanation](/farshid/content/note-pycuda.md) — Run CUDA C kernels from Python
 
 ---
 

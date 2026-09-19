@@ -3,7 +3,7 @@ Book exploring multimodal AI combining computer vision with large language model
 tags: [computer-vision, llm, multimodal, rag]
 hashtags: "#cv #llm #multimodal #rag"
 
-[Computer Vision Meets LLM](/notes/pubs/books/ai/cv-meets-llm/)
+[Computer Vision Meets LLM](/farshid/content/books-cv-meets-llm.md)
 
 # AI computer vision locally LLMs on device 
 
@@ -50,7 +50,7 @@ OpenAI's GPT-4 Turbo with Vision capabilities offers powerful tools for processi
 
 #### **c. Token Cost Management**
 - **Tools**: Utilize AI Model Cost Calculators to estimate and manage token costs effectively.
-  - [AI Model Cost Calculator](/notes/docs/projects/ai-cost-calculator/)
+  - [AI Model Cost Calculator](/farshid/content/computer-vision.md)
 
 ### **4. Implementing Retrieval-Augmented Generation (RAG) Systems with Multimodal Data**
 
@@ -197,7 +197,7 @@ As AI continues to evolve, the symbiosis between visual and textual data process
 ---
 
 Computer  Vision Meet LLM: Multi agent swarm with RAG for image and videos
-https://www.pirahansiah.com/notes/docs/projects/ai-cost-calculator/
+https://www.pirahansiah.com/farshid/content/computer-vision.md
 https://community.openai.com/t/how-do-i-calculate-image-tokens-in-gpt4-vision/492318
 https://platform.openai.com/docs/guides/vision
 Multi agent swarm with RAG for image and videos

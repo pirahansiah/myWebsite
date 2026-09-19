@@ -8,7 +8,7 @@
   var SECTIONS = [ // nav items: ONLY these three (per user)
     { label:'Home',          icon:'🏠', type:'hash', file:'home', anchor:'top' },
     { label:'Atlas',         icon:'🗂️', type:'hash', file:'atlas', anchor:'top' },
-    { label:'Search Swarm',  icon:'🕸️', type:'link', href:'/farshid/swarm/' },
+    { label:'Search Swarm',  icon:'🕸️', type:'link', href:'/farshid/content/swarm.html' },
   ];
 
   function $id(i){ return document.getElementById(i); }
@@ -26,11 +26,10 @@
 
   function renderMarkdownRoute(file, anchor){
     var path;
-    // permanent absolute paths — the site lives under /farshid/
-    if (file==='home' || file==='atlas') path='/farshid/'+file+'.md';
-    else if (file==='contact' || file==='privacy') path='/farshid/'+file+'.md';
+    // permanent absolute paths — everything lives under /farshid/content/
+    if (file==='atlas' || file==='contact' || file==='privacy') path='/farshid/content/'+file+'.md';
     else if (file.indexOf('content/')===0) path='/farshid/'+file+'.md';
-    else if (file.indexOf('/')>=0) path=file+'.md';       // already absolute
+    else if (file.indexOf('/')>=0) path='/farshid/'+file+'.md';   // absolute (e.g. projects/…/README)
     else path='/farshid/content/'+file+'.md';
     fetch(path)
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
@@ -87,7 +86,7 @@
   }
   function bootDeck(panel){
     panel.__deck = new Reveal(panel, {
-      embedded: true, hash: true, center: true, touch: true,
+      embedded: true, hash: false, center: true, touch: true,
       controls: true, progress: true, slideNumber: 'c/t',
       width: 1120, height: 760, margin: 0.06, minScale: 0.2, maxScale: 2.0
     });

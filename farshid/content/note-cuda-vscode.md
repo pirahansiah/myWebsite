@@ -2,7 +2,7 @@ Step-by-step guide to configure VS Code for CUDA C++ development on Windows with
 
 # Simple Setting Up a CUDA Development Environment in VS Code in Windows 
 
-https://www.pirahansiah.com/notes/docs/cuda/cuda-vscode/ 
+https://www.pirahansiah.com/farshid/content/note-cuda-vscode.md 
 ![VSCode: C++, CUDA, Windows](/farshid/content/VSCodeCUDAwindows.png)
 
 🚀 Setting Up a CUDA Development Environment in VS Code (Windows)

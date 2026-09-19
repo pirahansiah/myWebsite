@@ -22,6 +22,12 @@
   }
   function renderMarkdown(src){
     src = src.replace(/\r\n?/g,'\n');
+    // strip a leading YAML front matter block (leftover from Jekyll / Google Sites
+    // exports). This site has no build step, so it would otherwise show up as
+    // visible "layout:/title:" text at the top of the rendered page.
+    src = src.replace(/^\s*---[ \t]*\n([\s\S]*?)\n---[ \t]*(?:\n|$)/, function(m, body){
+      return /^[A-Za-z0-9_.-]+[ \t]*:/m.test(body) ? '' : m;
+    });
     var lines = src.split('\n');
     var html = '', i = 0, listStack = [];
     function inList(){return listStack.length>0;}

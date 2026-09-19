@@ -7,7 +7,7 @@ AI models like GPT-4 Turbo, Google Gemini 1.5 Pro, and Claude 3 Opus offer advan
 ### AI Model Cost Calculator: Optimizing Costs for Computer Vision and Multimodal AI Solutions
 
 My AI Model Cost Calculator with the latest pricing for GPT-4 Turbo, Google Gemini 1.5 Pro, and Claude 3 Opus! 💡 Calculate text and image processing costs easily with real-time estimates. Check it out! #AI #MachineLearning #CostCalculator #GPT4 #Claude #GoogleGemini
-- [AI Model Cost Calculator: Optimizing Costs for Computer Vision and Multimodal AI Solutions](/notes/docs/projects/ai-cost-calculator/)
+- [AI Model Cost Calculator: Optimizing Costs for Computer Vision and Multimodal AI Solutions](/farshid/content/computer-vision.md)
 
 ### How image to token
 

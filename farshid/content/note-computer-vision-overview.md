@@ -29,51 +29,51 @@ I am an accomplished Research Engineer with 12+ years of experience, including a
 - **3 Patents** (Face Image Augmentation, Vehicle Detection, Facial Analysis Advertising)
 - **2 Book Chapters** (Springer)
 - **6 Journal Papers** | **11 Conference Papers**
-- [Full Portfolio](/notes/docs/resources/)
+- [Full Portfolio](/farshid/content/computer-vision.md)
 
 ## Consulting Services
 
-I offer personalized coaching, tutoring, and consulting in computer vision and AI. [Learn more](/notes/docs/coaching/).
+I offer personalized coaching, tutoring, and consulting in computer vision and AI. [Learn more](/farshid/content/note-coaching-roadmap.md).
 
 ---
 
 ## Content Hub
 
 ### Computer Vision & 3D
-- [3D Vision & Multi-Camera Systems](/notes/docs/cv/3d/) — Point clouds, depth sensing, camera sync
-- [Optical Flow: Challenges & Solutions](/notes/docs/cv/optical-flow/) — Illumination, occlusion, fast motion
-- [Real-Time Multi-Camera Systems](/notes/docs/cv/multi-camera/) — Scaling to 100+ cameras
+- [3D Vision & Multi-Camera Systems](/farshid/content/note-3d-vision.md) — Point clouds, depth sensing, camera sync
+- [Optical Flow: Challenges & Solutions](/farshid/content/note-optical-flow.md) — Illumination, occlusion, fast motion
+- [Real-Time Multi-Camera Systems](/farshid/content/note-multi-camera.md) — Scaling to 100+ cameras
 
 ### AI & LLMs
-- [Advanced LLM Concepts](/notes/docs/llm/llm-concepts/) — RAG, embeddings, multimodal
-- [Orchestrating AI Agents](/notes/docs/llm/agents/) — Multi-agent systems
-- [Blog: AI & LLMs](/notes/docs/llm/blog/) — RAG vs CAG, multi-agent architectures
+- [Advanced LLM Concepts](/farshid/content/note-llm-concepts.md) — RAG, embeddings, multimodal
+- [Orchestrating AI Agents](/farshid/content/note-llm-agents.md) — Multi-agent systems
+- [Blog: AI & LLMs](/farshid/content/note-llm-blog.md) — RAG vs CAG, multi-agent architectures
 
 ### CUDA & GPU
-- [Numba JIT Tutorial](/notes/docs/cuda/numba/) — Python performance optimization
-- [PyCUDA Kernel Explanation](/notes/docs/cuda/pycuda/) — CUDA from Python
-- [CUDA in VS Code on Windows](/notes/docs/cuda/cuda-vscode/) — Dev environment setup
-- [MLX, CoreML & Metal](/notes/docs/cuda/apple-ml/) — Apple Silicon ML
+- [Numba JIT Tutorial](/farshid/content/note-numba.md) — Python performance optimization
+- [PyCUDA Kernel Explanation](/farshid/content/note-pycuda.md) — CUDA from Python
+- [CUDA in VS Code on Windows](/farshid/content/note-cuda-vscode.md) — Dev environment setup
+- [MLX, CoreML & Metal](/farshid/content/note-apple-ml.md) — Apple Silicon ML
 
 ### Programming & Tools
-- [C++ Quick Reference](/notes/docs/cpp/) — Memory, STL, debugging
-- [Python Configuration & Tips](/notes/docs/python/) — Config management, pybind11, Cython
-- [Developer Tools & Setup](/notes/docs/dev-tools/) — Docker, GitHub, CLI tools
-- [Shell & Vim Reference](/notes/docs/shell-vim/) — Terminal essentials
+- [C++ Quick Reference](/farshid/content/note-cpp.md) — Memory, STL, debugging
+- [Python Configuration & Tips](/farshid/content/note-python-configuration.md) — Config management, pybind11, Cython
+- [Developer Tools & Setup](/farshid/content/note-developer-tools.md) — Docker, GitHub, CLI tools
+- [Shell & Vim Reference](/farshid/content/note-shell-vim.md) — Terminal essentials
 
 ### Optimization & ML
-- [CV, DL & ML Optimization](/notes/docs/optimization/) — Quantization, pruning, frameworks
-- [Prompt Engineering Templates](/notes/docs/prompts/) — LLM prompt patterns
+- [CV, DL & ML Optimization](/farshid/content/note-optimization-guide.md) — Quantization, pruning, frameworks
+- [Prompt Engineering Templates](/farshid/content/note-prompt-templates.md) — LLM prompt patterns
 
 ### Business & Career
-- [Startup Guide](/notes/docs/startup/) — Edge AI business, fundraising, pitch decks
-- [SEO for LLM-Powered Search](/notes/docs/seo/) — Structured data, AI visibility
-- [Local Video Avatar Generator](/notes/docs/llm/avatar/) — Ollama + Wav2Lip tutorial
-- [Top LinkedIn Posts 2024](/notes/docs/linkedin/) — Camera calibration, C++, robotics
+- [Startup Guide](/farshid/content/note-startup-guide.md) — Edge AI business, fundraising, pitch decks
+- [SEO for LLM-Powered Search](/farshid/content/note-seo-for-llms.md) — Structured data, AI visibility
+- [Local Video Avatar Generator](/farshid/content/note-llm-avatar.md) — Ollama + Wav2Lip tutorial
+- [Top LinkedIn Posts 2024](/farshid/content/note-linkedin-2024.md) — Camera calibration, C++, robotics
 
 ### Resources
-- [Portfolio & Publications](/notes/docs/resources/) — Patents, books, papers
-- [Curated Links](/notes/docs/links/) — Tools, tutorials, reading
+- [Portfolio & Publications](/farshid/content/computer-vision.md) — Patents, books, papers
+- [Curated Links](/farshid/content/computer-vision.md) — Tools, tutorials, reading
 
 ---
 

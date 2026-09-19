@@ -1,7 +1,70 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>404 — Page not found</title>
-<script>location.replace('/farshid/index.html#atlas');</script>
+<title>Redirecting — pirahansiah.com</title>
+<script>
+/* Any URL that reaches this page is routed into the single-page app, which is the
+   only place markdown gets rendered. Raw .md files are served by GitHub Pages as
+   text/markdown (source code), so stale/bookmarked/crawled .md links are sent to
+   the rendered page instead of dumping the file. */
+(function(){
+  var HOME = '/farshid/content/index.html';
+
+  /* old slide names -> current slugs */
+  var SLUG = {
+    'llm-optimization'   : 'presentation-llm-optimization',
+    'research-tools'     : 'presentation-research-tools',
+    'presentation'       : 'presentation',
+    'presentation-cv'    : 'presentation-cv',
+    'presentation-updates': 'presentation-updates'
+  };
+
+  /* old root-level page paths -> current target (true = html page, not markdown) */
+  var OLD = {
+    '/qr'            : '/farshid/content/qrcode.html',
+    '/crypto'        : 'crypto',
+    '/metamask'      : 'metamask',
+    '/game'          : 'game',
+    '/solana-games'  : 'solana-games',
+    '/privacy'       : 'privacy',
+    '/terms'         : 'terms',
+    '/wiki'          : 'wiki',
+    '/product'       : 'product',
+    '/solutions'     : 'solutions',
+    '/prompts'       : 'prompts',
+    '/use-cases'     : 'use-cases',
+    '/why-not'       : 'why-not',
+    '/menus'         : 'menus',
+    '/sitemap'       : 'menus',
+    '/notes/docs/product'   : 'product',
+    '/notes/docs/solutions' : 'solutions'
+  };
+
+  var path = decodeURIComponent(location.pathname || '').replace(/\/+$/, '');
+  var hash = location.hash || '';
+  var target = null;
+
+  var md = path.match(/\/([^\/]+)\.md$/i);
+  var legacy = path.replace(/^\/farshid/, '');   /* /farshid/crypto -> /crypto */
+
+  if (md) {
+    /* raw markdown URL (old slide decks, bookmarks, search results) */
+    var slug = md[1].toLowerCase();
+    target = HOME + '#content/' + (SLUG[slug] || slug);
+  } else if (path === '' || path === '/' || path === '/farshid' || path === '/farshid/content') {
+    target = HOME + hash;
+  } else if (OLD[legacy]) {
+    var v = OLD[legacy];
+    target = (v.charAt(0) === '/') ? v : HOME + '#content/' + v;
+  } else if (/^\/notes(\/|$)/.test(legacy)) {
+    target = HOME + '#atlas';              /* legacy Google Sites paths */
+  } else {
+    target = HOME + '#atlas';              /* unknown: the Atlas is the index */
+  }
+
+  location.replace(target);
+})();
+</script>
 </head>
-<body><h1>404</h1><p><a href="/farshid/index.html#atlas">Return to the Atlas</a></p></body></html>
+<body><h1>Page not found</h1><p><a href="/farshid/content/index.html#atlas">Go to the Atlas</a></p></body></html>

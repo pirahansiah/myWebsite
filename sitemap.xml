@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Only real HTML entry points are listed. Markdown sources are fetched and rendered
+     by the app itself; listing raw .md URLs here advertised source files to crawlers,
+     so anyone clicking a search result saw markdown text instead of the page. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://pirahansiah.com/</loc></url>
   <url><loc>https://pirahansiah.com/farshid/</loc></url>
-  <url><loc>https://pirahansiah.com/farshid/index.html#atlas</loc></url>
-  <url><loc>https://pirahansiah.com/farshid/qr/</loc></url>
-  <url><loc>https://pirahansiah.com/farshid/swarm/</loc></url>
-  <url><loc>https://pirahansiah.com/farshid/contact.md</loc></url>
-  <url><loc>https://pirahansiah.com/farshid/privacy.md</loc></url>
-  <url><loc>https://pirahansiah.com/farshid/notes/slides/research-tools.md</loc></url>
-  <url><loc>https://pirahansiah.com/farshid/notes/slides/presentation.md</loc></url>
-  <url><loc>https://pirahansiah.com/farshid/notes/slides/presentation-cv.md</loc></url>
-  <url><loc>https://pirahansiah.com/farshid/notes/slides/presentation-updates.md</loc></url>
-  <url><loc>https://pirahansiah.com/farshid/notes/slides/llm-optimization.md</loc></url>
+  <url><loc>https://pirahansiah.com/farshid/content/index.html</loc></url>
+  <url><loc>https://pirahansiah.com/farshid/content/qrcode.html</loc></url>
+  <url><loc>https://pirahansiah.com/farshid/content/swarm.html</loc></url>
 </urlset>
