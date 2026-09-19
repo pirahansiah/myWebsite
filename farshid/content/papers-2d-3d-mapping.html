@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+'<meta name="theme-color" content="#EEF0F4">
+<title>Paper: 2D versus 3D Map for Environment Movement Objects · Farshid Pirahansiah</title>
+<meta name="description" content="Comparison of 2D and 3D mapping approaches for environment movement detection.">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/papers-2d-3d-mapping.html">
+<link rel="alternate" type="text/markdown" href="/farshid/content/papers-2d-3d-mapping.md" title="Markdown source">
+<link rel="icon" href="/farshid/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/papers-2d-3d-mapping.html">
+<meta property="og:title" content="Paper: 2D versus 3D Map for Environment Movement Objects">
+<meta property="og:description" content="Comparison of 2D and 3D mapping approaches for environment movement detection.">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="llms" href="/llms.txt">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"ScholarlyArticle","@id":"https://pirahansiah.com/farshid/content/papers-2d-3d-mapping.html#article","url":"https://pirahansiah.com/farshid/content/papers-2d-3d-mapping.html","name":"Paper: 2D versus 3D Map for Environment Movement Objects","headline":"Paper: 2D versus 3D Map for Environment Movement Objects","description":"Comparison of 2D and 3D mapping approaches for environment movement detection.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/papers-2d-3d-mapping.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"Paper: 2D versus 3D Map for Environment Movement Objects","item":"https://pirahansiah.com/farshid/content/papers-2d-3d-mapping.html"}]}]}</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-item" href="/farshid/content/index.html">Home</a>
+<a class="nav-item" href="/farshid/content/atlas.html">Atlas</a>
+<a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+</nav></div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#publications">Publications</a></nav>
+<article class="article">
+
+<p>Comparison of 2D and 3D mapping approaches for environment movement detection.</p>
+<p>tags: [3d-mapping, object-detection, computer-vision, robotics]
+hashtags: "#3dmapping #objectdetection #cv #robotics"</p>
+<p>My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects</p>
+<p>https://www.pirahansiah.com/notes/pubs/papers/conference-paper_2D_versus_3D_Map_for_Environment_Movement_Objects</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Paper-2D-versus-3D-Map-for-Environment-Movement-Objects-e2pruii">spotify</a></p>
+<p><a href="http://www.ftsm.ukm.my/cait2012/images/Program%20Schedule%20CAIT2012.pdf">PDF Download My Conference Paper</a></p>
+<p><img alt="My Conference Paper  My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects " src="/farshid/content/2d-3d-map-movement.png" /></p>
+<p><img src="/farshid/content/2d-3d-map-movement.png" alt="My Conference Paper: My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects "  style="max-width: 100%; height: auto;"></p>
+<h1 id="paper-2d-versus-3d-map-for-environment-movement-objects">Paper: 2D versus 3D Map for Environment Movement Objects</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li><strong>Main Focus</strong>: The use of 2D vs. 3D mapping in tracking environmental movement objects.</li>
+<li><strong>Key Applications</strong>:<ul>
+<li>Autonomous systems</li>
+<li>Robotics</li>
+</ul>
+</li>
+<li><strong>Challenges</strong>:<ul>
+<li>Object rotation issues in 2D mapping</li>
+<li>Scaling problems in 2D environments</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-materials-and-methods">2. Materials and Methods</h2>
+<ul>
+<li><strong>3D Mapping Algorithms</strong>:<ul>
+<li>Introduces algorithms that manage:</li>
+<li>Scale</li>
+<li>Position</li>
+<li>Orientation</li>
+</ul>
+</li>
+<li><strong>Data Capture</strong>:<ul>
+<li>Details the <strong>camera</strong> and <strong>sensor systems</strong> used to capture movement data.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-experiments-and-discussions">3. Experiments and Discussions</h2>
+<ul>
+<li><strong>System Performance Comparison</strong>:<ul>
+<li>Evaluates <strong>2D vs. 3D mapping systems</strong> based on:</li>
+<li>Accuracy</li>
+<li>Adaptability to different conditions</li>
+<li>Results indicate significant <strong>improvement in accuracy</strong> with the 3D system.</li>
+</ul>
+</li>
+<li><strong>Test Conditions</strong>:<ul>
+<li>Different test scenarios were designed to assess:</li>
+<li>Real-world movement</li>
+<li>Environmental challenges</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-conclusion">4. Conclusion</h2>
+<ul>
+<li><strong>Key Findings</strong>:<ul>
+<li>3D mapping shows <strong>superior performance</strong> in real-world tracking compared to 2D.</li>
+<li>Better handling of environmental challenges such as rotation and scaling.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-table-of-comparison">5. Table of Comparison</h2>
+<ul>
+<li><strong>Comparison Parameters</strong>:<ul>
+<li>Accuracy rates</li>
+<li>Time efficiency</li>
+</ul>
+</li>
+<li><strong>Methods Evaluated</strong>:<ul>
+<li>2D Mapping</li>
+<li>3D Mapping</li>
+<li>Hybrid approaches</li>
+</ul>
+</li>
+</ul>
+</article>
+<p class="page-foot">Source: <a href="/farshid/content/papers-2d-3d-mapping.md">content/papers-2d-3d-mapping.md</a> · Last modified 2026-09-19 · <a href="/farshid/content/atlas.html">All pages</a></p>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. Farshid Pirahansiah</div>
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas.html">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/qrcode.html">Scan &amp; Share</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+</body>
+</html>

@@ -16,8 +16,8 @@
 .qr-btn.open { background: var(--accent); color: #fff; }
 .qr-btn.open:hover { background: #a83809; }
 .qr-btn.copy { background: rgba(200,65,10,0.12); color: var(--accent); }
-.qr-note { background: rgba(200,65,10,0.06); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 10px; padding: 12px 14px; font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0 0 22px; }
-.qr-addr { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; line-height: 1.5; word-break: break-all; color: var(--accent2); background: rgba(0,0,0,0.045); border-radius: 8px; padding: 7px 8px; margin: 2px 0 8px; -webkit-user-select: all; user-select: all; cursor: text; }
+.qr-note { background: var(--surface-2); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; font-size: 13.5px; line-height: 1.55; color: var(--ink-2); margin: 0 0 22px; max-width: 68ch; }
+.qr-addr { font-family: var(--mono); font-size: 12.5px; line-height: 1.55; word-break: break-all; color: var(--ink); background: var(--surface-2); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; margin: 2px 0 8px; -webkit-user-select: all; user-select: all; cursor: text; font-variant-numeric: tabular-nums; }
 .qr-addr-note { font-size: 12px; color: var(--muted); margin: 10px 0 0; }
 </style>
 

@@ -5,10 +5,17 @@
 (function(){
   'use strict';
   var DEFAULT = 'home';
+  // Drawn 16px icons, 1.5 stroke beside 500-weight text, currentColor so CSS owns
+  // their states. (Emoji standing in for an icon set is a tell, not an icon system.)
+  var ICONS = {
+    home: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.2 7.1 8 2.4l5.8 4.7V13a1 1 0 0 1-1 1h-3v-3.6H6.2V14h-3a1 1 0 0 1-1-1z"/></svg>',
+    atlas: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="2.4" y="2.4" width="4.6" height="4.6" rx="1.2"/><rect x="9" y="2.4" width="4.6" height="4.6" rx="1.2"/><rect x="2.4" y="9" width="4.6" height="4.6" rx="1.2"/><rect x="9" y="9" width="4.6" height="4.6" rx="1.2"/></svg>',
+    search: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="7.2" cy="7.2" r="4.3"/><path d="m10.5 10.5 3.1 3.1"/></svg>'
+  };
   var SECTIONS = [ // nav items: ONLY these three (per user)
-    { label:'Home',          icon:'🏠', type:'hash', file:'home', anchor:'top' },
-    { label:'Atlas',         icon:'🗂️', type:'hash', file:'atlas', anchor:'top' },
-    { label:'Search Swarm',  icon:'🕸️', type:'link', href:'/farshid/content/swarm.html' },
+    { label:'Home',          icon:'home',   type:'hash', file:'home', anchor:'top' },
+    { label:'Atlas',         icon:'atlas',  type:'link', href:'/farshid/content/atlas.html' },
+    { label:'Search Swarm',  icon:'search', type:'link', href:'/farshid/content/swarm.html' },
   ];
 
   function $id(i){ return document.getElementById(i); }
@@ -114,9 +121,8 @@
         var mp=m[1].replace(/\.[mM][dD]$/,'').replace(/^\/farshid\//,'').replace(/^\/content\//,'').replace(/^\//,'');
         var targetAnchor=m[2]||'';
         a.addEventListener('click', function(e){ e.preventDefault(); setHash(mp+(targetAnchor?':'+slug(targetAnchor):'')); });
-      } else {
-        a.setAttribute('target','_blank');
       }
+      // internal absolute paths (canonical static pages, qr/swarm tools) navigate in the same tab
     });
   }
 
@@ -165,7 +171,7 @@
       if(s.type==='link'){ key=('link:'+s.href); }
       else { key=s.file+'|'+(s.anchor&&s.anchor!=='top'?slug(s.anchor):''); }
       var href = s.type==='link' ? s.href : ('#'+s.file+(s.anchor&&s.anchor!=='top'?':'+slug(s.anchor):''));
-      html += '<a class="nav-item" data-key="'+key+'" href="'+href+'"><span class="nav-icon">'+(s.icon||'')+'</span>'+(s.icon?' ': '')+s.label+'</a>';
+      html += '<a class="nav-item" data-key="'+key+'" href="'+href+'"><span class="nav-icon">'+(ICONS[s.icon]||'')+'</span>'+s.label+'</a>';
     });
     nav.innerHTML=html;
     nav.querySelectorAll('a').forEach(function(a){

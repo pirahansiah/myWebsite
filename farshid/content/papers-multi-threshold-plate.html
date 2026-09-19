@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+'<meta name="theme-color" content="#EEF0F4">
+<title>Multi-threshold Approach for License Plate Recognition System · Farshid Pirahansiah</title>
+<meta name="description" content="Adaptive multi-threshold approach using MLP for license plate recognition systems.">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/papers-multi-threshold-plate.html">
+<link rel="alternate" type="text/markdown" href="/farshid/content/papers-multi-threshold-plate.md" title="Markdown source">
+<link rel="icon" href="/farshid/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/papers-multi-threshold-plate.html">
+<meta property="og:title" content="Multi-threshold Approach for License Plate Recognition System">
+<meta property="og:description" content="Adaptive multi-threshold approach using MLP for license plate recognition systems.">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="llms" href="/llms.txt">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"ScholarlyArticle","@id":"https://pirahansiah.com/farshid/content/papers-multi-threshold-plate.html#article","url":"https://pirahansiah.com/farshid/content/papers-multi-threshold-plate.html","name":"Multi-threshold Approach for License Plate Recognition System","headline":"Multi-threshold Approach for License Plate Recognition System","description":"Adaptive multi-threshold approach using MLP for license plate recognition systems.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/papers-multi-threshold-plate.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"Multi-threshold Approach for License Plate Recognition System","item":"https://pirahansiah.com/farshid/content/papers-multi-threshold-plate.html"}]}]}</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-item" href="/farshid/content/index.html">Home</a>
+<a class="nav-item" href="/farshid/content/atlas.html">Atlas</a>
+<a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+</nav></div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#publications">Publications</a></nav>
+<article class="article">
+
+<p>Adaptive multi-threshold approach using MLP for license plate recognition systems.</p>
+<p>Multi-threshold_Approach_for_License_Plate_Recognition_System</p>
+<p>https://www.pirahansiah.com/notes/pubs/papers/Multi-threshold_Approach_for_License_Plate_Recognition_System</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-Multi-threshold-Approach-for-License-Plate-Recognition-System-e2ps2fe">spotify</a></p>
+<p><a href="http://waset.org/publications/3636">PDF Download My Conference Paper</a></p>
+<p><img alt="My Conference Paper  Multi-threshold Approach for License Plate Recognition System " src="/farshid/content/multi-threshold-license-plate.png" /></p>
+<p><img src="/farshid/content/multi-threshold-license-plate.png" alt="My Conference Paper:  Multi-threshold Approach for License Plate Recognition System"  style="max-width: 100%; height: auto;"></p>
+<h1 id="multi-threshold-approach-for-license-plate-recognition-system">Multi-threshold Approach for License Plate Recognition System</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li><strong>Objective</strong>: Propose an adaptive multi-threshold approach for image segmentation, specifically in object detection.</li>
+<li><strong>Application</strong>: Malaysian License Plate Recognition (LPR) system.</li>
+<li><strong>Challenge</strong>: Different types of license plates require varied detection techniques depending on the country.</li>
+</ul>
+<h2 id="2-adaptive-multi-threshold-approach">2. Adaptive Multi-threshold Approach</h2>
+<ul>
+<li><strong>Key Method</strong>:<ul>
+<li>Multi Layer Perceptron (MLP) trained by backpropagation to optimize threshold values.</li>
+<li>Finds optimum threshold values by analyzing the peak value from a graph of object count versus threshold ranges.</li>
+</ul>
+</li>
+<li><strong>Advantages</strong>:<ul>
+<li>Adaptive to different types of license plates, including single-line and double-line plates with varying fonts.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-comparison-with-other-threshold-methods">3. Comparison with Other Threshold Methods</h2>
+<ul>
+<li><strong>Other Techniques</strong>:<ul>
+<li>Kittler and Illingworth’s Threshold</li>
+<li>Potential Difference</li>
+<li>Otsu’s Method</li>
+</ul>
+</li>
+<li><strong>Performance</strong>:<ul>
+<li>The adaptive multi-threshold approach improves overall performance compared to these existing methods.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-license-plate-recognition-process">4. License Plate Recognition Process</h2>
+<ul>
+<li><strong>Steps</strong>:<ol>
+<li><strong>Image Segmentation</strong>: Applies multi-thresholding to separate the license plate and individual characters.</li>
+<li><strong>Character Segmentation</strong>: Uses the threshold values to segment characters within the license plate region.</li>
+<li><strong>Recognition</strong>: Classifies the segmented characters to extract the license plate number.</li>
+</ol>
+</li>
+</ul>
+<h2 id="5-conclusion-and-future-work">5. Conclusion and Future Work</h2>
+<ul>
+<li><strong>Key Findings</strong>:<ul>
+<li>The proposed adaptive multi-threshold method enhances the performance of the LPR system.</li>
+</ul>
+</li>
+<li><strong>Future Work</strong>:<ul>
+<li>Further improvements are underway to accommodate real-time system specifications.</li>
+</ul>
+</li>
+</ul>
+</article>
+<p class="page-foot">Source: <a href="/farshid/content/papers-multi-threshold-plate.md">content/papers-multi-threshold-plate.md</a> · Last modified 2026-09-19 · <a href="/farshid/content/atlas.html">All pages</a></p>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. Farshid Pirahansiah</div>
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas.html">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/qrcode.html">Scan &amp; Share</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+</body>
+</html>

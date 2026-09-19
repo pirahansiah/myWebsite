@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+'<meta name="theme-color" content="#EEF0F4">
+<title>Mind Map: Orchestrating Agents · Farshid Pirahansiah</title>
+<meta name="description" content="Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/note-llm-agents.html">
+<link rel="alternate" type="text/markdown" href="/farshid/content/note-llm-agents.md" title="Markdown source">
+<link rel="icon" href="/farshid/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/note-llm-agents.html">
+<meta property="og:title" content="Mind Map: Orchestrating Agents">
+<meta property="og:description" content="Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="llms" href="/llms.txt">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"Article","@id":"https://pirahansiah.com/farshid/content/note-llm-agents.html#article","url":"https://pirahansiah.com/farshid/content/note-llm-agents.html","name":"Mind Map: Orchestrating Agents","headline":"Mind Map: Orchestrating Agents","description":"Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/note-llm-agents.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"Mind Map: Orchestrating Agents","item":"https://pirahansiah.com/farshid/content/note-llm-agents.html"}]}]}</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-item" href="/farshid/content/index.html">Home</a>
+<a class="nav-item" href="/farshid/content/atlas.html">Atlas</a>
+<a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+</nav></div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#notes-guides">Notes &amp; Guides</a></nav>
+<article class="article">
+
+<p>Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.</p>
+<p><img src="/farshid/content/Mind_Map_Orchestrating_Agents.png" alt="Mind Map Orchestrating Agents" style="max-width: 100%; height: auto;"></p>
+<h1 id="mind-map-orchestrating-agents">Mind Map: Orchestrating Agents</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li><strong>Concept</strong>: Coordination of multiple AI agents to perform complex tasks</li>
+<li><strong>Goal</strong>: To achieve tasks that are too complicated for a single agent to handle</li>
+<li><strong>Example Tasks</strong>: Research, planning, multi-step processes</li>
+</ul>
+<h2 id="2-key-components">2. Key Components</h2>
+<h3 id="21-agents">2.1 Agents</h3>
+<ul>
+<li><strong>Definition</strong>: Autonomous units designed to carry out specific tasks</li>
+<li><strong>Types</strong>:</li>
+<li>Single-purpose agents</li>
+<li>General-purpose agents</li>
+<li><strong>Capabilities</strong>:</li>
+<li>Interact with environments</li>
+<li>Process inputs and produce outputs</li>
+<li>Self-contained decision-making</li>
+</ul>
+<h3 id="22-orchestrator">2.2 Orchestrator</h3>
+<ul>
+<li><strong>Role</strong>: Coordinates and manages multiple agents</li>
+<li><strong>Tasks</strong>:</li>
+<li>Delegates tasks among agents</li>
+<li>Monitors agent progress</li>
+<li>Handles communication between agents</li>
+<li>Combines results from various agents to complete the overall task</li>
+</ul>
+<h3 id="23-communication">2.3 Communication</h3>
+<ul>
+<li><strong>Importance</strong>: Enables agents to work together</li>
+<li><strong>Methods</strong>:</li>
+<li>Message passing between agents</li>
+<li>API calls between different AI models or functions</li>
+<li>Shared memory or database for information exchange</li>
+</ul>
+<h2 id="3-orchestrating-multiple-agents">3. Orchestrating Multiple Agents</h2>
+<h3 id="31-task-decomposition">3.1 Task Decomposition</h3>
+<ul>
+<li><strong>Purpose</strong>: Breaking down complex tasks into manageable subtasks</li>
+<li><strong>Method</strong>:</li>
+<li>Assign subtasks to specialized agents</li>
+<li>Monitor each agent's progress</li>
+<li>Aggregate results from agents</li>
+</ul>
+<h3 id="32-decision-making">3.2 Decision-Making</h3>
+<ul>
+<li><strong>Orchestrator Role</strong>:</li>
+<li>Selects the appropriate agent for each subtask</li>
+<li>Evaluates results and adjusts strategies dynamically</li>
+</ul>
+<h2 id="4-example-workflow">4. Example Workflow</h2>
+<h3 id="41-research-task">4.1 Research Task</h3>
+<ul>
+<li><strong>Step 1</strong>: The orchestrator divides the task into research, summarizing, and final reporting.</li>
+<li><strong>Step 2</strong>: Agents handle different parts of the task, such as finding information or analyzing data.</li>
+<li><strong>Step 3</strong>: The orchestrator combines the results from all agents into a cohesive report.</li>
+</ul>
+<h3 id="42-multi-agent-collaboration">4.2 Multi-Agent Collaboration</h3>
+<ul>
+<li><strong>Scenario</strong>: Writing a complex essay</li>
+<li><strong>Agent 1</strong>: Researches information on a topic.</li>
+<li><strong>Agent 2</strong>: Summarizes the information.</li>
+<li><strong>Agent 3</strong>: Writes a draft.</li>
+<li><strong>Orchestrator</strong>: Oversees the process, checks the quality, and revises content as needed.</li>
+</ul>
+<h2 id="5-benefits-of-orchestrating-agents">5. Benefits of Orchestrating Agents</h2>
+<ul>
+<li><strong>Efficiency</strong>: Faster task completion through parallelization</li>
+<li><strong>Scalability</strong>: Able to tackle larger, more complex tasks</li>
+<li><strong>Flexibility</strong>: Agents can be specialized or general, depending on the need</li>
+<li><strong>Improved Decision-Making</strong>: The orchestrator can dynamically adjust strategies based on agent performance</li>
+</ul>
+<h2 id="6-challenges">6. Challenges</h2>
+<ul>
+<li><strong>Coordination Complexity</strong>: Managing multiple agents requires careful orchestration</li>
+<li><strong>Communication Overhead</strong>: Communication between agents can slow down processes</li>
+<li><strong>Error Handling</strong>: Failure of one agent could affect the entire task</li>
+<li><strong>Resource Management</strong>: Allocating resources effectively across agents</li>
+</ul>
+<h2 id="7-applications">7. Applications</h2>
+<ul>
+<li><strong>Research &amp; Analysis</strong>: Orchestrating agents to perform in-depth analysis on various topics</li>
+<li><strong>Content Creation</strong>: Using multiple agents to research, draft, and edit complex writing tasks</li>
+<li><strong>Project Management</strong>: Breaking down large projects into tasks for different agents</li>
+</ul>
+<h2 id="8-conclusion">8. Conclusion</h2>
+<ul>
+<li><strong>Summary</strong>: Orchestrating multiple agents can be powerful for complex tasks</li>
+<li><strong>Outlook</strong>: As AI evolves, more complex and nuanced orchestrations will become possible</li>
+</ul>
+</article>
+<p class="page-foot">Source: <a href="/farshid/content/note-llm-agents.md">content/note-llm-agents.md</a> · Last modified 2026-09-19 · <a href="/farshid/content/atlas.html">All pages</a></p>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. Farshid Pirahansiah</div>
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas.html">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/qrcode.html">Scan &amp; Share</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+</body>
+</html>

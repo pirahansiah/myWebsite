@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+'<meta name="theme-color" content="#EEF0F4">
+<title>10 Years of CV Debugging Lessons · Farshid Pirahansiah</title>
+<meta name="description" content="Lessons learned from a decade of debugging computer vision systems in production.">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/10-years.html">
+<link rel="alternate" type="text/markdown" href="/farshid/content/10-years.md" title="Markdown source">
+<link rel="icon" href="/farshid/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/10-years.html">
+<meta property="og:title" content="10 Years of CV Debugging Lessons">
+<meta property="og:description" content="Lessons learned from a decade of debugging computer vision systems in production.">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="llms" href="/llms.txt">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"Article","@id":"https://pirahansiah.com/farshid/content/10-years.html#article","url":"https://pirahansiah.com/farshid/content/10-years.html","name":"10 Years of CV Debugging Lessons","headline":"10 Years of CV Debugging Lessons","description":"Lessons learned from a decade of debugging computer vision systems in production.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/10-years.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"10 Years of CV Debugging Lessons","item":"https://pirahansiah.com/farshid/content/10-years.html"}]}]}</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-item" href="/farshid/content/index.html">Home</a>
+<a class="nav-item" href="/farshid/content/atlas.html">Atlas</a>
+<a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+</nav></div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#notes-guides">Notes &amp; Guides</a></nav>
+<article class="article">
+
+<blockquote>
+<p><strong>10 Years of CV Debugging Lessons</strong> — Lessons learned from a decade of debugging computer vision systems in production. — https://www.pirahansiah.com/notes/pubs/10-years/
+Lessons learned from a decade of debugging computer vision systems in production.</p>
+</blockquote>
+<p><em>Last updated: 2026-08-08.</em>  <!--ENHANCED--></p>
+<p>I engage directly with investors, customers, and companies to present our solutions and understand their concerns and product needs. By organizing and analyzing these requirements from a professional, technical perspective, I design and architect robust software systems. I translate these user needs into actionable user stories, project milestones, and tasks to deliver reliable solutions, while planning future optimizations and feature roadmaps.</p>
+<h1 id="update-aug-2026">update Aug. 2026</h1>
+<p>for color detection HSV can use multiple colors so better and more robust
+using multi color HSV during ROI selection for detect the multi objects </p>
+<p>Metis PCIe 4-AIPU card axelera 
+different position of camera 
+shadow rejection 
+i tested many models for Hermes for 4060 with 8gb gpu ram only need 2gb model + 6gb contecsx 64k so 
+Hermes: need 5gb for context , so the qwen3:4b is only 3gb and can run with it on 4060 laptop 8gb ram, so connect browser is working fine and fast so the ram is really important </p>
+<p>the speed of 4060 vs 5060 gap gddr 6 vs gddr7
+the apple use lines to increase bus ram for lpddr so achieve same with low ram</p>
+<h1 id="computervision_edge_ai">ComputerVision_Edge_AI</h1>
+<p>High-Accuracy Real-Time Medical Image Processing on Embedded Systems</p>
+<h1 id="realtimeembeddedmedicalimageprocessing">RealTimeEmbeddedMedicalImageProcessing</h1>
+<p>C++:
+cv::setNumThreads(cv::getNumberOfCPUs())
+Python:
+import multiprocessing
+num_cpus = multiprocessing.cpu_count()
+cv2.setNumThreads(num_cpus)</p>
+<p>As an AI and computer vision expert with over a decade of experience collaborating with esteemed global organizations, my expertise encompasses AI research and development, machine learning, deep learning, Internet of Things (IoT), and model optimization for edge and cloud-based solutions. With a portfolio of 21 publications, three patents, and extensive practical experience in real-time computer vision applications, I have spearheaded groundbreaking projects in generative AI, video analytics, and intelligent systems. Proficient in C++, Python, OpenCV, and advanced GPU optimization, I am recognized for bridging the gap between cutting-edge research and commercially viable products.</p>
+<p>lessons learned fixing bug and review codes for my 10 years experince </p>
+<p>you need lessons learned after each project so what do you learn during projects.</p>
+<h4 id="using-floating-points">using floating points</h4>
+<p>using cast
+do not compare float/double numbers by ==</p>
+<h4 id="cv">CV</h4>
+<p>Background Subtraction (BGS) algorithms
+  GrabCut algorithm
+  Apply a threshold to the depth map to create a mask that suppresses the distant background.
+    Read frames &gt; Rectify the images (cv2.stereoRectify, cv2.initUndistortRectifyMap, and cv2.remap) &gt; Compute the disparity map (cv2.StereoBM or cv2.StereoSGBM) &gt; Create a depth map &gt; Apply a threshold to the depth map
+  In OpenCV, temporal constraints are used in video analysis to impose rules on how objects or pixels behave over time across consecutive frames. This helps track objects more accurately and make sense of motion, rather than just analyzing individual images. </p>
+<h4 id="resize">resize</h4>
+<p>Upscaling → cv2.INTER_LANCZOS4 (sharp, high quality) or cv2.INTER_CUBIC.
+  Downscaling → cv2.INTER_AREA (built-in antialiasing).
+  Exact scale factors → use fx, fy as floats (avoid rounding dsize).
+  Avoid cumulative rounding → keep data in float (float32/float64) during processing.
+  Gamma-aware resizing (more accurate): linearize to linear RGB, resize, then convert back to sRGB.
+  Pre-blur for large downsamples: light Gaussian blur can suppress aliasing before resize.</p>
+<h4 id="vllm">VLLM</h4>
+<p>if the model does not have generating you can create random noisy image as input
+  new models can have multiple input images in the beginning
+  first : mask the object inside the image then edit it
+  keep test of the image original</p>
+<h4 id="camera">Camera</h4>
+<p>Core technologies
+    UVC (USB Video Class)
+    DMA (Direct Memory Access)
+    USB data transfer
+    Video streaming
+    Camera interface
+  Performance and efficiency
+    Low-latency capture
+    High-speed transfer
+    Buffer bypass
+    Chunk-based transfer
+    Real-time processing
+    Frame processing
+  Technical components
+    Method names
+    Data transfer unit
+    Streaming optimization
+    High throughput
+    Driver bypass
+    Frame capture
+  Application context
+    Camera application
+    Live video feed
+    High-performance camera</p>
+<p>import cv2</p>
+<h4 id="camera-calibration">Camera Calibration</h4>
+<ul>
+<li>the size is very important measure manually and use very accurate parameter setting</li>
+</ul>
+<h4 id="load-pre-calibrated-camera-matrices">Load pre-calibrated camera matrices</h4>
+<h4 id="note-this-requires-prior-calibration-with-a-checkerboard">NOTE: This requires prior calibration with a checkerboard</h4>
+<h4 id="and-cannot-be-done-in-a-single-line">and cannot be done in a single line.</h4>
+<h4 id="see-opencv-documentation-for-stereocalibrate">See OpenCV documentation for <code>stereoCalibrate</code>.</h4>
+<p>mtx1, dist1, mtx2, dist2, R, T, E, F = ... #### Load matrices from a file</p>
+<h4 id="initialize-stereo-correspondence-algorithm">Initialize stereo correspondence algorithm</h4>
+<p>stereo = cv2.StereoBM.create(numDisparities=16, blockSize=15)</p>
+<h4 id="open-cameras-adjust-indices-as-needed">Open cameras (adjust indices as needed)</h4>
+<p>cap1 = cv2.VideoCapture(0)
+cap2 = cv2.VideoCapture(1)</p>
+<p>while True:
+    ret1, frame1 = cap1.read()
+    ret2, frame2 = cap2.read()</p>
+<pre><code>if not ret1 or not ret2:
+    break
+
+
+#### Rectify and process the images
+undistort1 = cv2.undistort(frame1, mtx1, dist1)
+undistort2 = cv2.undistort(frame2, mtx2, dist2)
+
+#### Compute the disparity map
+disparity = stereo.compute(cv2.cvtColor(undistort1, cv2.COLOR_BGR2GRAY),
+                          cv2.cvtColor(undistort2, cv2.COLOR_BGR2GRAY))
+
+#### Create a mask by thresholding the disparity (adjust the value)
+#### A low disparity means the object is far away (background)
+_, mask = cv2.threshold(disparity, 50, 255, cv2.THRESH_BINARY_INV)
+
+#### Apply the mask to the original frame
+masked_frame = cv2.bitwise_and(frame1, frame1, mask=mask)
+
+#### Display the result
+cv2.imshow('Background Suppressed', masked_frame)
+
+
+if cv2.waitKey(1) &amp; 0xFF == ord('q'):
+    break
+</code></pre>
+<p>cap1.release()
+cap2.release()
+cv2.destroyAllWindows()</p>
+<hr />
+<p>Relational databases store multi-modal, multi-scale information.  The database level has a relational/temporal structure.  Relational Graph Neural Networks (RelGNNs) use composite messages. </p>
+<hr />
+<p>Relational Foundation Models (RFMs) are a type of large language model that focus on learning, usability, and systems optimization and inference. They use a unique approach called relational transformer zero-shot prompting, which allows them to make predictions without prior training on specific data. RFMs also offer highly efficient supervised fine-tuning, enabling them to quickly adapt to new tasks and datasets.</p>
+<p>Proactive decision intelligence (DI) is another key feature of RFMs. DI involves predicting and forecasting outcomes, which can be particularly useful in fields like biology where scientists need to make informed decisions based on complex data. RFMs can perform DI in real-time, making predictions for any use case on any data in seconds. However, it's important to note that RFMs are not designed for batch prediction over billions of entities.</p>
+<h2 id="artificial-intelligence-ai-is-being-increasingly-used-in-various-scientific-fields-including-biology-ai-agents-are-being-developed-to-assist-scientists-in-their-research-and-experiments-helping-them-to-analyze-data-more-efficiently-and-make-more-accurate-predictions">Artificial intelligence (AI) is being increasingly used in various scientific fields, including biology. AI agents are being developed to assist scientists in their research and experiments, helping them to analyze data more efficiently and make more accurate predictions.</h2>
+<h2 id="tools-to-remove-all-personal-information-from-images-and-videos-including-metadata-faces-vehicles-ocr-to-find-private-information-ocr-to-find-specific-information-like-street-names-or-billboards-and-if-youre-at-home-to-provide-all-kinds-of-information-that-might-reveal-your-location-tattoos-mirrors-shadows-and-to-identify-you-anonymizing-techniques-include-blurring-faces-using-masks-or-masking-out-all-pixels">* Tools to remove all personal information from images and videos, including metadata, faces, vehicles, OCR to find private information, OCR to find specific information like street names or billboards, and if you're at home, to provide all kinds of information that might reveal your location, tattoos, mirrors, shadows, and to identify you. Anonymizing techniques include blurring faces, using masks, or masking out all pixels.</h2>
+<p>Map out your daily activities, considering how you spend your days, including meetings, focused work time, and work areas. Determine the percentage of your time allocated to each aspect of your role. If you had the power to change anything, what would it be? This is meant to be open-ended, so feel free to draw it up in a way that makes sense to you!</p>
+<p>Identify your growth areas. Think big-picture and long-term to ground your Professional Growth Plan (PGP) in your core values and desired career direction. Identify your career drivers, considering what matters most to you in terms of career growth, such as challenges, advancement, influence, or security. Determine your desired brand or "image," defining what you want to be known for in your career. Set career goals, visualizing your career trajectory over the next few years. If you're uncertain about your future, explore potential career paths or target roles that interest you or warrant further exploration. Identify areas of work that intrigue you or warrant further learning.</p>
+<p>Focus on your strengths and areas for improvement. To grow professionally, build skills that excel in your current role and broaden or deepen your experience for career advancement. Your last performance review or development conversation with your lead can provide valuable insights for this section. Identify tasks in your current job that contribute to your long-term goals and that you want to emphasize or perform more frequently. Determine the skills you need to develop in your current role or aspire to in other areas.</p>
+<p>Develop an action plan, being specific about how you'll build the necessary skills. Effective development plans incorporate activities from each of the three E's: Experience, Exposure, and Education. Here are some examples of each:
+Peer coaching
+Stretch assignments
+Special projects
+Transfers/rotations
+For future reference, your PGP will evolve as your interests, skills, and experience change. Review it quarterly to stay accountable to your action items and share your progress with your lead.</p>
+<hr />
+<p>I have a Windows PC with an NVIDIA GPU and need to work on other PCs and a laptop without NVIDIA GPUs. For remote work or weekend coding and research, I want seamless project continuity. One solution is to use WSL (Windows Subsystem for Linux) and create a portable Linux environment. This allows me to use the same Linux setup on any Windows machine, even without an NVIDIA GPU, while keeping my projects, code, and large datasets accessible on an external SSD.</p>
+<ul>
+<li>To use external storage, create your Ubuntu WSL distro (e.g., named 22) on your main PC and export it to a .tar file on an external drive:</li>
+<li></li>
+<li>```bash
+wsl --export 22 E:\\WSL\\22\\ubuntu22.tar
+wsl --shutdown</li>
+</ul>
+<pre><code>
+* The path for the portable WSL folder on both PCs will be:
+* 
+* ```bash
+D:\\\\WSL\\\\DistroName
+</code></pre>
+<ol>
+<li>To import WSL on a new PC without Ubuntu or WSL installed, check the WSL version and update:</li>
+<li></li>
+<li>```bash
+wsl --version
+wsl --update</li>
+</ol>
+<pre><code>
+1. Import the exported .tar file into the same folder path as the main PC:
+2. 
+3. ```bash
+wsl --import 22 D:\\\\WSL\\\\DistroName D:\\\\WSL\\\\22\\\\ubuntu22.tar
+wsl --shutdown
+</code></pre>
+<p>Notes:
+* - Always use the same folder path (D:\\WSL\\DistroName) on every PC for consistency.
+* - For each new PC, simply export the distro on the main PC and import it into the same folder.
+* - This keeps all your projects, code, and datasets portable and consistent across machines without needing multiple copies.</p>
+</article>
+<p class="page-foot">Source: <a href="/farshid/content/10-years.md">content/10-years.md</a> · Last modified 2026-09-19 · <a href="/farshid/content/atlas.html">All pages</a></p>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. Farshid Pirahansiah</div>
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas.html">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/qrcode.html">Scan &amp; Share</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+</body>
+</html>

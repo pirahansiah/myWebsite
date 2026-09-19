@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+'<meta name="theme-color" content="#EEF0F4">
+<title>Simple Setting Up a CUDA Development Environment in VS Code in Windows · Farshid Pirahansiah</title>
+<meta name="description" content="Step-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and debugging.">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/note-cuda-vscode.html">
+<link rel="alternate" type="text/markdown" href="/farshid/content/note-cuda-vscode.md" title="Markdown source">
+<link rel="icon" href="/farshid/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/note-cuda-vscode.html">
+<meta property="og:title" content="Simple Setting Up a CUDA Development Environment in VS Code in Windows">
+<meta property="og:description" content="Step-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and debugging.">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="llms" href="/llms.txt">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"Article","@id":"https://pirahansiah.com/farshid/content/note-cuda-vscode.html#article","url":"https://pirahansiah.com/farshid/content/note-cuda-vscode.html","name":"Simple Setting Up a CUDA Development Environment in VS Code in Windows","headline":"Simple Setting Up a CUDA Development Environment in VS Code in Windows","description":"Step-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and debugging.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/note-cuda-vscode.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"Simple Setting Up a CUDA Development Environment in VS Code in Windows","item":"https://pirahansiah.com/farshid/content/note-cuda-vscode.html"}]}]}</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-item" href="/farshid/content/index.html">Home</a>
+<a class="nav-item" href="/farshid/content/atlas.html">Atlas</a>
+<a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+</nav></div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#notes-guides">Notes &amp; Guides</a></nav>
+<article class="article">
+
+<p>Step-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and debugging.</p>
+<h1 id="simple-setting-up-a-cuda-development-environment-in-vs-code-in-windows">Simple Setting Up a CUDA Development Environment in VS Code in Windows</h1>
+<p>https://www.pirahansiah.com/farshid/content/note-cuda-vscode.md 
+<img alt="VSCode: C++, CUDA, Windows" src="/farshid/content/VSCodeCUDAwindows.png" /></p>
+<p>🚀 Setting Up a CUDA Development Environment in VS Code (Windows)</p>
+<p>If you’re working with CUDA C++ and want a clean and efficient workflow inside Visual Studio Code, this guide shows how to configure tasks and launch settings to build and debug .cu files using nvcc and the MSVC toolchain.</p>
+<p>Below is a breakdown of how the key configuration files come together.</p>
+<p>⸻</p>
+<p>🛠️ tasks.json – Automating the Build Process</p>
+<pre><code>{
+  &quot;version&quot;: &quot;2.0.0&quot;,
+  &quot;tasks&quot;: [
+    {
+      &quot;label&quot;: &quot;Build CUDA Project&quot;,
+      &quot;type&quot;: &quot;shell&quot;,
+      &quot;command&quot;: &quot;nvcc&quot;,
+      &quot;args&quot;: [
+        &quot;-I&quot;,
+        &quot;C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\include&quot;,
+        &quot;-L&quot;,
+        &quot;C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.42.34433\\lib\\x64&quot;,
+        &quot;${workspaceFolder}/main.cu&quot;,
+        &quot;-o&quot;,
+        &quot;${workspaceFolder}/main.exe&quot;
+      ],
+      &quot;group&quot;: {
+        &quot;kind&quot;: &quot;build&quot;,
+        &quot;isDefault&quot;: true
+      },
+      &quot;problemMatcher&quot;: []
+    }
+  ]
+}
+</code></pre>
+<p>This task uses nvcc to compile a CUDA file (main.cu) and links it against MSVC libraries. It’s defined as the default build task, making it easy to trigger with Ctrl + Shift + B.</p>
+<p>⸻</p>
+<p>💡 settings.json – File Associations &amp; Terminal Preferences</p>
+<pre><code>{
+  &quot;files.associations&quot;: {
+    &quot;*.cu&quot;: &quot;cpp&quot;
+  },
+  &quot;terminal.integrated.shell.windows&quot;: &quot;cmd.exe&quot;
+}
+</code></pre>
+<p>This helps VS Code:
+    •   Treat .cu files as C++ for syntax highlighting, IntelliSense, and formatting.
+    •   Use the Windows Command Prompt (cmd.exe) as the integrated terminal for consistency with the Windows toolchain.</p>
+<p>⸻</p>
+<p>🧪 launch.json – Debugging the Executable</p>
+<pre><code>{
+  &quot;version&quot;: &quot;0.2.0&quot;,
+  &quot;configurations&quot;: [
+    {
+      &quot;name&quot;: &quot;Build and Run CUDA&quot;,
+      &quot;type&quot;: &quot;cppvsdbg&quot;,
+      &quot;request&quot;: &quot;launch&quot;,
+      &quot;preLaunchTask&quot;: &quot;Build CUDA Project&quot;,
+      &quot;program&quot;: &quot;${workspaceFolder}/main.exe&quot;,
+      &quot;args&quot;: [],
+      &quot;stopAtEntry&quot;: false,
+      &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,
+      &quot;environment&quot;: [],
+      &quot;console&quot;: &quot;externalTerminal&quot;
+    }
+  ]
+}
+</code></pre>
+<p>This debug configuration will:
+    •   Automatically build the project before running (preLaunchTask)
+    •   Run the resulting main.exe in an external terminal
+    •   Use the Visual Studio debugger (cppvsdbg) for a seamless experience</p>
+<p>⸻</p>
+<p>📘 c_cpp_properties.json – IntelliSense Setup</p>
+<pre><code>{
+  &quot;configurations&quot;: [
+    {
+      &quot;name&quot;: &quot;Windows&quot;,
+      &quot;includePath&quot;: [
+        &quot;${workspaceFolder}&quot;,
+        &quot;C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.42.34433/include&quot;,
+        &quot;C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/ucrt&quot;
+      ],
+      &quot;defines&quot;: [],
+      &quot;windowsSdkVersion&quot;: &quot;10.0.22621.0&quot;,
+      &quot;compilerPath&quot;: &quot;C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/bin/nvcc.exe&quot;,
+      &quot;cStandard&quot;: &quot;c17&quot;,
+      &quot;cppStandard&quot;: &quot;c++17&quot;,
+      &quot;intelliSenseMode&quot;: &quot;windows-msvc-x64&quot;
+    }
+  ],
+  &quot;version&quot;: 4
+}
+</code></pre>
+<p>This enables:
+    •   Full IntelliSense for C++ and CUDA code
+    •   Accurate error highlighting
+    •   Auto-completion based on both CUDA and MSVC headers</p>
+<p>⸻</p>
+<p>✅ Summary</p>
+<p>With this setup:
+    •   You can build and run CUDA projects with a single shortcut
+    •   Syntax highlighting and IntelliSense work properly
+    •   Debugging is fully integrated</p>
+<p>This config is especially useful for developers who prefer the lightweight and customizable nature of VS Code over heavier IDEs like Visual Studio.</p>
+<p>⸻</p>
+<p>🙋 Tips &amp; Improvements:
+    •   Use ${env:CUDA_PATH} instead of hardcoding the CUDA path
+    •   Add more args like -g for debug symbols
+    •   For larger projects, consider using CMake + CMake Tools extension</p>
+<p>⸻</p>
+</article>
+<p class="page-foot">Source: <a href="/farshid/content/note-cuda-vscode.md">content/note-cuda-vscode.md</a> · Last modified 2026-09-19 · <a href="/farshid/content/atlas.html">All pages</a></p>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. Farshid Pirahansiah</div>
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas.html">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/qrcode.html">Scan &amp; Share</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+</body>
+</html>

@@ -1,43 +1,63 @@
 # pirahansiah.com
 
-A pure static, markdown-first personal site for Dr. Farshid Pirahansiah.
-No build step, no dependencies, no submodules — every page is a plain Markdown
-file rendered in the browser. GitHub Pages serves it directly from the `main`
-branch root (pinned static by `.nojekyll`).
+A static, markdown-first personal site for Dr. Farshid Pirahansiah. No build step,
+no dependencies, no submodules. GitHub Pages serves the `main` branch root as-is
+(pinned static by `.nojekyll`).
+
+Every page exists twice, on purpose:
+
+1. **`content/<slug>.html`** — a real, server-rendered HTML page with `<title>`,
+   description, canonical URL, OpenGraph and JSON-LD, plus `<link rel="alternate"
+   type="text/markdown">` pointing at the source `.md`. This is what crawlers,
+   LLM/answer engines and no-JS fetches read, and what internal links point at.
+2. **`content/<slug>.md`** — the source, rendered in the browser by the hash-route
+   app (`#content/<slug>`). Same look; needed for the search index and the deck
+   pages.
+
+`/llms.txt` (every page + one-line summary), `/llms-full.txt` (full text of the
+site) and `/sitemap.xml` are generated from the same pass.
 
 ## Structure
 
-- `index.html` (root) — redirect stubs to `/farshid/`; GitHub Pages plumbing.
-- `404.html` (root) — unknown URLs go to the Atlas.
+- `index.html` (root) — resolves the apex to the home page (canonical + refresh).
+- `404.html` (root) — unknown/legacy URLs redirect to the right rendered page.
+- `robots.txt`, `sitemap.xml`, `llms.txt`, `llms-full.txt` — generated entry points.
 - `farshid/` — the ENTIRE site lives here:
-  - `farshid/index.html` — the home page (About, publications, patents) + thin
-    shell that loads the current `.md` by hash and renders it. Carries GA4 +
+  - `farshid/index.html` — resolves `/farshid/` to the home page.
+  - `farshid/content/index.html` — the home page (About, publications, patents,
+    services) and the app shell that renders `#content/<slug>` routes. Carries GA4 +
     AdSense.
   - `farshid/app.js`, `farshid/md.js`, `farshid/style.css`, `farshid/search-index.js`
-    — engine (dependency-free markdown renderer, hash router, search index, CSS).
-  - `farshid/atlas.md` — the single index for the whole site.
-  - `farshid/content/` — every publication, course, note, and talk as flat `.md`
-    files, with their images/mp3s/mindmaps colocated right beside them.
-  - `farshid/qr/` — the permanent QR / Scan & Share page.
-  - `farshid/swarm/` — animated Search Swarm page.
-  - `farshid/scripts/` — generators (`gen_atlas.py`, `gen_search_index.py`).
+    — engine (markdown renderer, hash router, search index, design system).
+  - `farshid/content/` — every publication, course, note and talk as flat `.md`
+    files, with images/mp3s/mindmaps colocated beside them; `atlas.md` is the
+    index of everything; `qrcode.html` and `swarm.html` are standalone tools.
+  - `farshid/projects/` — the generators and the projects they index.
 
 ## How it works
 
-`farshid/index.html` reads the URL hash (e.g. `#content/course-ros`), fetches that
-markdown file, and renders it client-side with the bundled `farshid/md.js`
-renderer. No network, no server, no build. Internal `.md` links navigate within
-the page; everything else opens in a new tab.
+The home shell reads the URL hash (e.g. `#content/course-ros`), fetches that
+markdown file and renders it with the bundled `farshid/md.js`. Static pages are
+plain HTML with the same CSS, so both surfaces look identical. Internal links point
+at the canonical `.html` pages; only the deck (Reveal) routes need the app.
 
 ## Editing / adding content
 
-Drop any `.md` file into `farshid/content/` (images/mp3s next to it), then run
-`python3 farshid/scripts/gen_atlas.py` to regenerate `farshid/atlas.md`, and
-`python3 farshid/scripts/gen_search_index.py` to rebuild `farshid/search-index.js`.
-HTML is allowed inside markdown for styling and images. Done — push to `main`.
+Drop a `.md` file into `farshid/content/` (images next to it), then run all three
+generators:
+
+```bash
+python3 farshid/projects/gen_atlas.py          # farshid/content/atlas.md
+python3 farshid/projects/gen_search_index.py   # farshid/search-index.js
+python3 farshid/projects/gen_static_pages.py   # content/*.html, llms*.txt, sitemap.xml
+```
+
+`gen_static_pages.py` needs `python3 -m pip install markdown`. HTML is allowed
+inside markdown for styling; scripts inside markdown do not run on the static
+pages (they are stripped there), so interactive pages belong in a standalone
+`.html` file. Done — push to `main`.
 
 ## Deploy
 
-Push to `main`. GitHub Pages (already configured `build_type: legacy` from
-`main`/root) serves the files as-is; `.nojekyll` keeps it from running Jekyll.
-CDN cache is ~2 minutes, so content takes a short while to appear after a push.
+Push to `main`. GitHub Pages (`build_type: legacy` from `main`/root) serves the
+files as-is; `.nojekyll` keeps Jekyll out. CDN cache is ~2 minutes.

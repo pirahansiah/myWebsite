@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+'<meta name="theme-color" content="#EEF0F4">
+<title>Simultaneous Localization and Mapping Trends and Humanoid Robot Linkages · Farshid Pirahansiah</title>
+<meta name="description" content="Survey of 3D SLAM techniques for localization, mapping, and humanoid robot applications.">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/journals-3d-slam-humanoid.html">
+<link rel="alternate" type="text/markdown" href="/farshid/content/journals-3d-slam-humanoid.md" title="Markdown source">
+<link rel="icon" href="/farshid/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/journals-3d-slam-humanoid.html">
+<meta property="og:title" content="Simultaneous Localization and Mapping Trends and Humanoid Robot Linkages">
+<meta property="og:description" content="Survey of 3D SLAM techniques for localization, mapping, and humanoid robot applications.">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="llms" href="/llms.txt">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"ScholarlyArticle","@id":"https://pirahansiah.com/farshid/content/journals-3d-slam-humanoid.html#article","url":"https://pirahansiah.com/farshid/content/journals-3d-slam-humanoid.html","name":"Simultaneous Localization and Mapping Trends and Humanoid Robot Linkages","headline":"Simultaneous Localization and Mapping Trends and Humanoid Robot Linkages","description":"Survey of 3D SLAM techniques for localization, mapping, and humanoid robot applications.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/journals-3d-slam-humanoid.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"Simultaneous Localization and Mapping Trends and Humanoid Robot Linkages","item":"https://pirahansiah.com/farshid/content/journals-3d-slam-humanoid.html"}]}]}</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-item" href="/farshid/content/index.html">Home</a>
+<a class="nav-item" href="/farshid/content/atlas.html">Atlas</a>
+<a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+</nav></div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#publications">Publications</a></nav>
+<article class="article">
+
+<p>Survey of 3D SLAM techniques for localization, mapping, and humanoid robot applications.</p>
+<p>3D_SLAM_Simultaneous_Localization_And_Mapping_Trends_And_Humanoid_Robot_Linkages</p>
+<p>https://www.pirahansiah.com/notes/pubs/journals/3D_SLAM_Simultaneous_Localization_And_Mapping_Trends_And_Humanoid_Robot_Linkages/</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/3D-SLAM-Simultaneous-Localization-And-Mapping-Trends-And-Humanoid-Robot-Linkages-e2prg07">spotify</a></p>
+<p><a href="http://journalarticle.ukm.my/6644/1/4429-10302-1-SM.pdf">PDF Download</a></p>
+<p><img alt="3D SLAM Simultaneous Localization And Mapping Trends And Humanoid Robot Linkages" src="/farshid/content/3d-slam-humanoid-robots.png" /></p>
+<p><img src="/farshid/content/3d-slam-humanoid-robots.png" alt="Simultaneous Localization And Mapping Trends And Humanoid Robot Linkages" style="max-width: 100%; height: auto;"></p>
+<h1 id="simultaneous-localization-and-mapping-trends-and-humanoid-robot-linkages">Simultaneous Localization and Mapping Trends and Humanoid Robot Linkages</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li>SLAM: Simultaneous Localization and Mapping</li>
+<li>Real-time map creation and localization</li>
+<li>Robotics application: goal determination, motion planning</li>
+<li>Usage in rescue missions, medical field, pipeline inspection, and more</li>
+<li>Challenges: sensor uncertainty, correspondence, loop closing, time complexity</li>
+</ul>
+<h2 id="2-slam-methods">2. SLAM Methods</h2>
+<ul>
+<li>Kalman Filter (KF)</li>
+<li>Bayesian filter handling uncertainty</li>
+<li>Extended KF (EKF), Unscented KF (UKF), SEIF improvements</li>
+<li>Challenges: computational resources, landmark growth</li>
+<li>Particle Filter</li>
+<li>Non-parametric recursive algorithm</li>
+<li>Handles non-linearity and non-Gaussian noise</li>
+<li>FastSLAM algorithms: O(P log L) complexity</li>
+<li>Graph-based SLAM</li>
+<li>Nodes as robot poses, edges as spatial constraints</li>
+<li>State-of-the-art for speed and accuracy</li>
+<li>Feature-based SLAM</li>
+<li>Describes environments using point features</li>
+<li>Laser ranging systems for mapping</li>
+</ul>
+<h2 id="3-slam-evaluation-methods">3. SLAM Evaluation Methods</h2>
+<ul>
+<li>Allocated Resources</li>
+<li>Processing time and memory usage</li>
+<li>EKF, CEKF, and UKF comparisons</li>
+<li>Precision and Noise</li>
+<li>Reducing drift and noise</li>
+<li>Odometry, laser, radar, camera usage</li>
+<li>Environmental Factors</li>
+<li>Outdoor, indoor, underwater, dynamic environments</li>
+<li>3D maps, point maps for environmental challenges</li>
+</ul>
+<h2 id="4-slam-for-humanoid-robots">4. SLAM for Humanoid Robots</h2>
+<ul>
+<li>Humanoid challenges: degrees of freedom, camera variability</li>
+<li>Solutions:</li>
+<li>Stereo vision setup</li>
+<li>Local 3D maps for footstep planning</li>
+<li>Real-time VSLAM using single camera (e.g., HRP-2)</li>
+<li>GPU-accelerated tracking for humanoid tasks</li>
+</ul>
+<h2 id="5-datasets-for-slam">5. Datasets for SLAM</h2>
+<ul>
+<li>Online datasets for SLAM research</li>
+<li>Indoor and outdoor datasets</li>
+<li>Popular datasets: Intel research lab, MIT CSAIL, FHW Museum</li>
+<li>Benchmark datasets</li>
+<li>Ground truth needed for accurate mapping</li>
+</ul>
+<h2 id="6-conclusion-and-future-work">6. Conclusion and Future Work</h2>
+<ul>
+<li>New combinatory SLAM methods: grid-based FastSLAM, graph-based SLAM</li>
+<li>Challenges: 3D SLAM for humanoid robots, noisy vision from robot motion</li>
+<li>Future research: stereo vision SLAM in real-world environments, stereo video stabilization, 3D mapping</li>
+</ul>
+</article>
+<p class="page-foot">Source: <a href="/farshid/content/journals-3d-slam-humanoid.md">content/journals-3d-slam-humanoid.md</a> · Last modified 2026-09-19 · <a href="/farshid/content/atlas.html">All pages</a></p>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. Farshid Pirahansiah</div>
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas.html">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/qrcode.html">Scan &amp; Share</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+</body>
+</html>

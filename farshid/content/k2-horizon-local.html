@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+'<meta name="theme-color" content="#EEF0F4">
+<title>Running K2-Horizon Locally on Apple Silicon · Farshid Pirahansiah</title>
+<meta name="description" content="Serve IFM&#x27;s K2-Horizon (custom k2-horizon architecture GGUF) on Apple M3 via the MBZUAI-IFM llama.cpp fork, and wire it into Hermes Agent at 64K context.">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/k2-horizon-local.html">
+<link rel="alternate" type="text/markdown" href="/farshid/content/k2-horizon-local.md" title="Markdown source">
+<link rel="icon" href="/farshid/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/k2-horizon-local.html">
+<meta property="og:title" content="Running K2-Horizon Locally on Apple Silicon">
+<meta property="og:description" content="Serve IFM&#x27;s K2-Horizon (custom k2-horizon architecture GGUF) on Apple M3 via the MBZUAI-IFM llama.cpp fork, and wire it into Hermes Agent at 64K context.">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="llms" href="/llms.txt">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"Article","@id":"https://pirahansiah.com/farshid/content/k2-horizon-local.html#article","url":"https://pirahansiah.com/farshid/content/k2-horizon-local.html","name":"Running K2-Horizon Locally on Apple Silicon","headline":"Running K2-Horizon Locally on Apple Silicon","description":"Serve IFM's K2-Horizon (custom k2-horizon architecture GGUF) on Apple M3 via the MBZUAI-IFM llama.cpp fork, and wire it into Hermes Agent at 64K context.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/k2-horizon-local.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"Running K2-Horizon Locally on Apple Silicon","item":"https://pirahansiah.com/farshid/content/k2-horizon-local.html"}]}]}</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-item" href="/farshid/content/index.html">Home</a>
+<a class="nav-item" href="/farshid/content/atlas.html">Atlas</a>
+<a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+</nav></div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#notes-guides">Notes &amp; Guides</a></nav>
+<article class="article">
+
+<blockquote>
+<p><strong>Running K2-Horizon Locally on Apple Silicon</strong> — Serve IFM's K2-Horizon GGUF via the MBZUAI-IFM llama.cpp fork and wire it into Hermes at 64K context. — https://www.pirahansiah.com/notes/docs/llm/k2-horizon-local/</p>
+</blockquote>
+<h1 id="running-k2-horizon-locally-on-apple-silicon-m3-16gb">Running K2-Horizon Locally on Apple Silicon (M3, 16GB)</h1>
+<p>K2-Horizon (by IFM / MBZUAI) is a compact <em>reasoning</em> model family. The published weights
+(<code>IFM/K2-Horizon-0.9B-GGUF</code>) are <strong>GGUF only</strong> in a <strong>custom <code>k2-horizon</code> architecture</strong>
+(a MoVA-style attention/value-router). That breaks the usual local paths:</p>
+<p><em>Last updated: 2026-09-05.</em>  <!--ENHANCED--></p>
+<h2 id="why-omlx-and-ollama-cannot-load-it-verified">Why oMLX and Ollama cannot load it (verified)</h2>
+<ul>
+<li><strong>oMLX</strong> (the MLX server) ingests only <strong>MLX safetensors</strong> (<code>config.json</code> + <code>*.safetensors</code>).
+  A <code>.gguf</code> is not ingestible by oMLX at all — there is no <code>add</code>/<code>pull</code> for GGUF.</li>
+<li><strong>Ollama</strong> bundles <strong>mainline llama.cpp</strong>, which has <strong>no <code>k2-horizon</code> support</strong> yet. The
+  upstream PR is still in progress.</li>
+<li>The model's own README states it requires <em>"a version of llama.cpp containing K2 Horizon
+  architecture support"</em> — i.e. the <strong>MBZUAI-IFM fork</strong> at <code>github.com/MBZUAI-IFM/llama.cpp</code>
+  (<code>model/K2Horizon</code> branch).</li>
+</ul>
+<p>Grepping the ollama 0.30.6 and oMLX 0.6.4 binaries confirms <strong>zero</strong> <code>k2-horizon</code> references,
+whereas the fork's <code>src/models/k2-horizon.cpp</code> + <code>libllama.0.3.0.dylib</code> do contain it.</p>
+<h2 id="build-the-mbzuai-ifm-llamacpp-fork-metal">Build the MBZUAI-IFM llama.cpp fork (Metal)</h2>
+<pre><code class="language-bash"># Use the exact validated commit the model authors recommend.
+git clone --branch model/K2Horizon --single-branch \
+  https://github.com/MBZUAI-IFM/llama.cpp.git llama.cpp-k2
+cd llama.cpp-k2
+git log -1 --format='%H %s'   # expect 35999d101... &quot;model: K2 Horizon chat template ...&quot;
+
+# Apple Silicon: Metal backend, embed the Metal lib, Release.
+cmake -B build -DGGML_METAL=ON -DGGML_METAL_EMBED_LIBRARY=ON \
+      -DCMAKE_BUILD_TYPE=Release -DLLAMA_CURL=ON
+cmake --build build --target llama-server -j $(sysctl -n hw.ncpu)
+</code></pre>
+<p>Verify the architecture is compiled in:</p>
+<pre><code class="language-bash">strings build/bin/libllama.0.3.0.dylib | grep -c k2-horizon   # expect &gt; 0
+./build/bin/llama-server --version                            # 0.3.0-dev, commit 35999d101
+</code></pre>
+<h2 id="download-the-gguf">Download the GGUF</h2>
+<pre><code class="language-bash">mkdir -p ~/models/k2-horizon
+curl -L -o ~/models/k2-horizon/K2-Horizon-1B-BF16.gguf \
+  &quot;https://huggingface.co/IFM/K2-Horizon-0.9B-GGUF/resolve/main/K2-Horizon-1B-BF16.gguf&quot;
+# ~2.16 GB, BF16 full precision (fine for 0.9B/1B class on 16 GB unified RAM)
+</code></pre>
+<h2 id="serve-on-8080">Serve on :8080</h2>
+<pre><code class="language-bash">./build/bin/llama-server \
+  --model ~/models/k2-horizon/K2-Horizon-1B-BF16.gguf \
+  --alias k2-horizon:latest \
+  --host 127.0.0.1 --port 8080 \
+  --ctx-size 65536 --n-gpu-layers 99 --flash-attn on \
+  --reasoning-format deepseek --reasoning-effort default
+</code></pre>
+<ul>
+<li><code>--ctx-size 65536</code> — Hermes enforces a <strong>64K context floor</strong> for the default model; smaller
+  and it refuses with <em>"Choose a model with at least 64K context."</em></li>
+<li><code>--reasoning-format deepseek</code> — populates <code>message.reasoning_content</code> (K2 is a reasoner).</li>
+<li><code>--flash-attn on</code> (not a bare flag — the server needs the <code>on</code> value).</li>
+</ul>
+<p>Health + generation check:</p>
+<pre><code class="language-bash">curl -s http://127.0.0.1:8080/health                 # {&quot;status&quot;:&quot;ok&quot;}
+curl -s http://127.0.0.1:8080/v1/models | grep -o 'k2-horizon:latest'
+</code></pre>
+<h2 id="wire-into-hermes-separate-endpoint-do-not-touch-omlxs-8000">Wire into Hermes (separate endpoint, do NOT touch oMLX's :8000)</h2>
+<p>Point Hermes at the <strong>:8080</strong> server via a new custom provider — keep oMLX on :8000 as-is:</p>
+<pre><code class="language-bash">hermes config set model.base_url &quot;http://127.0.0.1:8080/v1&quot;
+hermes config set model.default &quot;k2-horizon:latest&quot;
+hermes config set agent.model    &quot;k2-horizon:latest&quot;
+hermes config set delegation.base_url &quot;http://127.0.0.1:8080/v1&quot;
+hermes config set delegation.model    &quot;k2-horizon:latest&quot;
+hermes gateway restart
+</code></pre>
+<p>Verify: <code>hermes chat -q "hi"</code> → gateway log shows
+<code>model=k2-horizon:latest provider=custom base_url=http://127.0.0.1:8080/v1</code>.</p>
+<h2 id="persistence-survives-reboot-logout">Persistence (survives reboot / logout)</h2>
+<p><code>~/Library/LaunchAgents/com.farshid.k2-horizon-serve.plist</code> — <code>RunAtLoad</code> + <code>KeepAlive</code>,
+mirroring the oMLX agent in the <a href="/farshid/content/note-optimization-guide.html">Local LLM Optimization</a>
+guide (§7a). Only one process may hold :8080.</p>
+<h2 id="gotchas">Gotchas</h2>
+<ul>
+<li><strong>It is a reasoner.</strong> Every reply includes a <code>reasoning_content</code> trace and is slow
+  (~24 s for a 40-token answer) — that is the model's nature, not a misconfig.</li>
+<li><strong>BF16 GGUF is large.</strong> 2.16 GB for ~1B params; watch RAM if you add bigger BF16 GGUFs on 16 GB.</li>
+<li><strong>No oMLX/Ollama route.</strong> If you need K2-Horizon in oMLX, you must first convert the GGUF to
+  MLX safetensors (and even then the custom arch's grouped RMSNorm needs a custom loader), which
+  is not provided for the 0.9B/1B size as of this writing (community MLX conversions exist only
+  for 3.7B/7B, and require <code>--trust-remote-code</code>). The llama.cpp fork is the supported path.</li>
+</ul>
+</article>
+<p class="page-foot">Source: <a href="/farshid/content/k2-horizon-local.md">content/k2-horizon-local.md</a> · Last modified 2026-09-19 · <a href="/farshid/content/atlas.html">All pages</a></p>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. Farshid Pirahansiah</div>
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas.html">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/qrcode.html">Scan &amp; Share</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+</body>
+</html>

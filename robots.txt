@@ -1,3 +1,47 @@
+# pirahansiah.com — everything here is public and meant to be read, quoted and cited.
+# AI assistants, answer engines and search crawlers are welcome; no content is withheld.
+
 User-agent: *
 Allow: /
+
+# Answer engines and AI assistants — explicitly allowed
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: YouBot
+Allow: /
+
 Sitemap: https://pirahansiah.com/sitemap.xml
+
+# Machine-readable indexes
+# https://pirahansiah.com/llms.txt        — every page with a one-line summary
+# https://pirahansiah.com/llms-full.txt   — the full text of the site

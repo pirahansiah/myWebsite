@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+'<meta name="theme-color" content="#EEF0F4">
+<title>Reducing Token Usage · Farshid Pirahansiah</title>
+<meta name="description" content="Presentation: practical techniques to reduce token usage and cost when using AI assistants for software development.">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/slides-token-optimization.html">
+<link rel="alternate" type="text/markdown" href="/farshid/content/slides-token-optimization.md" title="Markdown source">
+<link rel="icon" href="/farshid/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/slides-token-optimization.html">
+<meta property="og:title" content="Reducing Token Usage">
+<meta property="og:description" content="Presentation: practical techniques to reduce token usage and cost when using AI assistants for software development.">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="llms" href="/llms.txt">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"Article","@id":"https://pirahansiah.com/farshid/content/slides-token-optimization.html#article","url":"https://pirahansiah.com/farshid/content/slides-token-optimization.html","name":"Reducing Token Usage","headline":"Reducing Token Usage","description":"Presentation: practical techniques to reduce token usage and cost when using AI assistants for software development.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/slides-token-optimization.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"Reducing Token Usage","item":"https://pirahansiah.com/farshid/content/slides-token-optimization.html"}]}]}</script>
+</head>
+<style>
+.deck-invite{margin:0 0 26px;padding:18px 20px;border:1px solid var(--rule);border-radius:14px;background:var(--surface-2)}.deck-invite p{margin:0 0 12px;color:var(--ink-2);font-size:15px}
+</style>
+<body>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-item" href="/farshid/content/index.html">Home</a>
+<a class="nav-item" href="/farshid/content/atlas.html">Atlas</a>
+<a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+</nav></div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#talks-presentations">Talks &amp; Presentations</a></nav>
+<article class="article">
+<div class="deck-invite"><p>Slide deck — this page holds the full text of every slide. <a href="/farshid/content/index.html#content/slides-token-optimization">Open it as a presentation</a>.</p></div>
+<p>Presentation: practical techniques to reduce token usage and cost when using AI assistants for software development.</p>
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/black.min.css"></p>
+<style>
+  body { background: #000 !important; overflow: hidden !important; }
+  .site-main { padding: 0 !important; margin: 0 !important; background: #000 !important; border: none !important; box-shadow: none !important; max-width: none !important; width: 100% !important; }
+  .toolbar, .site-footer, footer { display: none !important; }
+  .presentation-panel { width: 100%; height: calc(100vh - 80px); overflow: hidden; background: #000; }
+  .reveal .slides section { height: 100%; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; padding: 16px !important; box-sizing: border-box !important; }
+  .reveal .slides { height: 100%; }
+  .reveal { height: 100%; width: 100%; }
+  .reveal h1 { font-size: 1.8em; margin-bottom: 0.2em; color: #fff; text-align: center; }
+  .reveal h2 { font-size: 1.2em; margin: 0.1em 0; color: #22D3EE; text-align: center; }
+  .reveal p, .reveal li { font-size: 0.9em; color: #ccc; line-height: 1.5; }
+  .reveal ul { list-style: none; padding: 0; text-align: left; }
+  .reveal .controls { color: #fff; }
+  .m { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 95%; }
+  .c { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 14px; text-align: center; }
+  .c p { text-align: left; margin: 4px 0; }
+  .n { font-size: 2.2em; font-weight: 800; margin: 0; }
+  .n.g { color: #30d158; } .n.r { color: #0284C7; } .n.b { color: #22D3EE; } .n.p { color: #06B6D4; } .n.o { color: #ff9f0a; }
+  .nav-hint { position: absolute; bottom: 8px; font-size: 0.5em; opacity: 0.3; color: white; pointer-events: none; z-index: 10; }
+  @media (max-width: 480px) { .m { grid-template-columns: 1fr; } .n { font-size: 1.8em; } .reveal h1 { font-size: 1.4em; } .reveal h2 { font-size: 1em; } }
+</style>
+
+<div class="presentation-panel">
+  <div class="nav-hint">← tap back | tap next →</div>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1>Reducing Token Usage</h1>
+        <h2>in AI-Assisted Development</h2>
+        <p style="color:#888; margin-top:1.5em;">Dr. Farshid Pirahansiah</p>
+      </section>
+
+      <section>
+        <h2>The Problem</h2>
+        <div class="m">
+          <div class="c"><div class="n r">162 KB</div><p>Full .claude folder</p></div>
+          <div class="c"><div class="n r">100%</div><p>Token cost</p></div>
+          <div class="c"><div class="n o">Slow</div><p>Response time</p></div>
+          <div class="c"><div class="n o">$$$</div><p>API cost</p></div>
+        </div>
+        <p style="margin-top:1em;">1 token ≈ 4 chars • Every file = tokens</p>
+      </section>
+
+      <section>
+        <h2>Token Cost by Component</h2>
+        <div class="m">
+          <div class="c"><div class="n b">~10 KB</div><p>Core files<br>✅ Always needed</p></div>
+          <div class="c"><div class="n o">~90 KB</div><p>Skills (32 files)<br>Select per project</p></div>
+          <div class="c"><div class="n p">~14 KB</div><p>Agents (7 files)<br>Select per domain</p></div>
+          <div class="c"><div class="n g">6-10%</div><p>Minimal config<br>Best savings</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Strategy 1: .cursorignore</h2>
+        <div class="m">
+          <div class="c"><div class="n g">5-10%</div><p><strong>Minimal</strong><br>Core only</p></div>
+          <div class="c"><div class="n b">20-30%</div><p><strong>Web</strong><br>Python/backend</p></div>
+          <div class="c"><div class="n p">35-45%</div><p><strong>CV/ML</strong><br>YOLO, SAM2</p></div>
+          <div class="c"><div class="n o">40-50%</div><p><strong>Edge/C++</strong><br>Inference</p></div>
+        </div>
+        <p style="margin-top:0.8em;">Copy template → project/.cursorignore</p>
+      </section>
+
+      <section>
+        <h2>Strategy 2: Selective Loading</h2>
+        <div class="m">
+          <div class="c" style="text-align:left;">
+            <p style="color:#30d158; font-weight:bold;">✅ INCLUDE</p>
+            <p>! .claude/skills/cv-pipeline/</p>
+            <p>! .claude/agents/debugger.md</p>
+            <p>! .claude/CLAUDE.md</p>
+          </div>
+          <div class="c" style="text-align:left;">
+            <p style="color:#0284C7; font-weight:bold;">❌ EXCLUDE</p>
+            <p>.claude/skills/portfolio/</p>
+            <p>.claude/workflows/</p>
+            <p>.claude/agent-memory/</p>
+          </div>
+        </div>
+        <p style="margin-top:0.8em; color:#30d158;">38-45% instead of 100%</p>
+      </section>
+
+      <section>
+        <h2>Strategy 3: Remove Files</h2>
+        <div class="m">
+          <div class="c" style="text-align:left;">
+            <p style="color:#0284C7; font-weight:bold;">Delete</p>
+            <p>DIRECTORY-TREE.md</p>
+            <p>FILE-INVENTORY.md</p>
+            <p>PROJECT_PORTFOLIO (4084 lines!)</p>
+          </div>
+          <div class="c" style="text-align:left;">
+            <p style="color:#ff9f0a; font-weight:bold;">Also remove</p>
+            <p>7 .cursorignore variants</p>
+            <p>agent-memory/ (other projects)</p>
+            <p>myWebsite/ (duplicate)</p>
+          </div>
+        </div>
+        <p style="margin-top:0.8em; color:#30d158;">-4,967 lines removed</p>
+      </section>
+
+      <section>
+        <h2>Before & After</h2>
+        <div class="m">
+          <div class="c" style="border-color:#0284C7;">
+            <p style="color:#0284C7; font-weight:bold;">BEFORE</p>
+            <p>60 files • 162 KB</p>
+            <p>4084-line portfolio file</p>
+            <p>7 .cursorignore variants</p>
+          </div>
+          <div class="c" style="border-color:#30d158;">
+            <p style="color:#30d158; font-weight:bold;">AFTER</p>
+            <p>12 files • ~30 KB</p>
+            <p>73-line focused CLAUDE.md</p>
+            <p>81% fewer files</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Strategy 4: codebase-memory</h2>
+        <p style="color:#06B6D4;">Stop "read this file" • Stop grep the repo</p>
+        <div class="m">
+          <div class="c"><div class="n g">10x</div><p>Fewer tokens</p></div>
+          <div class="c"><div class="n b">83%</div><p>Answer quality</p></div>
+          <div class="c"><div class="n p">2.1x</div><p>Fewer tool calls</p></div>
+          <div class="c"><div class="n o">3 min</div><p>Linux kernel index</p></div>
+        </div>
+        <p style="margin-top:0.8em;">One graph query replaces dozens of grep/read</p>
+      </section>
+
+      <section>
+        <h2>Impact Analysis</h2>
+        <div class="m">
+          <div class="c" style="text-align:left;">
+            <p style="color:#0284C7; font-weight:bold;">BEFORE</p>
+            <p>grep → scan → read → repeat</p>
+            <p>~412,000 tokens per session</p>
+          </div>
+          <div class="c" style="text-align:left;">
+            <p style="color:#30d158; font-weight:bold;">AFTER</p>
+            <p>Index once → one graph query</p>
+            <p>~3,400 tokens per session</p>
+          </div>
+        </div>
+        <p style="margin-top:0.8em;">99% token reduction</p>
+      </section>
+
+      <section>
+        <h2>Advanced: AST Skeletonization</h2>
+        <p style="color:#06B6D4;">Hide implementation, keep structure</p>
+        <div class="m">
+          <div class="c" style="text-align:left;">
+            <p style="color:#0284C7; font-weight:bold;">BEFORE</p>
+            <p>Send full 1000-line file</p>
+            <p>~50,000 tokens</p>
+          </div>
+          <div class="c" style="text-align:left;">
+            <p style="color:#30d158; font-weight:bold;">AFTER (Skeleton)</p>
+            <p>Signatures + imports only</p>
+            <p>~2,000 tokens</p>
+          </div>
+        </div>
+        <p style="margin-top:0.8em;">Tree-sitter parses AST → strips function bodies → keeps class/method signatures</p>
+      </section>
+
+      <section>
+        <h2>Advanced: Prompt Caching</h2>
+        <p style="color:#06B6D4;">The game changer from Anthropic &amp; OpenAI</p>
+        <div class="m">
+          <div class="c"><div class="n g">90%</div><p>Cost reduction</p></div>
+          <div class="c"><div class="n b">100KB</div><p>Cache checkpoint</p></div>
+          <div class="c"><div class="n p">Perfect</div><p>Accuracy</p></div>
+          <div class="c"><div class="n o">Free</div><p>Cache hits</p></div>
+        </div>
+        <p style="margin-top:0.8em;">Freeze .claude/skills + CLAUDE.md in cache block</p>
+      </section>
+
+      <section>
+        <h2>Advanced: LLMLingua Compression</h2>
+        <p style="color:#06B6D4;">Microsoft Research • 7B model pre-processor</p>
+        <div class="m">
+          <div class="c"><div class="n g">20x</div><p>Compression ratio</p></div>
+          <div class="c"><div class="n b">&lt;1%</div><p>Accuracy drop</p></div>
+          <div class="c"><div class="n p">7B</div><p>Pre-processor model</p></div>
+          <div class="c"><div class="n o">90-95%</div><p>Token savings</p></div>
+        </div>
+        <p style="margin-top:0.8em;">AI doesn't need "the, and, a" or verbose boilerplate</p>
+      </section>
+
+      <section>
+        <h2>Advanced: Multi-Model Routing</h2>
+        <p style="color:#06B6D4;">Don't use Sonnet for everything</p>
+        <div class="m">
+          <div class="c" style="text-align:left;">
+            <p style="color:#30d158; font-weight:bold;">Step 1: Haiku (cheap)</p>
+            <p>"Which 3 files are relevant?"</p>
+            <p>Returns file paths only</p>
+          </div>
+          <div class="c" style="text-align:left;">
+            <p style="color:#22D3EE; font-weight:bold;">Step 2: Sonnet (expensive)</p>
+            <p>Receives only 3 files</p>
+            <p>Does the actual coding</p>
+          </div>
+        </div>
+        <p style="margin-top:0.8em;">80% cost reduction • High accuracy</p>
+      </section>
+
+      <section>
+        <h2>Advanced: Unified Diff Output</h2>
+        <p style="color:#06B6D4;">Stop asking AI to rewrite entire files</p>
+        <div class="m">
+          <div class="c" style="text-align:left;">
+            <p style="color:#0284C7; font-weight:bold;">BEFORE</p>
+            <p>Rewrite entire 1000-line file</p>
+            <p>Full re-stream every time</p>
+          </div>
+          <div class="c" style="text-align:left;">
+            <p style="color:#30d158; font-weight:bold;">AFTER (Diff)</p>
+            <p>Output 10 changed lines only</p>
+            <p>60-90% token savings</p>
+          </div>
+        </div>
+        <p style="margin-top:0.8em;">Tools: Aider search/replace blocks, unified diff format</p>
+      </section>
+
+      <section>
+        <h2>Advanced: Open Source Tools</h2>
+        <div class="m">
+          <div class="c"><p style="font-weight:bold; color:#22D3EE;">Aider</p><p>Repository map with ctags</p><p>Strip comments &amp; whitespace</p></div>
+          <div class="c"><p style="font-weight:bold; color:#06B6D4;">Repomix</p><p>Pack repo → single file</p><p>Token counting + secrets scrub</p></div>
+          <div class="c"><p style="font-weight:bold; color:#30d158;">grep-ast</p><p>AST-aware grep</p><p>Signatures only, skip bodies</p></div>
+          <div class="c"><p style="font-weight:bold; color:#ff9f0a;">codebase-memory</p><p>Knowledge graph index</p><p>158 languages, sub-ms queries</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>What We Added to .claude</h2>
+        <p style="color:#06B6D4;">New rule: rules/token-reduction.md</p>
+        <div class="m">
+          <div class="c" style="text-align:left;">
+            <p style="color:#30d158; font-weight:bold;">Added</p>
+            <p>token-reduction.md (8 strategies)</p>
+            <p>Quick reference table</p>
+            <p>Always-loaded coding rule</p>
+          </div>
+          <div class="c" style="text-align:left;">
+            <p style="color:#22D3EE; font-weight:bold;">Result</p>
+            <p>.claude folder: cleaned + enhanced</p>
+            <p>Agent knows all 8 techniques</p>
+            <p>Applied automatically per session</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Technique Comparison</h2>
+        <div class="m">
+          <div class="c"><div class="n p">70-80%</div><p><strong>AST Skeleton</strong><br>High accuracy</p></div>
+          <div class="c"><div class="n g">90%</div><p><strong>Prompt Caching</strong><br>Perfect accuracy</p></div>
+          <div class="c"><div class="n b">90-95%</div><p><strong>LLMLingua</strong><br>Medium-high</p></div>
+          <div class="c"><div class="n o">60-90%</div><p><strong>Unified Diff</strong><br>High accuracy</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Results</h2>
+        <div class="m">
+          <div class="c"><div class="n g">-81%</div><p>Files</p></div>
+          <div class="c"><div class="n b">-82%</div><p>Size</p></div>
+          <div class="c"><div class="n p">-88%</div><p>Lines</p></div>
+          <div class="c"><div class="n o">90-99%</div><p>Tokens saved</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h1>Summary</h1>
+        <p>→ 10 strategies from file cleanup to AI compression</p>
+        <p>→ 60 files → 12, 162KB → 30KB</p>
+        <p>→ AST skeleton: 70% savings, full structure</p>
+        <p>→ Prompt caching: 90% cost reduction</p>
+        <p>→ LLMLingua: 20x compression, &lt;1% accuracy loss</p>
+        <p style="margin-top:1em; color:#22D3EE;">pirahansiah.com</p>
+      </section>
+
+      <section>
+        <h1>Thank You</h1>
+        <button id="restart-btn" style="background:rgba(255,255,255,0.1); color:white; border:1px solid white; padding:10px; border-radius:10px; cursor:pointer;">Restart</button>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+
+
+</article>
+<p class="page-foot">Source: <a href="/farshid/content/slides-token-optimization.md">content/slides-token-optimization.md</a> · Last modified 2026-09-19 · <a href="/farshid/content/atlas.html">All pages</a></p>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. Farshid Pirahansiah</div>
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas.html">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/qrcode.html">Scan &amp; Share</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+</body>
+</html>

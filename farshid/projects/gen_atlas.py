@@ -52,11 +52,12 @@ for slug,t in entries:
 
 SECTIONS = ['Publications','Courses','Notes & Guides','Talks, Presentations & Keynotes','Site Pages','Connect & Share','Projects']
 
-# Links inside atlas.md use in-app hash routes (#content/<slug>), NOT raw .md paths:
+# Links inside atlas.md point at the canonical static pages (#content/<slug>), NOT raw .md paths:
 # markdown is rendered client-side only, so a raw .md URL shows the source file when
 # opened in a new tab, opened from a search result, or clicked from outside the app.
 def content_url(slug):
-    return '#content/'+slug
+    # Canonical static page: crawlers (and no-JS fetches) cannot follow hash routes.
+    return f'/farshid/content/{slug}.html'
 
 # publication subgroup order
 PUBSUB = ['Book Chapters','Journal Articles','Conference Papers','Patents','Keynotes','Profile']
@@ -66,10 +67,10 @@ def render():
     for sec in SECTIONS:
         if sec=='Site Pages':
             L.append('## Site Pages'); L.append('')
-            L.append('- [**🏠 Home — about &amp; overview**](/farshid/content/index.html)')
-            L.append('- [**🕸️ Search Swarm — one search for the whole knowledge base**](/farshid/content/swarm.html)')
-            L.append('- [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/content/qrcode.html)')
-            L.append('- [**🗂️ Atlas — this index**](#atlas)')
+            L.append('- [**Home — about &amp; overview**](/farshid/content/index.html)')
+            L.append('- [**Search Swarm — one search for the whole knowledge base**](/farshid/content/swarm.html)')
+            L.append('- [**Scan &amp; Share — all links + QR codes**](/farshid/content/qrcode.html)')
+            L.append('- [**Atlas — this index**](/farshid/content/atlas.html)')
             L.append('- [**Talk: Reducing Token Usage in AI-Assisted Development**](#content/slides-token-optimization)')
             L.append('- [**Keynote: LLMs Meet Computer Vision**](#content/keynotes-llm-cv)')
             L.append('- [**Research Tools — talks &amp; keynotes hub**](#content/research-tools)')
@@ -80,8 +81,8 @@ def render():
         if sec=='Connect & Share':
             items=sorted(buckets.get(('Connect & Share',None),[]), key=lambda x:x[1].lower())
             L.append('## Connect & Share'); L.append('')
-            L.append('- [**🕸️ Search Swarm — one search for the whole knowledge base**](/farshid/content/swarm.html)')
-            L.append('- [**🔗 Scan &amp; Share — all links + QR codes**](/farshid/content/qrcode.html)')
+            L.append('- [**Search Swarm — one search for the whole knowledge base**](/farshid/content/swarm.html)')
+            L.append('- [**Scan &amp; Share — all links + QR codes**](/farshid/content/qrcode.html)')
             L.append('')
             rest = [x for x in items if x[0]!='qr']
             for slug,t in rest:
@@ -102,7 +103,7 @@ def render():
                             rb=open(rm,encoding='utf-8').read()
                             m=re.search(r'^#\s+(.+)$',rb,re.M)
                             if m: label=' '.join(m.group(1).split())
-                        L.append(f'- [{label}](/farshid/projects/{d}/README.md)')
+                        L.append(f'- [{label}](/farshid/projects/{d}/)')
             L.append(''); continue
         # collect subgroups for this section
         subs=[s for (s_s,s) in buckets if s_s==sec]

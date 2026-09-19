@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+'<meta name="theme-color" content="#EEF0F4">
+<title>How PyCUDA Reads and Runs C Kernels · Farshid Pirahansiah</title>
+<meta name="description" content="Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/note-pycuda.html">
+<link rel="alternate" type="text/markdown" href="/farshid/content/note-pycuda.md" title="Markdown source">
+<link rel="icon" href="/farshid/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/note-pycuda.html">
+<meta property="og:title" content="How PyCUDA Reads and Runs C Kernels">
+<meta property="og:description" content="Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="llms" href="/llms.txt">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"Article","@id":"https://pirahansiah.com/farshid/content/note-pycuda.html#article","url":"https://pirahansiah.com/farshid/content/note-pycuda.html","name":"How PyCUDA Reads and Runs C Kernels","headline":"How PyCUDA Reads and Runs C Kernels","description":"Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/note-pycuda.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"How PyCUDA Reads and Runs C Kernels","item":"https://pirahansiah.com/farshid/content/note-pycuda.html"}]}]}</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-item" href="/farshid/content/index.html">Home</a>
+<a class="nav-item" href="/farshid/content/atlas.html">Atlas</a>
+<a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+</nav></div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#notes-guides">Notes &amp; Guides</a></nav>
+<article class="article">
+
+<p>Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.</p>
+<p>How PyCUDA Reads and Runs C Kernels</p>
+<p><img src="/farshid/content/CUDA_pycuda_kernel_explanation.png" alt="How PyCUDA Reads and Runs C Kernels" style="max-width: 100%; height: auto;"></p>
+<h1 id="how-pycuda-reads-and-runs-c-kernels">How PyCUDA Reads and Runs C Kernels</h1>
+<p>In <strong>PyCUDA</strong>, you can run <strong>CUDA kernels</strong> (which are typically written in C or C++) directly from Python. PyCUDA provides a way to write CUDA code as a string, compile it at runtime, and execute it on the GPU. Let's walk through the process step-by-step, explaining how PyCUDA interacts with a kernel written in C and runs it.</p>
+<h2 id="1-importing-pycuda-modules">1. Importing PyCUDA Modules</h2>
+<p>The following lines import PyCUDA’s functionalities:</p>
+<pre><code class="language-python">import pycuda.curandom as curandom
+import pycuda.driver as cuda
+import pycuda.autoinit
+</code></pre>
+<ul>
+<li><strong><code>pycuda.driver as cuda</code></strong>: This module provides the basic interface to communicate with the CUDA driver, which manages GPU resources and executes code.</li>
+<li><strong><code>pycuda.autoinit</code></strong>: This module automatically initializes CUDA when you import it, setting up the GPU and its context (the memory space for the program to run).</li>
+<li><strong><code>pycuda.curandom</code></strong>: This module is used to generate random numbers on the GPU using CUDA’s random number generation capabilities.</li>
+</ul>
+<h2 id="2-importing-the-cuda-kernels">2. Importing the CUDA Kernels</h2>
+<pre><code class="language-python">import GraphTsetlinMachine.kernels as kernels
+</code></pre>
+<ul>
+<li>This imports a module named <strong><code>kernels</code></strong> from <code>GraphTsetlinMachine</code>. Presumably, this module contains CUDA code (written in C) in the form of strings or functions that will later be compiled and executed using PyCUDA.</li>
+</ul>
+<h2 id="3-writing-cuda-kernels-c-code-in-strings">3. Writing CUDA Kernels (C Code in Strings)</h2>
+<p>In PyCUDA, CUDA kernels (written in C or C++) are typically embedded as string literals in Python code. Here is an example of what that might look like:</p>
+<pre><code class="language-c">__global__ void add(int *a, int *b, int *result) {
+    int idx = threadIdx.x + blockIdx.x * blockDim.x;
+    result[idx] = a[idx] + b[idx];
+}
+</code></pre>
+<p>This is a simple CUDA kernel written in C:
+- <strong><code>__global__</code></strong>: This indicates that <code>add</code> is a CUDA kernel that can be called from the host (Python) and will run on the GPU.
+- The kernel adds two arrays element-wise on the GPU.</p>
+<h2 id="4-compiling-and-running-the-kernel">4. Compiling and Running the Kernel</h2>
+<p>In PyCUDA, you compile and run this CUDA code from Python. Here’s how PyCUDA reads and executes the kernel:</p>
+<h3 id="a-compiling-the-kernel-using-sourcemodule">a) Compiling the Kernel Using <code>SourceModule</code></h3>
+<p>You use PyCUDA’s <strong><code>SourceModule</code></strong> class to compile the kernel code at runtime:</p>
+<pre><code class="language-python">from pycuda.compiler import SourceModule
+
+mod = SourceModule(kernel_code)
+</code></pre>
+<ul>
+<li><strong><code>SourceModule</code></strong> takes the kernel code as a string and compiles it into machine code that can be executed on the GPU.</li>
+<li>At this point, the CUDA kernel is ready to be called from Python.</li>
+</ul>
+<h3 id="b-extracting-the-kernel">b) Extracting the Kernel</h3>
+<p>Once the kernel is compiled, you can extract it from the <code>SourceModule</code> object using its function name:</p>
+<pre><code class="language-python">add = mod.get_function(&quot;add&quot;)
+</code></pre>
+<ul>
+<li><strong><code>get_function("add")</code></strong>: This retrieves the <strong>compiled CUDA function</strong> (kernel) called <code>add</code>.</li>
+</ul>
+<h3 id="c-allocating-memory-on-the-gpu">c) Allocating Memory on the GPU</h3>
+<p>Before running the kernel, you need to allocate memory on the GPU. This can be done using PyCUDA’s <strong><code>cuda.mem_alloc()</code></strong> function:</p>
+<pre><code class="language-python">import numpy as np
+
+a = np.array([1, 2, 3, 4], dtype=np.int32)
+b = np.array([5, 6, 7, 8], dtype=np.int32)
+result = np.zeros_like(a)
+
+a_gpu = cuda.mem_alloc(a.nbytes)
+b_gpu = cuda.mem_alloc(b.nbytes)
+result_gpu = cuda.mem_alloc(result.nbytes)
+
+cuda.memcpy_htod(a_gpu, a)
+cuda.memcpy_htod(b_gpu, b)
+</code></pre>
+<ul>
+<li><strong><code>cuda.mem_alloc()</code></strong>: Allocates GPU memory for the arrays.</li>
+<li><strong><code>cuda.memcpy_htod()</code></strong>: Copies data from the host (CPU) to the device (GPU).</li>
+</ul>
+<h3 id="d-running-the-kernel">d) Running the Kernel</h3>
+<p>Now that the memory is allocated and the kernel is compiled, you can execute the kernel on the GPU:</p>
+<pre><code class="language-python">add(a_gpu, b_gpu, result_gpu, block=(4, 1, 1), grid=(1, 1))
+</code></pre>
+<ul>
+<li><strong><code>block=(4, 1, 1)</code></strong>: Specifies that we want to launch 4 threads per block (1-dimensional thread block).</li>
+<li><strong><code>grid=(1, 1)</code></strong>: Specifies that we are using 1 block in the grid.</li>
+</ul>
+<p>This launches the <strong><code>add</code></strong> kernel on the GPU, which performs element-wise addition of the arrays <code>a</code> and <code>b</code> and stores the result in <code>result</code>.</p>
+<h3 id="e-retrieving-the-results">e) Retrieving the Results</h3>
+<p>Once the kernel has completed execution, the results can be copied back from GPU memory to the host:</p>
+<pre><code class="language-python">cuda.memcpy_dtoh(result, result_gpu)
+print(result)  # Output: [6 8 10 12]
+</code></pre>
+<ul>
+<li><strong><code>cuda.memcpy_dtoh()</code></strong>: Copies the result from the device (GPU) back to the host (CPU).</li>
+<li>Finally, the result is printed, showing the sum of the arrays.</li>
+</ul>
+<h2 id="5-running-the-kernel-in-your-example">5. Running the Kernel in Your Example</h2>
+<p>In your case, the code seems to be using kernels from the <code>GraphTsetlinMachine.kernels</code> module. These kernels are most likely stored as C code in string format within the module. Here's a simplified explanation of what happens:</p>
+<ul>
+<li><strong>Step 1</strong>: The kernel code (written in C/CUDA) is stored as a string in the <code>kernels</code> module.</li>
+<li><strong>Step 2</strong>: The kernel code is compiled at runtime using <code>SourceModule</code> from PyCUDA.</li>
+<li><strong>Step 3</strong>: The Python code allocates memory for the necessary data structures on the GPU using <code>cuda.mem_alloc</code>.</li>
+<li><strong>Step 4</strong>: The kernel is executed on the GPU with specified grid and block dimensions using the <code>get_function</code> to retrieve and call the kernel.</li>
+<li><strong>Step 5</strong>: The results are copied back from GPU memory to CPU memory using <code>cuda.memcpy_dtoh</code>, and the results can then be used in Python.</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<ul>
+<li><strong>PyCUDA</strong> enables running CUDA kernels (written in C) directly from Python.</li>
+<li>The <strong><code>SourceModule</code></strong> class is used to compile the kernel code.</li>
+<li>Memory allocation is done using <strong><code>cuda.mem_alloc</code></strong>, and data is transferred between the host and device using <strong><code>memcpy_htod</code></strong> (Host to Device) and <strong><code>memcpy_dtoh</code></strong> (Device to Host).</li>
+<li>Kernels are executed by calling the compiled kernel function with specific grid and block configurations.</li>
+</ul>
+<p>In your specific example, <code>GraphTsetlinMachine.kernels</code> likely contains CUDA kernel code for running Tsetlin Machine operations on the GPU, and PyCUDA is handling the compilation and execution of this code.</p>
+</article>
+<p class="page-foot">Source: <a href="/farshid/content/note-pycuda.md">content/note-pycuda.md</a> · Last modified 2026-09-19 · <a href="/farshid/content/atlas.html">All pages</a></p>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. Farshid Pirahansiah</div>
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas.html">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/qrcode.html">Scan &amp; Share</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+'<meta name="theme-color" content="#EEF0F4">
+<title>MetaMask — Connect &amp; Receive · Farshid Pirahansiah</title>
+<meta name="description" content="Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive address. Private test page.">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/metamask.html">
+<link rel="alternate" type="text/markdown" href="/farshid/content/metamask.md" title="Markdown source">
+<link rel="icon" href="/farshid/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/metamask.html">
+<meta property="og:title" content="MetaMask — Connect &amp; Receive">
+<meta property="og:description" content="Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive address. Private test page.">
+<meta name="twitter:card" content="summary">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="llms" href="/llms.txt">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"Article","@id":"https://pirahansiah.com/farshid/content/metamask.html#article","url":"https://pirahansiah.com/farshid/content/metamask.html","name":"MetaMask — Connect & Receive","headline":"MetaMask — Connect & Receive","description":"Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive address. Private test page.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/metamask.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"MetaMask — Connect & Receive","item":"https://pirahansiah.com/farshid/content/metamask.html"}]}]}</script>
+</head>
+<body>
+<header class="topbar"><div class="topbar-inner">
+<a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+<nav class="nav" aria-label="Primary">
+<a class="nav-item" href="/farshid/content/index.html">Home</a>
+<a class="nav-item" href="/farshid/content/atlas.html">Atlas</a>
+<a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+</nav></div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#notes-guides">Notes &amp; Guides</a></nav>
+<article class="article">
+
+<blockquote>
+<p><strong>MetaMask Connect</strong> — Connect your wallet, receive, or send crypto automatically. — https://pirahansiah.com/metamask/
+Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive address. Private test page.</p>
+</blockquote>
+<p><em>Last updated: 2026-08-16.</em>  <!--ENHANCED--></p>
+<style>
+.mm-hero { text-align: center; padding: 32px 16px 4px; }
+.mm-hero h1 { font-size: 2rem; margin: 0 0 8px; }
+.mm-hero p { color: var(--text-muted); margin: 0 auto 4px; max-width: 640px; }
+
+.mm-connect-bar { max-width: 520px; margin: 18px auto 0; padding: 0 16px; text-align: center; }
+.mm-btn {
+  display: inline-block; padding: 12px 26px; border: none; border-radius: 12px; cursor: pointer;
+  font-size: 1rem; font-weight: 600; color: #062A33;
+  background: linear-gradient(135deg, var(--farshid-blue), var(--farshid-purple));
+  box-shadow: 0 4px 18px rgba(34, 211, 238,0.35); transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.mm-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(34, 211, 238,0.45); }
+.mm-btn.ghost { background: var(--glass-bg-strong); box-shadow: none; }
+.mm-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.mm-connected {
+  display: none; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
+  padding: 12px 16px; border-radius: 14px; background: var(--glass-bg); border: 1px solid var(--glass-border);
+  font-size: 0.9rem;
+}
+.mm-connected .acct { font-family: ui-monospace, monospace; color: #7ee0a3; }
+.mm-connected .bal { color: var(--text-muted); }
+.mm-err {
+  margin-top: 12px; padding: 12px; border-radius: 10px;
+  background: rgba(255,55,95,0.15); border: 1px solid rgba(255,55,95,0.4);
+  color: #ff8a9b; font-size: 0.88rem; display: none;
+}
+
+.crypto-warnings { max-width: 760px; margin: 22px auto 6px; padding: 0 16px; display: grid; gap: 12px; }
+.warn-box {
+  display: flex; gap: 12px; align-items: flex-start;
+  border-radius: 14px; padding: 14px 16px; font-size: 0.92rem; line-height: 1.6;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.warn-box .warn-icon { font-size: 1.2rem; line-height: 1.4; flex-shrink: 0; }
+.warn-box b { display: block; margin-bottom: 2px; }
+.warn-box.warning { background: rgba(255,59,48,0.10); border: 1px solid rgba(255,59,48,0.38); color: #ffb3b8; }
+.warn-box.warning b { color: #ff6961; }
+.warn-box.caution { background: rgba(255,149,0,0.10); border: 1px solid rgba(255,159,10,0.38); color: #ffd9a0; }
+.warn-box.caution b { color: #ffb340; }
+.warn-box.note { background: rgba(34, 211, 238,0.10); border: 1px solid rgba(34, 211, 238,0.38); color: #bcd9ff; }
+.warn-box.note b { color: #06B6D4; }
+.warn-box.when { background: rgba(48,209,88,0.09); border: 1px solid rgba(48,209,88,0.36); color: #b7e8c7; }
+.warn-box.when b { color: #30d158; }
+.warn-box code { font-family: ui-monospace, monospace; color: #06B6D4; }
+
+.crypto-selector { max-width: 760px; margin: 26px auto 0; padding: 0 16px; display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.token-pill {
+  padding: 9px 18px; border-radius: 12px; cursor: pointer; font-size: 0.9rem; font-weight: 700;
+  color: var(--text-muted); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14);
+  transition: all 0.18s ease;
+}
+.token-pill:hover { border-color: rgba(34, 211, 238,0.5); color: var(--text); }
+.token-pill.active { color: #062A33; border-color: transparent; background: linear-gradient(135deg, #22D3EE, #06B6D4); box-shadow: 0 4px 16px rgba(34, 211, 238,0.35); }
+
+.crypto-panel {
+  max-width: 440px; margin: 22px auto 0; padding: 26px 22px; border-radius: 20px; text-align: center;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+}
+.panel-head { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 6px; }
+.panel-head .ticker { font-size: 1.6rem; font-weight: 800; letter-spacing: 0.5px; }
+.panel-head .chain { font-size: 0.8rem; color: var(--text-muted); background: rgba(255,255,255,0.08); padding: 3px 10px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+.panel-network { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 14px; }
+.panel-live { display: none; color: #30d158; font-size: 0.78rem; margin-bottom: 10px; }
+.crypto-panel .qr { width: 168px; height: 168px; margin: 0 auto 16px; border-radius: 12px; background: #fff; padding: 10px; display: flex; align-items: center; justify-content: center; }
+.crypto-panel .qr img { width: 148px; height: 148px; display: block; }
+.crypto-panel .qr .qr-svg { display: none; }
+.crypto-panel .qr .qr-svg svg { width: 148px; height: 148px; display: block; }
+.crypto-panel .addr {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 0.8rem; line-height: 1.5; word-break: break-all; color: #c9d4e3;
+  background: rgba(0,0,0,0.28); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 12px; margin-bottom: 16px;
+}
+.copy-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px;
+  background: linear-gradient(135deg, #22D3EE, #06B6D4); color: #062A33; border: none; border-radius: 10px;
+  font-size: 0.92rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.copy-btn:hover { opacity: 0.9; transform: scale(1.03); }
+.copy-btn.copied { background: linear-gradient(135deg, #34c759, #30d158); }
+.panel-warn { margin-top: 16px; font-size: 0.8rem; color: #ffb340; line-height: 1.5; }
+
+/* --- send panel --- */
+.send-panel {
+  max-width: 440px; margin: 18px auto 40px; padding: 24px 22px; border-radius: 20px; text-align: center;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+}
+.send-panel h3 { margin: 0 0 4px; font-size: 1.15rem; }
+.send-desc { color: var(--text-muted); font-size: 0.82rem; margin: 0 0 14px; }
+.send-balance { font-size: 0.9rem; font-weight: 600; color: #7ee0a3; margin-bottom: 14px; min-height: 1.2em; }
+.send-row { display: flex; align-items: center; gap: 10px; justify-content: center; margin-bottom: 14px; }
+.send-row input {
+  width: 180px; padding: 11px 14px; border-radius: 10px; font-size: 1rem;
+  background: rgba(0,0,0,0.28); border: 1px solid rgba(255,255,255,0.14); color: var(--text);
+}
+.send-row input:focus { outline: none; border-color: rgba(34, 211, 238,0.6); }
+.send-sym { font-size: 0.9rem; font-weight: 700; color: var(--text-muted); min-width: 34px; }
+.send-btn {
+  display: inline-block; padding: 11px 28px; border: none; border-radius: 12px; cursor: pointer;
+  font-size: 0.95rem; font-weight: 700; color: #fff;
+  background: linear-gradient(135deg, #34c759, #30d158); box-shadow: 0 4px 18px rgba(48,209,88,0.3);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.send-btn:hover { transform: translateY(-1px); }
+.send-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+.send-status { margin-top: 12px; font-size: 0.84rem; line-height: 1.5; min-height: 1.2em; color: var(--text-muted); word-break: break-all; }
+.send-status.ok { color: #30d158; }
+.send-status.err { color: #ff8a9b; }
+.send-status.pending { color: #ffb340; }
+
+.mm-note { color: var(--text-muted); font-size: 0.8rem; margin: 20px auto 0; text-align: center; max-width: 560px; padding-bottom: 40px; }
+</style>
+
+<div class="mm-hero">
+  <h1>MetaMask — Connect &amp; Receive</h1>
+  <p>Connect your wallet, then receive or send crypto automatically. Select a token to switch networks.</p>
+</div>
+
+<div class="mm-connect-bar">
+  <button class="mm-btn" id="mm-connect-btn" type="button">Connect MetaMask</button>
+  <div class="mm-connected" id="mm-connected">
+    <span class="acct" id="mm-acct"></span>
+    <span class="bal" id="mm-bal"></span>
+    <button class="mm-btn ghost" id="mm-disconnect" type="button">Disconnect</button>
+  </div>
+  <div class="mm-err" id="mm-err"></div>
+</div>
+
+<div class="crypto-warnings">
+  <div class="warn-box warning">
+    <span class="warn-icon">&#9888;&#65039;</span>
+    <div><b>Warning — transfers are irreversible</b>
+    Crypto transactions cannot be reversed, refunded, or recovered once confirmed. There is no chargeback and no support line that can undo a transfer. Double-check everything before you send.</div>
+  </div>
+  <div class="warn-box caution">
+    <span class="warn-icon">&#9888;&#65039;</span>
+    <div><b>Caution — send on the correct network</b>
+    Ethereum, Base and BNB Smart Chain share the same address (<code>0xFcE7&hellip;53B0C</code>). Sending on the wrong network — for example Base instead of Ethereum — can permanently lose your funds. The page auto-switches to the right network before sending.</div>
+  </div>
+  <div class="warn-box note">
+    <span class="warn-icon">&#8505;&#65039;</span>
+    <div><b>Note — voluntary, no invoice</b>
+    This page is a voluntary support option, not a purchase or invoice. Crypto payments are final with no automatic receipt or confirmation. If you are unsure, send a small test amount first.</div>
+  </div>
+  <div class="warn-box when">
+    <span class="warn-icon">&#128161;</span>
+    <div><b>When to use it</b>
+    Use crypto to support the work anonymously or internationally with low fees. For contracts, invoices, consulting, or anything that needs a receipt, email <code>info@pirahansiah.com</code> instead.</div>
+  </div>
+</div>
+
+<div class="crypto-selector" id="crypto-selector">
+  <button class="token-pill" data-token="btc" type="button">BTC</button>
+  <button class="token-pill active" data-token="eth" type="button">ETH</button>
+  <button class="token-pill" data-token="sol" type="button">SOL</button>
+  <button class="token-pill" data-token="base" type="button">BASE</button>
+  <button class="token-pill" data-token="bnb" type="button">BNB</button>
+</div>
+
+<div class="crypto-panel">
+  <div class="panel-head">
+    <span class="ticker" id="sel-ticker">&#9874; ETH</span>
+    <span class="chain" id="sel-chain">Ethereum</span>
+  </div>
+  <div class="panel-network" id="sel-network">Ethereum mainnet &middot; native ETH &amp; ERC-20 tokens</div>
+  <div class="panel-live" id="sel-live">&#10003; Live from your connected MetaMask wallet</div>
+  <div class="qr">
+    <img id="sel-qr-img" src="/farshid/content/eth.svg" alt="Ethereum QR code">
+    <div class="qr-svg" id="sel-qr-svg"></div>
+  </div>
+  <div class="addr" id="sel-addr">0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C</div>
+  <button class="copy-btn" id="sel-copy" type="button">Copy address</button>
+  <div class="panel-warn" id="sel-warn">Send only on the Ethereum network (ERC-20).</div>
+</div>
+
+<div class="send-panel">
+  <h3>Send crypto</h3>
+  <p class="send-desc">Sends native tokens from your connected wallet to the support address (auto-switches network).</p>
+  <div class="send-balance" id="send-balance">Connect MetaMask to see your balance.</div>
+  <div class="send-row">
+    <input type="text" id="send-amount" inputmode="decimal" placeholder="0.001" autocomplete="off">
+    <span class="send-sym" id="send-sym">ETH</span>
+  </div>
+  <button class="send-btn" id="send-btn" type="button" disabled>Send</button>
+  <div class="send-status" id="send-status">Connect MetaMask to enable sending.</div>
+</div>
+
+<p class="mm-note">Private test page — not linked from anywhere on the site. Requires the MetaMask browser extension.</p>
+
+
+
+</article>
+<p class="page-foot">Source: <a href="/farshid/content/metamask.md">content/metamask.md</a> · Last modified 2026-09-19 · <a href="/farshid/content/atlas.html">All pages</a></p>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. Farshid Pirahansiah</div>
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas.html">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/qrcode.html">Scan &amp; Share</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+</body>
+</html>
