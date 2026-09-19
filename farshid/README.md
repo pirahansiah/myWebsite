@@ -38,7 +38,9 @@ standalone `.html`.
     AdSense.
   - `farshid/app.js`, `farshid/md.js`, `farshid/style.css`, `farshid/deck.css`,
     `farshid/search-index.js` — engine (markdown renderer, hash router, Reveal deck
-    boot, search index, design system).
+    boot, search index, design system). See "Design system" below.
+  - `farshid/fonts/` — Ubuntu Sans + Ubuntu Sans Mono (self-hosted `woff2`, UFL-1.0;
+    licence text in `fonts/LICENCE-UFL-1.0.txt`). No third-party font requests.
   - `farshid/permalinks.js`, `farshid/page-aliases.js` — generated URL maps
     (permalinks → page, legacy `/notes/...` → page) used by root `404.html`.
   - `qr/index.html` — the `/qr/` permanent short link.
@@ -105,6 +107,34 @@ prefer the `.md` form inside pages.
 * **`farshid/page-aliases.js`** (generated from the vault) adds ~170 older
   `/notes/<section>/<note>/` aliases, so links written years ago — the ones inside
   the pages themselves — land on the page that now serves that content.
+
+## Design system
+
+The site is themed as the Ubuntu 26 desktop (Yaru / GNOME) brought to the web, and
+the reading surface fills the display instead of sitting in a narrow centred column.
+
+- **Tokens** live at the top of `farshid/style.css`: `--canvas` `#fafafa`, surfaces
+  `#fff`/`#f6f5f4`/`#ebebeb`, ink `#1d1d1d`/`#5c5c5c`, `--accent` `#e95420` (Yaru
+  orange), `--accent-ink` `#b8410f` for link text, `--accent-fill` `#cc400b` behind
+  white labels, `--radius` 12px. A `prefers-color-scheme: dark` block swaps in the
+  Yaru dark set (`#242424` canvas). Decks stay white/black in both.
+- **Type**: Ubuntu Sans (self-hosted) with `Ubuntu`/system fallbacks, Ubuntu Sans Mono
+  for code; the body size scales with the viewport (`clamp()`) so big screens get
+  bigger text, not wider empty margins.
+- **Width**: nothing caps the layout — `--maxw` is `100%` and the gutter is
+  `clamp(18px, 2.2vw, 52px)`. Prose paragraphs cap at `120ch` for readability;
+  above 1620px a long prose page (`article.prose-cols`, 3 columns above 2400px)
+  splits into columns, with code, tables, images and headings spanning the full
+  width so nothing breaks across columns. Pages that ship their own layout (atlas
+  index, decks, QR grid, games, wiki) stay single-column — `app.js` decides by
+  looking for those panels in the rendered markdown.
+- **Chrome**: the top bar is a GNOME header bar (translucent, hairline, flat pill
+  nav), rows are boxed GNOME-style rows, cards are Yaru cards (12px, hairline, one
+  soft shadow), buttons come in Yaru "suggested" and "normal" flavours. Browser
+  surfaces (selection, caret, focus ring, scrollbar, `accent-color`) are themed too.
+- Aesthetic rules that stay true across edits: flat surfaces (no gradients), no
+  gradient text, no emoji standing in for icons, one `<h1>` per page, hairline
+  rules instead of heavy borders, no animation of layout properties.
 
 ## How it works
 

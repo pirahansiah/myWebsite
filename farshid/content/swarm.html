@@ -3,10 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#F2F3F7">
+<meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#242424" media="(prefers-color-scheme: dark)">
 <title>Search Swarm — Farshid Pirahansiah</title>
 <meta name="description" content="One search for the whole pirahansiah.com knowledge base — type a question, get ranked matches, and watch a swarm of agents map and synthesize every publication, course, note, talk, and project.">
 <link rel="icon" href="/farshid/favicon.png">
+<link rel="preload" href="/farshid/fonts/ubuntu-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/farshid/fonts/ubuntu-sans-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/farshid/style.css">
 <meta name="robots" content="index, follow">
 <!-- Google AdSense -->
@@ -28,7 +31,7 @@
   background: var(--glass-strong); border: 1px solid var(--rule); border-radius: 18px;
   box-shadow: var(--shadow-lg); overflow: hidden; position: relative;
 }
-.swarm-visual { position: relative; height: 300px; background: radial-gradient(620px 300px at 50% 0%, rgba(10,102,255,0.10), transparent 70%); }
+.swarm-visual { position: relative; height: 300px; background: radial-gradient(620px 300px at 50% 0%, rgba(233,84,32,0.10), transparent 70%); }
 .swarm-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .swarm-ask { display: flex; gap: 10px; padding: 14px; border-top: 1px solid var(--rule); }
 .swarm-ask input {
@@ -40,7 +43,7 @@
   padding: 14px 24px; font-size: 15px; font-weight: 600; border: none; border-radius: 12px;
   background: var(--accent); color: #fff; cursor: pointer; transition: background .15s;
 }
-.swarm-ask button:hover { background: #0652cf; }
+.swarm-ask button:hover { background: #d34a17; }
 .swarm-legend { display: flex; gap: 16px; justify-content: center; padding: 10px; font-size: 12px; color: var(--ink-2); flex-wrap: wrap; }
 .swarm-legend span i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
 
@@ -52,7 +55,7 @@
   padding: 6px 13px; font-size: 13px; border-radius: 24px; cursor: pointer;
   background: var(--glass); border: 1px solid var(--rule); color: var(--ink-2); transition: all .18s;
 }
-.swarm-tag:hover, .swarm-tag.active { background: rgba(10,102,255,0.12); border-color: var(--accent); color: var(--accent); }
+.swarm-tag:hover, .swarm-tag.active { background: rgba(233,84,32,0.12); border-color: var(--accent); color: var(--accent); }
 .swarm-list { list-style: none; padding: 0; margin: 0; }
 .swarm-result {
   background: var(--glass-strong); border: 1px solid var(--rule); border-radius: 14px;
@@ -63,7 +66,7 @@
 .swarm-result .sr-snippet { font-size: 14px; color: var(--ink-2); line-height: 1.55; margin: 0 0 8px; }
 .swarm-result .sr-path { font-family: var(--mono); font-size: 12px; color: var(--accent-ink); }
 .swarm-result:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-mark { background: rgba(10,102,255,0.18); color: inherit; border-radius: 3px; padding: 0 1px; }
+mark { background: rgba(233,84,32,0.18); color: inherit; border-radius: 3px; padding: 0 1px; }
 .swarm-empty { text-align: center; color: var(--ink-2); padding: 30px 0; }
 .swarm-empty h2 { font-family: var(--ui-display); font-weight: 650; font-size: 20px; color: var(--ink); margin: 0 0 6px; }
 .swarm-count { font-size: 13px; color: var(--ink-2); margin: 0 0 6px; }
@@ -97,7 +100,7 @@ mark { background: rgba(10,102,255,0.18); color: inherit; border-radius: 3px; pa
       <div class="swarm-visual">
         <canvas id="swarm-canvas" class="swarm-canvas"></canvas>
         <div class="swarm-legend">
-          <span><i style="background:#0a66ff"></i>pages &amp; pubs</span>
+          <span><i style="background:#e95420"></i>pages &amp; pubs</span>
           <span><i style="background:#8338e0"></i>tags</span>
           <span><i style="background:#24bfa0"></i>agents</span>
         </div>
@@ -160,7 +163,7 @@ mark { background: rgba(10,102,255,0.18); color: inherit; border-radius: 3px; pa
     for(var i=0;i<agents.length;i++) for(var j=i+1;j<agents.length;j++){
       var a=agents[i],b=agents[j];
       var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
-      if(d<90){ ctx.strokeStyle='rgba(10,102,255,'+(0.25*(1-d/90))+')'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
+      if(d<90){ ctx.strokeStyle='rgba(233,84,32,'+(0.25*(1-d/90))+')'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
     }
     agents.forEach(function(a){
       a.x+=a.vx*dt*30; a.y+=a.vy*dt*30;

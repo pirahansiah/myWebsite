@@ -81,7 +81,12 @@
     var ft = fm && fm[1].match(/^title:\s*(.+)$/m);
     if(ft) h1 = ft[1].replace(/^["']|["']$/g,'').trim();
     document.title = (h1?h1+' — ':'')+'Farshid Pirahansiah';
-    c.innerHTML = '<article class="article">'+window.renderMarkdown(txt)+'</article>';
+    // Long text fills the display: prose pages split into columns on wide screens.
+    // A page that ships its own panels (atlas index, decks, QR grid, games, wiki layout)
+    // keeps the single full-width flow — columns inside those would fight their own layout.
+    var rbody = window.renderMarkdown(txt);
+    var PANEL = /class="[^"]*\b(hero|atlas-list|presentation-panel|wiki-cols|wiki-wrap|qr-grid|sitemap-grid|game-page|sga-wrap|crypto-panel|mm-hero|swarm-studio|send-panel)\b/;
+    c.innerHTML = '<article class="article' + (PANEL.test(rbody) ? '' : ' prose-cols') + '">' + rbody + '</article>';
     c.querySelectorAll('h1,h2,h3').forEach(function(h,i){ if(!h.id) h.id = slug(h.textContent); });
     highlightNav(file, anchor||'');
     wireLinks(c);
