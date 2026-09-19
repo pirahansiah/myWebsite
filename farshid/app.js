@@ -33,11 +33,10 @@
 
   function renderMarkdownRoute(file, anchor){
     var path;
-    // permanent absolute paths — everything lives under /farshid/content/
-    if (file==='atlas' || file==='contact' || file==='privacy') path='/farshid/content/'+file+'.md';
-    else if (file.indexOf('content/')===0) path='/farshid/'+file+'.md';
-    else if (file.indexOf('/')>=0) path='/farshid/'+file+'.md';   // absolute (e.g. projects/…/README)
-    else path='/farshid/content/'+file+'.md';
+    var f = (file||'').replace(/^content\//,'');        // '#content/<page>' is the usual route shape
+    if (file.indexOf('.html')>=0)      path='/farshid/'+file;             // an app-shell route
+    else if (f.indexOf('/')>=0)        path='/farshid/'+f+'.md';          // projects/<name>/README
+    else                               path='/farshid/content/'+f+'.md';  // everything else
     fetch(path)
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
       .then(function(txt){ renderInto(txt, file, anchor); })
