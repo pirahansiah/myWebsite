@@ -16,7 +16,32 @@
 .qr-btn.open { background: var(--accent); color: #fff; }
 .qr-btn.open:hover { background: #a83809; }
 .qr-btn.copy { background: rgba(200,65,10,0.12); color: var(--accent); }
+.qr-note { background: rgba(200,65,10,0.06); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 10px; padding: 12px 14px; font-size: 13px; line-height: 1.55; color: var(--muted); margin: 0 0 22px; }
+.qr-addr { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; line-height: 1.5; word-break: break-all; color: var(--accent2); background: rgba(0,0,0,0.045); border-radius: 8px; padding: 7px 8px; margin: 2px 0 8px; -webkit-user-select: all; user-select: all; cursor: text; }
+.qr-addr-note { font-size: 12px; color: var(--muted); margin: 10px 0 0; }
 </style>
+
+## Social &amp; Web
+
+<div class="qr-grid">
+  <div class="qr-card"><h3>pirahansiah.com</h3><p>Website</p><img src="/farshid/content/pirahansiah.png" alt="Website QR" loading="lazy"><a class="qr-link" href="/">pirahansiah.com</a></div>
+  <div class="qr-card"><h3>LinkedIn</h3><p>Profile</p><img src="/farshid/content/linkedin2.png" alt="LinkedIn QR" loading="lazy"><a class="qr-link" href="https://www.linkedin.com/in/pirahansiah/" target="_blank">linkedin.com/in/pirahansiah</a></div>
+  <div class="qr-card"><h3>GitHub</h3><p>Code</p><img src="/farshid/content/github.png" alt="GitHub QR" loading="lazy"><a class="qr-link" href="https://github.com/pirahansiah" target="_blank">github.com/pirahansiah</a></div>
+  <div class="qr-card"><h3>X / Twitter</h3><p>Posts</p><img src="/farshid/content/twitter.png" alt="Twitter QR" loading="lazy"><a class="qr-link" href="https://x.com/pirahansiah" target="_blank">x.com/pirahansiah</a></div>
+  <div class="qr-card"><h3>https://www.linkedin.com/groups/10320678/</h3><p>Computer Vision,Generative AI,Edge Computing,Fine-tune Multimodal LLMs,Robotics,IoT,AR/VR,Medical</p><img src="/farshid/content/linkedin.png" alt="https://www.linkedin.com/groups/10320678/" loading="lazy">target="_blank">linkedin.com/in/pirahansiah</a></div></div>
+  <div class="qr-card"><h3>Telegram</h3><p>Channel</p><img src="/farshid/content/telegram.png" alt="Telegram QR" loading="lazy"></div>
+  <div class="qr-card"><h3>YouTube</h3><p>Videos</p><img src="/farshid/content/youtube.png" alt="YouTube QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Instagram</h3><p>Photos</p><img src="/farshid/content/instagram.png" alt="Instagram QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Facebook</h3><p>Page</p><img src="/farshid/content/facebook.png" alt="Facebook QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Discord</h3><p>Community</p><img src="/farshid/content/discord.png" alt="Discord QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Mastodon</h3><p>Fediverse</p><img src="/farshid/content/mastodon.png" alt="Mastodon QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Reddit</h3><p>Community</p><img src="/farshid/content/reddit.png" alt="Reddit QR" loading="lazy"><a class="qr-link" href="https://reddit.com/u/pirahansiah" target="_blank">u/pirahansiah</a></div>
+  <div class="qr-card"><h3>TikTok</h3><p>Short videos</p><img src="/farshid/content/tiktok.png" alt="TikTok QR" loading="lazy"></div>
+  <div class="qr-card"><h3>WhatsApp</h3><p>Chat</p><img src="/farshid/content/whatsapp.png" alt="WhatsApp QR" loading="lazy"></div>
+  <div class="qr-card"><h3>Mind Maps</h3><p>Notes</p><img src="/farshid/content/mindmaps.png" alt="Mind Maps QR" loading="lazy"><a class="qr-link" href="/farshid/content/index.html#atlas">Mind maps</a></div>
+  <div class="qr-card"><h3>Slides</h3><p>Talks</p><img src="/farshid/content/slides.png" alt="Slides QR" loading="lazy"><a class="qr-link" href="/farshid/content/index.html#content/slides-token-optimization">Slides</a></div>
+  <div class="qr-card"><h3>tiziran</h3><p>Site</p><img src="/farshid/content/tiziran.png" alt="Tiziran QR" loading="lazy"></div>
+</div>
 
 ## Referrals &amp; Invites
 
@@ -82,36 +107,43 @@
   </div>
 </div>
 
-## Social &amp; Web
-
-<div class="qr-grid">
-  <div class="qr-card"><h3>pirahansiah.com</h3><p>Website</p><img src="/farshid/content/pirahansiah.png" alt="Website QR" loading="lazy"><a class="qr-link" href="/">pirahansiah.com</a></div>
-  <div class="qr-card"><h3>LinkedIn</h3><p>Profile</p><img src="/farshid/content/linkedin.png" alt="LinkedIn QR" loading="lazy"><a class="qr-link" href="https://www.linkedin.com/in/pirahansiah/" target="_blank">linkedin.com/in/pirahansiah</a></div>
-  <div class="qr-card"><h3>GitHub</h3><p>Code</p><img src="/farshid/content/github.png" alt="GitHub QR" loading="lazy"><a class="qr-link" href="https://github.com/pirahansiah" target="_blank">github.com/pirahansiah</a></div>
-  <div class="qr-card"><h3>X / Twitter</h3><p>Posts</p><img src="/farshid/content/twitter.png" alt="Twitter QR" loading="lazy"><a class="qr-link" href="https://x.com/pirahansiah" target="_blank">x.com/pirahansiah</a></div>
-  <div class="qr-card"><h3>LinkedIn 2</h3><p>Alt profile</p><img src="/farshid/content/linkedin2.png" alt="LinkedIn 2 QR" loading="lazy"></div>
-  <div class="qr-card"><h3>Telegram</h3><p>Channel</p><img src="/farshid/content/telegram.png" alt="Telegram QR" loading="lazy"></div>
-  <div class="qr-card"><h3>YouTube</h3><p>Videos</p><img src="/farshid/content/youtube.png" alt="YouTube QR" loading="lazy"></div>
-  <div class="qr-card"><h3>Instagram</h3><p>Photos</p><img src="/farshid/content/instagram.png" alt="Instagram QR" loading="lazy"></div>
-  <div class="qr-card"><h3>Facebook</h3><p>Page</p><img src="/farshid/content/facebook.png" alt="Facebook QR" loading="lazy"></div>
-  <div class="qr-card"><h3>Discord</h3><p>Community</p><img src="/farshid/content/discord.png" alt="Discord QR" loading="lazy"></div>
-  <div class="qr-card"><h3>Mastodon</h3><p>Fediverse</p><img src="/farshid/content/mastodon.png" alt="Mastodon QR" loading="lazy"></div>
-  <div class="qr-card"><h3>Reddit</h3><p>Community</p><img src="/farshid/content/reddit.png" alt="Reddit QR" loading="lazy"><a class="qr-link" href="https://reddit.com/u/pirahansiah" target="_blank">u/pirahansiah</a></div>
-  <div class="qr-card"><h3>TikTok</h3><p>Short videos</p><img src="/farshid/content/tiktok.png" alt="TikTok QR" loading="lazy"></div>
-  <div class="qr-card"><h3>WhatsApp</h3><p>Chat</p><img src="/farshid/content/whatsapp.png" alt="WhatsApp QR" loading="lazy"></div>
-  <div class="qr-card"><h3>Mind Maps</h3><p>Notes</p><img src="/farshid/content/mindmaps.png" alt="Mind Maps QR" loading="lazy"><a class="qr-link" href="/farshid/content/index.html#atlas">Mind maps</a></div>
-  <div class="qr-card"><h3>Slides</h3><p>Talks</p><img src="/farshid/content/slides.png" alt="Slides QR" loading="lazy"><a class="qr-link" href="/farshid/content/index.html#content/slides-token-optimization">Slides</a></div>
-  <div class="qr-card"><h3>tiziran</h3><p>Site</p><img src="/farshid/content/tiziran.png" alt="Tiziran QR" loading="lazy"></div>
-</div>
-
 ## Crypto Addresses
 
+<p class="qr-note">Purely optional &mdash; this is a tip jar, nothing more, for the open-source projects and free tools I build and maintain. No invoice, no obligation, nothing to sign. If you would rather not, everything stays free to use.</p>
+
 <div class="qr-grid">
-  <div class="qr-card"><h3>Bitcoin (BTC)</h3><p>BTC address</p><img src="/farshid/content/btc.svg" alt="BTC QR" loading="lazy"></div>
-  <div class="qr-card"><h3>Ethereum (ETH)</h3><p>ETH address</p><img src="/farshid/content/eth.svg" alt="ETH QR" loading="lazy"></div>
-  <div class="qr-card"><h3>BNB</h3><p>BNB address</p><img src="/farshid/content/bnb.svg" alt="BNB QR" loading="lazy"></div>
-  <div class="qr-card"><h3>Solana (SOL)</h3><p>SOL address</p><img src="/farshid/content/sol.svg" alt="SOL QR" loading="lazy"></div>
-  <div class="qr-card"><h3>Base</h3><p>Base address</p><img src="/farshid/content/base.svg" alt="Base QR" loading="lazy"></div>
+  <div class="qr-card">
+    <h3>Bitcoin (BTC)</h3><p>Bitcoin network &middot; BTC only</p>
+    <img src="/farshid/content/btc.svg" alt="Bitcoin address QR code" loading="lazy">
+    <div class="qr-addr">bc1q922uu6uwu3x2grlkypeuyywet9msk2fzxypy6d</div>
+    <div class="qr-actions"><a class="qr-btn copy" href="/farshid/content/btc.svg" download>Download QR</a></div>
+  </div>
+  <div class="qr-card">
+    <h3>Ethereum (ETH)</h3><p>Ethereum mainnet &middot; ETH &amp; ERC-20</p>
+    <img src="/farshid/content/eth.svg" alt="Ethereum address QR code" loading="lazy">
+    <div class="qr-addr">0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C</div>
+    <div class="qr-actions"><a class="qr-btn copy" href="/farshid/content/eth.svg" download>Download QR</a></div>
+  </div>
+  <div class="qr-card">
+    <h3>BNB</h3><p>BNB Smart Chain &middot; BNB &amp; BEP-20</p>
+    <img src="/farshid/content/bnb.svg" alt="BNB address QR code" loading="lazy">
+    <div class="qr-addr">0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C</div>
+    <div class="qr-actions"><a class="qr-btn copy" href="/farshid/content/bnb.svg" download>Download QR</a></div>
+  </div>
+  <div class="qr-card">
+    <h3>Solana (SOL)</h3><p>Solana network &middot; SOL &amp; SPL tokens</p>
+    <img src="/farshid/content/sol.svg" alt="Solana address QR code" loading="lazy">
+    <div class="qr-addr">4Ub6VYF69PdCjpCMWDysU54WPb1xB7s628ASkCuJmcib</div>
+    <div class="qr-actions"><a class="qr-btn copy" href="/farshid/content/sol.svg" download>Download QR</a></div>
+  </div>
+  <div class="qr-card">
+    <h3>Base</h3><p>Base L2 &middot; ETH on Base only</p>
+    <img src="/farshid/content/base.svg" alt="Base address QR code" loading="lazy">
+    <div class="qr-addr">0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C</div>
+    <div class="qr-actions"><a class="qr-btn copy" href="/farshid/content/base.svg" download>Download QR</a></div>
+  </div>
 </div>
+
+<p class="qr-addr-note">The same address covers ETH, BNB and Base &mdash; always check it on the device that signs, and send only on the network named above each code.</p>
 
 <p class="swarm-hint">Scan to open each link, or tap the Open button. All QR codes can be downloaded and shared.</p>

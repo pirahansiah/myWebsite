@@ -35,6 +35,9 @@
 .qr-btn.open { background: var(--accent); color: #fff; }
 .qr-btn.open:hover { background: #0652cf; }
 .qr-btn.copy { background: rgba(10,102,255,0.12); color: var(--accent); }
+.qr-note { background: rgba(10,102,255,0.06); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 10px; padding: 12px 14px; font-size: 13px; line-height: 1.55; color: var(--ink-2); margin: 0 0 22px; }
+.qr-addr { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; line-height: 1.5; word-break: break-all; color: var(--ink); background: rgba(10,102,255,0.07); border-radius: 8px; padding: 7px 8px; margin: 2px 0 8px; -webkit-user-select: all; user-select: all; cursor: text; }
+.qr-addr-note { font-size: 12px; color: var(--ink-2); margin: 10px 0 0; }
 .qr-section-title { font-family: var(--ui-display); font-weight: 650; font-size: 24px; letter-spacing: -0.01em; margin: 44px 0 4px; }
 </style>
 </head>
@@ -136,13 +139,55 @@
   </div>
 
   <h2 class="qr-section-title">Crypto Addresses</h2>
+  <p class="qr-note">Purely optional &mdash; this is a tip jar, nothing more, for the open-source projects and free tools I build and maintain. No invoice, no obligation, nothing to sign. If you would rather not, everything stays free to use.</p>
   <div class="qr-grid">
-    <div class="qr-card"><h3>Bitcoin (BTC)</h3><p>BTC address</p><img src="/farshid/content/btc.svg" alt="BTC QR" loading="lazy"></div>
-    <div class="qr-card"><h3>Ethereum (ETH)</h3><p>ETH address</p><img src="/farshid/content/eth.svg" alt="ETH QR" loading="lazy"></div>
-    <div class="qr-card"><h3>BNB</h3><p>BNB address</p><img src="/farshid/content/bnb.svg" alt="BNB QR" loading="lazy"></div>
-    <div class="qr-card"><h3>Solana (SOL)</h3><p>SOL address</p><img src="/farshid/content/sol.svg" alt="SOL QR" loading="lazy"></div>
-    <div class="qr-card"><h3>Base</h3><p>Base address</p><img src="/farshid/content/base.svg" alt="Base QR" loading="lazy"></div>
+    <div class="qr-card">
+      <h3>Bitcoin (BTC)</h3><p>Bitcoin network &middot; BTC only</p>
+      <img src="/farshid/content/btc.svg" alt="Bitcoin address QR code" loading="lazy">
+      <div class="qr-addr">bc1q922uu6uwu3x2grlkypeuyywet9msk2fzxypy6d</div>
+      <div class="qr-actions">
+        <button class="qr-btn copy" type="button" data-copy="bc1q922uu6uwu3x2grlkypeuyywet9msk2fzxypy6d">Copy address</button>
+        <a class="qr-btn copy" href="/farshid/content/btc.svg" download>Download QR</a>
+      </div>
+    </div>
+    <div class="qr-card">
+      <h3>Ethereum (ETH)</h3><p>Ethereum mainnet &middot; ETH &amp; ERC-20</p>
+      <img src="/farshid/content/eth.svg" alt="Ethereum address QR code" loading="lazy">
+      <div class="qr-addr">0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C</div>
+      <div class="qr-actions">
+        <button class="qr-btn copy" type="button" data-copy="0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C">Copy address</button>
+        <a class="qr-btn copy" href="/farshid/content/eth.svg" download>Download QR</a>
+      </div>
+    </div>
+    <div class="qr-card">
+      <h3>BNB</h3><p>BNB Smart Chain &middot; BNB &amp; BEP-20</p>
+      <img src="/farshid/content/bnb.svg" alt="BNB address QR code" loading="lazy">
+      <div class="qr-addr">0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C</div>
+      <div class="qr-actions">
+        <button class="qr-btn copy" type="button" data-copy="0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C">Copy address</button>
+        <a class="qr-btn copy" href="/farshid/content/bnb.svg" download>Download QR</a>
+      </div>
+    </div>
+    <div class="qr-card">
+      <h3>Solana (SOL)</h3><p>Solana network &middot; SOL &amp; SPL tokens</p>
+      <img src="/farshid/content/sol.svg" alt="Solana address QR code" loading="lazy">
+      <div class="qr-addr">4Ub6VYF69PdCjpCMWDysU54WPb1xB7s628ASkCuJmcib</div>
+      <div class="qr-actions">
+        <button class="qr-btn copy" type="button" data-copy="4Ub6VYF69PdCjpCMWDysU54WPb1xB7s628ASkCuJmcib">Copy address</button>
+        <a class="qr-btn copy" href="/farshid/content/sol.svg" download>Download QR</a>
+      </div>
+    </div>
+    <div class="qr-card">
+      <h3>Base</h3><p>Base L2 &middot; ETH on Base only</p>
+      <img src="/farshid/content/base.svg" alt="Base address QR code" loading="lazy">
+      <div class="qr-addr">0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C</div>
+      <div class="qr-actions">
+        <button class="qr-btn copy" type="button" data-copy="0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C">Copy address</button>
+        <a class="qr-btn copy" href="/farshid/content/base.svg" download>Download QR</a>
+      </div>
+    </div>
   </div>
+  <p class="qr-addr-note">The same address covers ETH, BNB and Base &mdash; always check it on the device that signs, and send only on the network named above each code.</p>
 
   <p class="swarm-hint">Scan to open each link, or tap the Open button. All QR codes can be downloaded and shared. <a href="/">Back to pirahansiah.com</a></p>
 </main>
@@ -160,5 +205,25 @@
   </div>
 </footer>
 <script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var text = btn.getAttribute('data-copy'), label = btn.textContent;
+    function done(){ btn.textContent = 'Copied \u2713'; setTimeout(function(){ btn.textContent = label; }, 1600); }
+    function legacy(){
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.top = '-1000px';
+      document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, text.length);
+      try { document.execCommand('copy'); done(); }
+      catch (e) { btn.textContent = 'Select + copy'; setTimeout(function(){ btn.textContent = label; }, 1600); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(done, legacy);
+    } else { legacy(); }
+  });
+});
+</script>
 </body>
 </html>

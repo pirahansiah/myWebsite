@@ -209,23 +209,23 @@ Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive
   var RECIPIENT = '0xFcE78486AE65e006Dc0d235FDD5d1E9169D53B0C';
 
   var TOKENS = {
-    btc: { ticker: '&#8383; BTC', chain: 'Bitcoin', qr: '/assets/qr/btc.svg',
+    btc: { ticker: '&#8383; BTC', chain: 'Bitcoin', qr: '/farshid/content/btc.svg',
       addr: 'bc1q922uu6uwu3x2grlkypeuyywet9msk2fzxypy6d',
       network: 'Bitcoin network &middot; native BTC &middot; bech32 (SegWit) address',
       warn: 'Send only on the Bitcoin network.', evm: false, sym: 'BTC' },
-    eth: { ticker: '&#9874; ETH', chain: 'Ethereum', qr: '/assets/qr/eth.svg',
+    eth: { ticker: '&#9874; ETH', chain: 'Ethereum', qr: '/farshid/content/eth.svg',
       addr: RECIPIENT,
       network: 'Ethereum mainnet &middot; native ETH &amp; ERC-20 tokens',
       warn: 'Send only on the Ethereum network (ERC-20).', evm: true, sym: 'ETH', chainId: '0x1' },
-    sol: { ticker: '&#9670; SOL', chain: 'Solana', qr: '/assets/qr/sol.svg',
+    sol: { ticker: '&#9670; SOL', chain: 'Solana', qr: '/farshid/content/sol.svg',
       addr: '4Ub6VYF69PdCjpCMWDysU54WPb1xB7s628ASkCuJmcib',
       network: 'Solana network &middot; native SOL &amp; SPL tokens',
       warn: 'Send only on the Solana network.', evm: false, sym: 'SOL' },
-    base: { ticker: '&#9650; BASE', chain: 'Base', qr: '/assets/qr/base.svg',
+    base: { ticker: '&#9650; BASE', chain: 'Base', qr: '/farshid/content/base.svg',
       addr: RECIPIENT,
       network: 'Base L2 &middot; native ETH &amp; ERC-20 tokens',
       warn: 'Send only on the Base network &mdash; do NOT send on Ethereum mainnet.', evm: true, sym: 'ETH', chainId: '0x2105' },
-    bnb: { ticker: '&#9679; BNB', chain: 'BNB Smart Chain', qr: '/assets/qr/bnb.svg',
+    bnb: { ticker: '&#9679; BNB', chain: 'BNB Smart Chain', qr: '/farshid/content/bnb.svg',
       addr: RECIPIENT,
       network: 'BNB Smart Chain &middot; native BNB &amp; BEP-20 tokens',
       warn: 'Send only on BNB Smart Chain (BEP-20).', evm: true, sym: 'BNB', chainId: '0x38' }
