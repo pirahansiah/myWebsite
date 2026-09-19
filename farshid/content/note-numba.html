@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 '<meta name="theme-color" content="#EEF0F4">
-<title>🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀 · Farshid Pirahansiah</title>
+<title>Accelerate Python with Numba’s @jit(nopython=True) · Farshid Pirahansiah</title>
 <meta name="description" content="Tutorial on using Numba&#x27;s @jit decorator to compile Python functions into optimized machine code for faster numerical computing.">
 <link rel="canonical" href="https://pirahansiah.com/farshid/content/note-numba.html">
 <link rel="alternate" type="text/markdown" href="/farshid/content/note-numba.md" title="Markdown source">
@@ -13,12 +13,12 @@
 <meta property="og:site_name" content="Farshid Pirahansiah">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://pirahansiah.com/farshid/content/note-numba.html">
-<meta property="og:title" content="🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀">
+<meta property="og:title" content="Accelerate Python with Numba’s @jit(nopython=True)">
 <meta property="og:description" content="Tutorial on using Numba&#x27;s @jit decorator to compile Python functions into optimized machine code for faster numerical computing.">
 <meta name="twitter:card" content="summary">
 <meta name="author" content="Dr. Farshid Pirahansiah">
 <link rel="llms" href="/llms.txt">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"Article","@id":"https://pirahansiah.com/farshid/content/note-numba.html#article","url":"https://pirahansiah.com/farshid/content/note-numba.html","name":"🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀","headline":"🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀","description":"Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/note-numba.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀","item":"https://pirahansiah.com/farshid/content/note-numba.html"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pirahansiah.com/#person","name":"Dr. Farshid Pirahansiah","url":"https://pirahansiah.com/","jobTitle":"Computer Vision & Edge AI Engineer","email":"info@pirahansiah.com","knowsAbout":["Computer Vision","Edge AI","Model Optimization","On-device LLMs","GPU Acceleration","Image Processing"],"sameAs":["https://www.linkedin.com/in/pirahansiah/","https://github.com/pirahansiah","https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en","https://x.com/pirahansiah"]},{"@type":"WebSite","@id":"https://pirahansiah.com/#website","url":"https://pirahansiah.com/","name":"Farshid Pirahansiah","inLanguage":"en","publisher":{"@id":"https://pirahansiah.com/#person"}},{"@type":"Article","@id":"https://pirahansiah.com/farshid/content/note-numba.html#article","url":"https://pirahansiah.com/farshid/content/note-numba.html","name":"Accelerate Python with Numba’s @jit(nopython=True)","headline":"Accelerate Python with Numba’s @jit(nopython=True)","description":"Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.","inLanguage":"en","dateModified":"2026-09-19","author":{"@id":"https://pirahansiah.com/#person"},"publisher":{"@id":"https://pirahansiah.com/#person"},"isPartOf":{"@id":"https://pirahansiah.com/#website"},"mainEntityOfPage":{"@id":"https://pirahansiah.com/farshid/content/note-numba.html"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://pirahansiah.com/farshid/content/index.html"},{"@type":"ListItem","position":2,"name":"Atlas","item":"https://pirahansiah.com/farshid/content/atlas.html"},{"@type":"ListItem","position":3,"name":"Accelerate Python with Numba’s @jit(nopython=True)","item":"https://pirahansiah.com/farshid/content/note-numba.html"}]}]}</script>
 </head>
 <body>
 <header class="topbar"><div class="topbar-inner">
@@ -31,11 +31,12 @@
 <main class="wrap">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#notes-guides">Notes &amp; Guides</a></nav>
 <article class="article">
+<h1>Accelerate Python with Numba’s @jit(nopython=True)</h1>
 
 <p>Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.</p>
 <p>Accelerate Python with Numba’s <code>@jit(nopython=True)</code> </p>
 <p><img src="/farshid/content/CUDA_numba_jit_tutorial.png" alt="Accelerate Python with Numba’s <code>@jit(nopython=True)</code> " style="max-width: 100%; height: auto;"></p>
-<h1 id="accelerate-python-with-numbas-jitnopythontrue">🚀 Accelerate Python with Numba’s <code>@jit(nopython=True)</code> 🚀</h1>
+
 <p>Are you looking to <strong>optimize your Python code</strong> for better performance? If you work with <strong>large datasets</strong> or run complex numerical computations, the <strong>Numba</strong> library can be a game-changer!</p>
 <p>With <strong><code>@jit(nopython=True)</code></strong>, Numba translates Python functions into <strong>machine code</strong> using Just-In-Time (JIT) compilation. This drastically reduces execution time, especially for <strong>loops</strong> and <strong>numerical operations</strong>.</p>
 <p>Let me show you how it works! 👇</p>
@@ -152,7 +153,7 @@ print(result)
 - <a href="https://numba.pydata.org/">Numba Documentation</a>
 - <a href="https://github.com/numba/numba">Numba GitHub Repository</a></p>
 <p>Feel free to connect with me for more tips on optimizing your Python code! 👨‍💻</p>
-<h1 id="python-numba-machinelearning-performanceoptimization-bigdata-datascience">Python #Numba #MachineLearning #PerformanceOptimization #BigData #DataScience</h1>
+<h2 id="python-numba-machinelearning-performanceoptimization-bigdata-datascience">Python #Numba #MachineLearning #PerformanceOptimization #BigData #DataScience</h2>
 </article>
 <p class="page-foot">Source: <a href="/farshid/content/note-numba.md">content/note-numba.md</a> · Last modified 2026-09-19 · <a href="/farshid/content/atlas.html">All pages</a></p>
 </main>

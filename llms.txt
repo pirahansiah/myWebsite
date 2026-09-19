@@ -6,7 +6,7 @@ Every page below is a static HTML document; the markdown source is linked from e
 
 ## Site
 
-- [Atlas](https://pirahansiah.com/farshid/content/atlas.html): The single index of everything on pirahansiah.com. Every publication, course, note, talk, and project lives here. Pick a section.
+- [Atlas](https://pirahansiah.com/farshid/content/atlas.html): The single index of everything on pirahansiah.com — every publication, course, note, talk and project on one page.
 - [Contact](https://pirahansiah.com/farshid/content/contact.html): Dr. Farshid Pirahansiah — computer vision & edge AI engineer.
 - [Privacy](https://pirahansiah.com/farshid/content/privacy.html): pirahansiah.com is a wholly static site. There are no analytics scripts, no cookies, no trackers, and no server-side logging of personal data.
 
@@ -45,6 +45,7 @@ Every page below is a static HTML document; the markdown source is linked from e
 
 - [10 Years of CV Debugging Lessons](https://pirahansiah.com/farshid/content/10-years.html): Lessons learned from a decade of debugging computer vision systems in production.
 - [2025](https://pirahansiah.com/farshid/content/note-llm-blog.html): Blog posts on RAG vs CAG, multi-agent architectures, AI's impact on jobs, and the future of software development.
+- [Accelerate Python with Numba’s @jit(nopython=True)](https://pirahansiah.com/farshid/content/note-numba.html): Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.
 - [Agent Swarm](https://pirahansiah.com/farshid/content/note-swarm.html): Agent Swarm — ask a question and watch a live swarm of research agents map and synthesize the whole pirahansiah.com knowledge base.
 - [All Pages — pirahansiah.com](https://pirahansiah.com/farshid/content/wiki.html): A complete alphabetical index of every page on pirahansiah.com — computer vision, AI, LLM, CUDA and edge-deployment knowledge base.
 - [Building a Local Video Avatar Generator Using Ollama and Open-Source Tools](https://pirahansiah.com/farshid/content/note-llm-avatar.html): Build a fully local video avatar generator using Ollama LLM, Piper TTS, and Wav2Lip without cloud services.
@@ -81,7 +82,6 @@ Every page below is a static HTML document; the markdown source is linked from e
 - [The New Era of SEO: Optimizing Websites for LLMs](https://pirahansiah.com/farshid/content/note-seo-for-llms.html): How to optimize websites for LLM-powered search engines using structured data and AI-friendly content.
 - [tools](https://pirahansiah.com/farshid/content/note-shell-vim.html): Quick reference for shell commands, vim basics, and essential CLI tools.
 - [Why This Site Exists](https://pirahansiah.com/farshid/content/why-not.html): Why this personal knowledge base exists, what it covers, and the principles behind how it is built and maintained.
-- [🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀](https://pirahansiah.com/farshid/content/note-numba.html): Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.
 
 ## Courses
 

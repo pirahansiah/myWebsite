@@ -31,11 +31,12 @@
 <main class="wrap">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#notes-guides">Notes &amp; Guides</a></nav>
 <article class="article">
+<h1>How PyCUDA Reads and Runs C Kernels</h1>
 
 <p>Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.</p>
 <p>How PyCUDA Reads and Runs C Kernels</p>
 <p><img src="/farshid/content/CUDA_pycuda_kernel_explanation.png" alt="How PyCUDA Reads and Runs C Kernels" style="max-width: 100%; height: auto;"></p>
-<h1 id="how-pycuda-reads-and-runs-c-kernels">How PyCUDA Reads and Runs C Kernels</h1>
+
 <p>In <strong>PyCUDA</strong>, you can run <strong>CUDA kernels</strong> (which are typically written in C or C++) directly from Python. PyCUDA provides a way to write CUDA code as a string, compile it at runtime, and execute it on the GPU. Let's walk through the process step-by-step, explaining how PyCUDA interacts with a kernel written in C and runs it.</p>
 <h2 id="1-importing-pycuda-modules">1. Importing PyCUDA Modules</h2>
 <p>The following lines import PyCUDA’s functionalities:</p>

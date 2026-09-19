@@ -345,6 +345,50 @@ body.has-consent-sheet { padding-bottom: 118px; }   /* the consent sheet never c
 .contact-v a { color: var(--accent-ink); text-decoration: none; }
 .contact-v a:hover { border-bottom: 1px solid currentColor; }
 
+/* ---------- atlas: a dense index, not a stack of lists ---------- */
+.article .atlas-jump {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin: 0 0 2px; padding: 0 0 18px; border-bottom: 1px solid var(--rule);
+}
+.article .atlas-jump a {
+  display: inline-flex; align-items: baseline; gap: 6px;
+  font-size: 13.5px; font-weight: 500; color: var(--ink-2); text-decoration: none;
+  border: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  border-radius: var(--radius-pill); padding: 5px 11px;
+  transition-property: background-color, border-color, color; transition-duration: 150ms;
+}
+.article .atlas-jump a:hover { background: var(--surface-2); color: var(--accent-ink); border-color: var(--rule-strong); }
+.article .atlas-jump a span { font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.article .atlas-sec { padding-top: 2px; }
+.article .atlas-sec h2 {
+  font-size: 22px; margin: 30px 0 2px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+}
+.article .atlas-sub {
+  font-size: 13px; font-weight: 560; color: var(--ink-3); margin: 24px 0 3px;
+  scroll-margin-top: 88px;   /* jumping from the pill row must not strand the label at the fold */
+}
+.article .atlas-count { color: var(--ink-3); font-variant-numeric: tabular-nums; margin-left: 5px; }
+.article .atlas-list { columns: 3; column-gap: 34px; margin: 2px 0 10px; padding: 0; list-style: none; }
+.article .atlas-list li {
+  break-inside: avoid; max-width: none; margin: 0; padding: 3.5px 0;
+  font-size: 14.5px; line-height: 1.45;
+}
+.article .atlas-list li a { border-bottom: none; color: var(--ink); }
+.article .atlas-list li a:hover { color: var(--accent-ink); text-decoration: underline; text-underline-offset: 0.2em; }
+.article .atlas-note {
+  font-size: 13px; color: var(--ink-3); margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--rule);
+}
+@media (max-width: 1100px) { .article .atlas-list { columns: 2; } }
+@media (max-width: 700px) {
+  /* an index should stay scannable on a phone: two narrow columns beat one 5,400px scroll */
+  .article .atlas-list { columns: 2; column-gap: 18px; }
+  .article .atlas-list li { font-size: 13.5px; line-height: 1.4; padding: 3px 0; }
+  .article .atlas-sec h2 { font-size: 20px; }
+  .article .atlas-sub { margin-top: 14px; }
+  .article .atlas-jump { gap: 5px; padding-bottom: 14px; }
+  .article .atlas-jump a { font-size: 12.5px; padding: 4px 9px; }
+}
+
 /* ---------- ads (subdued, labelled) ---------- */
 .ad-slot { margin: 36px 0; padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 .ad-slot ins { display: block; min-height: 0; }

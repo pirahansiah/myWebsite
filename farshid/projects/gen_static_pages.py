@@ -44,6 +44,30 @@ def split_front_matter(body):
     return meta, body[m.end():]
 
 
+def literal_emphasis(html_in):
+    """`**bold**` inside a raw-HTML block is not parsed by markdown — render it instead of leaking asterisks."""
+    return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', html_in, flags=re.S)
+
+
+def _norm(s):
+    return re.sub(r'[^a-z0-9]+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', s)).lower()).strip()
+
+
+def strip_leading_title(rendered, title):
+    """Drop the body's opening heading when it only repeats the page title (already an h1).
+
+    Looks only at the very top of the document: some pages open with a figure or a
+    `<div>`, and deep inside a slide deck a matching heading must be left alone.
+    """
+    m = re.search(r'<h[12][^>]*>(.*?)</h[12]>', rendered[:600], re.S)
+    if not m:
+        return rendered
+    body_head, t = _norm(m.group(1)), _norm(title)
+    if body_head and body_head == t:
+        return rendered[:m.start()] + rendered[m.end():]
+    return rendered
+
+
 def title_of(slug, body, meta=None):
     if meta and meta.get('title'):
         return ' '.join(meta['title'].split())
@@ -53,6 +77,7 @@ def title_of(slug, body, meta=None):
     if m:
         t = re.sub(r'<[^>]+>', '', m.group(1))
         t = re.sub(r'[*_`]', '', t)
+        t = re.sub(r'[\U0001F000-\U0001FAFF\u2190-\u21FF\u2600-\u27BF\uFE0F]', ' ', t)  # emoji: body may keep them, metadata must not
         return ' '.join(html.unescape(t).split())
     return ' '.join(w.capitalize() for w in slug.replace('-', ' ').split())
 
@@ -121,7 +146,7 @@ LEGACY_ALIASES = {
     '/notes/':                      '/farshid/content/atlas.html#site-pages',
     '/notes/sitemap/':              '/farshid/content/atlas.html',
     '/notes/docs/':                 '/farshid/content/atlas.html#notes-guides',
-    '/notes/docs/links/':           '/farshid/content/atlas.html#connect-share',
+    '/notes/docs/links/':           '/farshid/content/atlas.html#site-pages',
     '/notes/docs/resources/':       '/farshid/content/atlas.html#notes-guides',
     '/notes/docs/dev-tools/':       '/farshid/content/atlas.html#notes-guides',
     '/notes/docs/shell-vim/':       '/farshid/content/atlas.html#notes-guides',
@@ -321,8 +346,12 @@ def build_pages(md_files):
 
         md = markdown.Markdown(extensions=['extra', 'sane_lists', 'toc'])
         rendered = md.convert(body)
+        # the page already has one h1 (the title); body headings drop a level so agents
+        # and screen readers get a single, honest outline
+        rendered = strip_leading_title(re.sub(r'<(/?)h1([^>]*)>', r'<\1h2\2>', rendered), title)
         # interactive pages keep their own standalone HTML twin; never ship their scripts here
         rendered = re.sub(r'<script\b.*?</script>', '', rendered, flags=re.S | re.I)
+        rendered = literal_emphasis(rendered)
         rendered = rewrite_links(rendered)
 
         canonical = f'{ORIGIN}/farshid/content/{slug}.html'
@@ -358,6 +387,7 @@ def build_pages(md_files):
             '<main class="wrap">',
             crumbs,
             '<article class="article">',
+            f'<h1>{html.escape(title)}</h1>',
             invite,
             rendered,
             '</article>',
@@ -457,6 +487,7 @@ def build_project_pages():
         title = title_of(d, body, meta)
         description = truncate(first_paragraph(body, meta)) or f'{title} — project by Dr. Farshid Pirahansiah.'
         rendered = markdown.Markdown(extensions=['extra', 'sane_lists', 'toc']).convert(body)
+        rendered = strip_leading_title(re.sub(r'<(/?)h1([^>]*)>', r'<\1h2\2>', rendered), title)
         rendered = rewrite_links(re.sub(r'<script\b.*?</script>', '', rendered, flags=re.S | re.I))
         canonical = f'{ORIGIN}/farshid/projects/{d}/'
         head = BOILER_HEAD.format(title=html.escape(title), description=html.escape(description, quote=True),
@@ -466,7 +497,9 @@ def build_project_pages():
                          '<nav class="crumbs" aria-label="Breadcrumb">'
                          '<a href="/farshid/content/index.html">Home</a><span>/</span>'
                          '<a href="/farshid/content/atlas.html">Atlas</a><span>/</span>Projects</nav>',
-                         '<article class="article">', rendered, '</article>',
+                         '<article class="article">',
+                         f'<h1>{html.escape(title)}</h1>',
+                         rendered, '</article>',
                          f'<p class="page-foot">Source: <a href="/farshid/projects/{d}/README.md">projects/{d}/README.md</a>'
                          ' · <a href="/farshid/content/atlas.html">All pages</a></p>',
                          '</main>', footer_html(), '</body>', '</html>', ''])

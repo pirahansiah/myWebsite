@@ -31,13 +31,14 @@
 <main class="wrap">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/farshid/content/index.html">Home</a><span>/</span><a href="/farshid/content/atlas.html">Atlas</a><span>/</span><a href="/farshid/content/atlas.html#notes-guides">Notes &amp; Guides</a></nav>
 <article class="article">
+<h1>Python</h1>
 
 <p>Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.</p>
-<h1 id="python">Python</h1>
+
 <p><a href="https://www.pirahansiah.com/notes/docs/python">Python</a>
 A comparison of built-in and third-party configuration options for Python projects
 This guide compares Python's native configuration methods and popular third-party libraries, helping developers choose the best fit for their project's needs.</p>
-<h1 id="python-devtools-configuration-configfiles-pythontips-opensource-machinelearning-webdev-fastap">Python #DevTools #Configuration #ConfigFiles #PythonTips #OpenSource #MachineLearning #WebDev #FastAP</h1>
+<h2 id="python-devtools-configuration-configfiles-pythontips-opensource-machinelearning-webdev-fastap">Python #DevTools #Configuration #ConfigFiles #PythonTips #OpenSource #MachineLearning #WebDev #FastAP</h2>
 <ul>
 <li>
 <p>Python Configuration Management</p>
@@ -49,7 +50,7 @@ This guide compares Python's native configuration methods and popular third-part
 <p><a href="#tips">Ttips</a></p>
 </li>
 </ul>
-<h1 id="python-configuration-management">Python Configuration Management</h1>
+<h2 id="python-configuration-management">Python Configuration Management</h2>
 <p>A comparison of built-in and third-party configuration options for Python projects</p>
 <p>📌 Summary</p>
 <p>This guide compares Python's native configuration methods and popular third-party libraries, helping developers choose the best fit for their project's needs.</p>
@@ -104,7 +105,7 @@ This guide compares Python's native configuration methods and popular third-part
     •   🌊 YAML-based hierarchical config
     •   ✅ Designed for deep learning projects</p>
 <hr />
-<h1 id="tips">tips</h1>
+<h2 id="tips">tips</h2>
 <h3 id="mmap-optimization-memory-usage-best">mmap -&gt; optimization memory usage best</h3>
 <pre><code>df =pd.series()
 all=pd.dataFrame()
@@ -118,11 +119,11 @@ def pow(*arge):
 def pow (x,y,z=None,/): #The forward slash (/) ensures you must call it like pow(2, 3) and not pow(x=2, y=3).
 
 *args
-**kwargs
+<strong>kwargs
 / positional
 
 def timer(func):
-    def wrapper(*args, ** kwargs):
+    def wrapper(*args, </strong> kwargs):
         start_t=time.time()
         result=func(*args,**kwargs)
         end_t=time.time()
@@ -151,7 +152,7 @@ pop
 </code></pre>
 <p>pip install pybind11  </p>
 <p>// add.cpp</p>
-<h1 id="include">include <pybind11/pybind11.h></h1>
+<h2 id="include">include <pybind11/pybind11.h></h2>
 <p>// Simple C++ function to add two numbers
 int add(int a, int b) {
     return a + b;
@@ -163,23 +164,23 @@ PYBIND11_MODULE(mycpp, m) {
 <p>cl /LD /IC:\Users-winUser.conda\envs\py314\Include /IC:\Users-winUser.conda\envs\py314\Lib\site-packages\pybind11\include add.cpp /link /OUT:mycpp.pyd /LIBPATH:C:\Users-winUser.conda\envs\py314\libs python314.lib</p>
 <p>import mycpp
 print(mycpp.add(2, 3))  # Output should be: 5</p>
-<h1 id="2">2</h1>
+<h2 id="2">2</h2>
 <p>pip install setuptools
 pip install cython</p>
 <h2 id="header">header</h2>
-<h1 id="pragma-once">pragma once</h1>
+<h2 id="pragma-once">pragma once</h2>
 <p>int add(int a, int b);</p>
 <h2 id="cpp">cpp</h2>
-<h1 id="include-addh">include "add.h"</h1>
+<h2 id="include-addh">include "add.h"</h2>
 <p>int add(int a, int b) { return a + b; }</p>
 <h2 id="add_wrapperpyx">add_wrapper.pyx</h2>
-<h1 id="add_wrapperpyx_1">add_wrapper.pyx</h1>
+<h2 id="add_wrapperpyx_1">add_wrapper.pyx</h2>
 <p>cdef extern from "add.h":
     int add(int a, int b)</p>
 <p>def py_add(int a, int b):
     return add(a, b)</p>
 <h2 id="setuppy">setup.py</h2>
-<h1 id="setuppy_1">setup.py</h1>
+<h2 id="setuppy_1">setup.py</h2>
 <p>from setuptools import setup, Extension
 from Cython.Build import cythonize</p>
 <p>ext = Extension(
