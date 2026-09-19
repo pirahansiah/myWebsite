@@ -1350,7 +1350,7 @@ As an AI and computer vision expert with over a decade of experience collaborati
   - [My Conference Papers: Multi-threshold Approach for License Plate Recognition System ](/farshid/content/papers-multi-threshold-plate.md)
   - [My Conference Papers: Pattern Image Significance for Camera Calibration](/farshid/content/papers-pattern-calibration.md)
   - [My Conference Papers: TafreshGrid Grid computing in Tafresh university ](/farshid/content/papers-grid-computing.md)
-  <!-- - [My Conference Papers: Computer Vision meet LLM ](/notes/pubs/papers/ ) -->
+  
 # Hardware I Used and Can Work With
 - **Axelera AI M2**
   - Axelera Metis M.2 on Raspberry Pi 5
@@ -10616,7 +10616,7 @@ Lessons learned from a decade of debugging computer vision systems in production
 
 # 10 Years of CV Debugging Lessons
 
-*Last updated: 2026-08-08.*  <!--ENHANCED-->
+*Last updated: 2026-08-08.*  
 
 
 I engage directly with investors, customers, and companies to present our solutions and understand their concerns and product needs. By organizing and analyzing these requirements from a professional, technical perspective, I design and architect robust software systems. I translate these user needs into actionable user stories, project milestones, and tasks to deliver reliable solutions, while planning future optimizations and feature roadmaps.
@@ -12648,7 +12648,7 @@ URL: https://pirahansiah.com/farshid/content/wiki.md
 
 A complete alphabetical index of every page on pirahansiah.com — computer vision, AI, LLM, CUDA and edge-deployment knowledge base.
 
-*Last updated: 2026-08-16.*  <!--ENHANCED-->
+*Last updated: 2026-08-16.*  
 <style>
 .wiki-wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; font-family: -apple-system, 'Linux Libertine', Georgia, Times, serif; }
 .wiki-title { font-size: 1.8rem; font-weight: 400; border-bottom: 1px solid var(--glass-border); padding-bottom: 8px; margin-bottom: 16px; color: var(--text); }
@@ -13205,7 +13205,7 @@ URL: https://pirahansiah.com/farshid/content/use-cases.md
 > **Complete Portfolio** — Publications, patents, expertise, tools, and GitHub projects across CV and AI — https://www.pirahansiah.com/notes/pkm/use-cases/
 Publications, patents, expertise, tools, and GitHub projects across CV and AI
 
-*Last updated: 2026-08-08.*  <!--ENHANCED-->
+*Last updated: 2026-08-08.*  
 
 
 # Table of Contents
@@ -14009,7 +14009,7 @@ URL: https://pirahansiah.com/farshid/content/crypto.md
 > **Crypto Payments** — Support open-source computer vision and edge AI work with cryptocurrency. — https://pirahansiah.com/crypto/
 Support Dr. Farshid Pirahansiah's open-source computer vision and edge AI work with cryptocurrency. Bitcoin, Ethereum, Solana, Base and BNB Smart Chain wallet addresses.
 
-*Last updated: 2026-08-16.*  <!--ENHANCED-->
+*Last updated: 2026-08-16.*  
 
 
 <style>
@@ -14847,7 +14847,7 @@ URL: https://pirahansiah.com/farshid/content/optimization-index.md
 > **CV, DL & ML Optimization Guide** — Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines. — https://www.pirahansiah.com/notes/docs/optimization/
 Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines.
 
-*Last updated: 2026-08-08.*  <!--ENHANCED-->
+*Last updated: 2026-08-08.*  
 
 
 # Optimization 
@@ -15362,7 +15362,7 @@ URL: https://pirahansiah.com/farshid/content/game.md
 > **Games** — Play classic arcade games — Snake, Flappy Bird & 2048 — right in your browser or as a Telegram Mini App — https://pirahansiah.com/game/
 Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as a Telegram Mini App. High scores, haptics and a share button.
 
-*Last updated: 2026-08-16.*  <!--ENHANCED-->
+*Last updated: 2026-08-16.*  
 
 
 <div class="game-page">
@@ -15386,7 +15386,7 @@ Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as 
   </div>
 
   <div class="game-stage" id="game-stage">
-    <!-- SNAKE -->
+    
     <div class="game-panel" id="game-snake">
       <canvas id="snake-canvas" aria-label="Snake game board"></canvas>
       <div class="game-overlay" id="snake-overlay">
@@ -15396,7 +15396,7 @@ Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as 
       </div>
     </div>
 
-    <!-- FLAPPY -->
+    
     <div class="game-panel" id="game-flappy" hidden>
       <canvas id="flappy-canvas" aria-label="Flappy Bird game board"></canvas>
       <div class="game-overlay" id="flappy-overlay">
@@ -15406,7 +15406,7 @@ Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as 
       </div>
     </div>
 
-    <!-- 2048 -->
+    
     <div class="game-panel" id="game-2048" hidden>
       <div class="board2048-wrap">
         <div class="grid2048" id="grid2048"></div>
@@ -15901,7 +15901,7 @@ URL: https://pirahansiah.com/farshid/content/metamask.md
 > **MetaMask Connect** — Connect your wallet, receive, or send crypto automatically. — https://pirahansiah.com/metamask/
 Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive address. Private test page.
 
-*Last updated: 2026-08-16.*  <!--ENHANCED-->
+*Last updated: 2026-08-16.*  
 
 
 <style>
@@ -16593,7 +16593,7 @@ URL: https://pirahansiah.com/farshid/content/product.md
 > **Product — Embedded CV & Edge AI** — Embedded computer vision and edge AI systems portfolio. — https://www.pirahansiah.com/farshid/content/product.md
 Embedded computer vision and edge AI systems portfolio.
 
-*Last updated: 2026-08-16.*  <!--ENHANCED-->
+*Last updated: 2026-08-16.*  
 
 
 <style>
@@ -16837,7 +16837,7 @@ URL: https://pirahansiah.com/farshid/content/conference-paper.md
 > **Publications — Conference Papers** — All peer-reviewed conference papers by Dr. Farshid Pirahansiah on image processing, camera calibration, pattern recognition, and grid computing. — https://www.pirahansiah.com/notes/pubs/papers/conference-paper/
 All peer-reviewed conference papers by Dr. Farshid Pirahansiah on image processing, camera calibration, pattern recognition, and grid computing.
 
-*Last updated: 2026-08-08.*  <!--ENHANCED-->
+*Last updated: 2026-08-08.*  
 
 
 tags: [research, papers, image-processing, computer-vision, camera-calibration, pattern-recognition]
@@ -17823,7 +17823,7 @@ K2-Horizon (by IFM / MBZUAI) is a compact *reasoning* model family. The publishe
 (`IFM/K2-Horizon-0.9B-GGUF`) are **GGUF only** in a **custom `k2-horizon` architecture**
 (a MoVA-style attention/value-router). That breaks the usual local paths:
 
-*Last updated: 2026-09-05.*  <!--ENHANCED-->
+*Last updated: 2026-09-05.*  
 
 ## Why oMLX and Ollama cannot load it (verified)
 
@@ -18056,7 +18056,7 @@ Quick reference for shell commands, vim basics, and essential CLI tools.
         }
         source mcd.sh
         !!
-<!--  -->
+
 command + /
 option+shif+a
 
@@ -18090,7 +18090,7 @@ URL: https://pirahansiah.com/farshid/content/menus.md
 
 Complete navigation index with summaries of all site pages
 
-*Last updated: 2026-09-04.*  <!--ENHANCED-->
+*Last updated: 2026-09-04.*  
 # Sitemap — All Pages
 
 ## Product
@@ -18202,7 +18202,7 @@ URL: https://pirahansiah.com/farshid/content/solana-games.md
 > **Solana Arcade** — Play Snake & Tetris, connect Phantom, and sign your high score as a cryptographic proof. — https://pirahansiah.com/solana-games/
 Play Snake and Tetris in your browser, connect a Phantom wallet, and sign your high score as a cryptographic proof on Solana. No install, no account, runs locally.
 
-*Last updated: 2026-08-16.*  <!--ENHANCED-->
+*Last updated: 2026-08-16.*  
 
 
 <style>
@@ -18482,7 +18482,7 @@ URL: https://pirahansiah.com/farshid/content/solutions.md
 > **Solutions — AI Courses & Workshops** — AI 2026 courses, workshops, and business solutions for production-ready products. — https://www.pirahansiah.com/notes/docs/solutions/
 AI 2026 courses, workshops, and business solutions for production-ready products.
 
-*Last updated: 2026-08-16.*  <!--ENHANCED-->
+*Last updated: 2026-08-16.*  
 
 
 <style>
@@ -23578,7 +23578,7 @@ URL: https://pirahansiah.com/farshid/content/terms.md
 > **Terms of Service** — Terms of Service — https://www.pirahansiah.com/terms/
 Terms of service for pirahansiah.com: acceptable use of the content, intellectual property notice, disclaimers, and contact information.
 
-*Last updated: 2026-08-14.*  <!--ENHANCED-->
+*Last updated: 2026-08-14.*  
 
 
 # Terms of Service
@@ -23636,41 +23636,38 @@ URL: https://pirahansiah.com/farshid/expert-coaching-resources/localAI.md
 
 # Tips and tricks to run a local model for Hermes Agent on your laptop
 
-## A
+A local model on a laptop is small in one thing only: the context window. The tips below keep that window for the answer, not for the packing.
 
-### How do I write good prompts when my context is 32k and I also need to include reference material?
+## Writing prompts on a 32k budget
 
-Treat the 32k as a budget. Everything counts against it: your instructions, the reference text, the chat history, and the model's answer.
+You have 32k of context and you must also include reference material. Treat the 32k as a budget. Your instructions, the reference text, the chat history and the model's answer all count against it.
 
-1. **Plan the split.** I would keep 4k to 8k free for the answer. Keep instructions under 1k. The rest is for reference text. Don't fill it to the limit, because quality often drops before you hit 32k.
+1. **Plan the split.** Keep 4k to 8k free for the answer and keep the instructions under 1k. The rest is for reference text. Do not fill the window to the limit, because quality often drops before you reach 32k.
 
-2. **Don't paste whole documents.** Split them into small chunks (300 to 500 tokens each) and pick only the best 4 to 6 for each question. That is what RAG does. It works better than a big paste.
+2. **Do not paste whole documents.** Split them into small chunks of 300 to 500 tokens and select only the best 4 to 6 for each question. That is what RAG does, and it works better than one large paste.
 
-3. **Watch the order.** Models often miss things in the middle of long input. Put the task and rules first, then the reference text, then the question last. Repeat the key rule in one line at the end.
+3. **Watch the order.** Models often miss things in the middle of a long input. Put the task and the rules first, then the reference text, then the question last. Repeat the key rule in one line at the end.
 
-4. **Label the references.** Use simple tags like `<doc id="1">...</doc>`. Then you can say "cite the doc id".
+4. **Label the references.** Use simple tags, for example `<doc id="1">...</doc>`. Then you can tell the model to cite the doc id.
 
-5. **Limit the model to your text.** Write: "Use only the documents. If the answer is not there, say 'not found'." This stops made-up answers.
+5. **Limit the model to your text.** Write: "Use only the documents. If the answer is not there, say 'not found'." This stops invented answers.
 
 6. **Shrink the history.** Replace old chat turns with a short summary. Old turns waste space.
 
-7. **Check the real limit.** If you use Ollama, the default context is much smaller than 32k. Set `num_ctx` to 32768 yourself. Otherwise the model quietly cuts your input, and you won't see an error. Also count tokens with a tool. Don't guess.
+7. **Check the real limit.** If you use Ollama, the default context is much smaller than 32k. Set `num_ctx` to 32768 yourself. Otherwise the model quietly cuts your input and you see no error. Count the tokens with a tool; do not guess.
 
+## Let Jev pick the chunks before the model writes
 
+Jev (console.typesafe.ai) does not generate text. It returns a constrained decision, such as a yes/no probability or a choice among fixed options, and your code decides what to do with it. Jev is the picker; your normal LLM is the writer.
 
-## B
-### Jev — https://console.typesafe.ai/home
+How I would build it:
 
-Jev does not generate text. It returns a constrained decision, like a yes/no probability or a choice among fixed options, and your code decides what to do with it. That fits your idea well. Jev is the picker. Your normal LLM is the writer.
+1. **Split first.** Cut code by function or class and documents by heading. Give each chunk an id.
+2. **Ask Jev one yes/no question per chunk.** The question type is called Noul. It returns one number from 0 to 1: the probability that the answer is yes. The state is the question plus one chunk. The instruction is: "The chunk contains information needed to answer the question."
+3. **Sort by that number.** Take the best chunks until your token budget is full. For code, add the chunk above and the chunk below.
+4. **Send only those chunks to the main LLM.** Tell it to answer in 150 words or fewer and to name the chunk ids it used. That gives you the small result.
 
-**How I would build it**
-
-1. **Split first.** Cut code by function or class. Cut docs by heading. Give each chunk an id.
-2. **Ask Jev one yes/no question per chunk.** The question type is called Noul. It returns one number from 0 to 1, the probability that the answer is yes. Your state is the question plus one chunk. The instruction is: "The chunk contains information needed to answer the question."
-3. **Sort by that number.** Take the best chunks until your token budget is full. For code, add the chunk above and below too.
-4. **Send only those chunks to your main LLM.** Tell it to answer in max 150 words and name the chunk ids it used. That gives you the small result.
-
-The guide describes this same shape: fetch wide first, then use a yes/no question per passage to filter before anything expensive sees it. It says the filter costs less than the context window it saves. The price is $0.042 per million input tokens, and output is free. Scanning 1 million tokens of code costs about 4 cents.
+The guide describes this same shape: fetch wide first, then use a yes/no question per passage to filter the material before anything expensive sees it. It says the filter costs less than the context window it saves. The price is $0.042 per million input tokens, and output is free. Scanning 1 million tokens of code costs about 4 cents.
 
 Here is a rough sketch based on the guide. I did not test it:
 
@@ -23690,120 +23687,57 @@ def rank(question, chunks):
     return sorted(scored, key=lambda x: x[0], reverse=True)
 ```
 
-**Things I would watch**
+What I would watch:
 
-- **Send one chunk per call, not a whole file.** The docs say accuracy drops when the state holds material the question does not need.
-- **Rate limit.** 1,200 requests per minute for jev-1.13. Many chunks means you need batching.
-- **Jev reads literally.** It answers the question you wrote, not the one you meant. Write the instruction very plainly.
-- **Hostile text.** Text in the state that argues for its own classification can move the answer. Be careful with web docs.
+- **Send one chunk per call, not a whole file.** The documents say accuracy drops when the state holds material the question does not need.
+- **Rate limit.** jev-1.13.0 allows 1,200 requests per minute. Many chunks means you need batching.
+- **Jev reads literally.** It answers the question you wrote, not the question you meant. Write the instruction plainly.
+- **Hostile text.** Text in the state that argues for its own classification can move the answer. Be careful with web documents.
 - **Access.** It is in early access with a waitlist. Keys are at console.typesafe.ai/settings/keys.
 - **Pin the version.** `jev-latest` can change under you, so use `jev-1.13.0`.
 
+## What I tested on two AMD laptops
 
+Both machines use AMD Ryzen AI processors: the Ryzen AI 400 series in the Legion, and Ryzen AI Max with unified memory in the ZBook.
 
+### Ternary-Bonsai-2-27B on a Lenovo Legion 5 15AGP11
 
-handoff documents summarized 
-jason as databade 
-gork build
+The laptop has an AMD Ryzen AI 7 450 processor, 32 GB of RAM, a 1 TB SSD and an NVIDIA GeForce RTX 5060 GPU. Ternary-Bonsai-2-27B performed quickly and accurately. The updated model, Ternary Bonsai 2 27B PTQ1_0, needs a different version of the Ollama server, so it needs custom compilation and build procedures. With 8 GB of VRAM the context window is limited to 32k tokens, which makes the model well suited to short tasks. For larger projects I use Qwen3.5-9B, which supports a 100k token context window.
 
+### HP ZBook Ultra G1a — Ryzen AI Max+ Pro 395, 128 GB unified memory
 
-How to Access It
-1.  Press Windows key + S and search for “Task Scheduler”.
-2.  Or run taskschd.msc in the Run dialog (Win + R).
-It’s very similar to cron jobs on Linux/macOS.
+The 14-inch 2.8K touch display model. Performance was quick and accurate, but the AMD architecture needed extensive compilation and configuration, because no component worked out of the box.
 
+## Tasks that stay with the specialist
 
+The tasks that expert developers will increasingly have to handle in the AI era:
 
-vision intelligence 
-technical product engineer lead managembt 
-Motion Graphics
-Session   Push to GitHub
-what is domin knowldeg and why solve this problem 
+* Design and maintain the high-level system architecture and the overall software structure.
+* Review, validate and critique AI-generated code for correctness, security and quality.
+* Refactor AI output to improve reusability, reduce duplication and lower complexity.
+* Write precise prompts, set constraints and guide AI agents or coding tools.
+* Find and resolve the complex bugs, edge cases and integration problems that AI struggles with.
+* Enforce coding standards, design patterns and long-term maintainability.
+* Manage the technical debt that rapid AI-assisted development creates.
+* Optimise performance, scalability and resource use beyond what basic AI suggestions give.
+* Make sure that domain logic, business rules and regulatory requirements are implemented correctly.
+* Integrate several AI tools, models and pipelines, and control cost and reliability.
+* Use advanced test strategies, including adversarial and system-level testing.
+* Mentor teams and set best practices for productive human-AI collaboration.
+* Decide when to use AI, and when to write or redesign the code by hand.
 
-Vision-Language-Action (VLA) models that enable robots to understand and interact with the
-world with unprecedented generalization. You will work on the intersection of large-scale
-foundation models and real-world robotic execution, bridging the gap between state-of-the-art research and deployed embodied
-intelligence.
-Your Responsibilities:
-Research & Development:
-• Design, implement, and scale VLA models and foundation architectures for robotic
-manipulation and navigation.
+These responsibilities move the specialist from pure code production towards oversight, architecture, quality control and strategic guidance.
 
+## Scheduling a job on Windows
 
-add always remmber agent/llm/chat 
-Write in ASD-STE100.
+Windows Task Scheduler is close to cron jobs on Linux and macOS.
 
+1. Press the Windows key and S, then search for "Task Scheduler".
+2. Or run `taskschd.msc` in the Run dialog (Win + R).
 
+## Referral links
 
-
-## C
-
-### Ternary-Bonsai-2-27B
-AMD Ryzen AI 400 Series and Ryzen AI Max PC Processors
-### Lenovo Legion 5 15AGP11 laptop AMD Ryzen™ AI 7 450 processor, 32 GB of RAM, a 1 TB SSD, and an NVIDIA GeForce RTX™ 5060 GPU
-I evaluated Ternary-Bonsai-2-27B on a Lenovo Legion 5 15AGP11 laptop featuring an AMD Ryzen™ AI 7 450 processor, 32 GB of RAM, a 1 TB SSD, and an NVIDIA GeForce RTX™ 5060 GPU. Performance was both rapid and accurate; however, the updated model, Ternary Bonsai 2 27B PTQ1_0, requires a different version of the Ollama server, necessitating custom compilation and build procedures. Due to the 8 GB VRAM constraint, the context window is limited to 32K tokens, making this model well suited for short tasks. For larger projects, I continue to use Qwen3.5-9B, which supports a 100K token context window.
-
-On a Lenovo Legion 5 (Ryzen AI 7 450, 32 GB RAM, 1 TB SSD, RTX 5060), Ternary-Bonsai-2-27B performed quickly and accurately. The PTQ1_0 version needs a custom-built Ollama server; with 8 GB VRAM, its 32K token context suits short tasks. For larger projects, I use Qwen3.5-9B (100K tokens).
-
-### STRIX HALO and 128 GB of unified memory, 
-### HP ZBook Ultra G1a (14-inch, 2.8 K touch display) featuring the Ryzen AI MAX+ PRO 395
-Performance was rapid and accurate; however, the AMD architecture required extensive compilation and configuration, as no components functioned out of the box. 
-
-
-## D
-### PKM
-atomic note
-not more than 255 charteerrs if possible
-down/more depth
-up
-
-
-
-## E
-List of key tasks specialists (expert developers) will increasingly need to handle in the AI era:
-* Design and maintain high-level system architecture and overall software structure
-* Thoroughly review, validate, and critique AI-generated code for correctness, security, and quality
-* Refactor AI output to improve reusability, reduce duplication, and lower complexity
-* Write precise prompts, set constraints, and effectively guide AI agents or coding tools
-* Identify and resolve complex bugs, edge cases, and integration issues that AI struggles with
-* Enforce coding standards, design patterns, and long-term maintainability
-* Manage technical debt created by rapid AI-assisted development
-* Optimize performance, scalability, and resource usage beyond what basic AI suggestions provide
-* Ensure domain-specific logic, business rules, and regulatory/compliance requirements are correctly implemented
-* Integrate multiple AI tools, models, and pipelines while controlling costs and reliability
-* Conduct advanced testing strategies (including adversarial and system-level testing)
-* Mentor teams and establish best practices for productive human-AI collaboration
-* Make critical trade-off decisions on when to use AI versus writing or redesigning code manually
-These responsibilities shift the specialist’s role from pure code production toward oversight, architecture, quality control, and strategic guidance.
-
-
-
-## F
-Low cost coding models for everyone.
-https://opencode.ai/go?ref=3KMNQG0CS4
-
-
-Join Trade Republic. The smartest way to invest, spend and bank. Create an account via the link to secure a welcome bonus.
-https://refnocode.trade.re/z28xmjp6
-
-scalable
-https://de.scalable.capital/en/invitation/bj2bkn
-
-Join me at Scalable, the best place to invest in your financial future. Open an account in just a few minutes using my link and secure a start bonus of €25. Start now.
-
-WISE
-https://wise.com/invite/ilpn/farshidp1
-
-EToro
-Hey! I’m trading with etoro. They have 1,000s of assets and awesome tools. Want to join me? Use my link to sign up:
-https://etoro.tw/3XGZzNz 
-
-
-kraken. byt crypto
-https://invite.kraken.com/JDNW/sqqgzc9a
-
-
-## G
+The tools I use, with my referral links, are on the [QR codes page](/qr/).
 
 ---
 
@@ -24015,7 +23949,7 @@ URL: https://pirahansiah.com/farshid/content/why-not.md
 
 Why this personal knowledge base exists, what it covers, and the principles behind how it is built and maintained.
 
-*Last updated: 2026-08-14.*  <!--ENHANCED-->
+*Last updated: 2026-08-14.*  
 This site exists for three reasons:
 
 ## 1. A public engineering notebook

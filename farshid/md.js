@@ -75,6 +75,7 @@
         i++;
         while (i<lines.length){
           var l2 = lines[i].match(/^\s*[-*+]\s+(.*)$/);
+          if (!l2 && /^\s*$/.test(lines[i]) && /^\s*[-*+]\s+/.test(lines[i+1]||'')){ i++; l2 = lines[i].match(/^\s*[-*+]\s+(.*)$/); }
           if (l2){ html += '<li>'+inline(l2[1])+'</li>\n'; i++; }
           else break;
         }
@@ -85,6 +86,9 @@
         i++;
         while (i<lines.length){
           var o2 = lines[i].match(/^\s*\d+[.)]\s+(.*)$/);
+          // a blank line between two items is a "loose list", not the end of the list:
+          // without this every item becomes its own list and restarts at 1.
+          if (!o2 && /^\s*$/.test(lines[i]) && /^\s*\d+[.)]\s+/.test(lines[i+1]||'')){ i++; o2 = lines[i].match(/^\s*\d+[.)]\s+(.*)$/); }
           if (o2){ html += '<li>'+inline(o2[1])+'</li>\n'; i++; }
           else break;
         }
@@ -103,6 +107,12 @@
         html += '<table><thead><tr>'+header.map(function(h){return '<th>'+inline(h)+'</th>';}).join('')+'</tr></thead><tbody>';
         for (var r=0;r<rows.length;r++){ html += '<tr>'+rows[r].map(function(c){return '<td>'+inline(c)+'</td>';}).join('')+'</tr>'; }
         html += '</tbody></table>\n'; continue;
+      }
+      // html comment: a note to the author, not page text. The inline escaper would
+      // otherwise print the comment marker on the page, so consume the whole block.
+      if (/^\s*<!--/.test(line)){
+        while (i < lines.length && !/-->\s*$/.test(lines[i])) i++;
+        i++; continue;
       }
       // html passthrough block (raw)
       if (/^\s*<\/?[a-zA-Z][^>]*>/.test(line)){

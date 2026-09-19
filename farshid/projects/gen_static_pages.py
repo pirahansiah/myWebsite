@@ -213,6 +213,7 @@ def write_llms(pages):
         for p in items:
             _meta, raw = split_front_matter(open(p['path'], encoding='utf-8').read())
             raw = re.sub(r'<script\b.*?</script>', '', raw, flags=re.S | re.I)
+            raw = re.sub(r'(?s)<!--.*?-->', '', raw)      # editor notes are not site text
             full += [f"## {p['title']}", f"URL: {p['url']}", '', raw.strip(), '', '---', '']
     open(os.path.join(SITE, 'llms-full.txt'), 'w', encoding='utf-8').write('\n'.join(full))
 
