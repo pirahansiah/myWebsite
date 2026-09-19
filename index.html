@@ -12,6 +12,22 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pirahansiah.com/">
 <meta name="robots" content="index, follow">
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7548808026663917" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
 </head>
 <body>
 <header class="topbar">
@@ -49,6 +65,14 @@
     <div class="stat"><div class="stat-num">21</div><div class="stat-label">Publications</div></div>
     <div class="stat"><div class="stat-num">3</div><div class="stat-label">Patents</div></div>
   </div>
+
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-7548808026663917"
+       data-ad-slot="auto"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   <div class="article">
     <h2>About Me</h2>
@@ -140,8 +164,27 @@
     <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
   </div>
 </footer>
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>This website uses cookies for analytics and personalized ads (Google AdSense). By clicking Accept, you consent to our use of cookies.</span>
+  <button id="gdpr-accept" type="button">Accept</button>
+</div>
 <script src="/assets/js/md.js"></script>
 <script src="/assets/js/app.js"></script>
 <script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    if(localStorage.getItem('gdpr_consent')){ if(banner) banner.classList.remove('active'); }
+    else { if(banner) banner.classList.add('active'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','1');
+      if(banner) banner.classList.remove('active');
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+  })();
+</script>
 </body>
 </html>
