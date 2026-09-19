@@ -23,11 +23,11 @@ hashtags: "#cv #debugging #lessonslearned #opencv"
 [Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/expert-coaching-resources/localAI.md)
 
 
+# Vision-Language-Action models
+design, implement and scale VLA models and foundation architectures for robotic manipulation and navigation.
+Vision-Language-Action models that let robots understand and interact with the world with unprecedented generalisation; large-scale foundation models and real-world robotic execution, bridging the gap between research and deployed embodied intelligence. 
 
-
-
-
-> **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production. — https://www.pirahansiah.com/notes/pubs/10-years/
+> **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production. 
 Lessons learned from a decade of debugging computer vision systems in production.
 
 # 10 Years of CV Debugging Lessons

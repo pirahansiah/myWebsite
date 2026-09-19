@@ -4,6 +4,13 @@ title: "Tips and tricks to run a local model for Hermes Agent on your laptop"
 permalink: /expert-coaching-resources/localAI/
 description: "Running a local model for Hermes Agent on a laptop: budgeting a 32k context between instructions, references and the answer, a yes/no filter that picks the chunks before the main model sees them, and notes from two AMD laptops."
 ---
+# On my laptop with 8gb vram 
+- 131k qwen3.5-9b q4
+- 32k Ternary-Bonsai-2-27B (based on qwen3.8-27b) it is q1 
+
+
+
+
 
 # Tips and tricks to run a local model for Hermes Agent on your laptop
 
@@ -116,17 +123,10 @@ index and llms-full.txt). Nothing here is published:
 
 - handoff documents summarized
 - JSON as a database
-- build something with Grok
-- session: push to GitHub
-- add: always remember agent / llm / chat
-- write in ASD-STE100 (applied to the text on this page)
+- add: always remember agent / llm / chat write in ASD-STE100 (applied to the text on this page)
 - vision intelligence · technical product engineer lead · management · motion graphics
 - what is domain knowledge, and why solve this problem
-- pasted VLA job posting: Vision-Language-Action models that let robots understand and
-  interact with the world with unprecedented generalisation; work at the intersection of
-  large-scale foundation models and real-world robotic execution, bridging the gap between
-  research and deployed embodied intelligence. Responsibilities: design, implement and
-  scale VLA models and foundation architectures for robotic manipulation and navigation.
+- Vision-Language-Action models that let robots understand and interact with the world with unprecedented generalisation; large-scale foundation models and real-world robotic execution, bridging the gap between research and deployed embodied intelligence. design, implement and scale VLA models and foundation architectures for robotic manipulation and navigation.
 - PKM convention: atomic notes, not more than 255 characters if possible; link down for
   more depth, up for the wider view.
 -->
