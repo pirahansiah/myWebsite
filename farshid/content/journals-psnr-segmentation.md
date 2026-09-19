@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/journals/PEAK_SIGNAL-TO-NOISE_RATIO_BASED
 
 [PDF Download](http://www.jatit.org/volumes/Vol57No2/4Vol57No2.pdf  )
 
-  ![PEAK SIGNAL-TO-NOISE RATIO BASED ON THRESHOLD METHOD FOR IMAGE SEGMENTATION](/farshid/assets/img/psnr-threshold-segmentation.png)
+  ![PEAK SIGNAL-TO-NOISE RATIO BASED ON THRESHOLD METHOD FOR IMAGE SEGMENTATION](/farshid/content/psnr-threshold-segmentation.png)
 
-  <img src="/farshid/assets/img/psnr-threshold-segmentation.png" alt="PEAK SIGNAL-TO-NOISE RATIO BASED ON THRESHOLD METHOD FOR IMAGE SEGMENTATION" style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/psnr-threshold-segmentation.png" alt="PEAK SIGNAL-TO-NOISE RATIO BASED ON THRESHOLD METHOD FOR IMAGE SEGMENTATION" style="max-width: 100%; height: auto;">
 
 # Mind Map: Peak Signal-to-Noise Ratio Based on Threshold Method for Image Segmentation
 

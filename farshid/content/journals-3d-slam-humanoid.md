@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/journals/3D_SLAM_Simultaneous_Localizatio
 
 [PDF Download](http://journalarticle.ukm.my/6644/1/4429-10302-1-SM.pdf  )
 
-  ![3D SLAM Simultaneous Localization And Mapping Trends And Humanoid Robot Linkages](/farshid/assets/img/3d-slam-humanoid-robots.png)
+  ![3D SLAM Simultaneous Localization And Mapping Trends And Humanoid Robot Linkages](/farshid/content/3d-slam-humanoid-robots.png)
 
-  <img src="/farshid/assets/img/3d-slam-humanoid-robots.png" alt="Simultaneous Localization And Mapping Trends And Humanoid Robot Linkages" style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/3d-slam-humanoid-robots.png" alt="Simultaneous Localization And Mapping Trends And Humanoid Robot Linkages" style="max-width: 100%; height: auto;">
 
 # Simultaneous Localization and Mapping Trends and Humanoid Robot Linkages
 

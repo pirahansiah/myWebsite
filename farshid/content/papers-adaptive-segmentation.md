@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/papers/Adaptive_Image_Segmentation_Based_
 
 [PDF Download My Conference Paper](https://doi.org/10.1109/ICCAIE.2010.5735125  )
 
-  ![My Conference Paper   ](/farshid/assets/img/adaptive-image-segmentation-psnr.png)
+  ![My Conference Paper   ](/farshid/content/adaptive-image-segmentation-psnr.png)
 
-  <img src="/farshid/assets/img/adaptive-image-segmentation-psnr.png" alt="My Conference Paper: Adaptive Image Segmentation Based on PSNR for License Plate Recognition "  style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/adaptive-image-segmentation-psnr.png" alt="My Conference Paper: Adaptive Image Segmentation Based on PSNR for License Plate Recognition "  style="max-width: 100%; height: auto;">
 
 # Adaptive Image Segmentation Based on PSNR for License Plate Recognition
 

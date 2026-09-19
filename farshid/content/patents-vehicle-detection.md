@@ -3,15 +3,15 @@ Image processing method for detecting moving vehicles using CLAHE, Sobel, and ge
 [spotify](https://podcasters.spotify.com/pod/show/pirahansiah/episodes/A-METHOD-FOR-DETECTING-A-MOVING-VEHICLE-WO2021107761A1-e2pk5mj)
 
 <audio controls>
-  <source src="/farshid/assets/img/vehicle-detection.mp3" type="audio/mpeg">
+  <source src="/farshid/content/vehicle-detection.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 [PDF Download](https://patentimages.storage.googleapis.com/16/41/83/2576e20c4a0af5/WO2021107761A1.pdf  )
 
-  ![A METHOD FOR DETECTING A MOVING VEHICLE WO2021107761A1](/farshid/assets/img/vehicle-detection.png)
+  ![A METHOD FOR DETECTING A MOVING VEHICLE WO2021107761A1](/farshid/content/vehicle-detection.png)
 
-  <img src="/farshid/assets/img/vehicle-detection.png" alt="A METHOD FOR DETECTING A MOVING VEHICLE WO2021107761A1" style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/vehicle-detection.png" alt="A METHOD FOR DETECTING A MOVING VEHICLE WO2021107761A1" style="max-width: 100%; height: auto;">
 
 Patent Summary:
 

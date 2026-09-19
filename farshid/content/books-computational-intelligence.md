@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/books/Book_Computational_Intelligence_Fro
 
 [PDF Download book chapter titled “Augmented Optical Flow Methods for Video Stabilization", In Computational Intelligence: from theory to application. (2017) (p18).](http://www.ukm.my/penerbit/penerbitan-2017/)
 
-  ![Book: Computational Intelligence: From Theory to Application explores augmented optical flow methods for video stabilization, focusing on eliminating jitter and improving image clarity](/farshid/assets/img/computational-intelligence-optical-flow.png)
+  ![Book: Computational Intelligence: From Theory to Application explores augmented optical flow methods for video stabilization, focusing on eliminating jitter and improving image clarity](/farshid/content/computational-intelligence-optical-flow.png)
 
-  <img src="/farshid/assets/img/computational-intelligence-optical-flow.png" alt="Book: Computational Intelligence: From Theory to Application explores augmented optical flow methods for video stabilization, focusing on eliminating jitter and improving image clarity" style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/computational-intelligence-optical-flow.png" alt="Book: Computational Intelligence: From Theory to Application explores augmented optical flow methods for video stabilization, focusing on eliminating jitter and improving image clarity" style="max-width: 100%; height: auto;">
 
 # Computational Intelligence: From Theory to Application
 ## Chapter 4: Augmented Optical Flow Methods for Video Stabilization

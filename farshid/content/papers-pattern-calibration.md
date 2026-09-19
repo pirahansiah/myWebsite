@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/papers/Pattern_Image_Significance_for_Cam
 
 [PDF Download My Conference Paper](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8305440&isnumber=8305342  )
 
-  ![My Conference Paper   Pattern Image Significance for Camera Calibration](/farshid/assets/img/pattern-image-calibration.png)
+  ![My Conference Paper   Pattern Image Significance for Camera Calibration](/farshid/content/pattern-image-calibration.png)
 
-  <img src="/farshid/assets/img/pattern-image-calibration.png" alt="My Conference Paper: Pattern Image Significance for Camera Calibration "  style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/pattern-image-calibration.png" alt="My Conference Paper: Pattern Image Significance for Camera Calibration "  style="max-width: 100%; height: auto;">
 
 # Pattern Image Significance for Camera Calibration
 

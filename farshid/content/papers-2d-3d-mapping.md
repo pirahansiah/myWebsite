@@ -11,9 +11,9 @@ https://www.pirahansiah.com/notes/pubs/papers/conference-paper_2D_versus_3D_Map_
 
 [PDF Download My Conference Paper]( http://www.ftsm.ukm.my/cait2012/images/Program%20Schedule%20CAIT2012.pdf )
 
-  ![My Conference Paper  My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects ](/farshid/assets/img/2d-3d-map-movement.png)
+  ![My Conference Paper  My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects ](/farshid/content/2d-3d-map-movement.png)
 
-  <img src="/farshid/assets/img/2d-3d-map-movement.png" alt="My Conference Paper: My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects "  style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/2d-3d-map-movement.png" alt="My Conference Paper: My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects "  style="max-width: 100%; height: auto;">
 
 # Paper: 2D versus 3D Map for Environment Movement Objects
 

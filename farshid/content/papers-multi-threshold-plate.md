@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/papers/Multi-threshold_Approach_for_Licen
 
 [PDF Download My Conference Paper]( http://waset.org/publications/3636 )
 
-  ![My Conference Paper  Multi-threshold Approach for License Plate Recognition System ](/farshid/assets/img/multi-threshold-license-plate.png)
+  ![My Conference Paper  Multi-threshold Approach for License Plate Recognition System ](/farshid/content/multi-threshold-license-plate.png)
 
-  <img src="/farshid/assets/img/multi-threshold-license-plate.png" alt="My Conference Paper:  Multi-threshold Approach for License Plate Recognition System"  style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/multi-threshold-license-plate.png" alt="My Conference Paper:  Multi-threshold Approach for License Plate Recognition System"  style="max-width: 100%; height: auto;">
 
 # Multi-threshold Approach for License Plate Recognition System
 

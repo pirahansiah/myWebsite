@@ -1,6 +1,6 @@
 Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production deployment.
 
-<img src="/farshid/assets/img/Mind_Map_Advanced_LLM_Concepts.png" alt="Mind Map Advanced LLM Concepts" style="max-width: 100%; height: auto;">
+<img src="/farshid/content/Mind_Map_Advanced_LLM_Concepts.png" alt="Mind Map Advanced LLM Concepts" style="max-width: 100%; height: auto;">
 
 # Mind Map: Orchestrating Agents & Advanced LLM Concepts
 

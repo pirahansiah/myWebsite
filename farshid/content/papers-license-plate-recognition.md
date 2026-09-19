@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/papers/License_Plate_Recognition_with_Mul
 
 [PDF Download My Conference Paper]( https://doi.org/10.1109/ICEEI.2011.6021627 )
 
-  ![My Conference Paper License Plate Recognition with Multi-Threshold Based on Entropy  ](/farshid/assets/img/license-plate-recognition-entropy.png)
+  ![My Conference Paper License Plate Recognition with Multi-Threshold Based on Entropy  ](/farshid/content/license-plate-recognition-entropy.png)
 
-  <img src="/farshid/assets/img/license-plate-recognition-entropy.png" alt="My Conference Paper: License Plate Recognition with Multi-Threshold Based on Entropy "  style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/license-plate-recognition-entropy.png" alt="My Conference Paper: License Plate Recognition with Multi-Threshold Based on Entropy "  style="max-width: 100%; height: auto;">
 
 # License Plate Recognition with Multi-threshold based on Entropy
 

@@ -1,6 +1,6 @@
 Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.
 
-<img src="/farshid/assets/img/Mind_Map_Orchestrating_Agents.png" alt="Mind Map Orchestrating Agents" style="max-width: 100%; height: auto;">
+<img src="/farshid/content/Mind_Map_Orchestrating_Agents.png" alt="Mind Map Orchestrating Agents" style="max-width: 100%; height: auto;">
 
 # Mind Map: Orchestrating Agents
 

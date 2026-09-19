@@ -3,15 +3,15 @@ GAN-based method for augmenting face images from surveillance with fuzzy logic q
 [spotify](https://spotifyanchor-web.app.link/e/XZpmcmHCFNb)
 
 <audio controls>
-  <source src="/farshid/assets/img/face-image-augmentation.mp3" type="audio/mpeg">
+  <source src="/farshid/content/face-image-augmentation.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 [PDF Download](https://patentimages.storage.googleapis.com/b8/d9/7f/ea8a5b789e1dad/WO2021060971A1.pdf )
 
-  ![A METHOD FOR AUGMENTING A PLURALITY OF FACE IMAGES WO2021060971A1](/farshid/assets/img/face-image-augmentation.png)
+  ![A METHOD FOR AUGMENTING A PLURALITY OF FACE IMAGES WO2021060971A1](/farshid/content/face-image-augmentation.png)
 
-  <img src="/farshid/assets/img/face-image-augmentation.png" alt="A METHOD FOR AUGMENTING A PLURALITY OF FACE IMAGES WO2021060971A1" style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/face-image-augmentation.png" alt="A METHOD FOR AUGMENTING A PLURALITY OF FACE IMAGES WO2021060971A1" style="max-width: 100%; height: auto;">
 
 The patent WO2021060971A1 describes a method for augmenting face images, particularly for use in video surveillance systems. The invention addresses the limitations of traditional surveillance, where cameras capture face images from limited angles, leading to incomplete or substandard images. The method involves acquiring face images from both cameras and the internet, applying data augmentation techniques to increase the number of images, and using a Generative Adversarial Network (GAN) to create additional face images. This process helps generate better-quality face images that can improve facial recognition systems.
 

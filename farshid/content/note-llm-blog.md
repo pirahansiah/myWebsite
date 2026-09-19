@@ -78,7 +78,7 @@ Leveraging CUDA for High-Performance GPU Computing with PyCUDA and Numba.
 
 # LLM
 
-<img src="/farshid/assets/img/Mind_Map_Orchestrating_Agents.png" alt="Mind Map Orchestrating Agents" style="max-width: 100%; height: auto;">
+<img src="/farshid/content/Mind_Map_Orchestrating_Agents.png" alt="Mind Map Orchestrating Agents" style="max-width: 100%; height: auto;">
 
 ## Orchestrating AI Agents
 

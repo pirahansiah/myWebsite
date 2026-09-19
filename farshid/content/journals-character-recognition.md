@@ -6,9 +6,9 @@ CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION
 
 [PDF Download](http://www.jatit.org/volumes/Vol52No2/6Vol52No2.pdf )
 
-  ![CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION](/farshid/assets/img/character-object-recognition.png)
+  ![CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION](/farshid/content/character-object-recognition.png)
 
-  <img src="/farshid/assets/img/character-object-recognition.png" alt="CHARACTER AND OBJECT RECOGNITION BASED ON GLOBAL FEATURE EXTRACTION" style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/character-object-recognition.png" alt="CHARACTER AND OBJECT RECOGNITION BASED ON GLOBAL FEATURE EXTRACTION" style="max-width: 100%; height: auto;">
 
 # Mind Map: Character and Object Recognition Based on Global Feature Extraction
 

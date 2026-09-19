@@ -2,7 +2,7 @@ Explanation of how PyCUDA compiles and executes CUDA kernels written in C from P
 
 How PyCUDA Reads and Runs C Kernels
 
-<img src="/farshid/assets/img/CUDA_pycuda_kernel_explanation.png" alt="How PyCUDA Reads and Runs C Kernels" style="max-width: 100%; height: auto;">
+<img src="/farshid/content/CUDA_pycuda_kernel_explanation.png" alt="How PyCUDA Reads and Runs C Kernels" style="max-width: 100%; height: auto;">
 
 # How PyCUDA Reads and Runs C Kernels
 

@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/papers/Comparison_single_thresholding_met
 
 [PDF Download My Conference Paper](https://doi.org/10.1109/ICPAIR.2011.5976918  )
 
-  ![My Conference Paper  Comparison single thresholding method for handwritten images segmentation ](/farshid/assets/img/comparison-thresholding-handwritten.png)
+  ![My Conference Paper  Comparison single thresholding method for handwritten images segmentation ](/farshid/content/comparison-thresholding-handwritten.png)
 
-  <img src="/farshid/assets/img/comparison-thresholding-handwritten.png" alt="My Conference Paper: Comparison single thresholding method for handwritten images segmentation "  style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/comparison-thresholding-handwritten.png" alt="My Conference Paper: Comparison single thresholding method for handwritten images segmentation "  style="max-width: 100%; height: auto;">
 
 # Comparison Single Thresholding Method for Handwritten Images Segmentation
 

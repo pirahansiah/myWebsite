@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/papers/TafreshGrid_Grid_computing_in_Tafr
 
 [PDF Download My Conference Paper](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6014009&isnumber=6013532 )
 
-  ![My Conference Paper  TafreshGrid Grid computing in Tafresh university ](/farshid/assets/img/tafreshgrid-grid-computing.png)
+  ![My Conference Paper  TafreshGrid Grid computing in Tafresh university ](/farshid/content/tafreshgrid-grid-computing.png)
 
-  <img src="/farshid/assets/img/tafreshgrid-grid-computing.png" alt="My Conference Paper: TafreshGrid Grid computing in Tafresh university "  style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/tafreshgrid-grid-computing.png" alt="My Conference Paper: TafreshGrid Grid computing in Tafresh university "  style="max-width: 100%; height: auto;">
 
 # TafreshGrid: Grid Computing in Tafresh University
 

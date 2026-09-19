@@ -85,9 +85,9 @@ As an AI and computer vision expert with over a decade of experience collaborati
 
 # Patent Summary
 
-  ![Dr. Farshid Pirahansiah 3 Patents - AI Innovations in Vehicle Detection, Facial Analysis, and Image Augmentation](/farshid/assets/img/Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation.png)
+  ![Dr. Farshid Pirahansiah 3 Patents - AI Innovations in Vehicle Detection, Facial Analysis, and Image Augmentation](/farshid/content/Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation.png)
 
-  <img src="/farshid/assets/img/Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation.png" alt="Dr. Farshid Pirahansiah 3 Patents - AI Innovations in Vehicle Detection, Facial Analysis, and Image Augmentation" style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/Dr._Farshid_Pirahansiah_3_Patents_-_AI_Innovations_in_Vehicle_Detection,_Facial_Analysis,_and_Image_Augmentation.png" alt="Dr. Farshid Pirahansiah 3 Patents - AI Innovations in Vehicle Detection, Facial Analysis, and Image Augmentation" style="max-width: 100%; height: auto;">
 
 This collection of patents presents cutting-edge innovations in computer vision and facial analysis, enhancing applications in surveillance, advertising, and vehicle detection.
 

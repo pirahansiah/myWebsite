@@ -8,15 +8,15 @@ hashtags: "#patent #facialrecognition #advertising #deeplearning"
 [spotify](https://podcasters.spotify.com/pod/show/pirahansiah/episodes/SYSTEM-AND-METHOD-FOR-PROVIDING-ADVERTISEMENT-CONTENTS-BASED-ON-FACIAL-ANALYSIS-WO2020141969A2-e2p7342)
 
 <audio controls>
-  <source src="/farshid/assets/img/facial-analysis-advertisement.mp3" type="audio/mpeg">
+  <source src="/farshid/content/facial-analysis-advertisement.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 [PDF Download](https://patentimages.storage.googleapis.com/ff/3f/a5/e7b42ef58d8a03/WO2020141969A2.pdf)
 
-  ![SYSTEM AND METHOD FOR PROVIDING ADVERTISEMENT CONTENTS BASED ON FACIAL ANALYSIS WO2020141969A2](/farshid/assets/img/facial-analysis-advertisement.png)
+  ![SYSTEM AND METHOD FOR PROVIDING ADVERTISEMENT CONTENTS BASED ON FACIAL ANALYSIS WO2020141969A2](/farshid/content/facial-analysis-advertisement.png)
 
-  <img src="/farshid/assets/img/facial-analysis-advertisement.png" alt="SYSTEM AND METHOD FOR PROVIDING ADVERTISEMENT CONTENTS BASED ON FACIAL ANALYSIS WO2020141969A2" style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/facial-analysis-advertisement.png" alt="SYSTEM AND METHOD FOR PROVIDING ADVERTISEMENT CONTENTS BASED ON FACIAL ANALYSIS WO2020141969A2" style="max-width: 100%; height: auto;">
 
 🎧 Listen and Explore 🗺️ the engaging audio discussion about the innovative patent “SYSTEM AND METHOD FOR PROVIDING ADVERTISEMENT CONTENTS BASED ON FACIAL ANALYSIS WO2020141969A2”!
 

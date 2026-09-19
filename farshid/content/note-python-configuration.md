@@ -8,7 +8,7 @@ This guide compares Python's native configuration methods and popular third-part
 
 - Python Configuration Management
     
-    <img src="/farshid/assets/img/python-configuration-management.png" alt="Python Configuration Management" style="max-width: 100%; height: auto;">
+    <img src="/farshid/content/python-configuration-management.png" alt="Python Configuration Management" style="max-width: 100%; height: auto;">
 
     [Python Configuration Management](#python-configuration-management)
 

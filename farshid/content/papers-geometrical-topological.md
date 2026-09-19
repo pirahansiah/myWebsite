@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/papers/An_evaluation_of_classification_te
 
 [PDF Download My Conference Paper](https://scholar.google.com/scholar?oi=bibs&cluster=3038184255311332521&btnI=1&hl=en  )
 
-  ![My Conference Paper  An evaluation of classification techniques using enhanced Geometrical Topological Feature Analysis ](/farshid/assets/img/classification-geometrical-topological.png)
+  ![My Conference Paper  An evaluation of classification techniques using enhanced Geometrical Topological Feature Analysis ](/farshid/content/classification-geometrical-topological.png)
 
-  <img src="/farshid/assets/img/classification-geometrical-topological.png" alt="My Conference Paper:  An evaluation of classification techniques using enhanced Geometrical Topological Feature Analysis"  style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/classification-geometrical-topological.png" alt="My Conference Paper:  An evaluation of classification techniques using enhanced Geometrical Topological Feature Analysis"  style="max-width: 100%; height: auto;">
 
 # An Evaluation of Classification Techniques Using Enhanced Geometrical Topological Feature Analysis
 

@@ -8,9 +8,9 @@ USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM
 
 - [PDF Download](http://www.jatit.org/volumes/Vol95No21/1Vol95No21.pdf)
 
-  ![USING AN ANT COLONY OPTIMIZATION ALGORITHM](/farshid/assets/img/ant-colony-optimization.png)
+  ![USING AN ANT COLONY OPTIMIZATION ALGORITHM](/farshid/content/ant-colony-optimization.png)
 
-  <img src="/farshid/assets/img/ant-colony-optimization.png" alt="USING AN ANT COLONY OPTIMIZATION ALGORITHM" style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/ant-colony-optimization.png" alt="USING AN ANT COLONY OPTIMIZATION ALGORITHM" style="max-width: 100%; height: auto;">
 
 # Ant Colony Optimization for Image Edge Detection
 

@@ -7,9 +7,9 @@ Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio
 [PDF Download](https://ieeexplore.ieee.org/document/5735125)
 [PDF Download](https://pdfs.semanticscholar.org/05b2/d39fce4e8a99897e95f8c75416f65a5a0acc.pdf)
 
-  ![Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio](/farshid/assets/img/adaptive-thresholding-psnr.png)
+  ![Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio](/farshid/content/adaptive-thresholding-psnr.png)
 
-  <img src="/farshid/assets/img/adaptive-thresholding-psnr.png" alt="Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio" style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/adaptive-thresholding-psnr.png" alt="Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio" style="max-width: 100%; height: auto;">
 
 # Mind Map: Adaptive Image Thresholding Based on PSNR
 

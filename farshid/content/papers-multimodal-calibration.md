@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/papers/Camera_Calibration_for_Multi-Modal
 
 [PDF Download My Conference Paper](https://ieeexplore.ieee.org/document/7360336 )
 
-  ![My Conference Paper  Camera Calibration for Multi-Modal Robot Vision ](/farshid/assets/img/camera-calibration-multi-modal.png)
+  ![My Conference Paper  Camera Calibration for Multi-Modal Robot Vision ](/farshid/content/camera-calibration-multi-modal.png)
 
-  <img src="/farshid/assets/img/camera-calibration-multi-modal.png" alt="My Conference Paper: Camera Calibration for Multi-Modal Robot Vision "  style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/camera-calibration-multi-modal.png" alt="My Conference Paper: Camera Calibration for Multi-Modal Robot Vision "  style="max-width: 100%; height: auto;">
 
 # Camera Calibration for Multi-Modal Robot Vision
 

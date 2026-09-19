@@ -6,9 +6,9 @@ GSFT-PSNR_Global_Single_Fuzzy_Threshold
 
 [PDF Download](https://www.ijcsns.com/June.2016-Volume.4-No.6/Article01.pdf )
 
-  ![Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio](/farshid/assets/img/gsft-psnr-fuzzy-threshold.png)
+  ![Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio](/farshid/content/gsft-psnr-fuzzy-threshold.png)
 
-  <img src="/farshid/assets/img/gsft-psnr-fuzzy-threshold.png" alt="GSFT-PSNR Global Single Fuzzy Threshold" style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/gsft-psnr-fuzzy-threshold.png" alt="GSFT-PSNR Global Single Fuzzy Threshold" style="max-width: 100%; height: auto;">
 
 # Mind Map: GSFT-PSNR Global Single Fuzzy Threshold
 

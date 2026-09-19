@@ -8,9 +8,9 @@ https://www.pirahansiah.com/notes/pubs/papers/Character_Recognition_Based_on_Glo
 
 [PDF Download My Conference Paper]( https://doi.org/10.1109/ICEEI.2011.6021649 )
 
-  ![My Conference Paper  Character Recognition Based on Global Feature ](/farshid/assets/img/character-recognition-global-feature.png)
+  ![My Conference Paper  Character Recognition Based on Global Feature ](/farshid/content/character-recognition-global-feature.png)
 
-  <img src="/farshid/assets/img/character-recognition-global-feature.png" alt="My Conference Paper: Character Recognition Based on Global Feature "  style="max-width: 100%; height: auto;">
+  <img src="/farshid/content/character-recognition-global-feature.png" alt="My Conference Paper: Character Recognition Based on Global Feature "  style="max-width: 100%; height: auto;">
 
 # Character Recognition Based on Global Feature Extraction
 
