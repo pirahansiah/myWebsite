@@ -393,7 +393,7 @@ hermes skills list
       <section>
         <h1>Thank You & Discussion</h1>
         <p style="color:#94a3b8; font-size:.7em;">Quantize smart · Draft in parallel · Fuse the kernel · Run native</p>
-        <p style="font-size:.6em; margin-top:8px;"><a href="/notes/slides/" style="color:#38bdf8;">← All presentations</a> · <a href="/notes/slides/research-tools/" style="color:#a855f7;">New Era of Research Tools</a></p>
+        <p style="font-size:.6em; margin-top:8px;"><a href="/farshid/notes/slides/" style="color:#38bdf8;">← All presentations</a> · <a href="/farshid/notes/slides/research-tools/" style="color:#a855f7;">New Era of Research Tools</a></p>
       </section>
 
     </div>
