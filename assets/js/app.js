@@ -5,17 +5,10 @@
 (function(){
   'use strict';
   var DEFAULT = 'home';
-  var SECTIONS = [ // nav items: label -> {type, target, anchor}
+  var SECTIONS = [ // nav items: ONLY these three (per user)
     { label:'Home',          icon:'🏠', type:'hash', file:'home', anchor:'top' },
     { label:'Atlas',         icon:'🗂️', type:'hash', file:'atlas', anchor:'top' },
-    { label:'Publications',  icon:'📚', type:'hash', file:'atlas', anchor:'Publications' },
-    { label:'Courses',       icon:'🎓', type:'hash', file:'atlas', anchor:'Courses' },
-    { label:'Search',        icon:'🔍', type:'link', href:'/search' },
     { label:'Search Swarm',  icon:'🕸️', type:'link', href:'/swarm' },
-    { label:'Notes',         icon:'📝', type:'hash', file:'atlas', anchor:'Notes & Guides' },
-    { label:'Slides',        icon:'📽️', type:'hash', file:'atlas', anchor:'Slides & Talks' },
-    { label:'Connect',       icon:'🔗', type:'link', href:'/qr' },
-    { label:'Projects',      icon:'📁', type:'hash', file:'atlas', anchor:'Projects' },
   ];
 
   function $id(i){ return document.getElementById(i); }

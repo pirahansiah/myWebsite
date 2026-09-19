@@ -1,11 +1,5 @@
 Keynote on token economics, multimodal RAG, and practical CV+LLM applications.
 
-#   
-
-# coursera video RAG
-
-# Ollama + Vision
-
 # Where LLMs Meet Computer Vision: Unlocking Multimodal AI
 
 AI models like GPT-4 Turbo, Google Gemini 1.5 Pro, and Claude 3 Opus offer advanced multimodal processing, each excelling in specific tasks from text generation to image analysis. Their pricing varies based on token usage, making it essential to choose the model that best fits your project’s needs.
@@ -105,22 +99,4 @@ Seeing AI
 ### Few-shot prompting
 ### Context window
 
-### 
-
-### 
-- []()
-
-### 
-
-### 
-
-### 
-- []()
-
-### 
-
-### 
-
-### 
-- []()
-Seeing AI
+### Seeing AI

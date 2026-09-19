@@ -29,6 +29,8 @@ entries = load(CONTENT)
 
 def group(slug):
     if slug=='qr': return 'Connect & Share',None
+    if slug in ('research-tools','slides-token-optimization','keynotes-llm-cv'):
+        return 'Talks, Presentations & Keynotes',None
     if slug.startswith('books-'): return 'Publications','Book Chapters'
     if slug.startswith('journals-'): return 'Publications','Journal Articles'
     if slug.startswith('papers-'): return 'Publications','Conference Papers'
@@ -37,7 +39,7 @@ def group(slug):
     if slug=='computer-vision': return 'Publications','Profile'
     if slug.startswith('course-'): return 'Courses',None
     if slug.startswith('note-'): return 'Notes & Guides',None
-    if slug.startswith('slides-'): return 'Slides & Talks',None
+    if slug.startswith('slides-'): return 'Talks, Presentations & Keynotes',None
     return 'Notes & Guides',None
 
 buckets = {}  # (section, subgroup) -> list
@@ -45,7 +47,7 @@ for slug,t in entries:
     sec, sub = group(slug)
     buckets.setdefault((sec,sub), []).append((slug,t))
 
-SECTIONS = ['Publications','Courses','Notes & Guides','Slides & Talks','Connect & Share','Projects']
+SECTIONS = ['Publications','Courses','Notes & Guides','Talks, Presentations & Keynotes','Connect & Share','Projects']
 
 # publication subgroup order
 PUBSUB = ['Book Chapters','Journal Articles','Conference Papers','Patents','Keynotes','Profile']
@@ -92,7 +94,10 @@ def render():
             if sub:
                 L.append(f'### {sub}'); L.append('')
             for slug,t in items:
-                L.append(f'- [{t}](/content/{slug}.md)')
+                if slug=='research-tools':
+                    L.append('- [**Research Tools — talks &amp; keynotes hub**](/notes/slides/research-tools/)')
+                else:
+                    L.append(f'- [{t}](/content/{slug}.md)')
             L.append('')
     L.append('---'); L.append('')
     L.append('*Generated index — every page is a plain Markdown file under `content/`.*')

@@ -42,10 +42,6 @@ The single index of everything on pirahansiah.com. Every publication, course, no
 - [Patent Application WO 2020/141969 A2 - Digital Advertising System](/content/patents-facial-analysis.md)
 - [Patents Face Augmentation](/content/patents-face-augmentation.md)
 
-### Keynotes
-
-- [# coursera video RAG](/content/keynotes-llm-cv.md)
-
 ### Profile
 
 - [Me](/content/computer-vision.md)
@@ -97,9 +93,11 @@ The single index of everything on pirahansiah.com. Every publication, course, no
 - [tools](/content/note-shell-vim.md)
 - [🚀 Accelerate Python with Numba’s `@jit(nopython=True)` 🚀](/content/note-numba.md)
 
-## Slides & Talks
+## Talks, Presentations & Keynotes
 
 - [Reducing Token Usage](/content/slides-token-optimization.md)
+- [**Research Tools — talks &amp; keynotes hub**](/notes/slides/research-tools/)
+- [Where LLMs Meet Computer Vision: Unlocking Multimodal AI](/content/keynotes-llm-cv.md)
 
 ## Connect & Share
 
