@@ -58,7 +58,10 @@ def render():
             if items:
                 L.append('## Connect & Share'); L.append('')
                 for slug,t in items:
-                    L.append(f'- [{t}](/content/{slug}.md)')
+                    if slug=='qr':
+                        L.append('- [**Scan &amp; Share — all links + QR codes**](/qr)')
+                    else:
+                        L.append(f'- [{t}](/content/{slug}.md)')
                 L.append('')
             continue
         if sec=='Projects':
