@@ -12,7 +12,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <nav class="atlas-jump" aria-label="Atlas sections">
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
-  <a href="#notes-guides">Notes &amp; Guides <span>39</span></a>
+  <a href="#notes-guides">Notes &amp; Guides <span>40</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
   <a href="#site-pages">Site Pages <span>6</span></a>
   <a href="#projects">Projects <span>4</span></a>
@@ -91,7 +91,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <section class="atlas-sec" id="notes-guides">
   <h2>Notes &amp; Guides</h2>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/10-years.md">10 Years of CV Debugging Lessons</a></li>
+    <li><a href="/farshid/expert-coaching-resources/10-years.md">10 Years of CV Debugging Lessons</a></li>
     <li><a href="/farshid/content/note-llm-blog.md">2025</a></li>
     <li><a href="/farshid/content/note-swarm.md">Agent Swarm</a></li>
     <li><a href="/farshid/content/wiki.md">All Pages</a></li>
@@ -126,6 +126,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/use-cases.md">Table of Contents</a></li>
     <li><a href="/farshid/content/terms.md">Terms of Service</a></li>
     <li><a href="/farshid/content/note-seo-for-llms.md">The New Era of SEO: Optimizing Websites for LLMs</a></li>
+    <li><a href="/farshid/expert-coaching-resources/localAI.md">Tips and tricks to run a local model for Hermes Agent on your laptop</a></li>
     <li><a href="/farshid/content/note-shell-vim.md">tools</a></li>
     <li><a href="/farshid/content/why-not.md">Why This Site Exists</a></li>
     <li><a href="/farshid/content/game.md">🎮 Arcade</a></li>
@@ -137,11 +138,11 @@ The single index of everything on pirahansiah.com — every publication, course,
   <h2>Talks, Presentations &amp; Keynotes</h2>
   <h3 class="atlas-sub" id="presentations-slide-decks">Presentations &amp; Slide Decks <span class="atlas-count">5</span></h3>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/presentation-research-tools.md">The New Era of Research Tools</a></li>
-    <li><a href="/farshid/content/presentation.md">Hermes Agent for Research Assistance</a></li>
-    <li><a href="/farshid/content/presentation-cv.md">Hermes Agent for Big Computer Vision Projects</a></li>
-    <li><a href="/farshid/content/presentation-updates.md">Hermes Agent — Recent Updates &amp; Complete Feature Guide</a></li>
-    <li><a href="/farshid/content/presentation-llm-optimization.md">New LLM Optimization Methods — Run Local &amp; Fast</a></li>
+    <li><a href="presentation-research-tools">The New Era of Research Tools</a></li>
+    <li><a href="presentation">Hermes Agent for Research Assistance</a></li>
+    <li><a href="presentation-cv">Hermes Agent for Big Computer Vision Projects</a></li>
+    <li><a href="presentation-updates">Hermes Agent — Recent Updates &amp; Complete Feature Guide</a></li>
+    <li><a href="presentation-llm-optimization">New LLM Optimization Methods — Run Local &amp; Fast</a></li>
   </ul>
   <ul class="atlas-list">
     <li><a href="/farshid/content/presentation-updates.md">Hermes Agent</a></li>
@@ -177,4 +178,4 @@ The single index of everything on pirahansiah.com — every publication, course,
   </ul>
 </section>
 
-<p class="atlas-note">Generated index — every page is a file under <code>content/</code>.</p>
+<p class="atlas-note">Generated index — every page is one markdown file under <code>content/</code> or <code>expert-coaching-resources/</code>.</p>

@@ -49,7 +49,9 @@
 
   /* front-matter permalinks (PIRAHANSIAH page headers): /qr/, /notes/pubs/10-years/, … */
   var PERM = window.PERMALINKS || {};
-  var permKey = path.replace(/^\/farshid\/content/, '').replace(/^\/+|\/+$/g, '').toLowerCase();
+  var p1 = path.replace(/^\/+|\/+$/g, '').toLowerCase();          // farshid/content/… or …/qr
+  var p2 = p1.replace(/^farshid\//, '');                          // the same path without /farshid/
+  var permKey = PERM[p1] ? p1 : (PERM[p2] ? p2 : p1);
   var md = path.match(/\/([^\/]+)\.md$/i);
   var htm = path.match(/\/([^\/]+)\.html$/i);   /* pages used to be shipped as .html */
   var legacy = path.replace(/^\/farshid/, '');   /* /farshid/crypto -> /crypto */

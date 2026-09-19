@@ -43,7 +43,7 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 
 ## Notes & Guides
 
-- [10 Years of CV Debugging Lessons](https://pirahansiah.com/farshid/content/10-years.md): Lessons learned from a decade of debugging computer vision systems in production.
+- [10 Years of CV Debugging Lessons](https://pirahansiah.com/farshid/expert-coaching-resources/10-years.md): Lessons learned from a decade of debugging computer vision systems in production.
 - [3D Vision & Real-Time Multi-Camera Systems](https://pirahansiah.com/farshid/content/note-3d-vision.md): Real-time 3D point cloud generation, depth sensing, and multi-camera synchronization for computer vision applications.
 - [Accelerate Python with Numba's @jit(nopython=True)](https://pirahansiah.com/farshid/content/note-numba.md): Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.
 - [Advanced LLM Concepts](https://pirahansiah.com/farshid/content/note-llm-concepts.md): Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production deployment.
@@ -81,6 +81,7 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 - [Solutions — AI Courses & Workshops](https://pirahansiah.com/farshid/content/solutions.md): AI 2026 courses, workshops, and business solutions for production-ready products.
 - [Startup Guide: Edge AI Business](https://pirahansiah.com/farshid/content/note-startup-guide.md): Edge AI business plan, fundraising in Germany, pitch decks, and growth strategies.
 - [Terms of Service](https://pirahansiah.com/farshid/content/terms.md): Terms of service for pirahansiah.com: acceptable use of the content, intellectual property notice, disclaimers, and contact information.
+- [Tips and tricks to run a local model for Hermes Agent on your laptop](https://pirahansiah.com/farshid/expert-coaching-resources/localAI.md): Running a local model for Hermes Agent on a laptop: budgeting a 32k context between instructions, references and the answer, chunked retrieval, and using…
 - [Top LinkedIn Posts 2024](https://pirahansiah.com/farshid/content/note-linkedin-2024.md): Highlights from 2024 LinkedIn posts covering camera calibration, C++, NVIDIA optimization, and robotics.
 - [Why This Site Exists](https://pirahansiah.com/farshid/content/why-not.md): Why this personal knowledge base exists, what it covers, and the principles behind how it is built and maintained.
 

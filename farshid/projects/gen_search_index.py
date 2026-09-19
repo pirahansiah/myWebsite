@@ -5,12 +5,28 @@ Output: window.SEARCH_INDEX = [ {slug, title, text, tags, url}, ... ]"""
 import os, re, json
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+PAGE_DIRS = ['content', 'expert-coaching-resources']
 CONTENT = os.path.join(ROOT, 'content')
+
+
+def page_files():
+    for d in PAGE_DIRS:
+        full = os.path.join(ROOT, d)
+        if not os.path.isdir(full):
+            continue
+        for f in sorted(os.listdir(full)):
+            if f.endswith('.md'):
+                yield d, f
 
 def slug_title(title):
     s = title.lower()
     s = re.sub(r'[^a-z0-9]+', '-', s).strip('-')
     return s
+
+def strip_front_matter(text):
+    m = re.match(r'^---\s*\n.*?\n---\s*\n', text, re.S)
+    return text[m.end():] if m else text
+
 
 def clean(text):
     # remove markdown syntax for searchable text
@@ -21,13 +37,12 @@ def clean(text):
     return text.strip()
 
 entries = []
-for fn in sorted(os.listdir(CONTENT)):
-    if not fn.endswith('.md'): continue
+for folder, fn in page_files():
     slug = fn[:-3]
-    body = open(os.path.join(CONTENT, fn), encoding='utf-8').read()
+    body = open(os.path.join(ROOT, folder, fn), encoding='utf-8').read()
     h1 = re.search(r'^#\s+(.+)$', body, re.M)
     title = ' '.join(h1.group(1).split()) if h1 else slug
-    text = clean(body)
+    text = clean(strip_front_matter(body))   # the page header is metadata, not searchable text
     # tags: headings + highlighted words
     tags = re.findall(r'^#{2,3}\s+(.+)$', body, re.M)
     tags = [' '.join(t.split()) for t in tags][:6]
@@ -36,7 +51,8 @@ for fn in sorted(os.listdir(CONTENT)):
         'title': title,
         'text': text[:1500],
         'tags': tags,
-        'url': '/farshid/content/index.html#content/'+slug
+        # the app route: '#content/<page>', and for a page in another folder its path
+        'url': '/farshid/content/index.html#content/' + (slug if folder == 'content' else folder + '/' + slug)
     })
 
 # add atlas + qr + swarm permanent pages

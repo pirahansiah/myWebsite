@@ -31,12 +31,14 @@
     return (h==='' || h==='home');
   }
 
+  var currentFile='';        // the page being read — used to resolve relative .md links
   function renderMarkdownRoute(file, anchor){
     var path;
     var f = (file||'').replace(/^content\//,'');        // '#content/<page>' is the usual route shape
     if (file.indexOf('.html')>=0)      path='/farshid/'+file;             // an app-shell route
     else if (f.indexOf('/')>=0)        path='/farshid/'+f+'.md';          // projects/<name>/README
     else                               path='/farshid/content/'+f+'.md';  // everything else
+    currentFile = f;
     fetch(path)
       .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
       .then(function(txt){ renderInto(txt, file, anchor); })
@@ -188,10 +190,14 @@
         return;
       }
       if(/^(https?:)?\/\//.test(href)){ a.setAttribute('target','_blank'); return; }
-      // internal .md link -> route (strip permanent /farshid/ prefix, then /content/)
+      // internal .md link -> route (strip permanent /farshid/ prefix, then /content/);
+      // a relative link (localAI.md) is resolved against the page you are reading
       if(/\.md(?:[#:]|$)/.test(href)){
         var m=href.match(/^([^#:]+\.md)(?:[#:](.+))?$/);
-        var mp=m[1].replace(/\.[mM][dD]$/,'').replace(/^\/farshid\//,'').replace(/^\/content\//,'').replace(/^\//,'');
+        var rel=m[1], base=(currentFile||'').indexOf('/')>=0 ? currentFile.replace(/\/[^\/]*$/,'')+'/' : '';
+        var mp=rel.replace(/\.[mM][dD]$/,'');
+        if(!/^\//.test(rel) && base) mp=base+mp;                     // relative to this page
+        mp=mp.replace(/^\/farshid\//,'').replace(/^\/content\//,'').replace(/^\//,'');
         var targetAnchor=m[2]||'';
         a.addEventListener('click', function(e){ e.preventDefault(); setHash(mp+(targetAnchor?':'+slug(targetAnchor):'')); });
       }

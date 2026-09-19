@@ -4,7 +4,19 @@ Run: python3 gen_atlas.py  (writes atlas.md next to content/)"""
 import html, os, re
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+PAGE_DIRS = ['content', 'expert-coaching-resources']   # every page folder, indexed alike
 CONTENT = os.path.join(ROOT, 'content')
+
+
+def page_files():
+    """(folder, filename) for each page file, stable order."""
+    for d in PAGE_DIRS:
+        full = os.path.join(ROOT, d)
+        if not os.path.isdir(full):
+            continue
+        for f in sorted(os.listdir(full)):
+            if f.endswith('.md'):
+                yield d, f
 PROJ = os.path.join(ROOT, 'projects')
 
 def clean_title(t):
@@ -21,17 +33,15 @@ def title(slug, body):
     if m2: return clean_title(m2.group(1))
     return ' '.join(w.capitalize() for w in slug.replace('-',' ').split())
 
-def load(folder):
+def load():
     out=[]
-    if not os.path.isdir(folder): return out
-    for f in sorted(os.listdir(folder)):
-        if not f.endswith('.md'): continue
+    for d, f in page_files():
         slug=f[:-3]
-        body=open(os.path.join(folder,f),encoding='utf-8').read()
-        out.append((slug, title(slug,body)))
+        body=open(os.path.join(ROOT, d, f),encoding='utf-8').read()
+        out.append((slug, title(slug,body), d + '/' + f))
     return out
 
-entries = load(CONTENT)
+entries = load()
 
 def group(slug):
     if slug in ('qr','atlas','contact','privacy'): return None,None  # handled in Site Pages / Connect & Share
@@ -51,17 +61,18 @@ def group(slug):
     return 'Notes & Guides',None
 
 buckets = {}  # (section, subgroup) -> list
-for slug,t in entries:
+for slug,t,rel in entries:
     sec, sub = group(slug)
     if sec is None: continue
-    buckets.setdefault((sec,sub), []).append((slug,t))
+    buckets.setdefault((sec,sub), []).append((f'/farshid/{rel}', t))
 
 SECTIONS = ['Publications','Courses','Notes & Guides','Talks, Presentations & Keynotes','Site Pages','Projects']
 
 # Links point at the page files themselves: each page is one markdown file, which the
 # browser app renders in place (and which a crawler or an LLM reads as the final text).
-def content_url(slug):
-    return f'/farshid/content/{slug}.md'
+def content_url(rel):
+    """The page's own file: the app renders it in place, a crawler reads it as text."""
+    return f'/farshid/{rel}'
 
 # publication subgroup order
 PUBSUB = ['Book Chapters','Journal Articles','Conference Papers','Patents','Keynotes','Profile']
@@ -122,20 +133,14 @@ def render():
             if sub:
                 L.append(f'  <h3 class="atlas-sub" id="{subid}">{esc(sub)} <span class="atlas-count">{len(items)}</span></h3>')
             L.append('  <ul class="atlas-list">')
-            for slug, t in items:
-                L.append(f'    <li><a href="{entry_url(slug)}">{esc(t)}</a></li>')
+            for url, t in items:
+                L.append(f'    <li><a href="{url}">{esc(t)}</a></li>')
             L.append('  </ul>')
         L.append('</section>')
         L.append('')
-    L.append('<p class="atlas-note">Generated index — every page is a file under <code>content/</code>.</p>')
+    L.append('<p class="atlas-note">Generated index — every page is one markdown file '
+             'under <code>content/</code> or <code>expert-coaching-resources/</code>.</p>')
     return '\n'.join(L)
-
-
-def entry_url(slug):
-    """The page file: one markdown file per page, or a lessoned hand-written app path."""
-    if slug.startswith('/'):        # already a site path (swarm.html, qrcode.html, index.html)
-        return slug
-    return f'/farshid/content/{slug}.md'
 
 
 def site_pages_items():

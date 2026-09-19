@@ -5,8 +5,10 @@ no dependencies, no submodules. GitHub Pages serves the `main` branch root as-is
 (pinned static by `.nojekyll` — Pages does not convert markdown, so every page is
 exactly one file).
 
-**One file per page.** Each page is a single markdown file in `farshid/content/`.
-Nothing is duplicated: the browser app renders the same file a crawler reads.
+**One file per page.** Each page is a single markdown file in `farshid/content/`
+(or in another page folder — `farshid/expert-coaching-resources/` — the generators
+read every folder listed in their `PAGE_DIRS`). Nothing is duplicated: the browser
+app renders the same file a crawler reads.
 
 - **readers** — the app shell fetches the `.md` and renders it (`#content/<slug>`,
   or the `/<slug>.md` URL, which routes into the app).
@@ -43,6 +45,9 @@ standalone `.html`.
   - `farshid/content/` — every publication, course, note and talk as flat `.md`
     files, with images/mp3s/mindmaps colocated beside them; `atlas.md` is the index
     of everything; `swarm.html` is the standalone search tool.
+  - `farshid/expert-coaching-resources/` — a second page folder (same rules); list it
+    in `PAGE_DIRS` when a new folder is added, or its pages drop out of the Atlas,
+    the search index, `sitemap.xml`, `llms.txt` and the permalink map.
   - `farshid/projects/` — the generators and the projects they index (each project
     is a `README.md`, read through the app).
 
@@ -77,16 +82,26 @@ description: "Lessons learned from a decade of debugging computer vision systems
 python3 farshid/projects/gen_front_matter.py   # page headers + farshid/page-aliases.js
 ```
 
+## Linking between pages
+
+Inside markdown, link the target's markdown file — absolute (`/farshid/expert-coaching-resources/localAI.md`)
+or relative to the page you are on (`localAI.md`). The app turns it into an in-app
+route, so it renders without a reload, and a plain reader or crawler still follows
+the file. A link without `.md` also works, but only through the URL router, so
+prefer the `.md` form inside pages.
+
 ## Permanent links (short URLs)
 
 * **`/qr/`** — the QR hub, a real page (HTTP 200, `noindex`, OpenGraph card) that
   opens `#content/qr`. Put `/qr/` on a business card or behind a printed QR code:
   short, permanent, and the content behind it can change freely.
 * **Every front-matter `permalink` resolves.** `farshid/permalinks.js` (generated)
-  maps permalink → page route; root `404.html` resolves it in the browser. So
-  `/notes/pubs/10-years/`, `/notes/wiki/`, `/projects/rag/` and the rest open the
-  right page (HTTP 404 → instant redirect; only the `.md` URLs are 200, which is
-  what `sitemap.xml` and `llms.txt` list).
+  maps both the permalink and the page's real file path → page route; root
+  `404.html` resolves either in the browser. So `/notes/pubs/10-years/`,
+  `/notes/wiki/`, `/projects/rag/`, `/farshid/expert-coaching-resources/localAI`
+  and the rest open the right page (HTTP 404 → instant redirect; only the `.md`
+  URLs are 200, which is what `sitemap.xml` and `llms.txt` list). Moving a page to
+  another folder keeps its permalink working — re-run the generators.
 * **`farshid/page-aliases.js`** (generated from the vault) adds ~170 older
   `/notes/<section>/<note>/` aliases, so links written years ago — the ones inside
   the pages themselves — land on the page that now serves that content.
