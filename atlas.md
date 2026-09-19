@@ -101,6 +101,10 @@ The single index of everything on pirahansiah.com. Every publication, course, no
 
 - [Reducing Token Usage](/content/slides-token-optimization.md)
 
+## Connect & Share
+
+- [Scan &amp; Share](/content/qr.md)
+
 ## Projects
 
 Source code and scripts live under `projects/`. Each project has its own folder with its own README.

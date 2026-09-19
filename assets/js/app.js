@@ -12,6 +12,7 @@
     'Courses':        { file:'atlas', anchor:'Courses' },
     'Notes':          { file:'atlas', anchor:'Notes & Guides' },
     'Slides':         { file:'atlas', anchor:'Slides & Talks' },
+    'Connect':        { file:'atlas', anchor:'Connect & Share' },
     'Projects':       { file:'atlas', anchor:'Projects' },
   };
 

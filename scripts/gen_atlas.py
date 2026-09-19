@@ -3,7 +3,7 @@
 Run: python3 gen_atlas.py  (writes atlas.md next to content/)"""
 import os, re
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 CONTENT = os.path.join(ROOT, 'content')
 PROJ = os.path.join(ROOT, 'projects')
 
@@ -28,6 +28,7 @@ def load(folder):
 entries = load(CONTENT)
 
 def group(slug):
+    if slug=='qr': return 'Connect & Share',None
     if slug.startswith('books-'): return 'Publications','Book Chapters'
     if slug.startswith('journals-'): return 'Publications','Journal Articles'
     if slug.startswith('papers-'): return 'Publications','Conference Papers'
@@ -44,7 +45,7 @@ for slug,t in entries:
     sec, sub = group(slug)
     buckets.setdefault((sec,sub), []).append((slug,t))
 
-SECTIONS = ['Publications','Courses','Notes & Guides','Slides & Talks','Projects']
+SECTIONS = ['Publications','Courses','Notes & Guides','Slides & Talks','Connect & Share','Projects']
 
 # publication subgroup order
 PUBSUB = ['Book Chapters','Journal Articles','Conference Papers','Patents','Keynotes','Profile']
@@ -52,6 +53,14 @@ PUBSUB = ['Book Chapters','Journal Articles','Conference Papers','Patents','Keyn
 def render():
     L=['# Atlas','','The single index of everything on pirahansiah.com. Every publication, course, note, talk, and project lives here. Pick a section.','']
     for sec in SECTIONS:
+        if sec=='Connect & Share':
+            items=sorted(buckets.get(('Connect & Share',None),[]), key=lambda x:x[1].lower())
+            if items:
+                L.append('## Connect & Share'); L.append('')
+                for slug,t in items:
+                    L.append(f'- [{t}](/content/{slug}.md)')
+                L.append('')
+            continue
         if sec=='Projects':
             L.append('## Projects'); L.append('')
             L.append('Source code and scripts live under `projects/`. Each project has its own folder with its own README.')
