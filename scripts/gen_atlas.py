@@ -55,14 +55,15 @@ def render():
     for sec in SECTIONS:
         if sec=='Connect & Share':
             items=sorted(buckets.get(('Connect & Share',None),[]), key=lambda x:x[1].lower())
-            if items:
-                L.append('## Connect & Share'); L.append('')
-                for slug,t in items:
-                    if slug=='qr':
-                        L.append('- [**Scan &amp; Share — all links + QR codes**](/qr)')
-                    else:
-                        L.append(f'- [{t}](/content/{slug}.md)')
-                L.append('')
+            L.append('## Connect & Share'); L.append('')
+            L.append('- [**🔍 Search — the whole knowledge base**](/search)')
+            L.append('- [**🕸️ Search Swarm — live agent search**](/swarm)')
+            L.append('- [**🔗 Scan &amp; Share — all links + QR codes**](/qr)')
+            L.append('')
+            rest = [x for x in items if x[0]!='qr']
+            for slug,t in rest:
+                L.append(f'- [{t}](/content/{slug}.md)')
+            L.append('')
             continue
         if sec=='Projects':
             L.append('## Projects'); L.append('')

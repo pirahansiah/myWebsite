@@ -5,16 +5,18 @@
 (function(){
   'use strict';
   var DEFAULT = 'home';
-  var SECTIONS = { // nav targets: label -> {file, anchor (raw heading text)}
-    'Home':           { file:'home', anchor:'top' },
-    'Atlas':          { file:'atlas', anchor:'top' },
-    'Publications':   { file:'atlas', anchor:'Publications' },
-    'Courses':        { file:'atlas', anchor:'Courses' },
-    'Notes':          { file:'atlas', anchor:'Notes & Guides' },
-    'Slides':         { file:'atlas', anchor:'Slides & Talks' },
-    'Connect':        { file:'atlas', anchor:'Connect & Share' },
-    'Projects':       { file:'atlas', anchor:'Projects' },
-  };
+  var SECTIONS = [ // nav items: label -> {type, target, anchor}
+    { label:'Home',          icon:'🏠', type:'hash', file:'home', anchor:'top' },
+    { label:'Atlas',         icon:'🗂️', type:'hash', file:'atlas', anchor:'top' },
+    { label:'Publications',  icon:'📚', type:'hash', file:'atlas', anchor:'Publications' },
+    { label:'Courses',       icon:'🎓', type:'hash', file:'atlas', anchor:'Courses' },
+    { label:'Search',        icon:'🔍', type:'link', href:'/search' },
+    { label:'Search Swarm',  icon:'🕸️', type:'link', href:'/swarm' },
+    { label:'Notes',         icon:'📝', type:'hash', file:'atlas', anchor:'Notes & Guides' },
+    { label:'Slides',        icon:'📽️', type:'hash', file:'atlas', anchor:'Slides & Talks' },
+    { label:'Connect',       icon:'🔗', type:'link', href:'/qr' },
+    { label:'Projects',      icon:'📁', type:'hash', file:'atlas', anchor:'Projects' },
+  ];
 
   function $id(i){ return document.getElementById(i); }
   function hashParts(){
@@ -124,14 +126,19 @@
   function buildNav(){
     var nav=$id('nav'); if(!nav) return;
     var html='';
-    Object.keys(SECTIONS).forEach(function(label){
-      var s=SECTIONS[label];
-      var key=s.file+'|'+(s.anchor&&s.anchor!=='top'?slug(s.anchor):'');
-      html += '<a class="nav-item" data-key="'+key+'" href="#'+s.file+(s.anchor&&s.anchor!=='top'?':'+slug(s.anchor):'')+'">'+label+'</a>';
+    SECTIONS.forEach(function(s){
+      var key;
+      if(s.type==='link'){ key=('link:'+s.href); }
+      else { key=s.file+'|'+(s.anchor&&s.anchor!=='top'?slug(s.anchor):''); }
+      var href = s.type==='link' ? s.href : ('#'+s.file+(s.anchor&&s.anchor!=='top'?':'+slug(s.anchor):''));
+      html += '<a class="nav-item" data-key="'+key+'" href="'+href+'"><span class="nav-icon">'+(s.icon||'')+'</span>'+(s.icon?' ': '')+s.label+'</a>';
     });
     nav.innerHTML=html;
     nav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(e){ e.preventDefault(); setHash(a.getAttribute('href').replace(/^#/,'')); });
+      a.addEventListener('click', function(e){
+        if(a.getAttribute('data-key').indexOf('link:')===0) return; // let it navigate normally
+        e.preventDefault(); setHash(a.getAttribute('href').replace(/^#/,''));
+      });
     });
   }
 

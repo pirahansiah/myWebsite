@@ -74,6 +74,8 @@ img, video, canvas { max-width: 100%; height: auto; }
 .nav a:hover { background: rgba(255,255,255,0.6); color: var(--ink); }
 .nav a.active { color: var(--accent); background: rgba(10,102,255,0.10); }
 .nav-toggle { display: none; }
+.nav-icon { line-height: 1; }
+.nav-item { white-space: nowrap; }
 
 /* ---------- layout ---------- */
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }

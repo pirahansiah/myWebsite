@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F2F3F7">
+<title>Search Swarm — Farshid Pirahansiah</title>
+<meta name="description" content="Ask a question and watch a swarm of research agents map and synthesize the whole pirahansiah.com knowledge base.">
+<link rel="icon" href="/assets/img/favicon.png">
+<link rel="stylesheet" href="/assets/css/style.css">
+<meta name="robots" content="index, follow">
+<style>
+.swarm-hero { max-width: 760px; margin: 0 auto; text-align: center; padding: 40px 0 20px; }
+.swarm-hero h1 { font-family: var(--ui-display); font-weight: 700; font-size: clamp(34px,5vw,52px); letter-spacing: -0.02em; margin: 0 0 10px; }
+.swarm-hero p { color: var(--ink-2); font-size: 16px; max-width: 640px; margin: 0 auto; }
+.swarm-studio { max-width: 760px; margin: 0 auto; }
+.swarm-box {
+  background: var(--glass-strong); border: 1px solid var(--rule); border-radius: 18px;
+  box-shadow: var(--shadow-lg); overflow: hidden; position: relative;
+}
+.swarm-visual { position: relative; height: 340px; background: radial-gradient(620px 300px at 50% 0%, rgba(10,102,255,0.10), transparent 70%); }
+.swarm-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.swarm-ask { display: flex; gap: 10px; padding: 14px; border-top: 1px solid var(--rule); }
+.swarm-ask input {
+  flex: 1; padding: 14px 18px; font-size: 16px; border: 1px solid var(--rule); border-radius: 12px;
+  background: #fff; color: var(--ink); outline: none;
+}
+.swarm-ask input:focus { border-color: var(--accent); }
+.swarm-ask button {
+  padding: 14px 24px; font-size: 15px; font-weight: 600; border: none; border-radius: 12px;
+  background: var(--accent); color: #fff; cursor: pointer; transition: background .15s;
+}
+.swarm-ask button:hover { background: #0652cf; }
+.swarm-synth { padding: 0 22px 22px; max-height: 320px; overflow-y: auto; display: none; }
+.swarm-synth.show { display: block; }
+.swarm-synth h3 { font-family: var(--ui-display); font-weight: 650; font-size: 17px; margin: 16px 0 8px; color: var(--ink); }
+.swarm-synth p, .swarm-synth li { font-size: 14.5px; color: var(--ink-2); line-height: 1.6; }
+.swarm-synth ul { padding-left: 20px; }
+.swarm-synth a { color: var(--accent); text-decoration: none; }
+.swarm-synth .swarm-rel-rows a { display: block; margin: 6px 0; }
+.swarm-legend { display: flex; gap: 16px; justify-content: center; padding: 10px; font-size: 12px; color: var(--ink-2); flex-wrap: wrap; }
+.swarm-legend span i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/">Dr. <em>Farshid</em> Pirahansiah</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a class="active" href="/swarm">🕸️ Search Swarm</a>
+      <a href="/search">🔍 Search</a>
+      <a href="/index.html#atlas">Atlas</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="swarm-hero">
+    <h1>Search Swarm</h1>
+    <p>Ask a question and watch a swarm of AI research agents map the whole knowledge base — publications, courses, notes, talks, and projects — then synthesize an answer.</p>
+  </div>
+
+  <div class="swarm-studio">
+    <div class="swarm-box">
+      <div class="swarm-visual">
+        <canvas id="swarm-canvas" class="swarm-canvas"></canvas>
+        <div class="swarm-legend">
+          <span><i style="background:#0a66ff"></i>pages &amp; pubs</span>
+          <span><i style="background:#8338e0"></i>tags</span>
+          <span><i style="background:#24bfa0"></i>agents</span>
+        </div>
+      </div>
+      <div class="swarm-ask">
+        <input id="swarm-input" type="text" placeholder="e.g. camera calibration, optical flow, OpenAI agents..." autocomplete="off">
+        <button id="swarm-go">Swarm &rarr;</button>
+      </div>
+      <div class="swarm-synth" id="swarm-synth"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Dr. <em>Farshid</em> Pirahansiah</div>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/search">Search</a>
+      <a href="/swarm">Search Swarm</a>
+      <a href="/index.html#atlas">Atlas</a>
+      <a href="/qr">Connect</a>
+    </div>
+    <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+<script src="/assets/js/search-index.js"></script>
+<script>
+(function(){
+  'use strict';
+  var INDEX = window.SEARCH_INDEX || [];
+  var canvas = document.getElementById('swarm-canvas');
+  var ctx = canvas.getContext('2d');
+  var synth = document.getElementById('swarm-synth');
+  var input = document.getElementById('swarm-input');
+  var go = document.getElementById('swarm-go');
+  var W, H, agents = [], run = null;
+
+  function resize(){ W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
+  window.addEventListener('resize', resize); resize();
+
+  function spawn(n){
+    agents=[];
+    for(var i=0;i<n;i++){
+      agents.push({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*1.6, vy:(Math.random()-.5)*1.6, r:2+Math.random()*3, hue:Math.random()<0.55?220:(Math.random()<0.7?260:160)});
+    }
+  }
+  var last=performance.now();
+  function frame(now){
+    var dt=Math.min(0.05,(now-last)/1000); last=now;
+    ctx.clearRect(0,0,W,H);
+    // links
+    for(var i=0;i<agents.length;i++){
+      for(var j=i+1;j<agents.length;j++){
+        var a=agents[i],b=agents[j];
+        var dx=a.x-b.x,dy=a.y-b.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<90){ ctx.strokeStyle='rgba(10,102,255,'+(0.25*(1-d/90))+')'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke(); }
+      }
+    }
+    agents.forEach(function(a){
+      a.x+=a.vx*dt*30; a.y+=a.vy*dt*30;
+      if(a.x<0||a.x>W)a.vx*=-1; if(a.y<0||a.y>H)a.vy*=-1;
+      ctx.beginPath(); ctx.arc(a.x,a.y,a.r,0,6.28);
+      ctx.fillStyle='hsla('+a.hue+',70%,55%,0.85)'; ctx.fill();
+    });
+    run=requestAnimationFrame(frame);
+  }
+  spawn(40); run=requestAnimationFrame(frame);
+
+  function esc(s){return s.replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
+
+  function swarm(){
+    var q=input.value.trim();
+    if(!q) return;
+    spawn(60);
+    var terms=q.split(/\s+/).filter(Boolean);
+    var found=INDEX.filter(function(e){
+      var hay=(e.title+' '+e.tags.join(' ')+' '+e.text).toLowerCase();
+      return terms.every(function(t){return hay.indexOf(t.toLowerCase())>=0;});
+    });
+    // build synthesis
+    var cats=[];
+    var tagSet={};
+    found.forEach(function(e){
+      (e.tags||[]).forEach(function(t){tagSet[t]=true;});
+    });
+    var html='<h3>Swarm synthesis</h3><p><strong>'+found.length+' pages</strong> matched your question.</p>';
+    if(found.length){
+      html+='<h3>Top related pages</h3><ul>'+found.slice(0,8).map(function(e){
+        return '<li><a href="'+e.url+'">'+esc(e.title)+'</a></li>';
+      }).join('')+'</ul>';
+      var tags=Object.keys(tagSet).slice(0,8);
+      if(tags.length) html+='<h3>Tags in play</h3><p>'+tags.map(esc).join(' · ')+'</p>';
+    } else {
+      html+='<p>No exact match — try <a href="/search">full search</a> for partial results.</p>';
+    }
+    html+='<h3>Related</h3><p><a href="/search">Open full search</a> · <a href="/index.html#atlas">Browse the Atlas</a></p>';
+    synth.innerHTML=html; synth.classList.add('show');
+  }
+  go.addEventListener('click', swarm);
+  input.addEventListener('keydown', function(e){ if(e.key==='Enter') swarm(); });
+  document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear();});
+})();
+</script>
+</body>
+</html>

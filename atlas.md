@@ -103,7 +103,10 @@ The single index of everything on pirahansiah.com. Every publication, course, no
 
 ## Connect & Share
 
-- [**Scan &amp; Share — all links + QR codes**](/qr)
+- [**🔍 Search — the whole knowledge base**](/search)
+- [**🕸️ Search Swarm — live agent search**](/swarm)
+- [**🔗 Scan &amp; Share — all links + QR codes**](/qr)
+
 
 ## Projects
 
