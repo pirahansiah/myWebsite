@@ -20,11 +20,15 @@ tags: [computer-vision, debugging, lessons-learned, opencv]
 hashtags: "#cv #debugging #lessonslearned #opencv"
 ---
 
+
+
+
+
 # 10 Years of CV Debugging Lessons
 
 > **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production.
 
-*Last updated: 2026-08-08.*  <!--ENHANCED-->
+
 
 [Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/expert-coaching-resources/localAI.md)
 
