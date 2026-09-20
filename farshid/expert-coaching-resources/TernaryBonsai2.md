@@ -131,27 +131,4 @@ Two details from the talk that landed closer to home than expected: YC ran a fle
 
 Both increments are the same work from two directions. On the local side you spend memory to buy context, and you refuse to claim a number you have not measured. On the harness side you spend context to buy capability, and you refuse to claim a gain you have not held out. A 2-bit model on an 8 GB laptop is not a compromise if the harness around it is doing the work — and neither claim is worth anything until a real completion comes back.
 
-## The files this came from
 
-All 16 artifacts of the two increments, one line each:
-
-| File | What it is |
-|---|---|
-| `plan_k2_horizon.md` | v1: the Ollama-first plan; the architecture registry scan, the empirical gate |
-| `tasks_k2_horizon.md` | v1 tasks: the load attempt, the fork build, the serve check |
-| `handoff_k2_horizon.md` | v1 handoff: Ollama cannot run this model today, with the byte-level evidence |
-| `plan_k2_horizon_v2.md` | v2: quantized with the KV-cache math as the binding constraint; the quant ladder |
-| `tasks_k2_horizon_v2.md` | v2 tasks: Q4_K_M download, the Windows Unicode fix, the VRAM measurement |
-| `handoff_k2_horizon_v2.md` | v2 handoff: the Q5_1 reality check and the #28788 blocker |
-| `plan_k2_horizon_v3.md` | v3: IQ2_XXS as primary; both quants; the Hermes wiring section |
-| `tasks_k2_horizon_v3.md` | v3 tasks: T1–T5 with the per-task acceptance lists |
-| `handoff_k2_horizon_v3.md` | v3 handoff: the 131K headline and the honesty rules |
-| `handoff_k2_horizon_v4.md` | v4 handoff: T1 verified and T2 running on a real board, with task ids |
-| `spec_k2_horizon_final.md` | The locked spec: configuration, VRAM budget, wiring, the four-part done definition |
-| `dispatch_bot2_k2_final.md` | The dispatch packet: exact commands, scope note, reporting rules |
-| `handoff_k2_horizon_final.md` | Final handoff: T1 and T2 complete, the compile-time caveat, T3 next |
-| `handoff_pptx_20260914.md` | The earlier deck increment, and the cached-transcript truncation that would have produced 4 decks instead of 5 |
-| `yc-harness-club-presentation.md` | The Harness Night deck: the harness ladder, the talks, and the external research with sources |
-| `transcript_n9xKblqyQ28.json` | The source transcript: 1,662 segments, 1:00:09, 62,978 characters |
-
-Sources: HuggingFace `NANI-Nithin/K2-Horizon-3.7B-GGUF`; the MBZUAI-IFM `llama.cpp` fork, branch `model/K2Horizon`; llama.cpp issue #28788 (MSVC regex escapes); YouTube `n9xKblqyQ28`, "Harness Night" at YC Harness Club. The transcript is automatic speech recognition, so names and terms appear as heard ("ArcGI" is ARC-AGI, "Harsha" is our robot lobster of the evening).
