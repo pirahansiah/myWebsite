@@ -78,6 +78,7 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 - [SEO for LLM-Powered Search](https://pirahansiah.com/farshid/content/note-seo-for-llms.md): How to optimize websites for LLM-powered search engines using structured data and AI-friendly content.
 - [Shell & Vim Quick Reference](https://pirahansiah.com/farshid/content/note-shell-vim.md): Quick reference for shell commands, vim basics, and essential CLI tools.
 - [Sitemap & Page Summaries](https://pirahansiah.com/farshid/content/menus.md): Complete navigation index with summaries of all site pages
+- [Small weights, big context: running a 2-bit model on an 8 GB laptop GPU](https://pirahansiah.com/farshid/expert-coaching-resources/TernaryBonsai2.md): One write-up distilled from a local-model increment: why the KV cache and not the weights decides the context budget, what a 2-bit 3.7B model costs on 8…
 - [Solana Arcade — Snake & Tetris](https://pirahansiah.com/farshid/content/solana-games.md): Play Snake and Tetris in your browser, connect a Phantom wallet, and sign your high score as a cryptographic proof on Solana. No install, no account, runs…
 - [Solutions — AI Courses & Workshops](https://pirahansiah.com/farshid/content/solutions.md): AI 2026 courses, workshops, and business solutions for production-ready products.
 - [Startup Guide: Edge AI Business](https://pirahansiah.com/farshid/content/note-startup-guide.md): Edge AI business plan, fundraising in Germany, pitch decks, and growth strategies.

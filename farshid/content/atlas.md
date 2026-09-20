@@ -12,7 +12,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <nav class="atlas-jump" aria-label="Atlas sections">
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
-  <a href="#notes-guides">Notes &amp; Guides <span>41</span></a>
+  <a href="#notes-guides">Notes &amp; Guides <span>42</span></a>
   <a href="#products">Products <span>27</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
   <a href="#site-pages">Site Pages <span>6</span></a>
@@ -122,6 +122,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/k2-horizon-local.md">Running K2-Horizon Locally on Apple Silicon (M3, 16GB)</a></li>
     <li><a href="/farshid/content/note-cuda-vscode.md">Simple Setting Up a CUDA Development Environment in VS Code in Windows</a></li>
     <li><a href="/farshid/content/menus.md">Sitemap — All Pages</a></li>
+    <li><a href="/farshid/expert-coaching-resources/TernaryBonsai2.md">Small weights, big context: running a 2-bit model on an 8 GB laptop GPU</a></li>
     <li><a href="/farshid/content/solana-games.md">Solana Arcade</a></li>
     <li><a href="/farshid/content/solutions.md">Solutions</a></li>
     <li><a href="/farshid/content/crypto.md">Support via Crypto</a></li>
