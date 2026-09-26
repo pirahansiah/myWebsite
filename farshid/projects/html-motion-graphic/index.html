@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#4d1436">
+  <meta name="description" content="An animated, searchable constellation of every page in Farshid Pirahansiah's computer vision and AI portfolio.">
+  <title>Farshid Pirahansiah — Work in Motion</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="catalog.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-window">
+    <header class="titlebar">
+      <a class="brand" href="https://pirahansiah.com/farshid/content/index.html" aria-label="Farshid Pirahansiah — website home">
+        <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.3"/>
+          <ellipse cx="12" cy="12" rx="3.6" ry="8.5" stroke="currentColor" stroke-width="1.3" transform="rotate(42 12 12)"/>
+          <circle cx="17.5" cy="6.7" r="1.7" fill="currentColor"/>
+        </svg>
+        <span>Farshid Pirahansiah</span>
+      </a>
+      <span class="app-title">Work in Motion</span>
+      <a class="home-link" href="https://pirahansiah.com/farshid/content/index.html">Website home <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <div class="workspace">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <h1 id="page-title">A body of work, in orbit.</h1>
+          <p>Computer vision, edge AI, research, and the ideas connecting them.</p>
+        </div>
+        <div class="collection-count" aria-label="Pages in the site index">
+          <strong id="entry-total">105</strong>
+          <span>pages<br>in the collection</span>
+        </div>
+      </section>
+
+      <section class="explorer" aria-label="Explore all pages">
+        <div class="explorer-top">
+          <label class="searchbox">
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.7"/><path d="m12.8 12.8 4 4"/></svg>
+            <span class="visually-hidden">Search pages</span>
+            <input id="search" type="search" placeholder="Search 105 pages…" autocomplete="off" spellcheck="false">
+            <kbd aria-hidden="true">/</kbd>
+          </label>
+          <button id="motion-toggle" class="motion-toggle" type="button" aria-pressed="false">
+            <svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 3.5v11l9-5.5z" fill="currentColor"/></svg>
+            <span>Pause motion</span>
+          </button>
+        </div>
+
+        <div id="filters" class="filters" role="group" aria-label="Filter pages by topic"></div>
+        <p id="result-status" class="result-status" aria-live="polite"></p>
+
+        <div class="map-layout">
+          <section class="map-panel" aria-labelledby="map-heading">
+            <div class="panel-heading">
+              <div>
+                <h2 id="map-heading">The constellation</h2>
+                <p>Choose a point to inspect a page.</p>
+              </div>
+              <span class="map-key"><i></i> one point per page</span>
+            </div>
+            <div class="map-stage">
+              <svg id="constellation" viewBox="0 0 1080 600" role="img" aria-labelledby="map-title map-description">
+                <title id="map-title">A map of the pages on pirahansiah.com</title>
+                <desc id="map-description">Pages are grouped into research, courses, notes, talks, projects, coaching resources, site pages, and tools. Use search or the topic filters to find a page.</desc>
+                <g id="map-links"></g>
+                <g id="map-orbits"></g>
+                <g id="map-labels"></g>
+                <g id="map-nodes"></g>
+              </svg>
+              <div class="map-caption"><span>105 pages</span><span>8 topics</span><span>One connected index</span></div>
+            </div>
+          </section>
+
+          <aside class="selection-panel" aria-labelledby="selection-heading" aria-live="polite">
+            <div class="selection-topline"><span class="selection-dot"></span><span id="selection-category">Start here</span></div>
+            <h2 id="selection-heading">Atlas</h2>
+            <p id="selection-copy">The complete index of publications, courses, notes, talks, and projects.</p>
+            <a id="selection-link" class="open-link" href="https://pirahansiah.com/farshid/content/index.html#content/atlas">
+              Open this page <span aria-hidden="true">↗</span>
+            </a>
+            <div class="selection-foot"><span>SELECTED PAGE</span><span id="selection-number">01 / 105</span></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="index-section" aria-labelledby="index-heading">
+        <div class="index-heading-row">
+          <div>
+            <h2 id="index-heading">Every page</h2>
+            <p>Search, filter, or browse the complete index.</p>
+          </div>
+          <span id="visible-count" class="visible-count">105 pages</span>
+        </div>
+        <div id="page-list" class="page-list"></div>
+        <p id="empty-state" class="empty-state" hidden>No pages match that search. Try another word or clear the topic filter.</p>
+      </section>
+
+      <footer class="footer">
+        <span>One constellation, many paths.</span>
+        <a href="https://pirahansiah.com/farshid/content/atlas.md">View the source Atlas <span aria-hidden="true">↗</span></a>
+      </footer>
+    </div>
+  </main>
+  <noscript><p class="noscript">This motion graphic needs JavaScript. The full text index is available in the <a href="https://pirahansiah.com/farshid/content/atlas.md">site Atlas</a>.</p></noscript>
+</body>
+</html>

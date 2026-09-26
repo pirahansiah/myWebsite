@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-10T08:54:56Z",
+  "notes": [
+    {
+      "id": "20260910T085456552Z",
+      "path": "html/notes/20260910T085456552Z-tiziran-computer-vision-edge-ai-hub.html",
+      "md_path": "md/notes/20260910T085456552Z-tiziran-computer-vision-edge-ai-hub.md",
+      "title": "Tiziran.com — Computer Vision, Deep Learning & Edge AI Hub",
+      "created_at": "2026-09-10T08:54:56Z",
+      "updated_at": "2026-09-10T08:54:56Z",
+      "input_type": "url",
+      "note_kind": "capture",
+      "status": "complete",
+      "source": {
+        "reference": "https://tiziran.com",
+        "title": "Computer Vision, Deep Learning, Artificial superintelligence (ASI)",
+        "author": "Dr. Farshid Pirahansiah (site owner; byline not stated as a formal author field)",
+        "published_at": null,
+        "accessed_at": "2026-09-10",
+        "access_status": "partial",
+        "fingerprint": "sha256:b7422a344336a38c6ba0ac1e4f548ec804d686a8ba153de43ca08d445bf9dfce"
+      },
+      "summary": "Capture of tiziran.com: a computer-vision and edge-AI consulting hub by Dr. Farshid Pirahansiah with courses, workshops, open-source tools, and community groups.",
+      "compact_idea": "Tiziran turns embedded computer-vision expertise into a public hub of courses, open-source tools, and consulting.",
+      "tags": ["computer-vision", "edge-ai", "deep-learning", "opencv", "embedded-ai", "consulting"],
+      "mocs": ["inbox"],
+      "para": "resource",
+      "relations": [
+        {
+          "target_id": "note:20260909T135230683Z",
+          "type": "related",
+          "reason": "Tiziran publishes a knowledge-management / PKM section (still a stub) in the same domain as this vault's dual-format PKM prompt note."
+        }
+      ],
+      "ideas": [
+        {"anchor": "idea-01", "text": "Tiziran packages a computer-vision career into one public hub for consulting, courses, and open-source tools."},
+        {"anchor": "idea-02", "text": "Deduction: the positioning is embedded and edge deployment — Jetson, Hailo, Axelera, Coral, FPGA — rather than model research."},
+        {"anchor": "idea-03", "text": "Free reusable artifacts such as the OpenCV5 NuGet static libraries and the cvtest framework feed the consulting pipeline."},
+        {"anchor": "idea-04", "text": "cvtest argues computer vision has no standard test suite and proposes PSNR, SSIM, and hardware benchmarks as acceptance criteria."},
+        {"anchor": "idea-05", "text": "Structured learning paths — courses, workshops, book summaries, roadmaps — drive long-tail discovery of the site."}
+      ]
+    },
+    {
+      "id": "20260909T142257825Z",
+      "path": "html/notes/20260909T142257825Z-introducing-hermes-agent-overview.html",
+      "md_path": "md/notes/20260909T142257825Z-introducing-hermes-agent-overview.md",
+      "title": "Introducing Hermes Agent — Interactive Learning Guide",
+      "created_at": "2026-09-09T14:22:57Z",
+      "updated_at": "2026-09-09T14:22:57Z",
+      "input_type": "text",
+      "note_kind": "capture",
+      "status": "complete",
+      "source": {
+        "reference": "User-submitted text",
+        "title": null,
+        "author": null,
+        "published_at": null,
+        "accessed_at": "2026-09-09",
+        "access_status": "complete",
+        "fingerprint": null
+      },
+      "summary": "Interactive learning guide covering Hermes Agent: why, how, tips, examples, future of work.",
+      "compact_idea": "Hermes Agent introduces a structured workflow for AI-assisted productivity.",
+      "tags": ["hermes-agent", "productivity", "ai-overview", "getting-started", "future-of-work", "interactive-guide"],
+      "mocs": ["inbox"],
+      "para": "resource",
+      "relations": [
+        {
+          "target_id": "note:20260909T135230683Z",
+          "type": "related",
+          "reason": "PKM prompt defines vault capture process"
+        }
+      ],
+      "ideas": [
+        {"anchor": "idea-01", "text": "Hermes Agent introduces a structured workflow for AI-assisted productivity."},
+        {"anchor": "idea-02", "text": "Learning paths progress from why, how, tips, examples, to future vision."},
+        {"anchor": "idea-03", "text": "Interactive tutorials accelerate onboarding and knowledge transfer."}
+      ]
+    },
+    {
+      "id": "20260909T135230683Z",
+      "path": "html/notes/20260909T135230683Z-dual-format-pkm-prompt.html",
+      "md_path": "md/notes/20260909T135230683Z-dual-format-pkm-prompt.md",
+      "title": "Dual-Format PKM Prompt — AI Second Brain with PARA and Progressive Summarization",
+      "created_at": "2026-09-09T13:52:30Z",
+      "updated_at": "2026-09-09T13:52:30Z",
+      "input_type": "text",
+      "note_kind": "capture",
+      "status": "complete",
+      "source": {
+        "reference": "User-submitted text",
+        "title": null,
+        "author": null,
+        "published_at": null,
+        "accessed_at": "2026-09-09",
+        "access_status": "complete",
+        "fingerprint": null
+      },
+      "summary": "This note captures a complete dual-format PKM prompt that creates paired HTML and Markdown notes with PARA organization, Progressive Summarization, and a strict filesystem sandbox.",
+      "compact_idea": "Run PKM captures through a dual HTML-Markdown pipeline with PARA and Progressive Summarization.",
+      "tags": ["pkm", "ai-second-brain", "para-method", "progressive-summarization", "note-taking", "knowledge-management", "prompt-design"],
+      "mocs": ["inbox"],
+      "para": "resource",
+      "relations": [],
+      "ideas": [
+        {"anchor": "idea-01", "text": "The PKM prompt creates paired HTML and Markdown notes for every capture, keeping both trees in lockstep."},
+        {"anchor": "idea-02", "text": "PARA organizes notes by actionability: projects, areas, resources, and archives — stored as metadata, not duplicate folders."},
+        {"anchor": "idea-03", "text": "Progressive Summarization compresses notes through five layers: excerpts, bold, highlight, paraphrase, remix."},
+        {"anchor": "idea-04", "text": "The filesystem sandbox constraint prevents the agent from writing outside the allowed vault root."}
+      ]
+    }
+  ]
+}

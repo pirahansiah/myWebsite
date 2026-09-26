@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-10T08:54:56Z",
+  "nodes": [
+    {
+      "id": "note:20260910T085456552Z",
+      "kind": "note",
+      "title": "Tiziran.com — Computer Vision, Deep Learning & Edge AI Hub",
+      "path": "html/notes/20260910T085456552Z-tiziran-computer-vision-edge-ai-hub.html"
+    },
+    {
+      "id": "note:20260909T142257825Z",
+      "kind": "note",
+      "title": "Introducing Hermes Agent — Interactive Learning Guide",
+      "path": "html/notes/20260909T142257825Z-introducing-hermes-agent-overview.html"
+    },
+    {
+      "id": "note:20260909T135230683Z",
+      "kind": "note",
+      "title": "Dual-Format PKM Prompt — AI Second Brain with PARA and Progressive Summarization",
+      "path": "html/notes/20260909T135230683Z-dual-format-pkm-prompt.html"
+    },
+    {
+      "id": "moc:inbox",
+      "kind": "moc",
+      "title": "Inbox",
+      "path": "html/moc/inbox.html"
+    },
+    {
+      "id": "tag:ai-overview",
+      "kind": "tag",
+      "title": "ai-overview",
+      "path": "html/tags/ai-overview.html"
+    },
+    {
+      "id": "tag:ai-second-brain",
+      "kind": "tag",
+      "title": "ai-second-brain",
+      "path": "html/tags/ai-second-brain.html"
+    },
+    {
+      "id": "tag:computer-vision",
+      "kind": "tag",
+      "title": "computer-vision",
+      "path": "html/tags/computer-vision.html"
+    },
+    {
+      "id": "tag:consulting",
+      "kind": "tag",
+      "title": "consulting",
+      "path": "html/tags/consulting.html"
+    },
+    {
+      "id": "tag:deep-learning",
+      "kind": "tag",
+      "title": "deep-learning",
+      "path": "html/tags/deep-learning.html"
+    },
+    {
+      "id": "tag:edge-ai",
+      "kind": "tag",
+      "title": "edge-ai",
+      "path": "html/tags/edge-ai.html"
+    },
+    {
+      "id": "tag:embedded-ai",
+      "kind": "tag",
+      "title": "embedded-ai",
+      "path": "html/tags/embedded-ai.html"
+    },
+    {
+      "id": "tag:future-of-work",
+      "kind": "tag",
+      "title": "future-of-work",
+      "path": "html/tags/future-of-work.html"
+    },
+    {
+      "id": "tag:getting-started",
+      "kind": "tag",
+      "title": "getting-started",
+      "path": "html/tags/getting-started.html"
+    },
+    {
+      "id": "tag:hermes-agent",
+      "kind": "tag",
+      "title": "hermes-agent",
+      "path": "html/tags/hermes-agent.html"
+    },
+    {
+      "id": "tag:interactive-guide",
+      "kind": "tag",
+      "title": "interactive-guide",
+      "path": "html/tags/interactive-guide.html"
+    },
+    {
+      "id": "tag:knowledge-management",
+      "kind": "tag",
+      "title": "knowledge-management",
+      "path": "html/tags/knowledge-management.html"
+    },
+    {
+      "id": "tag:note-taking",
+      "kind": "tag",
+      "title": "note-taking",
+      "path": "html/tags/note-taking.html"
+    },
+    {
+      "id": "tag:opencv",
+      "kind": "tag",
+      "title": "opencv",
+      "path": "html/tags/opencv.html"
+    },
+    {
+      "id": "tag:para-method",
+      "kind": "tag",
+      "title": "para-method",
+      "path": "html/tags/para-method.html"
+    },
+    {
+      "id": "tag:pkm",
+      "kind": "tag",
+      "title": "pkm",
+      "path": "html/tags/pkm.html"
+    },
+    {
+      "id": "tag:productivity",
+      "kind": "tag",
+      "title": "productivity",
+      "path": "html/tags/productivity.html"
+    },
+    {
+      "id": "tag:progressive-summarization",
+      "kind": "tag",
+      "title": "progressive-summarization",
+      "path": "html/tags/progressive-summarization.html"
+    },
+    {
+      "id": "tag:prompt-design",
+      "kind": "tag",
+      "title": "prompt-design",
+      "path": "html/tags/prompt-design.html"
+    }
+  ],
+  "edges": [
+    {
+      "source": "note:20260910T085456552Z",
+      "target": "moc:inbox",
+      "type": "in_moc",
+      "reason": "Note is member of Inbox MOC"
+    },
+    {
+      "source": "note:20260910T085456552Z",
+      "target": "tag:computer-vision",
+      "type": "tagged_with",
+      "reason": "Note carries tag computer-vision"
+    },
+    {
+      "source": "note:20260910T085456552Z",
+      "target": "tag:edge-ai",
+      "type": "tagged_with",
+      "reason": "Note carries tag edge-ai"
+    },
+    {
+      "source": "note:20260910T085456552Z",
+      "target": "tag:deep-learning",
+      "type": "tagged_with",
+      "reason": "Note carries tag deep-learning"
+    },
+    {
+      "source": "note:20260910T085456552Z",
+      "target": "tag:opencv",
+      "type": "tagged_with",
+      "reason": "Note carries tag opencv"
+    },
+    {
+      "source": "note:20260910T085456552Z",
+      "target": "tag:embedded-ai",
+      "type": "tagged_with",
+      "reason": "Note carries tag embedded-ai"
+    },
+    {
+      "source": "note:20260910T085456552Z",
+      "target": "tag:consulting",
+      "type": "tagged_with",
+      "reason": "Note carries tag consulting"
+    },
+    {
+      "source": "note:20260910T085456552Z",
+      "target": "note:20260909T135230683Z",
+      "type": "related",
+      "reason": "Tiziran publishes a knowledge-management / PKM section (still a stub) in the same domain as the vault's PKM prompt note."
+    },
+    {
+      "source": "note:20260909T142257825Z",
+      "target": "moc:inbox",
+      "type": "in_moc",
+      "reason": "Note is member of Inbox MOC"
+    },
+    {
+      "source": "note:20260909T142257825Z",
+      "target": "tag:hermes-agent",
+      "type": "tagged_with",
+      "reason": "Note carries tag hermes-agent"
+    },
+    {
+      "source": "note:20260909T142257825Z",
+      "target": "tag:productivity",
+      "type": "tagged_with",
+      "reason": "Note carries tag productivity"
+    },
+    {
+      "source": "note:20260909T142257825Z",
+      "target": "tag:ai-overview",
+      "type": "tagged_with",
+      "reason": "Note carries tag ai-overview"
+    },
+    {
+      "source": "note:20260909T142257825Z",
+      "target": "tag:getting-started",
+      "type": "tagged_with",
+      "reason": "Note carries tag getting-started"
+    },
+    {
+      "source": "note:20260909T142257825Z",
+      "target": "tag:future-of-work",
+      "type": "tagged_with",
+      "reason": "Note carries tag future-of-work"
+    },
+    {
+      "source": "note:20260909T142257825Z",
+      "target": "tag:interactive-guide",
+      "type": "tagged_with",
+      "reason": "Note carries tag interactive-guide"
+    },
+    {
+      "source": "note:20260909T142257825Z",
+      "target": "note:20260909T135230683Z",
+      "type": "related",
+      "reason": "PKM prompt defines vault capture process"
+    },
+    {
+      "source": "note:20260909T135230683Z",
+      "target": "moc:inbox",
+      "type": "in_moc",
+      "reason": "Note is member of Inbox MOC"
+    },
+    {
+      "source": "note:20260909T135230683Z",
+      "target": "tag:pkm",
+      "type": "tagged_with",
+      "reason": "Note carries tag pkm"
+    },
+    {
+      "source": "note:20260909T135230683Z",
+      "target": "tag:ai-second-brain",
+      "type": "tagged_with",
+      "reason": "Note carries tag ai-second-brain"
+    },
+    {
+      "source": "note:20260909T135230683Z",
+      "target": "tag:para-method",
+      "type": "tagged_with",
+      "reason": "Note carries tag para-method"
+    },
+    {
+      "source": "note:20260909T135230683Z",
+      "target": "tag:progressive-summarization",
+      "type": "tagged_with",
+      "reason": "Note carries tag progressive-summarization"
+    },
+    {
+      "source": "note:20260909T135230683Z",
+      "target": "tag:note-taking",
+      "type": "tagged_with",
+      "reason": "Note carries tag note-taking"
+    },
+    {
+      "source": "note:20260909T135230683Z",
+      "target": "tag:knowledge-management",
+      "type": "tagged_with",
+      "reason": "Note carries tag knowledge-management"
+    },
+    {
+      "source": "note:20260909T135230683Z",
+      "target": "tag:prompt-design",
+      "type": "tagged_with",
+      "reason": "Note carries tag prompt-design"
+    }
+  ]
+}

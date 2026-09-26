@@ -1,0 +1,5 @@
+A clean hand-drawn ink mind map poster on warm off-white paper. Center: a bold circle reading "Qwen-Image-2.1" with a smaller line "8 GB VRAM" underneath. Seven thick tapered ink branches with arrowheads radiate to these hand-lettered labels: Hardware, Install, The Bug, The Fix, Testing, Performance, Licence. Beside each label place one simple doodle: a GPU chip, a terminal window, a broken chain link, a wrench, a checklist, a stopwatch, a paper scroll.
+
+Across the lower third, draw a comparison row of three rectangular cards, each with a bold title and a short list of large single numbers. Card one titled "Photoroom PRX": 1.3B, 28 steps, 1024px. Card two titled "FLUX.2 klein 4B": 4B, 4 steps, 1024px. Card three titled "Qwen-Image 2.0": 7B, 25 steps, 2048px.
+
+Ink black line work only, one red accent, one teal accent. Large clear lettering, generous spacing, even stroke weight, flat two-dimensional drawing, no shading, no gradients, no photo texture, no watermark.

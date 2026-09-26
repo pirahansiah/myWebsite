@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review — AI PKM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Review</h1>
+<p>Incomplete captures and unresolved follow-ups.</p>
+
+<section>
+<h2>Open</h2>
+<ol>
+<li><strong>Tiziran link hygiene (2026-09-10).</strong> Three URLs advertised by tiziran.com return HTTP 404: <code>github.com/pirahansiah/opencv-cpp</code>, <code>tiziran.com/topics/opencv</code>, and <code>tiziran.com/topics-and-projects/opencv</code> (the last is also listed in the page's own site map). Could be renamed/moved/private — unknown.</li>
+<li><strong>Tiziran partial access (2026-09-10).</strong> Embedded Google Forms, Google Sites "Embedded Files", and CDN-hosted images were not retrievable by text extraction; long link groups were elided, so the site map may be longer than captured. Source <code>access_status: partial</code>.</li>
+<li><strong>Tiziran PKM page is a stub (2026-09-10).</strong> The <code>/book-summary/knowledge_management/pkm</code> page exists but carries no body text; unclear whether intentionally empty or unfinished.</li>
+<li><strong>Malformed MOC HTML replaced (2026-09-10).</strong> The vault's <code>html/moc/inbox.html</code> previously had a malformed <code>&lt;style&gt;</code> block and a missing <code>&lt;/main&gt;</code>; rewritten cleanly during the capture. Noted for transparency, not requiring action.</li>
+</ol>
+</section>
+
+<section>
+<h2>Resolved</h2>
+<ul>
+<li><strong>2026-09-10 — Cross-format pointer repair.</strong> Two existing Markdown notes used <code>../html/notes/…</code> for their "View as HTML" link, which resolves to <code>md/html/notes/…</code> and was broken. Corrected to <code>../../html/notes/…</code> (generated navigation only; prose untouched): <code>20260909T142257825Z-introducing-hermes-agent-overview.md</code>, <code>20260909T135230683Z-dual-format-pkm-prompt.md</code>.</li>
+<li><strong>2026-09-10 — Index staleness regenerated.</strong> <code>tags.md</code>/<code>tags.html</code>, <code>ideas.md</code>/<code>ideas.html</code>, <code>tom.md</code>, and <code>moc/inbox.*</code> were out of date against <code>catalog.json</code> (missing the six Hermes-agent tags, three Hermes ideas, and the hermes note from the Inbox MOC). Regenerated for consistency during the 2026-09-10 capture.</li>
+</ul>
+</section>
+
+<nav>
+<p><a href="index.html">Index</a> · <a href="../md/review.md">View as Markdown</a></p>
+</nav>
+</main>
+</body>
+</html>
