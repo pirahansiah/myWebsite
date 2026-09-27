@@ -1,6 +1,6 @@
 # Farshid Pirahansiah
 
-> Dr. Farshid Pirahansiah — computer vision and edge AI engineer. 21 publications, 3 patents, 12+ years turning computer-vision and deep-learning research into production systems for edge and cloud.
+> Dr. Farshid Pirahansiah — computer-vision and edge-AI mentor, consultant, and engineer. 21 publications, 3 patents, 12+ years turning research into practical systems for edge and cloud.
 
 Every page is a markdown file: the links below go straight to it (markdown is the full, final text — there is no separate HTML edition). The browser app renders the same files at https://pirahansiah.com/farshid/content/index.html#content/<name>. Contact: info@pirahansiah.com · Full text of the whole site: /llms-full.txt
 
@@ -43,7 +43,6 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 
 ## Notes & Guides
 
-- [10 Years of CV Debugging Lessons](https://pirahansiah.com/farshid/expert-coaching-resources/10-years.md): Lessons learned from a decade of debugging computer vision systems in production.
 - [3D Vision & Real-Time Multi-Camera Systems](https://pirahansiah.com/farshid/content/note-3d-vision.md): Real-time 3D point cloud generation, depth sensing, and multi-camera synchronization for computer vision applications.
 - [Accelerate Python with Numba's @jit(nopython=True)](https://pirahansiah.com/farshid/content/note-numba.md): Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.
 - [Advanced LLM Concepts](https://pirahansiah.com/farshid/content/note-llm-concepts.md): Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production deployment.
@@ -63,7 +62,6 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 - [How PyCUDA Reads and Runs C Kernels](https://pirahansiah.com/farshid/content/note-pycuda.md): Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.
 - [LLM Prompts for Knowledge Graph](https://pirahansiah.com/farshid/content/prompts.md): Write ONE short sentence (max 20 words) summarising a technical note. Title: {title} Key terms: {topterms} Headings: {headings} Reply with the sentence…
 - [Local Video Avatar Generator with Ollama](https://pirahansiah.com/farshid/content/note-llm-avatar.md): Build a fully local video avatar generator using Ollama LLM, Piper TTS, and Wav2Lip without cloud services.
-- [Mentoring, Consulting & Coaching](https://pirahansiah.com/farshid/expert-coaching-resources/post.md): Mentoring, project coaching and consulting for computer vision and edge AI engineers and teams — and the free resources I hand out along the way.
 - [MetaMask — Connect & Receive](https://pirahansiah.com/farshid/content/metamask.md): Connect MetaMask to auto-fill your EVM address, send crypto, or reveal a receive address. Private test page.
 - [Mind Map: Orchestrating AI Agents](https://pirahansiah.com/farshid/content/note-llm-agents.md): Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.
 - [MLX, CoreML, and Metal for Apple Silicon](https://pirahansiah.com/farshid/content/note-apple-ml.md): Guide to Numba JIT, PyCUDA-to-Metal transition, CoreML conversion, and MLX framework on Apple Silicon.
@@ -78,12 +76,10 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 - [SEO for LLM-Powered Search](https://pirahansiah.com/farshid/content/note-seo-for-llms.md): How to optimize websites for LLM-powered search engines using structured data and AI-friendly content.
 - [Shell & Vim Quick Reference](https://pirahansiah.com/farshid/content/note-shell-vim.md): Quick reference for shell commands, vim basics, and essential CLI tools.
 - [Sitemap & Page Summaries](https://pirahansiah.com/farshid/content/menus.md): Complete navigation index with summaries of all site pages
-- [Small weights, big context: running a 2-bit model on an 8 GB laptop GPU](https://pirahansiah.com/farshid/expert-coaching-resources/TernaryBonsai2.md): One write-up distilled from a local-model increment: why the KV cache and not the weights decides the context budget, what a 2-bit 3.7B model costs on 8…
 - [Solana Arcade — Snake & Tetris](https://pirahansiah.com/farshid/content/solana-games.md): Play Snake and Tetris in your browser, connect a Phantom wallet, and sign your high score as a cryptographic proof on Solana. No install, no account, runs…
 - [Solutions — AI Courses & Workshops](https://pirahansiah.com/farshid/content/solutions.md): AI 2026 courses, workshops, and business solutions for production-ready products.
 - [Startup Guide: Edge AI Business](https://pirahansiah.com/farshid/content/note-startup-guide.md): Edge AI business plan, fundraising in Germany, pitch decks, and growth strategies.
 - [Terms of Service](https://pirahansiah.com/farshid/content/terms.md): Terms of service for pirahansiah.com: acceptable use of the content, intellectual property notice, disclaimers, and contact information.
-- [Tips and tricks to run a local model for Hermes Agent on your laptop](https://pirahansiah.com/farshid/expert-coaching-resources/localAI.md): Running a local model for Hermes Agent on a laptop: budgeting a 32k context between instructions, references and the answer, a yes/no filter that picks…
 - [Top LinkedIn Posts 2024](https://pirahansiah.com/farshid/content/note-linkedin-2024.md): Highlights from 2024 LinkedIn posts covering camera calibration, C++, NVIDIA optimization, and robotics.
 - [Why This Site Exists](https://pirahansiah.com/farshid/content/why-not.md): Why this personal knowledge base exists, what it covers, and the principles behind how it is built and maintained.
 
@@ -108,6 +104,15 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 - [TensorFlow Deployment Specialization](https://pirahansiah.com/farshid/content/course-tensorflow-deploy.md): TensorFlow deployment: browser-based TF.js, device-based TF Lite, data pipelines, and optimization.
 - [Tesla AI](https://pirahansiah.com/farshid/content/course-tesla.md): Workshop on Tesla's autonomous driving technology and AI systems.
 
+## Mentoring & Coaching
+
+- [10 Years of CV Debugging Lessons](https://pirahansiah.com/farshid/content/10-years.md): Lessons learned from a decade of debugging computer vision systems in production.
+- [Mac as LLM inference only](https://pirahansiah.com/farshid/content/LocalLLMonMac.md): Mac as LLM inference only
+- [Mentoring, Consulting & Coaching](https://pirahansiah.com/farshid/content/post.md): Mentoring, project coaching and consulting for computer vision and edge AI engineers and teams — and the free resources I hand out along the way.
+- [Qwen-Image-2.1 on an 8 GB laptop GPU: install, configure, and the one node that broke it](https://pirahansiah.com/farshid/content/qwen-image-21-local.md): A complete local text-to-image setup on an RTX 4060 Laptop: the 7B GGUF transformer, the int8 text encoder, the 64-channel VAE, and the loader bug that…
+- [Small weights, big context: running a 2-bit model on an 8 GB laptop GPU](https://pirahansiah.com/farshid/content/TernaryBonsai2.md): One write-up distilled from a local-model increment: why the KV cache and not the weights decides the context budget, what a 2-bit 3.7B model costs on 8…
+- [Tips and tricks to run a local model for Hermes Agent on your laptop](https://pirahansiah.com/farshid/content/localAI.md): Running a local model for Hermes Agent on a laptop: budgeting a 32k context between instructions, references and the answer, a yes/no filter that picks…
+
 ## Talks & Presentations
 
 - [Hermes Agent for Big Computer Vision Projects](https://pirahansiah.com/farshid/content/presentation-cv.md): Production-scale computer vision engineering with autonomous agents: setup, bots, multi-agent orchestration, research, profiling, cron jobs, messaging…
@@ -120,6 +125,7 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 
 ## Projects
 
+- [HTML motion graphic](https://pirahansiah.com/farshid/projects/html-motion-graphic/README.md): A standalone, dependency-free motion graphic index for the pages on pirahansiah.com. The SVG constellation, topic filters, search, selected-page…
 - [llm-tools](https://pirahansiah.com/farshid/projects/llm-tools/README.md): Source files for the llm-tools project.
 - [mimo](https://pirahansiah.com/farshid/projects/mimo/README.md): Source files for the mimo project.
 - [rag](https://pirahansiah.com/farshid/projects/rag/README.md): Source files for the rag project.

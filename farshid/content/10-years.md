@@ -30,7 +30,7 @@ hashtags: "#cv #debugging #lessonslearned #opencv"
 
 
 
-[Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/expert-coaching-resources/localAI.md)
+[Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/content/localAI.md)
 
 ## Vision-Language-Action models
 

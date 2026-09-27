@@ -5,7 +5,7 @@ import html, os, re, subprocess
 from urllib.parse import quote
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
-PAGE_DIRS = ['content', 'expert-coaching-resources']   # every page folder, indexed alike
+PAGE_DIRS = ['content']   # all indexed page markdown lives in one flat folder
 CONTENT = os.path.join(ROOT, 'content')
 
 
@@ -19,7 +19,7 @@ def page_files():
             if f.endswith('.md'):
                 yield d, f
 PROJ = os.path.join(ROOT, 'projects')
-PRODUCTS = os.path.join(ROOT, 'products')
+PRODUCTS = os.path.join(ROOT, 'downloads')
 
 def clean_title(t):
     t = re.sub(r'<[^>]+>', '', t)
@@ -47,6 +47,8 @@ entries = load()
 
 def group(slug):
     if slug in ('qr','atlas','contact','privacy'): return None,None  # handled in Site Pages / Connect & Share
+    if slug in ('10-years', 'post', 'localAI', 'LocalLLMonMac', 'TernaryBonsai2', 'qwen-image-21-local'):
+        return 'Mentoring & Coaching',None
     if slug in ('research-tools','slides-token-optimization','keynotes-llm-cv'):
         return 'Talks, Presentations & Keynotes',None
     if slug.startswith('presentation-') or slug=='presentation':
@@ -68,7 +70,7 @@ for slug,t,rel in entries:
     if sec is None: continue
     buckets.setdefault((sec,sub), []).append((f'/farshid/{rel}', t))
 
-SECTIONS = ['Publications','Courses','Notes & Guides','Products','Talks, Presentations & Keynotes','Site Pages','Projects']
+SECTIONS = ['Publications','Courses','Notes & Guides','Downloads','Mentoring & Coaching','Talks, Presentations & Keynotes','Site Pages','Projects']
 
 # Links point at the page files themselves: each page is one markdown file, which the
 # browser app renders in place (and which a crawler or an LLM reads as the final text).
@@ -106,10 +108,10 @@ def render():
         if sec == 'Projects':
             groups.append(('Projects', 'projects', [(None, None, project_items())]))
             continue
-        if sec == 'Products':
+        if sec == 'Downloads':
             blocks = product_blocks()
             if blocks:
-                groups.append(('Products', 'products', blocks))
+                groups.append(('Downloads', 'downloads', blocks))
             continue
         subs = [s for (s_s, s) in buckets if s_s == sec]
         if sec == 'Publications':
@@ -150,8 +152,7 @@ def render():
         L.append('</section>')
         L.append('')
     L.append('<p class="atlas-note">Generated index — every page is one markdown file '
-             'under <code>content/</code> or <code>expert-coaching-resources/</code>; the '
-             'downloads are the files in <code>products/</code>.</p>')
+            'under <code>content/</code>; downloadable resources are grouped in <code>downloads/</code>.</p>')
     return '\n'.join(L)
 
 
@@ -203,19 +204,19 @@ def pretty_name(f):
 
 # A download with no store listing keeps its filename; these are the ones worth naming.
 NO_LISTING_TITLES = {
-    'computer-vision-ai-engineers-guide.pdf': "Computer Vision & AI — A Practical Engineer's Guide",
-    'etsy-listings.txt': 'Store listing copy (source text)',
-    'local-llm-optimization-20260905.zip': 'Local LLM optimization — source archive (2026-09-05)',
-    'optimize_local_llm.sh': 'optimize_local_llm.sh — local LLM tuning script',
-    'OPTIMIZATION.md': 'OPTIMIZATION.md — local LLM optimization notes',
+    'cv-engineers-guide.pdf': "Computer Vision & AI — A Practical Engineer's Guide",
+    'store-listings.txt': 'Store listing copy (source text)',
+    'local-llm-source.zip': 'Local LLM optimization — source archive (2026-09-05)',
+    'optimize-llm.sh': 'Local LLM tuning script',
+    'optimization.md': 'Local LLM optimization notes',
     'prompts.md': 'Prompt templates — source text',
 }
 
 
 def listing_entries():
-    """The store copy this folder ships (etsy-listings.txt): TITLE / CATEGORY / DESCRIPTION."""
+    """The store copy this folder ships (store-listings.txt): TITLE / CATEGORY / DESCRIPTION."""
     out = []
-    src = os.path.join(PRODUCTS, 'etsy-listings.txt')
+    src = os.path.join(PRODUCTS, 'store-listings.txt')
     if not os.path.exists(src):
         return out
     raw = open(src, encoding='utf-8').read()
@@ -242,9 +243,9 @@ def pdf_pages(path):
 
 
 def product_blocks():
-    """Every file in products/, grouped the way the store groups them.
+    """Every file in downloads/, grouped the way the store groups them.
 
-    Titles come from the folder's own listing copy (etsy-listings.txt) matched to each PDF
+    Titles come from the folder's own listing copy (store-listings.txt) matched to each PDF
     by filename tokens, with the page count as the tiebreak — 'computer-vision-ai-engineers-guide'
     and 'cv-coaching-roadmap' both answer to "Computer Vision", and only the page count
     (406 vs 4) tells them apart. A file with no listing keeps its filename, pretty-printed.
@@ -286,7 +287,7 @@ def product_blocks():
     items = []          # (category, sort_title, url, title, meta, attrs, desc)
     for f in files:
         e = picked.get(f)
-        url = '/farshid/products/' + quote(f)
+        url = '/farshid/downloads/' + quote(f)
         meta = ' · '.join([x for x in [f"{info[f]['pages']} pp" if info[f]['pages'] else '',
                                        human_size(info[f]['size'])] if x])
         attrs = ' target="_blank" rel="noopener"' if info[f]['pdf'] else ' download'
@@ -320,13 +321,18 @@ def project_items():
             p = os.path.join(PROJ, d)
             if not os.path.isdir(p):
                 continue
-            label = d
             rm = os.path.join(p, 'README.md')
-            if os.path.exists(rm):
-                rb = open(rm, encoding='utf-8').read()
-                m = re.search(r'^#\s+(.+)$', rb, re.M)
-                if m:
-                    label = ' '.join(m.group(1).split())
+            if not os.path.isfile(rm):
+                continue
+            ignored = subprocess.run(['git', 'check-ignore', '-q', os.path.relpath(rm, ROOT)],
+                                     cwd=ROOT, capture_output=True, text=True).returncode == 0
+            if ignored:
+                continue
+            rb = open(rm, encoding='utf-8').read()
+            label = d
+            m = re.search(r'^#\s+(.+)$', rb, re.M)
+            if m:
+                label = ' '.join(m.group(1).split())
             out.append((f'/farshid/projects/{d}/README.md', label + ' — ' + d if label != d else d))
     return out
 

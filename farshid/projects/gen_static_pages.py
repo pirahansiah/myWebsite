@@ -22,12 +22,11 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..'))          # .../myWebsite/farshid
 SITE = os.path.abspath(os.path.join(ROOT, '..'))          # .../myWebsite
 CONTENT = os.path.join(ROOT, 'content')
-PAGE_DIRS = ['content', 'expert-coaching-resources']   # every folder that holds pages
+PAGE_DIRS = ['content']   # every page source lives in one flat markdown folder
 
 
 def page_route(rel):
-    """'content/wiki.md' -> 'wiki' (what the app appends to #content/);
-    'expert-coaching-resources/x.md' -> 'expert-coaching-resources/x' (nested route)."""
+    """'content/wiki.md' -> 'wiki' (what the app appends to #content/)."""
     r = rel[:-3]
     return r[len('content/'):] if r.startswith('content/') else r
 
@@ -44,7 +43,7 @@ def page_files():
 PROJECTS = os.path.join(ROOT, 'projects')
 ORIGIN = 'https://pirahansiah.com'
 SPA = ORIGIN + '/farshid/content/index.html'              # the interactive app entry
-LLMS_SECTIONS = ['Site', 'Publications', 'Notes & Guides', 'Courses', 'Talks & Presentations', 'Projects']
+LLMS_SECTIONS = ['Site', 'Publications', 'Notes & Guides', 'Courses', 'Mentoring & Coaching', 'Talks & Presentations', 'Projects']
 
 # Hand-written pages that are not markdown (small apps, not content pages).
 STANDALONE = [('/farshid/content/index.html', 'daily', '1.0'),
@@ -110,6 +109,8 @@ def truncate(text, limit=155):
 
 
 def section_of(slug):
+    if slug in ('10-years', 'post', 'localAI', 'LocalLLMonMac', 'TernaryBonsai2', 'qwen-image-21-local'):
+        return 'Mentoring & Coaching'
     if slug.startswith(('books-', 'journals-', 'papers-', 'patents-', 'keynotes-')):
         return 'Publications'
     if slug == 'computer-vision':
@@ -147,7 +148,7 @@ def build_pages():
         _meta, body = split_front_matter(open(src, encoding='utf-8').read())
         title = title_of(slug, body, _meta)
         description = truncate(first_paragraph(body, _meta)) or \
-            f'{title} — Dr. Farshid Pirahansiah, computer vision and edge AI engineer.'
+            f'{title} — Dr. Farshid Pirahansiah, computer-vision and edge-AI mentor, consultant, and engineer.'
         route = page_route(rel)
         pages.append({'slug': slug, 'route': route, 'permalink': _meta.get('permalink', ''),
                       'title': title, 'description': description, 'path': src,
@@ -165,6 +166,11 @@ def build_projects():
     for d in sorted(os.listdir(PROJECTS)):
         readme = os.path.join(PROJECTS, d, 'README.md')
         if not os.path.isfile(readme):
+            continue
+        rel = os.path.relpath(readme, SITE)
+        ignored = subprocess.run(['git', 'check-ignore', '-q', rel], cwd=SITE,
+                                 capture_output=True, text=True).returncode == 0
+        if ignored:
             continue
         meta, body = split_front_matter(open(readme, encoding='utf-8').read())
         title = title_of(d, body, meta)
@@ -185,8 +191,8 @@ def write_llms(pages):
     lines = [
         '# Farshid Pirahansiah',
         '',
-        '> Dr. Farshid Pirahansiah — computer vision and edge AI engineer. 21 publications, 3 patents, '
-        '12+ years turning computer-vision and deep-learning research into production systems for edge and cloud.',
+        '> Dr. Farshid Pirahansiah — computer-vision and edge-AI mentor, consultant, and engineer. 21 publications, '
+        '3 patents, 12+ years turning research into practical systems for edge and cloud.',
         '',
         'Every page is a markdown file: the links below go straight to it (markdown is the full, '
         'final text — there is no separate HTML edition). The browser app renders the same files at '
@@ -214,6 +220,7 @@ def write_llms(pages):
             _meta, raw = split_front_matter(open(p['path'], encoding='utf-8').read())
             raw = re.sub(r'<script\b.*?</script>', '', raw, flags=re.S | re.I)
             raw = re.sub(r'(?s)<!--.*?-->', '', raw)      # editor notes are not site text
+            raw = '\n'.join(line.rstrip() for line in raw.splitlines())
             full += [f"## {p['title']}", f"URL: {p['url']}", '', raw.strip(), '', '---', '']
     open(os.path.join(SITE, 'llms-full.txt'), 'w', encoding='utf-8').write('\n'.join(full))
 
@@ -226,7 +233,7 @@ def write_permalinks(pages):
         perm = (pg.get('permalink') or '').strip('/')
         if perm:
             rows.append((perm, target))
-        rel = (pg.get('md') or '').lstrip('/')          # e.g. 'farshid/expert-coaching-resources/x.md'
+        rel = (pg.get('md') or '').lstrip('/')          # e.g. 'farshid/content/x.md'
         if rel.endswith('.md'):
             rows.append((rel[:-3], target))            # the URL in the address bar, extension-less
     rows = [(k.lower(), v) for k, v in rows]

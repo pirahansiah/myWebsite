@@ -290,11 +290,10 @@
       if(/^(https?:)?\/\//.test(href)){ a.setAttribute('target','_blank'); return; }
       // internal .md link -> route (strip permanent /farshid/ prefix, then /content/);
       // a relative link (localAI.md) is resolved against the page you are reading
-      // ... but only markdown that IS a page: files under content/, expert-coaching-resources/
-      // or a project folder. A .md inside products/ is a download, not a page — routing it
-      // would send the reader to "Page not found" instead of the file.
+      // ... but only markdown that IS a page: files under content/ or a project folder. A .md inside
+      // downloads/ is a download, not a page — routing it would send the reader to "Page not found".
       var mdTarget=href.replace(/^\/farshid\//,'').replace(/[#:].*$/,'');
-      var mdIsPage=!/^\//.test(href) || /^(content|expert-coaching-resources|projects)\//.test(mdTarget);
+      var mdIsPage=!/^\//.test(href) || /^(content|projects)\//.test(mdTarget);
       if(mdIsPage && /\.md(?:[#:]|$)/.test(href)){
         var m=href.match(/^([^#:]+\.md)(?:[#:](.+))?$/);
         var rel=m[1], base=(currentFile||'').indexOf('/')>=0 ? currentFile.replace(/\/[^\/]*$/,'')+'/' : '';
@@ -356,7 +355,7 @@
     var file = hp.file || DEFAULT;
     var anchor = hp.anchor;
     if(isHomeHash(file, anchor)){
-      showHome();
+      showHome(anchor);
     } else {
       showMarkdown(file, anchor);
     }
@@ -370,14 +369,18 @@
   }
   function isHomeHash(file, anchor){ return (file===''||file==='home'); }
 
-  function showHome(){
+  function showHome(anchor){
     var baked=$id('baked-home'), c=$id('content');
-    c.setAttribute('hidden','');          // markdown container hidden — home is baked
+    c.setAttribute('hidden','');
     if(baked) baked.removeAttribute('hidden');
     c.innerHTML='';
-    document.title='Dr. Farshid Pirahansiah — Computer Vision & Edge AI Engineer';
+    document.title='Dr. Farshid Pirahansiah — Computer Vision & Edge AI Mentor & Consultant';
     highlightNav('home','');
-    window.scrollTo(0,0);
+    var target=anchor && $id(anchor);
+    if(target && baked && baked.contains(target)){
+      var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+    } else window.scrollTo(0,0);
   }
   function showMarkdown(file, anchor){
     var baked=$id('baked-home');

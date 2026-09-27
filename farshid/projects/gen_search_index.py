@@ -15,7 +15,7 @@ index with `class="qr-hero"` fragments.
 import os, re, json
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
-PAGE_DIRS = ['content', 'expert-coaching-resources']
+PAGE_DIRS = ['content']
 CONTENT = os.path.join(ROOT, 'content')
 
 

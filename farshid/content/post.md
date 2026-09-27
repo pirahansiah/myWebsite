@@ -22,14 +22,14 @@ I mentor engineers and consult for teams building computer vision and edge AI sy
 
 ## The resources
 
-- **[10 Years of CV Debugging Lessons](/farshid/expert-coaching-resources/10-years.md)** — lessons learned from a decade of debugging computer vision systems in production.
-- **[Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/expert-coaching-resources/localAI.md)** — budgeting a 32k context between instructions, references and the answer, and a yes/no filter that picks the chunks before the main model sees them.
+- **[10 Years of CV Debugging Lessons](/farshid/content/10-years.md)** — lessons learned from a decade of debugging computer vision systems in production.
+- **[Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/content/localAI.md)** — budgeting a 32k context between instructions, references and the answer, and a yes/no filter that picks the chunks before the main model sees them.
 - **[CV Coaching & Teaching Roadmap](/farshid/content/note-coaching-roadmap.md)** — the curriculum I teach, from image formation to multi-camera systems.
-- **[OpenCV 5 Cheat Sheet (PDF)](/farshid/expert-coaching-resources/OpenCV_5_Cheat_Sheet_pirahansiah.pdf)** — the functions that come up in every session, on one page.
-- **[Computer Vision Coaching Roadmap (PDF)](/farshid/products/cv-coaching-roadmap.pdf)** — the same learning path as a printable sheet.
+- **[OpenCV 5 Cheat Sheet (PDF)](/farshid/downloads/opencv5-cheatsheet.pdf)** — the functions that come up in every session, on one page.
+- **[Computer Vision Coaching Roadmap (PDF)](/farshid/downloads/cv-coaching-roadmap.pdf)** — the same learning path as a printable sheet.
 
 ## Getting started
 
 Tell me what you are building and where it is stuck. Email **info@pirahansiah.com** or reach me on [LinkedIn](https://www.linkedin.com/in/pirahansiah/).
 
-<img src="/farshid/expert-coaching-resources/linkedin.JPG" alt="LinkedIn QR card for Dr. Farshid Pirahansiah — scan to connect" style="max-width: 100%; height: auto;">
+<img src="/farshid/content/linkedin-card.jpg" alt="LinkedIn QR card for Dr. Farshid Pirahansiah — scan to connect" style="max-width: 100%; height: auto;">

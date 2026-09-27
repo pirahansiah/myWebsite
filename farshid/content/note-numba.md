@@ -9,7 +9,7 @@ Tutorial on using Numba's @jit decorator to compile Python functions into optimi
 
 Accelerate Python with Numba’s `@jit(nopython=True)` 
 
-<img src="/farshid/content/CUDA_numba_jit_tutorial.png" alt="Accelerate Python with Numba’s `@jit(nopython=True)` " style="max-width: 100%; height: auto;">
+<img src="/farshid/content/numba-jit.png" alt="Accelerate Python with Numba’s `@jit(nopython=True)` " style="max-width: 100%; height: auto;">
 
 # 🚀 Accelerate Python with Numba’s `@jit(nopython=True)` 🚀
 

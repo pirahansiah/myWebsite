@@ -12,7 +12,7 @@ This page records the full setup, configuration, and testing of **Qwen-Image-2.1
 
 It also records a failure worth reading. The pipeline loaded without error, ran to completion in 120 seconds, and produced pure noise on every prompt. The cause was one wrong node type. The diagnosis is included because the same class of error will appear in other GGUF-plus-safetensors pipelines.
 
-The companion page for language models on the same hardware is [Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/expert-coaching-resources/localAI.md).
+The companion page for language models on the same hardware is [Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/content/localAI.md).
 
 ## The target hardware
 

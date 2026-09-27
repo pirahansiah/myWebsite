@@ -10,7 +10,7 @@ hashtags: "#localllm #quantization #llamacpp #aiagents #edgeai"
 
 This page condenses one working session's artifacts: getting an aggressively quantized model served locally at a long context, and making it selectable inside the agent — 16 files of plans, specs, task lists, handoffs, a video transcript and a slide deck, all from two increments in September 2026. The numbers below are copied from those files; where a number is arithmetic rather than a measurement, it says so.
 
-The sibling case on the same class of hardware is Ternary-Bonsai-2-27B at 32k context (see [Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/expert-coaching-resources/localAI.md)), and the same model family on a 16 GB Apple Silicon machine — full-precision BF16, Metal build — is written up in [Running K2-Horizon Locally on Apple Silicon](/farshid/content/k2-horizon-local.md). This page is the 8 GB discrete-GPU version: the capacity math, the Windows landmine, the wiring into the agent, and the harness question that decides whether a small local model is actually useful.
+The sibling case on the same class of hardware is Ternary-Bonsai-2-27B at 32k context (see [Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/content/localAI.md)), and the same model family on a 16 GB Apple Silicon machine — full-precision BF16, Metal build — is written up in [Running K2-Horizon Locally on Apple Silicon](/farshid/content/k2-horizon-local.md). This page is the 8 GB discrete-GPU version: the capacity math, the Windows landmine, the wiring into the agent, and the harness question that decides whether a small local model is actually useful.
 
 ## The KV cache decides the budget, not the weights
 

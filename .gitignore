@@ -1,3 +1,6 @@
 .DS_Store
 .*.swp
 node_modules/
+farshid/private/
+farshid/projects/html-motion-graphic/.impeccable/chrome-*/
+farshid/projects/qwen-image-2.1-int4/

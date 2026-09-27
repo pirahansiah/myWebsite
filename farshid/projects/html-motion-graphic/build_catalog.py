@@ -23,7 +23,7 @@ def category_for(path: str) -> str:
         return "Site & tools"
     if "/projects/" in path:
         return "Projects"
-    if "/expert-coaching-resources/" in path:
+    if name in {"10-years.md", "post.md", "localai.md", "localllmonmac.md", "ternarybonsai2.md", "qwen-image-21-local.md"}:
         return "Coaching resources"
     if name.startswith(("books-", "journals-", "papers-", "patents-")) or name == "conference-paper.md":
         return "Research & publications"

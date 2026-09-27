@@ -13,7 +13,7 @@ title, a permanent link and a description — the fields the PKM vault uses:
 
 Values are taken, in order of authority:
   1. front matter the page already has (never overwritten)
-  2. the matching note in the PKM vault (../PKM) — title / description / permalink
+  2. the matching note in the local PKM folder (`farshid/pkm`) — title / description / permalink
   3. the page itself — first heading, share-line blurb, first paragraph
   4. the legacy URL the page was exported from (its original permalink)
 
@@ -26,13 +26,14 @@ import io
 import os
 import re
 import sys
+import subprocess
 import unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))          # repo root
 CONTENT = os.path.join(ROOT, 'farshid', 'content')
 PROJECTS = os.path.join(ROOT, 'farshid', 'projects')
-VAULT = os.path.normpath(os.path.join(ROOT, '..', 'PKM'))
+VAULT = os.path.join(ROOT, 'farshid', 'pkm')
 
 LAYOUT = 'farshid_default'
 CANON = ('layout', 'title', 'permalink', 'description', 'sitemap', 'noindex')
@@ -314,8 +315,10 @@ def main():
 
     pairs = []
     pages = sorted(glob.glob(os.path.join(CONTENT, '*.md')))
-    pages += sorted(glob.glob(os.path.join(ROOT, 'farshid', 'expert-coaching-resources', '*.md')))
     pages += sorted(glob.glob(os.path.join(PROJECTS, '*', 'README.md')))
+    pages = [p for p in pages if subprocess.run(
+        ['git', 'check-ignore', '-q', os.path.relpath(p, ROOT)], cwd=ROOT,
+        capture_output=True, text=True).returncode != 0]
     changed = 0
     for path in pages:
         slug = os.path.basename(os.path.dirname(path)) if path.endswith('README.md') else os.path.basename(path)[:-3]

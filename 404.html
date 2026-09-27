@@ -19,7 +19,10 @@
     'research-tools'     : 'presentation-research-tools',
     'presentation'       : 'presentation',
     'presentation-cv'    : 'presentation-cv',
-    'presentation-updates': 'presentation-updates'
+    'presentation-updates': 'presentation-updates',
+    'localai': 'localAI',
+    'localllmonmac': 'LocalLLMonMac',
+    'ternarybonsai2': 'TernaryBonsai2'
   };
 
   /* old root-level page paths -> current target (true = html page, not markdown) */
@@ -43,8 +46,37 @@
     '/notes/docs/solutions' : 'solutions'
   };
 
+  var MOVED_FILES = {
+    '/farshid/avatar.jpg': '/farshid/assets/profile.jpg',
+    '/farshid/favicon.png': '/farshid/assets/favicon.png',
+    '/qr/index.html': '/farshid/qr/index.html',
+    '/farshid/products/computer-vision-ai-engineers-guide.pdf': '/farshid/downloads/cv-engineers-guide.pdf',
+    '/farshid/products/local-llm-optimization-20260905.zip': '/farshid/downloads/local-llm-source.zip',
+    '/farshid/products/optimize_local_llm.sh': '/farshid/downloads/optimize-llm.sh',
+    '/farshid/products/optimization.md': '/farshid/downloads/optimization.md',
+    '/farshid/products/etsy-listings.txt': '/farshid/downloads/store-listings.txt',
+    '/farshid/expert-coaching-resources/opencv_5_cheat_sheet_pirahansiah.pdf': '/farshid/downloads/opencv5-cheatsheet.pdf',
+    '/farshid/expert-coaching-resources/linkedin.jpg': '/farshid/content/linkedin-card.jpg',
+    '/farshid/content/mind_map_orchestrating_agents.png': '/farshid/content/agent-orchestration-map.png',
+    '/farshid/content/vscodecudawindows.png': '/farshid/content/cuda-windows-vscode.png',
+    '/farshid/content/cuda_numba_jit_tutorial.png': '/farshid/content/numba-jit.png',
+    '/farshid/content/cuda_pycuda_kernel_explanation.png': '/farshid/content/pycuda-kernel.png',
+    '/farshid/content/mind_map_advanced_llm_concepts.png': '/farshid/content/llm-concepts-map.png',
+    '/farshid/content/microsoft_ai_use_cases.png': '/farshid/content/microsoft-ai-use-cases.png',
+    '/farshid/content/optimizationml.png': '/farshid/content/ml-optimization.png',
+    '/farshid/content/under_over_fit_ml.png': '/farshid/content/ml-overfitting.png',
+    '/farshid/content/recommended ml optimization and project workflow.png': '/farshid/content/ml-workflow.png',
+    '/farshid/content/image_00005_.png': '/farshid/content/qwen-image-21-8gb-mindmap.png',
+    '/farshid/content/dr._farshid_pirahansiah_3_patents_-_ai_innovations_in_vehicle_detection,_facial_analysis,_and_image_augmentation.png': '/farshid/content/patent-portfolio.png'
+  };
+
   var path = decodeURIComponent(location.pathname || '').replace(/\/+$/, '');
   var hash = location.hash || '';
+  var moved = MOVED_FILES[path.toLowerCase()];
+  if (!moved && /^\/farshid\/products\//i.test(path)) moved = path.replace(/^\/farshid\/products\//i, '/farshid/downloads/');
+  if (!moved && /^\/farshid\/fonts\//i.test(path)) moved = path.replace(/^\/farshid\/fonts\//i, '/farshid/assets/');
+  if (!moved && /^\/farshid\/expert-coaching-resources\//i.test(path)) moved = path.replace(/^\/farshid\/expert-coaching-resources\//i, '/farshid/content/');
+  if (moved) { location.replace(moved + location.search + hash); return; }
   var target = null;
 
   /* front-matter permalinks (PIRAHANSIAH page headers): /qr/, /notes/pubs/10-years/, … */
