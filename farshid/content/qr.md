@@ -151,14 +151,14 @@ description: "Scan a code or tap Open to reach Dr. Farshid Pirahansiah's links â
   </div>
 </div>
 <div class="qr-card">
-  <a class="qr-code" href="https://www.youtube.com/@pirahansiah" target="_blank" rel="noopener" aria-label="Open YouTube QR code"><img src="/farshid/content/youtube.png" alt="YouTube QR code" loading="lazy" width="132" height="132"></a>
+  <a class="qr-code" href="https://www.youtube.com/@computervisiondeeplearning" target="_blank" rel="noopener" aria-label="Open YouTube QR code"><img src="/farshid/content/youtube.png" alt="YouTube QR code" loading="lazy" width="132" height="132"></a>
   <div class="qr-body">
     <h3>YouTube</h3>
     <p class="qr-desc">Video tutorials and tech talks.</p>
-    <p class="qr-target" title="https://www.youtube.com/@pirahansiah">youtube.com/@pirahansiah</p>
+    <p class="qr-target" title="https://www.youtube.com/@computervisiondeeplearning">youtube.com/@computervisiondeeplearning</p>
     <div class="qr-actions">
-      <a class="qr-btn open" href="https://www.youtube.com/@pirahansiah" target="_blank" rel="noopener">Open</a>
-      <button class="qr-btn" type="button" data-copy="https://www.youtube.com/@pirahansiah">Copy link</button>
+      <a class="qr-btn open" href="https://www.youtube.com/@computervisiondeeplearning" target="_blank" rel="noopener">Open</a>
+      <button class="qr-btn" type="button" data-copy="https://www.youtube.com/@computervisiondeeplearning">Copy link</button>
       <a class="qr-btn ghost" href="/farshid/content/youtube.png" download>Download QR</a>
     </div>
   </div>
