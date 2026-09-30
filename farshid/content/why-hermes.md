@@ -134,3 +134,99 @@ You don't have to abandon anything: keep `opencode`, `codex`, `claude` or `grok`
 - Muse Code: [Meta docs](https://dev.meta.ai/docs/muse-code), [build-with-muse-code](https://developer.meta.com/ai/resources/blog/build-with-muse-code/)
 - Grok Build: [x.ai news](https://x.ai/news/grok-build-cli), [x.ai/build](https://x.ai/build)
 - Hermes: [hermes-agent.nousresearch.com/docs](https://hermes-agent.nousresearch.com/docs/)
+
+## Using Hermes as a Dots replacement (setup · config · prompt)
+
+Dots is an always-on personal agent in OpenAI's cloud. This is the shortest path to the same behaviour with Hermes — your machine, your model, your keys.
+
+### 1. Install (one line, ~5 minutes)
+
+```bash
+curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+hermes setup     # wizard: model, provider, terminal, gateway, tools, agent
+hermes doctor    # confirm the install is healthy
+```
+
+### 2. Config — point it at OpenAI (or any model)
+
+```bash
+hermes auth add openai-codex      # Codex OAuth sign-in, or
+#  put OPENAI_API_KEY in ~/.hermes/.env for the plain openai provider
+hermes model                      # interactive picker: choose model + provider
+```
+
+Settings live in `~/.hermes/config.yaml` — never hand-edit it; use `hermes config set KEY VAL`.
+Secrets live in `~/.hermes/.env`.
+
+```bash
+hermes config set model.provider openai     # the provider
+hermes config set approvals.mode smart      # Dots-style approval gate (default)
+```
+
+One honest caveat: **GPT-6 Astra is Dots' own hosted model, not a public API endpoint.** You
+run whatever OpenAI model your key can reach (e.g. gpt-5) through the same harness instead.
+
+### 3. Prompt it like Dots
+
+Dots' pitch is "give it a goal and it works in the background, checking in when it needs you."
+Hermes maps that one-to-one:
+
+| Dots behaviour | Hermes |
+|---|---|
+| "Work on this until it's done" | `/goal "plan the quarterly launch and keep me posted"` |
+| Long task that keeps running | `/background "migrate the repo to TypeScript and leave notes"` |
+| Recurring jobs | `hermes cron create '0 9 * * *' 'summarize overnight PRs'` |
+| Get back to something later | `/queue "…"` |
+| Fan out to subagents | ask it to `delegate_task` (batched, parallel); `/agents` to watch |
+
+`/goal` is the closest thing to Dots: a standing objective that survives across turns until you
+clear it (`/goal status|pause|resume|clear`). Cron is Dots' recurring-work loop on a real
+scheduler — `hermes cron` accepts `'30m'`, `'every monday 9am'`, `'0 9 * * *'`, or an ISO
+timestamp, and each job can pin its own model, skills and delivery platform.
+
+### 4. Make it reachable where you already are
+
+Dots reaches you in ChatGPT, Slack, Teams and iMessage. Hermes connects to those and more:
+
+```bash
+hermes gateway setup    # pick Telegram / Slack / WhatsApp / iMessage / Signal / Teams / Email / …
+hermes gateway start    # run the gateway headless (keep it alive via launchd / systemd)
+hermes send …           # one-off message out
+/handoff telegram       # in-session: move the current task to your phone
+```
+
+`hermes gateway start` is the always-on layer — the agent keeps running and answers on every
+connected platform. iMessage uses Photon (`hermes photon setup`). Optional: `hermes profile
+create <name>` for a separate identity (Bot Mode) with its own model, memory and skills.
+
+### 5. Approvals (Dots' safety gate)
+
+Dots pauses and asks before sensitive actions. Hermes ships the same gate:
+
+```bash
+hermes config set approvals.mode smart     # ask only when risky (default)
+hermes config set approvals.mode manual    # ask for everything
+# in chat: /approve   /deny   /yolo (toggle bypass)
+```
+
+### 6. Give it context and memory (Dots' connected apps)
+
+- Memory is on by default (`hermes memory status`) — it remembers you across sessions.
+- Connect external apps with MCP: `hermes mcp add …`, `hermes mcp catalog`, `hermes mcp install …`.
+- Event-driven triggers: `hermes webhook subscribe …`.
+- Credentials: `hermes auth` (pooled, auto-rotating keys) and `hermes secrets bitwarden|onepassword`.
+
+### A worked day
+
+**Dots:** "Every morning, check the market and tell me in Slack if anything matters."
+**Hermes:** `hermes cron create '0 8 * * *' 'check overnight news relevant to my portfolio and message me on Slack if anything is material'`
+
+**Dots:** "Book this trip, ask me before you spend money."
+**Hermes:** `/goal "book the SF trip within a $2,500 budget"` + `approvals.mode: manual` so it asks before any purchase.
+
+**Dots:** it reaches you in iMessage at dinner.
+**Hermes:** `hermes gateway setup` (iMessage via Photon) + `hermes gateway start` — same ping, same phone.
+
+You are not trading Dots' behaviour for a coding CLI. You are re-building the same always-on,
+goal-driven agent — except it runs on your machine, with any model, and you own the memory and
+the audit trail.
