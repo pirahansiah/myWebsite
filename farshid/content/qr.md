@@ -298,10 +298,10 @@ description: "Scan a code or tap Open to reach Dr. Farshid Pirahansiah's links â
   </div>
 </div>
 <div class="qr-card">
-  <a class="qr-code" href="https://docs.google.com/presentation/d/14HX-99rGO9x1AtOnEigZ_2gAzZaPwvxqCEnnG0dk870/edit?usp=sharing" target="_blank" rel="noopener" aria-label="Open Slide decks QR code"><img src="/farshid/content/slides.png" alt="Slide decks QR code" loading="lazy" width="132" height="132"></a>
+  <a class="qr-code" href="https://docs.google.com/presentation/d/14HX-99rGO9x1AtOnEigZ_2gAzZaPwvxqCEnnG0dk870/edit?usp=sharing" target="_blank" rel="noopener" aria-label="Open Hermes Agent talk slides QR code"><img src="/farshid/content/slides.png" alt="Hermes Agent talk slides QR code" loading="lazy" width="132" height="132"></a>
   <div class="qr-body">
-    <h3>Slide decks</h3>
-    <p class="qr-desc">Talks and presentations.</p>
+    <h3>Hermes Agent â€” talk slides</h3>
+    <p class="qr-desc">The slides of my talk introducing Hermes Agent (Google Slides).</p>
     <p class="qr-target" title="https://docs.google.com/presentation/d/14HX-99rGO9x1AtOnEigZ_2gAzZaPwvxqCEnnG0dk870/edit?usp=sharing">docs.google.com/presentation/d/14HX-99rGO9x1AtOnEigZ_2gAzZaPwvxqCEnnG0dk870/edit?usp=sharing</p>
     <div class="qr-actions">
       <a class="qr-btn open" href="https://docs.google.com/presentation/d/14HX-99rGO9x1AtOnEigZ_2gAzZaPwvxqCEnnG0dk870/edit?usp=sharing" target="_blank" rel="noopener">Open</a>
