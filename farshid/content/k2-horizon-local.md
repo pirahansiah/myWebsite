@@ -133,3 +133,7 @@ guide (§7a). Only one process may hold :8080.
   MLX safetensors (and even then the custom arch's grouped RMSNorm needs a custom loader), which
   is not provided for the 0.9B/1B size as of this writing (community MLX conversions exist only
   for 3.7B/7B, and require `--trust-remote-code`). The llama.cpp fork is the supported path.
+
+## Related
+
+- [Why Hermes: One Agent Over Dots, Muse Code & Grok Build](/notes/docs/llm/why-hermes/) — how Hermes stacks up against OpenAI Dots, Meta Muse Code and xAI Grok Build.

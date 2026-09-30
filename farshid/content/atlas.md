@@ -12,7 +12,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <nav class="atlas-jump" aria-label="Atlas sections">
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
-  <a href="#notes-guides">Notes &amp; Guides <span>38</span></a>
+  <a href="#notes-guides">Notes &amp; Guides <span>39</span></a>
   <a href="#downloads">Downloads <span>28</span></a>
   <a href="#mentoring-coaching">Mentoring &amp; Coaching <span>6</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
@@ -128,6 +128,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/terms.md">Terms of Service</a></li>
     <li><a href="/farshid/content/note-seo-for-llms.md">The New Era of SEO: Optimizing Websites for LLMs</a></li>
     <li><a href="/farshid/content/note-shell-vim.md">tools</a></li>
+    <li><a href="/farshid/content/why-hermes.md">Why Hermes: One Agent Over Dots, Muse Code &amp; Grok Build</a></li>
     <li><a href="/farshid/content/why-not.md">Why This Site Exists</a></li>
     <li><a href="/farshid/content/game.md">🎮 Arcade</a></li>
     <li><a href="/farshid/content/note-numba.md">🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀</a></li>

@@ -81,6 +81,7 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 - [Startup Guide: Edge AI Business](https://pirahansiah.com/farshid/content/note-startup-guide.md): Edge AI business plan, fundraising in Germany, pitch decks, and growth strategies.
 - [Terms of Service](https://pirahansiah.com/farshid/content/terms.md): Terms of service for pirahansiah.com: acceptable use of the content, intellectual property notice, disclaimers, and contact information.
 - [Top LinkedIn Posts 2024](https://pirahansiah.com/farshid/content/note-linkedin-2024.md): Highlights from 2024 LinkedIn posts covering camera calibration, C++, NVIDIA optimization, and robotics.
+- [Why Hermes: One Agent Over Dots, Muse Code & Grok Build](https://pirahansiah.com/farshid/content/why-hermes.md): Side-by-side comparison of OpenAI Dots, Meta Muse Code, xAI Grok Build and Hermes Agent — why a self-hosted, provider-agnostic harness beats three…
 - [Why This Site Exists](https://pirahansiah.com/farshid/content/why-not.md): Why this personal knowledge base exists, what it covers, and the principles behind how it is built and maintained.
 
 ## Courses

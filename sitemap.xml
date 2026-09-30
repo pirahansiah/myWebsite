@@ -3,10 +3,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://pirahansiah.com/farshid/content/index.html</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/swarm.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/10-years.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/10-years.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/LocalLLMonMac.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/TernaryBonsai2.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/atlas.md</loc><lastmod>2026-09-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/atlas.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/books-camera-calibration.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/books-computational-intelligence.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/books-cv-meets-llm.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -14,7 +14,7 @@
   <url><loc>https://pirahansiah.com/farshid/content/books-opencv5-ch1.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/books-opencv5-ch2.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/books-opencv5-ch3.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/computer-vision.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/computer-vision.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/conference-paper.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/contact.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/course-ai-engineers-guide.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -53,19 +53,19 @@
   <url><loc>https://pirahansiah.com/farshid/content/note-coaching-roadmap.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-computer-vision-overview.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-cpp.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/note-cuda-vscode.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/note-cuda-vscode.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-developer-tools.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-linkedin-2024.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/note-llm-agents.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/note-llm-agents.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-llm-avatar.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/note-llm-blog.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/note-llm-concepts.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/note-llm-blog.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/note-llm-concepts.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-multi-camera.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/note-numba.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/note-numba.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-optical-flow.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-optimization-guide.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-prompt-templates.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/note-pycuda.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/note-pycuda.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-python-configuration.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-seo-for-llms.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-shell-vim.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -99,7 +99,7 @@
   <url><loc>https://pirahansiah.com/farshid/projects/rag/README.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/projects/site-tools/README.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/prompts.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/qr.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/qr.md</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/qwen-image-21-local.md</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/research-tools.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/slides-token-optimization.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -107,6 +107,7 @@
   <url><loc>https://pirahansiah.com/farshid/content/solutions.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/terms.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/use-cases.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/why-hermes.md</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/why-not.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/wiki.md</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
