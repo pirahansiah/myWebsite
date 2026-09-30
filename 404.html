@@ -27,7 +27,7 @@
 
   /* old root-level page paths -> current target (true = html page, not markdown) */
   var OLD = {
-    '/qr'            : '/farshid/content/index.html#content/qr',
+    '/qr'            : 'qr',
     '/crypto'        : 'crypto',
     '/metamask'      : 'metamask',
     '/game'          : 'game',
@@ -79,6 +79,11 @@
   if (moved) { location.replace(moved + location.search + hash); return; }
   var target = null;
 
+  /* Clean route handoff: index.html?p=<route>. The app renders it and immediately
+     rewrites the URL to the permanent path, so the address bar never shows a
+     #content/… hash — not even for the instant it takes to redirect. */
+  function R(route){ return HOME + '?p=' + encodeURIComponent(route); }
+
   /* front-matter permalinks (PIRAHANSIAH page headers): /qr/, /notes/pubs/10-years/, … */
   var PERM = window.PERMALINKS || {};
   var p1 = path.replace(/^\/+|\/+$/g, '').toLowerCase();          // farshid/content/… or …/qr
@@ -90,32 +95,32 @@
 
   if (PERM[permKey]) {
     var ps = PERM[permKey];
-    target = HOME + (ps === 'atlas' ? '#atlas' : '#content/' + ps);
+    target = R(ps === 'atlas' ? 'atlas' : 'content/' + ps);
   } else if (md) {
     /* the page file itself (old decks, bookmarks, search results) */
     var slug = md[1].toLowerCase();
-    target = HOME + '#content/' + (SLUG[slug] || slug);
+    target = R('content/' + (SLUG[slug] || slug));
   } else if (htm) {
     /* a page that used to exist as .html (every link shared before Sep 2026) */
     var slug = htm[1].toLowerCase();
-    if (slug === 'atlas')      target = HOME + '#atlas';
-    else if (slug === 'index') target = HOME + (hash || '#home');
-    else                       target = HOME + '#content/' + (SLUG[slug] || slug);
+    if (slug === 'atlas')      target = R('atlas');
+    else if (slug === 'index') target = R(hash ? hash.replace(/^#/,'') : 'home');
+    else                       target = R('content/' + (SLUG[slug] || slug));
   } else if (path === '' || path === '/' || path === '/farshid' || path === '/farshid/content') {
-    target = HOME + hash;
+    target = R(hash ? hash.replace(/^#/,'') : 'home');
   } else if (OLD[legacy]) {
     var v = OLD[legacy];
-    target = (v.charAt(0) === '/') ? v : HOME + '#content/' + v;
+    target = (v.charAt(0) === '/') ? v : R('content/' + v);
   } else if (/^\/notes\/slides/.test(legacy)) {
-    target = HOME + '#content/research-tools';                /* talks hub */
+    target = R('content/research-tools');                /* talks hub */
   } else if (/^\/notes\/docs(\/|$)/.test(legacy)) {
-    target = HOME + '#atlas:notes-guides';
+    target = R('atlas:notes-guides');
   } else if (/^\/notes\/pubs/.test(legacy)) {
-    target = HOME + '#atlas:publications';
+    target = R('atlas:publications');
   } else if (/^\/notes(\/|$)/.test(legacy)) {
-    target = HOME + '#atlas';              /* legacy Google Sites paths */
+    target = R('atlas');              /* legacy Google Sites paths */
   } else {
-    target = HOME + '#atlas';              /* unknown: the Atlas is the index */
+    target = R('atlas');              /* unknown: the Atlas is the index */
   }
 
   location.replace(target);
@@ -130,4 +135,4 @@
   })(window, document, "clarity", "script", "ylg7k9stm7");
 </script>
 </head>
-<body><h1>Page not found</h1><p><a href="/farshid/content/index.html#atlas">Go to the Atlas</a></p></body></html>
+<body><h1>Page not found</h1><p><a href="/farshid/content/atlas">Go to the Atlas</a></p></body></html>

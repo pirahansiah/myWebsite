@@ -232,7 +232,7 @@ The single index of everything on pirahansiah.com — every publication, course,
   <h2>Site Pages</h2>
   <ul class="atlas-list">
     <li><a href="/farshid/content/index.html">Home — about &amp; overview</a></li>
-    <li><a href="/farshid/content/index.html#atlas">Atlas — this index</a></li>
+    <li><a href="/farshid/content/atlas">Atlas — this index</a></li>
     <li><a href="/farshid/content/swarm.html">Search Swarm — one search for the whole knowledge base</a></li>
     <li><a href="/farshid/content/qr.md">Scan &amp; Share — all links + QR codes</a></li>
     <li><a href="/farshid/content/contact.md">Contact</a></li>

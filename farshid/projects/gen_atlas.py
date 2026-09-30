@@ -159,7 +159,7 @@ def render():
 def site_pages_items():
     return [
         ('/farshid/content/index.html', 'Home — about & overview'),
-        ('/farshid/content/index.html#atlas', 'Atlas — this index'),
+        ('/farshid/content/atlas', 'Atlas — this index'),
         ('/farshid/content/swarm.html', 'Search Swarm — one search for the whole knowledge base'),
         ('/farshid/content/qr.md', 'Scan & Share — all links + QR codes'),
         ('/farshid/content/contact.md', 'Contact'),

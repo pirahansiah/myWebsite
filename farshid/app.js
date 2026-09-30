@@ -66,7 +66,7 @@
             : (ATLAS_SECTIONS.indexOf(anchor||'')>=0 ? anchor : null);
     if(sec && name!=='atlas'){ setHash('atlas:'+sec); return; }
     var c=$id('content');
-    if(c) c.innerHTML = '<p class="err">That page is gone. The <a id="err-atlas" href="#atlas">Atlas</a>'+
+    if(c) c.innerHTML = '<p class="err">That page is gone. The <a id="err-atlas" href="/farshid/content/atlas">Atlas</a>'+
       ' indexes every publication, note, talk and project on this site.</p>';
     var eb=$id('err-atlas');
     if(eb) eb.addEventListener('click', function(e){ e.preventDefault(); setHash('atlas'); });
@@ -201,16 +201,15 @@
     if(panel.querySelector('.deck-menu')) return;
     var wrap=document.createElement('div');
     wrap.className='deck-menu';
-    var shell='/farshid/content/index.html#';
     wrap.innerHTML =
       '<button class="deck-menu-btn" type="button" aria-expanded="false" aria-controls="deck-menu-list">'+
         '<svg width="15" height="15" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" '+
         'stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg>'+
         '<span>Menu</span></button>'+
       '<div class="deck-menu-list" id="deck-menu-list" hidden>'+
-        '<a href="'+shell+'home">Home</a>'+
-        '<a href="'+shell+'atlas">Atlas</a>'+
-        '<a href="'+shell+'atlas:talks-presentations-keynotes">Presentations</a>'+
+        '<a href="/farshid/content/index.html">Home</a>'+
+        '<a href="/farshid/content/atlas">Atlas</a>'+
+        '<a href="/farshid/content/atlas#talks-presentations-keynotes">Presentations</a>'+
         '<a href="/farshid/content/swarm.html">Search Swarm</a>'+
         '<a href="/qr/">Scan &amp; share</a>'+
       '</div>';
@@ -280,7 +279,7 @@
           if(el){
             e.preventDefault();
             el.scrollIntoView({behavior:'smooth',block:'start'});
-            try{ history.replaceState(null,'','#'+route+':'+slug(id)); }catch(err){}
+            try{ history.replaceState(null,'',routeToPath(route+':'+slug(id))); }catch(err){}
           } else if(route){
             e.preventDefault(); setHash('atlas:'+slug(id));   // the anchor lives on the Atlas
           }
@@ -455,7 +454,8 @@
     buildNav();
     wireLinks($id('baked-home'));   // baked home links: keep in-page anchors from hijacking the route
     // mobile nav toggle already handled below via initMobileNav
-    var r = pathToRoute(location.pathname, location.hash);
+    var q = (location.search||'').match(/[?&]p=([^&]+)/);
+    var r = q ? decodeURIComponent(q[1]) : pathToRoute(location.pathname, location.hash);
     navigate(r);
     try{ history.replaceState(null,'',routeToPath(r)); }catch(e){}
   }
