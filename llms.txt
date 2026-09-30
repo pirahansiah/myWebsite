@@ -2,7 +2,7 @@
 
 > Dr. Farshid Pirahansiah — computer-vision and edge-AI mentor, consultant, and engineer. 21 publications, 3 patents, 12+ years turning research into practical systems for edge and cloud.
 
-Every page is a markdown file: the links below go straight to it (markdown is the full, final text — there is no separate HTML edition). The browser app renders the same files at https://pirahansiah.com/farshid/content/index.html#content/<name>. Contact: info@pirahansiah.com · Full text of the whole site: /llms-full.txt
+Every page is a markdown file: the links below go straight to it (markdown is the full, final text — there is no separate HTML edition). The browser app renders the same files at https://pirahansiah.com/farshid/content/<name>. Contact: info@pirahansiah.com · Full text of the whole site: /llms-full.txt
 
 ## Site
 

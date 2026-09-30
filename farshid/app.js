@@ -303,6 +303,15 @@
         var targetAnchor=m[2]||'';
         a.addEventListener('click', function(e){ e.preventDefault(); setHash(mp+(targetAnchor?':'+slug(targetAnchor):'')); });
       }
+      // clean permanent paths (/farshid/content/<slug>, no .md) -> route, no reload
+      var cleanM = href.match(/^\/farshid\/content\/([a-zA-Z0-9_-]+)$/);
+      if(cleanM){
+        var cslug = cleanM[1];
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          setHash(cslug === 'atlas' ? 'atlas' : 'content/' + cslug);
+        });
+      }
       // internal absolute paths (canonical static pages, qr/swarm tools) navigate in the same tab
     });
   }
@@ -408,20 +417,47 @@
     });
   }
 
-  // ---- routing by hash ----
+  // ---- routing by clean permanent paths (the address bar never shows #content/…) ----
+  function routeToPath(route){
+    var r=(route||'').replace(/^#/,'');
+    var parts=r.split(':');
+    var file=parts[0], anchor=parts[1]||'';
+    var suffix=(anchor && anchor!=='top') ? ('#'+slug(anchor)) : '';
+    if(!file || file==='home') return '/farshid/content/index.html'+suffix;
+    if(file==='atlas') return '/farshid/content/atlas'+suffix;
+    var f=file.replace(/^content\//,'');
+    if(f.indexOf('/')>=0) return '/farshid/'+f+suffix;        // projects/<name>/README
+    return '/farshid/content/'+f+suffix;
+  }
+  function pathToRoute(path, hash){
+    if(hash){
+      var h=(hash||'').replace(/^#\/?/,'').replace(/\.md$/,'');
+      if(h && h!=='home') return h;                            // legacy #content/x / #atlas
+    }
+    var p=(path||'').replace(/\/+$/,'');
+    if(p===''||p==='/') return 'home';
+    if(/index\.html$/.test(p)) return 'home';
+    if(p==='/farshid/content/atlas') return 'atlas';
+    var m=p.match(/^\/farshid\/content\/([a-zA-Z0-9_-]+)$/);
+    if(m) return 'content/'+m[1];
+    return 'home';
+  }
   function setHash(h){
-    try{ history.replaceState(null,'','#'+h); }catch(e){}
     navigate(h);
+    try{ history.pushState(null,'',routeToPath(h)); }catch(e){}
   }
   function onHashChange(){
     navigate(location.hash||'');
+    try{ history.replaceState(null,'',routeToPath(location.hash||'')); }catch(e){}
   }
 
   function init(){
     buildNav();
     wireLinks($id('baked-home'));   // baked home links: keep in-page anchors from hijacking the route
     // mobile nav toggle already handled below via initMobileNav
-    navigate(location.hash||'');
+    var r = pathToRoute(location.pathname, location.hash);
+    navigate(r);
+    try{ history.replaceState(null,'',routeToPath(r)); }catch(e){}
   }
 
   // mobile nav toggle
@@ -443,6 +479,7 @@
   }
 
   window.addEventListener('hashchange', onHashChange);
+  window.addEventListener('popstate', function(){ navigate(pathToRoute(location.pathname, location.hash)); });
   document.addEventListener('DOMContentLoaded', function(){ initMobileNav(); init(); });
   if(document.readyState!=='loading'){ initMobileNav(); init(); }
 })();

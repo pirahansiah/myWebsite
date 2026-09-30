@@ -79,8 +79,8 @@ for folder, fn in page_files():
         'title': title,
         'text': re.sub(r'\s+', ' ', text).strip()[:1800],
         'tags': tags,
-        # the app route: '#content/<page>', and for a page in another folder its path
-        'url': '/farshid/content/index.html#content/' + (slug if folder == 'content' else folder + '/' + slug),
+        # the permanent path: /farshid/content/<page> (no hash, no .md — the app routes it)
+        'url': ('/farshid/content/' + slug) if folder == 'content' else ('/farshid/' + folder + '/' + slug),
     }
     order.append(slug)
 
@@ -88,14 +88,14 @@ for folder, fn in page_files():
 # standalone tools. Each one is merged into its page entry, never appended beside it.
 CURATED = [
     {'slug': 'atlas', 'title': 'Atlas — index of everything',
-     'tags': ['index', 'publications', 'courses', 'notes'], 'url': '/farshid/content/index.html#atlas'},
+     'tags': ['index', 'publications', 'courses', 'notes'], 'url': '/farshid/content/atlas'},
     # The hub lists ~28 destinations below the fold; keywords carry them so search finds
     # the page for a service name without indexing 400KB of card markup.
     {'slug': 'qr', 'title': 'QR Codes — Scan, Open, Copy',
      'tags': ['qr', 'links', 'social', 'referrals', 'referral', 'invite', 'crypto', 'address', 'tip jar',
               'opencode', 'trade republic', 'scalable capital', 'wise', 'etoro', 'kraken',
               'bitcoin', 'ethereum', 'solana', 'bnb', 'base'],
-     'url': '/farshid/content/index.html#content/qr'},
+     'url': '/farshid/content/qr'},
     {'slug': 'presentation-research-tools', 'title': 'The New Era of Research Tools',
      'tags': ['presentation', 'research', 'agents']},
     {'slug': 'presentation', 'title': 'Hermes Agent for Research Assistance',
@@ -116,7 +116,7 @@ for c in CURATED:
             e['url'] = c['url']
     else:
         entries[c['slug']] = {'slug': c['slug'], 'title': c['title'], 'text': ' '.join(c['tags']),
-                              'tags': c['tags'], 'url': c.get('url', '/farshid/content/' + c['slug'] + '.md')}
+                              'tags': c['tags'], 'url': c.get('url', '/farshid/content/' + c['slug'])}
         order.append(c['slug'])
 
 entries['swarm-search'] = {

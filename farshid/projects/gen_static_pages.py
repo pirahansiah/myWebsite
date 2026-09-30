@@ -196,7 +196,7 @@ def write_llms(pages):
         '',
         'Every page is a markdown file: the links below go straight to it (markdown is the full, '
         'final text — there is no separate HTML edition). The browser app renders the same files at '
-        f'{SPA}#content/<name>. Contact: info@pirahansiah.com · Full text of the whole site: /llms-full.txt',
+        f'{ORIGIN}/farshid/content/<name>. Contact: info@pirahansiah.com · Full text of the whole site: /llms-full.txt',
         '',
     ]
     for sec in LLMS_SECTIONS:

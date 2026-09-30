@@ -353,6 +353,49 @@ hermes skills list
 
       
       <section>
+        <h2>Hermes as a Dots (OpenAI) Replacement</h2>
+        <p style="font-size:0.7em; color:#6b7280">Dots = OpenAI's always-on agent (GPT-6 Astra, cloud, $100/mo). Hermes rebuilds the same behaviour on your machine, any model.</p>
+        <div class="code-box">
+          <pre><span class="cmt"># 1. Install</span>
+<span class="cmd">curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash</span>
+<span class="cmd">hermes setup</span>   <span class="cmt"># wizard: model, provider, terminal, gateway, tools</span>
+
+<span class="cmt"># 2. Point it at OpenAI (or any model)</span>
+<span class="cmd">hermes auth add openai-codex</span>   <span class="cmt"># OAuth, or OPENAI_API_KEY in ~/.hermes/.env</span>
+<span class="cmd">hermes model</span>        <span class="cmt"># pick model + provider</span>
+
+<span class="cmt"># 3. Dots-style approval gate</span>
+<span class="cmd">hermes config set approvals.mode smart</span>   <span class="cmt"># ask only when risky</span></pre>
+        </div>
+        <p style="margin-top:0.5em; font-size:0.68em; color:#92400e">GPT-6 Astra is Dots' own hosted model, not a public endpoint — run whatever OpenAI model your key can reach instead.</p>
+      </section>
+
+      <section>
+        <h2>Prompt It Like Dots — Goals, Background, Always-On</h2>
+        <div class="m-2">
+          <div class="c c-left">
+            <h3 style="color:#1a56db">🎯 Goal-driven</h3>
+            <p><code>/goal "plan the launch and keep me posted"</code></p>
+            <p><code>/background "migrate the repo …"</code></p>
+            <p><code>hermes cron create '0 9 * * *' '…'</code></p>
+          </div>
+          <div class="c c-left">
+            <h3 style="color:#15803d">📱 Always-on</h3>
+            <p><code>hermes gateway setup</code> → Slack / Teams / iMessage / Telegram</p>
+            <p><code>hermes gateway start</code> — headless, every platform</p>
+            <p><code>/handoff telegram</code> — move the task to your phone</p>
+          </div>
+        </div>
+        <div class="code-box" style="margin-top:0.5em">
+          <pre><span class="cmt"># Dots: "every morning, check the market, tell me in Slack"</span>
+<span class="cmd">hermes cron create '0 8 * * *'</span> <span class="str">"check overnight news and message me on Slack if material"</span>
+
+<span class="cmt"># Dots: "book this trip, ask before you spend"</span>
+<span class="cmd">/goal</span> <span class="str">"book the SF trip within a $2,500 budget"</span> + <span class="cmd">approvals.mode manual</span></pre>
+        </div>
+      </section>
+
+      <section>
         <h1>Thank You</h1>
         <h2 style="color:#2b3038">Hermes Agent — Updates & Complete Feature Guide</h2>
         <p style="margin-top:1.2em">

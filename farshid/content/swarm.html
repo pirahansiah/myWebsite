@@ -93,7 +93,7 @@ mark { background: rgba(233,84,32,0.18); color: inherit; border-radius: 3px; pad
     <nav class="nav" aria-label="Primary">
       <a href="/">Home</a>
       <a class="active" href="/farshid/content/swarm.html">🕸️ Search Swarm</a>
-      <a href="/farshid/content/index.html#atlas">Atlas</a>
+      <a href="/farshid/content/atlas">Atlas</a>
     </nav>
   </div>
 </header>
@@ -126,7 +126,7 @@ mark { background: rgba(233,84,32,0.18); color: inherit; border-radius: 3px; pad
       <ul class="swarm-list" id="swarm-list"></ul>
       <div class="swarm-empty" id="swarm-empty" hidden>
         <h2>No results</h2>
-        <p>Try a different keyword, or browse the <a href="/farshid/content/index.html#atlas">Atlas</a>.</p>
+        <p>Try a different keyword, or browse the <a href="/farshid/content/atlas">Atlas</a>.</p>
       </div>
     </div>
 
@@ -140,8 +140,8 @@ mark { background: rgba(233,84,32,0.18); color: inherit; border-radius: 3px; pad
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/farshid/content/swarm.html">Search Swarm</a>
-      <a href="/farshid/content/index.html#atlas">Atlas</a>
-      <a href="/farshid/content/index.html#content/qr">Connect</a>
+      <a href="/farshid/content/atlas">Atlas</a>
+      <a href="/farshid/content/qr">Connect</a>
     </div>
     <div class="footer-note">EDGE AI &middot; COMPUTER VISION &middot; &copy; <span data-year>2026</span></div>
   </div>
@@ -255,9 +255,9 @@ mark { background: rgba(233,84,32,0.18); color: inherit; border-radius: 3px; pad
       var tags=Object.keys(tagSet).slice(0,8);
       if(tags.length) html+='<h3>Tags in play</h3><p>'+tags.map(esc).join(' · ')+'</p>';
     } else {
-      html+='<p>No exact match — try a broader keyword, or browse the <a href="/farshid/content/index.html#atlas">Atlas</a>.</p>';
+      html+='<p>No exact match — try a broader keyword, or browse the <a href="/farshid/content/atlas">Atlas</a>.</p>';
     }
-    html+='<h3>Browse</h3><p><a href="/farshid/content/index.html#atlas">Browse the full Atlas</a></p>';
+    html+='<h3>Browse</h3><p><a href="/farshid/content/atlas">Browse the full Atlas</a></p>';
     synthEl.innerHTML=html; synthEl.classList.add('show');
   }
 
