@@ -1,0 +1,3 @@
+Pillow>=10.0
+numpy>=1.24
+fonttools[woff]>=4.50

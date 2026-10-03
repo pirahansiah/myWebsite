@@ -126,8 +126,10 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 
 ## Projects
 
+- [claude-config](https://pirahansiah.com/farshid/projects/claude-config/README.md): A downloadable agent workspace that turns dense model output into controlled-English text, diagrams, interactive pages and explainer videos — the…
 - [HTML motion graphic](https://pirahansiah.com/farshid/projects/html-motion-graphic/README.md): A standalone, dependency-free motion graphic index for the pages on pirahansiah.com. The SVG constellation, topic filters, search, selected-page…
 - [llm-tools](https://pirahansiah.com/farshid/projects/llm-tools/README.md): Source files for the llm-tools project.
+- [Markdown Motion Studio](https://pirahansiah.com/farshid/projects/md-motion-studio/README.md): mastermotion.py generates short, silent MP4 treatments from pages in farshid/content/: a 2D concept map, an editorial motion-graphic, and a perspective 3D…
 - [mimo](https://pirahansiah.com/farshid/projects/mimo/README.md): Source files for the mimo project.
 - [rag](https://pirahansiah.com/farshid/projects/rag/README.md): Source files for the rag project.
 - [site-tools](https://pirahansiah.com/farshid/projects/site-tools/README.md): Source files for the site-tools project.

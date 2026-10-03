@@ -256,3 +256,27 @@ Notes:
 * - Always use the same folder path (D:\\\\WSL\\\\DistroName) on every PC for consistency.
 * - For each new PC, simply export the distro on the main PC and import it into the same folder.
 * - This keeps all your projects, code, and datasets portable and consistent across machines without needing multiple copies.
+
+<!-- motion-graphic:10-years -->
+<figure class="md-motion">
+  <video controls playsinline preload="metadata" poster="/farshid/assets/motion/10-years/2d.jpg" aria-label="2D visual summary for this page">
+    <source src="/farshid/assets/motion/10-years/2d.mp4" type="video/mp4">
+    Video playback is not supported by this browser.
+  </video>
+  <figcaption>2D visual summary</figcaption>
+</figure>
+<figure class="md-motion">
+  <video controls playsinline preload="metadata" poster="/farshid/assets/motion/10-years/motion.jpg" aria-label="Motion graphic for this page">
+    <source src="/farshid/assets/motion/10-years/motion.mp4" type="video/mp4">
+    Video playback is not supported by this browser.
+  </video>
+  <figcaption>Motion graphic</figcaption>
+</figure>
+<figure class="md-motion">
+  <video controls playsinline preload="metadata" poster="/farshid/assets/motion/10-years/3d.jpg" aria-label="3D perspective study for this page">
+    <source src="/farshid/assets/motion/10-years/3d.mp4" type="video/mp4">
+    Video playback is not supported by this browser.
+  </video>
+  <figcaption>3D perspective study</figcaption>
+</figure>
+<!-- /motion-graphic:10-years -->

@@ -1,3 +1,25 @@
+/* Motion videos generated from selected Markdown pages */
+.md-motion {
+  margin: clamp(1.5rem, 4vw, 3rem) 0;
+  max-width: 960px;
+}
+.md-motion video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--wall-dark);
+  box-shadow: var(--shadow-sm);
+}
+.md-motion figcaption {
+  margin-top: .55rem;
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+
 /* ============================================================
    pirahansiah.com — design system
    Committed world: the Ubuntu 26 desktop (Yaru / GNOME 46+),
