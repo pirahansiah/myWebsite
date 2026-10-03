@@ -17,7 +17,7 @@ The single index of everything on pirahansiah.com — every publication, course,
   <a href="#mentoring-coaching">Mentoring &amp; Coaching <span>6</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
   <a href="#site-pages">Site Pages <span>6</span></a>
-  <a href="#projects">Projects <span>5</span></a>
+  <a href="#projects">Projects <span>6</span></a>
 </nav>
 
 <section class="atlas-sec" id="publications">
@@ -243,6 +243,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <section class="atlas-sec" id="projects">
   <h2>Projects</h2>
   <ul class="atlas-list">
+    <li><a href="/farshid/projects/claude-config/README.md">Understanding model output — text, diagrams, pages, video — claude-config</a></li>
     <li><a href="/farshid/projects/html-motion-graphic/README.md">HTML motion graphic — html-motion-graphic</a></li>
     <li><a href="/farshid/projects/llm-tools/README.md">llm-tools</a></li>
     <li><a href="/farshid/projects/mimo/README.md">mimo</a></li>

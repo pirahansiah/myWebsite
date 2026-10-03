@@ -1,0 +1,28 @@
+# machine-specific (never commit)
+CLAUDE.local.md
+settings.local.json
+*.local.md
+PERSONAL.md
+.env
+.env.local
+secrets/
+
+# macOS junk
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# session data
+sessions/
+todos/
+shell-snapshots/
+statsig/
+projects/
+backups/
+
+# python / build artifacts
+__pycache__/
+*.py[cod]
+runs/
+builds/
