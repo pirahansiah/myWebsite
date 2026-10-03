@@ -213,7 +213,14 @@ def main():
                     all_similar.append({"url": href, "text": text, "source": src})
 
     print(f"\n--- Local Markdown File Check ---")
-    contents_dir = "/Volumes/4tb/2026-07/myWebsite/notes"
+    # All site files live under one tree: /Users/farshid/Library/CloudStorage/Dropbox/pirahansiah-com/farshid
+    # This script sits in <site>/farshid/projects/site-tools/, so the site root is derived from it;
+    # set SITE_ROOT to scan a different checkout.
+    SITE_ROOT = os.environ.get(
+        "SITE_ROOT",
+        os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..")),
+    )
+    contents_dir = os.path.join(SITE_ROOT, "farshid", "content")
     broken_local, md_files = scan_markdown_files(contents_dir)
     print(f"  Scanned {len(md_files)} markdown/HTML files")
 
