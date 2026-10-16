@@ -18,7 +18,7 @@ Standalone HTML is used for the app shell, search, QR route shim, redirect stubs
 GitHub Pages serves this repository from the `main` branch root, so the deployment shell and required metadata stay at the repository root: `index.html`, `404.html`, `.nojekyll`, `CNAME`, `robots.txt`, `sitemap.xml`, and the generated `llms*.txt` files. Moving those into `farshid/` would break the current Pages deployment.
 
 - `farshid/content/` — the homepage, all public markdown pages, and page-specific images; one flat source directory. `atlas.md` is the index and `swarm.html` is the standalone search tool.
-- `farshid/assets/` — sitewide profile/favicon images and self-hosted Ubuntu Sans fonts.
+- `farshid/assets/` — sitewide profile and favicon images, plus the generated motion videos under `assets/motion/`.
 - `farshid/downloads/` — downloadable documents, scripts, archives, and their store-listing source text.
 - `farshid/app.js`, `md.js`, `style.css`, `deck.css`, and `search-index.js` — app shell, markdown renderer, hash router, design system, deck styles, and generated search data.
 - `farshid/permalinks.js` and `page-aliases.js` — generated URL maps used by root `404.html`.
@@ -97,7 +97,7 @@ display instead of sitting in a narrow centred column.
   orange), `--accent-ink` `#b8410f` for link text, `--accent-fill` `#cc400b` behind
   white labels, `--radius` 12px. A `prefers-color-scheme: dark` block swaps in the
   Yaru dark set (`#242424` canvas). Decks stay white/black in both.
-- **Type**: Ubuntu Sans (self-hosted) with `Ubuntu`/system fallbacks, Ubuntu Sans Mono for code; body text scales with the viewport and is 18px on phone-sized screens, with larger touch targets for controls.
+- **Type**: system fonts only — `system-ui`/`-apple-system`/Segoe UI/Roboto for text and `ui-monospace`/Menlo for code; no webfont files are shipped. Body text scales with the viewport and is 18px on phone-sized screens, with larger touch targets for controls.
 - **Width**: nothing caps the layout — `--maxw` is `100%` and the gutter is
   `clamp(18px, 2.2vw, 52px)`. Prose paragraphs cap at `120ch` for readability;
   above 1620px a long prose page (`article.prose-cols`, 3 columns above 2400px)

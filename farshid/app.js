@@ -143,8 +143,7 @@
     panel.__deck.on('slidechanged', function(){ panel.classList.add('deck-started'); fitDeckSlides(panel); });
     panel.__deck.on('ready', function(){ fitDeckSlides(panel); });
     panel.__deck.on('resize', function(){ fitDeckSlides(panel); });
-    // Webfonts change the text metrics, so a deck fitted with the fallback face overflows
-    // again the moment Ubuntu Sans arrives.
+    // Fonts load after first paint, so a deck fitted before they are ready can overflow.
     if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ fitDeckSlides(panel); });
     var rb=document.getElementById('restart-btn');
     if(rb) rb.addEventListener('click', function(e){ e.stopPropagation(); panel.__deck.slide(0); });

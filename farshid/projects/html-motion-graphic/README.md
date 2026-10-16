@@ -16,4 +16,4 @@ python3 build_catalog.py
 
 The script reads the neighboring website's `sitemap.xml` and markdown titles and rewrites only `catalog.js` in this directory. It does not modify the website. This script assumes the project remains at `farshid/projects/html-motion-graphic/` inside the site repository.
 
-The Ubuntu Sans font files are copied under the Ubuntu Font Licence; the licence is included in `assets/`.
+Type is set with the system font stack (`system-ui`/Segoe UI/Roboto for text, `ui-monospace`/Menlo for code); no webfont files ship with this page.

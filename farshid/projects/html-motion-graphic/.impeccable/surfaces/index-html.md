@@ -17,7 +17,7 @@ Constraints: This project is isolated in `farshid/projects/html-motion-graphic/`
 
 THESIS: Replace a static all-pages list with a navigable constellation where the full collection is visible and every node opens its real page.
 
-OWN-WORLD: Extend the existing Ubuntu desktop window: aubergine wallpaper, flat Yaru light surfaces, Ubuntu Sans, hairline structure, and Yaru orange as the interaction accent. No new visual identity.
+OWN-WORLD: Extend the existing Ubuntu desktop window: aubergine wallpaper, flat Yaru light surfaces, system UI type, hairline structure, and Yaru orange as the interaction accent. No new visual identity.
 
 STORY: Visitors see the breadth of the collection, focus a topic or search, inspect a page, then open its canonical rendered destination.
 

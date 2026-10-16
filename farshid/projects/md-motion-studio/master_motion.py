@@ -6,7 +6,7 @@ Examples:
   python3 master_motion.py --pages atlas --mode 3d --embed
   python3 master_motion.py --all --mode motion
 
-Requires Pillow, NumPy, FontTools (WOFF2 font conversion), and ffmpeg.
+Requires Pillow, NumPy and ffmpeg. FontTools is only needed when a WOFF2 font is used.
 """
 from __future__ import annotations
 
@@ -26,10 +26,14 @@ from typing import Iterable
 try:
     import numpy as np
     from PIL import Image, ImageDraw, ImageFont, ImageFilter
-    from fontTools.ttLib import TTFont
 except ImportError as exc:
     print(f"Missing Python dependency: {exc}. Install with: python3 -m pip install -r requirements.txt", file=sys.stderr)
     raise SystemExit(2)
+
+try:  # only needed to convert a WOFF2 font for Pillow
+    from fontTools.ttLib import TTFont
+except ImportError:  # pragma: no cover
+    TTFont = None
 
 W, H = 960, 540
 FPS, SECONDS = 24, 6
@@ -108,22 +112,49 @@ def resolve_pages(root: Path, names: list[str], all_pages: bool) -> list[Path]:
     return resolved
 
 
+SYSTEM_FONTS = {
+    # the site ships no webfonts, so fall back to a font the machine already has
+    "sans": (
+        "/System/Library/Fonts/Supplemental/Arial.ttf",
+        "/System/Library/Fonts/Helvetica.ttc",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    ),
+    "mono": (
+        "/System/Library/Fonts/Supplemental/Courier New.ttf",
+        "/System/Library/Fonts/Menlo.ttc",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+    ),
+}
+
+
 def font_files(root: Path, cache: Path) -> tuple[Path, Path]:
+    """Return the (regular, mono) font paths used to draw every frame.
+
+    A WOFF2 in `farshid/assets/` wins when one is present (converted to TTF with FontTools);
+    otherwise the first existing system font from SYSTEM_FONTS is used as-is.
+    """
     assets = root / "farshid" / "assets"
-    regular = assets / "ubuntu-sans-latin.woff2"
-    mono = assets / "ubuntu-sans-mono-latin.woff2"
-    if not regular.is_file():
-        raise FileNotFoundError(f"Site Ubuntu Sans font is missing: {regular}")
-    cache.mkdir(parents=True, exist_ok=True)
-    converted = []
-    for src in (regular, mono if mono.exists() else regular):
-        out = cache / (src.stem + ".ttf")
-        if not out.exists() or out.stat().st_mtime < src.stat().st_mtime:
-            font = TTFont(str(src))
-            font.flavor = None
-            font.save(str(out))
-        converted.append(out)
-    return converted[0], converted[1]
+    resolved = []
+    for key, woff2 in (("sans", assets / "ubuntu-sans-latin.woff2"),
+                       ("mono", assets / "ubuntu-sans-mono-latin.woff2")):
+        if woff2.is_file():
+            if TTFont is None:
+                raise FileNotFoundError(
+                    f"{woff2} needs FontTools: python3 -m pip install -r requirements.txt")
+            cache.mkdir(parents=True, exist_ok=True)
+            out = cache / (woff2.stem + ".ttf")
+            if not out.exists() or out.stat().st_mtime < woff2.stat().st_mtime:
+                converted = TTFont(str(woff2))
+                converted.flavor = None
+                converted.save(str(out))
+            resolved.append(out)
+            continue
+        found = next((Path(c) for c in SYSTEM_FONTS[key] if Path(c).is_file()), None)
+        if found is None:
+            raise FileNotFoundError(
+                f"No {key} font: add a WOFF2 under {assets} or a path to SYSTEM_FONTS")
+        resolved.append(found)
+    return resolved[0], resolved[1]
 
 
 def font(path: Path, size: int) -> ImageFont.FreeTypeFont:
