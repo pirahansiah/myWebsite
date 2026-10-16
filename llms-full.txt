@@ -1,6 +1,6 @@
 # Farshid Pirahansiah — full site text
 
-Generated 2026-10-04 from the markdown sources of https://pirahansiah.com.
+Generated 2026-10-16 from the markdown sources of https://pirahansiah.com.
 Each section is one page, in the order of the Atlas.
 
 # Site
@@ -15,12 +15,12 @@ The single index of everything on pirahansiah.com — every publication, course,
 <nav class="atlas-jump" aria-label="Atlas sections">
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
-  <a href="#notes-guides">Notes &amp; Guides <span>39</span></a>
+  <a href="#notes-guides">Notes &amp; Guides <span>40</span></a>
   <a href="#downloads">Downloads <span>28</span></a>
   <a href="#mentoring-coaching">Mentoring &amp; Coaching <span>6</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
   <a href="#site-pages">Site Pages <span>6</span></a>
-  <a href="#projects">Projects <span>6</span></a>
+  <a href="#projects">Projects <span>7</span></a>
 </nav>
 
 <section class="atlas-sec" id="publications">
@@ -100,6 +100,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/note-swarm.md">Agent Swarm</a></li>
     <li><a href="/farshid/content/wiki.md">All Pages</a></li>
     <li><a href="/farshid/content/note-llm-avatar.md">Building a Local Video Avatar Generator Using Ollama and Open-Source Tools</a></li>
+    <li><a href="/farshid/content/cable-hub.md">Cable Hub</a></li>
     <li><a href="/farshid/content/note-coaching-roadmap.md">Computer Vision Expertise: Teaching &amp; Coaching Services</a></li>
     <li><a href="/farshid/content/conference-paper.md">Conference Papers</a></li>
     <li><a href="/farshid/content/note-developer-tools.md">Developer Tools &amp; Setup Guide</a></li>
@@ -249,6 +250,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/projects/claude-config/README.md">Understanding model output — text, diagrams, pages, video — claude-config</a></li>
     <li><a href="/farshid/projects/html-motion-graphic/README.md">HTML motion graphic — html-motion-graphic</a></li>
     <li><a href="/farshid/projects/llm-tools/README.md">llm-tools</a></li>
+    <li><a href="/farshid/projects/md-motion-studio/README.md">Markdown Motion Studio — md-motion-studio</a></li>
     <li><a href="/farshid/projects/mimo/README.md">mimo</a></li>
     <li><a href="/farshid/projects/rag/README.md">rag</a></li>
     <li><a href="/farshid/projects/site-tools/README.md">site-tools</a></li>
@@ -12975,6 +12977,40 @@ md5sum
 
 ---
 
+## Cable Hub
+URL: https://pirahansiah.com/farshid/content/cable-hub.md
+
+the cable is play important rule in any part of project
+based on my experience i have some idea
+- use thunderbolt cable (i use apple thunderbolt 5 )
+	- if possible thunderbolt 5 cable support intel **Remote Direct Memory Access (RDMA)** also can use for AMD USB 4
+	- the speed and the bandwidth and power delivery is grantee
+	- the camera system has less problem with bandwidth transfer data and use multiple camera system
+	- the thunderbolt cable must verify minimum bandwidth to certified so it must has minimum quality and you do not need to worry about connections
+
+	|Feature| Lenovo Legion 5 15AGP11 Setup| Mac Studio Cluster Setup|
+|---|---|---|
+|**Connection Speed**|~10 to 20 Gbps (Host Network Limit)|Up to 80–120 Gbps (Thunderbolt 5)|
+|**How It Handles Data**|**CPU Bottleneck**: The CPU processes every single packet.|**True RDMA**: Data bypasses the CPU completely.|
+|**System Memory Speed**|~90 GB/s (Dual-Channel DDR5-5600)|460 GB/s to 1.2 TB/s (Unified Memory)|
+|**LLM Inference Speed**|**Slow**: Split tokens cause lag over the network.|**Fast**: Acts like one single giant graphics card.|
+
+
+- use DP 2.1 first HDMI 2.2 second
+	- display port cable it is support max for the monitor specially 3D display
+	- only HDMI 2.2 - 96 Gbps Ultra High Speed
+		- 16K 8K HDMI 2.2 Cable 2 m, 96 Gbps Ultra High Speed, 16K @ 60Hz, 8K @ 240Hz, 4K @ 480Hz, eARC, HDR10+, Dolby Vision, HDCP 2.3,
+	- only (DisplayPort) DP 2.1
+		- DisplayPort 2.1/2.1b: Offers up to 80 Gbps bandwidth and introduces active DP80 Low Loss (LL)
+- Hub
+	- i tested many different hub and I found that only the CalDigit thunderbolt 5 is good for windows, mac, linux
+- adaptor / charger
+	- if you use adaptor that has many ports like 2 usbc and one 1 usbA you must know the Watt is divided between all ports if you use all at the same time
+- power-bank
+	- use the model that support Laptop Power Bank, 165W
+
+---
+
 ## Complete Portfolio
 URL: https://pirahansiah.com/farshid/content/use-cases.md
 
@@ -24321,6 +24357,8 @@ URL: https://pirahansiah.com/farshid/content/10-years.md
 
 
 [Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/content/localAI.md)
+
+[Cable Hub — the cables, hubs and adapters that actually work with a laptop, Windows PC and Mac cluster](/farshid/content/cable-hub.md)
 
 ## Vision-Language-Action models
 

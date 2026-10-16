@@ -12,12 +12,12 @@ The single index of everything on pirahansiah.com — every publication, course,
 <nav class="atlas-jump" aria-label="Atlas sections">
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
-  <a href="#notes-guides">Notes &amp; Guides <span>39</span></a>
+  <a href="#notes-guides">Notes &amp; Guides <span>40</span></a>
   <a href="#downloads">Downloads <span>28</span></a>
   <a href="#mentoring-coaching">Mentoring &amp; Coaching <span>6</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
   <a href="#site-pages">Site Pages <span>6</span></a>
-  <a href="#projects">Projects <span>6</span></a>
+  <a href="#projects">Projects <span>7</span></a>
 </nav>
 
 <section class="atlas-sec" id="publications">
@@ -97,6 +97,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/note-swarm.md">Agent Swarm</a></li>
     <li><a href="/farshid/content/wiki.md">All Pages</a></li>
     <li><a href="/farshid/content/note-llm-avatar.md">Building a Local Video Avatar Generator Using Ollama and Open-Source Tools</a></li>
+    <li><a href="/farshid/content/cable-hub.md">Cable Hub</a></li>
     <li><a href="/farshid/content/note-coaching-roadmap.md">Computer Vision Expertise: Teaching &amp; Coaching Services</a></li>
     <li><a href="/farshid/content/conference-paper.md">Conference Papers</a></li>
     <li><a href="/farshid/content/note-developer-tools.md">Developer Tools &amp; Setup Guide</a></li>
@@ -246,6 +247,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/projects/claude-config/README.md">Understanding model output — text, diagrams, pages, video — claude-config</a></li>
     <li><a href="/farshid/projects/html-motion-graphic/README.md">HTML motion graphic — html-motion-graphic</a></li>
     <li><a href="/farshid/projects/llm-tools/README.md">llm-tools</a></li>
+    <li><a href="/farshid/projects/md-motion-studio/README.md">Markdown Motion Studio — md-motion-studio</a></li>
     <li><a href="/farshid/projects/mimo/README.md">mimo</a></li>
     <li><a href="/farshid/projects/rag/README.md">rag</a></li>
     <li><a href="/farshid/projects/site-tools/README.md">site-tools</a></li>

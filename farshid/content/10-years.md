@@ -32,6 +32,8 @@ hashtags: "#cv #debugging #lessonslearned #opencv"
 
 [Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/content/localAI.md)
 
+[Cable Hub — the cables, hubs and adapters that actually work with a laptop, Windows PC and Mac cluster](/farshid/content/cable-hub.md)
+
 ## Vision-Language-Action models
 
 design, implement and scale VLA models and foundation architectures for robotic manipulation and navigation.
