@@ -115,14 +115,16 @@ Machine used for the test: Apple M3, 16 GB RAM, macOS. Model: 949 MB, 4.21B para
 
 | measurement | value |
 | :--- | ---: |
-| prompt processing | 25 - 85 tok/s |
-| generation | 11 - 20 tok/s (51 - 91 ms per token) |
-| RAM | unchanged, 1.7 - 2.0 GB |
+| prompt processing, short prompt | 32 - 85 tok/s |
+| prompt processing, 14,026-token prompt | 18.2 tok/s (772 s total) |
+| generation, short context | 11 - 20 tok/s (51 - 91 ms per token) |
+| generation inside a 14k context | 7.8 tok/s |
+| RAM | unchanged, 1.73 GB after load, 2.03 GB after the long prompt |
 
 **What that means in practice**
 
-- A one-word answer to a short question: about 1-2 seconds with the GPU, 3-6 seconds on CPU.
-- The first real turn: Hermes sends a ~20,000-token prompt (system prompt plus tool schemas). With the GPU that is 84-104 seconds to the first token. On CPU only, arithmetic from the measured 25 tok/s prefill gives around 14 minutes — the one number on this page I derived rather than measured end to end.
+- A one-word answer to a short question: about 1-2 seconds with the GPU, 3-6 seconds on CPU. Inside a long context, generation drops to 7.8 tokens per second on CPU, so a 200-word answer there takes minutes, not seconds.
+- The first real turn: Hermes sends a ~20,000-token prompt (system prompt plus tool schemas). With the GPU that is 84-104 seconds to the first token. CPU only measured 772 seconds to process 14,026 tokens, so scaling that measured rate to a 20,000-token prompt gives roughly 18-20 minutes before the first token — the one number on this page I derived rather than measured end to end.
 - Every later turn reuses the cached prompt prefix, so it answers almost immediately. One long session is far cheaper than many short ones.
 - A genuinely old CPU (2015-era, two cores) will land 3-10x below the CPU row above. It still works, but treat it as a background/batch model rather than a chat you watch.
 
@@ -138,4 +140,4 @@ Machine used for the test: Apple M3, 16 GB RAM, macOS. Model: 949 MB, 4.21B para
 
 ## One line
 
-A ternary 4B model plus the fork's llama-server plus a `q4_0` KV cache at 64k context gives a fully local Hermes model in under 2 GB of RAM — about 40 tokens per second with a GPU, about 15 without one, and the only real price of an old GPU-less machine is the first turn.
+A ternary 4B model plus the fork's llama-server plus a `q4_0` KV cache at 64k context gives a fully local Hermes model in under 2 GB of RAM — about 40 tokens per second with a GPU and 11-20 without one at short context (7.8 inside a long CPU context), and the only real price of an old GPU-less machine is the first turn.
