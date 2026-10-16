@@ -12,7 +12,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <nav class="atlas-jump" aria-label="Atlas sections">
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
-  <a href="#notes-guides">Notes &amp; Guides <span>40</span></a>
+  <a href="#notes-guides">Notes &amp; Guides <span>41</span></a>
   <a href="#downloads">Downloads <span>28</span></a>
   <a href="#mentoring-coaching">Mentoring &amp; Coaching <span>6</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
@@ -94,6 +94,7 @@ The single index of everything on pirahansiah.com — every publication, course,
   <h2>Notes &amp; Guides</h2>
   <ul class="atlas-list">
     <li><a href="/farshid/content/note-llm-blog.md">2025</a></li>
+    <li><a href="/farshid/content/local-llm-hermes-low-ram.md">A local LLM for Hermes Agent on an old machine: under 8 GB RAM, no GPU</a></li>
     <li><a href="/farshid/content/note-swarm.md">Agent Swarm</a></li>
     <li><a href="/farshid/content/wiki.md">All Pages</a></li>
     <li><a href="/farshid/content/note-llm-avatar.md">Building a Local Video Avatar Generator Using Ollama and Open-Source Tools</a></li>

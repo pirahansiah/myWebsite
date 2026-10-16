@@ -13,6 +13,8 @@ A local model on a laptop is small in one thing only: the context window. The ti
 - 131k qwen3.5-9b q4
 - 32k Ternary-Bonsai-2-27B (based on qwen3.8-27b) it is q1
 
+For the smallest setup I run — a 1-bit 4B model at 64k context, under 2 GB of RAM, no GPU — the whole recipe with measured RAM, prefill and tokens-per-second numbers is on [A local LLM for Hermes Agent on an old machine](/notes/local-llm-hermes-low-ram/).
+
 ## Writing prompts on a 32k budget
 
 You have 32k of context and you must also include reference material. Treat the 32k as a budget. Your instructions, the reference text, the chat history and the model's answer all count against it.
@@ -77,7 +79,7 @@ Both machines use AMD Ryzen AI processors: the Ryzen AI 400 series in the Legion
 
 ### Ternary-Bonsai-2-27B on a Lenovo Legion 5 15AGP11
 
-The laptop has an AMD Ryzen AI 7 450 processor, 32 GB of RAM, a 1 TB SSD and an NVIDIA GeForce RTX 5060 GPU. Ternary-Bonsai-2-27B performed quickly and accurately. The updated model, Ternary Bonsai 2 27B PTQ1_0, needs a different version of the Ollama server, so it needs custom compilation and build procedures. With 8 GB of VRAM the context window is limited to 32k tokens, which makes the model well suited to short tasks. For larger projects I use Qwen3.5-9B, which supports a 100k token context window.
+The laptop has an AMD Ryzen AI 7 450 processor, 32 GB of RAM, a 1 TB SSD and an NVIDIA GeForce RTX 5060 GPU. Ternary-Bonsai-2-27B performed quickly and accurately. The updated model, Ternary Bonsai 2 27B PTQ1_0, needs a different version of the Ollama server, so it needs custom compilation and build procedures. The same PTQ1_0 packing is why the 4B version needs the fork's llama-server instead of the stock one — the prebuilt binary and the exact flags are in [the low-RAM page](/notes/local-llm-hermes-low-ram/). With 8 GB of VRAM the context window is limited to 32k tokens, which makes the model well suited to short tasks. For larger projects I use Qwen3.5-9B, which supports a 100k token context window.
 
 ### HP ZBook Ultra G1a — Ryzen AI Max+ Pro 395, 128 GB unified memory
 

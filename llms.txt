@@ -44,6 +44,7 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 ## Notes & Guides
 
 - [3D Vision & Real-Time Multi-Camera Systems](https://pirahansiah.com/farshid/content/note-3d-vision.md): Real-time 3D point cloud generation, depth sensing, and multi-camera synchronization for computer vision applications.
+- [A local LLM for Hermes Agent on an old machine: under 8 GB RAM, no GPU](https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram.md): How to give Hermes Agent a fully local model on an old, GPU-less, under-8 GB machine: a 949 MB 1-bit 4B model, the fork's llama-server, a q4_0 KV cache at…
 - [Accelerate Python with Numba's @jit(nopython=True)](https://pirahansiah.com/farshid/content/note-numba.md): Tutorial on using Numba's @jit decorator to compile Python functions into optimized machine code for faster numerical computing.
 - [Advanced LLM Concepts](https://pirahansiah.com/farshid/content/note-llm-concepts.md): Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production deployment.
 - [Agent Swarm](https://pirahansiah.com/farshid/content/note-swarm.md): Agent Swarm — ask a question and watch a live swarm of research agents map and synthesize the whole pirahansiah.com knowledge base.
