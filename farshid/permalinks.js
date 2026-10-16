@@ -215,7 +215,7 @@ window.PERMALINKS = {
   "projects/mimo": "projects/mimo/README",
   "projects/rag": "projects/rag/README",
   "projects/site-tools": "projects/site-tools/README",
-  "qr": "qr",
+  "qrcode": "qr",
   "solana-games": "solana-games",
   "terms": "terms"
 };

@@ -112,7 +112,7 @@ Windows Task Scheduler is close to cron jobs on Linux and macOS.
 
 ## Referral links
 
-The tools I use, with my referral links, are on the [QR codes page](/qr/).
+The tools I use, with my referral links, are on the [QR codes page](/qrcode).
 
 <!--
 Working notes kept from the draft of this page (not rendered, and kept out of the search

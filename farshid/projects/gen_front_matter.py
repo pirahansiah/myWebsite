@@ -75,7 +75,7 @@ PERMALINK = {
     'privacy':      '/privacy/',
     'menus':        '/notes/sitemap/',
     'wiki':         '/notes/wiki/',
-    'qr':           '/qr/',
+    'qr':           '/qrcode/',
     'presentation': '/notes/slides/presentation/',
     'slides-token-optimization': '/notes/slides/token-optimization/',
     'contact-index': '/contact/',

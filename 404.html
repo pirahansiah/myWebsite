@@ -28,6 +28,7 @@
   /* old root-level page paths -> current target (true = html page, not markdown) */
   var OLD = {
     '/qr'            : 'qr',
+    '/qrcode'        : 'qr',
     '/crypto'        : 'crypto',
     '/metamask'      : 'metamask',
     '/game'          : 'game',
@@ -49,7 +50,9 @@
   var MOVED_FILES = {
     '/farshid/avatar.jpg': '/farshid/assets/profile.jpg',
     '/farshid/favicon.png': '/farshid/assets/favicon.png',
-    '/qr/index.html': '/farshid/qr/index.html',
+    '/qr/index.html': '/farshid/content/qrcode.html',
+    '/farshid/qr': '/farshid/content/qrcode.html',
+    '/farshid/qr/index.html': '/farshid/content/qrcode.html',
     '/farshid/products/computer-vision-ai-engineers-guide.pdf': '/farshid/downloads/cv-engineers-guide.pdf',
     '/farshid/products/local-llm-optimization-20260905.zip': '/farshid/downloads/local-llm-source.zip',
     '/farshid/products/optimize_local_llm.sh': '/farshid/downloads/optimize-llm.sh',
@@ -84,9 +87,9 @@
      #content/… hash — not even for the instant it takes to redirect. */
   function R(route){ return HOME + '?p=' + encodeURIComponent(route); }
 
-  /* front-matter permalinks (PIRAHANSIAH page headers): /qr/, /notes/pubs/10-years/, … */
+  /* front-matter permalinks (PIRAHANSIAH page headers): /qrcode/, /notes/pubs/10-years/, … */
   var PERM = window.PERMALINKS || {};
-  var p1 = path.replace(/^\/+|\/+$/g, '').toLowerCase();          // farshid/content/… or …/qr
+  var p1 = path.replace(/^\/+|\/+$/g, '').toLowerCase();          // farshid/content/… or …/qrcode
   var p2 = p1.replace(/^farshid\//, '');                          // the same path without /farshid/
   var permKey = PERM[p1] ? p1 : (PERM[p2] ? p2 : p1);
   var md = path.match(/\/([^\/]+)\.md$/i);

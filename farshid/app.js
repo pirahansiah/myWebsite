@@ -210,7 +210,7 @@
         '<a href="/farshid/content/atlas">Atlas</a>'+
         '<a href="/farshid/content/atlas#talks-presentations-keynotes">Presentations</a>'+
         '<a href="/farshid/content/swarm.html">Search Swarm</a>'+
-        '<a href="/qr/">Scan &amp; share</a>'+
+        '<a href="/qrcode">Scan &amp; share</a>'+
       '</div>';
     panel.appendChild(wrap);
     var btn=wrap.querySelector('.deck-menu-btn'), list=wrap.querySelector('.deck-menu-list');

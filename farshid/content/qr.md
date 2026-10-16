@@ -1,13 +1,13 @@
 ---
 layout: farshid_default
 title: "QR Codes — Scan, Open, Copy"
-permalink: /qr/
+permalink: /qrcode/
 description: "Scan a code or tap Open to reach Dr. Farshid Pirahansiah's links — profiles, referral invites and crypto tip addresses — with a copy button for every URL and address."
 ---
 
 <div class="qr-hero">
   <h1>Scan, open, copy</h1>
-  <p>Point a phone camera at a code, or press <strong>Open</strong>. Every card also carries a <strong>Copy</strong> button for the link or the address, and the code itself downloads for sharing. This page is the permanent short link <strong>pirahansiah.com/qr</strong>.</p>
+  <p>Point a phone camera at a code, or press <strong>Open</strong>. Every card also carries a <strong>Copy</strong> button for the link or the address, and the code itself downloads for sharing. This page is the permanent short link <strong>pirahansiah.com/qrcode</strong>.</p>
 </div>
 
 <style>

@@ -16920,7 +16920,7 @@ URL: https://pirahansiah.com/farshid/content/qr.md
 
 <div class="qr-hero">
   <h1>Scan, open, copy</h1>
-  <p>Point a phone camera at a code, or press <strong>Open</strong>. Every card also carries a <strong>Copy</strong> button for the link or the address, and the code itself downloads for sharing. This page is the permanent short link <strong>pirahansiah.com/qr</strong>.</p>
+  <p>Point a phone camera at a code, or press <strong>Open</strong>. Every card also carries a <strong>Copy</strong> button for the link or the address, and the code itself downloads for sharing. This page is the permanent short link <strong>pirahansiah.com/qrcode</strong>.</p>
 </div>
 
 <style>
@@ -25525,7 +25525,7 @@ Windows Task Scheduler is close to cron jobs on Linux and macOS.
 
 ## Referral links
 
-The tools I use, with my referral links, are on the [QR codes page](/qr/).
+The tools I use, with my referral links, are on the [QR codes page](/qrcode).
 
 ---
 

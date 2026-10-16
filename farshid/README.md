@@ -15,14 +15,14 @@ Standalone HTML is used for the app shell, search, QR route shim, redirect stubs
 
 ## Structure
 
-GitHub Pages serves this repository from the `main` branch root, so the deployment shell and required metadata stay at the repository root: `index.html`, `404.html`, `.nojekyll`, `CNAME`, `robots.txt`, `sitemap.xml`, and the generated `llms*.txt` files. Moving those into `farshid/` would break the current Pages deployment.
+GitHub Pages serves this repository from the `main` branch root, so the deployment shell and required metadata stay at the repository root: `index.html`, `404.html`, `qrcode.html` (the `/qrcode` short link), `.nojekyll`, `CNAME`, `robots.txt`, `sitemap.xml`, and the generated `llms*.txt` files. Moving those into `farshid/` would break the current Pages deployment.
 
 - `farshid/content/` — the homepage, all public markdown pages, and page-specific images; one flat source directory. `atlas.md` is the index and `swarm.html` is the standalone search tool.
 - `farshid/assets/` — sitewide profile and favicon images, plus the generated motion videos under `assets/motion/`.
 - `farshid/downloads/` — downloadable documents, scripts, archives, and their store-listing source text.
 - `farshid/app.js`, `md.js`, `style.css`, `deck.css`, and `search-index.js` — app shell, markdown renderer, hash router, design system, deck styles, and generated search data.
 - `farshid/permalinks.js` and `page-aliases.js` — generated URL maps used by root `404.html`.
-- `farshid/qr/index.html` — the QR-route shim; `/qr/` remains the public short route to the QR page.
+- `farshid/content/qrcode.html` — the QR-route shim (plain HTML beside the markdown pages); the root `qrcode.html` is the same file for the short URL.
 - `farshid/projects/` — generators and independent source projects. These retain their own subfolders where their build assets need them.
 
 ## Page front matter
@@ -65,7 +65,7 @@ prefer the `.md` form inside pages.
 
 ## Permanent links (short URLs)
 
-* **`/qr/`** — a permanent short route to the `#content/qr` hub (noindex, OpenGraph card). The root 404 shim redirects it in the browser; the QR content can change without changing the printed code.
+* **`/qrcode`** — a permanent short route to the `#content/qr` hub (noindex, OpenGraph card). `qrcode.html` at the repo root answers it with a 200 and hands off to the app; `/qr/` and `/qr/index.html` still resolve through `404.html`'s legacy maps; the QR content can change without changing the printed code.
 * **Every front-matter `permalink` resolves.** `farshid/permalinks.js` (generated)
   maps both the permalink and the page's real file path → page route; root
   `404.html` resolves either in the browser. So `/notes/pubs/10-years/`,
