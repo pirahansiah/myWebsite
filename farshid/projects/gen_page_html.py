@@ -503,6 +503,68 @@ def write_page(p, body, panel):
     return path, len(page)
 
 
+# Short, shareable paths for the pages that get handed out on a card, a QR code or a
+# LinkedIn post. Each one is a real 200 page (so link previews unfurl) that declares the
+# generated page as its canonical and sends the reader straight there.
+SHORT_LINKS = {'consulting': 'edge-ai-consulting-germany',
+               'beratung': 'edge-ai-beratung',
+               'impressum': 'impressum'}
+
+STUB = """<!doctype html>
+<html lang="$lang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$title — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="$desc">
+<link rel="canonical" href="$canon">
+<meta http-equiv="refresh" content="0; url=$canon">
+<meta name="robots" content="index, follow">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="$canon">
+<meta property="og:title" content="$title">
+<meta property="og:description" content="$desc">
+<meta property="og:image" content="$image">
+<meta property="og:locale" content="$oglocale">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<script type="application/ld+json">
+$ld
+</script>
+<script>location.replace('$canon');</script>
+</head>
+<body>
+<h1>$title</h1>
+<p>Dr. Farshid Pirahansiah — embedded edge AI &amp; computer vision consultant, Germany.
+<a href="$canon">$canon</a></p>
+</body>
+</html>
+"""
+
+
+def write_short_links(pages):
+    by_slug = {p['slug']: p for p in pages}
+    n = 0
+    for short, slug in SHORT_LINKS.items():
+        p = by_slug.get(slug)
+        if not p or gsp.twin_ignored(p):
+            continue
+        canon = html_url(p)
+        path = os.path.join(SITE, short, 'index.html')
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        open(path, 'w', encoding='utf-8').write(Template(STUB).substitute(
+            lang=p.get('lang') or 'en',
+            title=html_mod.escape(p['title']),
+            desc=html_mod.escape(p['description'], quote=True),
+            canon=canon,
+            image=PROFILE_IMG,
+            oglocale='de_DE' if (p.get('lang') or 'en') == 'de' else 'en_GB',
+            ld=json_ld(p, canon, ORIGIN + p['md'], PROFILE_IMG, '')))
+        n += 1
+    return n
+
+
 def write_feed(pages):
     """RSS of the most recently updated pages — a stable, subscribeable signal for
     search engines, aggregators and answer-engine refreshers."""
@@ -575,7 +637,9 @@ def main(argv=None):
               + (f' — run gen_page_html.py\n' + '\n'.join('  ' + s for s in stale) if stale else ''))
         return 1 if stale else 0
     n_feed = write_feed(pages)
-    print(f'static pages: {written} written ({total/1024:.0f} KB), feed.xml with {n_feed} items'
+    n_short = write_short_links(pages)
+    print(f'static pages: {written} written ({total/1024:.0f} KB), feed.xml with {n_feed} items, '
+          f'{n_short} short links'
           + (f', skipped (gitignored): {", ".join(skipped)}' if skipped else ''))
     return 0
 
