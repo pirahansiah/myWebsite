@@ -47,7 +47,9 @@ LLMS_SECTIONS = ['Site', 'Publications', 'Notes & Guides', 'Courses', 'Mentoring
 
 # Hand-written pages that are not markdown (small apps, not content pages).
 STANDALONE = [('/farshid/content/index.html', 'daily', '1.0'),
-              ('/farshid/content/swarm.html', 'monthly', '0.5')]
+              ('/farshid/content/swarm.html', 'monthly', '0.5'),
+              ('/farshid/content/game.html', 'monthly', '0.6'),
+              ('/farshid/content/solana-games.html', 'monthly', '0.6')]
 
 
 def split_front_matter(body):

@@ -121,7 +121,6 @@ window.PERMALINKS = {
   "farshid/projects/rag/readme": "projects/rag/README",
   "farshid/projects/site-tools/readme": "projects/site-tools/README",
   "for-ai": "for-ai",
-  "game": "game",
   "metamask": "metamask",
   "notes/cable-hub": "cable-hub",
   "notes/computer-vision": "computer-vision",
@@ -220,6 +219,5 @@ window.PERMALINKS = {
   "projects/rag": "projects/rag/README",
   "projects/site-tools": "projects/site-tools/README",
   "qrcode": "qr",
-  "solana-games": "solana-games",
   "terms": "terms"
 };

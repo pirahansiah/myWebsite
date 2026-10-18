@@ -9,7 +9,7 @@ and keep the author, URL and date intact. Rules and citation formats: https://pi
 
 ## Atlas
 URL: https://pirahansiah.com/farshid/content/atlas.md
-Cite as: Pirahansiah, F. "Atlas". pirahansiah.com, updated 2026-10-16. https://pirahansiah.com/farshid/content/atlas.md
+Cite as: Pirahansiah, F. "Atlas". pirahansiah.com, updated 2026-10-18. https://pirahansiah.com/farshid/content/atlas.md
 
 # Atlas
 
@@ -111,6 +111,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/note-computer-vision-overview.md">Dr. Farshid Pirahansiah</a></li>
     <li><a href="/farshid/content/note-startup-guide.md">Edge AI Solutions: Local LLM Implementation Business Plan</a></li>
     <li><a href="/farshid/content/for-ai.md">For AI Assistants &amp; LLM Companies</a></li>
+    <li><a href="/farshid/content/game.md">Games — Arcade</a></li>
     <li><a href="/farshid/content/note-cpp.md">git</a></li>
     <li><a href="/farshid/content/note-pycuda.md">How PyCUDA Reads and Runs C Kernels</a></li>
     <li><a href="/farshid/content/prompts.md">LLM Prompts for Knowledge Graph</a></li>
@@ -130,7 +131,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/k2-horizon-local.md">Running K2-Horizon Locally on Apple Silicon (M3, 16GB)</a></li>
     <li><a href="/farshid/content/note-cuda-vscode.md">Simple Setting Up a CUDA Development Environment in VS Code in Windows</a></li>
     <li><a href="/farshid/content/menus.md">Sitemap — All Pages</a></li>
-    <li><a href="/farshid/content/solana-games.md">Solana Arcade</a></li>
+    <li><a href="/farshid/content/solana-games.md">Solana Arcade — Snake &amp; Tetris</a></li>
     <li><a href="/farshid/content/solutions.md">Solutions</a></li>
     <li><a href="/farshid/content/crypto.md">Support via Crypto</a></li>
     <li><a href="/farshid/content/use-cases.md">Table of Contents</a></li>
@@ -139,7 +140,6 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/note-shell-vim.md">tools</a></li>
     <li><a href="/farshid/content/why-hermes.md">Why Hermes: One Agent Over Dots, Muse Code &amp; Grok Build</a></li>
     <li><a href="/farshid/content/why-not.md">Why This Site Exists</a></li>
-    <li><a href="/farshid/content/game.md">🎮 Arcade</a></li>
     <li><a href="/farshid/content/note-numba.md">🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀</a></li>
   </ul>
 </section>
@@ -15398,83 +15398,21 @@ Replace "hub" with "summarize" in any GitHub URL for AI-powered documentation:
 URL: https://pirahansiah.com/farshid/content/game.md
 Cite as: Pirahansiah, F. "Games". pirahansiah.com, updated 2026-09-19. https://pirahansiah.com/farshid/content/game.md
 
-> **Games** — Play classic arcade games — Snake, Flappy Bird & 2048 — right in your browser or as a Telegram Mini App — https://pirahansiah.com/game/
 Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as a Telegram Mini App. High scores, haptics and a share button.
 
-*Last updated: 2026-08-16.*
+# Games — Arcade
 
+**▶ [Play Snake, Flappy Bird and 2048](/farshid/content/game.html)** — the arcade opens in its own page, with a Telegram Mini App mode, haptics, high scores and a share button.
 
-<div class="game-page">
-  <div class="game-header">
-    <h1>&#127918; Arcade</h1>
-    <p class="game-sub">Snake &middot; Flappy Bird &middot; 2048 &mdash; play right here, or open it inside Telegram as a Mini App.</p>
-    <div class="game-tg-badge" id="game-tg-badge">&#128336; Checking&hellip;</div>
-  </div>
+A markdown page cannot run scripts, so the playable arcade is a standalone page: <https://pirahansiah.com/farshid/content/game.html>. This file is its description and stays readable to crawlers and language models.
 
-  <div class="game-tabs" role="tablist" aria-label="Choose a game">
-    <button type="button" class="game-tab is-active" data-game="snake" role="tab" aria-selected="true">&#128013; Snake</button>
-    <button type="button" class="game-tab" data-game="flappy" role="tab" aria-selected="false">&#128038; Flappy</button>
-    <button type="button" class="game-tab" data-game="2048" role="tab" aria-selected="false">&#128290; 2048</button>
-  </div>
+- **Snake** — arrows, WASD, swipe or the on-screen pad.
+- **Flappy Bird** — tap, click or space to flap.
+- **2048** — swipe or arrows to slide and merge.
 
-  <div class="game-scorebar">
-    <span class="game-score" id="game-score">Score&nbsp;<b>0</b></span>
-    <span class="game-best" id="game-best">Best&nbsp;<b>0</b></span>
-    <button type="button" class="game-btn" id="game-restart" title="Restart the current game">&#8635; Restart</button>
-    <button type="button" class="game-btn" id="game-share" title="Share your score">&#128279; Share</button>
-  </div>
+Inside Telegram the page detects the Mini App and unlocks haptics, the Telegram theme and a share button; in a normal browser it runs in browser mode with local high scores.
 
-  <div class="game-stage" id="game-stage">
-
-    <div class="game-panel" id="game-snake">
-      <canvas id="snake-canvas" aria-label="Snake game board"></canvas>
-      <div class="game-overlay" id="snake-overlay">
-        <div class="game-overlay-title">Snake</div>
-        <div class="game-overlay-sub">Steer with arrows, WASD, swipe or the pad below. Eat &#127822; to grow.</div>
-        <button type="button" class="game-btn game-btn-primary" data-start="snake">Start</button>
-      </div>
-    </div>
-
-
-    <div class="game-panel" id="game-flappy" hidden>
-      <canvas id="flappy-canvas" aria-label="Flappy Bird game board"></canvas>
-      <div class="game-overlay" id="flappy-overlay">
-        <div class="game-overlay-title">Flappy Bird</div>
-        <div class="game-overlay-sub">Tap, click or press Space / &#8593; to flap. Fly through the gaps.</div>
-        <button type="button" class="game-btn game-btn-primary" data-start="flappy">Start</button>
-      </div>
-    </div>
-
-
-    <div class="game-panel" id="game-2048" hidden>
-      <div class="board2048-wrap">
-        <div class="grid2048" id="grid2048"></div>
-        <div class="game-overlay" id="g2048-overlay">
-          <div class="game-overlay-title">2048</div>
-          <div class="game-overlay-sub">Swipe or use arrows to merge tiles. Reach the 2048 tile.</div>
-          <button type="button" class="game-btn game-btn-primary" data-start="2048">Start</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="game-controls">
-    <div class="game-dpad" id="game-dpad" aria-label="Directional pad">
-      <button type="button" class="dpad-btn" data-dir="up" aria-label="Up">&#8593;</button>
-      <div class="dpad-row">
-        <button type="button" class="dpad-btn" data-dir="left" aria-label="Left">&#8592;</button>
-        <button type="button" class="dpad-btn dpad-flap" data-dir="flap" aria-label="Flap / action">&#9679;</button>
-        <button type="button" class="dpad-btn" data-dir="right" aria-label="Right">&#8594;</button>
-      </div>
-      <button type="button" class="dpad-btn" data-dir="down" aria-label="Down">&#8595;</button>
-    </div>
-    <div class="game-hint">
-      <span id="game-hint-snake">Arrows / WASD / swipe to steer.</span>
-      <span id="game-hint-flappy" hidden>Tap or Space to flap.</span>
-      <span id="game-hint-2048" hidden>Swipe or arrows to slide &amp; merge.</span>
-    </div>
-  </div>
-</div>
+How to cite this page: see [For AI assistants & LLM companies](/farshid/content/for-ai.md).
 
 ---
 
@@ -17958,133 +17896,22 @@ Complete navigation index with summaries of all site pages
 URL: https://pirahansiah.com/farshid/content/solana-games.md
 Cite as: Pirahansiah, F. "Solana Arcade — Snake & Tetris". pirahansiah.com, updated 2026-09-19. https://pirahansiah.com/farshid/content/solana-games.md
 
-> **Solana Arcade** — Play Snake & Tetris, connect Phantom, and sign your high score as a cryptographic proof. — https://pirahansiah.com/solana-games/
 Play Snake and Tetris in your browser, connect a Phantom wallet, and sign your high score as a cryptographic proof on Solana. No install, no account, runs locally.
 
-*Last updated: 2026-08-16.*
+# Solana Arcade — Snake & Tetris
 
+**◎ [Play Snake and Tetris](/farshid/content/solana-games.html)** — connect Phantom, play, then sign your best score. Signing is a message signature only: it is free, sends no transaction and spends no SOL.
 
+A markdown page cannot run scripts, so the playable arcade is a standalone page: <https://pirahansiah.com/farshid/content/solana-games.html>. This file is its description and stays readable to crawlers and language models.
 
+- **Snake** and **Tetris**, keyboard, swipe or on-screen controls, with local high scores.
+- **Phantom wallet** connection to prove the address that earned a score; no account and no install.
+- **Signed proof** — the score is signed as a message anyone can verify against the public key.
+- Runs entirely in the browser, including inside Telegram; nothing is uploaded.
 
-<div class="sga-wrap">
-  <div class="sga-hero">
-    <h1>Solana Arcade</h1>
-    <p>Play Snake and Tetris right in your browser, connect a Phantom wallet, and sign your high score as a cryptographic proof on Solana. No install, no account &mdash; everything runs locally.</p>
-  </div>
+Donation addresses, including the SOL tip address on the arcade page: [Crypto & support](/farshid/content/crypto.md).
 
-  <div class="sga-wallet">
-    <button id="wallet-connect-btn" class="sga-btn" type="button">Connect Phantom wallet</button>
-    <div id="wallet-bar">
-      <span id="wallet-address"></span>
-      <span id="wallet-balance"></span>
-      <button id="wallet-disconnect-btn" class="sga-btn ghost small" type="button">Disconnect</button>
-    </div>
-    <div class="sga-err" id="wallet-err"></div>
-    <p class="sga-phone-note">📱 <b>On mobile or inside Telegram?</b> Solana wallets can't connect inside Telegram's browser &mdash; the games still work everywhere, and you can send a tip to the SOL address below.</p>
-  </div>
-
-  <div class="sga-tabs">
-    <button id="tab-snake" class="sga-tab active" type="button">&#128013; Snake</button>
-    <button id="tab-tetris" class="sga-tab" type="button">&#129521; Tetris</button>
-  </div>
-
-  <div class="sga-warnings">
-    <div class="sga-warn note">
-      <span class="ic">&#8505;&#65039;</span>
-      <div><b>Runs entirely in your browser</b>
-      No install, no account, no server. High scores are saved locally on your device (localStorage) and can only be seen by you.</div>
-    </div>
-    <div class="sga-warn note">
-      <span class="ic">&#128737;&#65039;</span>
-      <div><b>Connecting never sends a transaction</b>
-      The &ldquo;Sign score&rdquo; button uses <code>signMessage</code> only &mdash; a free message signature. It can never move, send, or spend any SOL.</div>
-    </div>
-    <div class="sga-warn caution">
-      <span class="ic">&#9888;&#65039;</span>
-      <div><b>No on-chain leaderboard yet</b>
-      Scores are local, not stored on-chain. Signing produces a proof you can verify against your public key, but scores are not written to the Solana network.</div>
-    </div>
-  </div>
-
-  <div id="panel-snake" class="sga-panel">
-    <div class="sga-hud">
-      <div>Score<span id="snake-score">0</span></div>
-      <div>Best<span id="snake-high">0</span></div>
-    </div>
-    <div class="sga-stage">
-      <canvas id="snake-canvas" width="336" height="336" aria-label="Snake game board"></canvas>
-      <div id="snake-overlay" class="sga-overlay">
-        <div class="sga-overlay-inner">
-          <p id="snake-overlay-text">Press Start or an arrow key to play</p>
-          <button id="snake-start-btn" class="sga-btn" type="button">Start</button>
-        </div>
-      </div>
-    </div>
-    <div class="sga-dpad">
-      <button id="snake-up" class="sga-pad" type="button">&#8593;</button>
-      <div class="sga-dpad-row">
-        <button id="snake-left" class="sga-pad" type="button">&#8592;</button>
-        <button id="snake-down" class="sga-pad" type="button">&#8595;</button>
-        <button id="snake-right" class="sga-pad" type="button">&#8594;</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="panel-tetris" class="sga-panel" style="display:none">
-    <div class="sga-hud">
-      <div>Score<span id="tetris-score">0</span></div>
-      <div>Lines<span id="tetris-lines">0</span></div>
-      <div>Level<span id="tetris-level">1</span></div>
-      <div>Best<span id="tetris-high">0</span></div>
-    </div>
-    <div class="sga-tetris-layout">
-      <div class="sga-stage">
-        <canvas id="tetris-canvas" width="260" height="520" aria-label="Tetris game board"></canvas>
-        <div id="tetris-overlay" class="sga-overlay">
-          <div class="sga-overlay-inner">
-            <p id="tetris-overlay-text">Press Start or an arrow key to play</p>
-            <button id="tetris-start-btn" class="sga-btn" type="button">Start</button>
-          </div>
-        </div>
-      </div>
-      <div class="sga-next-box">
-        <div class="sga-next-label">Next</div>
-        <canvas id="tetris-next-canvas" width="80" height="80" aria-label="Next piece preview"></canvas>
-      </div>
-    </div>
-    <div class="sga-controls">
-      <button id="tetris-left" class="sga-pad" type="button">&#8592;</button>
-      <button id="tetris-rotate" class="sga-pad" type="button">Rotate</button>
-      <button id="tetris-down" class="sga-pad" type="button">&#8595;</button>
-      <button id="tetris-drop" class="sga-pad wide" type="button">Drop</button>
-      <button id="tetris-right" class="sga-pad" type="button">&#8594;</button>
-    </div>
-  </div>
-
-  <div class="sga-sign">
-    <h3>Sign your score</h3>
-    <p>Connect your wallet, play a game, then sign your best score as a cryptographic proof. Signing is free and never sends SOL &mdash; it only proves you own the address that earned the score.</p>
-    <button id="sign-score-btn" class="sga-btn" type="button">Sign your score</button>
-    <div class="sga-signature" id="sign-signature">No signed score yet.</div>
-    <button id="sign-copy" class="sga-btn ghost small" type="button">Copy</button>
-    <div class="sga-sign-note" id="sign-note" style="display:none">
-      This is a message signature only &mdash; no transaction was sent and no SOL was spent. Anyone can verify it against your public key with a Solana library.
-    </div>
-    <pre class="sga-sign-msg" id="sign-message"></pre>
-  </div>
-
-  <div class="sga-scores" id="sga-scores"></div>
-
-  <div class="sga-support">
-    <p><strong>Tip the developer</strong> &mdash; if the games made you smile, a small SOL tip helps keep this open-source work going. Send any amount to this address:</p>
-    <code class="sga-tip-addr" id="tip-address">4Ub6VYF69PdCjpCMWDysU54WPb1xB7s628ASkCuJmcib</code>
-    <div class="sga-support-actions">
-      <a class="sga-btn ghost" href="/farshid/content/crypto.md">All donation addresses</a>
-      <button id="tip-copy" class="sga-btn ghost" type="button">Copy SOL address</button>
-    </div>
-    <p class="sga-tip-hint">Works in Telegram and mobile browsers too &mdash; no wallet connection needed to send.</p>
-  </div>
-</div>
+How to cite this page: see [For AI assistants & LLM companies](/farshid/content/for-ai.md).
 
 ---
 

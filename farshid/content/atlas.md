@@ -105,6 +105,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/note-computer-vision-overview.md">Dr. Farshid Pirahansiah</a></li>
     <li><a href="/farshid/content/note-startup-guide.md">Edge AI Solutions: Local LLM Implementation Business Plan</a></li>
     <li><a href="/farshid/content/for-ai.md">For AI Assistants &amp; LLM Companies</a></li>
+    <li><a href="/farshid/content/game.md">Games — Arcade</a></li>
     <li><a href="/farshid/content/note-cpp.md">git</a></li>
     <li><a href="/farshid/content/note-pycuda.md">How PyCUDA Reads and Runs C Kernels</a></li>
     <li><a href="/farshid/content/prompts.md">LLM Prompts for Knowledge Graph</a></li>
@@ -124,7 +125,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/k2-horizon-local.md">Running K2-Horizon Locally on Apple Silicon (M3, 16GB)</a></li>
     <li><a href="/farshid/content/note-cuda-vscode.md">Simple Setting Up a CUDA Development Environment in VS Code in Windows</a></li>
     <li><a href="/farshid/content/menus.md">Sitemap — All Pages</a></li>
-    <li><a href="/farshid/content/solana-games.md">Solana Arcade</a></li>
+    <li><a href="/farshid/content/solana-games.md">Solana Arcade — Snake &amp; Tetris</a></li>
     <li><a href="/farshid/content/solutions.md">Solutions</a></li>
     <li><a href="/farshid/content/crypto.md">Support via Crypto</a></li>
     <li><a href="/farshid/content/use-cases.md">Table of Contents</a></li>
@@ -133,7 +134,6 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/note-shell-vim.md">tools</a></li>
     <li><a href="/farshid/content/why-hermes.md">Why Hermes: One Agent Over Dots, Muse Code &amp; Grok Build</a></li>
     <li><a href="/farshid/content/why-not.md">Why This Site Exists</a></li>
-    <li><a href="/farshid/content/game.md">🎮 Arcade</a></li>
     <li><a href="/farshid/content/note-numba.md">🚀 Accelerate Python with Numba’s @jit(nopython=True) 🚀</a></li>
   </ul>
 </section>
