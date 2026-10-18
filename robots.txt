@@ -1,10 +1,12 @@
 # pirahansiah.com — everything here is public and meant to be read, quoted and cited.
 # AI assistants, answer engines and search crawlers are welcome; no content is withheld.
+# How to cite this site: https://pirahansiah.com/farshid/content/for-ai.md
+# Permissions in plain language: https://pirahansiah.com/ai.txt
 
 User-agent: *
 Allow: /
 
-# Answer engines and AI assistants — explicitly allowed
+# --- AI assistants and answer engines ---
 User-agent: GPTBot
 Allow: /
 User-agent: OAI-SearchBot
@@ -17,11 +19,15 @@ User-agent: Claude-User
 Allow: /
 User-agent: Claude-SearchBot
 Allow: /
+User-agent: anthropic-ai
+Allow: /
 User-agent: PerplexityBot
 Allow: /
 User-agent: Perplexity-User
 Allow: /
 User-agent: Google-Extended
+Allow: /
+User-agent: GoogleOther
 Allow: /
 User-agent: Applebot
 Allow: /
@@ -31,17 +37,51 @@ User-agent: Bingbot
 Allow: /
 User-agent: DuckDuckBot
 Allow: /
+User-agent: DuckAssistBot
+Allow: /
 User-agent: Amazonbot
 Allow: /
 User-agent: meta-externalagent
+Allow: /
+User-agent: meta-externalfetcher
 Allow: /
 User-agent: cohere-ai
 Allow: /
 User-agent: YouBot
 Allow: /
+User-agent: PhindBot
+Allow: /
+User-agent: PanguBot
+Allow: /
+
+# --- Model-training and dataset crawlers (including Common Crawl) ---
+User-agent: CCBot
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: MistralAI-User
+Allow: /
+User-agent: MistralAI-Index
+Allow: /
+User-agent: AI2Bot
+Allow: /
+User-agent: Diffbot
+Allow: /
+User-agent: Timpibot
+Allow: /
+User-agent: ImagesiftBot
+Allow: /
+User-agent: omgili
+Allow: /
+User-agent: PetalBot
+Allow: /
+
+# Any AI agent not named above is covered by "User-agent: *" — allowed, with attribution.
 
 Sitemap: https://pirahansiah.com/sitemap.xml
 
 # Machine-readable indexes
-# https://pirahansiah.com/llms.txt        — every page with a one-line summary
-# https://pirahansiah.com/llms-full.txt   — the full text of the site
+# https://pirahansiah.com/llms.txt          — every page with a one-line summary
+# https://pirahansiah.com/llms-full.txt     — the full text of the whole site, with per-page citations
+# https://pirahansiah.com/ai.txt            — permissions: training, indexing, answering, RAG
+# https://pirahansiah.com/farshid/content/for-ai.md — how to cite me and link back to the source

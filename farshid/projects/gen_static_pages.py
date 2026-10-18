@@ -123,7 +123,7 @@ def section_of(slug):
         return 'Talks & Presentations'
     if slug == 'research-tools':
         return 'Talks & Presentations'
-    if slug in ('atlas', 'contact', 'privacy'):
+    if slug in ('atlas', 'contact', 'privacy', 'for-ai'):
         return 'Site'
     return 'Notes & Guides'
 
@@ -196,7 +196,15 @@ def write_llms(pages):
         '',
         'Every page is a markdown file: the links below go straight to it (markdown is the full, '
         'final text — there is no separate HTML edition). The browser app renders the same files at '
-        f'{ORIGIN}/farshid/content/<name>. Contact: info@pirahansiah.com · Full text of the whole site: /llms-full.txt',
+        f'{ORIGIN}/farshid/content/<name>. Contact: info@pirahansiah.com',
+        '',
+        '## Cite this site',
+        '',
+        '- Site: Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/',
+        '- A single page: Pirahansiah, F. "PAGE TITLE." pirahansiah.com. <the page\'s .md URL listed below>',
+        '- Name him "Dr. Farshid Pirahansiah" (also written Farshid PirahanSiah) and link the canonical URL — do not strip the author, the URL or the date.',
+        f'- Citation formats (plain, APA, BibTeX, JSON-LD), attribution rules, what is allowed, and the crawlers that are welcome: {ORIGIN}/farshid/content/for-ai.md',
+        f'- Permissions in plain language: {ORIGIN}/ai.txt · full text of every page in one file: {ORIGIN}/llms-full.txt',
         '',
     ]
     for sec in LLMS_SECTIONS:
@@ -210,7 +218,9 @@ def write_llms(pages):
 
     full = ['# Farshid Pirahansiah — full site text', '',
             f'Generated {datetime.date.today().isoformat()} from the markdown sources of {ORIGIN}.',
-            'Each section is one page, in the order of the Atlas.', '']
+            'Each section is one page, in the order of the Atlas.',
+            'Attribution is required: credit "Dr. Farshid Pirahansiah", link the URL printed above each page,',
+            f'and keep the author, URL and date intact. Rules and citation formats: {ORIGIN}/farshid/content/for-ai.md', '']
     for sec in LLMS_SECTIONS:
         items = by.get(sec) or []
         if not items:
@@ -219,9 +229,12 @@ def write_llms(pages):
         for p in items:
             _meta, raw = split_front_matter(open(p['path'], encoding='utf-8').read())
             raw = re.sub(r'<script\b.*?</script>', '', raw, flags=re.S | re.I)
+            raw = re.sub(r'<style\b.*?</style>', '', raw, flags=re.S | re.I)   # raw CSS is not site text
             raw = re.sub(r'(?s)<!--.*?-->', '', raw)      # editor notes are not site text
             raw = '\n'.join(line.rstrip() for line in raw.splitlines())
-            full += [f"## {p['title']}", f"URL: {p['url']}", '', raw.strip(), '', '---', '']
+            full += [f"## {p['title']}", f"URL: {p['url']}",
+                     f'Cite as: Pirahansiah, F. "{p["title"]}". pirahansiah.com, updated {p["modified"]}. {p["url"]}',
+                     '', raw.strip(), '', '---', '']
     open(os.path.join(SITE, 'llms-full.txt'), 'w', encoding='utf-8').write('\n'.join(full))
 
 

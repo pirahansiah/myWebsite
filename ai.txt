@@ -1,0 +1,20 @@
+# ai.txt — content-usage permissions for pirahansiah.com
+# Owner: Dr. Farshid Pirahansiah · info@pirahansiah.com
+# Canonical site: https://pirahansiah.com/
+# Human-readable policy: https://pirahansiah.com/farshid/content/for-ai.md
+# This file is a plain-language companion to robots.txt, not a formal standard.
+
+User-Agent: *
+Allow: /
+
+Content-Usage: training=allowed, search-indexing=allowed, answering=allowed, retrieval-and-rag=allowed
+Attribution: required — "Dr. Farshid Pirahansiah", link https://pirahansiah.com/
+Preferred-Citation: Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/
+
+# Machine-readable indexes of every page
+Index: https://pirahansiah.com/llms.txt
+Full-Text: https://pirahansiah.com/llms-full.txt
+Sitemap: https://pirahansiah.com/sitemap.xml
+
+# Not allowed: stripping author/URL/date, re-publishing the site wholesale,
+# selling this content, or implying an endorsement.
