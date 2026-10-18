@@ -204,19 +204,20 @@ def first_image(body):
 # ------------------------------------------------------------------------- head/shell
 
 HEAD = """<!doctype html>
-<html lang="en">
+<html lang="$lang">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
-<title>$title — Farshid Pirahansiah</title>
+<title>$title — Dr. Farshid Pirahansiah</title>
 <meta name="description" content="$desc">
 <meta name="author" content="Dr. Farshid Pirahansiah">
 <link rel="canonical" href="$canon">
 <link rel="alternate" type="text/markdown" href="$mdurl" title="Markdown source of this page">
 <link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
 <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+$hreflang$citation
 <link rel="icon" href="/farshid/assets/favicon.png">
 <link rel="stylesheet" href="/farshid/style.css">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -226,7 +227,7 @@ HEAD = """<!doctype html>
 <meta property="og:title" content="$title">
 <meta property="og:description" content="$desc">
 <meta property="og:image" content="$image">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="$oglocale">
 <meta property="article:author" content="Dr. Farshid Pirahansiah">
 <meta property="article:modified_time" content="$modified">
 <meta name="twitter:card" content="summary_large_image">
@@ -286,6 +287,7 @@ $ld
 <main>
 <div id="content" class="wrap">
 <article class="article$panel">
+<p class="page-byline">By <strong>Dr. Farshid Pirahansiah</strong> — computer vision &amp; embedded edge AI consultant, Germany. Updated $modified.</p>
 $body
 <hr>
 <p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;$title_esc&rdquo;. pirahansiah.com, updated $modified.
@@ -301,9 +303,12 @@ Canonical URL <a href="$canon">$canon</a> &middot; markdown source <a href="$mdu
       <a href="/farshid/content/index.html">Home</a>
       <a href="/farshid/content/atlas/">Atlas</a>
       <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/edge-ai-consulting-germany/">Edge AI consulting</a>
+      <a href="/farshid/content/edge-ai-beratung/">Beratung (DE)</a>
       <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+      <a href="/farshid/content/impressum/">Impressum</a>
     </div>
-    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+    <div class="footer-note"><strong>Dr. Farshid Pirahansiah</strong> &middot; embedded edge AI &amp; computer vision consultant &middot; Germany &middot; &copy; <span data-year>2026</span></div>
   </div>
 </footer>
 </div><!-- /.app-window -->
@@ -339,7 +344,15 @@ Canonical URL <a href="$canon">$canon</a> &middot; markdown source <a href="$mdu
 PERSON_LD = {
     '@type': 'Person', '@id': PERSON_ID, 'name': 'Dr. Farshid Pirahansiah',
     'honorificPrefix': 'Dr.', 'alternateName': 'Farshid PirahanSiah',
-    'url': ORIGIN + '/', 'jobTitle': 'Computer Vision & Edge AI Mentor and Consultant',
+    'url': ORIGIN + '/',
+    'jobTitle': 'Embedded Edge AI & Computer Vision Consultant',
+    'email': 'info@pirahansiah.com',
+    'description': 'Independent consultant for embedded edge AI and computer vision in Germany: '
+                   'C++, CUDA, TensorRT, OpenVINO and NVIDIA Jetson optimization for production vision systems.',
+    'knowsAbout': ['Computer Vision', 'Edge AI', 'Embedded AI', 'Model Optimization', 'Model Quantization',
+                   'NVIDIA Jetson', 'TensorRT', 'OpenVINO', 'CUDA', 'C++', 'OpenCV',
+                   'Real-time Image Processing', 'Industrial Computer Vision', 'On-device LLMs',
+                   'Multi-camera Systems', 'FPGA Acceleration'],
     'image': PROFILE_IMG,
     'sameAs': ['https://www.linkedin.com/in/pirahansiah/', 'https://github.com/pirahansiah',
                'https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en',
@@ -357,6 +370,31 @@ WEBSITE_LD = {
 }
 
 
+SERVICE_LD = {
+    '@type': 'ProfessionalService', '@id': ORIGIN + '/#service',
+    'name': 'Embedded Edge AI & Computer Vision Consulting — Dr. Farshid Pirahansiah',
+    'description': 'Independent consulting and engineering for teams building computer vision and edge AI '
+                   'systems: NVIDIA Jetson, TensorRT, OpenVINO, CUDA and C++ optimization for production.',
+    'url': ORIGIN + '/',
+    'provider': {'@id': PERSON_ID},
+    'founder': {'@id': PERSON_ID},
+    'serviceType': ['Edge AI consulting', 'Computer vision consulting',
+                    'Model optimization for embedded devices',
+                    'NVIDIA Jetson and TensorRT engineering', 'CUDA performance engineering',
+                    'Computer vision mentoring and training'],
+    'areaServed': [{'@type': 'Country', 'name': 'Germany'},
+                   {'@type': 'City', 'name': 'Munich'},
+                   {'@type': 'City', 'name': 'Stuttgart'},
+                   {'@type': 'City', 'name': 'Berlin'},
+                   {'@type': 'City', 'name': 'Heidelberg'},
+                   {'@type': 'AdministrativeArea', 'name': 'European Union'}],
+    'availableLanguage': [{'@type': 'Language', 'name': 'English', 'alternateName': 'en'},
+                          {'@type': 'Language', 'name': 'German', 'alternateName': 'de'}],
+    'knowsAbout': PERSON_LD['knowsAbout'],
+    'inLanguage': 'en',
+}
+
+
 def json_ld(p, canon, mdurl, image, body):
     created = p.get('created') or p['modified']
     node = {
@@ -366,11 +404,12 @@ def json_ld(p, canon, mdurl, image, body):
         'name': p['title'],
         'headline': p['title'],
         'description': p['description'],
-        'inLanguage': 'en',
+        'inLanguage': p.get('lang') or 'en',
         'isPartOf': {'@id': SITE_ID},
         'mainEntityOfPage': {'@id': canon + '#page'},
         'author': {'@id': PERSON_ID},
         'publisher': {'@id': PERSON_ID},
+        'about': {'@id': ORIGIN + '/#service'},
         'datePublished': created,
         'dateModified': p['modified'],
         'license': LICENSE,
@@ -395,11 +434,44 @@ def json_ld(p, canon, mdurl, image, body):
               {'@type': 'ListItem', 'position': 2, 'name': 'Atlas',
                'item': ORIGIN + '/farshid/content/atlas/'},
               {'@type': 'ListItem', 'position': 3, 'name': p['title'], 'item': canon}]
-    graph = [PERSON_LD, WEBSITE_LD, node,
+    graph = [PERSON_LD, WEBSITE_LD, SERVICE_LD, node,
              {'@type': 'BreadcrumbList', '@id': canon + '#breadcrumb', 'itemListElement': crumbs}]
     text = json.dumps({'@context': 'https://schema.org', '@graph': graph},
                       ensure_ascii=False, indent=1)
     return text.replace('</', '<\\/')
+
+
+PUBLICATION_PREFIXES = ('books-', 'journals-', 'papers-', 'patents-', 'keynotes-', 'computer-vision')
+
+
+def citation_meta(p, canon):
+    """Highwire tags: how a research index (Google Scholar, Crossref harvesters) recognises
+    a page as the landing page of a publication rather than as a blog post."""
+    if not p['slug'].startswith(PUBLICATION_PREFIXES):
+        return ''
+    esc = lambda v: html_mod.escape(v, quote=True)  # noqa: E731
+    # No citation_publication_date: the git date is when the PAGE was written, not when the
+    # paper was published — asserting the wrong year is worse than omitting the tag.
+    return ('<meta name="citation_title" content="%s">\n'
+            '<meta name="citation_author" content="Pirahansiah, Farshid">\n'
+            '<meta name="citation_language" content="en">\n'
+            '<meta name="citation_abstract_html_url" content="%s">\n'
+            '<meta name="citation_fulltext_html_url" content="%s">\n'
+            % (esc(p['title']), canon, canon))
+
+
+def hreflang_meta(p, canon):
+    """A translated pair declares both languages plus x-default (the English page)."""
+    lang = p.get('lang') or 'en'
+    other_url = p.get('translation_url')
+    if not other_url:
+        return ''
+    other = 'de' if lang == 'en' else 'en'
+    en_url = canon if lang == 'en' else other_url
+    return ('<link rel="alternate" hreflang="%s" href="%s">\n'
+            '<link rel="alternate" hreflang="%s" href="%s">\n'
+            '<link rel="alternate" hreflang="x-default" href="%s">\n'
+            % (lang, canon, other, other_url, en_url))
 
 
 def write_page(p, body, panel):
@@ -407,10 +479,15 @@ def write_page(p, body, panel):
     mdurl = ORIGIN + p['md']
     image = first_image(body)
     title_esc = html_mod.escape(p['title'])
+    lang = p.get('lang') or 'en'
     path = out_path(p)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     page = Template(HEAD).substitute(
         title=title_esc,
+        lang=lang,
+        oglocale='de_DE' if lang == 'de' else 'en_GB',
+        hreflang=hreflang_meta(p, canon),
+        citation=citation_meta(p, canon),
         desc=html_mod.escape(p['description'], quote=True),
         canon=canon,
         mdurl=mdurl,
@@ -485,6 +562,9 @@ def main(argv=None):
             continue
         meta, body_md = gsp.split_front_matter(open(p['path'], encoding='utf-8').read())
         p['tags'] = [t.strip() for t in re.findall(r'[A-Za-z0-9+#.-]+', meta.get('tags', '').strip('[]'))]
+        p['lang'] = (meta.get('lang') or 'en').strip().lower()
+        tr = (meta.get('translation') or '').strip()
+        p['translation_url'] = TARGETS[0].get(tr) if tr else None
         p['created'] = date_created(os.path.relpath(p['path'], SITE))
         body, panel = render(p)
         _, size = write_page(p, body, panel)

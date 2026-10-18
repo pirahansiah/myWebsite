@@ -47,7 +47,8 @@ entries = load()
 
 def group(slug):
     if slug in ('qr','atlas','contact','privacy'): return None,None  # handled in Site Pages / Connect & Share
-    if slug in ('10-years', 'post', 'localAI', 'LocalLLMonMac', 'TernaryBonsai2', 'qwen-image-21-local'):
+    if slug in ('10-years', 'post', 'localAI', 'LocalLLMonMac', 'TernaryBonsai2', 'qwen-image-21-local',
+                'edge-ai-consulting-germany', 'edge-ai-beratung', 'impressum'):
         return 'Mentoring & Coaching',None
     if slug in ('research-tools','slides-token-optimization','keynotes-llm-cv'):
         return 'Talks, Presentations & Keynotes',None

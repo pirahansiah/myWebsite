@@ -14,7 +14,7 @@ The single index of everything on pirahansiah.com — every publication, course,
   <a href="#courses">Courses <span>18</span></a>
   <a href="#notes-guides">Notes &amp; Guides <span>43</span></a>
   <a href="#downloads">Downloads <span>28</span></a>
-  <a href="#mentoring-coaching">Mentoring &amp; Coaching <span>6</span></a>
+  <a href="#mentoring-coaching">Mentoring &amp; Coaching <span>9</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
   <a href="#site-pages">Site Pages <span>6</span></a>
   <a href="#projects">Projects <span>7</span></a>
@@ -202,6 +202,9 @@ The single index of everything on pirahansiah.com — every publication, course,
   <h2>Mentoring &amp; Coaching</h2>
   <ul class="atlas-list">
     <li><a href="/farshid/content/10-years.md">10 Years of CV Debugging Lessons</a></li>
+    <li><a href="/farshid/content/edge-ai-beratung.md">Edge AI &amp; Computer Vision Beratung in Deutschland</a></li>
+    <li><a href="/farshid/content/edge-ai-consulting-germany.md">Embedded Edge AI &amp; Computer Vision Consultant in Germany</a></li>
+    <li><a href="/farshid/content/impressum.md">Impressum / Legal Notice</a></li>
     <li><a href="/farshid/content/LocalLLMonMac.md">LocalLLMonMac</a></li>
     <li><a href="/farshid/content/post.md">Mentoring, Consulting &amp; Coaching</a></li>
     <li><a href="/farshid/content/qwen-image-21-local.md">Qwen-Image-2.1 on an 8 GB laptop GPU: install, configure, and the one node that broke it</a></li>

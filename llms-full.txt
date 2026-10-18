@@ -22,7 +22,7 @@ The single index of everything on pirahansiah.com — every publication, course,
   <a href="#courses">Courses <span>18</span></a>
   <a href="#notes-guides">Notes &amp; Guides <span>43</span></a>
   <a href="#downloads">Downloads <span>28</span></a>
-  <a href="#mentoring-coaching">Mentoring &amp; Coaching <span>6</span></a>
+  <a href="#mentoring-coaching">Mentoring &amp; Coaching <span>9</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
   <a href="#site-pages">Site Pages <span>6</span></a>
   <a href="#projects">Projects <span>7</span></a>
@@ -210,6 +210,9 @@ The single index of everything on pirahansiah.com — every publication, course,
   <h2>Mentoring &amp; Coaching</h2>
   <ul class="atlas-list">
     <li><a href="/farshid/content/10-years.md">10 Years of CV Debugging Lessons</a></li>
+    <li><a href="/farshid/content/edge-ai-beratung.md">Edge AI &amp; Computer Vision Beratung in Deutschland</a></li>
+    <li><a href="/farshid/content/edge-ai-consulting-germany.md">Embedded Edge AI &amp; Computer Vision Consultant in Germany</a></li>
+    <li><a href="/farshid/content/impressum.md">Impressum / Legal Notice</a></li>
     <li><a href="/farshid/content/LocalLLMonMac.md">LocalLLMonMac</a></li>
     <li><a href="/farshid/content/post.md">Mentoring, Consulting &amp; Coaching</a></li>
     <li><a href="/farshid/content/qwen-image-21-local.md">Qwen-Image-2.1 on an 8 GB laptop GPU: install, configure, and the one node that broke it</a></li>
@@ -24430,6 +24433,336 @@ Notes:
   </video>
   <figcaption>3D perspective study</figcaption>
 </figure>
+
+---
+
+## Edge AI & Computer Vision Beratung in Deutschland
+URL: https://pirahansiah.com/farshid/content/edge-ai-beratung/
+Markdown source: https://pirahansiah.com/farshid/content/edge-ai-beratung.md
+Cite as: Pirahansiah, F. "Edge AI & Computer Vision Beratung in Deutschland". pirahansiah.com, updated 2026-10-18. https://pirahansiah.com/farshid/content/edge-ai-beratung/
+
+# Edge AI & Computer Vision Beratung in Deutschland
+
+Ich bin **Dr. Farshid Pirahansiah** — freiberuflicher Berater für **Embedded Edge AI**
+und **Computer Vision** für Engineering-Teams in **Deutschland**. **12+ Jahre**
+Berufserfahrung, **21 Publikationen**, **3 Patente**. Zusammengearbeitet wird remote im
+ganzen Bundesgebiet, vor Ort für Kick-offs, Integrationswochen und Labortests.
+
+Der Kern der Arbeit ist selten ein neues Modell. Meistens gibt es schon ein Modell, eine
+Platine, einen Termin — und ein System, das zu langsam, zu heiß oder auf der Zielhardware
+nicht reproduzierbar läuft. Genau dort setze ich an: Messen auf dem Gerät, Optimieren bis
+es die Rate hält, und zwar nachvollziehbar dokumentiert.
+*English version:* [Embedded Edge AI & Computer Vision Consultant in Germany](/farshid/content/edge-ai-consulting-germany.md).
+
+## Leistungen
+
+- **Produktionsreife Vision-Pipelines** — Kameraerfassung, Kalibrierung, Vor- und
+  Nachverarbeitung und Inferenz so verdrahtet, dass die Bildrate auch unter Last hält.
+- **Hardware-nahe Optimierung** — Quantisierung, Kernel- und Graph-Optimierung, plus eine
+  belastbare Messung dessen, was die Zielplattform wirklich leisten kann.
+- **Prototypen-Rettung & technische Bewertung** — vom funktionierenden Demo zum Produkt,
+  oder eine Hardware-/KI-Entscheidung, die vor der Budgetfreigabe fallen muss.
+- **Wissen im Team** — gemeinsames Arbeiten und Code-Review, damit das Know-how im
+  Unternehmen bleibt und nicht in einer Präsentation.
+
+## Hardware und Software, auf der ich optimiere
+
+| Ebene | Werkzeuge und Plattformen |
+|---|---|
+| Edge-Beschleuniger | NVIDIA Jetson (AGX Orin, Orin Nano, Xavier), Google Coral TPU, Hailo-8, Intel NCS2, Kria KV260 (FPGA) |
+| GPU & Runtime | CUDA, TensorRT, cuDNN, OpenVINO, ONNX Runtime, GGUF/llama.cpp, MLX/CoreML auf Apple Silicon |
+| Präzision & Kompression | INT8-/FP16-Quantisierung, Kalibrierung, Layer-Fusion, strukturiertes Pruning, Speicher-Budgetierung |
+| Vision & C++ | C++17/20, OpenCV, G-API, PyTorch → TensorRT Deployment, Python/Numba/Cython-Hotspots |
+| Systeme | Echtzeit-Pipelines, Multi-Kamera-Synchronisation, RDMA/Thunderbolt-Capture, Thermal- und Power-Limits, MIPI/GStreamer |
+
+## Typische Fragestellungen aus der Praxis
+
+### „Unser Detektor läuft mit 4 FPS auf dem bestellten Jetson"
+
+Ein FP32-PyTorch-Modell auf einem Embedded-Gerät ist der Klassiker. Die Arbeit: ein
+TensorRT-Engine für genau diese Zielplattform bauen, INT8 auf den eigenen Bildern
+kalibrieren, die Vorverarbeitung auf die GPU verlagern und batchten, was sich batchen
+lässt. Hintergrundnotizen: [CV-, DL- & ML-Optimierungsleitfaden](/farshid/content/optimization-index.md)
+und [PyCUDA: C-Kernel aus Python](/farshid/content/note-pycuda.md).
+
+### „Auf dem Rechner läuft es, auf dem Gerät nicht"
+
+Speichergrenzen, Thermal Throttling und ein anderer Operator-Satz sind drei verschiedene
+Probleme, die gleich aussehen. Die Arbeit: das echte Budget auf dem Gerät messen, das
+Profil auswerten, und das Modell so weit verkleinern, dass es in den vorhandenen Speicher
+passt — dieselbe Methode, mit der ich ein Sprachmodell auf 8 GB zum Laufen bringe
+([Notizen](/farshid/content/local-llm-hermes-low-ram.md)).
+
+### „Wir haben Kameras, aber das System sieht nicht zuverlässig"
+
+Kalibrierung, Synchronisation und Geometrie kommen vor den neuronalen Netzen:
+Multi-Kamera-Rigs, die nicht deckungsgleich sind, Optischer Fluss, der bei schneller
+Bewegung oder wechselndem Licht bricht, 3D-Rekonstruktion, die driftet. Siehe
+[3D-Vision & Multi-Kamera-Systeme](/farshid/content/note-3d-vision.md),
+[Optical Flow: Herausforderungen und Lösungen](/farshid/content/note-optical-flow.md) und
+[Verkabelung für Multi-Kamera-Capture](/farshid/content/cable-hub.md).
+
+### „Das Modell muss aufs Gerät — ohne Cloud, ohne GPU"
+
+Kleine Modelle für Edge-Geräte: passende Architektur wählen, quantisieren, lokal
+ausführen — vom 1-Bit-4B-Sprachmodell auf einem alten Laptop bis zur
+[Bildgenerierung mit 8 GB](/farshid/content/qwen-image-21-local.md) und der
+[ESP32-C3-Board-Arbeit](/farshid/content/esp32-c3-oled.md), bei der das gesamte Budget ein
+paar hundert Kilobyte beträgt.
+
+## Wie eine Zusammenarbeit abläuft
+
+1. **Gespräch über den tatsächlichen Engpass** — Modell, Hardware, Termin und die
+   Genauigkeit, die nicht verhandelbar ist.
+2. **Kurzes technisches Audit** — Profiling auf Ihrer Zielhardware, danach ein schriftliches
+   Ergebnis: was langsam ist, was machbar ist, was nicht passt und wo das Risiko liegt.
+3. **Umsetzung gemeinsam** — ich arbeite in Ihrem Repository und Review-Prozess, in C++,
+   Python und CUDA, in Ihrer Toolchain und CI.
+4. **Übergabe** — Pipelines, Profiling-Skript und Begründung, so dokumentiert, dass die
+   nächste Entwicklerin oder der nächste Entwickler es reproduzieren kann.
+
+## Vor Ort und remote
+
+- **Remote bundesweit** — gleiche Zeitzone, auf Deutsch oder Englisch.
+- **Vor Ort** für Kick-offs, Integrationswochen und Labortests, unter anderem in
+  **München, Stuttgart, Berlin und Heidelberg** — und überall dort, wo man mit Bahn oder
+  kurzem Flug hinkommt.
+- **Europaweit** (EU/EWR) sowie vollständig remote darüber hinaus.
+
+## Nachweise
+
+- **21 Publikationen** — Fachartikel, Konferenzbeiträge und Buchkapitel:
+  [Liste](/farshid/content/atlas.md#publications).
+- **3 Patente** — Erkennung bewegter Fahrzeuge, Gesichtsanalyse für Werbung,
+  GAN-basierte Gesichtsaugmentation:
+  [Patentseiten](/farshid/content/atlas.md#publications).
+- **Google Scholar** — [Zitationsprofil](https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en),
+  h-Index 8, 142 Zitierungen.
+- **Rechtliches** — [Impressum](/farshid/content/impressum.md) und
+  [Datenschutzerklärung](/farshid/content/privacy.md).
+
+## Kontakt
+
+- **E-Mail** — [info@pirahansiah.com](mailto:info@pirahansiah.com), mit Hardware, Modell
+  und der Zielgröße, die erreicht werden muss.
+- **Termin** — [calendly.com/pirahansiah/farshid](https://calendly.com/pirahansiah/farshid).
+- **Alles Weitere** — [Atlas](/farshid/content/atlas.md) oder
+  [alle Seiten](/farshid/content/wiki.md).
+
+*English version of this page:
+[Embedded Edge AI & Computer Vision Consultant in Germany](/farshid/content/edge-ai-consulting-germany.md).*
+
+---
+
+## Embedded Edge AI & Computer Vision Consultant in Germany
+URL: https://pirahansiah.com/farshid/content/edge-ai-consulting-germany/
+Markdown source: https://pirahansiah.com/farshid/content/edge-ai-consulting-germany.md
+Cite as: Pirahansiah, F. "Embedded Edge AI & Computer Vision Consultant in Germany". pirahansiah.com, updated 2026-10-18. https://pirahansiah.com/farshid/content/edge-ai-consulting-germany/
+
+# Embedded Edge AI & Computer Vision Consultant in Germany
+
+I am **Dr. Farshid Pirahansiah**: an independent consultant for embedded edge AI and
+computer vision, working with engineering teams in **Germany** and across Europe —
+remotely the whole working week, and on site for the milestones that need a whiteboard.
+**12+ years**, **21 publications**, **3 patents**, and a working rule: the model only
+counts once it runs on the device in front of the customer.
+
+The teams I work with are not looking for a general machine-learning lecture. They
+already have a model, a board, a deadline, and something that is too slow, too hot, or
+not reproducible on the hardware they have to ship. *Deutschsprachige Zusammenfassung:*
+[Edge AI & Computer Vision Beratung in Deutschland](/farshid/content/edge-ai-beratung.md).
+
+## What I do for engineering teams in Germany
+
+- **Production-ready vision pipelines** — camera capture, calibration, pre/post-processing
+  and inference wired into a system that keeps its frame rate under load.
+- **Hardware-level optimization** — quantization, kernel- and graph-level tuning, and a
+  realistic measurement of what the target device can actually do.
+- **Prototype rescue & technical due diligence** — a working demo that has to become a
+  product, or a hardware/AI decision that has to be made before the budget is committed.
+- **Team enablement** — paired engineering and review, so the knowledge stays in your team
+  instead of in a slide deck.
+
+## Hardware and software I optimize on
+
+| Layer | What I work with |
+|---|---|
+| Edge accelerators | NVIDIA Jetson (AGX Orin, Orin Nano, Xavier), Google Coral TPU, Hailo-8, Intel NCS2, Kria KV260 FPGA |
+| GPU & runtime | CUDA, TensorRT, cuDNN, OpenVINO, ONNX Runtime, GGUF/llama.cpp, MLX/CoreML on Apple silicon |
+| Precision & compression | INT8 / FP16 quantization, calibration, layer fusion, structured pruning, KV-cache and memory budgeting |
+| Vision & C++ | C++17/20, OpenCV, G-API, PyTorch → TensorRT deployment, Python/Numba/Cython hotspots |
+| Systems | real-time pipelines, multi-camera synchronization, RDMA/Thunderbolt capture, thermal and power limits, MIPI/GStreamer |
+
+## Pain points I am usually called for
+
+These are the situations that bring teams to me. Each one is a real engineering problem
+I have written up on this site — the links go to the notes, so you can judge the depth
+before we ever talk.
+
+### "Our detector runs at 4 FPS on the Jetson we already bought"
+
+An FP32 PyTorch model on an embedded device is the classic case. The work: build a
+TensorRT engine for the exact target, calibrate INT8 on your own images, move
+pre-processing onto the GPU so the CPU stops being the bottleneck, and batch what can be
+batched. See [CUDA development on Windows](/farshid/content/note-cuda-vscode.md) and
+[How PyCUDA compiles and runs C kernels](/farshid/content/note-pycuda.md) for the
+toolchain side, and the
+[CV, DL & ML optimization guide](/farshid/content/optimization-index.md) for the
+method-by-method approach.
+
+### "It works on the workstation and falls apart on the device"
+
+Memory ceilings, thermal throttling and a different operator set are three different
+problems that look alike. The work: measure the real budget on the device, profile where
+the frames are actually lost, and shrink the model to fit the memory you have.
+The [local-LLM-on-a-weak-machine write-up](/farshid/content/local-llm-hermes-low-ram.md)
+is the same method applied to a language model on an 8 GB machine.
+
+### "We have cameras, but the system does not see reliably"
+
+Calibration, sync and geometry before networks: multi-camera rigs where the frames do not
+line up, optical flow that breaks under fast motion or changing light, 3D reconstruction
+that drifts. See
+[3D vision & real-time multi-camera systems](/farshid/content/note-3d-vision.md),
+[Optical flow: challenges and solutions](/farshid/content/note-optical-flow.md) and the
+[cabling notes for multi-camera capture](/farshid/content/cable-hub.md).
+
+### "We need a model on the device, without a cloud and without a GPU"
+
+Small-model work for edge devices: choosing an architecture that fits, quantizing it, and
+running it locally — from a 1-bit 4B language model on an old laptop
+([notes](/farshid/content/local-llm-hermes-low-ram.md)) to
+[image generation on 8 GB](/farshid/content/qwen-image-21-local.md), plus
+[the ESP32-C3 board work](/farshid/content/esp32-c3-oled.md) where the whole budget is a
+few hundred kilobytes.
+
+## How an engagement usually works
+
+1. **A call about the actual bottleneck** — the model, the hardware, the deadline and the
+   accuracy that is non-negotiable. No slide deck, no discovery phase invoice.
+2. **A short technical audit** — profiling on your target device, then a written finding:
+   what is slow, what is fixable, what will not fit, and where the risk sits.
+3. **Implementation together** — I work inside your repository and review flow, or hand
+   your engineers a working reference they can extend. C++, Python and CUDA, in your
+   toolchain and your CI.
+4. **Hand-over** — the pipelines, the profiling script, and the reasoning, documented so
+   the next engineer (or the next model) can reproduce it.
+
+You can see what day-to-day work with me looks like in
+[Mentoring, consulting & coaching](/farshid/content/post.md) and
+[how I work with engineers and teams](/farshid/content/use-cases.md).
+
+## Where I work
+
+- **Remote across Germany** — the whole country, same time zone, in English or German.
+- **On site** for kick-offs, integration weeks and lab work, including **Munich,
+  Stuttgart, Berlin and Heidelberg**, and anywhere reachable by train or a short flight.
+- Also **Europe-wide** (EU/EEA) and fully remote engagements further afield.
+
+## Credentials
+
+- **21 publications** — journal articles, conference papers and book chapters:
+  [see the list](/farshid/content/atlas.md#publications).
+- **3 patents** — moving-vehicle detection, facial analysis for advertising, and GAN-based
+  face augmentation for surveillance:
+  [patent pages](/farshid/content/atlas.md#publications).
+- **Google Scholar** — [citation profile](https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en)
+  with h-index 8 and 142 citations.
+- **Mentoring track record** — the [CV coaching roadmap](/farshid/content/note-coaching-roadmap.md)
+  I teach from, and an [OpenCV 5 cheat sheet](/farshid/downloads/opencv5-cheatsheet.pdf)
+  used in real sessions.
+- **Legal & privacy** — [Impressum / legal notice](/farshid/content/impressum.md) and
+  [privacy policy](/farshid/content/privacy.md).
+
+## Start here
+
+- **Email** — [info@pirahansiah.com](mailto:info@pirahansiah.com) with the hardware, the
+  model and the number that has to be met.
+- **Book a call** — [calendly.com/pirahansiah/farshid](https://calendly.com/pirahansiah/farshid).
+- **Everything I have published** on computer vision and edge AI —
+  [the Atlas](/farshid/content/atlas.md) or [all pages](/farshid/content/wiki.md).
+
+*Consulting and engineering work is carried out as an independent contractor; research
+results and publication records are listed above and verifiable through the linked
+sources. This page is available in German as
+[Edge AI & Computer Vision Beratung in Deutschland](/farshid/content/edge-ai-beratung.md).*
+
+---
+
+## Impressum — Legal Notice & Datenschutz
+URL: https://pirahansiah.com/farshid/content/impressum/
+Markdown source: https://pirahansiah.com/farshid/content/impressum.md
+Cite as: Pirahansiah, F. "Impressum — Legal Notice & Datenschutz". pirahansiah.com, updated 2026-10-18. https://pirahansiah.com/farshid/content/impressum/
+
+# Impressum / Legal Notice
+
+Rechtliche Angaben für pirahansiah.com.
+
+## Angaben gemäß § 5 DDG (vormals § 5 TMG)
+
+**Dr. Farshid Pirahansiah**
+Freiberufliche Tätigkeit: Beratung, Entwicklung und Schulung im Bereich Computer Vision
+und Embedded Edge AI.
+
+- **Anschrift** — die Postanschrift wird auf Anfrage per E-Mail mitgeteilt:
+  [info@pirahansiah.com](mailto:info@pirahansiah.com)
+- **E-Mail** — [info@pirahansiah.com](mailto:info@pirahansiah.com)
+- **Verantwortlich für den Inhalt** — Dr. Farshid Pirahansiah (Anschrift wie oben)
+- **Web** — https://pirahansiah.com/
+
+Telefonische Erreichbarkeit wird auf Anfrage per E-Mail abgestimmt; für Erstkontakt bitte
+E-Mail oder [Terminbuchung](https://calendly.com/pirahansiah/farshid) nutzen.
+
+## Haftung für Inhalte
+
+Als Diensteanbieter bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten
+verantwortlich. Nach §§ 8 bis 10 DDG bin ich jedoch nicht verpflichtet, übermittelte oder
+gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf
+eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der
+Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+
+## Haftung für Links
+
+Diese Seite enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen
+Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen.
+Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der
+Seiten verantwortlich. Bei Bekanntwerden von Rechtsverletzungen entferne ich derartige
+Links unverzüglich.
+
+## Urheberrecht
+
+Alle auf dieser Seite erstellten Inhalte (Texte, Abbildungen, Code-Beispiele) sind
+urheberrechtlich geschützt. Eine Nutzung — auch auszugsweise — in Forschung, Lehre und
+KI-Systemen ist mit Quellenangabe („Dr. Farshid Pirahansiah, pirahansiah.com") erlaubt;
+die vollständigen Regeln stehen in der [Nutzungs- und Zitierrichtlinie für KI-Systeme](/farshid/content/for-ai.md)
+und in [ai.txt](/ai.txt).
+
+## Datenschutz / Data protection
+
+- Es werden **keine Cookies** zu Marketingzwecken ohne Zustimmung gesetzt; ohne Zustimmung
+  läuft die Analyse im zustimmungslosen Modus.
+- **Reichweitenmessung**: Google Analytics 4 (IP-Adressen gekürzt, Consent Mode v2) und
+  Microsoft Clarity (Sitzungsanalyse) — Details in der [Datenschutzerklärung](/farshid/content/privacy.md).
+- **Anzeigen**: Google AdSense; personalisierte Anzeigen nur nach Zustimmung über das
+  Consent-Banner.
+- **Kein Backend, kein Login, keine Formulare** — es werden keine personenbezogenen Daten
+  auf diesem Server gespeichert. Die Website wird statisch über GitHub Pages
+  (GitHub Inc., USA) ausgeliefert; es gelten zusätzlich die Datenschutzhinweise von GitHub.
+- **Betroffenenrechte** — Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und
+  Datenübertragbarkeit; Kontakt über [info@pirahansiah.com](mailto:info@pirahansiah.com).
+
+## English summary
+
+pirahansiah.com is the personal professional site of **Dr. Farshid Pirahansiah**,
+independent consultant for computer vision and embedded edge AI. This page is the German
+legal notice (§ 5 DDG). Contact: [info@pirahansiah.com](mailto:info@pirahansiah.com). The
+site is static, has no backend or login, sets no marketing cookies without consent, and
+uses Google Analytics 4, Microsoft Clarity and Google AdSense as described in the
+[privacy policy](/farshid/content/privacy.md). Content may be quoted and used with
+attribution — see the [AI citation rules](/farshid/content/for-ai.md).
+
+*Siehe auch: [Edge AI & Computer Vision Beratung in Deutschland](/farshid/content/edge-ai-beratung.md)
+· [Embedded Edge AI & Computer Vision Consultant in Germany](/farshid/content/edge-ai-consulting-germany.md).*
 
 ---
 

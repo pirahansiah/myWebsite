@@ -70,17 +70,18 @@
       ' indexes every publication, note, talk and project on this site.</p>';
     var eb=$id('err-atlas');
     if(eb) eb.addEventListener('click', function(e){ e.preventDefault(); setHash('atlas'); });
-    document.title='Not found — Farshid Pirahansiah';
+    document.title='Not found — Dr. Farshid Pirahansiah';
   }
 
   function renderInto(txt, file, anchor){
     var c=$id('content');
     var h1m = txt.match(/^#\s+(.+)$/m);
+    // the tab title is what a search engine shows: keep the name, drop emoji
     var h1 = h1m ? h1m[1].replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}]/gu,'').trim() : '';
     var fm = txt.match(/^---\s*\n([\s\S]*?)\n---/);            // front matter: the page's own title wins
     var ft = fm && fm[1].match(/^title:\s*(.+)$/m);
     if(ft) h1 = ft[1].replace(/^["']|["']$/g,'').trim();
-    document.title = (h1?h1+' — ':'')+'Farshid Pirahansiah';
+    document.title = (h1?h1+' — ':'')+'Dr. Farshid Pirahansiah';
     // Long text fills the display: prose pages split into columns on wide screens.
     // A page that ships its own panels (atlas index, decks, QR grid, games, wiki layout)
     // keeps the single full-width flow — columns inside those would fight their own layout.
@@ -302,7 +303,7 @@
         a.addEventListener('click', function(e){ e.preventDefault(); setHash(mp+(targetAnchor?':'+slug(targetAnchor):'')); });
       }
       // clean permanent paths (/farshid/content/<slug>, no .md) -> route, no reload
-      var cleanM = href.match(/^\/farshid\/content\/([a-zA-Z0-9_-]+)$/);
+      var cleanM = href.match(/^\/farshid\/content\/([a-zA-Z0-9_-]+)\/?$/);
       if(cleanM){
         var cslug = cleanM[1];
         a.addEventListener('click', function(e){
@@ -381,7 +382,7 @@
     c.setAttribute('hidden','');
     if(baked) baked.removeAttribute('hidden');
     c.innerHTML='';
-    document.title='Dr. Farshid Pirahansiah — Computer Vision & Edge AI Mentor & Consultant';
+    document.title='Dr. Farshid Pirahansiah — Embedded Edge AI & Computer Vision Consultant in Germany';
     highlightNav('home','');
     var target=anchor && $id(anchor);
     if(target && baked && baked.contains(target)){

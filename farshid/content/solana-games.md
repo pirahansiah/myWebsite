@@ -1,6 +1,7 @@
 ---
 layout: farshid_default
 title: "Solana Arcade — Snake & Tetris"
+permalink: /notes/solana-games/
 description: "Play Snake and Tetris in your browser, connect a Phantom wallet, and sign your high score as a cryptographic proof on Solana. No install, no account, runs locally."
 tags: [solana, games, snake, tetris, phantom, web3, arcade]
 hashtags: "#solana #games #snake #tetris #phantom #web3 #crypto"

@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "HTML motion graphic"
+permalink: /projects/html-motion-graphic/
+description: "A standalone, dependency-free motion graphic index for the pages on pirahansiah.com. The SVG constellation, topic filters, search, selected-page inspector, and complete linked index all use the same s"
+---
+
 # HTML motion graphic
 
 A standalone, dependency-free motion graphic index for the pages on pirahansiah.com. The SVG constellation, topic filters, search, selected-page inspector, and complete linked index all use the same sitemap-derived catalog.

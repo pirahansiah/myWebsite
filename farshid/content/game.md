@@ -1,6 +1,7 @@
 ---
 layout: farshid_default
 title: "Games"
+permalink: /notes/game/
 description: "Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as a Telegram Mini App. High scores, haptics and a share button."
 ---
 

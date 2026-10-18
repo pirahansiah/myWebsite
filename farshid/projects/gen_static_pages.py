@@ -114,8 +114,14 @@ def truncate(text, limit=155):
     return cut + '…'
 
 
+# Pages that sell the work: this is what a search for a Germany-based edge-AI/computer-vision
+# consultant has to land on, so they get the top sitemap priority and the home-page links.
+MONEY_PAGES = {'edge-ai-consulting-germany': '0.9', 'edge-ai-beratung': '0.9', 'impressum': '0.5'}
+
+
 def section_of(slug):
-    if slug in ('10-years', 'post', 'localAI', 'LocalLLMonMac', 'TernaryBonsai2', 'qwen-image-21-local'):
+    if slug in ('10-years', 'post', 'localAI', 'LocalLLMonMac', 'TernaryBonsai2', 'qwen-image-21-local',
+                'edge-ai-consulting-germany', 'edge-ai-beratung', 'impressum'):
         return 'Mentoring & Coaching'
     if slug.startswith(('books-', 'journals-', 'papers-', 'patents-', 'keynotes-')):
         return 'Publications'
@@ -309,8 +315,9 @@ def write_sitemap(pages):
     for p in sorted(pages, key=lambda x: x['slug']):
         if twin_ignored(p):
             continue      # a page whose HTML rendering cannot deploy is not a crawlable page
+        prio = MONEY_PAGES.get(p['slug'], '0.7')
         out.append(f"  <url><loc>{html_url(p)}</loc><lastmod>{p['modified']}</lastmod>"
-                   f"<changefreq>monthly</changefreq><priority>0.7</priority></url>")
+                   f"<changefreq>monthly</changefreq><priority>{prio}</priority></url>")
     out += ['</urlset>', '']
     open(os.path.join(SITE, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(out))
 

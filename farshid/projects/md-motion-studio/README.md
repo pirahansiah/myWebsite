@@ -1,3 +1,10 @@
+---
+layout: farshid_default
+title: "Markdown Motion Studio"
+permalink: /projects/md-motion-studio/
+description: "mastermotion.py generates short, silent MP4 treatments from pages in farshid/content/: a 2D concept map, an editorial motion-graphic, and a perspective 3D title card. It uses each page's front-matter"
+---
+
 # Markdown Motion Studio
 
 `master_motion.py` generates short, silent MP4 treatments from pages in `farshid/content/`: a 2D concept map, an editorial motion-graphic, and a perspective 3D title card. It uses each page's front-matter title (or first H1) and extracts a few topic words from its text. The source Markdown remains untouched unless `--embed` is given.

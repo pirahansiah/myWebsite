@@ -5,7 +5,7 @@
 <link>https://pirahansiah.com/</link>
 <description>New and updated pages on pirahansiah.com: computer vision, edge AI, GPU and on-device model engineering, publications and notes.</description>
 <language>en</language>
-<lastBuildDate>Sun, 18 Oct 2026 10:25:14 +0000</lastBuildDate>
+<lastBuildDate>Sun, 18 Oct 2026 10:31:36 +0000</lastBuildDate>
 <atom:link href="https://pirahansiah.com/feed.xml" rel="self" type="application/rss+xml"/>
 <copyright>Dr. Farshid Pirahansiah — attribution required, see https://pirahansiah.com/ai.txt</copyright>
 <item>
@@ -16,6 +16,24 @@
 <description>The single index of everything on pirahansiah.com — every publication, course, note, talk and project on one page.</description>
 <author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
 <category>Site</category>
+</item>
+<item>
+<title>Edge AI &amp; Computer Vision Beratung in Deutschland</title>
+<link>https://pirahansiah.com/farshid/content/edge-ai-beratung/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/edge-ai-beratung/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>Dr. Farshid Pirahansiah — freiberuflicher Berater für Embedded Edge AI und Computer Vision in Deutschland. Optimierung von C++, CUDA, TensorRT, OpenVINO…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Mentoring &amp; Coaching</category>
+</item>
+<item>
+<title>Embedded Edge AI &amp; Computer Vision Consultant in Germany</title>
+<link>https://pirahansiah.com/farshid/content/edge-ai-consulting-germany/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/edge-ai-consulting-germany/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>Dr. Farshid Pirahansiah — independent embedded edge AI and computer vision consultant for teams in Germany. C++, CUDA, TensorRT, OpenVINO and NVIDIA…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Mentoring &amp; Coaching</category>
 </item>
 <item>
 <title>ESP32-C3 OLED Projects: Four Firmwares on One Tiny Board</title>
@@ -43,6 +61,15 @@
 <description>Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as a Telegram Mini App. High scores, haptics and a share button.</description>
 <author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
 <category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Impressum — Legal Notice &amp; Datenschutz</title>
+<link>https://pirahansiah.com/farshid/content/impressum/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/impressum/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>Impressum und rechtliche Angaben zu pirahansiah.com: Dr. Farshid Pirahansiah, freiberufliche Beratung für Embedded Edge AI und Computer Vision in…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Mentoring &amp; Coaching</category>
 </item>
 <item>
 <title>Solana Arcade — Snake &amp; Tetris</title>
@@ -203,33 +230,6 @@
 <guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-llm-blog/</guid>
 <pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
 <description>Blog posts on RAG vs CAG, multi-agent architectures, AI&#x27;s impact on jobs, and the future of software development.</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Notes &amp; Guides</category>
-</item>
-<item>
-<title>Advanced LLM Concepts</title>
-<link>https://pirahansiah.com/farshid/content/note-llm-concepts/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-llm-concepts/</guid>
-<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
-<description>Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production deployment.</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Notes &amp; Guides</category>
-</item>
-<item>
-<title>Accelerate Python with Numba&#x27;s @jit(nopython=True)</title>
-<link>https://pirahansiah.com/farshid/content/note-numba/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-numba/</guid>
-<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
-<description>Tutorial on using Numba&#x27;s @jit decorator to compile Python functions into optimized machine code for faster numerical computing.</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Notes &amp; Guides</category>
-</item>
-<item>
-<title>How PyCUDA Reads and Runs C Kernels</title>
-<link>https://pirahansiah.com/farshid/content/note-pycuda/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-pycuda/</guid>
-<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
-<description>Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.</description>
 <author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
 <category>Notes &amp; Guides</category>
 </item>

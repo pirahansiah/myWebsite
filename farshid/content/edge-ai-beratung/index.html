@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Edge AI &amp; Computer Vision Beratung in Deutschland — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Dr. Farshid Pirahansiah — freiberuflicher Berater für Embedded Edge AI und Computer Vision in Deutschland. Optimierung von C++, CUDA, TensorRT, OpenVINO…">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/edge-ai-beratung/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/edge-ai-beratung.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="alternate" hreflang="de" href="https://pirahansiah.com/farshid/content/edge-ai-beratung/">
+<link rel="alternate" hreflang="en" href="https://pirahansiah.com/farshid/content/edge-ai-consulting-germany/">
+<link rel="alternate" hreflang="x-default" href="https://pirahansiah.com/farshid/content/edge-ai-consulting-germany/">
+
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/edge-ai-beratung/">
+<meta property="og:title" content="Edge AI &amp; Computer Vision Beratung in Deutschland">
+<meta property="og:description" content="Dr. Farshid Pirahansiah — freiberuflicher Berater für Embedded Edge AI und Computer Vision in Deutschland. Optimierung von C++, CUDA, TensorRT, OpenVINO…">
+<meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<meta property="og:locale" content="de_DE">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-10-18">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Edge AI &amp; Computer Vision Beratung in Deutschland">
+<meta name="twitter:description" content="Dr. Farshid Pirahansiah — freiberuflicher Berater für Embedded Edge AI und Computer Vision in Deutschland. Optimierung von C++, CUDA, TensorRT, OpenVINO…">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Embedded Edge AI & Computer Vision Consultant",
+   "email": "info@pirahansiah.com",
+   "description": "Independent consultant for embedded edge AI and computer vision in Germany: C++, CUDA, TensorRT, OpenVINO and NVIDIA Jetson optimization for production vision systems.",
+   "knowsAbout": [
+    "Computer Vision",
+    "Edge AI",
+    "Embedded AI",
+    "Model Optimization",
+    "Model Quantization",
+    "NVIDIA Jetson",
+    "TensorRT",
+    "OpenVINO",
+    "CUDA",
+    "C++",
+    "OpenCV",
+    "Real-time Image Processing",
+    "Industrial Computer Vision",
+    "On-device LLMs",
+    "Multi-camera Systems",
+    "FPGA Acceleration"
+   ],
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "ProfessionalService",
+   "@id": "https://pirahansiah.com/#service",
+   "name": "Embedded Edge AI & Computer Vision Consulting — Dr. Farshid Pirahansiah",
+   "description": "Independent consulting and engineering for teams building computer vision and edge AI systems: NVIDIA Jetson, TensorRT, OpenVINO, CUDA and C++ optimization for production.",
+   "url": "https://pirahansiah.com/",
+   "provider": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "founder": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "serviceType": [
+    "Edge AI consulting",
+    "Computer vision consulting",
+    "Model optimization for embedded devices",
+    "NVIDIA Jetson and TensorRT engineering",
+    "CUDA performance engineering",
+    "Computer vision mentoring and training"
+   ],
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Germany"
+    },
+    {
+     "@type": "City",
+     "name": "Munich"
+    },
+    {
+     "@type": "City",
+     "name": "Stuttgart"
+    },
+    {
+     "@type": "City",
+     "name": "Berlin"
+    },
+    {
+     "@type": "City",
+     "name": "Heidelberg"
+    },
+    {
+     "@type": "AdministrativeArea",
+     "name": "European Union"
+    }
+   ],
+   "availableLanguage": [
+    {
+     "@type": "Language",
+     "name": "English",
+     "alternateName": "en"
+    },
+    {
+     "@type": "Language",
+     "name": "German",
+     "alternateName": "de"
+    }
+   ],
+   "knowsAbout": [
+    "Computer Vision",
+    "Edge AI",
+    "Embedded AI",
+    "Model Optimization",
+    "Model Quantization",
+    "NVIDIA Jetson",
+    "TensorRT",
+    "OpenVINO",
+    "CUDA",
+    "C++",
+    "OpenCV",
+    "Real-time Image Processing",
+    "Industrial Computer Vision",
+    "On-device LLMs",
+    "Multi-camera Systems",
+    "FPGA Acceleration"
+   ],
+   "inLanguage": "en"
+  },
+  {
+   "@type": "TechArticle",
+   "@id": "https://pirahansiah.com/farshid/content/edge-ai-beratung/#page",
+   "url": "https://pirahansiah.com/farshid/content/edge-ai-beratung/",
+   "name": "Edge AI & Computer Vision Beratung in Deutschland",
+   "headline": "Edge AI & Computer Vision Beratung in Deutschland",
+   "description": "Dr. Farshid Pirahansiah — freiberuflicher Berater für Embedded Edge AI und Computer Vision in Deutschland. Optimierung von C++, CUDA, TensorRT, OpenVINO…",
+   "inLanguage": "de",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/edge-ai-beratung/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "about": {
+    "@id": "https://pirahansiah.com/#service"
+   },
+   "datePublished": "2026-10-18",
+   "dateModified": "2026-10-18",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "keywords": [
+    "edge-ai-beratung",
+    "computer-vision-beratung",
+    "deutschland",
+    "embedded-ai",
+    "nvidia-jetson",
+    "tensorrt",
+    "cuda",
+    "openvino",
+    "quantisierung",
+    "industrielle-bildverarbeitung",
+    "cpp"
+   ],
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "Leistungen",
+     "url": "https://pirahansiah.com/farshid/content/edge-ai-beratung/#leistungen"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Hardware und Software, auf der ich optimiere",
+     "url": "https://pirahansiah.com/farshid/content/edge-ai-beratung/#hardware-und-software-auf-der-ich-optimiere"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Typische Fragestellungen aus der Praxis",
+     "url": "https://pirahansiah.com/farshid/content/edge-ai-beratung/#typische-fragestellungen-aus-der-praxis"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Wie eine Zusammenarbeit abläuft",
+     "url": "https://pirahansiah.com/farshid/content/edge-ai-beratung/#wie-eine-zusammenarbeit-ablauft"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Vor Ort und remote",
+     "url": "https://pirahansiah.com/farshid/content/edge-ai-beratung/#vor-ort-und-remote"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Nachweise",
+     "url": "https://pirahansiah.com/farshid/content/edge-ai-beratung/#nachweise"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Kontakt",
+     "url": "https://pirahansiah.com/farshid/content/edge-ai-beratung/#kontakt"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/edge-ai-beratung/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Edge AI & Computer Vision Beratung in Deutschland",
+     "item": "https://pirahansiah.com/farshid/content/edge-ai-beratung/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/edge-ai-beratung.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p class="page-byline">By <strong>Dr. Farshid Pirahansiah</strong> — computer vision &amp; embedded edge AI consultant, Germany. Updated 2026-10-18.</p>
+<h1 id="edge-ai-computer-vision-beratung-in-deutschland">Edge AI &amp; Computer Vision Beratung in Deutschland</h1>
+<p>Ich bin <strong>Dr. Farshid Pirahansiah</strong> — freiberuflicher Berater für <strong>Embedded Edge AI</strong>
+und <strong>Computer Vision</strong> für Engineering-Teams in <strong>Deutschland</strong>. <strong>12+ Jahre</strong>
+Berufserfahrung, <strong>21 Publikationen</strong>, <strong>3 Patente</strong>. Zusammengearbeitet wird remote im
+ganzen Bundesgebiet, vor Ort für Kick-offs, Integrationswochen und Labortests.</p>
+<p>Der Kern der Arbeit ist selten ein neues Modell. Meistens gibt es schon ein Modell, eine
+Platine, einen Termin — und ein System, das zu langsam, zu heiß oder auf der Zielhardware
+nicht reproduzierbar läuft. Genau dort setze ich an: Messen auf dem Gerät, Optimieren bis
+es die Rate hält, und zwar nachvollziehbar dokumentiert.
+<em>English version:</em> <a href="https://pirahansiah.com/farshid/content/edge-ai-consulting-germany/">Embedded Edge AI &amp; Computer Vision Consultant in Germany</a>.</p>
+<h2 id="leistungen">Leistungen</h2>
+<ul>
+<li><strong>Produktionsreife Vision-Pipelines</strong> — Kameraerfassung, Kalibrierung, Vor- und
+  Nachverarbeitung und Inferenz so verdrahtet, dass die Bildrate auch unter Last hält.</li>
+<li><strong>Hardware-nahe Optimierung</strong> — Quantisierung, Kernel- und Graph-Optimierung, plus eine
+  belastbare Messung dessen, was die Zielplattform wirklich leisten kann.</li>
+<li><strong>Prototypen-Rettung &amp; technische Bewertung</strong> — vom funktionierenden Demo zum Produkt,
+  oder eine Hardware-/KI-Entscheidung, die vor der Budgetfreigabe fallen muss.</li>
+<li><strong>Wissen im Team</strong> — gemeinsames Arbeiten und Code-Review, damit das Know-how im
+  Unternehmen bleibt und nicht in einer Präsentation.</li>
+</ul>
+<h2 id="hardware-und-software-auf-der-ich-optimiere">Hardware und Software, auf der ich optimiere</h2>
+<table>
+<thead>
+<tr>
+<th>Ebene</th>
+<th>Werkzeuge und Plattformen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Edge-Beschleuniger</td>
+<td>NVIDIA Jetson (AGX Orin, Orin Nano, Xavier), Google Coral TPU, Hailo-8, Intel NCS2, Kria KV260 (FPGA)</td>
+</tr>
+<tr>
+<td>GPU &amp; Runtime</td>
+<td>CUDA, TensorRT, cuDNN, OpenVINO, ONNX Runtime, GGUF/llama.cpp, MLX/CoreML auf Apple Silicon</td>
+</tr>
+<tr>
+<td>Präzision &amp; Kompression</td>
+<td>INT8-/FP16-Quantisierung, Kalibrierung, Layer-Fusion, strukturiertes Pruning, Speicher-Budgetierung</td>
+</tr>
+<tr>
+<td>Vision &amp; C++</td>
+<td>C++17/20, OpenCV, G-API, PyTorch → TensorRT Deployment, Python/Numba/Cython-Hotspots</td>
+</tr>
+<tr>
+<td>Systeme</td>
+<td>Echtzeit-Pipelines, Multi-Kamera-Synchronisation, RDMA/Thunderbolt-Capture, Thermal- und Power-Limits, MIPI/GStreamer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="typische-fragestellungen-aus-der-praxis">Typische Fragestellungen aus der Praxis</h2>
+<h3 id="unser-detektor-lauft-mit-4-fps-auf-dem-bestellten-jetson">„Unser Detektor läuft mit 4 FPS auf dem bestellten Jetson"</h3>
+<p>Ein FP32-PyTorch-Modell auf einem Embedded-Gerät ist der Klassiker. Die Arbeit: ein
+TensorRT-Engine für genau diese Zielplattform bauen, INT8 auf den eigenen Bildern
+kalibrieren, die Vorverarbeitung auf die GPU verlagern und batchten, was sich batchen
+lässt. Hintergrundnotizen: <a href="https://pirahansiah.com/farshid/content/optimization-index/">CV-, DL- &amp; ML-Optimierungsleitfaden</a>
+und <a href="https://pirahansiah.com/farshid/content/note-pycuda/">PyCUDA: C-Kernel aus Python</a>.</p>
+<h3 id="auf-dem-rechner-lauft-es-auf-dem-gerat-nicht">„Auf dem Rechner läuft es, auf dem Gerät nicht"</h3>
+<p>Speichergrenzen, Thermal Throttling und ein anderer Operator-Satz sind drei verschiedene
+Probleme, die gleich aussehen. Die Arbeit: das echte Budget auf dem Gerät messen, das
+Profil auswerten, und das Modell so weit verkleinern, dass es in den vorhandenen Speicher
+passt — dieselbe Methode, mit der ich ein Sprachmodell auf 8 GB zum Laufen bringe
+(<a href="https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/">Notizen</a>).</p>
+<h3 id="wir-haben-kameras-aber-das-system-sieht-nicht-zuverlassig">„Wir haben Kameras, aber das System sieht nicht zuverlässig"</h3>
+<p>Kalibrierung, Synchronisation und Geometrie kommen vor den neuronalen Netzen:
+Multi-Kamera-Rigs, die nicht deckungsgleich sind, Optischer Fluss, der bei schneller
+Bewegung oder wechselndem Licht bricht, 3D-Rekonstruktion, die driftet. Siehe
+<a href="https://pirahansiah.com/farshid/content/note-3d-vision/">3D-Vision &amp; Multi-Kamera-Systeme</a>,
+<a href="https://pirahansiah.com/farshid/content/note-optical-flow/">Optical Flow: Herausforderungen und Lösungen</a> und
+<a href="https://pirahansiah.com/farshid/content/cable-hub/">Verkabelung für Multi-Kamera-Capture</a>.</p>
+<h3 id="das-modell-muss-aufs-gerat-ohne-cloud-ohne-gpu">„Das Modell muss aufs Gerät — ohne Cloud, ohne GPU"</h3>
+<p>Kleine Modelle für Edge-Geräte: passende Architektur wählen, quantisieren, lokal
+ausführen — vom 1-Bit-4B-Sprachmodell auf einem alten Laptop bis zur
+<a href="https://pirahansiah.com/farshid/content/qwen-image-21-local/">Bildgenerierung mit 8 GB</a> und der
+<a href="https://pirahansiah.com/farshid/content/esp32-c3-oled/">ESP32-C3-Board-Arbeit</a>, bei der das gesamte Budget ein
+paar hundert Kilobyte beträgt.</p>
+<h2 id="wie-eine-zusammenarbeit-ablauft">Wie eine Zusammenarbeit abläuft</h2>
+<ol>
+<li><strong>Gespräch über den tatsächlichen Engpass</strong> — Modell, Hardware, Termin und die
+   Genauigkeit, die nicht verhandelbar ist.</li>
+<li><strong>Kurzes technisches Audit</strong> — Profiling auf Ihrer Zielhardware, danach ein schriftliches
+   Ergebnis: was langsam ist, was machbar ist, was nicht passt und wo das Risiko liegt.</li>
+<li><strong>Umsetzung gemeinsam</strong> — ich arbeite in Ihrem Repository und Review-Prozess, in C++,
+   Python und CUDA, in Ihrer Toolchain und CI.</li>
+<li><strong>Übergabe</strong> — Pipelines, Profiling-Skript und Begründung, so dokumentiert, dass die
+   nächste Entwicklerin oder der nächste Entwickler es reproduzieren kann.</li>
+</ol>
+<h2 id="vor-ort-und-remote">Vor Ort und remote</h2>
+<ul>
+<li><strong>Remote bundesweit</strong> — gleiche Zeitzone, auf Deutsch oder Englisch.</li>
+<li><strong>Vor Ort</strong> für Kick-offs, Integrationswochen und Labortests, unter anderem in
+  <strong>München, Stuttgart, Berlin und Heidelberg</strong> — und überall dort, wo man mit Bahn oder
+  kurzem Flug hinkommt.</li>
+<li><strong>Europaweit</strong> (EU/EWR) sowie vollständig remote darüber hinaus.</li>
+</ul>
+<h2 id="nachweise">Nachweise</h2>
+<ul>
+<li><strong>21 Publikationen</strong> — Fachartikel, Konferenzbeiträge und Buchkapitel:
+  <a href="https://pirahansiah.com/farshid/content/atlas/#publications">Liste</a>.</li>
+<li><strong>3 Patente</strong> — Erkennung bewegter Fahrzeuge, Gesichtsanalyse für Werbung,
+  GAN-basierte Gesichtsaugmentation:
+  <a href="https://pirahansiah.com/farshid/content/atlas/#publications">Patentseiten</a>.</li>
+<li><strong>Google Scholar</strong> — <a href="https://scholar.google.com/citations?user=GvCEy4QAAAAJ&amp;hl=en">Zitationsprofil</a>,
+  h-Index 8, 142 Zitierungen.</li>
+<li><strong>Rechtliches</strong> — <a href="https://pirahansiah.com/farshid/content/impressum/">Impressum</a> und
+  <a href="https://pirahansiah.com/farshid/content/privacy/">Datenschutzerklärung</a>.</li>
+</ul>
+<h2 id="kontakt">Kontakt</h2>
+<ul>
+<li><strong>E-Mail</strong> — <a href="mailto:info@pirahansiah.com">info@pirahansiah.com</a>, mit Hardware, Modell
+  und der Zielgröße, die erreicht werden muss.</li>
+<li><strong>Termin</strong> — <a href="https://calendly.com/pirahansiah/farshid">calendly.com/pirahansiah/farshid</a>.</li>
+<li><strong>Alles Weitere</strong> — <a href="https://pirahansiah.com/farshid/content/atlas/">Atlas</a> oder
+  <a href="https://pirahansiah.com/farshid/content/wiki/">alle Seiten</a>.</li>
+</ul>
+<p><em>English version of this page:
+<a href="https://pirahansiah.com/farshid/content/edge-ai-consulting-germany/">Embedded Edge AI &amp; Computer Vision Consultant in Germany</a>.</em></p>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Edge AI &amp; Computer Vision Beratung in Deutschland&rdquo;. pirahansiah.com, updated 2026-10-18.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/edge-ai-beratung/">https://pirahansiah.com/farshid/content/edge-ai-beratung/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/edge-ai-beratung.md">edge-ai-beratung.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/edge-ai-consulting-germany/">Edge AI consulting</a>
+      <a href="/farshid/content/edge-ai-beratung/">Beratung (DE)</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+      <a href="/farshid/content/impressum/">Impressum</a>
+    </div>
+    <div class="footer-note"><strong>Dr. Farshid Pirahansiah</strong> &middot; embedded edge AI &amp; computer vision consultant &middot; Germany &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>
