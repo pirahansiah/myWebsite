@@ -69,6 +69,7 @@ Every page is a markdown file: the links below go straight to it (markdown is th
 - [CV, DL & ML Optimization Guide](https://pirahansiah.com/farshid/content/note-optimization-guide.md): Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines.
 - [CV, DL & ML Optimization Guide](https://pirahansiah.com/farshid/content/optimization-index.md): Comprehensive guide to optimizing deep learning models, CV systems, and data pipelines.
 - [Developer Tools & Setup Guide](https://pirahansiah.com/farshid/content/note-developer-tools.md): Curated developer tools, shell essentials, Docker tips, and GitHub tricks.
+- [ESP32-C3 OLED Projects: Four Firmwares on One Tiny Board](https://pirahansiah.com/farshid/content/esp32-c3-oled.md): A $3 ESP32-C3 with an onboard 72x40 OLED, four firmwares built on it — an icon slideshow, a status-LED diagnostic, a BLE HID mouse that scrolls for you…
 - [Games](https://pirahansiah.com/farshid/content/game.md): Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as a Telegram Mini App. High scores, haptics and a share button.
 - [How PyCUDA Reads and Runs C Kernels](https://pirahansiah.com/farshid/content/note-pycuda.md): Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.
 - [LLM Prompts for Knowledge Graph](https://pirahansiah.com/farshid/content/prompts.md): Write ONE short sentence (max 20 words) summarising a technical note. Title: {title} Key terms: {topterms} Headings: {headings} Reply with the sentence…

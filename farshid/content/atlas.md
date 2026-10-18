@@ -12,7 +12,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <nav class="atlas-jump" aria-label="Atlas sections">
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
-  <a href="#notes-guides">Notes &amp; Guides <span>42</span></a>
+  <a href="#notes-guides">Notes &amp; Guides <span>43</span></a>
   <a href="#downloads">Downloads <span>28</span></a>
   <a href="#mentoring-coaching">Mentoring &amp; Coaching <span>6</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
@@ -104,6 +104,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/note-developer-tools.md">Developer Tools &amp; Setup Guide</a></li>
     <li><a href="/farshid/content/note-computer-vision-overview.md">Dr. Farshid Pirahansiah</a></li>
     <li><a href="/farshid/content/note-startup-guide.md">Edge AI Solutions: Local LLM Implementation Business Plan</a></li>
+    <li><a href="/farshid/content/esp32-c3-oled.md">ESP32-C3 OLED Projects: Four Firmwares on One Tiny Board</a></li>
     <li><a href="/farshid/content/for-ai.md">For AI Assistants &amp; LLM Companies</a></li>
     <li><a href="/farshid/content/game.md">Games — Arcade</a></li>
     <li><a href="/farshid/content/note-cpp.md">git</a></li>
