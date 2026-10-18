@@ -20,7 +20,7 @@ Standalone HTML is used for the app shell, search, QR route shim, redirect stubs
 
 ## Structure
 
-GitHub Pages serves this repository from the `main` branch root, so the deployment shell and required metadata stay at the repository root: `index.html`, `404.html`, `qrcode.html` (the `/qrcode` short link), `.nojekyll`, `CNAME`, `robots.txt`, `sitemap.xml`, and the generated `llms*.txt` files. Moving those into `farshid/` would break the current Pages deployment.
+GitHub Pages serves this repository from the `main` branch root, so the deployment shell and required metadata stay at the repository root: `index.html`, `404.html`, `qrcode.html` (the `/qrcode` short link), `.nojekyll`, `CNAME`, `robots.txt`, `sitemap.xml`, `feed.xml`, the generated `llms*.txt` files, and the IndexNow key file (`<32-hex>.txt`, whose content is its own name — it is what lets a deploy ping Bing/Yandex to re-crawl a page immediately). Moving those into `farshid/` would break the current Pages deployment.
 
 - `farshid/content/` — the homepage, all public markdown pages, and page-specific images; one flat source directory. `atlas.md` is the index and `swarm.html` is the standalone search tool. Each `<slug>.md` has a **generated** `<slug>/index.html` next to it (see "The HTML rendering of a page") — never edit that by hand.
 - `farshid/assets/` — sitewide profile and favicon images, plus the generated motion videos under `assets/motion/`.

@@ -188,7 +188,10 @@ def html_url(p):
     rendering cannot be deployed (a gitignored path — e.g. claude-config/README.html)."""
     if twin_ignored(p):
         return p['url']
-    return f"{ORIGIN}/{twin_rel(p)[:-len('index.html')]}"
+    rel = twin_rel(p)
+    if rel.endswith('/index.html'):
+        rel = rel[:-len('index.html')]
+    return f"{ORIGIN}/{rel}"
 
 def build_projects():
     """Each project README.md is a page too (its source of truth is on GitHub as well)."""
@@ -304,6 +307,8 @@ def write_sitemap(pages):
     for loc, freq, prio in STANDALONE:
         out.append(f'  <url><loc>{ORIGIN}{loc}</loc><changefreq>{freq}</changefreq><priority>{prio}</priority></url>')
     for p in sorted(pages, key=lambda x: x['slug']):
+        if twin_ignored(p):
+            continue      # a page whose HTML rendering cannot deploy is not a crawlable page
         out.append(f"  <url><loc>{html_url(p)}</loc><lastmod>{p['modified']}</lastmod>"
                    f"<changefreq>monthly</changefreq><priority>0.7</priority></url>")
     out += ['</urlset>', '']

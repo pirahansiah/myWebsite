@@ -27786,9 +27786,9 @@ question* — and it is worth copying into any agent configuration, with or with
 ---
 
 ## HTML motion graphic
-URL: https://pirahansiah.com/farshid/projects/html-motion-graphic/R
+URL: https://pirahansiah.com/farshid/projects/html-motion-graphic/README.html
 Markdown source: https://pirahansiah.com/farshid/projects/html-motion-graphic/README.md
-Cite as: Pirahansiah, F. "HTML motion graphic". pirahansiah.com, updated 2026-10-16. https://pirahansiah.com/farshid/projects/html-motion-graphic/R
+Cite as: Pirahansiah, F. "HTML motion graphic". pirahansiah.com, updated 2026-10-16. https://pirahansiah.com/farshid/projects/html-motion-graphic/README.html
 
 # HTML motion graphic
 
@@ -27813,9 +27813,9 @@ Type is set with the system font stack (`system-ui`/Segoe UI/Roboto for text, `u
 ---
 
 ## llm-tools
-URL: https://pirahansiah.com/farshid/projects/llm-tools/R
+URL: https://pirahansiah.com/farshid/projects/llm-tools/README.html
 Markdown source: https://pirahansiah.com/farshid/projects/llm-tools/README.md
-Cite as: Pirahansiah, F. "llm-tools". pirahansiah.com, updated 2026-09-19. https://pirahansiah.com/farshid/projects/llm-tools/R
+Cite as: Pirahansiah, F. "llm-tools". pirahansiah.com, updated 2026-09-19. https://pirahansiah.com/farshid/projects/llm-tools/README.html
 
 # llm-tools
 
@@ -27824,9 +27824,9 @@ Source files for the `llm-tools` project.
 ---
 
 ## Markdown Motion Studio
-URL: https://pirahansiah.com/farshid/projects/md-motion-studio/R
+URL: https://pirahansiah.com/farshid/projects/md-motion-studio/README.html
 Markdown source: https://pirahansiah.com/farshid/projects/md-motion-studio/README.md
-Cite as: Pirahansiah, F. "Markdown Motion Studio". pirahansiah.com, updated 2026-10-04. https://pirahansiah.com/farshid/projects/md-motion-studio/R
+Cite as: Pirahansiah, F. "Markdown Motion Studio". pirahansiah.com, updated 2026-10-04. https://pirahansiah.com/farshid/projects/md-motion-studio/README.html
 
 # Markdown Motion Studio
 
@@ -27878,9 +27878,9 @@ After generation, review the MP4s/posters and Markdown diff. For site publicatio
 ---
 
 ## mimo
-URL: https://pirahansiah.com/farshid/projects/mimo/R
+URL: https://pirahansiah.com/farshid/projects/mimo/README.html
 Markdown source: https://pirahansiah.com/farshid/projects/mimo/README.md
-Cite as: Pirahansiah, F. "mimo". pirahansiah.com, updated 2026-09-19. https://pirahansiah.com/farshid/projects/mimo/R
+Cite as: Pirahansiah, F. "mimo". pirahansiah.com, updated 2026-09-19. https://pirahansiah.com/farshid/projects/mimo/README.html
 
 # mimo
 
@@ -27889,9 +27889,9 @@ Source files for the `mimo` project.
 ---
 
 ## rag
-URL: https://pirahansiah.com/farshid/projects/rag/R
+URL: https://pirahansiah.com/farshid/projects/rag/README.html
 Markdown source: https://pirahansiah.com/farshid/projects/rag/README.md
-Cite as: Pirahansiah, F. "rag". pirahansiah.com, updated 2026-09-19. https://pirahansiah.com/farshid/projects/rag/R
+Cite as: Pirahansiah, F. "rag". pirahansiah.com, updated 2026-09-19. https://pirahansiah.com/farshid/projects/rag/README.html
 
 # rag
 
@@ -27900,9 +27900,9 @@ Source files for the `rag` project.
 ---
 
 ## site-tools
-URL: https://pirahansiah.com/farshid/projects/site-tools/R
+URL: https://pirahansiah.com/farshid/projects/site-tools/README.html
 Markdown source: https://pirahansiah.com/farshid/projects/site-tools/README.md
-Cite as: Pirahansiah, F. "site-tools". pirahansiah.com, updated 2026-09-19. https://pirahansiah.com/farshid/projects/site-tools/R
+Cite as: Pirahansiah, F. "site-tools". pirahansiah.com, updated 2026-09-19. https://pirahansiah.com/farshid/projects/site-tools/README.html
 
 # site-tools
 
