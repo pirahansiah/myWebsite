@@ -84,10 +84,7 @@ def html_url(p):
 
 
 def out_path(p):
-    rel = p['md'].lstrip('/')                       # farshid/content/x.md | farshid/projects/n/README.md
-    if p['route'].startswith('projects/'):
-        return os.path.join(SITE, rel[:-3] + '.html')
-    return os.path.join(CONTENT, p['slug'], 'index.html')
+    return os.path.join(SITE, gsp.twin_rel(p))
 
 
 def date_created(rel_path):
@@ -476,9 +473,7 @@ def main():
     for p in pages:
         path = out_path(p)
         # a project README.html that is gitignored would never deploy — leave it alone
-        ignored = subprocess.run(['git', 'check-ignore', '-q', os.path.relpath(path, SITE)],
-                                 cwd=SITE, capture_output=True, text=True).returncode == 0
-        if ignored:
+        if gsp.twin_ignored(p):
             skipped.append(p['slug'])
             continue
         meta, body_md = gsp.split_front_matter(open(p['path'], encoding='utf-8').read())

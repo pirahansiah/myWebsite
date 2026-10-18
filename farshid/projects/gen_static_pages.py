@@ -164,11 +164,31 @@ def build_pages():
     return pages
 
 
-def html_url(p):
-    """Canonical URL of the page's static HTML rendering (see gen_page_html.py)."""
+def twin_rel(p):
+    """Repo-root-relative path of the page's generated HTML rendering (gen_page_html.py)."""
     if p['route'].startswith('projects/'):
-        return f"{ORIGIN}/{p['md'].lstrip('/')[:-3]}.html"
-    return f"{ORIGIN}/farshid/content/{p['slug']}/"
+        return p['md'].lstrip('/')[:-3] + '.html'
+    return f"farshid/content/{p['slug']}/index.html"
+
+
+_TWIN_IGNORED = {}
+
+
+def twin_ignored(p):
+    """True when the HTML twin cannot be deployed (.gitignore blocks that path)."""
+    rel = twin_rel(p)
+    if rel not in _TWIN_IGNORED:
+        _TWIN_IGNORED[rel] = subprocess.run(['git', 'check-ignore', '-q', rel], cwd=SITE,
+                                            capture_output=True, text=True).returncode == 0
+    return _TWIN_IGNORED[rel]
+
+
+def html_url(p):
+    """Canonical URL of the page: its static HTML rendering, or the markdown file when the
+    rendering cannot be deployed (a gitignored path — e.g. claude-config/README.html)."""
+    if twin_ignored(p):
+        return p['url']
+    return f"{ORIGIN}/{twin_rel(p)[:-len('index.html')]}"
 
 def build_projects():
     """Each project README.md is a page too (its source of truth is on GitHub as well)."""
