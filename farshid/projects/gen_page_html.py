@@ -287,7 +287,7 @@ $ld
 <main>
 <div id="content" class="wrap">
 <article class="article$panel">
-<p class="page-byline">By <strong>Dr. Farshid Pirahansiah</strong> — computer vision &amp; embedded edge AI consultant, Germany. Updated $modified.</p>
+<p class="page-byline">By <strong>Dr. Farshid Pirahansiah</strong> — computer vision &amp; embedded edge AI consultant, Berlin, Germany &middot; 12+ years. Updated $modified.</p>
 $body
 <hr>
 <p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;$title_esc&rdquo;. pirahansiah.com, updated $modified.
@@ -308,7 +308,7 @@ Canonical URL <a href="$canon">$canon</a> &middot; markdown source <a href="$mdu
       <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
       <a href="/farshid/content/impressum/">Impressum</a>
     </div>
-    <div class="footer-note"><strong>Dr. Farshid Pirahansiah</strong> &middot; embedded edge AI &amp; computer vision consultant &middot; Germany &middot; &copy; <span data-year>2026</span></div>
+    <div class="footer-note"><strong>Dr. Farshid Pirahansiah</strong> &middot; embedded edge AI &amp; computer vision consultant &middot; Berlin, Germany &middot; 12+ years &middot; &copy; <span data-year>2026</span></div>
   </div>
 </footer>
 </div><!-- /.app-window -->
@@ -352,7 +352,11 @@ PERSON_LD = {
     'knowsAbout': ['Computer Vision', 'Edge AI', 'Embedded AI', 'Model Optimization', 'Model Quantization',
                    'NVIDIA Jetson', 'TensorRT', 'OpenVINO', 'CUDA', 'C++', 'OpenCV',
                    'Real-time Image Processing', 'Industrial Computer Vision', 'On-device LLMs',
-                   'Multi-camera Systems', 'FPGA Acceleration'],
+                   'Multi-camera Systems', 'FPGA Acceleration', 'ESP32', 'ESP32-C3', 'Microcontroller AI',
+                   'RISC-V', 'TinyML', 'Edge Deployment'],
+    'address': {'@type': 'PostalAddress', 'addressLocality': 'Berlin', 'addressCountry': 'DE'},
+    'workLocation': {'@type': 'Place', 'address': {'@type': 'PostalAddress', 'addressLocality': 'Berlin',
+                                                  'addressCountry': 'DE'}},
     'image': PROFILE_IMG,
     'sameAs': ['https://www.linkedin.com/in/pirahansiah/', 'https://github.com/pirahansiah',
                'https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en',
@@ -383,11 +387,9 @@ SERVICE_LD = {
                     'NVIDIA Jetson and TensorRT engineering', 'CUDA performance engineering',
                     'Computer vision mentoring and training'],
     'areaServed': [{'@type': 'Country', 'name': 'Germany'},
-                   {'@type': 'City', 'name': 'Munich'},
-                   {'@type': 'City', 'name': 'Stuttgart'},
-                   {'@type': 'City', 'name': 'Berlin'},
-                   {'@type': 'City', 'name': 'Heidelberg'},
-                   {'@type': 'AdministrativeArea', 'name': 'European Union'}],
+                   {'@type': 'City', 'name': 'Berlin'}],
+    'address': {'@type': 'PostalAddress', 'addressLocality': 'Berlin', 'addressCountry': 'DE'},
+    'availableChannel': {'@type': 'ServiceChannel', 'serviceLocation': {'@type': 'Place', 'name': 'Berlin, Germany'}},
     'availableLanguage': [{'@type': 'Language', 'name': 'English', 'alternateName': 'en'},
                           {'@type': 'Language', 'name': 'German', 'alternateName': 'de'}],
     'knowsAbout': PERSON_LD['knowsAbout'],
@@ -536,7 +538,7 @@ $ld
 </head>
 <body>
 <h1>$title</h1>
-<p>Dr. Farshid Pirahansiah — embedded edge AI &amp; computer vision consultant, Germany.
+<p>Dr. Farshid Pirahansiah — embedded edge AI &amp; computer vision consultant, Berlin, Germany &middot; 12+ years.
 <a href="$canon">$canon</a></p>
 </body>
 </html>

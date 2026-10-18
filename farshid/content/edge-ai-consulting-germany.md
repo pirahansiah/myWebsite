@@ -11,10 +11,10 @@ translation: edge-ai-beratung
 # Embedded Edge AI & Computer Vision Consultant in Germany
 
 I am **Dr. Farshid Pirahansiah**: an independent consultant for embedded edge AI and
-computer vision, working with engineering teams in **Germany** and across Europe —
-remotely the whole working week, and on site for the milestones that need a whiteboard.
-**12+ years**, **21 publications**, **3 patents**, and a working rule: the model only
-counts once it runs on the device in front of the customer.
+computer vision, based in **Berlin, Germany** and working with engineering teams in Germany
+and across Europe — remotely the whole working week, and on site for the milestones that
+need a whiteboard. **12+ years**, **21 publications**, **3 patents**, and a working rule:
+the model only counts once it runs on the device in front of the customer.
 
 The teams I work with are not looking for a general machine-learning lecture. They
 already have a model, a board, a deadline, and something that is too slow, too hot, or
@@ -40,6 +40,7 @@ not reproducible on the hardware they have to ship. *Deutschsprachige Zusammenfa
 | GPU & runtime | CUDA, TensorRT, cuDNN, OpenVINO, ONNX Runtime, GGUF/llama.cpp, MLX/CoreML on Apple silicon |
 | Precision & compression | INT8 / FP16 quantization, calibration, layer fusion, structured pruning, KV-cache and memory budgeting |
 | Vision & C++ | C++17/20, OpenCV, G-API, PyTorch → TensorRT deployment, Python/Numba/Cython hotspots |
+| Microcontrollers & RISC-V | ESP32 / ESP32-C3 (ESP-IDF, Arduino, BLE HID, OLED UI, TinyML), RISC-V RV32/RV64 targets (ESP32-C3/C6 cores, K210/K230-class vision SoCs) |
 | Systems | real-time pipelines, multi-camera synchronization, RDMA/Thunderbolt capture, thermal and power limits, MIPI/GStreamer |
 
 ## Pain points I am usually called for
@@ -76,6 +77,14 @@ that drifts. See
 [Optical flow: challenges and solutions](/farshid/content/note-optical-flow.md) and the
 [cabling notes for multi-camera capture](/farshid/content/cable-hub.md).
 
+### "The problem starts below Linux: a microcontroller and a few hundred kilobytes"
+
+ESP32 / ESP32-C3 firmware (which is a RISC-V core): sensor and camera work, BLE HID,
+an OLED UI, and a model small enough to fit — flashed and measured with ESP-IDF or
+Arduino. Working example on this site:
+[four firmwares on one €3 RISC-V board](/farshid/content/esp32-c3-oled/). Broader ISA
+and toolchain notes: [RISC-V for AI](/farshid/content/course-risc-v/).
+
 ### "We need a model on the device, without a cloud and without a GPU"
 
 Small-model work for edge devices: choosing an architecture that fits, quantizing it, and
@@ -103,10 +112,11 @@ You can see what day-to-day work with me looks like in
 
 ## Where I work
 
-- **Remote across Germany** — the whole country, same time zone, in English or German.
-- **On site** for kick-offs, integration weeks and lab work, including **Munich,
-  Stuttgart, Berlin and Heidelberg**, and anywhere reachable by train or a short flight.
-- Also **Europe-wide** (EU/EEA) and fully remote engagements further afield.
+- **Based in Berlin, Germany** — remote across the whole country, same time zone, in
+  English or German.
+- **On site** for kick-offs, integration weeks and lab work in **Berlin** and anywhere in
+  Germany reachable by train or a short flight.
+- Fully remote engagements are possible anywhere the time zone works.
 
 ## Credentials
 

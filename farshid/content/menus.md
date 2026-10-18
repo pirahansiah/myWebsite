@@ -77,7 +77,7 @@ Complete navigation index with summaries of all site pages
 - **[Startup Guide](/notes/docs/startup/)** — Edge AI business plans, fundraising in Germany, pitch decks
 - **[SEO for LLMs](/notes/docs/seo/)** — Structured data, AI-friendly content optimization
 - **[Top LinkedIn Posts](/notes/docs/linkedin/)** — Top posts: camera calibration, C++, robotics
-- **[10 Years of Bug Fixing](/notes/pubs/10-years/)** — Lessons from fixing bugs in CV systems
+- **[12+ Years of Bug Fixing](/notes/pubs/10-years/)** — Lessons from 12+ years of fixing bugs in CV systems
 - **[Solutions](/notes/docs/solutions/)** — Industry solutions and business
 - **[Connect](/notes/docs/solutions/#connect)** — Get in touch
 

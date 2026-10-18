@@ -201,7 +201,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <section class="atlas-sec" id="mentoring-coaching">
   <h2>Mentoring &amp; Coaching</h2>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/10-years.md">10 Years of CV Debugging Lessons</a></li>
+    <li><a href="/farshid/content/10-years.md">12+ Years of CV Debugging Lessons</a></li>
     <li><a href="/farshid/content/edge-ai-beratung.md">Edge AI &amp; Computer Vision Beratung in Deutschland</a></li>
     <li><a href="/farshid/content/edge-ai-consulting-germany.md">Embedded Edge AI &amp; Computer Vision Consultant in Germany</a></li>
     <li><a href="/farshid/content/impressum.md">Impressum / Legal Notice</a></li>

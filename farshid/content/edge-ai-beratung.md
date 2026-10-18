@@ -11,9 +11,10 @@ translation: edge-ai-consulting-germany
 # Edge AI & Computer Vision Beratung in Deutschland
 
 Ich bin **Dr. Farshid Pirahansiah** — freiberuflicher Berater für **Embedded Edge AI**
-und **Computer Vision** für Engineering-Teams in **Deutschland**. **12+ Jahre**
-Berufserfahrung, **21 Publikationen**, **3 Patente**. Zusammengearbeitet wird remote im
-ganzen Bundesgebiet, vor Ort für Kick-offs, Integrationswochen und Labortests.
+und **Computer Vision**, ansässig in **Berlin, Deutschland**, für Engineering-Teams in
+Deutschland. **12+ Jahre** Berufserfahrung, **21 Publikationen**, **3 Patente**.
+Zusammengearbeitet wird remote im ganzen Bundesgebiet, vor Ort für Kick-offs,
+Integrationswochen und Labortests.
 
 Der Kern der Arbeit ist selten ein neues Modell. Meistens gibt es schon ein Modell, eine
 Platine, einen Termin — und ein System, das zu langsam, zu heiß oder auf der Zielhardware
@@ -40,6 +41,7 @@ es die Rate hält, und zwar nachvollziehbar dokumentiert.
 | GPU & Runtime | CUDA, TensorRT, cuDNN, OpenVINO, ONNX Runtime, GGUF/llama.cpp, MLX/CoreML auf Apple Silicon |
 | Präzision & Kompression | INT8-/FP16-Quantisierung, Kalibrierung, Layer-Fusion, strukturiertes Pruning, Speicher-Budgetierung |
 | Vision & C++ | C++17/20, OpenCV, G-API, PyTorch → TensorRT Deployment, Python/Numba/Cython-Hotspots |
+| Mikrocontroller & RISC-V | ESP32 / ESP32-C3 (ESP-IDF, Arduino, BLE HID, OLED-UI, TinyML), RISC-V RV32/RV64 (RISC-V-Kerne im ESP32-C3/C6, Vision-SoCs der K210/K230-Klasse) |
 | Systeme | Echtzeit-Pipelines, Multi-Kamera-Synchronisation, RDMA/Thunderbolt-Capture, Thermal- und Power-Limits, MIPI/GStreamer |
 
 ## Typische Fragestellungen aus der Praxis
@@ -69,6 +71,14 @@ Bewegung oder wechselndem Licht bricht, 3D-Rekonstruktion, die driftet. Siehe
 [Optical Flow: Herausforderungen und Lösungen](/farshid/content/note-optical-flow.md) und
 [Verkabelung für Multi-Kamera-Capture](/farshid/content/cable-hub.md).
 
+### „Das Problem beginnt unterhalb von Linux: ein Mikrocontroller und ein paar hundert Kilobyte"
+
+ESP32-/ESP32-C3-Firmware (ein RISC-V-Kern): Sensorik und Kamera, BLE HID, OLED-UI und
+ein Modell, das klein genug ist — geflasht und vermessen mit ESP-IDF oder Arduino.
+Funktionierendes Beispiel auf dieser Seite:
+[vier Firmwares auf einem 3-Euro-RISC-V-Board](/farshid/content/esp32-c3-oled.md).
+ISA- und Toolchain-Notizen: [RISC-V for AI](/farshid/content/course-risc-v.md).
+
 ### „Das Modell muss aufs Gerät — ohne Cloud, ohne GPU"
 
 Kleine Modelle für Edge-Geräte: passende Architektur wählen, quantisieren, lokal
@@ -90,11 +100,11 @@ paar hundert Kilobyte beträgt.
 
 ## Vor Ort und remote
 
-- **Remote bundesweit** — gleiche Zeitzone, auf Deutsch oder Englisch.
-- **Vor Ort** für Kick-offs, Integrationswochen und Labortests, unter anderem in
-  **München, Stuttgart, Berlin und Heidelberg** — und überall dort, wo man mit Bahn oder
-  kurzem Flug hinkommt.
-- **Europaweit** (EU/EWR) sowie vollständig remote darüber hinaus.
+- **Ansässig in Berlin, Deutschland** — remote bundesweit, gleiche Zeitzone, auf Deutsch
+  oder Englisch.
+- **Vor Ort** für Kick-offs, Integrationswochen und Labortests in **Berlin** und überall
+  in Deutschland, wo man mit Bahn oder kurzem Flug hinkommt.
+- Vollständig remote ist überall dort möglich, wo die Zeitzone passt.
 
 ## Nachweise
 

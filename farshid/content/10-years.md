@@ -1,10 +1,10 @@
 ---
 layout: farshid_default
-title: "10 Years of CV Debugging Lessons"
+title: "12+ Years of CV Debugging Lessons"
 permalink: /notes/pubs/10-years/
-description: "Lessons learned from a decade of debugging computer vision systems in production."
+description: "Lessons from 12+ years of building and debugging computer vision systems in production: floating-point pitfalls, background subtraction, stereo depth, camera calibration and the review habits that catch them."
 markmap: |
-  # 10 Years of CV Debugging
+  # 12+ Years of CV Debugging
   ## Lessons Learned
   - Floating point pitfalls
   - Background subtraction
@@ -24,9 +24,9 @@ hashtags: "#cv #debugging #lessonslearned #opencv"
 
 
 
-# 10 Years of CV Debugging Lessons
+# 12+ Years of CV Debugging Lessons
 
-> **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production.
+> **12+ Years of CV Debugging Lessons** — Lessons from 12+ years of building and debugging computer vision systems in production.
 
 
 
@@ -69,11 +69,11 @@ cv2.setNumThreads(num_cpus)
 
 
 
-As an AI and computer vision expert with over a decade of experience collaborating with esteemed global organizations, my expertise encompasses AI research and development, machine learning, deep learning, Internet of Things (IoT), and model optimization for edge and cloud-based solutions. With a portfolio of 21 publications, three patents, and extensive practical experience in real-time computer vision applications, I have spearheaded groundbreaking projects in generative AI, video analytics, and intelligent systems. Proficient in C++, Python, OpenCV, and advanced GPU optimization, I am recognized for bridging the gap between cutting-edge research and commercially viable products.
+As an AI and computer vision expert with 12+ years of experience collaborating with esteemed global organizations, my expertise encompasses AI research and development, machine learning, deep learning, Internet of Things (IoT), and model optimization for edge and cloud-based solutions. With a portfolio of 21 publications, three patents, and extensive practical experience in real-time computer vision applications, I have spearheaded groundbreaking projects in generative AI, video analytics, and intelligent systems. Proficient in C++, Python, OpenCV, and advanced GPU optimization, I am recognized for bridging the gap between cutting-edge research and commercially viable products.
 
 
 
-lessons learned fixing bug and review codes for my 10 years experince 
+lessons learned fixing bugs and reviewing code over my 12+ years of experience 
 
 you need lessons learned after each project so what do you learn during projects.
 

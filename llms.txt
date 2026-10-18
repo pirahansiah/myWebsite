@@ -112,14 +112,14 @@ Every page below links to its canonical HTML page: the full text, readable witho
 - [Modern C++ for Image Processing](https://pirahansiah.com/farshid/content/course-modern-cpp/): Modern C++23 for image processing: memory management, design patterns, CUDA, and OpenCV.
 - [OpenVINO Deep Learning](https://pirahansiah.com/farshid/content/course-openvino/): Intel OpenVINO toolkit for optimizing and deploying deep learning models.
 - [Parallel Programming for Computer Vision](https://pirahansiah.com/farshid/content/course-parallel-computing/): Python parallel programming techniques for computer vision applications.
-- [RISC-V for AI](https://pirahansiah.com/farshid/content/course-risc-v/): RISC-V open-source processor architecture for AI at the edge.
+- [RISC-V for AI](https://pirahansiah.com/farshid/content/course-risc-v/): RISC-V for edge AI: the open instruction set, the cores and boards that matter for embedded inference (ESP32-C3/C6, K210/K230, VisionFive 2), the vector…
 - [ROS: Robot Operating System](https://pirahansiah.com/farshid/content/course-ros/): ETH Zurich lecture on ROS architecture, navigation, simulation, and robot models.
 - [TensorFlow Deployment Specialization](https://pirahansiah.com/farshid/content/course-tensorflow-deploy/): TensorFlow deployment: browser-based TF.js, device-based TF Lite, data pipelines, and optimization.
 - [Tesla AI](https://pirahansiah.com/farshid/content/course-tesla/): Workshop on Tesla's autonomous driving technology and AI systems.
 
 ## Mentoring & Coaching
 
-- [10 Years of CV Debugging Lessons](https://pirahansiah.com/farshid/content/10-years/): Lessons learned from a decade of debugging computer vision systems in production.
+- [12+ Years of CV Debugging Lessons](https://pirahansiah.com/farshid/content/10-years/): Lessons from 12+ years of building and debugging computer vision systems in production: floating-point pitfalls, background subtraction, stereo depth…
 - [Edge AI & Computer Vision Beratung in Deutschland](https://pirahansiah.com/farshid/content/edge-ai-beratung/): Dr. Farshid Pirahansiah — freiberuflicher Berater für Embedded Edge AI und Computer Vision in Deutschland. Optimierung von C++, CUDA, TensorRT, OpenVINO…
 - [Embedded Edge AI & Computer Vision Consultant in Germany](https://pirahansiah.com/farshid/content/edge-ai-consulting-germany/): Dr. Farshid Pirahansiah — independent embedded edge AI and computer vision consultant for teams in Germany. C++, CUDA, TensorRT, OpenVINO and NVIDIA…
 - [Impressum — Legal Notice & Datenschutz](https://pirahansiah.com/farshid/content/impressum/): Impressum und rechtliche Angaben zu pirahansiah.com: Dr. Farshid Pirahansiah, freiberufliche Beratung für Embedded Edge AI und Computer Vision in…

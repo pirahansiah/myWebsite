@@ -5,7 +5,7 @@
 <link>https://pirahansiah.com/</link>
 <description>New and updated pages on pirahansiah.com: computer vision, edge AI, GPU and on-device model engineering, publications and notes.</description>
 <language>en</language>
-<lastBuildDate>Sun, 18 Oct 2026 10:37:29 +0000</lastBuildDate>
+<lastBuildDate>Sun, 18 Oct 2026 11:13:21 +0000</lastBuildDate>
 <atom:link href="https://pirahansiah.com/feed.xml" rel="self" type="application/rss+xml"/>
 <copyright>Dr. Farshid Pirahansiah — attribution required, see https://pirahansiah.com/ai.txt</copyright>
 <item>
@@ -99,11 +99,11 @@
 <category>Projects</category>
 </item>
 <item>
-<title>10 Years of CV Debugging Lessons</title>
+<title>12+ Years of CV Debugging Lessons</title>
 <link>https://pirahansiah.com/farshid/content/10-years/</link>
 <guid isPermaLink="true">https://pirahansiah.com/farshid/content/10-years/</guid>
 <pubDate>Fri, 16 Oct 2026 09:00:00 +0000</pubDate>
-<description>Lessons learned from a decade of debugging computer vision systems in production.</description>
+<description>Lessons from 12+ years of building and debugging computer vision systems in production: floating-point pitfalls, background subtraction, stereo depth…</description>
 <author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
 <category>Mentoring &amp; Coaching</category>
 </item>

@@ -209,7 +209,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <section class="atlas-sec" id="mentoring-coaching">
   <h2>Mentoring &amp; Coaching</h2>
   <ul class="atlas-list">
-    <li><a href="/farshid/content/10-years.md">10 Years of CV Debugging Lessons</a></li>
+    <li><a href="/farshid/content/10-years.md">12+ Years of CV Debugging Lessons</a></li>
     <li><a href="/farshid/content/edge-ai-beratung.md">Edge AI &amp; Computer Vision Beratung in Deutschland</a></li>
     <li><a href="/farshid/content/edge-ai-consulting-germany.md">Embedded Edge AI &amp; Computer Vision Consultant in Germany</a></li>
     <li><a href="/farshid/content/impressum.md">Impressum / Legal Notice</a></li>
@@ -1522,10 +1522,10 @@ Cite as: Pirahansiah, F. "CV — Dr. Farshid Pirahansiah". pirahansiah.com, upda
 
 Curriculum vitae covering 12+ years of computer vision R&D, 21 publications, and 3 patents.
 
-As an AI and computer vision expert with over a decade of experience collaborating with esteemed global organizations, my expertise encompasses AI research and development, machine learning, deep learning, Internet of Things (IoT), and model optimization for edge and cloud-based solutions. With a portfolio of 21 publications, three patents, and extensive practical experience in real-time computer vision applications, I have spearheaded groundbreaking projects in generative AI, video analytics, and intelligent systems. Proficient in C++, Python, OpenCV, and advanced GPU optimization, I am recognized for bridging the gap between cutting-edge research and commercially viable products.
+As an AI and computer vision expert with 12+ years of experience collaborating with esteemed global organizations, my expertise encompasses AI research and development, machine learning, deep learning, Internet of Things (IoT), and model optimization for edge and cloud-based solutions. With a portfolio of 21 publications, three patents, and extensive practical experience in real-time computer vision applications, I have spearheaded groundbreaking projects in generative AI, video analytics, and intelligent systems. Proficient in C++, Python, OpenCV, and advanced GPU optimization, I am recognized for bridging the gap between cutting-edge research and commercially viable products.
 
 # Me
-- I have a total of 21 publications, including 3 patents, 2 book chapters, 6 journal articles, and 10 conference papers. My Google Scholar profile indicates 137 citations, an h-index of 7, and an i10-index of 5.
+- I have a total of 21 publications, including 3 patents, 2 book chapters, 6 journal articles, and 10 conference papers. My Google Scholar profile indicates 142 citations and an h-index of 8.
 - [Dr. Farshid Pirahansiah CV](/farshid/content/computer-vision.md)
 - [My podcast](https://podcasters.spotify.com/pod/show/pirahansiah)
 
@@ -12991,7 +12991,7 @@ A complete alphabetical index of every page on pirahansiah.com — computer visi
       <li><a href="/notes/pubs/keynotes/">All Keynotes</a></li>
       <li><a href="/notes/pubs/keynotes/llm-cv/">LLMs Meet Computer Vision</a></li>
       <li><a href="/notes/pubs/cv/">Curriculum Vitae</a></li>
-      <li><a href="/notes/pubs/10-years/">Lessons from 10 Years of Fixing Bugs</a></li>
+      <li><a href="/notes/pubs/10-years/">Lessons from 12+ Years of Fixing Bugs</a></li>
     </ul>
   </div>
 
@@ -13410,7 +13410,7 @@ Publications, patents, expertise, tools, and GitHub projects across CV and AI
 
 # About
 
-Dr. Farshid Pirahansiah — Computer Vision expert with 12+ years R&D. 3 AI patents, 141+ citations (h-index 7), Springer book chapter author. Specializes in real-time image processing, edge AI across Jetson, Raspberry Pi, Hailo, Axelera, ARM. Full-stack CV/DL: model training → fine-tuning → deployment → API integration.
+Dr. Farshid Pirahansiah — Computer Vision expert with 12+ years R&D. 3 AI patents, 142 citations (h-index 8), Springer book chapter author. Specializes in real-time image processing, edge AI across Jetson, Raspberry Pi, Hailo, Axelera, ARM. Full-stack CV/DL: model training → fine-tuning → deployment → API integration.
 
 **Metrics:** 21 publications (3 patents, 2 books, 6 journals, 11 conferences) · h-index 7 · i10-index 5 · LinkedIn 55K+ · Facebook 15K+
 
@@ -14099,11 +14099,14 @@ I am an accomplished Research Engineer with 12+ years of experience, including a
 
 ## Experience
 
-- **12+ years:** Computer Vision, C++, R&D
-- **10+ years:** Machine Learning, Deep Learning, Python, Embedded Systems, Multi-Camera Systems
-- **7+ years:** IoT, Model Optimization, Robotics, Medical Imaging, Cloud (AWS)
-- **5+ years:** Technical Lead, Global Collaboration
-- **2+ years:** LLMs, Multimodal AI, RAG, Agentic Workflows
+Within those 12+ years in the field:
+
+- **Computer Vision, C++ and R&D** — the core of the whole period
+- **Machine Learning, Deep Learning, Python** — alongside it from the start
+- **Embedded systems, multi-camera rigs, model optimization** — most of that time on production deployments
+- **IoT, robotics, medical imaging, cloud (AWS)** — recurring across projects
+- **Technical lead and global collaboration** — multi-team work
+- **LLMs, multimodal AI, RAG, agentic workflows** — the most recent years
 
 ## Core Skills
 
@@ -15489,7 +15492,7 @@ Also on this site: [why one agent harness beats three vendor tools](/farshid/con
 
 | Item | Value |
 |---|---|
-| SoC | ESP32-C3 (QFN32) rev v0.4, single-core RISC-V at 160 MHz |
+| SoC | ESP32-C3 (QFN32) rev v0.4, single-core **RISC-V** (RV32IMC) at 160 MHz — see [RISC-V for AI](/farshid/content/course-risc-v.md) |
 | Memory | 4 MB embedded flash (XMC), 400 kB SRAM |
 | Radio | Wi-Fi 4 and Bluetooth 5.0 LE |
 | USB | native USB Serial/JTAG (VID 303A, PID 1001) — no UART bridge chip |
@@ -18120,7 +18123,7 @@ Complete navigation index with summaries of all site pages
 - **[Startup Guide](/notes/docs/startup/)** — Edge AI business plans, fundraising in Germany, pitch decks
 - **[SEO for LLMs](/notes/docs/seo/)** — Structured data, AI-friendly content optimization
 - **[Top LinkedIn Posts](/notes/docs/linkedin/)** — Top posts: camera calibration, C++, robotics
-- **[10 Years of Bug Fixing](/notes/pubs/10-years/)** — Lessons from fixing bugs in CV systems
+- **[12+ Years of Bug Fixing](/notes/pubs/10-years/)** — Lessons from 12+ years of fixing bugs in CV systems
 - **[Solutions](/notes/docs/solutions/)** — Industry solutions and business
 - **[Connect](/notes/docs/solutions/#connect)** — Get in touch
 
@@ -24080,18 +24083,70 @@ URL: https://pirahansiah.com/farshid/content/course-risc-v/
 Markdown source: https://pirahansiah.com/farshid/content/course-risc-v.md
 Cite as: Pirahansiah, F. "RISC-V for AI". pirahansiah.com, updated 2026-09-19. https://pirahansiah.com/farshid/content/course-risc-v/
 
-RISC-V open-source processor architecture for AI at the edge.
-
 # RISC-V for AI
 
-## Key References
+RISC-V is an open instruction-set architecture: anyone can implement it without a licence
+from ARM or Intel, which is exactly why it has become the default choice for cheap
+microcontrollers and for the new wave of small AI accelerators. For edge AI the practical
+question is not "is RISC-V better than ARM" — it is *which* RISC-V core is on the board in
+front of you, what it can do at inference time, and which toolchain will actually flash it.
+
+**12+ years** of embedded computer vision work, and the smallest end of that work is where
+RISC-V shows up: the [ESP32-C3 on my desk](/farshid/content/esp32-c3-oled.md) is a
+single-core RISC-V SoC.
+
+## Why RISC-V matters at the edge
+
+- **No licence, no royalty** — a chip vendor can add exactly the units it needs (a vector
+  unit, a DSP, an NPU) without a per-unit fee, which is how €3 boards with usable AI
+  throughput exist at all.
+- **Open toolchains** — `riscv64-unknown-elf-gcc`, or Clang with a RISC-V target; ESP-IDF,
+  Zephyr and Linux all ship RISC-V support. No vendor IDE is required to build firmware.
+- **From a microcontroller to Linux on one ISA** — RV32 microcontrollers with a few hundred
+  kB of RAM up to RV64 application cores that run Linux and real OpenCV, so a pipeline can
+  move down or up the range without changing architecture family.
+- **Vector extension (RVV 1.0, ratified 2021)** — the piece that matters for computer
+  vision: real SIMD for convolution, filtering and colour conversion on the CPU, and the
+  baseline the RVA22/RVA23 profiles standardise for application-class parts.
+
+## Cores and boards worth knowing
+
+| Board / SoC | Core | What it is good for |
+|---|---|---|
+| ESP32-C3 / ESP32-C6 | single-core RV32IMC @160 MHz (C6 adds Wi-Fi 6) | sensor nodes, BLE HID, small displays, TinyML — [four firmwares on a €3 board](/farshid/content/esp32-c3-oled.md) |
+| SiFive HiFive1 Rev B | FE310 RV32IMAC | learning the ISA bare-metal, peripheral work |
+| Kendryte K210 / K230 | RV64GC + KPU accelerator | camera inference at a few watts (face, keyword, objects) |
+| StarFive JH7110 (VisionFive 2) / Milk-V boards | quad RV64GC | Linux, OpenCV and a real vision pipeline on-device |
+| Application-class RVA23 parts | RV64 with RVV | where the ecosystem is heading for GPU-less inference |
+
+## Toolchains and frameworks I use
+
+- **Firmware** — ESP-IDF (a native RISC-V toolchain is bundled) and Arduino-ESP32 for quick
+  work; Zephyr where a real RTOS and a vendor-neutral HAL are needed.
+- **Bare metal** — `riscv64-unknown-elf-gcc`, OpenOCD/GDB over JTAG, and objdump for reading
+  what the compiler actually emitted.
+- **TinyML** — TensorFlow Lite Micro and microTVM; models quantised to int8, and the
+  operator set checked *before* an architecture is chosen.
+- **Linux-class parts** — OpenCV and ONNX Runtime on RV64 boards, usually with the CPU doing
+  the work and the KPU/NPU handling the heavy convolutions.
+- **Cross-checking cost** — anything claimed about latency or memory gets measured on the
+  board, not read from a datasheet. Same rule as on the
+  [Jetson and TensorRT side](/farshid/content/edge-ai-consulting-germany.md).
+
+## Key references
+
 - RISC-V Magazine (December 2020)
 - RISC-V Summit 2020
-
-## Resources
 - [riscv.org](https://riscv.org/)
 - [HiFive1 Rev B](https://www.amazon.de/-/en/HiFive1-Rev-B/dp/B086RGFS5N/)
 - [RISC-V 15 minute sample course](https://www.eenewseurope.com/news/risc-v-boom-edge-ai-says-facebooks-chief-ai-scientist)
+
+## Related on this site
+
+- [ESP32-C3 OLED projects](/farshid/content/esp32-c3-oled.md) — the RISC-V board work, start to finish.
+- [CV, DL & ML optimization guide](/farshid/content/optimization-index.md) — quantisation and pruning before any accelerator.
+- [C++ quick reference](/farshid/content/note-cpp.md) — the language side of embedded work.
+- [Edge AI & computer vision consulting in Germany](/farshid/content/edge-ai-consulting-germany.md) — where this work is applied.
 
 #RISC-V #EdgeAI #FarshidPirahansiah
 
@@ -24171,14 +24226,14 @@ Workshop on Tesla's autonomous driving technology and AI systems.
 
 # Mentoring & Coaching
 
-## 10 Years of CV Debugging Lessons
+## 12+ Years of CV Debugging Lessons
 URL: https://pirahansiah.com/farshid/content/10-years/
 Markdown source: https://pirahansiah.com/farshid/content/10-years.md
-Cite as: Pirahansiah, F. "10 Years of CV Debugging Lessons". pirahansiah.com, updated 2026-10-16. https://pirahansiah.com/farshid/content/10-years/
+Cite as: Pirahansiah, F. "12+ Years of CV Debugging Lessons". pirahansiah.com, updated 2026-10-16. https://pirahansiah.com/farshid/content/10-years/
 
-# 10 Years of CV Debugging Lessons
+# 12+ Years of CV Debugging Lessons
 
-> **10 Years of CV Debugging Lessons** — Lessons learned from a decade of debugging computer vision systems in production.
+> **12+ Years of CV Debugging Lessons** — Lessons from 12+ years of building and debugging computer vision systems in production.
 
 
 
@@ -24221,11 +24276,11 @@ cv2.setNumThreads(num_cpus)
 
 
 
-As an AI and computer vision expert with over a decade of experience collaborating with esteemed global organizations, my expertise encompasses AI research and development, machine learning, deep learning, Internet of Things (IoT), and model optimization for edge and cloud-based solutions. With a portfolio of 21 publications, three patents, and extensive practical experience in real-time computer vision applications, I have spearheaded groundbreaking projects in generative AI, video analytics, and intelligent systems. Proficient in C++, Python, OpenCV, and advanced GPU optimization, I am recognized for bridging the gap between cutting-edge research and commercially viable products.
+As an AI and computer vision expert with 12+ years of experience collaborating with esteemed global organizations, my expertise encompasses AI research and development, machine learning, deep learning, Internet of Things (IoT), and model optimization for edge and cloud-based solutions. With a portfolio of 21 publications, three patents, and extensive practical experience in real-time computer vision applications, I have spearheaded groundbreaking projects in generative AI, video analytics, and intelligent systems. Proficient in C++, Python, OpenCV, and advanced GPU optimization, I am recognized for bridging the gap between cutting-edge research and commercially viable products.
 
 
 
-lessons learned fixing bug and review codes for my 10 years experince
+lessons learned fixing bugs and reviewing code over my 12+ years of experience
 
 you need lessons learned after each project so what do you learn during projects.
 
@@ -24444,9 +24499,10 @@ Cite as: Pirahansiah, F. "Edge AI & Computer Vision Beratung in Deutschland". pi
 # Edge AI & Computer Vision Beratung in Deutschland
 
 Ich bin **Dr. Farshid Pirahansiah** — freiberuflicher Berater für **Embedded Edge AI**
-und **Computer Vision** für Engineering-Teams in **Deutschland**. **12+ Jahre**
-Berufserfahrung, **21 Publikationen**, **3 Patente**. Zusammengearbeitet wird remote im
-ganzen Bundesgebiet, vor Ort für Kick-offs, Integrationswochen und Labortests.
+und **Computer Vision**, ansässig in **Berlin, Deutschland**, für Engineering-Teams in
+Deutschland. **12+ Jahre** Berufserfahrung, **21 Publikationen**, **3 Patente**.
+Zusammengearbeitet wird remote im ganzen Bundesgebiet, vor Ort für Kick-offs,
+Integrationswochen und Labortests.
 
 Der Kern der Arbeit ist selten ein neues Modell. Meistens gibt es schon ein Modell, eine
 Platine, einen Termin — und ein System, das zu langsam, zu heiß oder auf der Zielhardware
@@ -24473,6 +24529,7 @@ es die Rate hält, und zwar nachvollziehbar dokumentiert.
 | GPU & Runtime | CUDA, TensorRT, cuDNN, OpenVINO, ONNX Runtime, GGUF/llama.cpp, MLX/CoreML auf Apple Silicon |
 | Präzision & Kompression | INT8-/FP16-Quantisierung, Kalibrierung, Layer-Fusion, strukturiertes Pruning, Speicher-Budgetierung |
 | Vision & C++ | C++17/20, OpenCV, G-API, PyTorch → TensorRT Deployment, Python/Numba/Cython-Hotspots |
+| Mikrocontroller & RISC-V | ESP32 / ESP32-C3 (ESP-IDF, Arduino, BLE HID, OLED-UI, TinyML), RISC-V RV32/RV64 (RISC-V-Kerne im ESP32-C3/C6, Vision-SoCs der K210/K230-Klasse) |
 | Systeme | Echtzeit-Pipelines, Multi-Kamera-Synchronisation, RDMA/Thunderbolt-Capture, Thermal- und Power-Limits, MIPI/GStreamer |
 
 ## Typische Fragestellungen aus der Praxis
@@ -24502,6 +24559,14 @@ Bewegung oder wechselndem Licht bricht, 3D-Rekonstruktion, die driftet. Siehe
 [Optical Flow: Herausforderungen und Lösungen](/farshid/content/note-optical-flow.md) und
 [Verkabelung für Multi-Kamera-Capture](/farshid/content/cable-hub.md).
 
+### „Das Problem beginnt unterhalb von Linux: ein Mikrocontroller und ein paar hundert Kilobyte"
+
+ESP32-/ESP32-C3-Firmware (ein RISC-V-Kern): Sensorik und Kamera, BLE HID, OLED-UI und
+ein Modell, das klein genug ist — geflasht und vermessen mit ESP-IDF oder Arduino.
+Funktionierendes Beispiel auf dieser Seite:
+[vier Firmwares auf einem 3-Euro-RISC-V-Board](/farshid/content/esp32-c3-oled.md).
+ISA- und Toolchain-Notizen: [RISC-V for AI](/farshid/content/course-risc-v.md).
+
 ### „Das Modell muss aufs Gerät — ohne Cloud, ohne GPU"
 
 Kleine Modelle für Edge-Geräte: passende Architektur wählen, quantisieren, lokal
@@ -24523,11 +24588,11 @@ paar hundert Kilobyte beträgt.
 
 ## Vor Ort und remote
 
-- **Remote bundesweit** — gleiche Zeitzone, auf Deutsch oder Englisch.
-- **Vor Ort** für Kick-offs, Integrationswochen und Labortests, unter anderem in
-  **München, Stuttgart, Berlin und Heidelberg** — und überall dort, wo man mit Bahn oder
-  kurzem Flug hinkommt.
-- **Europaweit** (EU/EWR) sowie vollständig remote darüber hinaus.
+- **Ansässig in Berlin, Deutschland** — remote bundesweit, gleiche Zeitzone, auf Deutsch
+  oder Englisch.
+- **Vor Ort** für Kick-offs, Integrationswochen und Labortests in **Berlin** und überall
+  in Deutschland, wo man mit Bahn oder kurzem Flug hinkommt.
+- Vollständig remote ist überall dort möglich, wo die Zeitzone passt.
 
 ## Nachweise
 
@@ -24562,10 +24627,10 @@ Cite as: Pirahansiah, F. "Embedded Edge AI & Computer Vision Consultant in Germa
 # Embedded Edge AI & Computer Vision Consultant in Germany
 
 I am **Dr. Farshid Pirahansiah**: an independent consultant for embedded edge AI and
-computer vision, working with engineering teams in **Germany** and across Europe —
-remotely the whole working week, and on site for the milestones that need a whiteboard.
-**12+ years**, **21 publications**, **3 patents**, and a working rule: the model only
-counts once it runs on the device in front of the customer.
+computer vision, based in **Berlin, Germany** and working with engineering teams in Germany
+and across Europe — remotely the whole working week, and on site for the milestones that
+need a whiteboard. **12+ years**, **21 publications**, **3 patents**, and a working rule:
+the model only counts once it runs on the device in front of the customer.
 
 The teams I work with are not looking for a general machine-learning lecture. They
 already have a model, a board, a deadline, and something that is too slow, too hot, or
@@ -24591,6 +24656,7 @@ not reproducible on the hardware they have to ship. *Deutschsprachige Zusammenfa
 | GPU & runtime | CUDA, TensorRT, cuDNN, OpenVINO, ONNX Runtime, GGUF/llama.cpp, MLX/CoreML on Apple silicon |
 | Precision & compression | INT8 / FP16 quantization, calibration, layer fusion, structured pruning, KV-cache and memory budgeting |
 | Vision & C++ | C++17/20, OpenCV, G-API, PyTorch → TensorRT deployment, Python/Numba/Cython hotspots |
+| Microcontrollers & RISC-V | ESP32 / ESP32-C3 (ESP-IDF, Arduino, BLE HID, OLED UI, TinyML), RISC-V RV32/RV64 targets (ESP32-C3/C6 cores, K210/K230-class vision SoCs) |
 | Systems | real-time pipelines, multi-camera synchronization, RDMA/Thunderbolt capture, thermal and power limits, MIPI/GStreamer |
 
 ## Pain points I am usually called for
@@ -24627,6 +24693,14 @@ that drifts. See
 [Optical flow: challenges and solutions](/farshid/content/note-optical-flow.md) and the
 [cabling notes for multi-camera capture](/farshid/content/cable-hub.md).
 
+### "The problem starts below Linux: a microcontroller and a few hundred kilobytes"
+
+ESP32 / ESP32-C3 firmware (which is a RISC-V core): sensor and camera work, BLE HID,
+an OLED UI, and a model small enough to fit — flashed and measured with ESP-IDF or
+Arduino. Working example on this site:
+[four firmwares on one €3 RISC-V board](/farshid/content/esp32-c3-oled/). Broader ISA
+and toolchain notes: [RISC-V for AI](/farshid/content/course-risc-v/).
+
 ### "We need a model on the device, without a cloud and without a GPU"
 
 Small-model work for edge devices: choosing an architecture that fits, quantizing it, and
@@ -24654,10 +24728,11 @@ You can see what day-to-day work with me looks like in
 
 ## Where I work
 
-- **Remote across Germany** — the whole country, same time zone, in English or German.
-- **On site** for kick-offs, integration weeks and lab work, including **Munich,
-  Stuttgart, Berlin and Heidelberg**, and anywhere reachable by train or a short flight.
-- Also **Europe-wide** (EU/EEA) and fully remote engagements further afield.
+- **Based in Berlin, Germany** — remote across the whole country, same time zone, in
+  English or German.
+- **On site** for kick-offs, integration weeks and lab work in **Berlin** and anywhere in
+  Germany reachable by train or a short flight.
+- Fully remote engagements are possible anywhere the time zone works.
 
 ## Credentials
 
@@ -24700,12 +24775,12 @@ Rechtliche Angaben für pirahansiah.com.
 
 ## Angaben gemäß § 5 DDG (vormals § 5 TMG)
 
-**Dr. Farshid Pirahansiah**
+**Dr. Farshid Pirahansiah**, Berlin, Deutschland
 Freiberufliche Tätigkeit: Beratung, Entwicklung und Schulung im Bereich Computer Vision
-und Embedded Edge AI.
+und Embedded Edge AI. **12+ Jahre** Berufserfahrung, 21 Publikationen, 3 Patente.
 
-- **Anschrift** — die Postanschrift wird auf Anfrage per E-Mail mitgeteilt:
-  [info@pirahansiah.com](mailto:info@pirahansiah.com)
+- **Anschrift** — **Berlin, Deutschland**. Die vollständige Postanschrift wird auf
+  Anfrage per E-Mail mitgeteilt: [info@pirahansiah.com](mailto:info@pirahansiah.com)
 - **E-Mail** — [info@pirahansiah.com](mailto:info@pirahansiah.com)
 - **Verantwortlich für den Inhalt** — Dr. Farshid Pirahansiah (Anschrift wie oben)
 - **Web** — https://pirahansiah.com/
@@ -24978,7 +25053,7 @@ I mentor engineers and consult for teams building computer vision and edge AI sy
 
 ## The resources
 
-- **[10 Years of CV Debugging Lessons](/farshid/content/10-years.md)** — lessons learned from a decade of debugging computer vision systems in production.
+- **[12+ Years of CV Debugging Lessons](/farshid/content/10-years.md)** — lessons from 12+ years of building and debugging computer vision systems in production.
 - **[Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/content/localAI.md)** — budgeting a 32k context between instructions, references and the answer, and a yes/no filter that picks the chunks before the main model sees them.
 - **[CV Coaching & Teaching Roadmap](/farshid/content/note-coaching-roadmap.md)** — the curriculum I teach, from image formation to multi-camera systems.
 - **[OpenCV 5 Cheat Sheet (PDF)](/farshid/downloads/opencv5-cheatsheet.pdf)** — the functions that come up in every session, on one page.
@@ -28121,7 +28196,7 @@ question* — and it is worth copying into any agent configuration, with or with
 ## HTML motion graphic
 URL: https://pirahansiah.com/farshid/projects/html-motion-graphic/README.html
 Markdown source: https://pirahansiah.com/farshid/projects/html-motion-graphic/README.md
-Cite as: Pirahansiah, F. "HTML motion graphic". pirahansiah.com, updated 2026-10-16. https://pirahansiah.com/farshid/projects/html-motion-graphic/README.html
+Cite as: Pirahansiah, F. "HTML motion graphic". pirahansiah.com, updated 2026-10-18. https://pirahansiah.com/farshid/projects/html-motion-graphic/README.html
 
 # HTML motion graphic
 
@@ -28159,7 +28234,7 @@ Source files for the `llm-tools` project.
 ## Markdown Motion Studio
 URL: https://pirahansiah.com/farshid/projects/md-motion-studio/README.html
 Markdown source: https://pirahansiah.com/farshid/projects/md-motion-studio/README.md
-Cite as: Pirahansiah, F. "Markdown Motion Studio". pirahansiah.com, updated 2026-10-04. https://pirahansiah.com/farshid/projects/md-motion-studio/README.html
+Cite as: Pirahansiah, F. "Markdown Motion Studio". pirahansiah.com, updated 2026-10-18. https://pirahansiah.com/farshid/projects/md-motion-studio/README.html
 
 # Markdown Motion Studio
 

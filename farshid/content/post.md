@@ -22,7 +22,7 @@ I mentor engineers and consult for teams building computer vision and edge AI sy
 
 ## The resources
 
-- **[10 Years of CV Debugging Lessons](/farshid/content/10-years.md)** — lessons learned from a decade of debugging computer vision systems in production.
+- **[12+ Years of CV Debugging Lessons](/farshid/content/10-years.md)** — lessons from 12+ years of building and debugging computer vision systems in production.
 - **[Tips and tricks to run a local model for Hermes Agent on your laptop](/farshid/content/localAI.md)** — budgeting a 32k context between instructions, references and the answer, and a yes/no filter that picks the chunks before the main model sees them.
 - **[CV Coaching & Teaching Roadmap](/farshid/content/note-coaching-roadmap.md)** — the curriculum I teach, from image formation to multi-camera systems.
 - **[OpenCV 5 Cheat Sheet (PDF)](/farshid/downloads/opencv5-cheatsheet.pdf)** — the functions that come up in every session, on one page.

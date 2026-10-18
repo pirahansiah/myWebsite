@@ -13,12 +13,12 @@ Rechtliche Angaben für pirahansiah.com.
 
 ## Angaben gemäß § 5 DDG (vormals § 5 TMG)
 
-**Dr. Farshid Pirahansiah**
+**Dr. Farshid Pirahansiah**, Berlin, Deutschland
 Freiberufliche Tätigkeit: Beratung, Entwicklung und Schulung im Bereich Computer Vision
-und Embedded Edge AI.
+und Embedded Edge AI. **12+ Jahre** Berufserfahrung, 21 Publikationen, 3 Patente.
 
-- **Anschrift** — die Postanschrift wird auf Anfrage per E-Mail mitgeteilt:
-  [info@pirahansiah.com](mailto:info@pirahansiah.com)
+- **Anschrift** — **Berlin, Deutschland**. Die vollständige Postanschrift wird auf
+  Anfrage per E-Mail mitgeteilt: [info@pirahansiah.com](mailto:info@pirahansiah.com)
 - **E-Mail** — [info@pirahansiah.com](mailto:info@pirahansiah.com)
 - **Verantwortlich für den Inhalt** — Dr. Farshid Pirahansiah (Anschrift wie oben)
 - **Web** — https://pirahansiah.com/

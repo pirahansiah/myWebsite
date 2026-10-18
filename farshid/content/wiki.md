@@ -218,7 +218,7 @@ A complete alphabetical index of every page on pirahansiah.com — computer visi
       <li><a href="/notes/pubs/keynotes/">All Keynotes</a></li>
       <li><a href="/notes/pubs/keynotes/llm-cv/">LLMs Meet Computer Vision</a></li>
       <li><a href="/notes/pubs/cv/">Curriculum Vitae</a></li>
-      <li><a href="/notes/pubs/10-years/">Lessons from 10 Years of Fixing Bugs</a></li>
+      <li><a href="/notes/pubs/10-years/">Lessons from 12+ Years of Fixing Bugs</a></li>
     </ul>
   </div>
 

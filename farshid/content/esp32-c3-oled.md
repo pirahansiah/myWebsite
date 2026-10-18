@@ -23,7 +23,7 @@ Also on this site: [why one agent harness beats three vendor tools](/farshid/con
 
 | Item | Value |
 |---|---|
-| SoC | ESP32-C3 (QFN32) rev v0.4, single-core RISC-V at 160 MHz |
+| SoC | ESP32-C3 (QFN32) rev v0.4, single-core **RISC-V** (RV32IMC) at 160 MHz — see [RISC-V for AI](/farshid/content/course-risc-v.md) |
 | Memory | 4 MB embedded flash (XMC), 400 kB SRAM |
 | Radio | Wi-Fi 4 and Bluetooth 5.0 LE |
 | USB | native USB Serial/JTAG (VID 303A, PID 1001) — no UART bridge chip |

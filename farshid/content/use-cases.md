@@ -68,7 +68,7 @@ Publications, patents, expertise, tools, and GitHub projects across CV and AI
 
 # About
 
-Dr. Farshid Pirahansiah — Computer Vision expert with 12+ years R&D. 3 AI patents, 141+ citations (h-index 7), Springer book chapter author. Specializes in real-time image processing, edge AI across Jetson, Raspberry Pi, Hailo, Axelera, ARM. Full-stack CV/DL: model training → fine-tuning → deployment → API integration.
+Dr. Farshid Pirahansiah — Computer Vision expert with 12+ years R&D. 3 AI patents, 142 citations (h-index 8), Springer book chapter author. Specializes in real-time image processing, edge AI across Jetson, Raspberry Pi, Hailo, Axelera, ARM. Full-stack CV/DL: model training → fine-tuning → deployment → API integration.
 
 **Metrics:** 21 publications (3 patents, 2 books, 6 journals, 11 conferences) · h-index 7 · i10-index 5 · LinkedIn 55K+ · Facebook 15K+
 

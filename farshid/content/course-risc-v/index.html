@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
 <title>RISC-V for AI — Dr. Farshid Pirahansiah</title>
-<meta name="description" content="RISC-V open-source processor architecture for AI at the edge.">
+<meta name="description" content="RISC-V for edge AI: the open instruction set, the cores and boards that matter for embedded inference (ESP32-C3/C6, K210/K230, VisionFive 2), the vector…">
 <meta name="author" content="Dr. Farshid Pirahansiah">
 <link rel="canonical" href="https://pirahansiah.com/farshid/content/course-risc-v/">
 <link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/course-risc-v.md" title="Markdown source of this page">
@@ -20,14 +20,14 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://pirahansiah.com/farshid/content/course-risc-v/">
 <meta property="og:title" content="RISC-V for AI">
-<meta property="og:description" content="RISC-V open-source processor architecture for AI at the edge.">
+<meta property="og:description" content="RISC-V for edge AI: the open instruction set, the cores and boards that matter for embedded inference (ESP32-C3/C6, K210/K230, VisionFive 2), the vector…">
 <meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
 <meta property="og:locale" content="en_GB">
 <meta property="article:author" content="Dr. Farshid Pirahansiah">
 <meta property="article:modified_time" content="2026-09-19">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="RISC-V for AI">
-<meta name="twitter:description" content="RISC-V open-source processor architecture for AI at the edge.">
+<meta name="twitter:description" content="RISC-V for edge AI: the open instruction set, the cores and boards that matter for embedded inference (ESP32-C3/C6, K210/K230, VisionFive 2), the vector…">
 <meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
 <script type="application/ld+json">
 {
@@ -59,8 +59,27 @@
     "Industrial Computer Vision",
     "On-device LLMs",
     "Multi-camera Systems",
-    "FPGA Acceleration"
+    "FPGA Acceleration",
+    "ESP32",
+    "ESP32-C3",
+    "Microcontroller AI",
+    "RISC-V",
+    "TinyML",
+    "Edge Deployment"
    ],
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berlin",
+    "addressCountry": "DE"
+   },
+   "workLocation": {
+    "@type": "Place",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Berlin",
+     "addressCountry": "DE"
+    }
+   },
    "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
    "sameAs": [
     "https://www.linkedin.com/in/pirahansiah/",
@@ -114,25 +133,21 @@
     },
     {
      "@type": "City",
-     "name": "Munich"
-    },
-    {
-     "@type": "City",
-     "name": "Stuttgart"
-    },
-    {
-     "@type": "City",
      "name": "Berlin"
-    },
-    {
-     "@type": "City",
-     "name": "Heidelberg"
-    },
-    {
-     "@type": "AdministrativeArea",
-     "name": "European Union"
     }
    ],
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berlin",
+    "addressCountry": "DE"
+   },
+   "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceLocation": {
+     "@type": "Place",
+     "name": "Berlin, Germany"
+    }
+   },
    "availableLanguage": [
     {
      "@type": "Language",
@@ -161,7 +176,13 @@
     "Industrial Computer Vision",
     "On-device LLMs",
     "Multi-camera Systems",
-    "FPGA Acceleration"
+    "FPGA Acceleration",
+    "ESP32",
+    "ESP32-C3",
+    "Microcontroller AI",
+    "RISC-V",
+    "TinyML",
+    "Edge Deployment"
    ],
    "inLanguage": "en"
   },
@@ -171,7 +192,7 @@
    "url": "https://pirahansiah.com/farshid/content/course-risc-v/",
    "name": "RISC-V for AI",
    "headline": "RISC-V for AI",
-   "description": "RISC-V open-source processor architecture for AI at the edge.",
+   "description": "RISC-V for edge AI: the open instruction set, the cores and boards that matter for embedded inference (ESP32-C3/C6, K210/K230, VisionFive 2), the vector…",
    "inLanguage": "en",
    "isPartOf": {
     "@id": "https://pirahansiah.com/#website"
@@ -194,16 +215,40 @@
    "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
    "isAccessibleForFree": true,
    "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "keywords": [
+    "risc-v",
+    "edge-ai",
+    "embedded",
+    "microcontroller",
+    "tinyml",
+    "esp32",
+    "hardware"
+   ],
    "hasPart": [
     {
      "@type": "WebPageElement",
-     "name": "Key References",
+     "name": "Why RISC-V matters at the edge",
+     "url": "https://pirahansiah.com/farshid/content/course-risc-v/#why-risc-v-matters-at-the-edge"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Cores and boards worth knowing",
+     "url": "https://pirahansiah.com/farshid/content/course-risc-v/#cores-and-boards-worth-knowing"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Toolchains and frameworks I use",
+     "url": "https://pirahansiah.com/farshid/content/course-risc-v/#toolchains-and-frameworks-i-use"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Key references",
      "url": "https://pirahansiah.com/farshid/content/course-risc-v/#key-references"
     },
     {
      "@type": "WebPageElement",
-     "name": "Resources",
-     "url": "https://pirahansiah.com/farshid/content/course-risc-v/#resources"
+     "name": "Related on this site",
+     "url": "https://pirahansiah.com/farshid/content/course-risc-v/#related-on-this-site"
     }
    ]
   },
@@ -284,19 +329,95 @@
 <main>
 <div id="content" class="wrap">
 <article class="article prose-cols">
-<p class="page-byline">By <strong>Dr. Farshid Pirahansiah</strong> — computer vision &amp; embedded edge AI consultant, Germany. Updated 2026-09-19.</p>
-<p>RISC-V open-source processor architecture for AI at the edge.</p>
+<p class="page-byline">By <strong>Dr. Farshid Pirahansiah</strong> — computer vision &amp; embedded edge AI consultant, Berlin, Germany &middot; 12+ years. Updated 2026-09-19.</p>
 <h1 id="risc-v-for-ai">RISC-V for AI</h1>
-<h2 id="key-references">Key References</h2>
+<p>RISC-V is an open instruction-set architecture: anyone can implement it without a licence
+from ARM or Intel, which is exactly why it has become the default choice for cheap
+microcontrollers and for the new wave of small AI accelerators. For edge AI the practical
+question is not "is RISC-V better than ARM" — it is <em>which</em> RISC-V core is on the board in
+front of you, what it can do at inference time, and which toolchain will actually flash it.</p>
+<p><strong>12+ years</strong> of embedded computer vision work, and the smallest end of that work is where
+RISC-V shows up: the <a href="https://pirahansiah.com/farshid/content/esp32-c3-oled/">ESP32-C3 on my desk</a> is a
+single-core RISC-V SoC.</p>
+<h2 id="why-risc-v-matters-at-the-edge">Why RISC-V matters at the edge</h2>
+<ul>
+<li><strong>No licence, no royalty</strong> — a chip vendor can add exactly the units it needs (a vector
+  unit, a DSP, an NPU) without a per-unit fee, which is how €3 boards with usable AI
+  throughput exist at all.</li>
+<li><strong>Open toolchains</strong> — <code>riscv64-unknown-elf-gcc</code>, or Clang with a RISC-V target; ESP-IDF,
+  Zephyr and Linux all ship RISC-V support. No vendor IDE is required to build firmware.</li>
+<li><strong>From a microcontroller to Linux on one ISA</strong> — RV32 microcontrollers with a few hundred
+  kB of RAM up to RV64 application cores that run Linux and real OpenCV, so a pipeline can
+  move down or up the range without changing architecture family.</li>
+<li><strong>Vector extension (RVV 1.0, ratified 2021)</strong> — the piece that matters for computer
+  vision: real SIMD for convolution, filtering and colour conversion on the CPU, and the
+  baseline the RVA22/RVA23 profiles standardise for application-class parts.</li>
+</ul>
+<h2 id="cores-and-boards-worth-knowing">Cores and boards worth knowing</h2>
+<table>
+<thead>
+<tr>
+<th>Board / SoC</th>
+<th>Core</th>
+<th>What it is good for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESP32-C3 / ESP32-C6</td>
+<td>single-core RV32IMC @160 MHz (C6 adds Wi-Fi 6)</td>
+<td>sensor nodes, BLE HID, small displays, TinyML — <a href="https://pirahansiah.com/farshid/content/esp32-c3-oled/">four firmwares on a €3 board</a></td>
+</tr>
+<tr>
+<td>SiFive HiFive1 Rev B</td>
+<td>FE310 RV32IMAC</td>
+<td>learning the ISA bare-metal, peripheral work</td>
+</tr>
+<tr>
+<td>Kendryte K210 / K230</td>
+<td>RV64GC + KPU accelerator</td>
+<td>camera inference at a few watts (face, keyword, objects)</td>
+</tr>
+<tr>
+<td>StarFive JH7110 (VisionFive 2) / Milk-V boards</td>
+<td>quad RV64GC</td>
+<td>Linux, OpenCV and a real vision pipeline on-device</td>
+</tr>
+<tr>
+<td>Application-class RVA23 parts</td>
+<td>RV64 with RVV</td>
+<td>where the ecosystem is heading for GPU-less inference</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toolchains-and-frameworks-i-use">Toolchains and frameworks I use</h2>
+<ul>
+<li><strong>Firmware</strong> — ESP-IDF (a native RISC-V toolchain is bundled) and Arduino-ESP32 for quick
+  work; Zephyr where a real RTOS and a vendor-neutral HAL are needed.</li>
+<li><strong>Bare metal</strong> — <code>riscv64-unknown-elf-gcc</code>, OpenOCD/GDB over JTAG, and objdump for reading
+  what the compiler actually emitted.</li>
+<li><strong>TinyML</strong> — TensorFlow Lite Micro and microTVM; models quantised to int8, and the
+  operator set checked <em>before</em> an architecture is chosen.</li>
+<li><strong>Linux-class parts</strong> — OpenCV and ONNX Runtime on RV64 boards, usually with the CPU doing
+  the work and the KPU/NPU handling the heavy convolutions.</li>
+<li><strong>Cross-checking cost</strong> — anything claimed about latency or memory gets measured on the
+  board, not read from a datasheet. Same rule as on the
+  <a href="https://pirahansiah.com/farshid/content/edge-ai-consulting-germany/">Jetson and TensorRT side</a>.</li>
+</ul>
+<h2 id="key-references">Key references</h2>
 <ul>
 <li>RISC-V Magazine (December 2020)</li>
 <li>RISC-V Summit 2020</li>
-</ul>
-<h2 id="resources">Resources</h2>
-<ul>
 <li><a href="https://riscv.org/">riscv.org</a></li>
 <li><a href="https://www.amazon.de/-/en/HiFive1-Rev-B/dp/B086RGFS5N/">HiFive1 Rev B</a></li>
 <li><a href="https://www.eenewseurope.com/news/risc-v-boom-edge-ai-says-facebooks-chief-ai-scientist">RISC-V 15 minute sample course</a></li>
+</ul>
+<h2 id="related-on-this-site">Related on this site</h2>
+<ul>
+<li><a href="https://pirahansiah.com/farshid/content/esp32-c3-oled/">ESP32-C3 OLED projects</a> — the RISC-V board work, start to finish.</li>
+<li><a href="https://pirahansiah.com/farshid/content/optimization-index/">CV, DL &amp; ML optimization guide</a> — quantisation and pruning before any accelerator.</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-cpp/">C++ quick reference</a> — the language side of embedded work.</li>
+<li><a href="https://pirahansiah.com/farshid/content/edge-ai-consulting-germany/">Edge AI &amp; computer vision consulting in Germany</a> — where this work is applied.</li>
 </ul>
 <h1 id="risc-v-edgeai-farshidpirahansiah">RISC-V #EdgeAI #FarshidPirahansiah</h1>
 <hr>
@@ -318,7 +439,7 @@ Canonical URL <a href="https://pirahansiah.com/farshid/content/course-risc-v/">h
       <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
       <a href="/farshid/content/impressum/">Impressum</a>
     </div>
-    <div class="footer-note"><strong>Dr. Farshid Pirahansiah</strong> &middot; embedded edge AI &amp; computer vision consultant &middot; Germany &middot; &copy; <span data-year>2026</span></div>
+    <div class="footer-note"><strong>Dr. Farshid Pirahansiah</strong> &middot; embedded edge AI &amp; computer vision consultant &middot; Berlin, Germany &middot; 12+ years &middot; &copy; <span data-year>2026</span></div>
   </div>
 </footer>
 </div><!-- /.app-window -->

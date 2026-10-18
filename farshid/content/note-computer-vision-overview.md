@@ -17,11 +17,14 @@ I am an accomplished Research Engineer with 12+ years of experience, including a
 
 ## Experience
 
-- **12+ years:** Computer Vision, C++, R&D
-- **10+ years:** Machine Learning, Deep Learning, Python, Embedded Systems, Multi-Camera Systems
-- **7+ years:** IoT, Model Optimization, Robotics, Medical Imaging, Cloud (AWS)
-- **5+ years:** Technical Lead, Global Collaboration
-- **2+ years:** LLMs, Multimodal AI, RAG, Agentic Workflows
+Within those 12+ years in the field:
+
+- **Computer Vision, C++ and R&D** — the core of the whole period
+- **Machine Learning, Deep Learning, Python** — alongside it from the start
+- **Embedded systems, multi-camera rigs, model optimization** — most of that time on production deployments
+- **IoT, robotics, medical imaging, cloud (AWS)** — recurring across projects
+- **Technical lead and global collaboration** — multi-team work
+- **LLMs, multimodal AI, RAG, agentic workflows** — the most recent years
 
 ## Core Skills
 

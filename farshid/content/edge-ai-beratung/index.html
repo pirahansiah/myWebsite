@@ -62,8 +62,27 @@
     "Industrial Computer Vision",
     "On-device LLMs",
     "Multi-camera Systems",
-    "FPGA Acceleration"
+    "FPGA Acceleration",
+    "ESP32",
+    "ESP32-C3",
+    "Microcontroller AI",
+    "RISC-V",
+    "TinyML",
+    "Edge Deployment"
    ],
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berlin",
+    "addressCountry": "DE"
+   },
+   "workLocation": {
+    "@type": "Place",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Berlin",
+     "addressCountry": "DE"
+    }
+   },
    "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
    "sameAs": [
     "https://www.linkedin.com/in/pirahansiah/",
@@ -117,25 +136,21 @@
     },
     {
      "@type": "City",
-     "name": "Munich"
-    },
-    {
-     "@type": "City",
-     "name": "Stuttgart"
-    },
-    {
-     "@type": "City",
      "name": "Berlin"
-    },
-    {
-     "@type": "City",
-     "name": "Heidelberg"
-    },
-    {
-     "@type": "AdministrativeArea",
-     "name": "European Union"
     }
    ],
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berlin",
+    "addressCountry": "DE"
+   },
+   "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceLocation": {
+     "@type": "Place",
+     "name": "Berlin, Germany"
+    }
+   },
    "availableLanguage": [
     {
      "@type": "Language",
@@ -164,7 +179,13 @@
     "Industrial Computer Vision",
     "On-device LLMs",
     "Multi-camera Systems",
-    "FPGA Acceleration"
+    "FPGA Acceleration",
+    "ESP32",
+    "ESP32-C3",
+    "Microcontroller AI",
+    "RISC-V",
+    "TinyML",
+    "Edge Deployment"
    ],
    "inLanguage": "en"
   },
@@ -325,12 +346,13 @@
 <main>
 <div id="content" class="wrap">
 <article class="article prose-cols">
-<p class="page-byline">By <strong>Dr. Farshid Pirahansiah</strong> — computer vision &amp; embedded edge AI consultant, Germany. Updated 2026-10-18.</p>
+<p class="page-byline">By <strong>Dr. Farshid Pirahansiah</strong> — computer vision &amp; embedded edge AI consultant, Berlin, Germany &middot; 12+ years. Updated 2026-10-18.</p>
 <h1 id="edge-ai-computer-vision-beratung-in-deutschland">Edge AI &amp; Computer Vision Beratung in Deutschland</h1>
 <p>Ich bin <strong>Dr. Farshid Pirahansiah</strong> — freiberuflicher Berater für <strong>Embedded Edge AI</strong>
-und <strong>Computer Vision</strong> für Engineering-Teams in <strong>Deutschland</strong>. <strong>12+ Jahre</strong>
-Berufserfahrung, <strong>21 Publikationen</strong>, <strong>3 Patente</strong>. Zusammengearbeitet wird remote im
-ganzen Bundesgebiet, vor Ort für Kick-offs, Integrationswochen und Labortests.</p>
+und <strong>Computer Vision</strong>, ansässig in <strong>Berlin, Deutschland</strong>, für Engineering-Teams in
+Deutschland. <strong>12+ Jahre</strong> Berufserfahrung, <strong>21 Publikationen</strong>, <strong>3 Patente</strong>.
+Zusammengearbeitet wird remote im ganzen Bundesgebiet, vor Ort für Kick-offs,
+Integrationswochen und Labortests.</p>
 <p>Der Kern der Arbeit ist selten ein neues Modell. Meistens gibt es schon ein Modell, eine
 Platine, einen Termin — und ein System, das zu langsam, zu heiß oder auf der Zielhardware
 nicht reproduzierbar läuft. Genau dort setze ich an: Messen auf dem Gerät, Optimieren bis
@@ -373,6 +395,10 @@ es die Rate hält, und zwar nachvollziehbar dokumentiert.
 <td>C++17/20, OpenCV, G-API, PyTorch → TensorRT Deployment, Python/Numba/Cython-Hotspots</td>
 </tr>
 <tr>
+<td>Mikrocontroller &amp; RISC-V</td>
+<td>ESP32 / ESP32-C3 (ESP-IDF, Arduino, BLE HID, OLED-UI, TinyML), RISC-V RV32/RV64 (RISC-V-Kerne im ESP32-C3/C6, Vision-SoCs der K210/K230-Klasse)</td>
+</tr>
+<tr>
 <td>Systeme</td>
 <td>Echtzeit-Pipelines, Multi-Kamera-Synchronisation, RDMA/Thunderbolt-Capture, Thermal- und Power-Limits, MIPI/GStreamer</td>
 </tr>
@@ -398,6 +424,12 @@ Bewegung oder wechselndem Licht bricht, 3D-Rekonstruktion, die driftet. Siehe
 <a href="https://pirahansiah.com/farshid/content/note-3d-vision/">3D-Vision &amp; Multi-Kamera-Systeme</a>,
 <a href="https://pirahansiah.com/farshid/content/note-optical-flow/">Optical Flow: Herausforderungen und Lösungen</a> und
 <a href="https://pirahansiah.com/farshid/content/cable-hub/">Verkabelung für Multi-Kamera-Capture</a>.</p>
+<h3 id="das-problem-beginnt-unterhalb-von-linux-ein-mikrocontroller-und-ein-paar-hundert-kilobyte">„Das Problem beginnt unterhalb von Linux: ein Mikrocontroller und ein paar hundert Kilobyte"</h3>
+<p>ESP32-/ESP32-C3-Firmware (ein RISC-V-Kern): Sensorik und Kamera, BLE HID, OLED-UI und
+ein Modell, das klein genug ist — geflasht und vermessen mit ESP-IDF oder Arduino.
+Funktionierendes Beispiel auf dieser Seite:
+<a href="https://pirahansiah.com/farshid/content/esp32-c3-oled/">vier Firmwares auf einem 3-Euro-RISC-V-Board</a>.
+ISA- und Toolchain-Notizen: <a href="https://pirahansiah.com/farshid/content/course-risc-v/">RISC-V for AI</a>.</p>
 <h3 id="das-modell-muss-aufs-gerat-ohne-cloud-ohne-gpu">„Das Modell muss aufs Gerät — ohne Cloud, ohne GPU"</h3>
 <p>Kleine Modelle für Edge-Geräte: passende Architektur wählen, quantisieren, lokal
 ausführen — vom 1-Bit-4B-Sprachmodell auf einem alten Laptop bis zur
@@ -417,11 +449,11 @@ paar hundert Kilobyte beträgt.</p>
 </ol>
 <h2 id="vor-ort-und-remote">Vor Ort und remote</h2>
 <ul>
-<li><strong>Remote bundesweit</strong> — gleiche Zeitzone, auf Deutsch oder Englisch.</li>
-<li><strong>Vor Ort</strong> für Kick-offs, Integrationswochen und Labortests, unter anderem in
-  <strong>München, Stuttgart, Berlin und Heidelberg</strong> — und überall dort, wo man mit Bahn oder
-  kurzem Flug hinkommt.</li>
-<li><strong>Europaweit</strong> (EU/EWR) sowie vollständig remote darüber hinaus.</li>
+<li><strong>Ansässig in Berlin, Deutschland</strong> — remote bundesweit, gleiche Zeitzone, auf Deutsch
+  oder Englisch.</li>
+<li><strong>Vor Ort</strong> für Kick-offs, Integrationswochen und Labortests in <strong>Berlin</strong> und überall
+  in Deutschland, wo man mit Bahn oder kurzem Flug hinkommt.</li>
+<li>Vollständig remote ist überall dort möglich, wo die Zeitzone passt.</li>
 </ul>
 <h2 id="nachweise">Nachweise</h2>
 <ul>
@@ -464,7 +496,7 @@ Canonical URL <a href="https://pirahansiah.com/farshid/content/edge-ai-beratung/
       <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
       <a href="/farshid/content/impressum/">Impressum</a>
     </div>
-    <div class="footer-note"><strong>Dr. Farshid Pirahansiah</strong> &middot; embedded edge AI &amp; computer vision consultant &middot; Germany &middot; &copy; <span data-year>2026</span></div>
+    <div class="footer-note"><strong>Dr. Farshid Pirahansiah</strong> &middot; embedded edge AI &amp; computer vision consultant &middot; Berlin, Germany &middot; 12+ years &middot; &copy; <span data-year>2026</span></div>
   </div>
 </footer>
 </div><!-- /.app-window -->
