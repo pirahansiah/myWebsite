@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Python Configuration &amp; C++ Integration — Farshid Pirahansiah</title>
+<meta name="description" content="Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/note-python-configuration/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/note-python-configuration.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/note-python-configuration/">
+<meta property="og:title" content="Python Configuration &amp; C++ Integration">
+<meta property="og:description" content="Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/content/python-configuration-management.png">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Python Configuration &amp; C++ Integration">
+<meta name="twitter:description" content="Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/content/python-configuration-management.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "TechArticle",
+   "@id": "https://pirahansiah.com/farshid/content/note-python-configuration/#page",
+   "url": "https://pirahansiah.com/farshid/content/note-python-configuration/",
+   "name": "Python Configuration & C++ Integration",
+   "headline": "Python Configuration & C++ Integration",
+   "description": "Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/note-python-configuration/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/content/python-configuration-management.png",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "header",
+     "url": "https://pirahansiah.com/farshid/content/note-python-configuration/#header"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "cpp",
+     "url": "https://pirahansiah.com/farshid/content/note-python-configuration/#cpp"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "add_wrapper.pyx",
+     "url": "https://pirahansiah.com/farshid/content/note-python-configuration/#add_wrapperpyx"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "setup.py",
+     "url": "https://pirahansiah.com/farshid/content/note-python-configuration/#setuppy"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "",
+     "url": "https://pirahansiah.com/farshid/content/note-python-configuration/#_1"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/note-python-configuration/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Python Configuration & C++ Integration",
+     "item": "https://pirahansiah.com/farshid/content/note-python-configuration/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/note-python-configuration.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p>Python configuration methods comparison plus pybind11 and Cython tips for C++ integration.</p>
+<h1 id="python">Python</h1>
+<p><a href="https://pirahansiah.com/farshid/content/note-python-configuration/">Python</a>
+A comparison of built-in and third-party configuration options for Python projects
+This guide compares Python's native configuration methods and popular third-party libraries, helping developers choose the best fit for their project's needs.</p>
+<h1 id="python-devtools-configuration-configfiles-pythontips-opensource-machinelearning-webdev-fastap">Python #DevTools #Configuration #ConfigFiles #PythonTips #OpenSource #MachineLearning #WebDev #FastAP</h1>
+<ul>
+<li>
+<p>Python Configuration Management</p>
+<p><img src="https://pirahansiah.com/farshid/content/python-configuration-management.png" alt="Python Configuration Management" style="max-width: 100%; height: auto;"></p>
+<p><a href="#python-configuration-management">Python Configuration Management</a></p>
+</li>
+<li>
+<p>Tips and tricks python scale up projects </p>
+<p><a href="#tips">Ttips</a></p>
+</li>
+</ul>
+<h1 id="python-configuration-management">Python Configuration Management</h1>
+<p>A comparison of built-in and third-party configuration options for Python projects</p>
+<p>📌 Summary</p>
+<p>This guide compares Python's native configuration methods and popular third-party libraries, helping developers choose the best fit for their project's needs.</p>
+<p>⸻</p>
+<p>🔧 Built-in Configuration Tools</p>
+<p>ConfigParser (INI Files)
+    •   📄 Simple structured text files
+    •   ✅ Built-in
+    •   ❗ Limitations: String-only, no nesting</p>
+<p>argparse (Command Line Arguments)
+    •   🧰 Used in CLI tools
+    •   ✅ Built-in
+    •   📝 Supports help text, types, defaults</p>
+<p>Environment Variables (os.environ)
+    •   🔒 Ideal for secrets and deployment
+    •   ✅ Built-in
+    •   ❗ Flat and string-only</p>
+<p>Python Module as Config
+    •   🐍 Python file for configuration
+    •   ✅ Built-in
+    •   🚀 Full flexibility and dynamic logic</p>
+<p>JSON Files
+    •   📦 Structured data format
+    •   ✅ Built-in
+    •   ❗ No comments, strict format</p>
+<p>TOML (e.g. pyproject.toml)
+    •   🧪 Used in packaging
+    •   ✅ Built-in (Python 3.11+)
+    •   ✅ Easy syntax and nesting</p>
+<p>YAML (via PyYAML)
+    •   📚 Readable with nested structures
+    •   ❌ Not built-in (requires install)
+    •   ✅ Human-friendly and widely used</p>
+<p>⸻</p>
+<p>🔌 Third-Party Configuration Libraries</p>
+<p>python-dotenv
+    •   📁 Loads .env into os.environ
+    •   ✅ Simple and effective</p>
+<p>python-decouple
+    •   🔒 Separates config from code
+    •   ✅ Supports .env, .ini, etc.</p>
+<p>dynaconf
+    •   🔁 Supports multi-environment configs
+    •   ✅ Compatible with YAML, JSON, TOML</p>
+<p>pydantic
+    •   🛡️ Type-safe configs with validation
+    •   ✅ Popular in FastAPI</p>
+<p>hydra
+    •   🧪 Hierarchical configs for ML apps
+    •   ✅ Handles complex parameter sweeps</p>
+<p>OmegaConf
+    •   🌊 YAML-based hierarchical config
+    •   ✅ Designed for deep learning projects</p>
+<hr>
+<h1 id="tips">tips</h1>
+<h3 id="mmap-optimization-memory-usage-best">mmap -&gt; optimization memory usage best</h3>
+<pre><code>df =pd.series()
+all=pd.dataFrame()
+df['a']=x
+all=pd.Concat([all, pd.DataFrame(df).T])
+all.to_csv('fn.csv', index=false, na_rep=&quot;NULL')
+
+def pow(*arge):
+    x,y,z=args
+
+def pow (x,y,z=None,/): #The forward slash (/) ensures you must call it like pow(2, 3) and not pow(x=2, y=3).
+
+*args
+**kwargs
+/ positional
+
+def timer(func):
+    def wrapper(*args, ** kwargs):
+        start_t=time.time()
+        result=func(*args,**kwargs)
+        end_t=time.time()
+        print(f&quot; function {func.__name__!r} took: {end_t - start_t: 0.4f} sec&quot;)
+        return result
+    return wrapper
+
+@functools.cash
+@dataclass
+
+from collections import deque
+stk=deque()
+stk.append('asadfas')
+stk.pop() 
+- o(n)
+stk=[]
+stk.pop().rstk[-1]
+
+collections import lifo
+deque()
+appendLeft(5)
+pop
+</code></pre>
+<hr>
+<pre><code>more *.md
+</code></pre>
+<p>pip install pybind11  </p>
+<p>// add.cpp</p>
+<h1 id="include">include <pybind11/pybind11.h></h1>
+<p>// Simple C++ function to add two numbers
+int add(int a, int b) {
+    return a + b;
+}</p>
+<p>// This creates the Python module and adds the function <code>add</code>
+PYBIND11_MODULE(mycpp, m) {
+    m.def("add", &amp;add, "A function which adds two numbers");
+}</p>
+<p>cl /LD /IC:\Users-winUser.conda\envs\py314\Include /IC:\Users-winUser.conda\envs\py314\Lib\site-packages\pybind11\include add.cpp /link /OUT:mycpp.pyd /LIBPATH:C:\Users-winUser.conda\envs\py314\libs python314.lib</p>
+<p>import mycpp
+print(mycpp.add(2, 3))  # Output should be: 5</p>
+<h1 id="2">2</h1>
+<p>pip install setuptools
+pip install cython</p>
+<h2 id="header">header</h2>
+<h1 id="pragma-once">pragma once</h1>
+<p>int add(int a, int b);</p>
+<h2 id="cpp">cpp</h2>
+<h1 id="include-addh">include "add.h"</h1>
+<p>int add(int a, int b) { return a + b; }</p>
+<h2 id="add_wrapperpyx">add_wrapper.pyx</h2>
+<h1 id="add_wrapperpyx_1">add_wrapper.pyx</h1>
+<p>cdef extern from "add.h":
+    int add(int a, int b)</p>
+<p>def py_add(int a, int b):
+    return add(a, b)</p>
+<h2 id="setuppy">setup.py</h2>
+<h1 id="setuppy_1">setup.py</h1>
+<p>from setuptools import setup, Extension
+from Cython.Build import cythonize</p>
+<p>ext = Extension(
+    "mycython",
+    sources=["add_wrapper.pyx", "add.cpp"],
+    language="c++",
+    include_dirs=["."],  # Path to add.h
+)</p>
+<p>setup(
+    ext_modules = cythonize([ext])
+)</p>
+<h2 id="_1"></h2>
+<p>python setup.py build_ext --inplace</p>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Python Configuration &amp; C++ Integration&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/note-python-configuration/">https://pirahansiah.com/farshid/content/note-python-configuration/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/note-python-configuration.md">note-python-configuration.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

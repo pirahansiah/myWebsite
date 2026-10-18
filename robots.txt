@@ -79,9 +79,12 @@ Allow: /
 # Any AI agent not named above is covered by "User-agent: *" — allowed, with attribution.
 
 Sitemap: https://pirahansiah.com/sitemap.xml
+Feed: https://pirahansiah.com/feed.xml
 
+# Every page is real HTML at https://pirahansiah.com/farshid/content/<slug>/ — no JavaScript
+# needed to read it — with the same text as markdown at .../<slug>.md.
 # Machine-readable indexes
 # https://pirahansiah.com/llms.txt          — every page with a one-line summary
 # https://pirahansiah.com/llms-full.txt     — the full text of the whole site, with per-page citations
 # https://pirahansiah.com/ai.txt            — permissions: training, indexing, answering, RAG
-# https://pirahansiah.com/farshid/content/for-ai.md — how to cite me and link back to the source
+# https://pirahansiah.com/farshid/content/for-ai/ — how to cite me and link back to the source

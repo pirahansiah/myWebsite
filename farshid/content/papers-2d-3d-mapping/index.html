@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>2D vs 3D Mapping for Moving Objects — Farshid Pirahansiah</title>
+<meta name="description" content="Comparison of 2D and 3D mapping approaches for environment movement detection.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/papers-2d-3d-mapping.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/">
+<meta property="og:title" content="2D vs 3D Mapping for Moving Objects">
+<meta property="og:description" content="Comparison of 2D and 3D mapping approaches for environment movement detection.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/content/2d-3d-map-movement.png">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2D vs 3D Mapping for Moving Objects">
+<meta name="twitter:description" content="Comparison of 2D and 3D mapping approaches for environment movement detection.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/content/2d-3d-map-movement.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/#page",
+   "url": "https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/",
+   "name": "2D vs 3D Mapping for Moving Objects",
+   "headline": "2D vs 3D Mapping for Moving Objects",
+   "description": "Comparison of 2D and 3D mapping approaches for environment movement detection.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/content/2d-3d-map-movement.png",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "1. Introduction",
+     "url": "https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/#1-introduction"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "2. Materials and Methods",
+     "url": "https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/#2-materials-and-methods"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "3. Experiments and Discussions",
+     "url": "https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/#3-experiments-and-discussions"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "4. Conclusion",
+     "url": "https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/#4-conclusion"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "5. Table of Comparison",
+     "url": "https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/#5-table-of-comparison"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "2D vs 3D Mapping for Moving Objects",
+     "item": "https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/papers-2d-3d-mapping.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p>Comparison of 2D and 3D mapping approaches for environment movement detection.</p>
+<p>tags: [3d-mapping, object-detection, computer-vision, robotics]
+hashtags: "#3dmapping #objectdetection #cv #robotics"</p>
+<p>My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects</p>
+<p>https://www.pirahansiah.com/notes/pubs/papers/conference-paper_2D_versus_3D_Map_for_Environment_Movement_Objects</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Paper-2D-versus-3D-Map-for-Environment-Movement-Objects-e2pruii">spotify</a></p>
+<p><a href="http://www.ftsm.ukm.my/cait2012/images/Program%20Schedule%20CAIT2012.pdf">PDF Download My Conference Paper</a></p>
+<p><img alt="My Conference Paper  My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects " src="https://pirahansiah.com/farshid/content/2d-3d-map-movement.png"></p>
+<p><img src="https://pirahansiah.com/farshid/content/2d-3d-map-movement.png" alt="My Conference Paper: My_Conference_Paper_2D_versus_3D_Map_for_Environment_Movement_Objects "  style="max-width: 100%; height: auto;"></p>
+<h1 id="paper-2d-versus-3d-map-for-environment-movement-objects">Paper: 2D versus 3D Map for Environment Movement Objects</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li><strong>Main Focus</strong>: The use of 2D vs. 3D mapping in tracking environmental movement objects.</li>
+<li><strong>Key Applications</strong>:<ul>
+<li>Autonomous systems</li>
+<li>Robotics</li>
+</ul>
+</li>
+<li><strong>Challenges</strong>:<ul>
+<li>Object rotation issues in 2D mapping</li>
+<li>Scaling problems in 2D environments</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-materials-and-methods">2. Materials and Methods</h2>
+<ul>
+<li><strong>3D Mapping Algorithms</strong>:<ul>
+<li>Introduces algorithms that manage:</li>
+<li>Scale</li>
+<li>Position</li>
+<li>Orientation</li>
+</ul>
+</li>
+<li><strong>Data Capture</strong>:<ul>
+<li>Details the <strong>camera</strong> and <strong>sensor systems</strong> used to capture movement data.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-experiments-and-discussions">3. Experiments and Discussions</h2>
+<ul>
+<li><strong>System Performance Comparison</strong>:<ul>
+<li>Evaluates <strong>2D vs. 3D mapping systems</strong> based on:</li>
+<li>Accuracy</li>
+<li>Adaptability to different conditions</li>
+<li>Results indicate significant <strong>improvement in accuracy</strong> with the 3D system.</li>
+</ul>
+</li>
+<li><strong>Test Conditions</strong>:<ul>
+<li>Different test scenarios were designed to assess:</li>
+<li>Real-world movement</li>
+<li>Environmental challenges</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-conclusion">4. Conclusion</h2>
+<ul>
+<li><strong>Key Findings</strong>:<ul>
+<li>3D mapping shows <strong>superior performance</strong> in real-world tracking compared to 2D.</li>
+<li>Better handling of environmental challenges such as rotation and scaling.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-table-of-comparison">5. Table of Comparison</h2>
+<ul>
+<li><strong>Comparison Parameters</strong>:<ul>
+<li>Accuracy rates</li>
+<li>Time efficiency</li>
+</ul>
+</li>
+<li><strong>Methods Evaluated</strong>:<ul>
+<li>2D Mapping</li>
+<li>3D Mapping</li>
+<li>Hybrid approaches</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;2D vs 3D Mapping for Moving Objects&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/">https://pirahansiah.com/farshid/content/papers-2d-3d-mapping/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/papers-2d-3d-mapping.md">papers-2d-3d-mapping.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

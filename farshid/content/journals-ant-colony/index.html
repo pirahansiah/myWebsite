@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Ant Colony Optimization for Image Processing — Farshid Pirahansiah</title>
+<meta name="description" content="ACO-based optimization for image thresholding and edge detection in OCR systems.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/journals-ant-colony/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/journals-ant-colony.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/journals-ant-colony/">
+<meta property="og:title" content="Ant Colony Optimization for Image Processing">
+<meta property="og:description" content="ACO-based optimization for image thresholding and edge detection in OCR systems.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/content/ant-colony-optimization.png">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ant Colony Optimization for Image Processing">
+<meta name="twitter:description" content="ACO-based optimization for image thresholding and edge detection in OCR systems.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/content/ant-colony-optimization.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://pirahansiah.com/farshid/content/journals-ant-colony/#page",
+   "url": "https://pirahansiah.com/farshid/content/journals-ant-colony/",
+   "name": "Ant Colony Optimization for Image Processing",
+   "headline": "Ant Colony Optimization for Image Processing",
+   "description": "ACO-based optimization for image thresholding and edge detection in OCR systems.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/journals-ant-colony/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/content/ant-colony-optimization.png",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "1. Introduction",
+     "url": "https://pirahansiah.com/farshid/content/journals-ant-colony/#1-introduction"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "2. State of the Art",
+     "url": "https://pirahansiah.com/farshid/content/journals-ant-colony/#2-state-of-the-art"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "3. Proposed Method",
+     "url": "https://pirahansiah.com/farshid/content/journals-ant-colony/#3-proposed-method"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "4. Results and Discussion",
+     "url": "https://pirahansiah.com/farshid/content/journals-ant-colony/#4-results-and-discussion"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "5. Conclusion",
+     "url": "https://pirahansiah.com/farshid/content/journals-ant-colony/#5-conclusion"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/journals-ant-colony/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Ant Colony Optimization for Image Processing",
+     "item": "https://pirahansiah.com/farshid/content/journals-ant-colony/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/journals-ant-colony.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p>ACO-based optimization for image thresholding and edge detection in OCR systems.</p>
+<p>USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM</p>
+<ul>
+<li>
+<p>https://www.pirahansiah.com/notes/pubs/journals/USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM/</p>
+</li>
+<li>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/USING_AN_ANT_COLONY_OPTIMIZATION_ALGORITHM-e2prlrn">spotify</a></p>
+</li>
+<li>
+<p><a href="http://www.jatit.org/volumes/Vol95No21/1Vol95No21.pdf">PDF Download</a></p>
+</li>
+</ul>
+<p><img alt="USING AN ANT COLONY OPTIMIZATION ALGORITHM" src="https://pirahansiah.com/farshid/content/ant-colony-optimization.png"></p>
+<p><img src="https://pirahansiah.com/farshid/content/ant-colony-optimization.png" alt="USING AN ANT COLONY OPTIMIZATION ALGORITHM" style="max-width: 100%; height: auto;"></p>
+<h1 id="ant-colony-optimization-for-image-edge-detection">Ant Colony Optimization for Image Edge Detection</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li><strong>Thresholding</strong>: Used in various computer vision applications like OCR, image segmentation, and object tracking.</li>
+<li><strong>Ant Colony Optimization (ACO)</strong>: Population-based metaheuristic for optimization.</li>
+<li><strong>Objective</strong>: Combining ACO, edge detection, and thresholding for Optical Character Recognition (OCR) systems.</li>
+</ul>
+<h2 id="2-state-of-the-art">2. State of the Art</h2>
+<h3 id="21-thresholding-methods">2.1 Thresholding Methods</h3>
+<ul>
+<li><strong>Categories</strong>: Single, Multilevel, Multi-thresholding</li>
+<li><strong>Single Thresholding</strong>: Converts the image into binary (black and white).</li>
+<li><strong>Pirahansiah's Single Threshold Method</strong>: A custom single threshold method using PSNR.</li>
+<li><strong>Multilevel Thresholding</strong>: Separates objects based on gray values using multiple thresholds.</li>
+<li><strong>Multi-threshold</strong>: Uses multiple threshold values to identify objects in images.</li>
+</ul>
+<h3 id="22-ant-colony-optimization-aco">2.2 Ant Colony Optimization (ACO)</h3>
+<ul>
+<li><strong>Introduction</strong>: Initially proposed by Marco Dorigo in 1992 for combinatorial optimization problems.</li>
+<li><strong>Application</strong>: Used for image edge detection in this paper.</li>
+<li><strong>Process</strong>:
+  1. Initialize ants randomly.
+  2. Move ants based on probability and pheromone updates.
+  3. Update pheromone values for optimization.</li>
+</ul>
+<h2 id="3-proposed-method">3. Proposed Method</h2>
+<ul>
+<li><strong>Combining ACO and Thresholding</strong>: ACO is applied to enhance image thresholding in OCR systems.</li>
+<li><strong>Comparison</strong>: The proposed method is compared with Otsu, Kittler, Illingworth, and Pirahansiah's methods.</li>
+</ul>
+<h2 id="4-results-and-discussion">4. Results and Discussion</h2>
+<ul>
+<li><strong>Datasets</strong>: DIBCO 2009 benchmark, including printed and handwritten images.</li>
+<li><strong>Performance</strong>: The proposed ACO-based method shows better PSNR results for thresholding compared to traditional methods.</li>
+<li><strong>Comparison Results</strong>: The ACO method outperforms others in printed and handwritten datasets.</li>
+</ul>
+<h2 id="5-conclusion">5. Conclusion</h2>
+<ul>
+<li><strong>Effective for OCR</strong>: The ACO-based thresholding method improves the edge detection and thresholding for OCR systems.</li>
+<li><strong>Future Work</strong>: Optimizing ACO parameters for better performance in different types of images.</li>
+</ul>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Ant Colony Optimization for Image Processing&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/journals-ant-colony/">https://pirahansiah.com/farshid/content/journals-ant-colony/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/journals-ant-colony.md">journals-ant-colony.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

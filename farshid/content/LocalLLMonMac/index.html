@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Mac as LLM inference only — Farshid Pirahansiah</title>
+<meta name="description" content="Mac as LLM inference only">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/LocalLLMonMac/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/LocalLLMonMac.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/LocalLLMonMac/">
+<meta property="og:title" content="Mac as LLM inference only">
+<meta property="og:description" content="Mac as LLM inference only">
+<meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-27">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mac as LLM inference only">
+<meta name="twitter:description" content="Mac as LLM inference only">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "TechArticle",
+   "@id": "https://pirahansiah.com/farshid/content/LocalLLMonMac/#page",
+   "url": "https://pirahansiah.com/farshid/content/LocalLLMonMac/",
+   "name": "Mac as LLM inference only",
+   "headline": "Mac as LLM inference only",
+   "description": "Mac as LLM inference only",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/LocalLLMonMac/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-27",
+   "dateModified": "2026-09-27",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "1. Use a dedicated macOS account",
+     "url": "https://pirahansiah.com/farshid/content/LocalLLMonMac/#1-use-a-dedicated-macos-account"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "2. Remove background applications",
+     "url": "https://pirahansiah.com/farshid/content/LocalLLMonMac/#2-remove-background-applications"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "3. Enable SSH and disable other sharing",
+     "url": "https://pirahansiah.com/farshid/content/LocalLLMonMac/#3-enable-ssh-and-disable-other-sharing"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "4. Run without an active desktop session",
+     "url": "https://pirahansiah.com/farshid/content/LocalLLMonMac/#4-run-without-an-active-desktop-session"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "5. Reduce the model’s memory requirement",
+     "url": "https://pirahansiah.com/farshid/content/LocalLLMonMac/#5-reduce-the-models-memory-requirement"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "6. Monitor the right values",
+     "url": "https://pirahansiah.com/farshid/content/LocalLLMonMac/#6-monitor-the-right-values"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Do not disable these",
+     "url": "https://pirahansiah.com/farshid/content/LocalLLMonMac/#do-not-disable-these"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/LocalLLMonMac/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Mac as LLM inference only",
+     "item": "https://pirahansiah.com/farshid/content/LocalLLMonMac/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/LocalLLMonMac.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<h1 id="localllmonmac">LocalLLMonMac</h1>
+<h1 id="mac-as-llm-inference-only">Mac as LLM inference only</h1>
+<p>The best approach is to turn the Mac into a <strong>headless inference appliance</strong>: macOS remains installed for Metal/MLX, but you avoid running a normal desktop session.</p>
+<p>Do not chase the “free RAM” number. Apple notes that unused RAM does not inherently improve performance; <strong>Memory Pressure</strong> and growing swap usage are the useful indicators. (<a href="https://support.apple.com/guide/activity-monitor/check-if-your-mac-needs-more-ram-actmntr34865/mac" title="Check if your Mac needs more RAM in Activity Monitor - Apple Support">Apple Support</a>)</p>
+<h2 id="1-use-a-dedicated-macos-account">1. Use a dedicated macOS account</h2>
+<p>Create a standard user named something like <code>llm</code>.</p>
+<p>For a machine used only for inference:</p>
+<ul>
+<li>Do not connect Mail, Messages, Photos, or other personal applications.</li>
+<li>Ideally, do not sign that account into an Apple Account.</li>
+<li>Otherwise, disable iCloud Drive, Photos, and unnecessary application syncing under <strong>System Settings → Apple Account → iCloud</strong>. (<a href="https://support.apple.com/en-us/102179?utm_source=chatgpt.com" title="How to turn off iCloud Photos">Apple Support</a>)</li>
+</ul>
+<p>A completely fresh macOS installation provides the cleanest starting point, but it is not mandatory.</p>
+<h2 id="2-remove-background-applications">2. Remove background applications</h2>
+<p>Open:</p>
+<p><strong>System Settings → General → Login Items &amp; Extensions</strong></p>
+<p>Under <strong>Open at Login</strong>, remove everything not required.</p>
+<p>Under <strong>App Background Activity</strong>, disable nonessential third-party software. Apple confirms these applications can continue checking for updates or synchronizing data even when their main applications are closed. (<a href="https://support.apple.com/en-my/guide/mac-help/mtusr003/mac" title="Change Login Items &amp; Extensions settings on Mac – Apple Support (MY)">Apple Support</a>)</p>
+<p>Especially remove or uninstall:</p>
+<ul>
+<li>Dropbox, OneDrive and Google Drive</li>
+<li>Adobe Creative Cloud</li>
+<li>Teams, Slack and Discord</li>
+<li>Docker Desktop</li>
+<li>VPN clients you do not require</li>
+<li>Antivirus or endpoint software, where company policy permits</li>
+<li>Menu-bar utilities</li>
+<li>GUI model applications such as LM Studio when using <code>llama-server</code> directly</li>
+</ul>
+<p>Uninstalling unused software is better than merely closing its window because helper processes may continue running.</p>
+<h2 id="3-enable-ssh-and-disable-other-sharing">3. Enable SSH and disable other sharing</h2>
+<p>Open:</p>
+<p><strong>System Settings → General → Sharing</strong></p>
+<p>Enable only <strong>Remote Login</strong>, and restrict access to the dedicated <code>llm</code> user. Remote Login provides SSH access without requiring a normal desktop workflow. (<a href="https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac" title="Allow a remote computer to access your Mac - Apple Support">Apple Support</a>)</p>
+<p>Disable unnecessary services such as:</p>
+<ul>
+<li>Screen Sharing</li>
+<li>Remote Management</li>
+<li>File Sharing</li>
+<li>Media Sharing</li>
+<li>Content Caching</li>
+<li>AirPlay Receiver</li>
+</ul>
+<h2 id="4-run-without-an-active-desktop-session">4. Run without an active desktop session</h2>
+<p>After configuring the machine:</p>
+<ol>
+<li>Restart it.</li>
+<li>Leave it at the macOS login screen.</li>
+<li>Connect from another computer through SSH:</li>
+</ol>
+<pre><code class="language-bash">ssh llm@your-mac-hostname.local
+</code></pre>
+<p>Running through SSH avoids browsers, Finder windows, GUI model frontends and most user-session applications.</p>
+<p>Install <code>tmux</code> so the inference server keeps running after the SSH connection closes:</p>
+<pre><code class="language-bash">brew install tmux
+tmux new -s llm
+</code></pre>
+<p>Then start the server:</p>
+<pre><code class="language-bash">caffeinate -dimsu /opt/homebrew/bin/llama-server \
+  --model /Users/llm/Models/model.gguf \
+  --n-gpu-layers all \
+  --ctx-size 8192 \
+  --parallel 1 \
+  --host 127.0.0.1 \
+  --port 8080
+</code></pre>
+<p>Current <code>llama.cpp</code> builds enable Metal by default on macOS, and <code>--n-gpu-layers all</code> requests that all possible layers be stored for GPU processing. (<a href="https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md" title="llama.cpp/docs/build.md at master · ggml-org/llama.cpp · GitHub">GitHub</a>)</p>
+<p>Detach from <code>tmux</code> with:</p>
+<pre><code class="language-text">Ctrl-B, then D
+</code></pre>
+<p>Reconnect later with:</p>
+<pre><code class="language-bash">tmux attach -t llm
+</code></pre>
+<p>Access the API securely from another computer with an SSH tunnel:</p>
+<pre><code class="language-bash">ssh -L 8080:127.0.0.1:8080 llm@your-mac-hostname.local
+</code></pre>
+<p>You can then use <code>http://127.0.0.1:8080</code> on the client computer. <code>llama-server</code> binds to localhost by default, which is safer than exposing it directly to the network. (<a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md" title="llama.cpp/tools/server/README.md at master · ggml-org/llama.cpp · GitHub">GitHub</a>)</p>
+<h2 id="5-reduce-the-models-memory-requirement">5. Reduce the model’s memory requirement</h2>
+<p>This typically saves much more memory than modifying macOS.</p>
+<p>Use:</p>
+<ul>
+<li>A 4-bit or 5-bit quantized model</li>
+<li><code>--parallel 1</code> for one simultaneous context</li>
+<li>The smallest context window you actually require</li>
+<li>No vision projection model unless needed</li>
+<li>No additional draft model unless speculative decoding is beneficial</li>
+</ul>
+<p>Context length directly controls KV-cache allocation. Do not use a model’s maximum 32K, 128K or larger context merely because it supports it. Set an explicit value such as:</p>
+<pre><code class="language-bash">--ctx-size 4096
+</code></pre>
+<p>or:</p>
+<pre><code class="language-bash">--ctx-size 8192
+</code></pre>
+<p><code>llama.cpp</code> also supports quantized KV-cache formats:</p>
+<pre><code class="language-bash">--cache-type-k q8_0 \
+--cache-type-v q8_0
+</code></pre>
+<p>More aggressive values such as <code>q4_0</code> use less memory, but should be benchmarked for quality and performance with your specific model. The currently documented supported cache types include <code>f16</code>, <code>q8_0</code>, <code>q4_0</code> and several others. (<a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md" title="llama.cpp/tools/server/README.md at master · ggml-org/llama.cpp · GitHub">GitHub</a>)</p>
+<h2 id="6-monitor-the-right-values">6. Monitor the right values</h2>
+<p>Open <strong>Activity Monitor → Memory</strong> during the longest realistic inference request.</p>
+<p>Aim for:</p>
+<ul>
+<li><strong>Memory Pressure:</strong> green</li>
+<li><strong>Swap Used:</strong> ideally zero or not continuously increasing</li>
+<li>No repeated model unloads or allocation failures</li>
+<li>No yellow or red pressure during long-context generation</li>
+</ul>
+<p>Apple defines green pressure as efficient RAM use, while yellow and red indicate increasing memory constraints. (<a href="https://support.apple.com/guide/activity-monitor/check-if-your-mac-needs-more-ram-actmntr34865/mac" title="Check if your Mac needs more RAM in Activity Monitor - Apple Support">Apple Support</a>)</p>
+<h2 id="do-not-disable-these">Do not disable these</h2>
+<p>Do not disable:</p>
+<ul>
+<li>Swap</li>
+<li>Memory compression</li>
+<li>System Integrity Protection</li>
+<li>FileVault</li>
+<li>Core macOS daemons</li>
+<li>Metal system services</li>
+</ul>
+<p>Also avoid <code>--mlock</code> when pushing close to the machine’s capacity. That option forces model memory to remain resident rather than allowing compression or swapping, which can make an already tight configuration fail sooner. (<a href="https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md" title="llama.cpp/tools/server/README.md at master · ggml-org/llama.cpp · GitHub">GitHub</a>)</p>
+<p>The realistic goal is not allocating 99% manually. It is increasing model size or context until the worst-case workload still remains under <strong>green Memory Pressure without growing swap usage</strong>.</p>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Mac as LLM inference only&rdquo;. pirahansiah.com, updated 2026-09-27.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/LocalLLMonMac/">https://pirahansiah.com/farshid/content/LocalLLMonMac/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/LocalLLMonMac.md">LocalLLMonMac.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

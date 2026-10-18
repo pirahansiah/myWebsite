@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Tips and tricks to run a local model for Hermes Agent on your laptop — Farshid Pirahansiah</title>
+<meta name="description" content="Running a local model for Hermes Agent on a laptop: budgeting a 32k context between instructions, references and the answer, a yes/no filter that picks…">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/localAI/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/localAI.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/localAI/">
+<meta property="og:title" content="Tips and tricks to run a local model for Hermes Agent on your laptop">
+<meta property="og:description" content="Running a local model for Hermes Agent on a laptop: budgeting a 32k context between instructions, references and the answer, a yes/no filter that picks…">
+<meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-10-16">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tips and tricks to run a local model for Hermes Agent on your laptop">
+<meta name="twitter:description" content="Running a local model for Hermes Agent on a laptop: budgeting a 32k context between instructions, references and the answer, a yes/no filter that picks…">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "TechArticle",
+   "@id": "https://pirahansiah.com/farshid/content/localAI/#page",
+   "url": "https://pirahansiah.com/farshid/content/localAI/",
+   "name": "Tips and tricks to run a local model for Hermes Agent on your laptop",
+   "headline": "Tips and tricks to run a local model for Hermes Agent on your laptop",
+   "description": "Running a local model for Hermes Agent on a laptop: budgeting a 32k context between instructions, references and the answer, a yes/no filter that picks…",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/localAI/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-27",
+   "dateModified": "2026-10-16",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "On my laptop with 8gb vram",
+     "url": "https://pirahansiah.com/farshid/content/localAI/#on-my-laptop-with-8gb-vram"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Writing prompts on a 32k budget",
+     "url": "https://pirahansiah.com/farshid/content/localAI/#writing-prompts-on-a-32k-budget"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Let Jev pick the chunks before the model writes",
+     "url": "https://pirahansiah.com/farshid/content/localAI/#let-jev-pick-the-chunks-before-the-model-writes"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "What I tested on two AMD laptops",
+     "url": "https://pirahansiah.com/farshid/content/localAI/#what-i-tested-on-two-amd-laptops"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Tasks that stay with the specialist",
+     "url": "https://pirahansiah.com/farshid/content/localAI/#tasks-that-stay-with-the-specialist"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Scheduling a job on Windows",
+     "url": "https://pirahansiah.com/farshid/content/localAI/#scheduling-a-job-on-windows"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Referral links",
+     "url": "https://pirahansiah.com/farshid/content/localAI/#referral-links"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/localAI/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Tips and tricks to run a local model for Hermes Agent on your laptop",
+     "item": "https://pirahansiah.com/farshid/content/localAI/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/localAI.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<h1 id="tips-and-tricks-to-run-a-local-model-for-hermes-agent-on-your-laptop">Tips and tricks to run a local model for Hermes Agent on your laptop</h1>
+<p>A local model on a laptop is small in one thing only: the context window. The tips below keep that window for the answer, not for the packing.</p>
+<h2 id="on-my-laptop-with-8gb-vram">On my laptop with 8gb vram</h2>
+<ul>
+<li>131k qwen3.5-9b q4</li>
+<li>32k Ternary-Bonsai-2-27B (based on qwen3.8-27b) it is q1</li>
+</ul>
+<p>For the smallest setup I run — a 1-bit 4B model at 64k context, under 2 GB of RAM, no GPU — the whole recipe with measured RAM, prefill and tokens-per-second numbers is on <a href="https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/">A local LLM for Hermes Agent on an old machine</a>.</p>
+<h2 id="writing-prompts-on-a-32k-budget">Writing prompts on a 32k budget</h2>
+<p>You have 32k of context and you must also include reference material. Treat the 32k as a budget. Your instructions, the reference text, the chat history and the model's answer all count against it.</p>
+<ol>
+<li>
+<p><strong>Plan the split.</strong> Keep 4k to 8k free for the answer and keep the instructions under 1k. The rest is for reference text. Do not fill the window to the limit, because quality often drops before you reach 32k.</p>
+</li>
+<li>
+<p><strong>Do not paste whole documents.</strong> Split them into small chunks of 300 to 500 tokens and select only the best 4 to 6 for each question. That is what RAG does, and it works better than one large paste.</p>
+</li>
+<li>
+<p><strong>Watch the order.</strong> Models often miss things in the middle of a long input. Put the task and the rules first, then the reference text, then the question last. Repeat the key rule in one line at the end.</p>
+</li>
+<li>
+<p><strong>Label the references.</strong> Use simple tags, for example <code>&lt;doc id="1"&gt;...&lt;/doc&gt;</code>. Then you can tell the model to cite the doc id.</p>
+</li>
+<li>
+<p><strong>Limit the model to your text.</strong> Write: "Use only the documents. If the answer is not there, say 'not found'." This stops invented answers.</p>
+</li>
+<li>
+<p><strong>Shrink the history.</strong> Replace old chat turns with a short summary. Old turns waste space.</p>
+</li>
+<li>
+<p><strong>Check the real limit.</strong> If you use Ollama, the default context is much smaller than 32k. Set <code>num_ctx</code> to 32768 yourself. Otherwise the model quietly cuts your input and you see no error. Count the tokens with a tool; do not guess.</p>
+</li>
+</ol>
+<h2 id="let-jev-pick-the-chunks-before-the-model-writes">Let Jev pick the chunks before the model writes</h2>
+<p>Jev (console.typesafe.ai) does not generate text. It returns a constrained decision, such as a yes/no probability or a choice among fixed options, and your code decides what to do with it. Jev is the picker; your normal LLM is the writer.</p>
+<p>How I would build it:</p>
+<ol>
+<li><strong>Split first.</strong> Cut code by function or class and documents by heading. Give each chunk an id.</li>
+<li><strong>Ask Jev one yes/no question per chunk.</strong> The question type is called Noul. It returns one number from 0 to 1: the probability that the answer is yes. The state is the question plus one chunk. The instruction is: "The chunk contains information needed to answer the question."</li>
+<li><strong>Sort by that number.</strong> Take the best chunks until your token budget is full. For code, add the chunk above and the chunk below.</li>
+<li><strong>Send only those chunks to the main LLM.</strong> Tell it to answer in 150 words or fewer and to name the chunk ids it used. That gives you the small result.</li>
+</ol>
+<p>The guide describes this same shape: fetch wide first, then use a yes/no question per passage to filter the material before anything expensive sees it. It says the filter costs less than the context window it saves. The price is $0.042 per million input tokens, and output is free. Scanning 1 million tokens of code costs about 4 cents.</p>
+<p>Here is a rough sketch based on the guide. I did not test it:</p>
+<pre><code class="language-python">from typesafe_sdk import Noul, TypeSafeClient
+
+client = TypeSafeClient()
+
+def rank(question, chunks):
+    scored = []
+    for c in chunks:
+        r = client.system_one(
+            state={&quot;question&quot;: question, &quot;chunk&quot;: c[&quot;text&quot;]},
+            questions={&quot;useful&quot;: Noul(instructions=&quot;The chunk contains information needed to answer the question&quot;)},
+        )
+        scored.append((r.answers[&quot;useful&quot;].noul, c))
+    return sorted(scored, key=lambda x: x[0], reverse=True)
+</code></pre>
+<p>What I would watch:</p>
+<ul>
+<li><strong>Send one chunk per call, not a whole file.</strong> The documents say accuracy drops when the state holds material the question does not need.</li>
+<li><strong>Rate limit.</strong> jev-1.13.0 allows 1,200 requests per minute. Many chunks means you need batching.</li>
+<li><strong>Jev reads literally.</strong> It answers the question you wrote, not the question you meant. Write the instruction plainly.</li>
+<li><strong>Hostile text.</strong> Text in the state that argues for its own classification can move the answer. Be careful with web documents.</li>
+<li><strong>Access.</strong> It is in early access with a waitlist. Keys are at console.typesafe.ai/settings/keys.</li>
+<li><strong>Pin the version.</strong> <code>jev-latest</code> can change under you, so use <code>jev-1.13.0</code>.</li>
+</ul>
+<h2 id="what-i-tested-on-two-amd-laptops">What I tested on two AMD laptops</h2>
+<p>Both machines use AMD Ryzen AI processors: the Ryzen AI 400 series in the Legion, and Ryzen AI Max with unified memory in the ZBook.</p>
+<h3 id="ternary-bonsai-2-27b-on-a-lenovo-legion-5-15agp11">Ternary-Bonsai-2-27B on a Lenovo Legion 5 15AGP11</h3>
+<p>The laptop has an AMD Ryzen AI 7 450 processor, 32 GB of RAM, a 1 TB SSD and an NVIDIA GeForce RTX 5060 GPU. Ternary-Bonsai-2-27B performed quickly and accurately. The updated model, Ternary Bonsai 2 27B PTQ1_0, needs a different version of the Ollama server, so it needs custom compilation and build procedures. The same PTQ1_0 packing is why the 4B version needs the fork's llama-server instead of the stock one — the prebuilt binary and the exact flags are in <a href="https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/">the low-RAM page</a>. With 8 GB of VRAM the context window is limited to 32k tokens, which makes the model well suited to short tasks. For larger projects I use Qwen3.5-9B, which supports a 100k token context window.</p>
+<h3 id="hp-zbook-ultra-g1a-ryzen-ai-max-pro-395-128-gb-unified-memory">HP ZBook Ultra G1a — Ryzen AI Max+ Pro 395, 128 GB unified memory</h3>
+<p>The 14-inch 2.8K touch display model. Performance was quick and accurate, but the AMD architecture needed extensive compilation and configuration, because no component worked out of the box.</p>
+<h2 id="tasks-that-stay-with-the-specialist">Tasks that stay with the specialist</h2>
+<p>The tasks that expert developers will increasingly have to handle in the AI era:</p>
+<ul>
+<li>Design and maintain the high-level system architecture and the overall software structure.</li>
+<li>Review, validate and critique AI-generated code for correctness, security and quality.</li>
+<li>Refactor AI output to improve reusability, reduce duplication and lower complexity.</li>
+<li>Write precise prompts, set constraints and guide AI agents or coding tools.</li>
+<li>Find and resolve the complex bugs, edge cases and integration problems that AI struggles with.</li>
+<li>Enforce coding standards, design patterns and long-term maintainability.</li>
+<li>Manage the technical debt that rapid AI-assisted development creates.</li>
+<li>Optimise performance, scalability and resource use beyond what basic AI suggestions give.</li>
+<li>Make sure that domain logic, business rules and regulatory requirements are implemented correctly.</li>
+<li>Integrate several AI tools, models and pipelines, and control cost and reliability.</li>
+<li>Use advanced test strategies, including adversarial and system-level testing.</li>
+<li>Mentor teams and set best practices for productive human-AI collaboration.</li>
+<li>Decide when to use AI, and when to write or redesign the code by hand.</li>
+</ul>
+<p>These responsibilities move the specialist from pure code production towards oversight, architecture, quality control and strategic guidance.</p>
+<h2 id="scheduling-a-job-on-windows">Scheduling a job on Windows</h2>
+<p>Windows Task Scheduler is close to cron jobs on Linux and macOS.</p>
+<ol>
+<li>Press the Windows key and S, then search for "Task Scheduler".</li>
+<li>Or run <code>taskschd.msc</code> in the Run dialog (Win + R).</li>
+</ol>
+<h2 id="referral-links">Referral links</h2>
+<p>The tools I use, with my referral links, are on the <a href="https://pirahansiah.com/farshid/content/qr/">QR codes page</a>.</p>
+<!--
+Working notes kept from the draft of this page (not rendered, and kept out of the search
+index and llms-full.txt). Nothing here is published:
+
+- handoff documents summarized
+- JSON as a database
+- add: always remember agent / llm / chat write in ASD-STE100 (applied to the text on this page)
+- vision intelligence · technical product engineer lead · management · motion graphics
+- what is domain knowledge, and why solve this problem
+- Vision-Language-Action models that let robots understand and interact with the world with unprecedented generalisation; large-scale foundation models and real-world robotic execution, bridging the gap between research and deployed embodied intelligence. design, implement and scale VLA models and foundation architectures for robotic manipulation and navigation.
+- PKM convention: atomic notes, not more than 255 characters if possible; link down for
+  more depth, up for the wider view.
+-->
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Tips and tricks to run a local model for Hermes Agent on your laptop&rdquo;. pirahansiah.com, updated 2026-10-16.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/localAI/">https://pirahansiah.com/farshid/content/localAI/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/localAI.md">localAI.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Why Hermes: One Agent Over Dots, Muse Code &amp; Grok Build — Farshid Pirahansiah</title>
+<meta name="description" content="Side-by-side comparison of OpenAI Dots, Meta Muse Code, xAI Grok Build and Hermes Agent — why a self-hosted, provider-agnostic harness beats three…">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/why-hermes/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/why-hermes.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/why-hermes/">
+<meta property="og:title" content="Why Hermes: One Agent Over Dots, Muse Code &amp; Grok Build">
+<meta property="og:description" content="Side-by-side comparison of OpenAI Dots, Meta Muse Code, xAI Grok Build and Hermes Agent — why a self-hosted, provider-agnostic harness beats three…">
+<meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-30">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why Hermes: One Agent Over Dots, Muse Code &amp; Grok Build">
+<meta name="twitter:description" content="Side-by-side comparison of OpenAI Dots, Meta Muse Code, xAI Grok Build and Hermes Agent — why a self-hosted, provider-agnostic harness beats three…">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "TechArticle",
+   "@id": "https://pirahansiah.com/farshid/content/why-hermes/#page",
+   "url": "https://pirahansiah.com/farshid/content/why-hermes/",
+   "name": "Why Hermes: One Agent Over Dots, Muse Code & Grok Build",
+   "headline": "Why Hermes: One Agent Over Dots, Muse Code & Grok Build",
+   "description": "Side-by-side comparison of OpenAI Dots, Meta Muse Code, xAI Grok Build and Hermes Agent — why a self-hosted, provider-agnostic harness beats three…",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/why-hermes/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-30",
+   "dateModified": "2026-09-30",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "keywords": [
+    "ai",
+    "llm",
+    "agents",
+    "hermes",
+    "comparison",
+    "openai",
+    "meta",
+    "xai",
+    "self-hosted"
+   ],
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "The four tools",
+     "url": "https://pirahansiah.com/farshid/content/why-hermes/#the-four-tools"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Head-to-head",
+     "url": "https://pirahansiah.com/farshid/content/why-hermes/#head-to-head"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Why Hermes is better",
+     "url": "https://pirahansiah.com/farshid/content/why-hermes/#why-hermes-is-better"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "What Hermes has that they don't",
+     "url": "https://pirahansiah.com/farshid/content/why-hermes/#what-hermes-has-that-they-dont"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Replacement map",
+     "url": "https://pirahansiah.com/farshid/content/why-hermes/#replacement-map"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Honest gaps",
+     "url": "https://pirahansiah.com/farshid/content/why-hermes/#honest-gaps"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Sources",
+     "url": "https://pirahansiah.com/farshid/content/why-hermes/#sources"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Using Hermes as a Dots replacement (setup · config · prompt)",
+     "url": "https://pirahansiah.com/farshid/content/why-hermes/#using-hermes-as-a-dots-replacement-setup-config-prompt"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/why-hermes/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Why Hermes: One Agent Over Dots, Muse Code & Grok Build",
+     "item": "https://pirahansiah.com/farshid/content/why-hermes/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/why-hermes.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<blockquote>
+<p><strong>Why Hermes: One Agent Over Dots, Muse Code &amp; Grok Build</strong> — Dots, Muse Code and Grok Build each give you one vendor-locked tool; Hermes is a self-hosted harness that runs any model (including theirs). — https://www.pirahansiah.com/notes/docs/llm/why-hermes/</p>
+</blockquote>
+<p>Dots, Muse Code and Grok Build are each locked to one vendor's model and one vendor's cloud. Hermes is a harness you own — same jobs, your model, your machine, your memory.</p>
+<p><em>Last updated: 2026-09-30.</em>  <!--ENHANCED--></p>
+<h1 id="why-hermes-one-agent-over-dots-muse-code-grok-build">Why Hermes: One Agent Over Dots, Muse Code &amp; Grok Build</h1>
+<h2 id="the-four-tools">The four tools</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Vendor</th>
+<th>What it is</th>
+<th>Model</th>
+<th>Runs where</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dots</strong></td>
+<td>OpenAI</td>
+<td>Always-on personal agent — works on a goal in the background, own cloud computer + browser, reachable in ChatGPT/Slack/Teams/iMessage, approval gates on sensitive actions</td>
+<td>GPT-6 Astra</td>
+<td>OpenAI cloud</td>
+<td>ChatGPT Pro $100/mo + Business Premium</td>
+</tr>
+<tr>
+<td><strong>Muse Code</strong></td>
+<td>Meta</td>
+<td>Terminal coding agent — subagent fan-out with one git worktree per child, replayable per-session event log, <code>muse exec</code> headless, <code>muse resume</code>, TypeScript SDK</td>
+<td>muse-spark-1.2/1.3</td>
+<td>your machine</td>
+<td>free install + Meta Model API account</td>
+</tr>
+<tr>
+<td><strong>Grok Build</strong></td>
+<td>xAI</td>
+<td>Terminal coding agent — parallel subagents in worktrees, AGENTS.md/plugins/hooks/skills/MCP out of the box, headless <code>-p</code>, ACP support</td>
+<td>grok-4.7 / grok-build-0.1</td>
+<td>your machine</td>
+<td>SuperGrok / X Premium+</td>
+</tr>
+<tr>
+<td><strong>Hermes</strong></td>
+<td>Nous Research</td>
+<td>General agent — code + ops + chat + automation: 30+ tools, agent-written skills, persistent memory, Bot Mode, cron, delegation, kanban, worktrees, 21+ chat platforms, MCP/plugins/hooks, any model</td>
+<td>any (local, OpenRouter, Anthropic, OpenAI, DeepSeek, xAI, Meta…)</td>
+<td>your machine, Docker / SSH / Daytona / Modal</td>
+<td>open source, bring your own key</td>
+</tr>
+</tbody>
+</table>
+<p><strong>One line:</strong> Dots, Muse Code and Grok Build are vendor products locked to one model and one cloud. Hermes is a harness you own.</p>
+<h2 id="head-to-head">Head-to-head</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Type &amp; model</strong></th>
+<th><strong>Runs / cost</strong></th>
+<th><strong>Always-on &amp; scheduling</strong></th>
+<th><strong>Parallel work</strong></th>
+<th><strong>Surfaces</strong></th>
+<th><strong>Memory · skills · audit</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dots</strong></td>
+<td>Always-on personal agent · GPT-6 Astra</td>
+<td>OpenAI cloud · $100/mo</td>
+<td>built-in persistence</td>
+<td>delegates to subagents</td>
+<td>ChatGPT, Slack, Teams, iMessage</td>
+<td>connected-app context · vendor-side audit</td>
+</tr>
+<tr>
+<td><strong>Muse Code</strong></td>
+<td>Terminal coding agent · muse-spark-1.2/1.3</td>
+<td>your machine · free + API</td>
+<td>— (CI only)</td>
+<td>subagent fan-out, worktree per child</td>
+<td>terminal (+ SDK)</td>
+<td>event log + resume · bundled playbooks</td>
+</tr>
+<tr>
+<td><strong>Grok Build</strong></td>
+<td>Terminal coding agent · grok-4.7</td>
+<td>your machine · SuperGrok</td>
+<td>— (CI only)</td>
+<td>parallel subagents + worktrees</td>
+<td>terminal + ACP editors</td>
+<td>AGENTS.md, hooks, MCP, skills · event stream</td>
+</tr>
+<tr>
+<td><strong>Hermes</strong></td>
+<td>General agent (code + ops + chat) · any model</td>
+<td>your machine / Docker / SSH · open source</td>
+<td>cron routines + <code>/goal</code> + Bot Mode</td>
+<td><code>delegate_task</code> + kanban + worktrees</td>
+<td>Telegram, Slack, Teams, WhatsApp, iMessage, Email, SMS + 18 more, API, ACP</td>
+<td>MEMORY.md + FTS5 search + skills + <code>state.db</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="why-hermes-is-better">Why Hermes is better</h2>
+<p><strong>1. No model lock-in — you can run <em>their</em> models inside it.</strong>
+Dots is GPT-6 Astra only, Muse Code is Muse Spark only, Grok Build is Grok only. Hermes is provider-agnostic, and its curated catalog already lists <code>meta/muse-spark-1.3</code> and <code>x-ai/grok-4.7</code>. Switching to Hermes keeps your favourite models and changes only the harness around them.</p>
+<p><strong>2. You own it — no cloud you don't control.</strong>
+Dots runs on OpenAI's cloud computer with your connected-app context shared to it, behind a $100/mo subscription. Hermes runs on your machine (or Docker / SSH / Daytona / Modal) with your keys, your data, and your audit trail on disk. Open source, free.</p>
+<p><strong>3. One agent replaces all three — and does more.</strong>
+Dots is a personal assistant only. Muse Code and Grok Build are coding only. Hermes does coding, ops, chat, research, automation and messaging from one core — no context-switching between three tools with three subscriptions.</p>
+<p><strong>4. It remembers and teaches itself.</strong>
+Muse has a per-session event log, Grok has installable skills, Dots has app context. Only Hermes has persistent memory <em>and</em> writes its own skills from experience — a procedure you walk it through once becomes a skill that auto-loads forever.</p>
+<p><strong>5. Deeper orchestration.</strong>
+Cron with natural-language scheduling, a durable kanban board for multi-agent work, bot-to-bot DMs across machines (<code>hermes peer</code>), and a Bot Mode where each bot is an isolated profile with its own model, memory and skills.</p>
+<h2 id="what-hermes-has-that-they-dont">What Hermes has that they don't</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Dots</th>
+<th>Muse Code</th>
+<th>Grok Build</th>
+<th><strong>Hermes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Runs locally / self-hosted</td>
+<td>✗ cloud only</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ (also Docker/SSH/Modal)</td>
+</tr>
+<tr>
+<td>Any model provider</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓ (incl. Muse Spark &amp; Grok models)</td>
+</tr>
+<tr>
+<td>Persistent memory (agent-written)</td>
+<td>~ app context</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓ MEMORY.md + FTS5 session search</td>
+</tr>
+<tr>
+<td>Self-authored skills (learns procedures)</td>
+<td>✗</td>
+<td>~ bundled playbooks</td>
+<td>~ installable</td>
+<td>✓ writes its own + syncs across devices</td>
+</tr>
+<tr>
+<td>Natural-language scheduler (cron)</td>
+<td>~ built-in persistence</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓ <code>hermes cron</code> (+ monitor mode, <code>--deliver</code>)</td>
+</tr>
+<tr>
+<td>Chat-app gateway</td>
+<td>~ ChatGPT/Slack/Teams/iMessage</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓ 21+ platforms</td>
+</tr>
+<tr>
+<td>Named bot roster (isolated agents)</td>
+<td>~ one Dot at a time</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓ Bot Mode — profiles as bots, group chats, bot↔bot DMs</td>
+</tr>
+<tr>
+<td>Kanban multi-agent board</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓ <code>hermes kanban</code></td>
+</tr>
+<tr>
+<td>Webhooks (event-driven triggers)</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓ <code>hermes webhook</code> + <code>hermes send</code></td>
+</tr>
+<tr>
+<td>Credential vault (signs in / pays for you)</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓ <code>hermes vault</code></td>
+</tr>
+<tr>
+<td>MCP — client <em>and</em> server</td>
+<td>✗ connected apps</td>
+<td>✗</td>
+<td>✓ client</td>
+<td>✓ client <strong>and</strong> server</td>
+</tr>
+<tr>
+<td>Plugins + lifecycle hooks</td>
+<td>✗</td>
+<td>✓ hooks</td>
+<td>✓</td>
+<td>✓ both, plus Python library + OpenAI-compatible API server</td>
+</tr>
+<tr>
+<td>Local models (zero cloud, no key)</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓ Ollama / llama.cpp / MLX</td>
+</tr>
+<tr>
+<td>Voice, TTS, image-gen, computer-use</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓ voice mode, TTS, image generation, <code>hermes computer-use</code></td>
+</tr>
+<tr>
+<td>Persistent goals (<code>/goal</code> keep-going loop)</td>
+<td>✓ its pitch</td>
+<td>~ compaction+resume</td>
+<td>✗</td>
+<td>✓ judge loop + turn budget + quality gates</td>
+</tr>
+<tr>
+<td>Import from Claude Code / Codex</td>
+<td>✗</td>
+<td>✗</td>
+<td>✗</td>
+<td>✓ <code>hermes import-agent</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="replacement-map">Replacement map</h2>
+<h3 id="coding-agent-muse-code-grok-build">Coding agent (Muse Code / Grok Build)</h3>
+<table>
+<thead>
+<tr>
+<th>Today</th>
+<th>Hermes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>muse</code> (interactive)</td>
+<td><code>hermes</code> (or <code>hermes --tui</code>)</td>
+</tr>
+<tr>
+<td><code>muse exec "…"</code> / <code>grok-build -p "…"</code></td>
+<td><code>hermes -z "…"</code> (stdout only) or <code>hermes chat -q "…"</code></td>
+</tr>
+<tr>
+<td><code>muse resume</code></td>
+<td><code>hermes --continue</code> / <code>hermes --resume &lt;id&gt;</code></td>
+</tr>
+<tr>
+<td><code>muse --subagent-worktree-isolation</code></td>
+<td><code>hermes -w</code> + <code>delegate_task</code></td>
+</tr>
+<tr>
+<td><code>muse serve</code> + MSP SDK</td>
+<td><code>hermes serve</code> / API server / <code>hermes acp</code> / <code>hermes peer</code></td>
+</tr>
+<tr>
+<td>Muse <code>/plan</code>, <code>/grill</code>, <code>/taste</code></td>
+<td>a skill you write once + <code>/goal</code> + <code>hermes skills search</code></td>
+</tr>
+<tr>
+<td>Grok Build in your editor (ACP)</td>
+<td><code>hermes acp --setup</code></td>
+</tr>
+<tr>
+<td>Claude Code / Codex setup</td>
+<td><code>hermes import-agent</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="always-on-personal-agent-dots">Always-on personal agent (Dots)</h3>
+<table>
+<thead>
+<tr>
+<th>Dots behaviour</th>
+<th>Hermes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Recurring work for you</td>
+<td><code>hermes cron create "0 9 * * *" "…" --name daily --deliver telegram</code></td>
+</tr>
+<tr>
+<td>A named agent with its own identity/tools</td>
+<td><code>hermes profile create &lt;bot&gt;</code> → Bot Mode</td>
+</tr>
+<tr>
+<td>Talk to it from chat apps</td>
+<td><code>hermes gateway start</code> → Telegram/Slack/Teams/iMessage/…</td>
+</tr>
+<tr>
+<td>Agents that know each other</td>
+<td>Bot group chats, <code>@mentions</code>, <code>hermes peer</code>, <code>hermes kanban</code></td>
+</tr>
+<tr>
+<td>"Don't stop until it's done"</td>
+<td><code>/goal &lt;objective&gt;</code></td>
+</tr>
+<tr>
+<td>Its own cloud computer / browser</td>
+<td>terminal backends (<code>local</code>/<code>docker</code>/<code>ssh</code>/<code>modal</code>) + <code>browser</code> + <code>hermes computer-use</code></td>
+</tr>
+<tr>
+<td>Connected apps &amp; credentials</td>
+<td>MCP servers, webhooks, <code>hermes vault</code>, egress proxy</td>
+</tr>
+<tr>
+<td>Approval for sensitive actions</td>
+<td>approval prompts → <code>hermes approvals</code>; hard stop with <code>hermes pause</code></td>
+</tr>
+</tbody>
+</table>
+<p>You don't have to abandon anything: keep <code>opencode</code>, <code>codex</code>, <code>claude</code> or <code>grok</code> installed and let Hermes drive them as tools — Hermes becomes the memory, scheduler and orchestrator.</p>
+<h2 id="honest-gaps">Honest gaps</h2>
+<ul>
+<li><strong>Dots itself</strong> — the hosted product, GPT-6 Astra, OpenAI's managed cloud computer and its safety layer. Not reproducible; replaced functionally, not identically.</li>
+<li><strong>A bundled frontier subscription</strong> — Dots / Muse Code / Grok Build include model quota. Hermes needs its own provider key or OAuth login.</li>
+<li><strong><code>muse serve</code> / MSP protocol SDK</strong> — closest equivalents are <code>hermes serve</code>, the API server, <code>hermes acp</code> and <code>hermes peer</code>; the wire protocols differ.</li>
+<li><strong>Consumer polish</strong> — one-click provisioning of an always-on cloud agent. In Hermes you set up the profile, gateway and routines yourself (about 15 minutes, once).</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<ul>
+<li>Dots: <a href="https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/">TechCrunch</a>, <a href="https://www.wired.com/story/openai-dots-always-on-ai-agents-that-proactively-help/">WIRED</a></li>
+<li>Muse Code: <a href="https://dev.meta.ai/docs/muse-code">Meta docs</a>, <a href="https://developer.meta.com/ai/resources/blog/build-with-muse-code/">build-with-muse-code</a></li>
+<li>Grok Build: <a href="https://x.ai/news/grok-build-cli">x.ai news</a>, <a href="https://x.ai/build">x.ai/build</a></li>
+<li>Hermes: <a href="https://hermes-agent.nousresearch.com/docs/">hermes-agent.nousresearch.com/docs</a></li>
+</ul>
+<h2 id="using-hermes-as-a-dots-replacement-setup-config-prompt">Using Hermes as a Dots replacement (setup · config · prompt)</h2>
+<p>Dots is an always-on personal agent in OpenAI's cloud. This is the shortest path to the same behaviour with Hermes — your machine, your model, your keys.</p>
+<h3 id="1-install-one-line-5-minutes">1. Install (one line, ~5 minutes)</h3>
+<pre><code class="language-bash">curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
+hermes setup     # wizard: model, provider, terminal, gateway, tools, agent
+hermes doctor    # confirm the install is healthy
+</code></pre>
+<h3 id="2-config-point-it-at-openai-or-any-model">2. Config — point it at OpenAI (or any model)</h3>
+<pre><code class="language-bash">hermes auth add openai-codex      # Codex OAuth sign-in, or
+#  put OPENAI_API_KEY in ~/.hermes/.env for the plain openai provider
+hermes model                      # interactive picker: choose model + provider
+</code></pre>
+<p>Settings live in <code>~/.hermes/config.yaml</code> — never hand-edit it; use <code>hermes config set KEY VAL</code>.
+Secrets live in <code>~/.hermes/.env</code>.</p>
+<pre><code class="language-bash">hermes config set model.provider openai     # the provider
+hermes config set approvals.mode smart      # Dots-style approval gate (default)
+</code></pre>
+<p>One honest caveat: <strong>GPT-6 Astra is Dots' own hosted model, not a public API endpoint.</strong> You
+run whatever OpenAI model your key can reach (e.g. gpt-5) through the same harness instead.</p>
+<h3 id="3-prompt-it-like-dots">3. Prompt it like Dots</h3>
+<p>Dots' pitch is "give it a goal and it works in the background, checking in when it needs you."
+Hermes maps that one-to-one:</p>
+<table>
+<thead>
+<tr>
+<th>Dots behaviour</th>
+<th>Hermes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Work on this until it's done"</td>
+<td><code>/goal "plan the quarterly launch and keep me posted"</code></td>
+</tr>
+<tr>
+<td>Long task that keeps running</td>
+<td><code>/background "migrate the repo to TypeScript and leave notes"</code></td>
+</tr>
+<tr>
+<td>Recurring jobs</td>
+<td><code>hermes cron create '0 9 * * *' 'summarize overnight PRs'</code></td>
+</tr>
+<tr>
+<td>Get back to something later</td>
+<td><code>/queue "…"</code></td>
+</tr>
+<tr>
+<td>Fan out to subagents</td>
+<td>ask it to <code>delegate_task</code> (batched, parallel); <code>/agents</code> to watch</td>
+</tr>
+</tbody>
+</table>
+<p><code>/goal</code> is the closest thing to Dots: a standing objective that survives across turns until you
+clear it (<code>/goal status|pause|resume|clear</code>). Cron is Dots' recurring-work loop on a real
+scheduler — <code>hermes cron</code> accepts <code>'30m'</code>, <code>'every monday 9am'</code>, <code>'0 9 * * *'</code>, or an ISO
+timestamp, and each job can pin its own model, skills and delivery platform.</p>
+<h3 id="4-make-it-reachable-where-you-already-are">4. Make it reachable where you already are</h3>
+<p>Dots reaches you in ChatGPT, Slack, Teams and iMessage. Hermes connects to those and more:</p>
+<pre><code class="language-bash">hermes gateway setup    # pick Telegram / Slack / WhatsApp / iMessage / Signal / Teams / Email / …
+hermes gateway start    # run the gateway headless (keep it alive via launchd / systemd)
+hermes send …           # one-off message out
+/handoff telegram       # in-session: move the current task to your phone
+</code></pre>
+<p><code>hermes gateway start</code> is the always-on layer — the agent keeps running and answers on every
+connected platform. iMessage uses Photon (<code>hermes photon setup</code>). Optional: <code>hermes profile
+create &lt;name&gt;</code> for a separate identity (Bot Mode) with its own model, memory and skills.</p>
+<h3 id="5-approvals-dots-safety-gate">5. Approvals (Dots' safety gate)</h3>
+<p>Dots pauses and asks before sensitive actions. Hermes ships the same gate:</p>
+<pre><code class="language-bash">hermes config set approvals.mode smart     # ask only when risky (default)
+hermes config set approvals.mode manual    # ask for everything
+# in chat: /approve   /deny   /yolo (toggle bypass)
+</code></pre>
+<h3 id="6-give-it-context-and-memory-dots-connected-apps">6. Give it context and memory (Dots' connected apps)</h3>
+<ul>
+<li>Memory is on by default (<code>hermes memory status</code>) — it remembers you across sessions.</li>
+<li>Connect external apps with MCP: <code>hermes mcp add …</code>, <code>hermes mcp catalog</code>, <code>hermes mcp install …</code>.</li>
+<li>Event-driven triggers: <code>hermes webhook subscribe …</code>.</li>
+<li>Credentials: <code>hermes auth</code> (pooled, auto-rotating keys) and <code>hermes secrets bitwarden|onepassword</code>.</li>
+</ul>
+<h3 id="a-worked-day">A worked day</h3>
+<p><strong>Dots:</strong> "Every morning, check the market and tell me in Slack if anything matters."
+<strong>Hermes:</strong> <code>hermes cron create '0 8 * * *' 'check overnight news relevant to my portfolio and message me on Slack if anything is material'</code></p>
+<p><strong>Dots:</strong> "Book this trip, ask me before you spend money."
+<strong>Hermes:</strong> <code>/goal "book the SF trip within a $2,500 budget"</code> + <code>approvals.mode: manual</code> so it asks before any purchase.</p>
+<p><strong>Dots:</strong> it reaches you in iMessage at dinner.
+<strong>Hermes:</strong> <code>hermes gateway setup</code> (iMessage via Photon) + <code>hermes gateway start</code> — same ping, same phone.</p>
+<p>You are not trading Dots' behaviour for a coding CLI. You are re-building the same always-on,
+goal-driven agent — except it runs on your machine, with any model, and you own the memory and
+the audit trail.</p>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Why Hermes: One Agent Over Dots, Muse Code &amp; Grok Build&rdquo;. pirahansiah.com, updated 2026-09-30.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/why-hermes/">https://pirahansiah.com/farshid/content/why-hermes/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/why-hermes.md">why-hermes.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

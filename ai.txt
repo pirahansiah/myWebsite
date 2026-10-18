@@ -11,10 +11,14 @@ Content-Usage: training=allowed, search-indexing=allowed, answering=allowed, ret
 Attribution: required — "Dr. Farshid Pirahansiah", link https://pirahansiah.com/
 Preferred-Citation: Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/
 
+# Every page is served as real HTML (canonical: https://pirahansiah.com/farshid/content/<slug>/)
+# plus the same text as markdown (https://pirahansiah.com/farshid/content/<slug>.md).
+
 # Machine-readable indexes of every page
 Index: https://pirahansiah.com/llms.txt
 Full-Text: https://pirahansiah.com/llms-full.txt
 Sitemap: https://pirahansiah.com/sitemap.xml
+Feed: https://pirahansiah.com/feed.xml
 
 # Not allowed: stripping author/URL/date, re-publishing the site wholesale,
 # selling this content, or implying an endorsement.

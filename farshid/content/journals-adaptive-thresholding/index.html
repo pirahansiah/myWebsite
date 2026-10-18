@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Adaptive Thresholding Based on PSNR — Farshid Pirahansiah</title>
+<meta name="description" content="PSNR-based adaptive thresholding for image segmentation in OCR and license plate recognition.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/journals-adaptive-thresholding.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/">
+<meta property="og:title" content="Adaptive Thresholding Based on PSNR">
+<meta property="og:description" content="PSNR-based adaptive thresholding for image segmentation in OCR and license plate recognition.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/content/adaptive-thresholding-psnr.png">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Adaptive Thresholding Based on PSNR">
+<meta name="twitter:description" content="PSNR-based adaptive thresholding for image segmentation in OCR and license plate recognition.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/content/adaptive-thresholding-psnr.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/#page",
+   "url": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/",
+   "name": "Adaptive Thresholding Based on PSNR",
+   "headline": "Adaptive Thresholding Based on PSNR",
+   "description": "PSNR-based adaptive thresholding for image segmentation in OCR and license plate recognition.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/content/adaptive-thresholding-psnr.png",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "1. Introduction",
+     "url": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/#1-introduction"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "2. Key Components",
+     "url": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/#2-key-components"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "3. Image Thresholding Methods",
+     "url": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/#3-image-thresholding-methods"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "4. PSNR-Based Adaptive Thresholding",
+     "url": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/#4-psnr-based-adaptive-thresholding"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "5. Comparative Analysis",
+     "url": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/#5-comparative-analysis"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "6. Results",
+     "url": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/#6-results"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "7. Applications and Future Work",
+     "url": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/#7-applications-and-future-work"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Adaptive Thresholding Based on PSNR",
+     "item": "https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/journals-adaptive-thresholding.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p>PSNR-based adaptive thresholding for image segmentation in OCR and license plate recognition.</p>
+<p>Adaptive_Image_Thresholding_Based_on_the_Peak_Signal-to-noise_Ratio</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/Adaptive-Image-Thresholding-Based-on-the-Peak-Signal-to-noise-Ratio-e2pnbgj">spotify</a></p>
+<p><a href="https://ieeexplore.ieee.org/document/5735125">PDF Download</a>
+<a href="https://pdfs.semanticscholar.org/05b2/d39fce4e8a99897e95f8c75416f65a5a0acc.pdf">PDF Download</a></p>
+<p><img alt="Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio" src="https://pirahansiah.com/farshid/content/adaptive-thresholding-psnr.png"></p>
+<p><img src="https://pirahansiah.com/farshid/content/adaptive-thresholding-psnr.png" alt="Adaptive Image Thresholding Based on the Peak Signal-to-noise Ratio" style="max-width: 100%; height: auto;"></p>
+<h1 id="mind-map-adaptive-image-thresholding-based-on-psnr">Mind Map: Adaptive Image Thresholding Based on PSNR</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li><strong>Research Focus</strong>: Enhancing image thresholding techniques using Peak Signal-to-noise Ratio (PSNR).</li>
+<li><strong>Key Concept</strong>: PSNR-based thresholding improves object-background separation in images.</li>
+<li><strong>Applications</strong>: License Plate Recognition (LPR), Optical Character Recognition (OCR), Standard and Handwritten Image Processing.</li>
+</ul>
+<h2 id="2-key-components">2. Key Components</h2>
+<h3 id="21-thresholding">2.1 Thresholding</h3>
+<ul>
+<li><strong>Definition</strong>: Segmentation technique used to differentiate objects from the background in images.</li>
+<li><strong>Types</strong>:</li>
+<li><strong>Single Thresholding</strong>: Produces binary images; faster computation.</li>
+<li><strong>Multilevel Thresholding</strong>: Produces gray-scale images; more complex but can capture finer details.</li>
+<li><strong>Importance</strong>: Reduces data size and improves computational efficiency in image processing.</li>
+</ul>
+<h3 id="22-peak-signal-to-noise-ratio-psnr">2.2 Peak Signal-to-noise Ratio (PSNR)</h3>
+<ul>
+<li><strong>Role</strong>: Used as an indicator to segment images by measuring image quality.</li>
+<li><strong>Purpose</strong>: Helps in selecting optimal threshold values for image segmentation.</li>
+<li><strong>Formula</strong>: PSNR measures similarity between the original image and segmented image.</li>
+</ul>
+<h2 id="3-image-thresholding-methods">3. Image Thresholding Methods</h2>
+<h3 id="31-single-thresholding">3.1 Single Thresholding</h3>
+<ul>
+<li><strong>Focus</strong>: Binary image generation, separating objects using one threshold value.</li>
+<li><strong>Advantages</strong>: Faster processing and simpler implementation.</li>
+<li><strong>Challenges</strong>: Less accurate in complex image environments.</li>
+</ul>
+<h3 id="32-multilevel-thresholding">3.2 Multilevel Thresholding</h3>
+<ul>
+<li><strong>Focus</strong>: Uses multiple threshold values for more complex image segmentation.</li>
+<li><strong>Advantages</strong>: Captures finer details and produces gray-scale images.</li>
+<li><strong>Challenges</strong>: Increased computation time and complexity.</li>
+</ul>
+<h3 id="33-potential-difference-thresholding">3.3 Potential Difference Thresholding</h3>
+<ul>
+<li><strong>Definition</strong>: Electrostatic binarization method used for image segmentation.</li>
+<li><strong>Applications</strong>: Handwriting and printed image recognition.</li>
+</ul>
+<h3 id="34-otsus-method">3.4 Otsu’s Method</h3>
+<ul>
+<li><strong>Role</strong>: Automatic threshold selection for image segmentation using histogram variance.</li>
+<li><strong>Popular Use Case</strong>: Effective in separating objects and background in printed images.</li>
+</ul>
+<h2 id="4-psnr-based-adaptive-thresholding">4. PSNR-Based Adaptive Thresholding</h2>
+<ul>
+<li><strong>Proposed Method</strong>: Applies PSNR to optimize image segmentation for various illumination conditions.</li>
+<li><strong>Applications</strong>: License Plate Recognition (LPR), OCR, and Standard Image Processing.</li>
+<li><strong>Results</strong>: Achieves comparable or better performance than traditional methods like Otsu and Kittler &amp; Illingworth.</li>
+</ul>
+<h2 id="5-comparative-analysis">5. Comparative Analysis</h2>
+<h3 id="51-performance-evaluation">5.1 Performance Evaluation</h3>
+<ul>
+<li><strong>Metrics</strong>: F-Measure and PSNR.</li>
+<li><strong>Benchmarked Against</strong>: Methods such as Otsu, Kittler &amp; Illingworth, Max Entropy, and Potential Difference.</li>
+</ul>
+<h3 id="52-image-datasets">5.2 Image Datasets</h3>
+<ul>
+<li><strong>Tested On</strong>:</li>
+<li><strong>Printed Images</strong>.</li>
+<li><strong>Handwritten Images</strong>.</li>
+<li><strong>Standard Datasets</strong>.</li>
+<li><strong>License Plate Images (LPR)</strong>.</li>
+</ul>
+<h2 id="6-results">6. Results</h2>
+<ul>
+<li><strong>Advantages of PSNR-based Thresholding</strong>:</li>
+<li>Improved object-background separation in challenging lighting conditions.</li>
+<li>Faster and more accurate for specific image types like license plates.</li>
+<li><strong>Limitations</strong>: Slightly underperforms in certain cases compared to multilevel thresholding.</li>
+</ul>
+<h2 id="7-applications-and-future-work">7. Applications and Future Work</h2>
+<ul>
+<li><strong>Potential Use Cases</strong>:</li>
+<li><strong>LPR Systems</strong>: Improved license plate segmentation.</li>
+<li><strong>Handwriting Recognition</strong>: Better segmentation in low-quality images.</li>
+<li><strong>Mobile Applications</strong>: Efficient thresholding for resource-constrained devices.</li>
+<li><strong>Future Work</strong>: Extending the method to real-time applications and exploring multi-threshold approaches.</li>
+</ul>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Adaptive Thresholding Based on PSNR&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/">https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/journals-adaptive-thresholding.md">journals-adaptive-thresholding.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

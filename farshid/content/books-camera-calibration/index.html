@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Camera Calibration &amp; Video Stabilization — Farshid Pirahansiah</title>
+<meta name="description" content="Springer book chapter on fuzzy camera calibration and video stabilization for robot localization.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/books-camera-calibration/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/books-camera-calibration.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/books-camera-calibration/">
+<meta property="og:title" content="Camera Calibration &amp; Video Stabilization">
+<meta property="og:description" content="Springer book chapter on fuzzy camera calibration and video stabilization for robot localization.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/content/camera-calibration-video-stabilization.png">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Camera Calibration &amp; Video Stabilization">
+<meta name="twitter:description" content="Springer book chapter on fuzzy camera calibration and video stabilization for robot localization.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/content/camera-calibration-video-stabilization.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "Chapter",
+   "@id": "https://pirahansiah.com/farshid/content/books-camera-calibration/#page",
+   "url": "https://pirahansiah.com/farshid/content/books-camera-calibration/",
+   "name": "Camera Calibration & Video Stabilization",
+   "headline": "Camera Calibration & Video Stabilization",
+   "description": "Springer book chapter on fuzzy camera calibration and video stabilization for robot localization.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/books-camera-calibration/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/content/camera-calibration-video-stabilization.png",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "1. Introduction",
+     "url": "https://pirahansiah.com/farshid/content/books-camera-calibration/#1-introduction"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "2. Overview of Robot Localization",
+     "url": "https://pirahansiah.com/farshid/content/books-camera-calibration/#2-overview-of-robot-localization"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "3. Robot Localization Approaches",
+     "url": "https://pirahansiah.com/farshid/content/books-camera-calibration/#3-robot-localization-approaches"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "4. Proposed Framework for Robot Localization",
+     "url": "https://pirahansiah.com/farshid/content/books-camera-calibration/#4-proposed-framework-for-robot-localization"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "5. Experimental Setup",
+     "url": "https://pirahansiah.com/farshid/content/books-camera-calibration/#5-experimental-setup"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "6. Dataset and Evaluation",
+     "url": "https://pirahansiah.com/farshid/content/books-camera-calibration/#6-dataset-and-evaluation"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "7. Results",
+     "url": "https://pirahansiah.com/farshid/content/books-camera-calibration/#7-results"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "8. Proposed Framework for Robot Localization",
+     "url": "https://pirahansiah.com/farshid/content/books-camera-calibration/#8-proposed-framework-for-robot-localization"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "9. Comparisons with Other Methods",
+     "url": "https://pirahansiah.com/farshid/content/books-camera-calibration/#9-comparisons-with-other-methods"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "10. Conclusion",
+     "url": "https://pirahansiah.com/farshid/content/books-camera-calibration/#10-conclusion"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/books-camera-calibration/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Camera Calibration & Video Stabilization",
+     "item": "https://pirahansiah.com/farshid/content/books-camera-calibration/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/books-camera-calibration.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p>Springer book chapter on fuzzy camera calibration and video stabilization for robot localization.</p>
+<p>My_Book_chapter_Camera_Calibration_and_Video_Stabilization_Framework_for_Robot_Localization  in the Book entitled “Control Engineering in Robotics and Industrial Automation" published in Springer</p>
+<p>https://www.pirahansiah.com/notes/pubs/books/My_Book_chapter_Camera_Calibration_and_Video_Stabilization_Framework_for_Robot_Localization/</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-book-chapter-titled-Camera-Calibration-and-Video-Stabilization-Framework-for-Robot-Localization-in-the-Book-entitled-Control-Engineering-in-Robotics-and-Industrial-Automation-published-Springer-e2prs80">spotify</a></p>
+<p><a href="https://www.waterstones.com/book/control-engineering-in-robotics-and-industrial-automation/muralindran-mariappan/mohd-rizal-arshad/9783030745394">PDF Download book chapter titled “book chapter titled “Camera Calibration and Video Stabilization Framework for Robot Localization” in the Book entitled “Control Engineering in Robotics and Industrial Automation" published in Springer</a></p>
+<p><img alt="My book chapter titled &quot;Camera Calibration and Video Stabilization Framework for Robot Localization&quot; in the Book entitled Control Engineering in Robotics and Industrial Automation published in Springer" src="https://pirahansiah.com/farshid/content/camera-calibration-video-stabilization.png"></p>
+<p><img src="https://pirahansiah.com/farshid/content/camera-calibration-video-stabilization.png" alt="book chapter titled "Camera Calibration and Video Stabilization Framework for Robot Localization" in the Book entitled "Control Engineering in Robotics and Industrial Automation" published in Springer" style="max-width: 100%; height: auto;"></p>
+<h1 id="camera-calibration-and-video-stabilization-framework-for-robot-localization">Camera Calibration and Video Stabilization Framework for Robot Localization</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li><strong>Key Issues in Localization</strong>: Camera calibration (CC) and video stabilization (VS).</li>
+<li><strong>Problems in Camera Calibration</strong>:</li>
+<li>Current methods use fixed thresholds, neglecting slope information, leading to blurring.</li>
+<li>Gaussian pyramid parameters in optical flow require manual tuning.</li>
+<li><strong>Challenges in Robot Vision</strong>:</li>
+<li>Large motion, motion blur, and defocus blur.</li>
+<li>Landmark recognition and probabilistic models fail due to image distortion.</li>
+<li><strong>Proposed Solution</strong>: A framework using Fuzzy Camera Calibration (FCC) and Fuzzy Optical Flow (FOF) for video stabilization.</li>
+</ul>
+<h2 id="2-overview-of-robot-localization">2. Overview of Robot Localization</h2>
+<ul>
+<li><strong>Simultaneous Localization and Mapping (SLAM)</strong>:</li>
+<li>Central focus in robotics.</li>
+<li>Provides real-time mapping and robot localization.</li>
+<li><strong>Applications of SLAM</strong>:</li>
+<li>Robotics competitions (e.g., RoboCup).</li>
+<li>Autonomous vehicles and unmanned aerial systems.</li>
+</ul>
+<h2 id="3-robot-localization-approaches">3. Robot Localization Approaches</h2>
+<h3 id="31-multi-sensor-fusion">3.1 Multi-Sensor Fusion</h3>
+<ul>
+<li><strong>Laser Rangefinder</strong>:</li>
+<li>Accurate but faces issues with glass and reflective surfaces.</li>
+<li>Ultrasonic beacons improve accuracy but are more error-prone.</li>
+<li><strong>Sensor Networks</strong>:</li>
+<li>Combines multiple sensors for improved accuracy.</li>
+<li>Sensors include ultrasonic, depth cameras, and lasers.</li>
+</ul>
+<h3 id="32-vision-localization">3.2 Vision Localization</h3>
+<ul>
+<li><strong>Model-Based</strong>:</li>
+<li>Uses edges, lines, and contours for comparison with object models.</li>
+<li>Challenges with occlusion and universal models.</li>
+<li><strong>Appearance-Based</strong>:</li>
+<li>Utilizes local features like Harris corners and SIFT for object recognition and tracking.</li>
+</ul>
+<h2 id="4-proposed-framework-for-robot-localization">4. Proposed Framework for Robot Localization</h2>
+<ul>
+<li><strong>Fuzzy Camera Calibration (FCC)</strong>:</li>
+<li>Provides intrinsic and extrinsic camera parameters.</li>
+<li>Adjusts for camera distortions and motion blur.</li>
+<li><strong>Fuzzy Optical Flow (FOF)</strong>:</li>
+<li>Stabilizes video frames for improved localization.</li>
+<li>Adaptive parameters based on image quality and motion.</li>
+</ul>
+<h2 id="5-experimental-setup">5. Experimental Setup</h2>
+<ul>
+<li><strong>Humanoid Robot Platform</strong>:</li>
+<li>Uses DARWIN-OP humanoid robot equipped with stereo cameras.</li>
+<li>Cameras mounted for stereo vision and depth detection in RoboCup environments.</li>
+<li><strong>Camera Calibration Experiment</strong>:</li>
+<li>Calibration using chessboard pattern with 9×6 points.</li>
+<li>Tests conducted with different blurriness and distances.</li>
+</ul>
+<h2 id="6-dataset-and-evaluation">6. Dataset and Evaluation</h2>
+<ul>
+<li><strong>Dataset Structure</strong>:</li>
+<li>700 images (350 pairs) with varying angles, blur, and noise.</li>
+<li>Tests conducted using Mono vision and Stereo vision methods.</li>
+<li><strong>Ground Truth Measurements</strong>:</li>
+<li>Distance measurement for robot localization using stereo vision.</li>
+<li>Comparison with ground truth and Mono vision methods.</li>
+</ul>
+<h2 id="7-results">7. Results</h2>
+<ul>
+<li><strong>Comparison with Mono Vision</strong>:</li>
+<li>FCC and FOF methods show significantly improved distance accuracy.</li>
+<li>Errors reduced in distance measurements for various landmark positions.</li>
+<li><strong>Stereo Vision Performance</strong>:</li>
+<li>Stereo vision outperforms Mono vision in accuracy.</li>
+<li>Fewer errors in robot localization even when landmarks are partially visible.</li>
+</ul>
+<h2 id="8-proposed-framework-for-robot-localization">8. Proposed Framework for Robot Localization</h2>
+<ul>
+<li><strong>Framework Steps</strong>:</li>
+<li>Step 1: Apply FCC for camera calibration.</li>
+<li>Step 2: Use FOF for video stabilization.</li>
+<li>Step 3: Measure distance and localize landmarks.</li>
+<li><strong>Stereo Vision Method</strong>:</li>
+<li>Un-distortion, rectification, correspondence, and re-projection for distance measurement.</li>
+</ul>
+<h2 id="9-comparisons-with-other-methods">9. Comparisons with Other Methods</h2>
+<ul>
+<li><strong>Comparison with Zhang’s Method</strong>:</li>
+<li>Proposed FCC shows 15% lower error in distance measurements.</li>
+<li>FCC has 12% lower standard deviation than Zhang’s method.</li>
+<li><strong>Fuzzy Gaussian Pyramid for Video Stabilization</strong>:</li>
+<li>Dynamic adjustment of parameters based on image sharpness and motion.</li>
+<li>Outperforms fixed-parameter methods in handling large motions.</li>
+</ul>
+<h2 id="10-conclusion">10. Conclusion</h2>
+<ul>
+<li><strong>Framework Effectiveness</strong>:</li>
+<li>FCC and FOF improve robot localization and distance measurements.</li>
+<li>Stereo vision system enhances localization accuracy in dynamic environments.</li>
+<li><strong>Broader Applications</strong>:</li>
+<li>Proposed methods applicable in augmented reality, autonomous vehicles, and 3D mapping.</li>
+</ul>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Camera Calibration &amp; Video Stabilization&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/books-camera-calibration/">https://pirahansiah.com/farshid/content/books-camera-calibration/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/books-camera-calibration.md">books-camera-calibration.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

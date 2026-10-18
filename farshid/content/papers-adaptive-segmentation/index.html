@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>PSNR-Based Segmentation for LPR — Farshid Pirahansiah</title>
+<meta name="description" content="Adaptive image segmentation using PSNR for license plate recognition systems.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/papers-adaptive-segmentation.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/">
+<meta property="og:title" content="PSNR-Based Segmentation for LPR">
+<meta property="og:description" content="Adaptive image segmentation using PSNR for license plate recognition systems.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/content/adaptive-image-segmentation-psnr.png">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PSNR-Based Segmentation for LPR">
+<meta name="twitter:description" content="Adaptive image segmentation using PSNR for license plate recognition systems.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/content/adaptive-image-segmentation-psnr.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/#page",
+   "url": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/",
+   "name": "PSNR-Based Segmentation for LPR",
+   "headline": "PSNR-Based Segmentation for LPR",
+   "description": "Adaptive image segmentation using PSNR for license plate recognition systems.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/content/adaptive-image-segmentation-psnr.png",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "1. Introduction",
+     "url": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/#1-introduction"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "2. Pattern Recognition",
+     "url": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/#2-pattern-recognition"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "3. Motivation",
+     "url": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/#3-motivation"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "4. Proposed Method",
+     "url": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/#4-proposed-method"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "5. Multi-Level Thresholding",
+     "url": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/#5-multi-level-thresholding"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "6. Experimental Evaluation",
+     "url": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/#6-experimental-evaluation"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "7. Conclusion",
+     "url": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/#7-conclusion"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "PSNR-Based Segmentation for LPR",
+     "item": "https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/papers-adaptive-segmentation.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p>Adaptive image segmentation using PSNR for license plate recognition systems.</p>
+<p>Adaptive_Image_Segmentation_Based_on_PSNR_for_License_Plate_Recognition</p>
+<p>https://www.pirahansiah.com/notes/pubs/papers/Adaptive_Image_Segmentation_Based_on_PSNR_for_License_Plate_Recognition</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-paper-Adaptive-image-segmentation-based-on-Peak-Signal-to-Noise-Ratio-for-a-license-plate-recognition-system-e2ps0ue">spotify</a></p>
+<p><a href="https://doi.org/10.1109/ICCAIE.2010.5735125">PDF Download My Conference Paper</a></p>
+<p><img alt="My Conference Paper   " src="https://pirahansiah.com/farshid/content/adaptive-image-segmentation-psnr.png"></p>
+<p><img src="https://pirahansiah.com/farshid/content/adaptive-image-segmentation-psnr.png" alt="My Conference Paper: Adaptive Image Segmentation Based on PSNR for License Plate Recognition "  style="max-width: 100%; height: auto;"></p>
+<h1 id="adaptive-image-segmentation-based-on-psnr-for-license-plate-recognition">Adaptive Image Segmentation Based on PSNR for License Plate Recognition</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li><strong>Objective</strong>: Propose an adaptive threshold method using Peak Signal-to-Noise Ratio (PSNR).</li>
+<li><strong>Applications of Image Segmentation</strong>:<ul>
+<li>License Plate Recognition (LPR)</li>
+<li>Preprocessing in image analysis</li>
+<li>Object detection and classification</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-pattern-recognition">2. Pattern Recognition</h2>
+<ul>
+<li><strong>Applications</strong>:<ul>
+<li>Optical Character Recognition (OCR)</li>
+<li>Biometrics (e.g., face, fingerprint recognition)</li>
+<li>Medical diagnostics (e.g., X-ray analysis)</li>
+<li>Military applications (e.g., Automated Target Recognition, Image Segmentation)</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-motivation">3. Motivation</h2>
+<ul>
+<li><strong>Thresholding</strong>:<ul>
+<li>Single and multi-level thresholding methods</li>
+<li>PSNR-based threshold for improved accuracy in segmentation</li>
+</ul>
+</li>
+<li><strong>Challenges</strong>:<ul>
+<li>Differing environmental conditions (e.g., contrast, lighting)</li>
+<li>Object complexity (e.g., fonts, colors, sizes)</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-proposed-method">4. Proposed Method</h2>
+<ul>
+<li><strong>PSNR as a Metric</strong>:<ul>
+<li>Used to determine optimal threshold value</li>
+<li>Evaluated across various test cases (dark, medium, bright images)</li>
+</ul>
+</li>
+<li><strong>Algorithm</strong>:<ul>
+<li>Adaptive thresholding method steps:
+   1. Calculate PSNR for different threshold values.
+   2. Select the threshold value with the highest PSNR.
+   3. Apply to image segmentation for license plate detection.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-multi-level-thresholding">5. Multi-Level Thresholding</h2>
+<ul>
+<li><strong>Benefits</strong>:<ul>
+<li>More accurate segmentation in complex images.</li>
+<li>Used when single-threshold methods are insufficient.</li>
+</ul>
+</li>
+<li><strong>Algorithm Steps</strong>:<ul>
+<li>Recursively apply PSNR to calculate the best multi-level thresholds.</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-experimental-evaluation">6. Experimental Evaluation</h2>
+<ul>
+<li><strong>Comparison of Methods</strong>:<ul>
+<li>PSNR-based method vs. existing methods:</li>
+<li>Kittler and Illingworth’s MET</li>
+<li>Potential Difference</li>
+<li>Otsu's method</li>
+<li>Results:</li>
+<li><strong>Proposed method</strong>: Reliable for high/low contrast situations (e.g., night, midday, rainy conditions).</li>
+</ul>
+</li>
+<li><strong>Performance Metrics</strong>:<ul>
+<li>Accuracy in detecting license plates and characters</li>
+<li>PSNR values across different threshold levels</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-conclusion">7. Conclusion</h2>
+<ul>
+<li><strong>Key Findings</strong>:<ul>
+<li>The proposed PSNR-based threshold method improves segmentation in license plate recognition.</li>
+<li>Adaptive to changing environmental conditions (e.g., lighting, contrast).</li>
+<li>Shows high reliability in experimental evaluations.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;PSNR-Based Segmentation for LPR&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/">https://pirahansiah.com/farshid/content/papers-adaptive-segmentation/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/papers-adaptive-segmentation.md">papers-adaptive-segmentation.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

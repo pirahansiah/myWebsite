@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Entropy-Based Multi-Threshold LPR — Farshid Pirahansiah</title>
+<meta name="description" content="Multi-threshold license plate recognition using entropy-based image segmentation.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/papers-license-plate-recognition/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/papers-license-plate-recognition.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/papers-license-plate-recognition/">
+<meta property="og:title" content="Entropy-Based Multi-Threshold LPR">
+<meta property="og:description" content="Multi-threshold license plate recognition using entropy-based image segmentation.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/content/license-plate-recognition-entropy.png">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Entropy-Based Multi-Threshold LPR">
+<meta name="twitter:description" content="Multi-threshold license plate recognition using entropy-based image segmentation.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/content/license-plate-recognition-entropy.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://pirahansiah.com/farshid/content/papers-license-plate-recognition/#page",
+   "url": "https://pirahansiah.com/farshid/content/papers-license-plate-recognition/",
+   "name": "Entropy-Based Multi-Threshold LPR",
+   "headline": "Entropy-Based Multi-Threshold LPR",
+   "description": "Multi-threshold license plate recognition using entropy-based image segmentation.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/papers-license-plate-recognition/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/content/license-plate-recognition-entropy.png",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "1. Introduction",
+     "url": "https://pirahansiah.com/farshid/content/papers-license-plate-recognition/#1-introduction"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "2. Entropy-based Thresholding",
+     "url": "https://pirahansiah.com/farshid/content/papers-license-plate-recognition/#2-entropy-based-thresholding"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "3. Proposed Method",
+     "url": "https://pirahansiah.com/farshid/content/papers-license-plate-recognition/#3-proposed-method"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "4. License Plate Recognition Process",
+     "url": "https://pirahansiah.com/farshid/content/papers-license-plate-recognition/#4-license-plate-recognition-process"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "5. Results and Discussion",
+     "url": "https://pirahansiah.com/farshid/content/papers-license-plate-recognition/#5-results-and-discussion"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "6. Conclusion",
+     "url": "https://pirahansiah.com/farshid/content/papers-license-plate-recognition/#6-conclusion"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/papers-license-plate-recognition/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Entropy-Based Multi-Threshold LPR",
+     "item": "https://pirahansiah.com/farshid/content/papers-license-plate-recognition/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/papers-license-plate-recognition.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p>Multi-threshold license plate recognition using entropy-based image segmentation.</p>
+<p>License_Plate_Recognition_with_Multi-Threshold_Based_on_Entropy</p>
+<p>https://www.pirahansiah.com/notes/pubs/papers/License_Plate_Recognition_with_Multi-Threshold_Based_on_Entropy</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/License-Plate-Recognition-with-Multi-threshold-based-on-Entropy-e2ps290">spotify</a></p>
+<p><a href="https://doi.org/10.1109/ICEEI.2011.6021627">PDF Download My Conference Paper</a></p>
+<p><img alt="My Conference Paper License Plate Recognition with Multi-Threshold Based on Entropy  " src="https://pirahansiah.com/farshid/content/license-plate-recognition-entropy.png"></p>
+<p><img src="https://pirahansiah.com/farshid/content/license-plate-recognition-entropy.png" alt="My Conference Paper: License Plate Recognition with Multi-Threshold Based on Entropy "  style="max-width: 100%; height: auto;"></p>
+<h1 id="license-plate-recognition-with-multi-threshold-based-on-entropy">License Plate Recognition with Multi-threshold based on Entropy</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li><strong>Objective</strong>: Propose a multi-thresholding method for license plate recognition.</li>
+<li><strong>Importance of Thresholding</strong>:<ul>
+<li>Simplifies image segmentation</li>
+<li>Ensures robustness and accuracy in recognizing license plate characters.</li>
+</ul>
+</li>
+<li><strong>Challenges</strong>:<ul>
+<li>Selecting the correct threshold values for better segmentation results.</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-entropy-based-thresholding">2. Entropy-based Thresholding</h2>
+<ul>
+<li><strong>Method</strong>:<ul>
+<li>Based on maximizing the cross entropy between the original image and the segmented image.</li>
+<li>Entropy is treated as a probability distribution of the image histogram.</li>
+</ul>
+</li>
+<li><strong>Historical Background</strong>:<ul>
+<li>Originally proposed by Pun and later improved by Kapur for image segmentation.</li>
+<li>Entropy-based thresholding is widely used for bi-level and multi-level thresholding.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-proposed-method">3. Proposed Method</h2>
+<ul>
+<li><strong>Multi-thresholding Based on Maximum Entropy</strong>:<ul>
+<li>Selects several threshold values by maximizing the entropy.</li>
+<li>Integrates partial ranges of the image histogram to achieve better segmentation.</li>
+</ul>
+</li>
+<li><strong>Comparison with Other Methods</strong>:<ul>
+<li>Compared to single-thresholding techniques based on maximum entropy.</li>
+<li>Evaluates how multi-thresholding enhances the recognition accuracy.</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-license-plate-recognition-process">4. License Plate Recognition Process</h2>
+<ul>
+<li><strong>Steps</strong>:<ol>
+<li><strong>Image Segmentation</strong>: Separates the license plate region using multi-thresholding.</li>
+<li><strong>Character Segmentation</strong>: Applies the selected thresholds to segment individual characters.</li>
+<li><strong>Recognition</strong>: Recognizes the segmented characters to produce the license plate number.</li>
+</ol>
+</li>
+</ul>
+<h2 id="5-results-and-discussion">5. Results and Discussion</h2>
+<ul>
+<li><strong>Performance</strong>:<ul>
+<li>The proposed multi-threshold method outperforms single-thresholding techniques.</li>
+<li>Shows improved segmentation results for varying lighting and environmental conditions.</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-conclusion">6. Conclusion</h2>
+<ul>
+<li><strong>Key Findings</strong>:<ul>
+<li>Multi-thresholding based on entropy enhances the accuracy of license plate recognition.</li>
+</ul>
+</li>
+<li><strong>Implications</strong>:<ul>
+<li>Can be applied in real-world license plate recognition systems with better robustness.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Entropy-Based Multi-Threshold LPR&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/papers-license-plate-recognition/">https://pirahansiah.com/farshid/content/papers-license-plate-recognition/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/papers-license-plate-recognition.md">papers-license-plate-recognition.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

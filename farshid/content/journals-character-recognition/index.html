@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Character &amp; Object Recognition via Features — Farshid Pirahansiah</title>
+<meta name="description" content="Global feature extraction methods for character and object recognition in computer vision.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/journals-character-recognition/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/journals-character-recognition.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/journals-character-recognition/">
+<meta property="og:title" content="Character &amp; Object Recognition via Features">
+<meta property="og:description" content="Global feature extraction methods for character and object recognition in computer vision.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/content/character-object-recognition.png">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Character &amp; Object Recognition via Features">
+<meta name="twitter:description" content="Global feature extraction methods for character and object recognition in computer vision.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/content/character-object-recognition.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://pirahansiah.com/farshid/content/journals-character-recognition/#page",
+   "url": "https://pirahansiah.com/farshid/content/journals-character-recognition/",
+   "name": "Character & Object Recognition via Features",
+   "headline": "Character & Object Recognition via Features",
+   "description": "Global feature extraction methods for character and object recognition in computer vision.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/journals-character-recognition/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/content/character-object-recognition.png",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "1. Introduction",
+     "url": "https://pirahansiah.com/farshid/content/journals-character-recognition/#1-introduction"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "2. Feature Extraction Methods",
+     "url": "https://pirahansiah.com/farshid/content/journals-character-recognition/#2-feature-extraction-methods"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "3. Proposed Method",
+     "url": "https://pirahansiah.com/farshid/content/journals-character-recognition/#3-proposed-method"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "4. Experimental Results",
+     "url": "https://pirahansiah.com/farshid/content/journals-character-recognition/#4-experimental-results"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "5. Applications",
+     "url": "https://pirahansiah.com/farshid/content/journals-character-recognition/#5-applications"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "6. Future Work",
+     "url": "https://pirahansiah.com/farshid/content/journals-character-recognition/#6-future-work"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "7. Summary",
+     "url": "https://pirahansiah.com/farshid/content/journals-character-recognition/#7-summary"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/journals-character-recognition/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Character & Object Recognition via Features",
+     "item": "https://pirahansiah.com/farshid/content/journals-character-recognition/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/journals-character-recognition.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p>Global feature extraction methods for character and object recognition in computer vision.</p>
+<p>CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/Character-and-Object-Recognition-Based-on-Global-Feature-Extraction-e2pptrp">spotify</a></p>
+<p><a href="http://www.jatit.org/volumes/Vol52No2/6Vol52No2.pdf">PDF Download</a></p>
+<p><img alt="CHARACTER_AND_OBJECT_RECOGNITION_BASED_ON_GLOBAL_FEATURE_EXTRACTION" src="https://pirahansiah.com/farshid/content/character-object-recognition.png"></p>
+<p><img src="https://pirahansiah.com/farshid/content/character-object-recognition.png" alt="CHARACTER AND OBJECT RECOGNITION BASED ON GLOBAL FEATURE EXTRACTION" style="max-width: 100%; height: auto;"></p>
+<h1 id="mind-map-character-and-object-recognition-based-on-global-feature-extraction">Mind Map: Character and Object Recognition Based on Global Feature Extraction</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li><strong>Optical Character Recognition (OCR)</strong>: Recognizes handwritten, irregular, and machine-printed characters.</li>
+<li><strong>Key Tasks in OCR</strong>:</li>
+<li>Pre-processing</li>
+<li>Segmentation</li>
+<li>Feature Extraction</li>
+<li>Classification</li>
+<li>Recognition</li>
+</ul>
+<h2 id="2-feature-extraction-methods">2. Feature Extraction Methods</h2>
+<h3 id="21-global-feature-extraction">2.1 Global Feature Extraction</h3>
+<ul>
+<li><strong>Definition</strong>: Uses entire image characteristics to extract features.</li>
+<li><strong>Methods</strong>:</li>
+<li><strong>Gray Level Co-occurrence Matrix (GLCM)</strong>: Uses spatial distribution of gray-level values.</li>
+<li><strong>Edge Direction Matrix (EDMS)</strong>: Captures edge directions but produces a limited number of features.</li>
+<li><strong>Challenges</strong>: </li>
+<li>Less discriminative features.</li>
+<li>Higher dimensionality leads to longer processing times.</li>
+</ul>
+<h3 id="22-spatial-feature-extraction">2.2 Spatial Feature Extraction</h3>
+<ul>
+<li><strong>Definition</strong>: Focuses on local image characteristics.</li>
+<li><strong>Techniques</strong>:</li>
+<li><strong>Robinson Compass Mask</strong>: Uses gradient filters in eight directions.</li>
+<li><strong>Strengths</strong>: Better for character recognition.</li>
+<li><strong>Limitations</strong>: Time-consuming due to high-dimensional data.</li>
+</ul>
+<h2 id="3-proposed-method">3. Proposed Method</h2>
+<ul>
+<li><strong>Combination of GLCM and EDMS</strong>:</li>
+<li>Aims to improve recognition rates by combining features.</li>
+<li><strong>Feature Selection</strong>: Uses gain ratio to reduce feature set size.</li>
+<li><strong>Datasets</strong>: License plates, font styles, and large binary images.</li>
+</ul>
+<h2 id="4-experimental-results">4. Experimental Results</h2>
+<ul>
+<li><strong>Performance Metrics</strong>:</li>
+<li><strong>Character Recognition Accuracy</strong>:<ul>
+<li>Proposed method: 85.99% with feature selection.</li>
+<li>EDMS: 80.19%, GLCM: 38.84%, Combination without feature selection: 58.78%.</li>
+</ul>
+</li>
+<li><strong>Object Recognition Accuracy</strong>:<ul>
+<li>Proposed method: 92.5% accuracy with feature selection.</li>
+<li>Robinson filter (spatial method) outperforms in character recognition (100% accuracy).</li>
+</ul>
+</li>
+<li><strong>Conclusion</strong>: Global feature extraction is better for object recognition, while spatial methods are better for character recognition.</li>
+</ul>
+<h2 id="5-applications">5. Applications</h2>
+<ul>
+<li><strong>Character Recognition</strong>:</li>
+<li>License Plate Recognition (LPR).</li>
+<li>Handwritten text recognition.</li>
+<li><strong>Object Recognition</strong>:</li>
+<li>Recognizing binary shapes in images.</li>
+<li>Differentiating between object categories using extracted features.</li>
+</ul>
+<h2 id="6-future-work">6. Future Work</h2>
+<ul>
+<li><strong>Improvements</strong>: Modify feature selection to further enhance recognition rates.</li>
+<li><strong>New Applications</strong>: Adapt method for complex character recognition and extend to other domains.</li>
+</ul>
+<h2 id="7-summary">7. Summary</h2>
+<ul>
+<li><strong>Goal</strong>: Improve OCR by combining global and spatial feature extraction techniques.</li>
+<li><strong>Key Findings</strong>: Proposed method shows promise for object recognition with efficient feature extraction.</li>
+</ul>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Character &amp; Object Recognition via Features&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/journals-character-recognition/">https://pirahansiah.com/farshid/content/journals-character-recognition/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/journals-character-recognition.md">journals-character-recognition.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

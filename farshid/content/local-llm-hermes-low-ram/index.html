@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>A local LLM for Hermes Agent on an old machine: under 8 GB RAM, no GPU — Farshid Pirahansiah</title>
+<meta name="description" content="How to give Hermes Agent a fully local model on an old, GPU-less, under-8 GB machine: a 949 MB 1-bit 4B model, the fork&#x27;s llama-server, a q4_0 KV cache at…">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/">
+<meta property="og:title" content="A local LLM for Hermes Agent on an old machine: under 8 GB RAM, no GPU">
+<meta property="og:description" content="How to give Hermes Agent a fully local model on an old, GPU-less, under-8 GB machine: a 949 MB 1-bit 4B model, the fork&#x27;s llama-server, a q4_0 KV cache at…">
+<meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-10-16">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A local LLM for Hermes Agent on an old machine: under 8 GB RAM, no GPU">
+<meta name="twitter:description" content="How to give Hermes Agent a fully local model on an old, GPU-less, under-8 GB machine: a 949 MB 1-bit 4B model, the fork&#x27;s llama-server, a q4_0 KV cache at…">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "TechArticle",
+   "@id": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/#page",
+   "url": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/",
+   "name": "A local LLM for Hermes Agent on an old machine: under 8 GB RAM, no GPU",
+   "headline": "A local LLM for Hermes Agent on an old machine: under 8 GB RAM, no GPU",
+   "description": "How to give Hermes Agent a fully local model on an old, GPU-less, under-8 GB machine: a 949 MB 1-bit 4B model, the fork's llama-server, a q4_0 KV cache at…",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-10-16",
+   "dateModified": "2026-10-16",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "keywords": [
+    "local-llm",
+    "hermes",
+    "quantization",
+    "llamacpp",
+    "low-ram",
+    "edgeai"
+   ],
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "The idea in four lines",
+     "url": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/#the-idea-in-four-lines"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "What you need: three downloads, no build",
+     "url": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/#what-you-need-three-downloads-no-build"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Serve it",
+     "url": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/#serve-it"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Plug it into Hermes: two config keys, not one",
+     "url": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/#plug-it-into-hermes-two-config-keys-not-one"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Keep it alive after a reboot",
+     "url": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/#keep-it-alive-after-a-reboot"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "The measured numbers",
+     "url": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/#the-measured-numbers"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Gotchas that cost time",
+     "url": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/#gotchas-that-cost-time"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "One line",
+     "url": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/#one-line"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "A local LLM for Hermes Agent on an old machine: under 8 GB RAM, no GPU",
+     "item": "https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<h1 id="a-local-llm-for-hermes-agent-on-an-old-machine-under-8-gb-ram-no-gpu">A local LLM for Hermes Agent on an old machine: under 8 GB RAM, no GPU</h1>
+<p>I run a fully local model inside Hermes Agent with no cloud key and no GPU. The trick is not a smaller model, it is an aggressively quantized one: a 4B model whose weights are ternary, stored at ~1.75 bits per weight, 949 MB on disk. Runtime RAM is weights plus KV cache plus small buffers, so the whole thing lives in about 2 GB — an old machine with under 8 GB is enough. The only real cost of dropping the GPU is time, and most of that time is paid once per session, not once per message.</p>
+<p>Everything below is the setup I published, with the numbers measured on the machine in the last table. Where a number is arithmetic instead of a measurement, the text says so.</p>
+<h2 id="the-idea-in-four-lines">The idea in four lines</h2>
+<ul>
+<li>A 1-bit/ternary 4B model weighs 949 MB instead of ~8 GB, and needs no cloud.</li>
+<li>Runtime RAM = model file + KV cache + buffers. Here that is 1.8 - 2.9 GB.</li>
+<li>Hermes refuses any model served with under 64,000 tokens of context, so serve 65536 and shrink the KV cache instead of shrinking the context.</li>
+<li>No GPU required. Metal or CUDA changes the speed, not whether it works.</li>
+</ul>
+<h2 id="what-you-need-three-downloads-no-build">What you need: three downloads, no build</h2>
+<ol>
+<li><strong>The model</strong> — <a href="https://huggingface.co/prism-ml/Ternary-Bonsai-2-4B-gguf">prism-ml/Ternary-Bonsai-2-4B-gguf</a>, file <code>Ternary-Bonsai-2-4B-PTQ1_0.gguf</code> (949 MB). <code>PTQ1_0</code> is the smallest packing of the three that hold the same ternary weights: 0.95 GB against 1.15 GB for <code>PQ2_0</code> and 1.21 GB for <code>Q2_0</code>. Lowest RAM wins for this use case.</li>
+<li><strong>The runtime</strong> — the <a href="https://github.com/PrismML-Eng/llama.cpp">PrismML fork of llama.cpp</a> (branch <code>prism</code>), prebuilt binary <code>llama-prism-&lt;tag&gt;-bin-macos-arm64.tar.gz</code>, about 12 MB, with linux, windows and android builds in the same release. <strong>Normal llama.cpp cannot load this file</strong>, Homebrew's included: it fails with <code>gguf_init_from_reader: failed to read tensor info</code> because the packings use private tensor types (<code>PQ2_0</code> = 142, <code>PTQ1_0</code> = 143). That error is the runtime, not a broken download — check the sha256 against the repo's <code>SHA256SUMS</code> file before you re-download anything.</li>
+<li><strong>Hermes Agent</strong>, already installed.</li>
+</ol>
+<h2 id="serve-it">Serve it</h2>
+<pre><code>llama-server \
+  --model Ternary-Bonsai-2-4B-PTQ1_0.gguf \
+  --alias Ternary-Bonsai-2-4B-PTQ1_0 \
+  --host 127.0.0.1 --port 8002 \
+  --ctx-size 65536 \
+  --cache-type-k q4_0 --cache-type-v q4_0 \
+  --flash-attn on \
+  --n-gpu-layers 0 \
+  --jinja \
+  --chat-template-kwargs '{&quot;enable_thinking&quot;:false}' \
+  --no-warmup
+</code></pre>
+<pre><code>curl http://127.0.0.1:8002/health      # {&quot;status&quot;:&quot;ok&quot;}
+curl http://127.0.0.1:8002/v1/models  # &quot;n_ctx&quot;: 65536
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">flag</th>
+<th style="text-align: left;">why it is there</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--ctx-size 65536</code></td>
+<td style="text-align: left;">Hermes' minimum is 64,000 tokens; below that it rejects the model outright.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--cache-type-k q4_0 --cache-type-v q4_0</code></td>
+<td style="text-align: left;">The KV cache is the second RAM eater. <code>q4_0</code> is the lowest type llama.cpp has — there is no 2-bit KV (allowed: <code>f32, f16, bf16, q8_0, q4_0, q4_1, iq4_nl, q5_0, q5_1</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--flash-attn on</code></td>
+<td style="text-align: left;">Smaller compute buffers.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--n-gpu-layers 0</code></td>
+<td style="text-align: left;">No GPU: everything on CPU. Use <code>99</code> when you do have a GPU.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--jinja</code></td>
+<td style="text-align: left;">Uses the model's own chat template, which is what makes tool calling work.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--chat-template-kwargs '{"enable_thinking":false}'</code></td>
+<td style="text-align: left;">Turns the model's thinking mode off for every client at once (see gotcha 1).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--no-warmup</code></td>
+<td style="text-align: left;">Skips the warmup pass, so the server is ready sooner.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plug-it-into-hermes-two-config-keys-not-one">Plug it into Hermes: two config keys, not one</h2>
+<pre><code>hermes config set custom_providers &quot;$(cat &lt;&lt;'EOF'
+- name: bonsai
+  base_url: http://127.0.0.1:8002/v1
+  model: Ternary-Bonsai-2-4B-PTQ1_0
+  models:
+    Ternary-Bonsai-2-4B-PTQ1_0:
+      context_length: 65536
+EOF
+)&quot;
+</code></pre>
+<pre><code>hermes config set model_aliases.bonsai \
+  '{model: Ternary-Bonsai-2-4B-PTQ1_0, provider: custom, base_url: &quot;http://127.0.0.1:8002/v1&quot;}'
+</code></pre>
+<ul>
+<li><code>custom_providers</code> is what puts the model in the picker; <code>model_aliases</code> is what makes the short name work (<code>/model bonsai</code>, or the one-shot <code>hermes -m bonsai</code>). Both are needed.</li>
+<li><code>model_aliases</code> entries must be dicts. A flat line like <code>bonsai: custom/Ternary-Bonsai-2-4B-PTQ1_0</code> is silently ignored.</li>
+<li><code>context_length</code> has to match the server's <code>--ctx-size</code>, otherwise the agent budgets context it cannot send.</li>
+<li>The default model does not change. Adding a local option is opt-in; making it the default changes every session.</li>
+</ul>
+<p>Test it without touching the default:</p>
+<pre><code>hermes -m bonsai -z &quot;Reply with exactly: hello&quot;
+</code></pre>
+<h2 id="keep-it-alive-after-a-reboot">Keep it alive after a reboot</h2>
+<p>The alias does not start the server, it only points at it. Without persistence the local model is gone at the next restart.</p>
+<ul>
+<li><strong>macOS</strong>: a launchd user agent with <code>RunAtLoad</code> and <code>KeepAlive</code>, then <code>launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/&lt;name&gt;.plist</code>.</li>
+<li><strong>Linux</strong>: a systemd user unit with <code>Restart=always</code>.</li>
+<li><strong>Windows</strong>: a scheduled task that runs at logon.</li>
+</ul>
+<h2 id="the-measured-numbers">The measured numbers</h2>
+<p>Machine used for the test: Apple M3, 16 GB RAM, macOS. Model: 949 MB, 4.21B parameters, 65,536 context, <code>q4_0</code> KV cache.</p>
+<p><strong>RAM</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">measurement</th>
+<th style="text-align: right;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">after load (cold)</td>
+<td style="text-align: right;">1.81 GB</td>
+</tr>
+<tr>
+<td style="text-align: left;">while serving</td>
+<td style="text-align: right;">1.83 - 2.15 GB</td>
+</tr>
+<tr>
+<td style="text-align: left;">peak during an 18k-token prompt</td>
+<td style="text-align: right;">2.90 GB</td>
+</tr>
+<tr>
+<td style="text-align: left;">of which model weights</td>
+<td style="text-align: right;">0.94 GB</td>
+</tr>
+<tr>
+<td style="text-align: left;">of which KV cache, 64k at q4_0</td>
+<td style="text-align: right;">~0.59 GB (~9 KB per token)</td>
+</tr>
+<tr>
+<td style="text-align: left;">disk (model + binaries)</td>
+<td style="text-align: right;">913 MB + 40 MB</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Speed with the GPU (<code>--n-gpu-layers 99</code>)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">measurement</th>
+<th style="text-align: right;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">prompt processing</td>
+<td style="text-align: right;">175 - 275 tok/s (274 at 2k, 258 at 7k, 196 at 14k)</td>
+</tr>
+<tr>
+<td style="text-align: left;">generation</td>
+<td style="text-align: right;">40.4 tok/s median (24 ms per token)</td>
+</tr>
+<tr>
+<td style="text-align: left;">cold start to healthy</td>
+<td style="text-align: right;">1.24 s</td>
+</tr>
+<tr>
+<td style="text-align: left;">the same prompt asked again</td>
+<td style="text-align: right;">0.23 s (prefix cache reused 18,018 of 18,022 tokens)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Speed without a GPU (CPU only, <code>--n-gpu-layers 0</code>, 4 threads)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">measurement</th>
+<th style="text-align: right;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">prompt processing, short prompt</td>
+<td style="text-align: right;">32 - 85 tok/s</td>
+</tr>
+<tr>
+<td style="text-align: left;">prompt processing, 14,026-token prompt</td>
+<td style="text-align: right;">18.2 tok/s (772 s total)</td>
+</tr>
+<tr>
+<td style="text-align: left;">generation, short context</td>
+<td style="text-align: right;">11 - 20 tok/s (51 - 91 ms per token)</td>
+</tr>
+<tr>
+<td style="text-align: left;">generation inside a 14k context</td>
+<td style="text-align: right;">7.8 tok/s</td>
+</tr>
+<tr>
+<td style="text-align: left;">RAM</td>
+<td style="text-align: right;">unchanged, 1.73 GB after load, 2.03 GB after the long prompt</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What that means in practice</strong></p>
+<ul>
+<li>A one-word answer to a short question: about 1-2 seconds with the GPU, 3-6 seconds on CPU. Inside a long context, generation drops to 7.8 tokens per second on CPU, so a 200-word answer there takes minutes, not seconds.</li>
+<li>The first real turn: Hermes sends a ~20,000-token prompt (system prompt plus tool schemas). With the GPU that is 84-104 seconds to the first token. CPU only measured 772 seconds to process 14,026 tokens, so scaling that measured rate to a 20,000-token prompt gives roughly 18-20 minutes before the first token — the one number on this page I derived rather than measured end to end.</li>
+<li>Every later turn reuses the cached prompt prefix, so it answers almost immediately. One long session is far cheaper than many short ones.</li>
+<li>A genuinely old CPU (2015-era, two cores) will land 3-10x below the CPU row above. It still works, but treat it as a background/batch model rather than a chat you watch.</li>
+</ul>
+<h2 id="gotchas-that-cost-time">Gotchas that cost time</h2>
+<ol>
+<li><strong>Empty answers or <code>@@@</code> garbage</strong> — it is a thinking model and the reasoning eats the whole token budget before writing anything. Server-side <code>--chat-template-kwargs '{"enable_thinking":false}'</code> fixes it for every client at once; or send <code>max_tokens</code> &gt;= 256 per request.</li>
+<li><strong><code>failed to read tensor info</code> at load</strong> — wrong llama.cpp (see download 2), not a corrupt model. Verify with the repo's <code>SHA256SUMS</code> first.</li>
+<li><strong>Hermes says the context is too small</strong> — either your <code>--ctx-size</code> is under 64,000 or <code>context_length</code> in <code>config.yaml</code> does not match it.</li>
+<li><strong>Model is in the config but <code>/model bonsai</code> does nothing</strong> — the server is not running; the alias never starts it.</li>
+<li><strong><code>hermes doctor</code> asks you to move <code>custom_providers</code> into <code>providers:</code></strong> — retired migration notice that fires for working entries. Ignore it.</li>
+<li><strong>Vision</strong> — this model also has an optional mmproj vision pack (+0.37 GB). Add it only if you need images; it is more RAM and more risk on a small machine.</li>
+<li><strong>Speculative decoding</strong> — the MTP (1.27 GB) and DFlash2 (1.58 GB) drafters make it faster and roughly double the RAM. On a sub-8 GB box, skip them.</li>
+</ol>
+<h2 id="one-line">One line</h2>
+<p>A ternary 4B model plus the fork's llama-server plus a <code>q4_0</code> KV cache at 64k context gives a fully local Hermes model in under 2 GB of RAM — about 40 tokens per second with a GPU and 11-20 without one at short context (7.8 inside a long CPU context), and the only real price of an old GPU-less machine is the first turn.</p>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;A local LLM for Hermes Agent on an old machine: under 8 GB RAM, no GPU&rdquo;. pirahansiah.com, updated 2026-10-16.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/">https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram.md">local-llm-hermes-low-ram.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

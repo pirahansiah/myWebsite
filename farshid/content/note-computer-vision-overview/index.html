@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Computer Vision — Farshid Pirahansiah</title>
+<meta name="description" content="Computer vision topics: 3D vision, optical flow, multi-camera systems.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/note-computer-vision-overview/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/note-computer-vision-overview.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/note-computer-vision-overview/">
+<meta property="og:title" content="Computer Vision">
+<meta property="og:description" content="Computer vision topics: 3D vision, optical flow, multi-camera systems.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Computer Vision">
+<meta name="twitter:description" content="Computer vision topics: 3D vision, optical flow, multi-camera systems.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "TechArticle",
+   "@id": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/#page",
+   "url": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/",
+   "name": "Computer Vision",
+   "headline": "Computer Vision",
+   "description": "Computer vision topics: 3D vision, optical flow, multi-camera systems.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "About Me",
+     "url": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/#about-me"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Experience",
+     "url": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/#experience"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Core Skills",
+     "url": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/#core-skills"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Published Research",
+     "url": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/#published-research"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Consulting Services",
+     "url": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/#consulting-services"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Content Hub",
+     "url": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/#content-hub"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Connect",
+     "url": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/#connect"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "AI Assistant",
+     "url": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/#ai-assistant"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Computer Vision",
+     "item": "https://pirahansiah.com/farshid/content/note-computer-vision-overview/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/note-computer-vision-overview.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p>Overview of Dr. Farshid Pirahansiah's computer vision and AI expertise: 3D vision, multi-camera systems, optical flow, model optimization, and edge AI deployment.</p>
+<h1 id="dr-farshid-pirahansiah">Dr. Farshid Pirahansiah</h1>
+<p>Computer Vision Research Engineer &amp; Technical Lead | Berlin, Germany</p>
+<h2 id="about-me">About Me</h2>
+<p>I am an accomplished Research Engineer with 12+ years of experience, including a PhD in Computer Science. My career has been dedicated to Computer Vision, Machine Learning, and ML Operations, with a proven track record of transforming complex algorithms into production-ready applications.</p>
+<h2 id="experience">Experience</h2>
+<ul>
+<li><strong>12+ years:</strong> Computer Vision, C++, R&amp;D</li>
+<li><strong>10+ years:</strong> Machine Learning, Deep Learning, Python, Embedded Systems, Multi-Camera Systems</li>
+<li><strong>7+ years:</strong> IoT, Model Optimization, Robotics, Medical Imaging, Cloud (AWS)</li>
+<li><strong>5+ years:</strong> Technical Lead, Global Collaboration</li>
+<li><strong>2+ years:</strong> LLMs, Multimodal AI, RAG, Agentic Workflows</li>
+</ul>
+<h2 id="core-skills">Core Skills</h2>
+<ul>
+<li><strong>Computer Vision &amp; AI:</strong> Image processing, deep learning, real-time systems</li>
+<li><strong>Languages:</strong> Python, C++, MATLAB</li>
+<li><strong>Frameworks:</strong> PyTorch, TensorFlow, ONNX Runtime, TensorRT, OpenVINO</li>
+<li><strong>Tools:</strong> Docker, Kubernetes, AWS, Git, MLflow, CI/CD</li>
+<li><strong>Edge AI:</strong> Jetson, Coral TPU, model quantization (INT8/FP16)</li>
+</ul>
+<h2 id="published-research">Published Research</h2>
+<ul>
+<li><strong>3 Patents</strong> (Face Image Augmentation, Vehicle Detection, Facial Analysis Advertising)</li>
+<li><strong>2 Book Chapters</strong> (Springer)</li>
+<li><strong>6 Journal Papers</strong> | <strong>11 Conference Papers</strong></li>
+<li><a href="https://pirahansiah.com/farshid/content/computer-vision/">Full Portfolio</a></li>
+</ul>
+<h2 id="consulting-services">Consulting Services</h2>
+<p>I offer personalized coaching, tutoring, and consulting in computer vision and AI. <a href="https://pirahansiah.com/farshid/content/note-coaching-roadmap/">Learn more</a>.</p>
+<hr>
+<h2 id="content-hub">Content Hub</h2>
+<h3 id="computer-vision-3d">Computer Vision &amp; 3D</h3>
+<ul>
+<li><a href="https://pirahansiah.com/farshid/content/note-3d-vision/">3D Vision &amp; Multi-Camera Systems</a> — Point clouds, depth sensing, camera sync</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-optical-flow/">Optical Flow: Challenges &amp; Solutions</a> — Illumination, occlusion, fast motion</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-multi-camera/">Real-Time Multi-Camera Systems</a> — Scaling to 100+ cameras</li>
+</ul>
+<h3 id="ai-llms">AI &amp; LLMs</h3>
+<ul>
+<li><a href="https://pirahansiah.com/farshid/content/note-llm-concepts/">Advanced LLM Concepts</a> — RAG, embeddings, multimodal</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-llm-agents/">Orchestrating AI Agents</a> — Multi-agent systems</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-llm-blog/">Blog: AI &amp; LLMs</a> — RAG vs CAG, multi-agent architectures</li>
+</ul>
+<h3 id="cuda-gpu">CUDA &amp; GPU</h3>
+<ul>
+<li><a href="https://pirahansiah.com/farshid/content/note-numba/">Numba JIT Tutorial</a> — Python performance optimization</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-pycuda/">PyCUDA Kernel Explanation</a> — CUDA from Python</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-cuda-vscode/">CUDA in VS Code on Windows</a> — Dev environment setup</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-apple-ml/">MLX, CoreML &amp; Metal</a> — Apple Silicon ML</li>
+</ul>
+<h3 id="programming-tools">Programming &amp; Tools</h3>
+<ul>
+<li><a href="https://pirahansiah.com/farshid/content/note-cpp/">C++ Quick Reference</a> — Memory, STL, debugging</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-python-configuration/">Python Configuration &amp; Tips</a> — Config management, pybind11, Cython</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-developer-tools/">Developer Tools &amp; Setup</a> — Docker, GitHub, CLI tools</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-shell-vim/">Shell &amp; Vim Reference</a> — Terminal essentials</li>
+</ul>
+<h3 id="optimization-ml">Optimization &amp; ML</h3>
+<ul>
+<li><a href="https://pirahansiah.com/farshid/content/note-optimization-guide/">CV, DL &amp; ML Optimization</a> — Quantization, pruning, frameworks</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-prompt-templates/">Prompt Engineering Templates</a> — LLM prompt patterns</li>
+</ul>
+<h3 id="business-career">Business &amp; Career</h3>
+<ul>
+<li><a href="https://pirahansiah.com/farshid/content/note-startup-guide/">Startup Guide</a> — Edge AI business, fundraising, pitch decks</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-seo-for-llms/">SEO for LLM-Powered Search</a> — Structured data, AI visibility</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-llm-avatar/">Local Video Avatar Generator</a> — Ollama + Wav2Lip tutorial</li>
+<li><a href="https://pirahansiah.com/farshid/content/note-linkedin-2024/">Top LinkedIn Posts 2024</a> — Camera calibration, C++, robotics</li>
+</ul>
+<h3 id="resources">Resources</h3>
+<ul>
+<li><a href="https://pirahansiah.com/farshid/content/computer-vision/">Portfolio &amp; Publications</a> — Patents, books, papers</li>
+<li><a href="https://pirahansiah.com/farshid/content/computer-vision/">Curated Links</a> — Tools, tutorials, reading</li>
+</ul>
+<hr>
+<h2 id="connect">Connect</h2>
+<ul>
+<li><a href="https://www.linkedin.com/in/pirahansiah/">LinkedIn</a></li>
+<li><a href="https://github.com/pirahansiah">GitHub</a></li>
+</ul>
+<hr>
+<h2 id="ai-assistant">AI Assistant</h2>
+<ul>
+<li><a href="https://chat.openai.com/g/g-vHELtCqJq-computer-vision-developer">Computer Vision Developer GPT</a> — Expert in Python, OpenCV for CV applications</li>
+</ul>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Computer Vision&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/note-computer-vision-overview/">https://pirahansiah.com/farshid/content/note-computer-vision-overview/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/note-computer-vision-overview.md">note-computer-vision-overview.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

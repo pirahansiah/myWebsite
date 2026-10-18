@@ -5,11 +5,16 @@ A static, markdown-first personal site for Dr. Farshid Pirahansiah. GitHub Pages
 **One file per page.** All public markdown pages are flat in `farshid/content/`. Page images live beside the markdown; sitewide images and fonts are in `farshid/assets/`; downloadable documents are in `farshid/downloads/`. The browser app renders each page directly from its source file.
 
 - **readers** — the app shell fetches the `.md` and renders it (`#content/<slug>`,
-  or the `/<slug>.md` URL, which routes into the app).
-- **crawlers, LLM/answer engines, no-JS fetches** — they read the `.md` file
-  directly; GitHub Pages serves it as `text/markdown`, which is the full text with
-  no chrome. `/llms.txt` (every page + one-line summary), `/llms-full.txt` (the
-  whole site in one file) and `/sitemap.xml` list those same markdown URLs.
+  or the `/<slug>.md` URL, which routes into the app). The app hydrates on top of the
+  page's generated HTML rendering, which is what the URL actually serves.
+- **crawlers, LLM/answer engines, no-JS fetches** — they read the generated HTML page
+  at the page's canonical URL, `/farshid/content/<slug>/` (a plain HTML response with the
+  full text, ids on the headings, internal links to other HTML pages, OpenGraph tags and
+  JSON-LD). The `.md` file stays available beside it as the plain-text source
+  (`text/markdown`, advertised with `rel="alternate" type="text/markdown"`).
+  `/llms.txt` (every page + one-line summary, linking the HTML pages), `/llms-full.txt`
+  (the whole site in one file), `/sitemap.xml` (canonical URLs + `lastmod`) and
+  `/feed.xml` (recently updated pages) are the machine-readable entry points.
 
 Standalone HTML is used for the app shell, search, QR route shim, redirect stubs, and interactive tools. Scripts inside markdown are stripped, so interactive pages remain standalone `.html` files.
 
@@ -17,7 +22,7 @@ Standalone HTML is used for the app shell, search, QR route shim, redirect stubs
 
 GitHub Pages serves this repository from the `main` branch root, so the deployment shell and required metadata stay at the repository root: `index.html`, `404.html`, `qrcode.html` (the `/qrcode` short link), `.nojekyll`, `CNAME`, `robots.txt`, `sitemap.xml`, and the generated `llms*.txt` files. Moving those into `farshid/` would break the current Pages deployment.
 
-- `farshid/content/` — the homepage, all public markdown pages, and page-specific images; one flat source directory. `atlas.md` is the index and `swarm.html` is the standalone search tool.
+- `farshid/content/` — the homepage, all public markdown pages, and page-specific images; one flat source directory. `atlas.md` is the index and `swarm.html` is the standalone search tool. Each `<slug>.md` has a **generated** `<slug>/index.html` next to it (see "The HTML rendering of a page") — never edit that by hand.
 - `farshid/assets/` — sitewide profile and favicon images, plus the generated motion videos under `assets/motion/`.
 - `farshid/downloads/` — downloadable documents, scripts, archives, and their store-listing source text.
 - `farshid/app.js`, `md.js`, `style.css`, `deck.css`, and `search-index.js` — app shell, markdown renderer, hash router, design system, deck styles, and generated search data.
@@ -131,7 +136,10 @@ python3 farshid/projects/gen_front_matter.py   # page headers, page-aliases.js
 python3 farshid/projects/gen_atlas.py          # farshid/content/atlas.md
 python3 farshid/projects/gen_search_index.py   # farshid/search-index.js
 python3 farshid/projects/gen_static_pages.py   # llms.txt, llms-full.txt, sitemap.xml, permalinks.js
+python3 farshid/projects/gen_page_html.py      # content/<slug>/index.html + feed.xml
 ```
+
+The last one needs `markdown` (`pip install markdown`), like `gen_atlas.py`.
 
 `gen_atlas.py` and `gen_static_pages.py` need `python3 -m pip install markdown`.
 HTML is allowed inside markdown for styling; scripts are stripped, so interactive
@@ -142,12 +150,31 @@ pages belong in a standalone `.html`. Done — push to `main`.
 Push to `main`. GitHub Pages (`build_type: legacy` from `main`/root) serves the
 files as-is; `.nojekyll` keeps Jekyll out. CDN cache is ~2 minutes.
 
-## History: why `content/*.html` is gone
+## The HTML rendering of a page
 
-Until Sep 2026 every page was written twice — a `.md` source plus a generated
-`.html` twin (title, canonical, OpenGraph, JSON-LD, nav, footer) for crawlers and
-for clean shareable URLs. Two files per page caused real confusion (edits landing
-in the copy that is not the source), and Pages cannot generate the twin without a
-build, so the twins were deleted and both readers and crawlers now use the
-markdown file. `/farshid/content/<name>.html` links shared earlier still work:
-they hit `404.html`, which sends the browser to `#content/<name>`.
+Crawlers that do not run JavaScript (GPTBot, ClaudeBot, PerplexityBot, CCBot, Bingbot
+without render) cannot read a client-rendered page, and a bare `text/markdown` response
+is treated as source code more often than as an article. So every markdown page also gets
+a generated HTML rendering at the page's canonical URL:
+
+| source | generated | URL |
+|---|---|---|
+| `farshid/content/<slug>.md` | `farshid/content/<slug>/index.html` | `/farshid/content/<slug>/` |
+| `farshid/projects/<name>/README.md` | `farshid/projects/<name>/README.html` | `/farshid/projects/<name>/README.html` |
+
+`gen_page_html.py` builds them: the article, the ids on the headings, every internal
+`.md` link rewritten to the HTML page it points at, the canonical link, OpenGraph/Twitter
+cards and a JSON-LD `@graph` (`Person`, `WebSite`, the page as `Article` /
+`TechArticle` / `ScholarlyArticle` / `Chapter` / `PresentationDigitalDocument`, and a
+`BreadcrumbList`). The app shell then hydrates on top of it, so a reader still gets the
+app (search, decks, in-page routing).
+
+**Never edit a generated page** — it is overwritten on the next run. The `.md` is the
+only source; the twin carries a "generated by gen_page_html.py" banner in the HTML. This
+is the difference from the old `.html` twins (removed Sep 2026, when two hand-editable
+files per page caused edits to land in the wrong one): these are build output, produced
+from the markdown, in a directory named after the page rather than beside it.
+
+`/farshid/content/<name>.html` links shared before Sep 2026 still work: they hit
+`404.html`, which sends the browser to `#content/<name>`, which now lands on the
+generated page's URL.

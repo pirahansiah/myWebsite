@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Qwen-Image-2.1 on an 8 GB laptop GPU: install, configure, and the one node that broke it — Farshid Pirahansiah</title>
+<meta name="description" content="A complete local text-to-image setup on an RTX 4060 Laptop: the 7B GGUF transformer, the int8 text encoder, the 64-channel VAE, and the loader bug that…">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/qwen-image-21-local/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/qwen-image-21-local.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/qwen-image-21-local/">
+<meta property="og:title" content="Qwen-Image-2.1 on an 8 GB laptop GPU: install, configure, and the one node that broke it">
+<meta property="og:description" content="A complete local text-to-image setup on an RTX 4060 Laptop: the 7B GGUF transformer, the int8 text encoder, the 64-channel VAE, and the loader bug that…">
+<meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-27">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Qwen-Image-2.1 on an 8 GB laptop GPU: install, configure, and the one node that broke it">
+<meta name="twitter:description" content="A complete local text-to-image setup on an RTX 4060 Laptop: the 7B GGUF transformer, the int8 text encoder, the 64-channel VAE, and the loader bug that…">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "TechArticle",
+   "@id": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#page",
+   "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/",
+   "name": "Qwen-Image-2.1 on an 8 GB laptop GPU: install, configure, and the one node that broke it",
+   "headline": "Qwen-Image-2.1 on an 8 GB laptop GPU: install, configure, and the one node that broke it",
+   "description": "A complete local text-to-image setup on an RTX 4060 Laptop: the 7B GGUF transformer, the int8 text encoder, the 64-channel VAE, and the loader bug that…",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-27",
+   "dateModified": "2026-09-27",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "keywords": [
+    "local-ai",
+    "image-generation",
+    "comfyui",
+    "gguf",
+    "qwen",
+    "quantization"
+   ],
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "The target hardware",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#the-target-hardware"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "What Qwen-Image-2.1 is",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#what-qwen-image-21-is"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Files and disk layout",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#files-and-disk-layout"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Install",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#install"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Configure",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#configure"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "The pipeline",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#the-pipeline"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "The bug: CLIPLoaderGGUF destroys the prompt",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#the-bug-cliploadergguf-destroys-the-prompt"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "The script",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#the-script"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Start the server",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#start-the-server"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Test",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#test"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Measured performance",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#measured-performance"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Facts that cost time to establish",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#facts-that-cost-time-to-establish"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Notes",
+     "url": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#notes"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/qwen-image-21-local/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Qwen-Image-2.1 on an 8 GB laptop GPU: install, configure, and the one node that broke it",
+     "item": "https://pirahansiah.com/farshid/content/qwen-image-21-local/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/qwen-image-21-local.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<h1 id="qwen-image-21-on-an-8-gb-laptop-gpu-install-configure-and-the-one-node-that-broke-it">Qwen-Image-2.1 on an 8 GB laptop GPU: install, configure, and the one node that broke it</h1>
+<p>This page records the full setup, configuration, and testing of <strong>Qwen-Image-2.1</strong> as a local text-to-image generator on a Windows laptop with an 8 GB GPU. It ends with a working one-command script that turns a text file into an image.</p>
+<p>It also records a failure worth reading. The pipeline loaded without error, ran to completion in 120 seconds, and produced pure noise on every prompt. The cause was one wrong node type. The diagnosis is included because the same class of error will appear in other GGUF-plus-safetensors pipelines.</p>
+<p>The companion page for language models on the same hardware is <a href="https://pirahansiah.com/farshid/content/localAI/">Tips and tricks to run a local model for Hermes Agent on your laptop</a>.</p>
+<h2 id="the-target-hardware">The target hardware</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPU</td>
+<td>NVIDIA GeForce RTX 4060 Laptop</td>
+</tr>
+<tr>
+<td>VRAM</td>
+<td>8,188 MiB total</td>
+</tr>
+<tr>
+<td>Driver</td>
+<td>596.08, CUDA 13.2 capable</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>32 GB</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td>Intel Core Ultra 7 155H</td>
+</tr>
+<tr>
+<td>OS</td>
+<td>Windows 11</td>
+</tr>
+</tbody>
+</table>
+<p>The 8 GB of VRAM is the binding constraint. Every choice below follows from it.</p>
+<h2 id="what-qwen-image-21-is">What Qwen-Image-2.1 is</h2>
+<p>Published 20 September 2026 by the Qwen team. It is a unified text-to-image <strong>and</strong> image-editing model.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visual generator</td>
+<td>7B parameters, 32-layer single-stream DiT</td>
+</tr>
+<tr>
+<td>Text encoder</td>
+<td>Qwen3-VL 8B</td>
+</tr>
+<tr>
+<td>VAE</td>
+<td>64-channel RGBA, 16x spatial compression</td>
+</tr>
+<tr>
+<td>Default inference</td>
+<td>40 steps</td>
+</tr>
+<tr>
+<td>Licence</td>
+<td>Qwen Research License, no commercial use without permission</td>
+</tr>
+</tbody>
+</table>
+<p>Two notes that matter before downloading anything:</p>
+<p><strong>A vision model is not an image generator.</strong> "Vision" or "VL" means image in, text out. Qwen-Image-2.1 is the reverse: text in, image out. Do not confuse it with Qwen2.5-VL or Qwen3-VL, which only read images.</p>
+<p><strong>The licence bars commercial use.</strong> This is a change from Qwen-Image 1.0 and 2.0, which shipped under Apache 2.0.</p>
+<h2 id="files-and-disk-layout">Files and disk layout</h2>
+<p>The model runs as three separate files. All of them are needed.</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Size</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen-image-2.1-Q4_K_M.gguf</code></td>
+<td>4.29 GiB</td>
+<td>the transformer</td>
+</tr>
+<tr>
+<td><code>qwen3vl_8b_int8_convrot.safetensors</code></td>
+<td>8.71 GiB</td>
+<td>the text encoder</td>
+</tr>
+<tr>
+<td><code>qwen_image_2.1_vae_bf16.safetensors</code></td>
+<td>644 MiB</td>
+<td>the VAE</td>
+</tr>
+</tbody>
+</table>
+<p>The layout used here keeps one copy of each file:</p>
+<pre><code>D:\ollama\
+  im.txt                              &lt;- your prompt goes here
+  gen.py                              &lt;- prompt file to image
+  gen.bat                             &lt;- double-click version
+  start-imggen.bat                    &lt;- start the server once
+  qwen-image-2.1\
+    diffusion_models\
+      qwen-image-2.1-Q4_K_M-arch.gguf
+    text_encoders\
+      qwen3vl_8b_int8_convrot.safetensors
+    vae\
+      qwen_image_2.1_vae_bf16.safetensors
+  comfyui\
+    .venv\
+    models\
+    output\                           &lt;- images land here
+    server.log
+</code></pre>
+<p>A file named <code>extra_model_paths.yaml</code> in the ComfyUI folder points ComfyUI at <code>D:\ollama\qwen-image-2.1</code>, so the 14 GB of weights are not duplicated into the ComfyUI tree.</p>
+<h3 id="the-archgguf-file">The <code>-arch.gguf</code> file</h3>
+<p>The downloaded GGUF had no <code>general.architecture</code> key in its header. ComfyUI's GGUF loader reads that key to identify the model. Without it, the loader falls back to guessing from tensor names and logs a compatibility-mode warning.</p>
+<p>The fix is to declare the key. A two-key header was written for <code>general.architecture = qwen_image21</code> and <code>general.name = qwen_image21</code>, producing the <code>-arch.gguf</code> file. Both files hold the same 297 tensors; only the header differs.</p>
+<p>Verify it worked:</p>
+<pre><code class="language-python">from gguf import GGUFReader
+r = GGUFReader(&quot;qwen-image-2.1-Q4_K_M-arch.gguf&quot;)
+print(r.fields[&quot;general.architecture&quot;])   # must print a ReaderField, not None
+</code></pre>
+<h2 id="install">Install</h2>
+<p>Python 3.11 virtual environment, then PyTorch with <strong>cu130</strong>.</p>
+<pre><code class="language-bash">cd /d/ollama
+git clone https://github.com/comfyanonymous/ComfyUI comfyui
+cd comfyui
+python -m venv .venv
+./.venv/Scripts/python.exe -m pip install --upgrade pip
+./.venv/Scripts/python.exe -m pip install -r requirements.txt
+</code></pre>
+<p>Then install PyTorch for CUDA 13:</p>
+<pre><code class="language-bash">./.venv/Scripts/python.exe -m pip install \
+  &quot;torch==2.14.0+cu130&quot; \
+  &quot;torchvision==0.29.0+cu130&quot; \
+  &quot;torchaudio==2.11.0+cu130&quot; \
+  --index-url https://download.pytorch.org/whl/cu130
+</code></pre>
+<p>Verify before going further:</p>
+<pre><code class="language-bash">./.venv/Scripts/python.exe -c &quot;
+import torch
+print('torch :', torch.__version__)
+print('cuda  :', torch.version.cuda)
+print('avail :', torch.cuda.is_available())
+print('device:', torch.cuda.get_device_name(0))
+&quot;
+</code></pre>
+<p>Expected output:</p>
+<pre><code>torch : 2.14.0+cu130
+cuda  : 13.0
+avail : True
+device: NVIDIA GeForce RTX 4060 Laptop GPU
+</code></pre>
+<p>Finally, the GGUF loader custom node:</p>
+<pre><code class="language-bash">cd custom_nodes
+git clone https://github.com/city96/ComfyUI-GGUF
+cd ..
+./.venv/Scripts/python.exe -m pip install -r custom_nodes/ComfyUI-GGUF/requirements.txt
+</code></pre>
+<h3 id="why-cu130-and-not-cu128">Why cu130 and not cu128</h3>
+<p>The text encoder uses <code>convrot</code> int8 quantization. ComfyUI's native int8 path routes through <code>comfy_kitchen</code>, which disables its CUDA backend on any torch below cu130 and prints:</p>
+<pre><code>WARNING: You need pytorch with cu130 or higher to use optimized CUDA operations.
+</code></pre>
+<p>On cu128 the warning appears and the optimized kernel is unavailable. Driver 596.08 reports CUDA 13.2 capability, so cu130 is both available and correct.</p>
+<h2 id="configure">Configure</h2>
+<p><code>D:\ollama\comfyui\extra_model_paths.yaml</code>:</p>
+<pre><code class="language-yaml">qwen_image_21:
+    base_path: D:/ollama/qwen-image-2.1/
+    diffusion_models: |
+        diffusion_models
+    unet: |
+        diffusion_models
+    text_encoders: |
+        text_encoders
+    clip: |
+        text_encoders
+    vae: |
+        vae
+</code></pre>
+<h2 id="the-pipeline">The pipeline</h2>
+<p>Five nodes. The settings are taken from the official ComfyUI template <code>image_qwen_image_2_1_t2i.json</code> and must not be "improved".</p>
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>Class</th>
+<th>Setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>transformer</td>
+<td><code>UnetLoaderGGUF</code></td>
+<td><code>qwen-image-2.1-Q4_K_M-arch.gguf</code></td>
+</tr>
+<tr>
+<td>text encoder</td>
+<td><strong><code>CLIPLoader</code></strong></td>
+<td><code>qwen3vl_8b_int8_convrot.safetensors</code>, type <code>qwen_image</code></td>
+</tr>
+<tr>
+<td>VAE</td>
+<td><code>VAELoader</code></td>
+<td><code>qwen_image_2.1_vae_bf16.safetensors</code></td>
+</tr>
+<tr>
+<td>conditioning</td>
+<td><code>TextEncodeQwenImage21</code></td>
+<td>prompt, negative, resolution 1024</td>
+</tr>
+<tr>
+<td>latent</td>
+<td><code>EmptyLatentImage</code></td>
+<td>1024 x 1024, batch 1</td>
+</tr>
+<tr>
+<td>sampler</td>
+<td><code>KSampler</code></td>
+<td>euler, simple, 25 steps, cfg 1.0, denoise 1.0</td>
+</tr>
+<tr>
+<td>decode</td>
+<td><code>VAEDecode</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-bug-cliploadergguf-destroys-the-prompt">The bug: <code>CLIPLoaderGGUF</code> destroys the prompt</h2>
+<p>This is the part worth keeping.</p>
+<h3 id="the-symptom">The symptom</h3>
+<p>The pipeline ran with no error. ComfyUI reported <code>Prompt executed in 140.44 seconds</code>. The output image was pure noise, and it was noise for <strong>every</strong> prompt, at 25 steps and at 40 steps, with cu128 and with cu130.</p>
+<h3 id="what-made-it-hard-to-see">What made it hard to see</h3>
+<p>The text encoder loaded without complaint. Its output tensors had the correct shape <code>(1, 15, 4096)</code>, contained no NaN and were not zero. The model detected correctly as <code>qwen_image21</code> with 32 layers and 64 channels. The VAE round-trip test was exact. Every part looked healthy.</p>
+<h3 id="the-cause">The cause</h3>
+<p>The original script loaded the <strong>safetensors</strong> text encoder with <code>CLIPLoaderGGUF</code>, the node from the ComfyUI-GGUF custom node pack. That node does this:</p>
+<pre><code class="language-python">model_options = {
+    &quot;custom_operations&quot;: GGMLOps,
+    &quot;initial_device&quot;: comfy.model_management.text_encoder_offload_device()
+}
+</code></pre>
+<p><code>GGMLOps</code> extends <code>comfy.ops.manual_cast</code> and replaces Linear, Conv2d, Embedding and LayerNorm with GGML versions that <strong>dequantize weights on the fly before compute</strong>. That is correct for a GGUF file.</p>
+<p>For an int8 <code>convrot</code> safetensors file it is wrong. It bypasses ComfyUI's native int8 convrot kernel, which is the component that applies the rotation the quantization depends on. The encoder still runs and still returns correctly shaped tensors — but the values no longer carry a usable prompt signal. The sampler then denoises toward texture instead of toward the prompt.</p>
+<p>The failure is silent. Nothing errors. The shape and dtype checks all pass.</p>
+<h3 id="the-fix">The fix</h3>
+<p>One node type:</p>
+<pre><code class="language-python">&quot;2&quot;: {&quot;class_type&quot;: &quot;CLIPLoader&quot;,          # was: CLIPLoaderGGUF
+      &quot;inputs&quot;: {&quot;clip_name&quot;: CLIP, &quot;type&quot;: &quot;qwen_image&quot;,
+                 &quot;device&quot;: &quot;default&quot;}},
+</code></pre>
+<p>The transformer keeps <code>UnetLoaderGGUF</code>, because the repository ships only a GGUF file for it. The rule is: <strong>match the loader to the file format.</strong> <code>UnetLoaderGGUF</code> for the <code>.gguf</code> transformer, the built-in <code>CLIPLoader</code> for the <code>.safetensors</code> encoder.</p>
+<h3 id="how-it-was-found">How it was found</h3>
+<p>The turning point was a 10-step run with <code>UnetLoaderGGUFAdvanced</code> set to <code>dequant_dtype=bfloat16</code>. The output changed from pure noise to a coherent but wrong texture — rusted metal instead of an apple. That proved the sampler worked and the prompt was not arriving. Everything upstream of the conditioning was then verified correct, which left the loader as the only candidate.</p>
+<h2 id="the-script">The script</h2>
+<p><code>D:\ollama\gen.py</code> reads a prompt from a text file and writes an image.</p>
+<pre><code class="language-python">#!/usr/bin/env python
+&quot;&quot;&quot;gen.py - prompt file to image.&quot;&quot;&quot;
+import argparse, json, os, sys, time, urllib.error, urllib.request, uuid
+
+COMFY = &quot;http://127.0.0.1:8188&quot;
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+UNET = &quot;qwen-image-2.1-Q4_K_M-arch.gguf&quot;
+CLIP = &quot;qwen3vl_8b_int8_convrot.safetensors&quot;
+VAE  = &quot;qwen_image_2.1_vae_bf16.safetensors&quot;
+
+
+def build(prompt, negative, steps, width, height, seed, cfg, prefix):
+    return {
+        &quot;1&quot;: {&quot;class_type&quot;: &quot;UnetLoaderGGUF&quot;,
+              &quot;inputs&quot;: {&quot;unet_name&quot;: UNET}},
+        &quot;2&quot;: {&quot;class_type&quot;: &quot;CLIPLoader&quot;,
+              &quot;inputs&quot;: {&quot;clip_name&quot;: CLIP, &quot;type&quot;: &quot;qwen_image&quot;,
+                         &quot;device&quot;: &quot;default&quot;}},
+        &quot;3&quot;: {&quot;class_type&quot;: &quot;VAELoader&quot;,
+              &quot;inputs&quot;: {&quot;vae_name&quot;: VAE}},
+        &quot;4&quot;: {&quot;class_type&quot;: &quot;TextEncodeQwenImage21&quot;,
+              &quot;inputs&quot;: {&quot;clip&quot;: [&quot;2&quot;, 0], &quot;prompt&quot;: prompt,
+                         &quot;negative_prompt&quot;: negative, &quot;resolution&quot;: 1024}},
+        &quot;6&quot;: {&quot;class_type&quot;: &quot;EmptyLatentImage&quot;,
+              &quot;inputs&quot;: {&quot;width&quot;: width, &quot;height&quot;: height, &quot;batch_size&quot;: 1}},
+        &quot;7&quot;: {&quot;class_type&quot;: &quot;KSampler&quot;,
+              &quot;inputs&quot;: {&quot;model&quot;: [&quot;1&quot;, 0], &quot;positive&quot;: [&quot;4&quot;, 0],
+                         &quot;negative&quot;: [&quot;4&quot;, 1], &quot;latent_image&quot;: [&quot;6&quot;, 0],
+                         &quot;seed&quot;: seed, &quot;steps&quot;: steps, &quot;cfg&quot;: cfg,
+                         &quot;sampler_name&quot;: &quot;euler&quot;, &quot;scheduler&quot;: &quot;simple&quot;,
+                         &quot;denoise&quot;: 1.0}},
+        &quot;8&quot;: {&quot;class_type&quot;: &quot;VAEDecode&quot;,
+              &quot;inputs&quot;: {&quot;samples&quot;: [&quot;7&quot;, 0], &quot;vae&quot;: [&quot;3&quot;, 0]}},
+        &quot;9&quot;: {&quot;class_type&quot;: &quot;SaveImage&quot;,
+              &quot;inputs&quot;: {&quot;images&quot;: [&quot;8&quot;, 0], &quot;filename_prefix&quot;: prefix}},
+    }
+</code></pre>
+<p>The rest of the script posts the graph to <code>/prompt</code>, polls <code>/history/&lt;id&gt;</code>, and prints the output path.</p>
+<p>Usage:</p>
+<pre><code class="language-bash">cd /d/ollama
+./gen.py                          # reads im.txt
+./gen.py other.txt                # another prompt file
+./gen.py --steps 40               # override a setting
+</code></pre>
+<p>Options: <code>--steps</code>, <code>--width</code>, <code>--height</code>, <code>--seed</code>, <code>--negative</code>, <code>--cfg</code>, <code>--out</code>.</p>
+<h2 id="start-the-server">Start the server</h2>
+<pre><code class="language-bat">@echo off
+cd /d D:\ollama\comfyui
+start &quot;ComfyUI server&quot; /min cmd /c &quot;&quot;D:\ollama\comfyui\.venv\Scripts\python.exe&quot; main.py --listen 127.0.0.1 --port 8188 --preview-method none &gt;&gt; &quot;D:\ollama\comfyui\server.log&quot; 2&gt;&amp;1&quot;
+echo ComfyUI server starting. Wait about 60 seconds.
+timeout /t 5 &gt;nul
+</code></pre>
+<h3 id="do-not-start-the-server-with-a-pipe">Do not start the server with a pipe</h3>
+<p>This is a Windows-specific trap. If the server's output goes to a pipe that later closes, the tqdm progress bar fails when it flushes stderr, and the sampler dies with:</p>
+<pre><code>OSError: [Errno 22] Invalid argument
+</code></pre>
+<p>The traceback points into <code>tqdm/std.py</code> and <code>app/logger.py</code>, which makes it look like a model fault. It is not. Redirect to a <strong>file</strong> as shown above. A file handle does not close.</p>
+<h2 id="test">Test</h2>
+<h3 id="1-verify-file-integrity">1. Verify file integrity</h3>
+<p>Every file has a published SHA256. Check all three before blaming the pipeline for anything.</p>
+<pre><code class="language-bash">cd /d/ollama/qwen-image-2.1/diffusion_models
+sha256sum qwen-image-2.1-Q4_K_M.gguf
+sha256sum ../vae/qwen_image_2.1_vae_bf16.safetensors
+sha256sum ../text_encoders/qwen3vl_8b_int8_convrot.safetensors
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Expected SHA256</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen-image-2.1-Q4_K_M.gguf</code></td>
+<td><code>833439e91bc1152d28f37aa198c7f6f4218b7de95754c2f7a318a2422ab4b2f8</code></td>
+</tr>
+<tr>
+<td><code>qwen_image_2.1_vae_bf16.safetensors</code></td>
+<td><code>bb21f7473051e1ac368515dd3f2e15cd44d7a11748ee8823e1ddca3e4876b7c9</code></td>
+</tr>
+<tr>
+<td><code>qwen3vl_8b_int8_convrot.safetensors</code></td>
+<td><code>8bfd0f6e12abf2d2d697ecc888e5e90b0d6741d6708f05799f53afa560452e8f</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-verify-the-vae-round-trip">2. Verify the VAE round-trip</h3>
+<p>Encode a known image, decode it, and compare. This isolates the VAE from the transformer.</p>
+<p>A red square on a blue background must decode back to the same colours:</p>
+<pre><code>corner RGB (expect blueish, high B): [0.0014, 0.0057, 0.7885]
+centre RGB (expect reddish, high R): [0.8927, 0.0021, 0.0]
+latent shape : (1, 64, 16, 16)
+latent nan   : False
+</code></pre>
+<p>If the latent is <code>(1, 16, ...)</code> instead of <code>(1, 64, ...)</code>, the wrong VAE class loaded.</p>
+<h3 id="3-verify-model-detection">3. Verify model detection</h3>
+<pre><code class="language-python">import comfy.model_detection as md
+cfg = md.detect_unet_config(sd, &quot;&quot;)
+</code></pre>
+<p>Must report:</p>
+<pre><code class="language-json">{
+  &quot;image_model&quot;: &quot;qwen_image21&quot;,
+  &quot;in_channels&quot;: 64,
+  &quot;out_channels&quot;: 64,
+  &quot;num_layers&quot;: 32,
+  &quot;attention_head_dim&quot;: 128,
+  &quot;num_attention_heads&quot;: 32,
+  &quot;context_in_dim&quot;: 4096,
+  &quot;mlp_ratio&quot;: 3
+}
+</code></pre>
+<p>If <code>image_model</code> is anything else, the <code>general.architecture</code> key is missing from the GGUF header.</p>
+<h3 id="4-generate">4. Generate</h3>
+<pre><code class="language-bash">cd /d/ollama
+echo &quot;a red apple on a wooden table, studio lighting, photorealistic&quot; &gt; im.txt
+./gen.py
+</code></pre>
+<p>Working output:</p>
+<pre><code>prompt file : D:\ollama\im.txt
+prompt      : a red apple on a wooden table, studio lighting, photorealistic
+size        : 1024x1024   steps: 25   cfg: 1.0   seed: 181446451
+queued      : 042ce9c3-41e8-4ebf-88b9-34a1b95cd5aa
+generating ...
+
+DONE in 120.7 seconds
+IMAGE: D:\ollama\comfyui\output\image_00001_.png
+</code></pre>
+<p>Open the image. If it is texture or noise rather than an apple, the text encoder loader is wrong. See the bug section above.</p>
+<h2 id="measured-performance">Measured performance</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Time</th>
+<th>VRAM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>25 steps, 1024 x 1024</td>
+<td>100-160 s</td>
+<td>~4.5 GB loaded, 5.6 GB usable</td>
+</tr>
+<tr>
+<td>40 steps, 1024 x 1024</td>
+<td>181 s</td>
+<td>same</td>
+</tr>
+<tr>
+<td>10 steps (diagnostic)</td>
+<td>57 s</td>
+<td>same</td>
+</tr>
+</tbody>
+</table>
+<p>The model runs <code>loaded completely</code> in VRAM. The text encoder does not fit beside the transformer, so ComfyUI loads it, encodes, frees it, and then samples. This is expected and costs no extra time worth measuring.</p>
+<h2 id="facts-that-cost-time-to-establish">Facts that cost time to establish</h2>
+<p>These are all normal and were wrongly suspected during diagnosis:</p>
+<ul>
+<li><strong><code>model_type FLUX</code></strong> in the log. <code>QwenImage21</code> in <code>model_base.py</code> is defined as <code>def __init__(self, model_config, model_type=ModelType.FLUX, ...)</code>. FLUX here names the <em>sigma schedule</em> class, not the architecture. Correct.</li>
+<li><strong><code>Requested to load WanVAE</code></strong>. The Qwen-Image VAE is Wan-derived. <code>comfy/sd.py</code> selects it on the marker <code>Qwen Image 2.1 VAE: Wan 2.2 layout, temporal kernel 1, no patchify, RGBA</code>, and sets <code>latent_channels = 64</code>, <code>upscale_ratio = 16</code>. Correct.</li>
+<li><strong>Text encoder output <code>std ~13</code>, peaks near 600.</strong> <code>layer_norm_hidden_state = False</code> is set for <em>all</em> Qwen text encoders. The hidden state is taken before the final RMSNorm, so large magnitudes are expected. The transformer's <code>txt_in.text_norm</code> normalizes on entry. Not a fault.</li>
+<li><strong><code>EmptyLatentImage</code> makes 4 channels at /8, but the model wants 64 at /16.</strong> The node's own third output pin looks like the intended latent source, but the official template uses <code>EmptyLatentImage</code>. ComfyUI reconciles the channel count during sampling. Not the bug.</li>
+<li><strong>The latent node's third pin is unused.</strong> Correct — it exists for reference-image editing, not text-to-image.</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>The model card states <strong>40 default steps</strong>. The ComfyUI template uses 25, which works. Raise <code>--steps</code> for maximum quality.</li>
+<li>Native context is 262,144 tokens and output supports up to 2K resolution with an RGBA alpha channel.</li>
+<li>The model accepts up to 10 reference images for editing. The <code>TextEncodeQwenImage21</code> node has 16 image input slots for this.</li>
+<li>GGUF quality ranks above int8 convrot in published latent-divergence benchmarks (<code>GGUF Q8 &gt; INT8 ConvRot &gt; MXFP8 &gt; FP8</code>), so the GGUF transformer path is a quality choice, not only a memory one.</li>
+<li>Licence: Qwen Research License. Commercial use requires separate permission from Qwen.</li>
+</ul>
+<hr>
+<p>(base) PS D:\ollama&gt; python ./gen.py
+prompt file : D:\ollama\im.txt
+prompt      : a red apple on a wooden table, studio lighting, photorealistic
+size        : 1024x1024   steps: 25   cfg: 1.0   seed: 2042660899
+queued      : 
+generating ...</p>
+<p>DONE in 117.5 seconds
+IMAGE: D:\ollama\comfyui\output\image_00003_.png
+(base) PS D:\ollama&gt; python ./gen.py
+prompt file : D:\ollama\im.txt
+prompt      : a mindmap about qwen 2.5 image vision model
+size        : 1024x1024   steps: 25   cfg: 1.0   seed: 1892887971
+queued      : 
+generating ...</p>
+<p>DONE in 114.6 seconds
+IMAGE: D:\ollama\comfyui\output\image_00004_.png
+(base) PS D:\ollama&gt; python ./gen.py
+prompt file : D:\ollama\im.txt
+prompt      : A single-page, print-ready mind map poster. Hand-drawn ink style on warm off-white paper, no photograph, no 3D render. Center: a bold circular node labelled "Qwen-Image-2.1 on 8 GB VRAM". Branching outward with thick tapered ink lines and small arrowheads into clean hand-lettered branch labels: "Hardware", "Install", "The Bug", "The Fix", "Testing", "Performance", "Licence". Each branch carries 3 to 5 short hand-lettered leaf notes with simple doodle icons: a GPU chip for Hardware, a terminal window for Install, a broken chain link for The Bug, a wrench for The Fix, a checklist for Testing, a stopwatch for Performance, a scroll for Licence. Around the lower half add a second ring comparing three rival models as three small cards labelled "Photoroom PRX", "FLUX.2 [klein] 4B", "Qwen-Image 2.0", each card showing tiny labelled rows for params, steps, native resolution and licence. Use a restrained palette of ink black, one red accent for warnings, and one teal accent for correct values. Dense but legible, generous whitespace, even stroke weight, no gradients, no photorealism, no clutter, no watermark.
+size        : 1024x1024   steps: 25   cfg: 1.0   seed: 2091873613
+queued      : 
+generating ...</p>
+<p>DONE in 232.2 seconds
+IMAGE: D:\ollama\comfyui\output\image_00005_.png
+(base) PS D:\ollama&gt;</p>
+<hr>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Qwen-Image-2.1 on an 8 GB laptop GPU: install, configure, and the one node that broke it&rdquo;. pirahansiah.com, updated 2026-09-27.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/qwen-image-21-local/">https://pirahansiah.com/farshid/content/qwen-image-21-local/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/qwen-image-21-local.md">qwen-image-21-local.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>OpenCV 5 — Chapter 1: Image Basics — Farshid Pirahansiah</title>
+<meta name="description" content="Glossary of AI/ML terms, references, and resources for computer vision practitioners.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/books-opencv5-ch1/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/books-opencv5-ch1.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/books-opencv5-ch1/">
+<meta property="og:title" content="OpenCV 5 — Chapter 1: Image Basics">
+<meta property="og:description" content="Glossary of AI/ML terms, references, and resources for computer vision practitioners.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OpenCV 5 — Chapter 1: Image Basics">
+<meta name="twitter:description" content="Glossary of AI/ML terms, references, and resources for computer vision practitioners.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "Chapter",
+   "@id": "https://pirahansiah.com/farshid/content/books-opencv5-ch1/#page",
+   "url": "https://pirahansiah.com/farshid/content/books-opencv5-ch1/",
+   "name": "OpenCV 5 — Chapter 1: Image Basics",
+   "headline": "OpenCV 5 — Chapter 1: Image Basics",
+   "description": "Glossary of AI/ML terms, references, and resources for computer vision practitioners.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/books-opencv5-ch1/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "Glossary of Key Terms",
+     "url": "https://pirahansiah.com/farshid/content/books-opencv5-ch1/#glossary-of-key-terms"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "References and Further Reading",
+     "url": "https://pirahansiah.com/farshid/content/books-opencv5-ch1/#references-and-further-reading"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Index",
+     "url": "https://pirahansiah.com/farshid/content/books-opencv5-ch1/#index"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Conclusion",
+     "url": "https://pirahansiah.com/farshid/content/books-opencv5-ch1/#conclusion"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/books-opencv5-ch1/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "OpenCV 5 — Chapter 1: Image Basics",
+     "item": "https://pirahansiah.com/farshid/content/books-opencv5-ch1/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/books-opencv5-ch1.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p>Glossary of AI/ML terms, references, and resources for computer vision practitioners.</p>
+<p>tags: [opencv, image-processing, computer-vision, python]
+hashtags: "#opencv #imageprocessing #cv #python"</p>
+<h1 id="mastering-ai-and-machine-learning-essential-glossary-resources-and-references"><strong>Mastering AI and Machine Learning: Essential Glossary, Resources, and References</strong></h1>
+<p>In the rapidly evolving fields of Artificial Intelligence (AI) and Machine Learning (ML), staying updated with key terms, resources, and the latest research is crucial for both novices and seasoned professionals. To support your journey, I’ve compiled a comprehensive guide encompassing a <strong>Glossary of Key Terms</strong>, <strong>References and Further Reading</strong>, and an <strong>Index</strong> of essential concepts and tools. Whether you're looking to deepen your understanding or seeking valuable resources to enhance your projects, this guide serves as a valuable roadmap.</p>
+<hr>
+<h2 id="glossary-of-key-terms"><strong>Glossary of Key Terms</strong></h2>
+<p>Understanding the foundational terminology is essential for navigating the complexities of AI and ML. Here are some pivotal terms:</p>
+<h3 id="a"><strong>A</strong></h3>
+<ul>
+<li><strong>AI (Artificial Intelligence)</strong>: The simulation of human intelligence processes by machines, including learning, reasoning, and self-correction.</li>
+<li><strong>Algorithm</strong>: A step-by-step procedure or formula for solving a problem or accomplishing a task.</li>
+<li><strong>API (Application Programming Interface)</strong>: A set of rules and protocols for building and interacting with software applications.</li>
+</ul>
+<h3 id="b"><strong>B</strong></h3>
+<ul>
+<li><strong>Bias</strong>: Systematic and unfair discrimination in AI model outcomes, often stemming from biased training data or flawed algorithms.</li>
+<li><strong>Big Data</strong>: Extremely large datasets analyzed computationally to reveal patterns, trends, and associations.</li>
+</ul>
+<h3 id="c"><strong>C</strong></h3>
+<ul>
+<li><strong>CNN (Convolutional Neural Network)</strong>: A deep learning neural network primarily used for analyzing visual imagery.</li>
+<li><strong>CI/CD (Continuous Integration/Continuous Deployment)</strong>: Software development practices that automate testing and deployment, enhancing efficiency and reducing errors.</li>
+<li><strong>Cross-Validation</strong>: A statistical method to estimate the skill of machine learning models by partitioning data into subsets for training and testing.</li>
+</ul>
+<h3 id="d"><strong>D</strong></h3>
+<ul>
+<li><strong>Data Augmentation</strong>: Techniques to increase data diversity for training models without collecting new data.</li>
+<li><strong>Deep Learning</strong>: A subset of ML involving neural networks with many layers to learn representations from data.</li>
+<li><strong>DevOps</strong>: Practices combining software development and IT operations for continuous delivery and high software quality.</li>
+</ul>
+<p><em>... [Include additional key terms as needed] ...</em></p>
+<p>For a complete glossary, refer to <strong>Appendix B</strong>.</p>
+<hr>
+<h2 id="references-and-further-reading"><strong>References and Further Reading</strong></h2>
+<p>Enhance your knowledge with these curated academic papers, books, online courses, and more:</p>
+<h3 id="academic-papers-and-journals"><strong>Academic Papers and Journals</strong></h3>
+<ul>
+<li><strong>"Attention is All You Need" by Vaswani et al. (2017)</strong></li>
+<li>Introduces the Transformer model foundational to many state-of-the-art NLP models.</li>
+<li>
+<p><a href="https://arxiv.org/abs/1706.03762">Read the Paper</a></p>
+</li>
+<li>
+<p><strong>"Deep Residual Learning for Image Recognition" by He et al. (2015)</strong></p>
+</li>
+<li>Presents Residual Networks (ResNets) addressing the vanishing gradient problem.</li>
+<li><a href="https://arxiv.org/abs/1512.03385">Read the Paper</a></li>
+</ul>
+<h3 id="books"><strong>Books</strong></h3>
+<ul>
+<li><strong>"Deep Learning" by Ian Goodfellow, Yoshua Bengio, and Aaron Courville</strong></li>
+<li>An authoritative textbook on deep learning fundamentals and advancements.</li>
+<li>
+<p><a href="https://www.deeplearningbook.org/">Explore the Book</a></p>
+</li>
+<li>
+<p><strong>"Artificial Intelligence: A Modern Approach" by Stuart Russell and Peter Norvig</strong></p>
+</li>
+<li>The leading textbook covering a broad range of AI topics.</li>
+<li><a href="https://www.pearson.com/store/p/artificial-intelligence-a-modern-approach/P100000431693">Explore the Book</a></li>
+</ul>
+<h3 id="online-courses-and-tutorials"><strong>Online Courses and Tutorials</strong></h3>
+<ul>
+<li><strong>Machine Learning by Stanford University (Coursera)</strong></li>
+<li>Instructor: Andrew Ng. Covers fundamentals of ML, data mining, and statistical pattern recognition.</li>
+<li>
+<p><a href="https://www.coursera.org/learn/machine-learning">Enroll Now</a></p>
+</li>
+<li>
+<p><strong>Deep Learning Specialization (Coursera)</strong></p>
+</li>
+<li>Instructor: Andrew Ng. A series of five courses delving into deep learning techniques.</li>
+<li><a href="https://www.coursera.org/specializations/deep-learning">Enroll Now</a></li>
+</ul>
+<h3 id="websites-and-blogs"><strong>Websites and Blogs</strong></h3>
+<ul>
+<li><strong>Towards Data Science</strong></li>
+<li>A Medium publication sharing concepts, ideas, and codes related to data science and AI.</li>
+<li>
+<p><a href="https://towardsdatascience.com/">Visit Towards Data Science</a></p>
+</li>
+<li>
+<p><strong>OpenAI Blog</strong></p>
+</li>
+<li>Insights and updates from OpenAI on their research and developments in AI.</li>
+<li><a href="https://openai.com/blog/">Visit OpenAI Blog</a></li>
+</ul>
+<h3 id="conferences-and-events"><strong>Conferences and Events</strong></h3>
+<ul>
+<li><strong>NeurIPS (Conference on Neural Information Processing Systems)</strong></li>
+<li>One of the most prestigious conferences in machine learning and computational neuroscience.</li>
+<li>
+<p><a href="https://nips.cc/">Learn More</a></p>
+</li>
+<li>
+<p><strong>ICML (International Conference on Machine Learning)</strong></p>
+</li>
+<li>A top-tier conference focusing on machine learning research.</li>
+<li><a href="https://icml.cc/">Learn More</a></li>
+</ul>
+<h3 id="communities-and-forums"><strong>Communities and Forums</strong></h3>
+<ul>
+<li><strong>Reddit - r/MachineLearning</strong></li>
+<li>Discussions, news, and research related to machine learning.</li>
+<li>
+<p><a href="https://www.reddit.com/r/MachineLearning/">Join the Community</a></p>
+</li>
+<li>
+<p><strong>Stack Overflow</strong></p>
+</li>
+<li>Ask and answer technical questions related to programming and AI.</li>
+<li><a href="https://stackoverflow.com/">Visit Stack Overflow</a></li>
+</ul>
+<h3 id="tools-and-libraries"><strong>Tools and Libraries</strong></h3>
+<ul>
+<li><strong>TensorFlow</strong></li>
+<li>An open-source platform for machine learning.</li>
+<li>
+<p><a href="https://www.tensorflow.org/">Explore TensorFlow</a></p>
+</li>
+<li>
+<p><strong>PyTorch</strong></p>
+</li>
+<li>An open-source machine learning library developed by Facebook’s AI Research lab.</li>
+<li><a href="https://pytorch.org/">Explore PyTorch</a></li>
+</ul>
+<p><em>... [Include additional references as needed] ...</em></p>
+<p>For an exhaustive list of references, see <strong>Appendix C</strong>.</p>
+<hr>
+<h2 id="index"><strong>Index</strong></h2>
+<p>Navigating through key terms and resources is seamless with a well-organized index. Here are some highlighted entries:</p>
+<h3 id="a_1"><strong>A</strong></h3>
+<ul>
+<li><strong>AI (Artificial Intelligence)</strong></li>
+<li>Overview and applications: Appendix B, Appendix C</li>
+<li><strong>Algorithm</strong></li>
+<li>Definition and usage: Appendix B</li>
+</ul>
+<h3 id="b_1"><strong>B</strong></h3>
+<ul>
+<li><strong>Backpropagation</strong></li>
+<li>Training neural networks: Appendix B, Appendix C</li>
+<li><strong>Bias</strong></li>
+<li>In AI models: Appendix B</li>
+</ul>
+<p>For a complete index, refer to the <strong>Index</strong> section.</p>
+<hr>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>Mastering AI and Machine Learning requires a solid grasp of key concepts, access to quality resources, and continuous engagement with the latest research and community discussions. This guide serves as a foundational reference to support your learning and professional growth in these dynamic fields.</p>
+<p><strong>Embrace the continuous learning process, actively engage with the AI community, and leverage these resources to stay at the forefront of technological advancements.</strong> By doing so, you will not only enhance your technical capabilities but also contribute to the responsible and innovative development of AI technologies that shape our future.</p>
+<hr>
+<h1 id="artificialintelligence-machinelearning-deeplearning-airesources-techeducation-professionaldevelopment-datascience-aicommunity">ArtificialIntelligence #MachineLearning #DeepLearning #AIResources #TechEducation #ProfessionalDevelopment #DataScience #AICommunity</h1>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;OpenCV 5 — Chapter 1: Image Basics&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/books-opencv5-ch1/">https://pirahansiah.com/farshid/content/books-opencv5-ch1/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/books-opencv5-ch1.md">books-opencv5-ch1.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

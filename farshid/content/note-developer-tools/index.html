@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Developer Tools &amp; Setup Guide — Farshid Pirahansiah</title>
+<meta name="description" content="Curated developer tools, shell essentials, Docker tips, and GitHub tricks.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/note-developer-tools/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/note-developer-tools.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/note-developer-tools/">
+<meta property="og:title" content="Developer Tools &amp; Setup Guide">
+<meta property="og:description" content="Curated developer tools, shell essentials, Docker tips, and GitHub tricks.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Developer Tools &amp; Setup Guide">
+<meta name="twitter:description" content="Curated developer tools, shell essentials, Docker tips, and GitHub tricks.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "TechArticle",
+   "@id": "https://pirahansiah.com/farshid/content/note-developer-tools/#page",
+   "url": "https://pirahansiah.com/farshid/content/note-developer-tools/",
+   "name": "Developer Tools & Setup Guide",
+   "headline": "Developer Tools & Setup Guide",
+   "description": "Curated developer tools, shell essentials, Docker tips, and GitHub tricks.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/note-developer-tools/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "Recommended Tools",
+     "url": "https://pirahansiah.com/farshid/content/note-developer-tools/#recommended-tools"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Shell Essentials",
+     "url": "https://pirahansiah.com/farshid/content/note-developer-tools/#shell-essentials"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Vim Quick Reference",
+     "url": "https://pirahansiah.com/farshid/content/note-developer-tools/#vim-quick-reference"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Docker Tips",
+     "url": "https://pirahansiah.com/farshid/content/note-developer-tools/#docker-tips"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "GitHub Tips",
+     "url": "https://pirahansiah.com/farshid/content/note-developer-tools/#github-tips"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/note-developer-tools/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Developer Tools & Setup Guide",
+     "item": "https://pirahansiah.com/farshid/content/note-developer-tools/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/note-developer-tools.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<h1 id="developer-tools-setup-guide">Developer Tools &amp; Setup Guide</h1>
+<p>Curated developer tools, shell essentials, Docker tips, and GitHub tricks.</p>
+<h2 id="recommended-tools">Recommended Tools</h2>
+<ul>
+<li><a href="https://github.com/Abdenasser/neohtop">NeoHtop</a> — Modern htop alternative</li>
+<li><a href="https://github.com/CapSoftware/Cap">Cap</a> — Open source Loom alternative for screen recordings</li>
+<li><a href="https://rustdesk.com/">RustDesk</a> — Open source remote desktop</li>
+<li><a href="https://github.com/helix-editor/helix">Helix Editor</a> — Post-modern modal editor</li>
+<li><a href="https://github.com/ahujasid/blender-mcp">Blender MCP</a> — Blender + MCP integration</li>
+<li><a href="https://rxresu.me/">RX Resume</a> — Resume builder</li>
+<li><a href="https://github.com/andandandand/practical-computer-vision">Practical Computer Vision</a> — CV learning resources</li>
+<li><a href="https://github.com/Maharshi-Pandya/cudacodes">CUDA Codes</a> — CUDA flash attention algorithms</li>
+<li><a href="https://dev.intelrealsense.com/docs/high-dynamic-range-with-stereoscopic-depth-cameras">Intel RealSense HDR</a> — HDR depth cameras</li>
+<li><a href="https://github.com/apple/ml-gbc">Apple ML-GBC</a> — Apple ML framework</li>
+<li><a href="https://github.com/mohsen12999/my-python-cli">Python CLI</a> — Python CLI tool</li>
+<li><a href="https://newsletter.francofernando.com/p/data-structures-for-image-processing">Data Structures for Image Processing</a> — Newsletter</li>
+</ul>
+<hr>
+<h2 id="shell-essentials">Shell Essentials</h2>
+<h3 id="echo-variables">Echo &amp; Variables</h3>
+<ul>
+<li><code>echo "value is $foo"</code> → value is bar (variable expanded)</li>
+<li><code>echo 'value is $foo'</code> → value is $foo (literal)</li>
+<li><code>foo=bar</code> — no space around <code>=</code></li>
+<li><code>$PATH</code> — environment variable</li>
+<li><code>cd -</code> — go to previous directory</li>
+</ul>
+<h3 id="navigation">Navigation</h3>
+<ul>
+<li><code>/</code> — root directory</li>
+<li><code>~</code> — home folder</li>
+<li><code>.</code> — current folder</li>
+<li><code>..</code> — parent folder</li>
+<li>Absolute path starts with <code>/</code>, relative path starts with <code>folder/file</code></li>
+</ul>
+<h3 id="shortcuts">Shortcuts</h3>
+<ul>
+<li><code>Ctrl+L</code> — clear terminal</li>
+<li><code>Ctrl+R</code> — reverse search history</li>
+<li><code>!!</code> — repeat last command</li>
+</ul>
+<h3 id="pipes-redirection">Pipes &amp; Redirection</h3>
+<ul>
+<li><code>;</code> — run commands sequentially</li>
+<li><code>&amp;&amp;</code> — run next only if previous succeeded</li>
+<li><code>|</code> — pipe output to next command</li>
+<li><code>&gt;&gt;</code> — append to file</li>
+<li><code>#</code> — root/sudo prompt</li>
+</ul>
+<h3 id="useful-commands">Useful Commands</h3>
+<ul>
+<li><code>xdg-open file</code> — open with default app</li>
+<li><code>ulimit -a</code> — show memory limits</li>
+<li><code>htop</code> — process monitor</li>
+<li><code>tldr</code> — simplified man pages</li>
+<li><code>locate</code> / <code>ripgrep (rg)</code> / <code>fzf</code> / <code>broot</code> / <code>nnn</code> — search &amp; file managers</li>
+</ul>
+<h3 id="custom-functions">Custom Functions</h3>
+<pre><code class="language-bash">mcd () {
+    mkdir -p &quot;$1&quot;
+    cd &quot;$1&quot;
+}
+source mcd.sh
+</code></pre>
+<h3 id="python-one-liner">Python One-Liner</h3>
+<pre><code class="language-python">#!/usr/bin/env python
+import sys
+for arg in reversed(sys.argv[1:]):
+    print(arg)
+</code></pre>
+<hr>
+<h2 id="vim-quick-reference">Vim Quick Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>i</code></td>
+<td>Enter insert mode</td>
+</tr>
+<tr>
+<td><code>Esc</code></td>
+<td>Exit insert mode</td>
+</tr>
+<tr>
+<td><code>r</code></td>
+<td>Replace character</td>
+</tr>
+<tr>
+<td><code>k</code></td>
+<td>Move up</td>
+</tr>
+<tr>
+<td><code>s-v</code></td>
+<td>Visual line select</td>
+</tr>
+<tr>
+<td><code>c-v</code></td>
+<td>Visual block select</td>
+</tr>
+<tr>
+<td><code>:</code></td>
+<td>Command mode</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="docker-tips">Docker Tips</h2>
+<h3 id="shrink-wsl-disk">Shrink WSL Disk</h3>
+<pre><code class="language-bash">wsl --shutdown
+diskpart
+select disk file=&quot;C:\Users\[USER]\AppData\Local\Docker\wsl\disk\docker_data.vhdx&quot;
+compact disk
+</code></pre>
+<hr>
+<h2 id="github-tips">GitHub Tips</h2>
+<h3 id="quick-access">Quick Access</h3>
+<ul>
+<li>Press <code>.</code> on any GitHub repo to open web-based VS Code editor</li>
+</ul>
+<h3 id="gitingest">GitIngest</h3>
+<p>Turn any GitHub repo into readable text for LLMs. Replace "hub" with "ingest" in the URL:
+- Repo: <code>https://github.com/user/repo</code>
+- Ingest: <code>https://gitingest.com/user/repo</code></p>
+<h3 id="pr-code-review">PR Code Review</h3>
+<p>Add <code>.diff</code> to the end of any PR URL to see raw changes. Paste into ChatGPT/Grok for AI code review:
+- PR: <code>https://github.com/user/repo/pull/42</code>
+- Diff: <code>https://github.com/user/repo/pull/42.diff</code></p>
+<h3 id="gitsummarize">GitSummarize</h3>
+<p>Replace "hub" with "summarize" in any GitHub URL for AI-powered documentation:
+- Repo: <code>https://github.com/user/repo</code>
+- Summary: <code>https://gitsummarize.com/user/repo</code></p>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Developer Tools &amp; Setup Guide&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/note-developer-tools/">https://pirahansiah.com/farshid/content/note-developer-tools/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/note-developer-tools.md">note-developer-tools.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

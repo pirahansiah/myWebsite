@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Classification with Geometrical Features — Farshid Pirahansiah</title>
+<meta name="description" content="Evaluation of classification techniques using enhanced geometrical and topological features.">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/papers-geometrical-topological/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/papers-geometrical-topological.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/papers-geometrical-topological/">
+<meta property="og:title" content="Classification with Geometrical Features">
+<meta property="og:description" content="Evaluation of classification techniques using enhanced geometrical and topological features.">
+<meta property="og:image" content="https://pirahansiah.com/farshid/content/classification-geometrical-topological.png">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-19">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Classification with Geometrical Features">
+<meta name="twitter:description" content="Evaluation of classification techniques using enhanced geometrical and topological features.">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/content/classification-geometrical-topological.png">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "ScholarlyArticle",
+   "@id": "https://pirahansiah.com/farshid/content/papers-geometrical-topological/#page",
+   "url": "https://pirahansiah.com/farshid/content/papers-geometrical-topological/",
+   "name": "Classification with Geometrical Features",
+   "headline": "Classification with Geometrical Features",
+   "description": "Evaluation of classification techniques using enhanced geometrical and topological features.",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/papers-geometrical-topological/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-19",
+   "dateModified": "2026-09-19",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/content/classification-geometrical-topological.png",
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "1. Introduction",
+     "url": "https://pirahansiah.com/farshid/content/papers-geometrical-topological/#1-introduction"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "2. Image Classification Techniques",
+     "url": "https://pirahansiah.com/farshid/content/papers-geometrical-topological/#2-image-classification-techniques"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "3. Enhanced Geometrical Topological Feature Analysis",
+     "url": "https://pirahansiah.com/farshid/content/papers-geometrical-topological/#3-enhanced-geometrical-topological-feature-analysis"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "4. Classification Error Analysis",
+     "url": "https://pirahansiah.com/farshid/content/papers-geometrical-topological/#4-classification-error-analysis"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "5. Results",
+     "url": "https://pirahansiah.com/farshid/content/papers-geometrical-topological/#5-results"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "6. Conclusion",
+     "url": "https://pirahansiah.com/farshid/content/papers-geometrical-topological/#6-conclusion"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/papers-geometrical-topological/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Classification with Geometrical Features",
+     "item": "https://pirahansiah.com/farshid/content/papers-geometrical-topological/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/papers-geometrical-topological.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p>Evaluation of classification techniques using enhanced geometrical and topological features.</p>
+<p>An_evaluation_of_classification_techniques_using_enhanced_Geometrical_Topological_Feature_Analysis</p>
+<p>https://www.pirahansiah.com/notes/pubs/papers/An_evaluation_of_classification_techniques_using_enhanced_Geometrical_Topological_Feature_Analysis</p>
+<p><a href="https://podcasters.spotify.com/pod/show/pirahansiah/episodes/My-Conference-Paper-An-evaluation-of-classification-techniques-using-enhanced-Geometrical-Topological-Feature-Analysis-e2ps17l">spotify</a></p>
+<p><a href="https://scholar.google.com/scholar?oi=bibs&amp;cluster=3038184255311332521&amp;btnI=1&amp;hl=en">PDF Download My Conference Paper</a></p>
+<p><img alt="My Conference Paper  An evaluation of classification techniques using enhanced Geometrical Topological Feature Analysis " src="https://pirahansiah.com/farshid/content/classification-geometrical-topological.png"></p>
+<p><img src="https://pirahansiah.com/farshid/content/classification-geometrical-topological.png" alt="My Conference Paper:  An evaluation of classification techniques using enhanced Geometrical Topological Feature Analysis"  style="max-width: 100%; height: auto;"></p>
+<h1 id="an-evaluation-of-classification-techniques-using-enhanced-geometrical-topological-feature-analysis">An Evaluation of Classification Techniques Using Enhanced Geometrical Topological Feature Analysis</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<ul>
+<li><strong>Objective</strong>: Evaluation of classification techniques for the Malaysian License Plate Recognition (LPR) system.</li>
+<li><strong>Applications of LPR</strong>:<ul>
+<li>Law enforcement</li>
+<li>Border protection</li>
+<li>Vehicle theft detection</li>
+<li>Automatic toll collection</li>
+<li>Traffic control</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-image-classification-techniques">2. Image Classification Techniques</h2>
+<ul>
+<li><strong>Artificial Immune Recognition System (AIRS)</strong>:<ul>
+<li>Mimics biological immune systems for pattern recognition.</li>
+</ul>
+</li>
+<li><strong>Neural Networks (NN)</strong>:<ul>
+<li>Machine learning technique that models the human brain to classify images.</li>
+</ul>
+</li>
+<li><strong>Bayesian Networks (BN)</strong>:<ul>
+<li>Probabilistic graphical models to classify data based on probability distributions.</li>
+</ul>
+</li>
+<li><strong>Support Vector Machine (SVM)</strong>:<ul>
+<li>Uses geometric representations to classify data.</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-enhanced-geometrical-topological-feature-analysis">3. Enhanced Geometrical Topological Feature Analysis</h2>
+<ul>
+<li><strong>Proposed Approach</strong>:<ul>
+<li>Focuses on improving image classification accuracy for Malaysian license plates.</li>
+<li>Uses topological features from license plate characters and numbers.</li>
+</ul>
+</li>
+<li><strong>Input Features</strong>:<ul>
+<li>Character shapes</li>
+<li>Geometrical features</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-classification-error-analysis">4. Classification Error Analysis</h2>
+<ul>
+<li><strong>Character Error Analysis</strong>:<ul>
+<li>Errors analyzed based on classification methods.</li>
+<li>Provides insights into which methods perform better in specific conditions.</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-results">5. Results</h2>
+<ul>
+<li><strong>Best Performing Technique</strong>: Support Vector Machine (SVM)<ul>
+<li>Outperforms AIRS, Neural Networks, and Bayesian Networks in accuracy for Malaysian LPR.</li>
+</ul>
+</li>
+<li><strong>Performance Factors</strong>:<ul>
+<li>Environmental conditions (weather, lighting)</li>
+<li>Character variability (font, size)</li>
+</ul>
+</li>
+</ul>
+<h2 id="6-conclusion">6. Conclusion</h2>
+<ul>
+<li><strong>Summary</strong>: SVM provides the most accurate classification for the Malaysian LPR system.</li>
+<li><strong>Implications</strong>: Improved reliability for law enforcement, toll collection, and traffic control systems.</li>
+</ul>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Classification with Geometrical Features&rdquo;. pirahansiah.com, updated 2026-09-19.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/papers-geometrical-topological/">https://pirahansiah.com/farshid/content/papers-geometrical-topological/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/papers-geometrical-topological.md">papers-geometrical-topological.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

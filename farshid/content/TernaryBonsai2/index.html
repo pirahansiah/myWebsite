@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Small weights, big context: running a 2-bit model on an 8 GB laptop GPU — Farshid Pirahansiah</title>
+<meta name="description" content="One write-up distilled from a local-model increment: why the KV cache and not the weights decides the context budget, what a 2-bit 3.7B model costs on 8…">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/TernaryBonsai2/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/TernaryBonsai2.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/TernaryBonsai2/">
+<meta property="og:title" content="Small weights, big context: running a 2-bit model on an 8 GB laptop GPU">
+<meta property="og:description" content="One write-up distilled from a local-model increment: why the KV cache and not the weights decides the context budget, what a 2-bit 3.7B model costs on 8…">
+<meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<meta property="og:locale" content="en">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-09-27">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Small weights, big context: running a 2-bit model on an 8 GB laptop GPU">
+<meta name="twitter:description" content="One write-up distilled from a local-model increment: why the KV cache and not the weights decides the context budget, what a 2-bit 3.7B model costs on 8…">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Computer Vision & Edge AI Mentor and Consultant",
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "TechArticle",
+   "@id": "https://pirahansiah.com/farshid/content/TernaryBonsai2/#page",
+   "url": "https://pirahansiah.com/farshid/content/TernaryBonsai2/",
+   "name": "Small weights, big context: running a 2-bit model on an 8 GB laptop GPU",
+   "headline": "Small weights, big context: running a 2-bit model on an 8 GB laptop GPU",
+   "description": "One write-up distilled from a local-model increment: why the KV cache and not the weights decides the context budget, what a 2-bit 3.7B model costs on 8…",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/TernaryBonsai2/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "datePublished": "2026-09-27",
+   "dateModified": "2026-09-27",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "keywords": [
+    "local-llm",
+    "quantization",
+    "llamacpp",
+    "hermes",
+    "ai-agents"
+   ],
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "The KV cache decides the budget, not the weights",
+     "url": "https://pirahansiah.com/farshid/content/TernaryBonsai2/#the-kv-cache-decides-the-budget-not-the-weights"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "The configuration",
+     "url": "https://pirahansiah.com/farshid/content/TernaryBonsai2/#the-configuration"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "What actually got built",
+     "url": "https://pirahansiah.com/farshid/content/TernaryBonsai2/#what-actually-got-built"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "The Windows landmine",
+     "url": "https://pirahansiah.com/farshid/content/TernaryBonsai2/#the-windows-landmine"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Wiring a local model in without changing the default",
+     "url": "https://pirahansiah.com/farshid/content/TernaryBonsai2/#wiring-a-local-model-in-without-changing-the-default"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Three rules worth stealing",
+     "url": "https://pirahansiah.com/farshid/content/TernaryBonsai2/#three-rules-worth-stealing"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "What the harness layer does with a model this small",
+     "url": "https://pirahansiah.com/farshid/content/TernaryBonsai2/#what-the-harness-layer-does-with-a-model-this-small"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "The one line that ties it together",
+     "url": "https://pirahansiah.com/farshid/content/TernaryBonsai2/#the-one-line-that-ties-it-together"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/TernaryBonsai2/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Small weights, big context: running a 2-bit model on an 8 GB laptop GPU",
+     "item": "https://pirahansiah.com/farshid/content/TernaryBonsai2/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/TernaryBonsai2.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<h1 id="small-weights-big-context-running-a-2-bit-model-on-an-8-gb-laptop-gpu">Small weights, big context: running a 2-bit model on an 8 GB laptop GPU</h1>
+<p>This page condenses one working session's artifacts: getting an aggressively quantized model served locally at a long context, and making it selectable inside the agent — 16 files of plans, specs, task lists, handoffs, a video transcript and a slide deck, all from two increments in September 2026. The numbers below are copied from those files; where a number is arithmetic rather than a measurement, it says so.</p>
+<p>The sibling case on the same class of hardware is Ternary-Bonsai-2-27B at 32k context (see <a href="https://pirahansiah.com/farshid/content/localAI/">Tips and tricks to run a local model for Hermes Agent on your laptop</a>), and the same model family on a 16 GB Apple Silicon machine — full-precision BF16, Metal build — is written up in <a href="https://pirahansiah.com/farshid/content/k2-horizon-local/">Running K2-Horizon Locally on Apple Silicon</a>. This page is the 8 GB discrete-GPU version: the capacity math, the Windows landmine, the wiring into the agent, and the harness question that decides whether a small local model is actually useful.</p>
+<h2 id="the-kv-cache-decides-the-budget-not-the-weights">The KV cache decides the budget, not the weights</h2>
+<p>A 3.7B model at 2 bits is tiny — 1,596 MiB. It still does not automatically fit, because the context is charged separately. Geometry parsed from the real GGUF header (not guessed): 36 blocks, 8 KV heads, head_dim 128, 32 Q heads (GQA 4:1), 2560 embedding, 524,288 native context.</p>
+<p>KV cache per token = 2 (K, V) x 36 layers x 8 KV heads x 128 dim x bytes per element. At 64K context:</p>
+<table>
+<thead>
+<tr>
+<th>KV dtype</th>
+<th>KV cache at 64K</th>
+<th>Verdict on an 8,188 MiB card</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F16</td>
+<td>9,216 MiB</td>
+<td>does not fit — the cache alone exceeds the whole card</td>
+</tr>
+<tr>
+<td>Q8_0</td>
+<td>4,608 MiB</td>
+<td>fits with a small quant</td>
+</tr>
+<tr>
+<td>Q4_0</td>
+<td>2,304 MiB</td>
+<td>fits with room to spare</td>
+</tr>
+</tbody>
+</table>
+<p>So KV quantization plus <code>-fa on</code> (flash attention, required for a quantized V cache) is not tuning — it is the precondition for 64K on this hardware. The model satisfies <code>head_dim_k == head_dim_v == 128</code>, so the flash-attention requirement is met.</p>
+<p>This is also where the extra headroom comes from. Cheaper weights buy context:</p>
+<table>
+<thead>
+<tr>
+<th>Context</th>
+<th>KV F16</th>
+<th>KV Q8_0</th>
+<th>KV Q4_0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32,768</td>
+<td>6,996</td>
+<td>4,692</td>
+<td>3,540</td>
+</tr>
+<tr>
+<td>65,536</td>
+<td>11,604</td>
+<td>6,996</td>
+<td>4,692</td>
+</tr>
+<tr>
+<td>131,072</td>
+<td>20,820</td>
+<td>11,604</td>
+<td>6,996</td>
+</tr>
+</tbody>
+</table>
+<p><em>(Totals in MiB including weights, a 492 MiB logits buffer and ~300 MiB CUDA/graph overhead; usable ceiling ~7,500 of 8,188 MiB.)</em></p>
+<p>Read that table as a trade, not a free win. 2-bit weights at 131K context is roughly the same memory as 4-bit weights at 64K context — and you buy context with quality. The plan kept both: IQ2_XXS at 64K as the default, Q4_K_M at 64K as the quality-first option, both wired so the choice is per task.</p>
+<h2 id="the-configuration">The configuration</h2>
+<pre><code>llama-server.exe -m K2-Horizon-3.7B-IQ2_XXS.gguf \
+  -ngl 99 -c 65536 -fa on -ctk q8_0 -ctv q4_0 -ub 512 -b 2048 \
+  --host 127.0.0.1 --port 8080
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weights</td>
+<td><code>K2-Horizon-3.7B-IQ2_XXS.gguf</code> — 1,673,165,504 bytes (1,596 MiB)</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>65,536</td>
+</tr>
+<tr>
+<td>KV cache</td>
+<td>K at q8_0, V at q4_0</td>
+</tr>
+<tr>
+<td>GPU offload</td>
+<td><code>-ngl 99</code> (all 36 layers)</td>
+</tr>
+<tr>
+<td>Micro-batch</td>
+<td><code>-ub 512</code> — at <code>-ub 2048</code> the logits buffer alone reaches 1.91 GiB and breaks the budget</td>
+</tr>
+<tr>
+<td>Estimated VRAM</td>
+<td>5,843 MiB of 8,188 — <strong>arithmetic, not a measurement</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Two more data points from the same increment, both arithmetic: the 3.67 GiB Q5_1 quant needs 7,920 MiB at KV-K8/V4 against ~7,500 usable, i.e. over by about 420 MiB — it is valid only with KV pushed to q4_0/q4_0. And F16 KV is not viable at 64K at any quant that fits.</p>
+<h2 id="what-actually-got-built">What actually got built</h2>
+<p>Two of the four "done" items, and the honest status matters more than the plan did:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Download the GGUF</td>
+<td>1,673,165,504 bytes exactly; sha256 <code>446953b4…4715ce</code> matches the HuggingFace LFS metadata; GGUF v3, 327 tensors, 35 KV pairs, <code>general.architecture = k2-horizon</code></td>
+</tr>
+<tr>
+<td>Build the runtime</td>
+<td>Fork <code>MBZUAI-IFM/llama.cpp</code> at commit <code>35999d1…</code>; MSVC 19.44 + CUDA 12.6.85, <code>CMAKE_CUDA_ARCHITECTURES=89</code>, 652/652 targets, exit 0</td>
+</tr>
+<tr>
+<td>Serve at 64K and measure VRAM</td>
+<td>not done — the 5,843 MiB figure is still arithmetic</td>
+</tr>
+<tr>
+<td>Select it inside the agent end to end</td>
+<td>not done</td>
+</tr>
+</tbody>
+</table>
+<p>The download task ran 582 seconds and passed all six acceptance checks, including "nothing written to the C: HuggingFace cache" and "the three pre-existing Ollama models still list". The one behaviour worth copying: the implementing bot noticed that the hash it recorded happened to resemble hash material quoted elsewhere in the spec, and asked for independent confirmation instead of declaring success. The confirming check (HuggingFace's <code>lfs.sha256</code>) went to the reviewer, not to the bot that wanted to believe itself.</p>
+<p>Ollama is not that runtime: its bundled llama.cpp ships a 147-entry architecture registry with zero <code>k2</code>, <code>k2_horizon</code> or <code>horizon</code> entries, the byte count for <code>k2_horizon</code> in its four native libraries is 0,0,0,0, and the upstream pull request to llama.cpp is still open. No prebuilt Windows binary exists (0 releases), so a source build was the only route.</p>
+<h2 id="the-windows-landmine">The Windows landmine</h2>
+<p>K2-Horizon's BPE pre-tokenizer uses <code>\u200C</code> and <code>\u200D</code> in a regex. MSVC's regex rejects those escapes at load time:</p>
+<pre><code>Regex error: regex_error(error_escape)
+llama_model_load: error loading model vocabulary
+</code></pre>
+<p>That is an open llama.cpp issue, not an unsupported architecture, and it is exactly the kind of failure that gets misreported in a handoff. GCC does not reproduce it (it truncates instead of throwing), so a MinGW build is a legitimate patch-free route. The increment authored a patch that replaces the escapes with literal UTF-8 bytes, built it against the pinned commit, and recorded the caveat in the same breath: <strong>the fix is compile-time only, so a real model load is still the proof</strong>. It is not yet run.</p>
+<p>Two smaller build notes that cost real time: an absolute-path <code>git clone</code> into <code>/d/...</code> silently no-ops under native git (the relative form works), and Ollama's bundled <code>llama-server.exe</code> looks like the binary you want but has no K2 support at all.</p>
+<h2 id="wiring-a-local-model-in-without-changing-the-default">Wiring a local model in without changing the default</h2>
+<p>"Selectable if I want it" is a specific requirement, and it is not satisfied by a server listening on a port. In Hermes it takes two config surfaces:</p>
+<pre><code class="language-yaml">custom_providers:
+  - name: k2horizon
+    base_url: http://127.0.0.1:8080/v1
+    model: K2-Horizon-3.7B-IQ2_XXS
+    models:
+      K2-Horizon-3.7B-IQ2_XXS: {context_length: 65536}
+model_aliases:
+  k2: {model: K2-Horizon-3.7B-IQ2_XXS, provider: custom, base_url: &quot;http://127.0.0.1:8080/v1&quot;}
+</code></pre>
+<ul>
+<li><code>custom_providers</code> puts the model in the picker; <code>model_aliases</code> makes <code>/model k2</code> work. Both are needed.</li>
+<li><code>context_length</code> per custom model is required, otherwise the agent cannot budget context and will over-send.</li>
+<li>The default model stays what it was. Adding a local option is opt-in; making it the default silently changes every session.</li>
+<li>Config goes through <code>hermes config set</code> and then <code>hermes doctor</code> — not a hand-edited <code>config.yaml</code>, where one bad indent takes the gateway down.</li>
+<li>The server must be running. Selecting the alias does not start it, which is why persistence (a service or scheduled task) is its own increment. Without it the alias dies on reboot.</li>
+</ul>
+<h2 id="three-rules-worth-stealing">Three rules worth stealing</h2>
+<ol>
+<li><strong>Arithmetic is not a measurement.</strong> The 5,843 MiB figure is a sum of five terms. Only <code>nvidia-smi</code> counts, and until it runs the number is a hypothesis.</li>
+<li><strong>A truncated download's <code>EOF</code> is not an architecture verdict.</strong> A partial file produced <code>unexpected EOF</code> during reconnaissance; recording that as "unsupported architecture" would have sent the whole plan down the wrong path.</li>
+<li><strong>A config entry is not proof.</strong> The requirement is a returned completion from the local server, through the agent. Anything less is a plan that looks finished on a slide.</li>
+</ol>
+<p>There is a fourth, quieter one: the same increment produced five successive plans and handoffs, each superseding the last, and every one of them kept the superseded file and stated what changed. The version history is the audit trail.</p>
+<h2 id="what-the-harness-layer-does-with-a-model-this-small">What the harness layer does with a model this small</h2>
+<p>The second increment in the same artifacts folder is a one-hour talk from YC Harness Club ("Harness Night", video <code>n9xKblqyQ28</code>), transcribed to 1,662 segments and rebuilt as a slide deck. Its argument is the complement of everything above: if you are running a 2-bit 3.7B model on a laptop GPU, the weights are the fixed part — the harness is the part you still control.</p>
+<ul>
+<li>The claim that carries the night: an 18% difference between harness one and harness two on the same weights, and the difference between ARC-AGI working and not working. Prompt-only scoring on ARC-AGI sits around 30%; a harness with a REPL and sub-agents reaches 95.5% with one model and 78% with another. Same weights, different harness.</li>
+<li>The ladder runs from v0 (prompt only, 2019) through tools, skills, reflection and sub-agents, to a self-improving harness (a meta-harness editing the agent's own harness) and a continual harness that refines skills and memory inside a single run.</li>
+<li>Context becomes a managed resource with levels: weights, the active window, a live Python REPL, and disk. Compaction, cache clearing and memory are three different operations, and only memory survives a context reset.</li>
+<li>The local-model argument is stated plainly: cloud-bound agents cost thousands of dollars a year in API spend and send your most personal data off the device, while a 27B local model was reaching roughly the level of a frontier model from August 2025. That is the same class of hardware as the 8 GB laptop above — and the reason the capacity math in this page is worth doing properly.</li>
+<li>Production practice matches: sub-agents isolate context (a child can burn 50K tokens and return a 1,500-token summary, at roughly 15x the token cost), prompt caching and tool-result clearing are first-class levers, and cutting tool output by 91% cut measured cost by only 11.9% because most tokens are reasoning, not tool output.</li>
+<li>The counter-paper is the most useful slide in the deck: harness-evolution papers that search and test on the same benchmark report gains that do not survive a held-out split. Hold out the test set and match the budget before believing an improvement — the same rule as "a config entry is not proof", applied to research.</li>
+</ul>
+<p>Two details from the talk that landed closer to home than expected: YC ran a fleet of 50+ Hermes agents in VMs before consolidating onto a centralized store, and the talk's own history of harnesses is measured in months, not years.</p>
+<h2 id="the-one-line-that-ties-it-together">The one line that ties it together</h2>
+<p>Both increments are the same work from two directions. On the local side you spend memory to buy context, and you refuse to claim a number you have not measured. On the harness side you spend context to buy capability, and you refuse to claim a gain you have not held out. A 2-bit model on an 8 GB laptop is not a compromise if the harness around it is doing the work — and neither claim is worth anything until a real completion comes back.</p>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Small weights, big context: running a 2-bit model on an 8 GB laptop GPU&rdquo;. pirahansiah.com, updated 2026-09-27.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/TernaryBonsai2/">https://pirahansiah.com/farshid/content/TernaryBonsai2/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/TernaryBonsai2.md">TernaryBonsai2.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+    </div>
+    <div class="footer-note">Edge AI &middot; computer vision &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>

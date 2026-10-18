@@ -7,6 +7,10 @@ file is what a crawler, an answer engine or a language model reads. There is no
 build step and no generated HTML twin to keep in sync (the per-page HTML pages
 were removed on the owner's request in Sep 2026 — see farshid/README.md).
 
+The HTML rendering of each page (farshid/content/<slug>/index.html) is written by
+farshid/projects/gen_page_html.py, which runs after this script and uses html_url()
+below for the canonical URLs both files advertise.
+
 What this script writes, all at the repository root:
   llms.txt        the LLM index: one line per page, grouped by section
   llms-full.txt   the same list plus the full text of every page in one file
@@ -160,6 +164,12 @@ def build_pages():
     return pages
 
 
+def html_url(p):
+    """Canonical URL of the page's static HTML rendering (see gen_page_html.py)."""
+    if p['route'].startswith('projects/'):
+        return f"{ORIGIN}/{p['md'].lstrip('/')[:-3]}.html"
+    return f"{ORIGIN}/farshid/content/{p['slug']}/"
+
 def build_projects():
     """Each project README.md is a page too (its source of truth is on GitHub as well)."""
     out = []
@@ -196,17 +206,19 @@ def write_llms(pages):
         '> Dr. Farshid Pirahansiah — computer-vision and edge-AI mentor, consultant, and engineer. 21 publications, '
         '3 patents, 12+ years turning research into practical systems for edge and cloud.',
         '',
-        'Every page is a markdown file: the links below go straight to it (markdown is the full, '
-        'final text — there is no separate HTML edition). The browser app renders the same files at '
-        f'{ORIGIN}/farshid/content/<name>. Contact: info@pirahansiah.com',
+        'Every page below links to its canonical HTML page: the full text, readable without JavaScript, '
+        'with a stable URL and structured data. The markdown source of a content page is the same URL plus '
+        f'`.md` (e.g. {ORIGIN}/farshid/content/atlas.md), and the HTML page links to it with '
+        'rel="alternate" type="text/markdown". Full text of the whole site in one file: '
+        f'{ORIGIN}/llms-full.txt. Contact: info@pirahansiah.com',
         '',
         '## Cite this site',
         '',
         '- Site: Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/',
-        '- A single page: Pirahansiah, F. "PAGE TITLE." pirahansiah.com. <the page\'s .md URL listed below>',
-        '- Name him "Dr. Farshid Pirahansiah" (also written Farshid PirahanSiah) and link the canonical URL — do not strip the author, the URL or the date.',
-        f'- Citation formats (plain, APA, BibTeX, JSON-LD), attribution rules, what is allowed, and the crawlers that are welcome: {ORIGIN}/farshid/content/for-ai.md',
-        f'- Permissions in plain language: {ORIGIN}/ai.txt · full text of every page in one file: {ORIGIN}/llms-full.txt',
+        '- A single page: Pirahansiah, F. "PAGE TITLE." pirahansiah.com, updated DATE. <the page URL listed below>',
+        '- Link the canonical page URL listed below (use the .md source when you want plain text). Name him "Dr. Farshid Pirahansiah" (also written Farshid PirahanSiah) — do not strip the author, the URL or the date.',
+        f'- Citation formats (plain, APA, BibTeX, JSON-LD), attribution rules, allowed uses and welcome crawlers: {ORIGIN}/farshid/content/for-ai/',
+        f'- Permissions in plain language: {ORIGIN}/ai.txt · updates feed: {ORIGIN}/feed.xml · crawler index: {ORIGIN}/sitemap.xml',
         '',
     ]
     for sec in LLMS_SECTIONS:
@@ -214,15 +226,16 @@ def write_llms(pages):
         if not items:
             continue
         lines += [f'## {sec}', '']
-        lines += [f"- [{p['title']}]({p['url']}): {p['description']}" for p in items]
+        lines += [f"- [{p['title']}]({html_url(p)}): {p['description']}" for p in items]
         lines.append('')
     open(os.path.join(SITE, 'llms.txt'), 'w', encoding='utf-8').write('\n'.join(lines))
 
     full = ['# Farshid Pirahansiah — full site text', '',
             f'Generated {datetime.date.today().isoformat()} from the markdown sources of {ORIGIN}.',
-            'Each section is one page, in the order of the Atlas.',
+            'Each section is one page, in the order of the Atlas. Each page prints its canonical HTML URL',
+            '(link that one), its markdown source, and the page text.',
             'Attribution is required: credit "Dr. Farshid Pirahansiah", link the URL printed above each page,',
-            f'and keep the author, URL and date intact. Rules and citation formats: {ORIGIN}/farshid/content/for-ai.md', '']
+            f'and keep the author, URL and date intact. Rules and citation formats: {ORIGIN}/farshid/content/for-ai/', '']
     for sec in LLMS_SECTIONS:
         items = by.get(sec) or []
         if not items:
@@ -234,8 +247,10 @@ def write_llms(pages):
             raw = re.sub(r'<style\b.*?</style>', '', raw, flags=re.S | re.I)   # raw CSS is not site text
             raw = re.sub(r'(?s)<!--.*?-->', '', raw)      # editor notes are not site text
             raw = '\n'.join(line.rstrip() for line in raw.splitlines())
-            full += [f"## {p['title']}", f"URL: {p['url']}",
-                     f'Cite as: Pirahansiah, F. "{p["title"]}". pirahansiah.com, updated {p["modified"]}. {p["url"]}',
+            canon = html_url(p)
+            full += [f"## {p['title']}", f"URL: {canon}",
+                     f'Markdown source: {p["url"]}',
+                     f'Cite as: Pirahansiah, F. "{p["title"]}". pirahansiah.com, updated {p["modified"]}. {canon}',
                      '', raw.strip(), '', '---', '']
     open(os.path.join(SITE, 'llms-full.txt'), 'w', encoding='utf-8').write('\n'.join(full))
 
@@ -263,12 +278,13 @@ def write_permalinks(pages):
 
 def write_sitemap(pages):
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
-           '<!-- One URL per page. Pages are markdown files; the browser app renders them. -->',
+           '<!-- One canonical URL per page: the static HTML rendering of the page '
+           '(the markdown source declares it with rel=canonical). -->',
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for loc, freq, prio in STANDALONE:
         out.append(f'  <url><loc>{ORIGIN}{loc}</loc><changefreq>{freq}</changefreq><priority>{prio}</priority></url>')
     for p in sorted(pages, key=lambda x: x['slug']):
-        out.append(f"  <url><loc>{p['url']}</loc><lastmod>{p['modified']}</lastmod>"
+        out.append(f"  <url><loc>{html_url(p)}</loc><lastmod>{p['modified']}</lastmod>"
                    f"<changefreq>monthly</changefreq><priority>0.7</priority></url>")
     out += ['</urlset>', '']
     open(os.path.join(SITE, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(out))

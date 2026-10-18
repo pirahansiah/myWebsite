@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Dr. Farshid Pirahansiah — computer vision &amp; edge AI</title>
+<link>https://pirahansiah.com/</link>
+<description>New and updated pages on pirahansiah.com: computer vision, edge AI, GPU and on-device model engineering, publications and notes.</description>
+<language>en</language>
+<lastBuildDate>Sun, 18 Oct 2026 10:13:22 +0000</lastBuildDate>
+<atom:link href="https://pirahansiah.com/feed.xml" rel="self" type="application/rss+xml"/>
+<copyright>Dr. Farshid Pirahansiah — attribution required, see https://pirahansiah.com/ai.txt</copyright>
+<item>
+<title>Atlas</title>
+<link>https://pirahansiah.com/farshid/content/atlas/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/atlas/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>The single index of everything on pirahansiah.com — every publication, course, note, talk and project on one page.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Site</category>
+</item>
+<item>
+<title>ESP32-C3 OLED Projects: Four Firmwares on One Tiny Board</title>
+<link>https://pirahansiah.com/farshid/content/esp32-c3-oled/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/esp32-c3-oled/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>A $3 ESP32-C3 with an onboard 72x40 OLED, four firmwares built on it — an icon slideshow, a status-LED diagnostic, a BLE HID mouse that scrolls for you…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>For AI Assistants &amp; LLM Companies</title>
+<link>https://pirahansiah.com/farshid/content/for-ai/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/for-ai/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>How ChatGPT, Claude, Gemini, DeepSeek, Grok, Mistral, Perplexity and every other AI assistant, answer engine and crawler should read, quote, cite and link…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Site</category>
+</item>
+<item>
+<title>Games</title>
+<link>https://pirahansiah.com/farshid/content/game/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/game/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>Play Snake, Flappy Bird and 2048 — classic arcade games in your browser or as a Telegram Mini App. High scores, haptics and a share button.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Solana Arcade — Snake &amp; Tetris</title>
+<link>https://pirahansiah.com/farshid/content/solana-games/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/solana-games/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>Play Snake and Tetris in your browser, connect a Phantom wallet, and sign your high score as a cryptographic proof on Solana. No install, no account, runs…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>10 Years of CV Debugging Lessons</title>
+<link>https://pirahansiah.com/farshid/content/10-years/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/10-years/</guid>
+<pubDate>Fri, 16 Oct 2026 09:00:00 +0000</pubDate>
+<description>Lessons learned from a decade of debugging computer vision systems in production.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Mentoring &amp; Coaching</category>
+</item>
+<item>
+<title>Cable Hub</title>
+<link>https://pirahansiah.com/farshid/content/cable-hub/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/cable-hub/</guid>
+<pubDate>Fri, 16 Oct 2026 09:00:00 +0000</pubDate>
+<description>Practical cabling notes for a laptop, a Windows PC and a Mac cluster: where Thunderbolt 5 (and USB4/Intel RDMA) actually pays off for multi-camera capture…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>A local LLM for Hermes Agent on an old machine: under 8 GB RAM, no GPU</title>
+<link>https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/</guid>
+<pubDate>Fri, 16 Oct 2026 09:00:00 +0000</pubDate>
+<description>How to give Hermes Agent a fully local model on an old, GPU-less, under-8 GB machine: a 949 MB 1-bit 4B model, the fork&#x27;s llama-server, a q4_0 KV cache at…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Tips and tricks to run a local model for Hermes Agent on your laptop</title>
+<link>https://pirahansiah.com/farshid/content/localAI/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/localAI/</guid>
+<pubDate>Fri, 16 Oct 2026 09:00:00 +0000</pubDate>
+<description>Running a local model for Hermes Agent on a laptop: budgeting a 32k context between instructions, references and the answer, a yes/no filter that picks…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Mentoring &amp; Coaching</category>
+</item>
+<item>
+<title>QR Codes — Scan, Open, Copy</title>
+<link>https://pirahansiah.com/farshid/content/qr/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/qr/</guid>
+<pubDate>Fri, 16 Oct 2026 09:00:00 +0000</pubDate>
+<description>Scan a code or tap Open to reach Dr. Farshid Pirahansiah&#x27;s links — profiles, referral invites and crypto tip addresses — with a copy button for every URL…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>HTML motion graphic</title>
+<link>https://pirahansiah.com/farshid/projects/html-motion-graphic/README.html</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/projects/html-motion-graphic/README.html</guid>
+<pubDate>Fri, 16 Oct 2026 09:00:00 +0000</pubDate>
+<description>A standalone, dependency-free motion graphic index for the pages on pirahansiah.com. The SVG constellation, topic filters, search, selected-page…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Projects</category>
+</item>
+<item>
+<title>Markdown Motion Studio</title>
+<link>https://pirahansiah.com/farshid/projects/md-motion-studio/README.html</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/projects/md-motion-studio/README.html</guid>
+<pubDate>Sun, 04 Oct 2026 09:00:00 +0000</pubDate>
+<description>mastermotion.py generates short, silent MP4 treatments from pages in farshid/content/: a 2D concept map, an editorial motion-graphic, and a perspective 3D…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Projects</category>
+</item>
+<item>
+<title>claude-config</title>
+<link>https://pirahansiah.com/farshid/projects/claude-config/README.html</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/projects/claude-config/README.html</guid>
+<pubDate>Sat, 03 Oct 2026 09:00:00 +0000</pubDate>
+<description>A downloadable agent workspace that turns dense model output into controlled-English text, diagrams, interactive pages and explainer videos — the…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Projects</category>
+</item>
+<item>
+<title>Running K2-Horizon Locally on Apple Silicon</title>
+<link>https://pirahansiah.com/farshid/content/k2-horizon-local/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/k2-horizon-local/</guid>
+<pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+<description>Serve IFM&#x27;s K2-Horizon (custom k2-horizon architecture GGUF) on Apple M3 via the MBZUAI-IFM llama.cpp fork, and wire it into Hermes Agent at 64K context.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Hermes Agent — Recent Updates &amp; Complete Feature Guide</title>
+<link>https://pirahansiah.com/farshid/content/presentation-updates/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/presentation-updates/</guid>
+<pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+<description>One deck covering every Hermes Agent feature with runnable examples: setup, bots, multi-agent, research, profiling, cron, messaging, group bots, artifacts.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Talks &amp; Presentations</category>
+</item>
+<item>
+<title>Why Hermes: One Agent Over Dots, Muse Code &amp; Grok Build</title>
+<link>https://pirahansiah.com/farshid/content/why-hermes/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/why-hermes/</guid>
+<pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
+<description>Side-by-side comparison of OpenAI Dots, Meta Muse Code, xAI Grok Build and Hermes Agent — why a self-hosted, provider-agnostic harness beats three…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Mac as LLM inference only</title>
+<link>https://pirahansiah.com/farshid/content/LocalLLMonMac/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/LocalLLMonMac/</guid>
+<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+<description>Mac as LLM inference only</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Mentoring &amp; Coaching</category>
+</item>
+<item>
+<title>Small weights, big context: running a 2-bit model on an 8 GB laptop GPU</title>
+<link>https://pirahansiah.com/farshid/content/TernaryBonsai2/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/TernaryBonsai2/</guid>
+<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+<description>One write-up distilled from a local-model increment: why the KV cache and not the weights decides the context budget, what a 2-bit 3.7B model costs on 8…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Mentoring &amp; Coaching</category>
+</item>
+<item>
+<title>CV — Dr. Farshid Pirahansiah</title>
+<link>https://pirahansiah.com/farshid/content/computer-vision/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/computer-vision/</guid>
+<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+<description>Curriculum vitae covering 12+ years of computer vision R&amp;D, 21 publications, and 3 patents.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Publications</category>
+</item>
+<item>
+<title>CUDA Development Environment in VS Code on Windows</title>
+<link>https://pirahansiah.com/farshid/content/note-cuda-vscode/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-cuda-vscode/</guid>
+<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+<description>Step-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and debugging.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Mind Map: Orchestrating AI Agents</title>
+<link>https://pirahansiah.com/farshid/content/note-llm-agents/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-llm-agents/</guid>
+<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+<description>Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Blog: AI, LLMs, and Computer Vision</title>
+<link>https://pirahansiah.com/farshid/content/note-llm-blog/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-llm-blog/</guid>
+<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+<description>Blog posts on RAG vs CAG, multi-agent architectures, AI&#x27;s impact on jobs, and the future of software development.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Advanced LLM Concepts</title>
+<link>https://pirahansiah.com/farshid/content/note-llm-concepts/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-llm-concepts/</guid>
+<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+<description>Comprehensive mind map covering advanced LLM concepts including RAG, embeddings, multimodal models, and production deployment.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Accelerate Python with Numba&#x27;s @jit(nopython=True)</title>
+<link>https://pirahansiah.com/farshid/content/note-numba/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-numba/</guid>
+<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+<description>Tutorial on using Numba&#x27;s @jit decorator to compile Python functions into optimized machine code for faster numerical computing.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>How PyCUDA Reads and Runs C Kernels</title>
+<link>https://pirahansiah.com/farshid/content/note-pycuda/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-pycuda/</guid>
+<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
+<description>Explanation of how PyCUDA compiles and executes CUDA kernels written in C from Python, with step-by-step examples.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+</channel>
+</rss>
