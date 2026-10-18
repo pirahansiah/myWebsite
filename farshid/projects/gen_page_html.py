@@ -465,16 +465,23 @@ def write_feed(pages):
     return len(items)
 
 
-def main():
+def main(argv=None):
+    argv = sys.argv[1:] if argv is None else argv
+    check = '--check' in argv
     pages = gsp.build_pages() + gsp.build_projects()
     global TARGETS
     TARGETS = link_targets(pages)
-    written, total, skipped = 0, 0, []
+    written, total, skipped, stale = 0, 0, [], []
     for p in pages:
         path = out_path(p)
         # a project README.html that is gitignored would never deploy — leave it alone
         if gsp.twin_ignored(p):
             skipped.append(p['slug'])
+            continue
+        if check:
+            # the twin is generated: a page edited without regenerating is a silent mismatch
+            if not os.path.exists(path) or os.path.getmtime(path) < os.path.getmtime(p['path']):
+                stale.append(os.path.relpath(path, SITE))
             continue
         meta, body_md = gsp.split_front_matter(open(p['path'], encoding='utf-8').read())
         p['tags'] = [t.strip() for t in re.findall(r'[A-Za-z0-9+#.-]+', meta.get('tags', '').strip('[]'))]
@@ -483,10 +490,15 @@ def main():
         _, size = write_page(p, body, panel)
         written += 1
         total += size
+    if check:
+        print(f'check: {len(stale)} stale or missing pages'
+              + (f' — run gen_page_html.py\n' + '\n'.join('  ' + s for s in stale) if stale else ''))
+        return 1 if stale else 0
     n_feed = write_feed(pages)
     print(f'static pages: {written} written ({total/1024:.0f} KB), feed.xml with {n_feed} items'
           + (f', skipped (gitignored): {", ".join(skipped)}' if skipped else ''))
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
