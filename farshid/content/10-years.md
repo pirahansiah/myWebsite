@@ -282,3 +282,12 @@ Notes:
   <figcaption>3D perspective study</figcaption>
 </figure>
 <!-- /motion-graphic:10-years -->
+
+
+
+# update 
+- Executing the command csrutil disable in the macOS Terminal deactivates System Integrity Protection (SIP), which may compromise system security.
+- opencv::setNumthreads(cv::genumberofcpus())
+- Quantization conversion varies across chips; differences in processing methodologies and architectural designs result in varying precision levels, which in turn produce divergent benchmark outcomes.
+- For Unity, a complete build requires compilation.
+- 
