@@ -5,9 +5,27 @@
 <link>https://pirahansiah.com/</link>
 <description>New and updated pages on pirahansiah.com: computer vision, edge AI, GPU and on-device model engineering, publications and notes.</description>
 <language>en</language>
-<lastBuildDate>Sun, 18 Oct 2026 11:13:21 +0000</lastBuildDate>
+<lastBuildDate>Sat, 07 Nov 2026 20:53:21 +0000</lastBuildDate>
 <atom:link href="https://pirahansiah.com/feed.xml" rel="self" type="application/rss+xml"/>
 <copyright>Dr. Farshid Pirahansiah — attribution required, see https://pirahansiah.com/ai.txt</copyright>
+<item>
+<title>Hermes + Cua Spaces on Windows: the complete guide</title>
+<link>https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/</guid>
+<pubDate>Sat, 07 Nov 2026 09:00:00 +0000</pubDate>
+<description>Run Hermes&#x27;s terminal, file and code tools inside an isolated Linux VM (a Cua Space) on Windows 11 instead of on the host: the QEMU -cpu host pitfall, the…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>12+ Years of CV Debugging Lessons</title>
+<link>https://pirahansiah.com/farshid/content/10-years/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/10-years/</guid>
+<pubDate>Sun, 25 Oct 2026 09:00:00 +0000</pubDate>
+<description>Lessons from 12+ years of building and debugging computer vision systems in production: floating-point pitfalls, background subtraction, stereo depth…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Mentoring &amp; Coaching</category>
+</item>
 <item>
 <title>Atlas</title>
 <link>https://pirahansiah.com/farshid/content/atlas/</link>
@@ -16,6 +34,24 @@
 <description>The single index of everything on pirahansiah.com — every publication, course, note, talk and project on one page.</description>
 <author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
 <category>Site</category>
+</item>
+<item>
+<title>CV — Dr. Farshid Pirahansiah</title>
+<link>https://pirahansiah.com/farshid/content/computer-vision/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/computer-vision/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>Curriculum vitae covering 12+ years of computer vision R&amp;D, 21 publications, and 3 patents.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Publications</category>
+</item>
+<item>
+<title>RISC-V for AI</title>
+<link>https://pirahansiah.com/farshid/content/course-risc-v/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/course-risc-v/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>RISC-V for edge AI: the open instruction set, the cores and boards that matter for embedded inference (ESP32-C3/C6, K210/K230, VisionFive 2), the vector…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Courses</category>
 </item>
 <item>
 <title>Edge AI &amp; Computer Vision Beratung in Deutschland</title>
@@ -72,11 +108,56 @@
 <category>Mentoring &amp; Coaching</category>
 </item>
 <item>
+<title>Sitemap &amp; Page Summaries</title>
+<link>https://pirahansiah.com/farshid/content/menus/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/menus/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>Complete navigation index with summaries of all site pages</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Computer Vision</title>
+<link>https://pirahansiah.com/farshid/content/note-computer-vision-overview/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-computer-vision-overview/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>Computer vision topics: 3D vision, optical flow, multi-camera systems.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Mentoring, Consulting &amp; Coaching</title>
+<link>https://pirahansiah.com/farshid/content/post/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/post/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>Mentoring, project coaching and consulting for computer vision and edge AI engineers and teams — and the free resources I hand out along the way.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Mentoring &amp; Coaching</category>
+</item>
+<item>
 <title>Solana Arcade — Snake &amp; Tetris</title>
 <link>https://pirahansiah.com/farshid/content/solana-games/</link>
 <guid isPermaLink="true">https://pirahansiah.com/farshid/content/solana-games/</guid>
 <pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
 <description>Play Snake and Tetris in your browser, connect a Phantom wallet, and sign your high score as a cryptographic proof on Solana. No install, no account, runs…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Complete Portfolio</title>
+<link>https://pirahansiah.com/farshid/content/use-cases/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/use-cases/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>Publications, patents, expertise, tools, and GitHub projects across CV and AI</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>All Pages — pirahansiah.com</title>
+<link>https://pirahansiah.com/farshid/content/wiki/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/wiki/</guid>
+<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
+<description>A complete alphabetical index of every page on pirahansiah.com — computer vision, AI, LLM, CUDA and edge-deployment knowledge base.</description>
 <author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
 <category>Notes &amp; Guides</category>
 </item>
@@ -97,15 +178,6 @@
 <description>mastermotion.py generates short, silent MP4 treatments from pages in farshid/content/: a 2D concept map, an editorial motion-graphic, and a perspective 3D…</description>
 <author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
 <category>Projects</category>
-</item>
-<item>
-<title>12+ Years of CV Debugging Lessons</title>
-<link>https://pirahansiah.com/farshid/content/10-years/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/10-years/</guid>
-<pubDate>Fri, 16 Oct 2026 09:00:00 +0000</pubDate>
-<description>Lessons from 12+ years of building and debugging computer vision systems in production: floating-point pitfalls, background subtraction, stereo depth…</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Mentoring &amp; Coaching</category>
 </item>
 <item>
 <title>Cable Hub</title>
@@ -158,78 +230,6 @@
 <guid isPermaLink="true">https://pirahansiah.com/farshid/content/k2-horizon-local/</guid>
 <pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
 <description>Serve IFM&#x27;s K2-Horizon (custom k2-horizon architecture GGUF) on Apple M3 via the MBZUAI-IFM llama.cpp fork, and wire it into Hermes Agent at 64K context.</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Notes &amp; Guides</category>
-</item>
-<item>
-<title>Hermes Agent — Recent Updates &amp; Complete Feature Guide</title>
-<link>https://pirahansiah.com/farshid/content/presentation-updates/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/presentation-updates/</guid>
-<pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
-<description>One deck covering every Hermes Agent feature with runnable examples: setup, bots, multi-agent, research, profiling, cron, messaging, group bots, artifacts.</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Talks &amp; Presentations</category>
-</item>
-<item>
-<title>Why Hermes: One Agent Over Dots, Muse Code &amp; Grok Build</title>
-<link>https://pirahansiah.com/farshid/content/why-hermes/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/why-hermes/</guid>
-<pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
-<description>Side-by-side comparison of OpenAI Dots, Meta Muse Code, xAI Grok Build and Hermes Agent — why a self-hosted, provider-agnostic harness beats three…</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Notes &amp; Guides</category>
-</item>
-<item>
-<title>Mac as LLM inference only</title>
-<link>https://pirahansiah.com/farshid/content/LocalLLMonMac/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/LocalLLMonMac/</guid>
-<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
-<description>Mac as LLM inference only</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Mentoring &amp; Coaching</category>
-</item>
-<item>
-<title>Small weights, big context: running a 2-bit model on an 8 GB laptop GPU</title>
-<link>https://pirahansiah.com/farshid/content/TernaryBonsai2/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/TernaryBonsai2/</guid>
-<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
-<description>One write-up distilled from a local-model increment: why the KV cache and not the weights decides the context budget, what a 2-bit 3.7B model costs on 8…</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Mentoring &amp; Coaching</category>
-</item>
-<item>
-<title>CV — Dr. Farshid Pirahansiah</title>
-<link>https://pirahansiah.com/farshid/content/computer-vision/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/computer-vision/</guid>
-<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
-<description>Curriculum vitae covering 12+ years of computer vision R&amp;D, 21 publications, and 3 patents.</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Publications</category>
-</item>
-<item>
-<title>CUDA Development Environment in VS Code on Windows</title>
-<link>https://pirahansiah.com/farshid/content/note-cuda-vscode/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-cuda-vscode/</guid>
-<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
-<description>Step-by-step guide to configure VS Code for CUDA C++ development on Windows with nvcc, IntelliSense, and debugging.</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Notes &amp; Guides</category>
-</item>
-<item>
-<title>Mind Map: Orchestrating AI Agents</title>
-<link>https://pirahansiah.com/farshid/content/note-llm-agents/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-llm-agents/</guid>
-<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
-<description>Mind map and guide to orchestrating multiple AI agents for complex task completion using LLMs.</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Notes &amp; Guides</category>
-</item>
-<item>
-<title>Blog: AI, LLMs, and Computer Vision</title>
-<link>https://pirahansiah.com/farshid/content/note-llm-blog/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/note-llm-blog/</guid>
-<pubDate>Sun, 27 Sep 2026 09:00:00 +0000</pubDate>
-<description>Blog posts on RAG vs CAG, multi-agent architectures, AI&#x27;s impact on jobs, and the future of software development.</description>
 <author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
 <category>Notes &amp; Guides</category>
 </item>

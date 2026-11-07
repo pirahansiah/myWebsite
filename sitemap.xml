@@ -5,7 +5,7 @@
   <url><loc>https://pirahansiah.com/farshid/content/swarm.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/game.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/solana-games.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/10-years/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/10-years/</loc><lastmod>2026-10-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/LocalLLMonMac/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/TernaryBonsai2/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/atlas/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -17,7 +17,7 @@
   <url><loc>https://pirahansiah.com/farshid/content/books-opencv5-ch2/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/books-opencv5-ch3/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/cable-hub/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/computer-vision/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/computer-vision/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/conference-paper/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/contact/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/course-ai-engineers-guide/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -34,7 +34,7 @@
   <url><loc>https://pirahansiah.com/farshid/content/course-modern-cpp/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/course-openvino/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/course-parallel-computing/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/course-risc-v/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/course-risc-v/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/course-ros/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/course-tensorflow-deploy/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/course-tesla/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -44,6 +44,7 @@
   <url><loc>https://pirahansiah.com/farshid/content/esp32-c3-oled/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/for-ai/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/game/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/</loc><lastmod>2026-11-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/impressum/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/journals-3d-slam-humanoid/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/journals-adaptive-thresholding/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -55,12 +56,12 @@
   <url><loc>https://pirahansiah.com/farshid/content/keynotes-llm-cv/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/local-llm-hermes-low-ram/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/localAI/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/menus/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/menus/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/metamask/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-3d-vision/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-apple-ml/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-coaching-roadmap/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/note-computer-vision-overview/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/note-computer-vision-overview/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-cpp/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-cuda-vscode/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/note-developer-tools/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -94,7 +95,7 @@
   <url><loc>https://pirahansiah.com/farshid/content/patents-face-augmentation/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/patents-facial-analysis/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/patents-vehicle-detection/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/post/</loc><lastmod>2026-09-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/post/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/presentation/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/presentation-cv/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/presentation-llm-optimization/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -116,8 +117,8 @@
   <url><loc>https://pirahansiah.com/farshid/content/solana-games/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/solutions/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/terms/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/use-cases/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/use-cases/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/why-hermes/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pirahansiah.com/farshid/content/why-not/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://pirahansiah.com/farshid/content/wiki/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pirahansiah.com/farshid/content/wiki/</loc><lastmod>2026-10-18</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

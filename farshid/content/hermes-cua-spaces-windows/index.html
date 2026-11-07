@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4d1436" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#3d1030" media="(prefers-color-scheme: dark)">
+<title>Hermes + Cua Spaces on Windows: the complete guide — Dr. Farshid Pirahansiah</title>
+<meta name="description" content="Run Hermes&#x27;s terminal, file and code tools inside an isolated Linux VM (a Cua Space) on Windows 11 instead of on the host: the QEMU -cpu host pitfall, the…">
+<meta name="author" content="Dr. Farshid Pirahansiah">
+<link rel="canonical" href="https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/">
+<link rel="alternate" type="text/markdown" href="https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows.md" title="Markdown source of this page">
+<link rel="alternate" type="text/plain" href="/ai.txt" title="AI usage permissions">
+<link rel="alternate" type="application/rss+xml" href="/feed.xml" title="pirahansiah.com — updated pages">
+
+<link rel="icon" href="/farshid/assets/favicon.png">
+<link rel="stylesheet" href="/farshid/style.css">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:site_name" content="Farshid Pirahansiah">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/">
+<meta property="og:title" content="Hermes + Cua Spaces on Windows: the complete guide">
+<meta property="og:description" content="Run Hermes&#x27;s terminal, file and code tools inside an isolated Linux VM (a Cua Space) on Windows 11 instead of on the host: the QEMU -cpu host pitfall, the…">
+<meta property="og:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<meta property="og:locale" content="en_GB">
+<meta property="article:author" content="Dr. Farshid Pirahansiah">
+<meta property="article:modified_time" content="2026-11-07">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hermes + Cua Spaces on Windows: the complete guide">
+<meta name="twitter:description" content="Run Hermes&#x27;s terminal, file and code tools inside an isolated Linux VM (a Cua Space) on Windows 11 instead of on the host: the QEMU -cpu host pitfall, the…">
+<meta name="twitter:image" content="https://pirahansiah.com/farshid/assets/profile.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Person",
+   "@id": "https://pirahansiah.com/#person",
+   "name": "Dr. Farshid Pirahansiah",
+   "honorificPrefix": "Dr.",
+   "alternateName": "Farshid PirahanSiah",
+   "url": "https://pirahansiah.com/",
+   "jobTitle": "Embedded Edge AI & Computer Vision Consultant",
+   "email": "info@pirahansiah.com",
+   "description": "Independent consultant for embedded edge AI and computer vision in Germany: C++, CUDA, TensorRT, OpenVINO and NVIDIA Jetson optimization for production vision systems.",
+   "knowsAbout": [
+    "Computer Vision",
+    "Edge AI",
+    "Embedded AI",
+    "Model Optimization",
+    "Model Quantization",
+    "NVIDIA Jetson",
+    "TensorRT",
+    "OpenVINO",
+    "CUDA",
+    "C++",
+    "OpenCV",
+    "Real-time Image Processing",
+    "Industrial Computer Vision",
+    "On-device LLMs",
+    "Multi-camera Systems",
+    "FPGA Acceleration",
+    "ESP32",
+    "ESP32-C3",
+    "Microcontroller AI",
+    "RISC-V",
+    "TinyML",
+    "Edge Deployment"
+   ],
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berlin",
+    "addressCountry": "DE"
+   },
+   "workLocation": {
+    "@type": "Place",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Berlin",
+     "addressCountry": "DE"
+    }
+   },
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "sameAs": [
+    "https://www.linkedin.com/in/pirahansiah/",
+    "https://github.com/pirahansiah",
+    "https://scholar.google.com/citations?user=GvCEy4QAAAAJ&hl=en",
+    "https://x.com/pirahansiah",
+    "https://www.youtube.com/@computervisiondeeplearning",
+    "https://podcasters.spotify.com/pod/show/pirahansiah"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://pirahansiah.com/#website",
+   "url": "https://pirahansiah.com/",
+   "name": "Farshid Pirahansiah",
+   "inLanguage": "en",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "license": "https://pirahansiah.com/ai.txt",
+   "citation": "Pirahansiah, F. (2026). pirahansiah.com — computer vision and edge AI knowledge base. https://pirahansiah.com/",
+   "mainEntity": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   }
+  },
+  {
+   "@type": "ProfessionalService",
+   "@id": "https://pirahansiah.com/#service",
+   "name": "Embedded Edge AI & Computer Vision Consulting — Dr. Farshid Pirahansiah",
+   "description": "Independent consulting and engineering for teams building computer vision and edge AI systems: NVIDIA Jetson, TensorRT, OpenVINO, CUDA and C++ optimization for production.",
+   "url": "https://pirahansiah.com/",
+   "provider": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "founder": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "serviceType": [
+    "Edge AI consulting",
+    "Computer vision consulting",
+    "Model optimization for embedded devices",
+    "NVIDIA Jetson and TensorRT engineering",
+    "CUDA performance engineering",
+    "Computer vision mentoring and training"
+   ],
+   "areaServed": [
+    {
+     "@type": "Country",
+     "name": "Germany"
+    },
+    {
+     "@type": "City",
+     "name": "Berlin"
+    }
+   ],
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berlin",
+    "addressCountry": "DE"
+   },
+   "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceLocation": {
+     "@type": "Place",
+     "name": "Berlin, Germany"
+    }
+   },
+   "availableLanguage": [
+    {
+     "@type": "Language",
+     "name": "English",
+     "alternateName": "en"
+    },
+    {
+     "@type": "Language",
+     "name": "German",
+     "alternateName": "de"
+    }
+   ],
+   "knowsAbout": [
+    "Computer Vision",
+    "Edge AI",
+    "Embedded AI",
+    "Model Optimization",
+    "Model Quantization",
+    "NVIDIA Jetson",
+    "TensorRT",
+    "OpenVINO",
+    "CUDA",
+    "C++",
+    "OpenCV",
+    "Real-time Image Processing",
+    "Industrial Computer Vision",
+    "On-device LLMs",
+    "Multi-camera Systems",
+    "FPGA Acceleration",
+    "ESP32",
+    "ESP32-C3",
+    "Microcontroller AI",
+    "RISC-V",
+    "TinyML",
+    "Edge Deployment"
+   ],
+   "inLanguage": "en"
+  },
+  {
+   "@type": "TechArticle",
+   "@id": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#page",
+   "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/",
+   "name": "Hermes + Cua Spaces on Windows: the complete guide",
+   "headline": "Hermes + Cua Spaces on Windows: the complete guide",
+   "description": "Run Hermes's terminal, file and code tools inside an isolated Linux VM (a Cua Space) on Windows 11 instead of on the host: the QEMU -cpu host pitfall, the…",
+   "inLanguage": "en",
+   "isPartOf": {
+    "@id": "https://pirahansiah.com/#website"
+   },
+   "mainEntityOfPage": {
+    "@id": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#page"
+   },
+   "author": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "publisher": {
+    "@id": "https://pirahansiah.com/#person"
+   },
+   "about": {
+    "@id": "https://pirahansiah.com/#service"
+   },
+   "datePublished": "2026-11-07",
+   "dateModified": "2026-11-07",
+   "license": "https://pirahansiah.com/ai.txt",
+   "usageInfo": "https://pirahansiah.com/farshid/content/for-ai/",
+   "isAccessibleForFree": true,
+   "image": "https://pirahansiah.com/farshid/assets/profile.jpg",
+   "keywords": [
+    "hermes",
+    "cua",
+    "windows",
+    "qemu",
+    "virtualization",
+    "wsl",
+    "ai",
+    "agents"
+   ],
+   "hasPart": [
+    {
+     "@type": "WebPageElement",
+     "name": "0. Read this first: the one rule that saves hours",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#0-read-this-first-the-one-rule-that-saves-hours"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "1. Install everything",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#1-install-everything"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "2. QEMU — the step that breaks most installs",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#2-qemu-the-step-that-breaks-most-installs"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "3. Create a Space, then configure Hermes",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#3-create-a-space-then-configure-hermes"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "4. Settings reference",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#4-settings-reference"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "5. Test it",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#5-test-it"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "6. Errors and fixes",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#6-errors-and-fixes"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "7. Files: the Space cannot see your host",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#7-files-the-space-cannot-see-your-host"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "8. VS Code remote access",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#8-vs-code-remote-access"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "9. Daily operation",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#9-daily-operation"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "10. Which backend to use",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#10-which-backend-to-use"
+    },
+    {
+     "@type": "WebPageElement",
+     "name": "Short version",
+     "url": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#short-version"
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://pirahansiah.com/farshid/content/index.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Atlas",
+     "item": "https://pirahansiah.com/farshid/content/atlas/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Hermes + Cua Spaces on Windows: the complete guide",
+     "item": "https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- Google tag (gtag.js) GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L49VVJP3B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-2L49VVJP3B');
+</script>
+<!-- Microsoft Clarity (session replay + dead clicks) -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ylg7k9stm7");
+</script>
+</head>
+<body>
+<!-- generated by farshid/projects/gen_page_html.py — do not edit: the source of this page is
+     https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows.md (markdown) and the site is rendered from it. Edit the markdown and regenerate. -->
+<div class="app-window">
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="/farshid/content/index.html">Dr. Farshid Pirahansiah</a>
+    <nav id="nav" class="nav" aria-label="Primary">
+      <a class="nav-item" href="/farshid/content/index.html">Home</a>
+      <a class="nav-item" href="/farshid/content/atlas/">Atlas</a>
+      <a class="nav-item" href="/farshid/content/swarm.html">Search Swarm</a>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M2.5 6h13M2.5 12h13"/></svg></button>
+  </div>
+</header>
+
+<div id="gdpr-banner" class="gdpr-banner">
+  <span>Cookies support analytics and personalized ads. Accept, or only necessary storage is used.</span>
+  <div class="gdpr-actions">
+    <button id="gdpr-decline" type="button" class="ghost">Decline</button>
+    <button id="gdpr-accept" type="button">Accept</button>
+  </div>
+</div>
+
+<main>
+<div id="content" class="wrap">
+<article class="article prose-cols">
+<p class="page-byline">By <strong>Dr. Farshid Pirahansiah</strong> — computer vision &amp; embedded edge AI consultant, Berlin, Germany &middot; 12+ years. Updated 2026-11-07.</p>
+<h1 id="hermes-cua-spaces-on-windows-the-complete-guide">Hermes + Cua Spaces on Windows: the complete guide</h1>
+<p><strong>What this is:</strong> run Hermes's terminal, file and code tools inside an isolated Linux VM (a Cua Space) instead of on your Windows host.</p>
+<p><strong>Tested on:</strong> Windows 11, Intel Core Ultra 7 155H, 32 GB RAM. All files on <code>M:\_farshid\WSL</code>. Drive <code>D:</code> was never used.</p>
+<p><strong>Verified result:</strong> <code>hostname</code> returns <code>hermes-qemu-test</code>; <code>cat /etc/os-release</code> returns <code>Ubuntu 24.04.5 LTS</code>.</p>
+<hr>
+<h2 id="0-read-this-first-the-one-rule-that-saves-hours">0. Read this first: the one rule that saves hours</h2>
+<p><code>terminal.backend cua</code> makes Hermes build a sandbox for <strong>every</strong> tool that needs one: <code>terminal</code>, <code>read_file</code>, <code>write_file</code>, <code>search_files</code>, <code>execute_code</code>, and the browser. When Space creation fails, <strong>all of them fail together</strong> — and the agent cannot fix its own settings, because <code>write_file</code> is blocked too.</p>
+<p><strong>Always test <code>cua spaces create</code> OUTSIDE Hermes. Set the backend only after it succeeds.</strong></p>
+<p>To recover, <strong>you</strong> run this in a real terminal, then restart Hermes:</p>
+<pre><code class="language-powershell">hermes config set terminal.backend local
+</code></pre>
+<p>Config binds to a <strong>new process</strong>. A live chat keeps the old backend, so restarting the chat is required — not optional.</p>
+<hr>
+<h2 id="1-install-everything">1. Install everything</h2>
+<h3 id="11-the-plugin">1.1 The plugin</h3>
+<p>From the catalog (id <code>cua-spaces</code>) or from source:</p>
+<pre><code>hermes plugins install https://github.com/trycua/hermes-cua-spaces
+</code></pre>
+<p>Say <strong>yes</strong> to the Python dependency prompt and <strong>yes</strong> to enabling the plugin.</p>
+<h3 id="12-the-cua-cli">1.2 The cua CLI</h3>
+<p>The shell installer refuses on Windows. Use PowerShell:</p>
+<pre><code class="language-powershell">curl -fsSL https://cua.ai/install.ps1 -o install.ps1
+powershell -NoProfile -File install.ps1 -Prefix &quot;M:\_farshid\WSL\cua&quot; -Select cli -NoModifyPath -Yes
+</code></pre>
+<p>Result: <code>M:\_farshid\WSL\cua\bin\cua.exe</code> (0.7.0 at install time).</p>
+<p><code>-NoModifyPath</code> is deliberate — PATH is set once, later, on purpose.</p>
+<h3 id="13-the-cua-python-package">1.3 The cua Python package</h3>
+<p>The plugin declares <code>cua&gt;=0.5.0,&lt;0.8</code> in its <code>plugin.yaml</code>. Install it into <strong>Hermes's own venv</strong>.</p>
+<p>Hermes uses a <strong>uv</strong> virtualenv <strong>with no pip</strong>. <code>pip install</code> fails with <code>No module named pip</code>. Use uv:</p>
+<pre><code class="language-bash">uv pip install --python &quot;C:/Users/&lt;user&gt;/AppData/Local/hermes/installs/&lt;id&gt;/environments/&lt;id&gt;/venv/Scripts/python.exe&quot; \
+    &quot;cua&gt;=0.5.0,&lt;0.8&quot;
+</code></pre>
+<p>Verify:</p>
+<pre><code class="language-bash">&quot;&lt;hermes-venv&gt;/Scripts/python.exe&quot; -c &quot;import cua, os; print(os.path.dirname(cua.__file__))&quot;
+</code></pre>
+<p>If Hermes prints <code>hermes: repairing the recorded dependency environment...</code>, it may install this for you. Then skip.</p>
+<h3 id="14-sign-in">1.4 Sign in</h3>
+<pre><code>cua auth login
+</code></pre>
+<p>Opens a browser. The plugin stores <strong>no token</strong> — it reads the sign-in this command saved. Nothing about Cua goes into <code>config.yaml</code> or <code>.env</code>.</p>
+<pre><code class="language-bash">cua auth status
+cua spaces ls        # must answer without an auth error
+</code></pre>
+<hr>
+<h2 id="2-qemu-the-step-that-breaks-most-installs">2. QEMU — the step that breaks most installs</h2>
+<h3 id="21-cua-does-not-install-qemu-for-you">2.1 Cua does NOT install QEMU for you</h3>
+<p><code>cua runtime setup qemu</code> on Windows answers exactly this:</p>
+<blockquote>
+<p><strong>Windows VMs on a Windows PC need QEMU, which Cua does not install for you. Install QEMU for Windows from https://qemu.weilnetz.de/ and add it to PATH, or create a Linux Space instead.</strong></p>
+</blockquote>
+<p>So <code>runtime setup</code> is a no-op here. Also: <strong>a WSL distro is not a Cua runtime.</strong> Cua needs QEMU or Docker.</p>
+<h3 id="22-two-ways-to-get-qemu">2.2 Two ways to get QEMU</h3>
+<p><strong>Option A — the official installer</strong> (needs <strong>administrator rights</strong>):</p>
+<pre><code>https://qemu.weilnetz.de/w64/2026/qemu-w64-setup-&lt;date&gt;.exe
+</code></pre>
+<p><strong>Option B — portable, no admin</strong> (use this if you cannot elevate):</p>
+<pre><code class="language-bash">curl -fL -o qemu.zip \
+  &quot;https://github.com/jzombie/lab-qemu-portable/releases/download/qemu-v11.1.2/qemu-portable-win-x64-UCRT64-11.1.2.zip&quot;
+curl -fsSL -o SHA256SUMS.txt \
+  &quot;https://github.com/jzombie/lab-qemu-portable/releases/download/qemu-v11.1.2/SHA256SUMS.txt&quot;
+sha256sum qemu.zip                     # must equal the zip's line in SHA256SUMS.txt
+&quot;C:/Program Files/7-Zip/7z.exe&quot; x qemu.zip &quot;-oM:\_farshid\WSL\qemu&quot; -y
+</code></pre>
+<p>Binaries land in <code>M:\_farshid\WSL\qemu\qemu-portable\</code>.</p>
+<h3 id="23-the-pitfall-a-qemu-build-with-no-host-cpu-model">2.3 THE PITFALL: a QEMU build with no <code>host</code> CPU model</h3>
+<p>Cua hardcodes this command line:</p>
+<pre><code>qemu-system-x86_64.exe -machine q35,smm=off -cpu host -accel whpx ...
+</code></pre>
+<p>A custom or "dirty" QEMU build can list <strong>200+ CPU models and not one of them is <code>host</code></strong>. Then every Space dies with:</p>
+<pre><code>unable to find CPU model 'host'
+</code></pre>
+<p><strong>Check before anything else:</strong></p>
+<pre><code class="language-bash">qemu-system-x86_64.exe -cpu help | grep -E &quot;^  host&quot;
+</code></pre>
+<p>No output = broken build; replace it. Proof that QEMU and WHPX are otherwise fine:</p>
+<pre><code class="language-bash">qemu-system-x86_64.exe -accel whpx -cpu host -display none -machine q35 -S   # fails
+qemu-system-x86_64.exe -accel whpx -cpu max  -display none -machine q35 -S   # runs
+</code></pre>
+<h3 id="24-put-qemu-on-path-permanently">2.4 Put QEMU on PATH, permanently</h3>
+<p>Cua finds QEMU <strong>only through PATH</strong>. Add the <code>qemu-portable</code> folder itself, not its parent:</p>
+<pre><code class="language-powershell">[Environment]::SetEnvironmentVariable('Path',
+  [Environment]::GetEnvironmentVariable('Path','User').TrimEnd(';') + ';M:\_farshid\WSL\qemu\qemu-portable','User')
+</code></pre>
+<p>Do the same for <code>M:\_farshid\WSL\cua\bin</code>.</p>
+<h3 id="25-verify">2.5 Verify</h3>
+<pre><code class="language-bash">cua doctor
+</code></pre>
+<p>Required lines:</p>
+<pre><code>[ok] host.runtime.qemu: QEMU emulator version 11.1.2
+[ok] host.accel: QEMU would use whpx for amd64 guests
+</code></pre>
+<p><code>host.accel [ok]</code> confirms <strong>WHPX hardware acceleration</strong>.</p>
+<hr>
+<h2 id="3-create-a-space-then-configure-hermes">3. Create a Space, then configure Hermes</h2>
+<h3 id="31-create-the-space-outside-hermes">3.1 Create the Space — OUTSIDE Hermes</h3>
+<pre><code class="language-bash">cua config set default.kind vm
+cua spaces create linux --on local --runtime qemu --kind vm --name hermes-qemu-test
+</code></pre>
+<p><code>runtime.linux</code> accepts only <code>auto|builtin|system</code> — <strong>not</strong> <code>qemu</code>. With no Docker, <code>default.kind vm</code> makes <code>auto</code> resolve to QEMU. First creation downloads the image; several minutes.</p>
+<p><strong>Test it here, before touching Hermes.</strong></p>
+<h3 id="32-point-hermes-at-the-space">3.2 Point Hermes at the Space</h3>
+<pre><code class="language-powershell">hermes config set terminal.backend cua
+hermes config set plugins.entries.cua-spaces.settings.space hermes-qemu-test
+hermes config set plugins.entries.cua-spaces.settings.delete_on_exit false
+</code></pre>
+<h3 id="33-restart-hermes">3.3 Restart Hermes</h3>
+<p>Config binds to a new process. Close the chat, open a new one.</p>
+<hr>
+<h2 id="4-settings-reference">4. Settings reference</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>terminal.backend</code></td>
+<td><code>cua</code></td>
+<td>Route tools into the Space</td>
+</tr>
+<tr>
+<td><code>plugins.entries.cua-spaces.settings.space</code></td>
+<td>a name</td>
+<td>Reuse one Space; <strong>a named Space is never deleted</strong></td>
+</tr>
+<tr>
+<td><code>...settings.delete_on_exit</code></td>
+<td><code>false</code></td>
+<td>Keep files between sessions</td>
+</tr>
+<tr>
+<td><code>...settings.create_timeout</code></td>
+<td><code>600</code></td>
+<td>Seconds allowed for a new Space</td>
+</tr>
+<tr>
+<td><code>default.kind</code> (cua)</td>
+<td><code>vm</code></td>
+<td>Picks QEMU when Docker is absent</td>
+</tr>
+<tr>
+<td><code>default.on</code> (cua)</td>
+<td><code>local</code></td>
+<td>Run on this computer, not in the cloud</td>
+</tr>
+<tr>
+<td><code>runtime.linux</code> (cua)</td>
+<td><code>auto</code></td>
+<td>Do <strong>not</strong> set <code>qemu</code> — rejected</td>
+</tr>
+</tbody>
+</table>
+<p>How the plugin picks a Space:</p>
+<ul>
+<li><code>space: create</code> + <code>delete_on_exit: true</code> → a throwaway Space per run, deleted at exit.</li>
+<li><code>space: create</code> + <code>delete_on_exit: false</code> → one Space named <code>hermes-default</code>, reused.</li>
+<li><code>space: &lt;name&gt;</code> → uses that Space, never deletes or stops it. <strong>Hermes still asks before risky commands</strong>, because it is your machine and not disposable.</li>
+</ul>
+<hr>
+<h2 id="5-test-it">5. Test it</h2>
+<h3 id="level-1-the-chat-test">Level 1 — the chat test</h3>
+<p>In a <strong>new</strong> chat:</p>
+<blockquote>
+<p>run hostname and cat /etc/os-release</p>
+</blockquote>
+<p><strong>Pass:</strong> <code>hermes-qemu-test</code> and <code>Ubuntu 24.04.5 LTS</code>. <strong>Fail:</strong> your Windows hostname, or a Space error.</p>
+<h3 id="level-2-direct-checks">Level 2 — direct checks</h3>
+<pre><code class="language-bash">cua doctor                                        # host.runtime.qemu [ok]
+cua spaces ls                                     # Space listed
+powershell -c &quot;Get-Process qemu-system-x86_64&quot;     # VM process live
+tail &quot;$USERPROFILE/.cua/vmm/qemu/hermes-qemu-test/serial.log&quot;    # Ubuntu booted
+</code></pre>
+<h3 id="level-3-file-tools-land-in-the-space-too">Level 3 — file tools land in the Space too</h3>
+<p>Ask in the chat:</p>
+<blockquote>
+<p>write /tmp/proof.txt with the text hello, read it back, then run uname -a</p>
+</blockquote>
+<p>Confirm the file is <strong>not</strong> on Windows:</p>
+<pre><code class="language-powershell">Test-Path C:\tmp\proof.txt        # must be False
+</code></pre>
+<hr>
+<h2 id="6-errors-and-fixes">6. Errors and fixes</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>unable to find CPU model 'host'</code></td>
+<td>QEMU build lacks <code>host</code></td>
+<td>Install standard or portable QEMU (2.3)</td>
+</tr>
+<tr>
+<td><code>Socket not found: //./pipe/dockerDesktopLinuxEngine</code></td>
+<td>Space missing; fell back to Docker</td>
+<td><code>cua spaces start &lt;name&gt;</code></td>
+</tr>
+<tr>
+<td><code>QEMU not found; missing: qemu-system-x86_64 / qemu-img</code></td>
+<td>QEMU not on PATH</td>
+<td>Add <code>qemu-portable</code> folder to USER PATH</td>
+</tr>
+<tr>
+<td><code>No module named 'cua'</code></td>
+<td>Package absent from Hermes venv</td>
+<td><code>uv pip install --python &lt;venv&gt;/Scripts/python.exe "cua&gt;=0.5.0,&lt;0.8"</code></td>
+</tr>
+<tr>
+<td><code>No module named pip</code></td>
+<td>Hermes venv is uv-managed</td>
+<td>Use <code>uv pip</code>, never <code>pip</code></td>
+</tr>
+<tr>
+<td><code>cua</code> not recognized</td>
+<td>CLI not on PATH</td>
+<td>Add <code>M:\_farshid\WSL\cua\bin</code> to USER PATH</td>
+</tr>
+<tr>
+<td><code>Cua did not accept your sign-in</code></td>
+<td>Not signed in</td>
+<td><code>cua auth login</code></td>
+</tr>
+<tr>
+<td><code>Cua can't find the Space ...</code></td>
+<td>Wrong name in settings</td>
+<td><code>cua spaces ls</code>, then fix <code>settings.space</code></td>
+</tr>
+<tr>
+<td><code>Cua can't start a Space here yet</code></td>
+<td>No runtime engine</td>
+<td><code>cua doctor</code></td>
+</tr>
+<tr>
+<td><strong>Every tool fails at once</strong></td>
+<td>Backend is <code>cua</code>, Space cannot start</td>
+<td>You run <code>hermes config set terminal.backend local</code>, then restart</td>
+</tr>
+<tr>
+<td><code>This Mac is almost out of space</code></td>
+<td>Cosmetic bug on Windows</td>
+<td>Ignore</td>
+</tr>
+<tr>
+<td>Windows installer cancelled</td>
+<td>Needs admin</td>
+<td>Use the portable zip</td>
+</tr>
+<tr>
+<td><code>hermes config set</code> seems ignored</td>
+<td>Config binds to a new process</td>
+<td>Restart Hermes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="7-files-the-space-cannot-see-your-host">7. Files: the Space cannot see your host</h2>
+<p>Host drives (<code>C:</code>, <code>M:</code>, Dropbox) are <strong>not mounted</strong> in the Space. <code>/mnt</code> and <code>/media</code> are empty.</p>
+<p><strong>Proven behaviour:</strong> a <code>write_file</code> to <code>C:\Users\...</code> does <strong>not</strong> fail. It silently creates a <strong>literal folder</strong> in the guest — <code>/home/cua/C:/Users/...</code>. The <code>resolved_path</code> shows this if you read it. The same happens to <code>M:\...</code>, giving <code>/home/cua/M:/...</code>.</p>
+<p>So the file "succeeds" but lands in the wrong machine. Always read <code>resolved_path</code>.</p>
+<h3 id="four-ways-to-move-data">Four ways to move data</h3>
+<p><strong>1. Read it through Hermes.</strong> Ask: <em>read /tmp/proof.txt and show me the contents</em>. Best for small text.</p>
+<p><strong>2. scp out of the Space.</strong></p>
+<pre><code class="language-bash">scp -i &quot;$USERPROFILE/.cua/vmm/qemu/hermes-qemu-test/id_ed25519&quot; \
+    -P &lt;port&gt; -o StrictHostKeyChecking=no \
+    cua@127.0.0.1:/tmp/proof.txt M:/_farshid/WSL/from-space/
+</code></pre>
+<p><strong>3. scp into the Space</strong> — same command, arguments swapped.</p>
+<p><strong>4. VS Code</strong> — see section 8. Best for whole folders.</p>
+<p><strong>Caution:</strong> the forwarded port changes each boot. Read it on the host:</p>
+<pre><code class="language-powershell">Select-String -Path &quot;$env:USERPROFILE\.cua\vmm\qemu\hermes-qemu-test\cmdline&quot; `
+  -Pattern 'hostfwd=tcp:127\.0\.0\.1:(\d+)-:22' | % { $_.Matches.Groups[1].Value }
+</code></pre>
+<hr>
+<h2 id="8-vs-code-remote-access">8. VS Code remote access</h2>
+<h3 id="81-it-works-and-you-do-not-need-sshd">8.1 It works, and you do not need sshd</h3>
+<p>VS Code connects through Cua's own channel. Evidence from a working setup inside the guest:</p>
+<pre><code class="language-bash">ls /home/cua/.vscode-server/          # exists, code-&lt;hash&gt; binary present
+ps aux | grep vscode                  # two server processes running
+head /home/cua/.vscode-server/.cli.*.log     # &quot;Found running server (pid=...)&quot;
+</code></pre>
+<p>The guest's <code>ssh</code> service is <strong>disabled and inactive</strong> by default, and that does not stop VS Code. <strong>Cua's command channel is <code>cua-spacesd</code> on port 3211, not sshd.</strong> Enabling ssh is optional.</p>
+<p>If you do want sshd anyway, the user <code>cua</code> has <strong>passwordless sudo</strong> (<code>sudo -n true</code> succeeds; groups include <code>sudo</code>, <code>video</code>, <code>audio</code>):</p>
+<blockquote>
+<p>in a chat: run <code>sudo systemctl enable --now ssh &amp;&amp; systemctl is-active ssh</code></p>
+</blockquote>
+<h3 id="82-there-is-no-vm-password">8.2 There is no VM password</h3>
+<p>Nothing ever asks for one. The credential is a <strong>key pair</strong> Cua generated when it made the Space:</p>
+<table>
+<thead>
+<tr>
+<th>Half</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Private</td>
+<td><code>%USERPROFILE%\.cua\vmm\qemu\hermes-qemu-test\id_ed25519</code> (host)</td>
+</tr>
+<tr>
+<td>Public</td>
+<td>guest <code>~/.ssh/authorized_keys</code>, comment <code>cua-vmm</code></td>
+</tr>
+</tbody>
+</table>
+<p>There is no password to find or reset. The key <strong>is</strong> the credential.</p>
+<h3 id="83-the-simplest-route">8.3 The simplest route</h3>
+<ol>
+<li>Open VS Code → <strong>Remote-SSH: Connect to Host</strong> (or use the remote explorer).</li>
+<li>Connect to the Space.</li>
+<li>Open the folder you want inside the guest, e.g. <code>/home/cua</code>.</li>
+<li>Drag files between panes, or use <strong>Download</strong> on a file.</li>
+</ol>
+<p>Because the Space cannot see <code>M:</code>, a VS Code window over this connection edits the <strong>guest</strong> filesystem, not your host files.</p>
+<h3 id="84-classic-remote-ssh-config-only-if-you-enable-sshd">8.4 Classic Remote-SSH config (only if you enable sshd)</h3>
+<p>Add to <code>%USERPROFILE%\.ssh\config</code>:</p>
+<pre><code>Host cua-space
+    HostName 127.0.0.1
+    Port &lt;forwarded-port&gt;
+    User cua
+    IdentityFile C:\Users\&lt;user&gt;\.cua\vmm\qemu\hermes-qemu-test\id_ed25519
+    StrictHostKeyChecking no
+    UserKnownHostsFile NUL
+</code></pre>
+<p>The port changes on every reboot. Update this file after a restart.</p>
+<hr>
+<h2 id="9-daily-operation">9. Daily operation</h2>
+<pre><code class="language-bash">cua spaces start hermes-qemu-test      # after every reboot or sleep
+cua spaces ls                          # confirm it is up
+cua spaces stop hermes-qemu-test        # suspend (memory is kept)
+cua spaces delete hermes-qemu-test      # remove (asks first)
+</code></pre>
+<ul>
+<li><strong>Spaces suspend when the machine sleeps.</strong> Start the Space before Space-backed work.</li>
+<li><code>cua spaces</code> has <strong>no <code>exec</code> subcommand</strong> — commands go through the Hermes plugin.</li>
+<li>Keep <code>M:\_farshid\WSL\qemu\qemu-portable</code> and <code>M:\_farshid\WSL\cua\bin</code> in the USER PATH permanently.</li>
+</ul>
+<hr>
+<h2 id="10-which-backend-to-use">10. Which backend to use</h2>
+<table>
+<thead>
+<tr>
+<th>Work</th>
+<th>Backend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Untrusted scripts, test installs, disposable work</td>
+<td><code>cua</code> (the Space)</td>
+</tr>
+<tr>
+<td>Your <code>M:\_farshid\WSL</code> files, models, ZeroClaw config</td>
+<td><code>local</code></td>
+</tr>
+</tbody>
+</table>
+<p>Revert with, <strong>outside</strong> Hermes, then restart:</p>
+<pre><code class="language-powershell">hermes config set terminal.backend local
+</code></pre>
+<hr>
+<h2 id="short-version">Short version</h2>
+<pre><code>install plugin
+install cua CLI            (PowerShell, -Prefix M:\_farshid\WSL\cua)
+install cua python pkg     (uv pip, NOT pip)
+cua auth login
+install QEMU               (portable zip if no admin; MUST have -cpu host)
+add QEMU + cua bin to USER PATH
+cua doctor                 (qemu [ok], accel [ok])
+cua spaces create ... --runtime qemu       &lt;-- TEST HERE, OUTSIDE HERMES
+hermes config set terminal.backend cua
+hermes config set ...settings.space &lt;name&gt;
+hermes config set ...settings.delete_on_exit false
+RESTART HERMES
+new chat: run hostname and cat /etc/os-release
+</code></pre>
+<p><strong>The two things that break most:</strong> a QEMU build without <code>-cpu host</code>, and a missing <code>cua</code> Python package in Hermes's uv venv.</p>
+<p><strong>The one rule that saves hours:</strong> test <code>cua spaces create</code> outside Hermes. A broken backend blocks the agent's own tools, and only you can restore it.</p>
+<p><strong>The one surprise:</strong> a <code>write_file</code> to a Windows path does not error — it quietly creates a literal folder like <code>/home/cua/C:/Users/...</code> inside the Space. Check <code>resolved_path</code>.</p>
+<hr>
+<p class="page-source"><em>Source:</em> Pirahansiah, F. &ldquo;Hermes + Cua Spaces on Windows: the complete guide&rdquo;. pirahansiah.com, updated 2026-11-07.
+Canonical URL <a href="https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/">https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/</a> &middot; markdown source <a href="https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows.md">hermes-cua-spaces-windows.md</a> &middot;
+<a href="/farshid/content/for-ai/">how to cite, quote and link this site</a>.</p>
+</article>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/farshid/content/index.html">Home</a>
+      <a href="/farshid/content/atlas/">Atlas</a>
+      <a href="/farshid/content/swarm.html">Search Swarm</a>
+      <a href="/farshid/content/edge-ai-consulting-germany/">Edge AI consulting</a>
+      <a href="/farshid/content/edge-ai-beratung/">Beratung (DE)</a>
+      <a href="/farshid/content/for-ai/">For AI &amp; LLMs</a>
+      <a href="/farshid/content/impressum/">Impressum</a>
+    </div>
+    <div class="footer-note"><strong>Dr. Farshid Pirahansiah</strong> &middot; embedded edge AI &amp; computer vision consultant &middot; Berlin, Germany &middot; 12+ years &middot; &copy; <span data-year>2026</span></div>
+  </div>
+</footer>
+</div><!-- /.app-window -->
+<script src="/farshid/md.js"></script>
+<script src="/farshid/app.js"></script>
+<script>document.querySelectorAll('[data-year]').forEach(function(e){ e.textContent=new Date().getFullYear(); });</script>
+<script>
+  (function(){
+    var banner=document.getElementById('gdpr-banner');
+    var accept=document.getElementById('gdpr-accept');
+    var decline=document.getElementById('gdpr-decline');
+    function closeSheet(){ if(banner) banner.classList.remove('active'); document.body.classList.remove('has-consent-sheet'); }
+    if(localStorage.getItem('gdpr_consent')){ closeSheet(); }
+    else { if(banner) banner.classList.add('active'); document.body.classList.add('has-consent-sheet'); }
+    if(accept) accept.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','granted'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'
+      });
+    });
+    if(decline) decline.addEventListener('click', function(){
+      localStorage.setItem('gdpr_consent','denied'); closeSheet();
+      if(window.gtag) gtag('consent','update',{
+        'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'
+      });
+    });
+  })();
+</script>
+</body>
+</html>
