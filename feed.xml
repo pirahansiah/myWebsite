@@ -5,9 +5,27 @@
 <link>https://pirahansiah.com/</link>
 <description>New and updated pages on pirahansiah.com: computer vision, edge AI, GPU and on-device model engineering, publications and notes.</description>
 <language>en</language>
-<lastBuildDate>Sat, 07 Nov 2026 20:53:21 +0000</lastBuildDate>
+<lastBuildDate>Mon, 09 Nov 2026 12:52:33 +0000</lastBuildDate>
 <atom:link href="https://pirahansiah.com/feed.xml" rel="self" type="application/rss+xml"/>
 <copyright>Dr. Farshid Pirahansiah — attribution required, see https://pirahansiah.com/ai.txt</copyright>
+<item>
+<title>Qwen4-27B at 1 bit and 64k context: the laptop rig</title>
+<link>https://pirahansiah.com/farshid/content/qwen4-27b-1bit-laptop/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/qwen4-27b-1bit-laptop/</guid>
+<pubDate>Mon, 09 Nov 2026 09:00:00 +0000</pubDate>
+<description>Running a 27B dense model on an 8 GB RTX 5060 laptop: 1-bit weights, a 64k KV cache that has to live partly outside the card, the llama-server flags that…</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Notes &amp; Guides</category>
+</item>
+<item>
+<title>Atlas</title>
+<link>https://pirahansiah.com/farshid/content/atlas/</link>
+<guid isPermaLink="true">https://pirahansiah.com/farshid/content/atlas/</guid>
+<pubDate>Sat, 07 Nov 2026 09:00:00 +0000</pubDate>
+<description>The single index of everything on pirahansiah.com — every publication, course, note, talk and project on one page.</description>
+<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
+<category>Site</category>
+</item>
 <item>
 <title>Hermes + Cua Spaces on Windows: the complete guide</title>
 <link>https://pirahansiah.com/farshid/content/hermes-cua-spaces-windows/</link>
@@ -25,15 +43,6 @@
 <description>Lessons from 12+ years of building and debugging computer vision systems in production: floating-point pitfalls, background subtraction, stereo depth…</description>
 <author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
 <category>Mentoring &amp; Coaching</category>
-</item>
-<item>
-<title>Atlas</title>
-<link>https://pirahansiah.com/farshid/content/atlas/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/atlas/</guid>
-<pubDate>Sun, 18 Oct 2026 09:00:00 +0000</pubDate>
-<description>The single index of everything on pirahansiah.com — every publication, course, note, talk and project on one page.</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Site</category>
 </item>
 <item>
 <title>CV — Dr. Farshid Pirahansiah</title>
@@ -223,15 +232,6 @@
 <description>A downloadable agent workspace that turns dense model output into controlled-English text, diagrams, interactive pages and explainer videos — the…</description>
 <author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
 <category>Projects</category>
-</item>
-<item>
-<title>Running K2-Horizon Locally on Apple Silicon</title>
-<link>https://pirahansiah.com/farshid/content/k2-horizon-local/</link>
-<guid isPermaLink="true">https://pirahansiah.com/farshid/content/k2-horizon-local/</guid>
-<pubDate>Wed, 30 Sep 2026 09:00:00 +0000</pubDate>
-<description>Serve IFM&#x27;s K2-Horizon (custom k2-horizon architecture GGUF) on Apple M3 via the MBZUAI-IFM llama.cpp fork, and wire it into Hermes Agent at 64K context.</description>
-<author>info@pirahansiah.com (Dr. Farshid Pirahansiah)</author>
-<category>Notes &amp; Guides</category>
 </item>
 </channel>
 </rss>

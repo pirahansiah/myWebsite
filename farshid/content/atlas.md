@@ -12,7 +12,7 @@ The single index of everything on pirahansiah.com — every publication, course,
 <nav class="atlas-jump" aria-label="Atlas sections">
   <a href="#publications">Publications <span>27</span></a>
   <a href="#courses">Courses <span>18</span></a>
-  <a href="#notes-guides">Notes &amp; Guides <span>44</span></a>
+  <a href="#notes-guides">Notes &amp; Guides <span>45</span></a>
   <a href="#downloads">Downloads <span>28</span></a>
   <a href="#mentoring-coaching">Mentoring &amp; Coaching <span>9</span></a>
   <a href="#talks-presentations-keynotes">Talks, Presentations &amp; Keynotes <span>13</span></a>
@@ -122,6 +122,7 @@ The single index of everything on pirahansiah.com — every publication, course,
     <li><a href="/farshid/content/product.md">Product</a></li>
     <li><a href="/farshid/content/note-prompt-templates.md">Prompt Engineering Templates</a></li>
     <li><a href="/farshid/content/note-python-configuration.md">Python</a></li>
+    <li><a href="/farshid/content/qwen4-27b-1bit-laptop.md">Qwen4-27B at 1 bit and 64k context: the laptop rig</a></li>
     <li><a href="/farshid/content/note-3d-vision.md">Real-Time 3D Point Cloud Generation and Visualization from Depth Data</a></li>
     <li><a href="/farshid/content/note-multi-camera.md">Real-Time Multi-Camera Vision Systems</a></li>
     <li><a href="/farshid/content/k2-horizon-local.md">Running K2-Horizon Locally on Apple Silicon (M3, 16GB)</a></li>
